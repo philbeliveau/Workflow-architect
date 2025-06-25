@@ -8,18 +8,18 @@ const ProblemStatement: React.FC = () => {
   const problems = [
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "Trop de travail dev répétitif",
-      description: "Documentation manuelle, PRs qui traînent, tests répétitifs, déploiements manuels. Vos développeurs passent 3 heures par jour sur des tâches que l'IA pourrait gérer. Pendant ce temps, les features clients s'accumulent et la dette technique grandit."
+      title: "Développeurs : Temps perdu sur le travail répétitif",
+      description: "Onboarding de 3 semaines, revues manuelles interminables, documentation obsolète. Vos développeurs passent 4h+ par jour sur des tâches que l'IA pourrait automatiser instantanément."
     },
     {
       icon: <AlertCircle className="w-8 h-8" />,
-      title: "ChatGPT/Copilot donnent des résultats faibles",
-      description: "Vous avez essayé les outils IA grand public. Parfois ça aide, souvent ça crée plus de problèmes qu'autre chose. Votre équipe a abandonné après quelques semaines frustrantes. Il vous faut une approche systématique, pas des outils isolés."
+      title: "Dirigeants : Attente sans fin des développements",
+      description: "\"Peut-être en Q3\" pour un simple tableau de bord client. Vous avez besoin d'outils internes, d'automatisations, de dashboards, mais l'équipe IT est débordée. Pendant ce temps, vous faites tout manuellement."
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Pas le temps de rechercher/implémenter",
-      description: "Entre les urgences client et la livraison des features, qui a le temps d'apprendre CrewAI, MCP, ou Claude-code? Vous voulez les bénéfices de l'IA, mais pas passer 3 mois à tout configurer. Il vous faut quelqu'un qui installe les systèmes pour vous."
+      title: "Tout le monde : L'IA est trop complexe à implémenter",
+      description: "CrewAI, MCP, Claude-code... Par où commencer ? Comment l'intégrer sans casser l'existant ? Vous voulez les bénéfices de l'IA, mais pas passer 6 mois à tout apprendre et configurer."
     }
   ];
 
@@ -79,11 +79,11 @@ const ProblemStatement: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Pourquoi vous luttez à livrer vite
+            Deux problèmes, deux solutions
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Vos développeurs passent 60% de leur temps sur des tâches répétitives. 
-            <span className="text-accent-blue font-semibold"> Nous installons les systèmes qui automatisent tout ça.</span>
+            Que vous soyez développeur ou dirigeant, vous perdez du temps sur des tâches que l'IA pourrait gérer. 
+            <span className="text-accent-blue font-semibold"> Nous donnons à chacun les bons outils pour son niveau.</span>
           </p>
         </motion.div>
 
@@ -139,7 +139,7 @@ const ProblemStatement: React.FC = () => {
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 border border-accent-blue/20 rounded-full px-6 py-3">
             <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
             <span className="text-text-secondary text-sm">
-              Il est temps de transformer votre équipe avec l'IA
+              Il est temps de donner à chacun les bons outils IA
             </span>
           </div>
         </motion.div>

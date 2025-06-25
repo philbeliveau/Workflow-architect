@@ -20,10 +20,10 @@ const Navigation: React.FC = () => {
 
   const navItems = [
     { name: 'Accueil', href: '/' },
-    { name: 'Services', href: '/services' },
+    { name: 'Développeurs', href: '/developers' },
+    { name: 'Business', href: '/business' },
     { name: 'Cas d\'étude', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'À propos', href: '/about' }
+    { name: 'Services', href: '/services' }
   ];
 
   return (
@@ -76,7 +76,7 @@ const Navigation: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="primary" size="md" href="/book-demo">
-              Réserver un diagnostic IA gratuit
+              Évaluation Gratuite
             </Button>
           </div>
 
@@ -126,7 +126,7 @@ const Navigation: React.FC = () => {
                     href="/book-demo"
                     className="w-full"
                   >
-                    Réserver un diagnostic IA gratuit
+                    Évaluation Gratuite
                   </Button>
                 </motion.div>
               </div>

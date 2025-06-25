@@ -10,76 +10,74 @@ const ServicesPreview: React.FC = () => {
   const services = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Audit de flux et gains rapides",
-      subtitle: "Parfait pour les équipes prêtes à tester",
-      price: "2 500€",
-      duration: "1-2 semaines",
-      description: "Obtenez des améliorations de productivité immédiates tout en développant la confiance pour des transformations plus importantes. Idéal pour les développeurs solo et les petites équipes.",
+      title: "Parcours Développeur - Starter",
+      subtitle: "Orchestration d'agents pour petites équipes",
+      price: "4 500€",
+      duration: "2 semaines",
+      description: "Installation d'un système d'agents Claude pour automatiser les revues de code, génération de docs, et tests. Idéal pour découvrir la puissance de l'orchestration IA.",
       features: [
-        "Analyse complète du flux de travail",
-        "Recommandations d'outils IA personnalisées",
-        "Implémentation de 3-5 automatisations rapides",
-        "Formation équipe aux pratiques IA",
-        "Support email 30 jours"
+        "Configuration Claude-code + CrewAI de base",
+        "Agents pour revue automatique et documentation",
+        "Intégration GitHub/Jira/Slack",
+        "Dashboards de monitoring des agents",
+        "Formation technique 8h + support 30j"
       ],
-      bestFor: "Développeurs solo, équipes 2-3 personnes",
-      cta: "Commencer l'audit",
-      href: "/services#audit",
+      bestFor: "Développeurs solo, startups 2-4 devs",
+      cta: "Démarrer Orchestration",
+      href: "/developers",
       featured: false,
       completionMetrics: [
-        { label: "Analyse workflow", value: 100 },
-        { label: "Implémentation IA", value: 85 },
+        { label: "Config agents", value: 100 },
+        { label: "Intégrations", value: 95 },
         { label: "Formation équipe", value: 90 }
       ]
     },
     {
       icon: <Building className="w-8 h-8" />,
-      title: "Implémentation complète IA",
-      subtitle: "Transformation systématique",
-      price: "15 000€",
-      duration: "4-6 semaines",
-      description: "Refonte complète du flux de travail avec des intégrations IA éprouvées qui évoluent avec votre croissance. Livraison 3x plus rapide garantie sans compromis sur la qualité.",
+      title: "Parcours Business - Autonomie",
+      subtitle: "Environnement no-code pour dirigeants",
+      price: "6 500€",
+      duration: "1 semaine",
+      description: "Configuration d'un environnement IA sécurisé pour construire vos propres dashboards clients, outils internes et automatisations. Sans attendre l'équipe IT.",
       features: [
-        "Audit et refonte complète du flux",
-        "Intégration de 8-12 outils IA",
-        "Scripts d'automatisation personnalisés",
-        "Formation et support d'adoption",
-        "Période d'optimisation 30 jours",
-        "Suivi métriques de productivité"
+        "Environnement Claude Business configuré",
+        "Templates tableaux de bord et outils internes",
+        "Intégrations CRM/Spreadsheets/DB sécurisées",
+        "Formation personnalisée 4h",
+        "Support hotline business 60j"
       ],
-      bestFor: "Équipes startup (3-8 développeurs)",
-      cta: "Réserver implémentation",
-      href: "/services#implementation",
+      bestFor: "CEOs, founders, chefs de projet",
+      cta: "Gagner en Autonomie",
+      href: "/business",
       featured: true,
       completionMetrics: [
-        { label: "Refonte complète", value: 100 },
-        { label: "Intégration outils IA", value: 95 },
-        { label: "Optimisation continue", value: 92 }
+        { label: "Env. configuré", value: 100 },
+        { label: "Templates installés", value: 100 },
+        { label: "Formation complète", value: 95 }
       ]
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Transformation agence IA",
-      subtitle: "Devenez l'agence IA de référence",
-      price: "35 000€",
-      duration: "8-12 semaines",
-      description: "Adoption IA à l'échelle de l'organisation qui transforme la façon dont vous livrez le travail client. Marges 40%+ plus élevées et avantage concurrentiel imbattable.",
+      title: "Entreprise - Les Deux Parcours",
+      subtitle: "Solution complète tech + business",
+      price: "15 000€",
+      duration: "4 semaines",
+      description: "Combinaison des deux parcours : orchestration d'agents avancée pour les devs + environnement business pour les dirigeants. L'organisation complète boostée par l'IA.",
       features: [
-        "Analyse et refonte organisationnelle",
-        "Intégration IA pour différents types clients",
-        "Formation et gestion du changement",
-        "Templates communication client",
-        "Période d'optimisation 90 jours",
-        "Support positionnement concurrentiel"
+        "Orchestration complète (MCPs, frameworks avancés)",
+        "Environnement business no-code sécurisé",
+        "Dashboards unifiés tech + business",
+        "Formation différenciée par profil",
+        "Support continu 90j + optimisations"
       ],
-      bestFor: "Agences (8-15 développeurs)",
-      cta: "Planifier consultation",
-      href: "/services#transformation",
+      bestFor: "Entreprises 8-20 personnes",
+      cta: "Transformation Complète",
+      href: "/enterprise",
       featured: false,
       completionMetrics: [
-        { label: "Transformation org.", value: 100 },
-        { label: "Formation changement", value: 88 },
-        { label: "Positionnement marché", value: 95 }
+        { label: "Deux parcours actifs", value: 100 },
+        { label: "Intégration unifiée", value: 95 },
+        { label: "Adoption équipes", value: 92 }
       ]
     }
   ];
@@ -140,11 +138,11 @@ const ServicesPreview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Choisissez votre chemin vers une livraison 3x plus rapide
+            Services Par Parcours
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Que vous soyez un développeur solo noyé dans le travail client ou un propriétaire d'agence cherchant à évoluer, 
-            nous avons un chemin éprouvé vers la productivité alimentée par l'IA.
+            Des solutions spécifiques pour développeurs et dirigeants. 
+            <span className="text-accent-blue font-semibold"> Nous mesurons les résultats, nous ne promettons pas.</span>
           </p>
         </motion.div>
 
@@ -270,7 +268,7 @@ const ServicesPreview: React.FC = () => {
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-6 py-3">
             <CheckCircle className="w-5 h-5 text-success-green" />
             <span className="text-text-secondary">
-              Garantie de remboursement de 90 jours sur tous les services
+              Chaque parcours adapté aux besoins spécifiques. Mesures d'impact incluses.
             </span>
           </div>
         </motion.div>

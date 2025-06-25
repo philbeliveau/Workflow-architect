@@ -7,10 +7,10 @@ import { ArrowRight, Calendar, CheckCircle, Zap } from 'lucide-react';
 
 const CTASection: React.FC = () => {
   const benefits = [
-    "Diagnostic IA gratuit de 30 minutes",
-    "Recommandations personnalisées",
-    "Aucun engagement requis",
-    "Insights exploitables immédiatement"
+    "Évaluation gratuite 30 min",
+    "Recommandations personnalisées par profil",
+    "Démonstration concrète",
+    "Plan d'implémentation immédiat"
   ];
 
   return (
@@ -69,7 +69,7 @@ const CTASection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Prêt à tripler votre vélocité de développement ?
+            Prêt à débloquer votre potentiel ?
           </h2>
         </motion.div>
 
@@ -81,8 +81,8 @@ const CTASection: React.FC = () => {
           viewport={{ once: true }}
         >
           <p className="text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Réservez un diagnostic IA gratuit et découvrez comment l'IA peut 
-            <span className="text-accent-blue font-semibold"> transformer la productivité de votre équipe.</span>
+            Évaluation gratuite adaptée à votre profil. Nous analyserons vos besoins et vous montrerons 
+            <span className="text-accent-blue font-semibold"> exactement ce que vous pourrez construire avec l'IA.</span>
           </p>
         </motion.div>
 
@@ -125,15 +125,15 @@ const CTASection: React.FC = () => {
               className="group text-lg px-12 py-4 h-auto"
             >
               <Calendar className="mr-3 h-6 w-6" />
-              Réserver un diagnostic IA gratuit
+              Réserver Évaluation Gratuite
               <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 
           {/* Supporting text */}
           <p className="text-text-muted text-sm">
-            En 30 minutes, nous analyserons votre processus de développement actuel et identifierons 
-            les trois plus grandes opportunités d'accélération alimentée par l'IA.
+            Évaluation gratuite sans argumentaire commercial. Juste des insights exploitables 
+            sur vos besoins et les solutions possibles.
           </p>
         </motion.div>
 
@@ -149,7 +149,7 @@ const CTASection: React.FC = () => {
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-6 py-3">
             <CheckCircle className="w-5 h-5 text-success-green" />
             <span className="text-text-secondary font-medium">
-              Aucun argumentaire de vente, aucun engagement requis
+              Pas de vente, pas d'engagement, juste des solutions
             </span>
           </div>
 

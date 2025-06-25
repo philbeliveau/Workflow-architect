@@ -1,5 +1,6 @@
 import Navigation from '@/components/sections/Navigation';
 import HeroBanner from '@/components/sections/HeroBanner';
+import TrackSelection from '@/components/sections/TrackSelection';
 import ProblemStatement from '@/components/sections/ProblemStatement';
 import SolutionOverview from '@/components/sections/SolutionOverview';
 import ToolsTrustSection from '@/components/sections/ToolsTrustSection';
@@ -15,6 +16,8 @@ export default function Home() {
       
       <main>
         <HeroBanner />
+        
+        <TrackSelection />
         
         <ProblemStatement />
         

@@ -10,20 +10,20 @@ const SolutionOverview: React.FC = () => {
     {
       number: "01",
       icon: <Search className="w-8 h-8" />,
-      title: "Auditez votre flux de travail actuel",
-      description: "Nous analysons votre processus de développement existant, identifions les goulots d'étranglement et cartographions exactement où l'IA peut avoir le plus grand impact. Aucune recommandation générique – tout est adapté aux besoins spécifiques et à la pile technologique de votre équipe."
+      title: "Nous évaluons votre situation actuelle",
+      description: "Audit complet de vos processus existants - développement, gestion de projet, outils métier. Nous identifions exactement où l'IA peut avoir le plus grand impact selon votre profil (technique ou métier)."
     },
     {
       number: "02",
       icon: <Settings className="w-8 h-8" />,
-      title: "Implémentez l'automatisation IA",
-      description: "En travaillant aux côtés de votre équipe, nous intégrons les bons outils IA dans votre flux de travail quotidien. De la génération de code aux tests automatisés, de la documentation aux revues de PR – nous gérons la configuration, la configuration et la formation."
+      title: "Nous intégrons sans perturber",
+      description: "Installation des systèmes IA adaptés à votre parcours. Pour les développeurs : orchestration d'agents avancée. Pour les dirigeants : environnement no-code sécurisé. Tout fonctionne avec vos outils actuels."
     },
     {
       number: "03",
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Mesurez et optimisez les résultats",
-      description: "Nous suivons des métriques spécifiques : temps de livraison, qualité du code, satisfaction des développeurs et retours clients. Ensuite, nous optimisons continuellement vos flux de travail pour maximiser les gains de productivité et assurer le succès à long terme."
+      title: "Nous mesurons et soutenons",
+      description: "Suivi continu des métriques de performance. Optimisation régulière des systèmes. Support technique permanent. Mises à jour avec les dernières capacités IA. Votre succès est notre priorité."
     }
   ];
 
@@ -87,11 +87,11 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Ce que nous faisons
+            Notre Approche : Améliorer, Pas Remplacer
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Nous implémentons avec vous un système de livraison assistée par IA. 
-            <span className="text-accent-blue font-semibold"> Résultat : livraison plus rapide, moins de bugs, développeurs plus heureux.</span>
+            Nous installons des systèmes IA qui s'intègrent à vos outils existants. 
+            <span className="text-accent-blue font-semibold"> Aucune courbe d'apprentissage. Aucun changement de processus. Juste plus d'efficacité.</span>
           </p>
         </motion.div>
 
@@ -185,10 +185,10 @@ const SolutionOverview: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-h2 font-bold text-text-primary mb-4">
-              Exemple de workflow automatisé
+              Exemple : Revue de code automatisée (Parcours Développeur)
             </h3>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              Voici à quoi ressemble un système de revue de code assisté par IA que nous implémentons
+              Voici comment nous automatisons les revues de code avec CrewAI et Claude-code
             </p>
           </div>
           
@@ -234,7 +234,7 @@ async function automatedReview(pullRequest: PR) {
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-8 py-4">
             <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
             <span className="text-text-primary font-medium">
-              Approche systématique pour des résultats garantis
+              Nous améliorons • Nous intégrons • Nous mesurons • Nous soutenons
             </span>
           </div>
         </motion.div>

@@ -1,111 +1,132 @@
-🔥 Revised Prompt to Claude-code — “AI Workflow Architect” Positioning
-You're acting as a senior UX strategist and technical copywriter for a new category of consulting: AI Workflow Architecture.
+🚀 Revised Positioning — "AI Development Accelerator" 
+You're acting as a senior conversion strategist and technical copywriter for a specialized consulting firm that transforms development teams into AI-powered delivery machines.
 
 🎯 Goal:
-Rebuild the homepage of our consulting firm so it communicates a high-authority, technically competent brand. This isn’t soft automation. This is AI-native system installation.
+Create a homepage that immediately communicates our unique value: We don't just add AI tools to your workflow — we rebuild your entire development pipeline to deliver 3x faster with zero quality compromise.
 
-We don’t teach prompt engineering.
-We don’t build chatbots.
-We re-architect development processes using Claude-code, autonomous agents, and multi-agent orchestration frameworks.
+We don't teach generic AI skills.
+We don't build simple chatbots.
+We install enterprise-grade AI development systems that make 4-person teams outperform 12-person teams.
 
 🧠 Who We Are:
-We’re AI workflow architects. We design, install, and maintain production-grade LLM-based systems that make small teams deliver like large ones — without hiring.
+We're the team that turns development bottlenecks into AI-powered highways. We specialize in installing complete AI development ecosystems using Claude-code, CrewAI, MCP integrations, and custom agent orchestration.
 
-We use tools like Claude-code, Autogen, CrewAI, MCPs, git-integrated agents, persistent memory configs, swarm programming frameworks, and more.
+Our systems handle: code review, documentation, testing, onboarding, project management integration, and deployment — all automatically, all production-ready.
 
-🧰 What We Build:
-We deliver systems that:
+🧰 What We Deliver:
+We build AI systems that eliminate your biggest development pain points:
 
-Onboard devs to a codebase in hours, not weeks
-
-Automatically generate PRs, documentation, and test coverage
-
-Coordinate multiple agents to execute engineering tasks
-
-Integrate cleanly with GitHub, Jira, ClickUp, Notion
-
-Operate autonomously within secured boundaries
+✅ New developers productive in 2 days (not 2 weeks)
+✅ Automatic PR reviews with 90%+ accuracy
+✅ Documentation that writes itself
+✅ Zero-config CI/CD with intelligent testing
+✅ Jira/GitHub sync that actually works
+✅ Code quality that improves over time
 
 🔧 Your Task:
-Design the landing page content and structure for this AI Workflow Architecture firm.
+Design the landing page content for this AI Development Acceleration firm.
 
 Use this structure:
 
 1. Hero Section
-Bold headline: “We Install AI Developer Infrastructures”
+Headline: "Ship 3x Faster. Same Team Size."
 
-Subhead: “Claude-code. Autonomous agents. Real output.”
+Subhead: "We install complete AI development systems. Your 4-person team delivers like a 12-person team. Results in week 1."
+
+Technical proof: "Claude-code • CrewAI • MCP • GitHub Actions • Production-ready"
 
 2 CTAs:
+"Get Free Development Audit" (primary)
+"See 3x Speed Case Study" (secondary)
 
-“Book a system architecture call”
-
-“See a before/after teardown”
-
-Trust bar: “Used by 50+ dev teams · Built on Claude · ROI in weeks”
+Trust indicators: "67% faster code reviews • 40% higher project margins • 95% client retention"
 
 2. Problem Section
-Make it technical and cold:
+Make it hit hard with specific pain points:
 
-“40% of your team’s time goes to code scaffolding, reviews, and onboarding”
+"Your developers spend 4+ hours daily on work AI should handle"
 
-“LLMs help — but without infrastructure, it’s chaos”
+"New hires take 3 weeks to be productive (costing you $15K in lost velocity)"
 
-“Teams that bolt on AI fail. Teams that re-architect win.”
+"Manual code reviews create 2-day bottlenecks on every feature"
 
-3. Offer Section
-“We architect and install autonomous AI workflows into your stack.”
+"Documentation is always outdated, onboarding is painful"
 
-Breakdown:
+"You know AI can help, but don't have 6 months to figure it out"
 
-Memory-configured Claude agents
+3. Solution Section
+"We install turnkey AI development acceleration systems"
 
-Structured repo augmentation (Claude.md, diagram auto-gen)
+What we implement:
+🤖 Intelligent code review agents (Claude-code integration)
+📚 Self-updating documentation systems  
+⚡ 2-day developer onboarding pipelines
+🔄 GitHub/Jira/Slack automation workflows
+🛡️ Quality gates that improve code over time
+📊 Velocity dashboards with actionable insights
 
-Git-integrated swarm PR agents
+4. Pricing Packages (Value-Based)
+Package Name | Investment | Timeline | ROI Guarantee
+AI Quickstart | €3,500 | 1 week | 2x faster reviews or money back
+Full Acceleration | €18,000 | 3 weeks | 3x delivery speed or we work free
+Enterprise Transformation | €45,000 | 6 weeks | Custom SLA + ongoing optimization
 
-Secure sandbox orchestration
+Each tier includes:
+- Complete system installation
+- Team training & adoption support  
+- 30-day optimization period
+- Measurable velocity improvements
 
-Dev dashboards + feedback loops
+CTAs: "Start Acceleration" / "Book Implementation Call"
 
-4. Packages (Implementation Tiers)
-Name	Price	What’s included
-Starter Stack	€2.5K	Audit + 3 lightweight agent installs
-Scalable System	€15K	Full repo augmentation + multi-agent workflows
-Full AI Factory	€35K	Org-level implementation, dashboards, training, metrics
+5. Case Studies (Specific Results)
+Before/After scenarios with:
 
-Each with outcome-based CTA: “Deploy This Stack”
+📈 Metrics: "Review time: 4 hours → 30 minutes"
+💻 Code samples: AI-generated vs manual work
+🏢 Company profile: "SaaS startup, 6 developers"
+💬 Testimonial: "We deliver features 3x faster. Same quality, less stress."
+🛠️ Tech stack: Visual of tools implemented
 
-5. Case Study (Technical Format)
-Repo: before/after screenshots
+6. Technology Trust Section
+Logo showcase: Claude • GitHub • CrewAI • Cursor • Jira
+Security: "Enterprise-grade, SOC2 compliant, GDPR ready"
+Reliability: "99.9% uptime, human fallbacks, full audit trails"
 
-PR diff: AI-generated vs human
+7. Urgency & Risk Reversal
+"Limited to 8 implementations per quarter"
+"90-day money-back guarantee"
+"Free emergency optimization if results don't hit targets"
 
-Tool chain used
+8. Final CTA
+Title: "Ready to 3x Your Development Speed?"
 
-Metrics (onboarding time, review velocity)
+Copy: "Book a free audit call. We'll analyze your current development pipeline and show you exactly where AI acceleration will have immediate impact. No sales pitch — just actionable insights."
 
-Client quote
+Button: "Book Free Development Audit"
+Secondary: "Download 3x Speed Playbook"
 
-6. Tech Stack + Trust
-Logo bar (Claude, GitHub, CrewAI, Autogen, Cursor)
+✍️ Writing Tone & Approach:
+✅ Direct, confident, results-focused
+✅ Specific metrics instead of vague promises  
+✅ Technical credibility without overwhelming jargon
+✅ Urgency without pressure tactics
+✅ Social proof from real implementations
+✅ Clear ROI and risk mitigation
+✅ Speak to CTOs, lead developers, and agency owners
+✅ Address the "too good to be true" objection upfront
 
-Security/QA protocols
+🎯 Key Psychological Triggers:
+- FOMO: Limited quarterly capacity
+- Social proof: Specific client results
+- Authority: Technical depth + business outcomes
+- Risk reversal: Guarantees and fallbacks
+- Urgency: Competitive advantage timing
+- Curiosity: "How do they actually do it?"
 
-FAQ about failure states, fallbacks, human-in-the-loop
-
-7. CTA Footer
-Title: “Architect Your System”
-
-Description: “Free audit call. We’ll map your current pipeline and show you where autonomous workflows give immediate lift.”
-
-Button: “Book Call”
-
-✍️ Writing Tone:
-Sharp, assertive, technical
-
-No AI hype
-
-No vague “productivity” claims — everything must point to real dev outcomes
-
-Speak to senior devs, technical agency founders, and PMs with real delivery pressure
+💰 Conversion Strategy:
+- Lead with speed (universal developer pain)
+- Prove with metrics (credibility)
+- Simplify with packages (clear next steps)
+- Protect with guarantees (risk removal)
+- Limit with scarcity (decision urgency)
