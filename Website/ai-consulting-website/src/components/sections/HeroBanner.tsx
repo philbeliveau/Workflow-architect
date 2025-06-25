@@ -4,8 +4,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Code, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const HeroBanner: React.FC = () => {
+  const t = useTranslations('hero');
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-900">
       {/* Background with gradient and pattern */}
@@ -55,7 +58,7 @@ const HeroBanner: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-blue to-accent-purple bg-clip-text text-transparent">
-            Tout le monde mérite l'accès aux capacités logicielles
+            {t('title')}
           </h1>
         </motion.div>
 
@@ -65,11 +68,11 @@ const HeroBanner: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Que vous soyez développeur ou dirigeant d'entreprise, nous vous donnons les outils IA pour construire ce dont vous avez besoin. 
-            <span className="text-accent-blue font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
+            {t('subtitle')}
+            <span className="text-accent-blue font-semibold"> {t('highlight')}</span>
           </p>
           <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
-            Pour les développeurs : Orchestration d'agents avancés • Pour les dirigeants : Solutions métier sans code
+            {t('description')}
           </div>
         </motion.div>
 
@@ -85,7 +88,7 @@ const HeroBanner: React.FC = () => {
             href="#track-selection"
             className="group"
           >
-            Découvrir Mon Parcours
+            {t('primaryCta')}
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
@@ -94,7 +97,7 @@ const HeroBanner: React.FC = () => {
             size="lg" 
             href="/book-demo"
           >
-            Évaluation Gratuite
+            {t('secondaryCta')}
           </Button>
         </motion.div>
 
@@ -106,20 +109,20 @@ const HeroBanner: React.FC = () => {
           className="mt-16 text-center"
         >
           <p className="text-sm text-text-muted mb-4">
-            Nous améliorons, nous n'remplaçons pas • Nous intégrons, nous ne perturbons pas
+            {t('trustLine')}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 text-xs text-text-muted">
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
-              Développeurs : Orchestration IA avancée
+              {t('metrics.developers')}
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
-              Dirigeants : Solutions métier immédiates
+              {t('metrics.business')}
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
-              Mesuré, pas promis
+              {t('metrics.measured')}
             </span>
           </div>
         </motion.div>

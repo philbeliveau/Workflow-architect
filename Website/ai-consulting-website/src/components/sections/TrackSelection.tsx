@@ -4,28 +4,31 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Code, Briefcase, ArrowRight, Cpu, Users, Zap, BarChart3 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const TrackSelection: React.FC = () => {
+  const t = useTranslations('trackSelection');
+  
   const tracks = [
     {
       id: "developers",
       icon: <Code className="w-12 h-12" />,
-      title: "Développeurs & Équipes Tech",
-      subtitle: "Orchestration d'agents avancée",
-      description: "Accélérez votre développement avec des systèmes d'agents intelligents, l'orchestration Claude-code, et des workflows automatisés.",
+      title: t('developers.title'),
+      subtitle: t('developers.subtitle'),
+      description: t('developers.description'),
       features: [
-        "Agents Claude pour revue de code automatique",
-        "Orchestration CrewAI et MCP avancée",
-        "Dashboards d'observabilité des agents",
-        "Bibliothèques de prompts internes",
-        "Intégration GitHub/Jira/Slack complète"
+        t('developers.features.0'),
+        t('developers.features.1'),
+        t('developers.features.2'),
+        t('developers.features.3'),
+        t('developers.features.4')
       ],
       benefits: [
-        { icon: Cpu, text: "Onboarding: 2 semaines → 2 heures" },
-        { icon: Zap, text: "Cycle de revue: 2-4 jours → 4-8 heures" },
-        { icon: BarChart3, text: "Bugs production: -60-80%" }
+        { icon: Cpu, text: t('developers.benefits.0') },
+        { icon: Zap, text: t('developers.benefits.1') },
+        { icon: BarChart3, text: t('developers.benefits.2') }
       ],
-      cta: "Explorer le Parcours Technique",
+      cta: t('developers.cta'),
       href: "/developers",
       color: "accent-blue",
       gradient: "from-accent-blue/10 to-accent-purple/10"
@@ -33,22 +36,22 @@ const TrackSelection: React.FC = () => {
     {
       id: "business",
       icon: <Briefcase className="w-12 h-12" />,
-      title: "Dirigeants & Chefs d'Entreprise",
-      subtitle: "Solutions métier sans code",
-      description: "Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.",
+      title: t('business.title'),
+      subtitle: t('business.subtitle'),
+      description: t('business.description'),
       features: [
-        "Environnement IA configuré pour vos besoins",
-        "Du langage naturel aux applications fonctionnelles",
-        "Templates d'intégration CRM/spreadsheets/bases de données",
-        "Système de déploiement sécurisé",
-        "Formation personnalisée incluse"
+        t('business.features.0'),
+        t('business.features.1'),
+        t('business.features.2'),
+        t('business.features.3'),
+        t('business.features.4')
       ],
       benefits: [
-        { icon: Users, text: "Tableaux de bord clients automatiques" },
-        { icon: Zap, text: "Outils internes en jours, pas mois" },
-        { icon: BarChart3, text: "Automatisation des processus métier" }
+        { icon: Users, text: t('business.benefits.0') },
+        { icon: Zap, text: t('business.benefits.1') },
+        { icon: BarChart3, text: t('business.benefits.2') }
       ],
-      cta: "Explorer le Parcours Business",
+      cta: t('business.cta'),
       href: "/business",
       color: "accent-purple",
       gradient: "from-accent-purple/10 to-accent-teal/10"
@@ -109,11 +112,11 @@ const TrackSelection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Choisissez Votre Parcours
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Deux approches distinctes pour deux besoins différents. 
-            <span className="text-accent-blue font-semibold"> Même excellence, outils adaptés.</span>
+            {t('subtitle')}
+            <span className="text-accent-blue font-semibold"> {t('highlight')}</span>
           </p>
         </motion.div>
 
@@ -205,21 +208,21 @@ const TrackSelection: React.FC = () => {
         >
           <div className="bg-primary-800/50 border border-primary-700 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-h3 font-bold text-text-primary mb-4">
-              L'idée clé : Adapter la bonne personne au bon problème
+              {t('keyInsight.title')}
             </h3>
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div>
-                <h4 className="text-accent-blue font-semibold mb-2">Tableau de bord client ?</h4>
-                <p className="text-text-secondary text-sm">→ Le dirigeant peut le construire</p>
+                <h4 className="text-accent-blue font-semibold mb-2">{t('keyInsight.clientDashboard')}</h4>
+                <p className="text-text-secondary text-sm">{t('keyInsight.clientSolution')}</p>
               </div>
               <div>
-                <h4 className="text-accent-purple font-semibold mb-2">Système d'authentification ?</h4>
-                <p className="text-text-secondary text-sm">→ Le développeur professionnel s'en charge</p>
+                <h4 className="text-accent-purple font-semibold mb-2">{t('keyInsight.authSystem')}</h4>
+                <p className="text-text-secondary text-sm">{t('keyInsight.authSolution')}</p>
               </div>
             </div>
             <div className="mt-6">
               <Button variant="outline" size="md" href="/book-demo">
-                Pas sûr ? Parlons-en ensemble
+                {t('keyInsight.notSure')}
               </Button>
             </div>
           </div>

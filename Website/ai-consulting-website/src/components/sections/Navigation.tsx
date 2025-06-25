@@ -3,11 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X, Zap, Globe } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
+  const locale = useLocale();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +25,18 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Accueil', href: '/' },
-    { name: 'Développeurs', href: '/developers' },
-    { name: 'Business', href: '/business' },
-    { name: 'Cas d\'étude', href: '/case-studies' },
-    { name: 'Services', href: '/services' }
+    { name: t('home'), href: '/' },
+    { name: t('developers'), href: '/developers' },
+    { name: t('business'), href: '/business' },
+    { name: t('caseStudies'), href: '/case-studies' },
+    { name: t('services'), href: '/services' }
   ];
+
+  const getLanguageSwitchPath = () => {
+    const currentPath = pathname.replace(`/${locale}`, '') || '/';
+    const newLocale = locale === 'fr' ? 'en' : 'fr';
+    return `/${newLocale}${currentPath}`;
+  };
 
   return (
     <motion.header
@@ -75,9 +87,22 @@ const Navigation: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="primary" size="md" href="/book-demo">
-              Évaluation Gratuite
-            </Button>
+            <div className="flex items-center gap-4">
+              {/* Language Switcher */}
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-text-secondary" />
+                <Link
+                  href={getLanguageSwitchPath()}
+                  className="text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm"
+                >
+                  {locale === 'fr' ? 'EN' : 'FR'}
+                </Link>
+              </div>
+              
+              <Button variant="primary" size="md" href="/book-demo">
+                {t('freeEvaluation')}
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -120,14 +145,27 @@ const Navigation: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button 
-                    variant="primary" 
-                    size="md" 
-                    href="/book-demo"
-                    className="w-full"
-                  >
-                    Évaluation Gratuite
-                  </Button>
+                  <div className="space-y-4">
+                    {/* Mobile Language Switcher */}
+                    <div className="flex items-center justify-center gap-3 py-2 border-t border-primary-700">
+                      <Globe className="w-4 h-4 text-text-secondary" />
+                      <Link
+                        href={getLanguageSwitchPath()}
+                        className="text-text-secondary hover:text-text-primary transition-colors duration-200"
+                      >
+                        {locale === 'fr' ? 'Switch to English' : 'Passer au Français'}
+                      </Link>
+                    </div>
+                    
+                    <Button 
+                      variant="primary" 
+                      size="md" 
+                      href="/book-demo"
+                      className="w-full"
+                    >
+                      {t('freeEvaluation')}
+                    </Button>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
