@@ -5,25 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Code, Zap } from 'lucide-react';
 
-interface HeroBannerProps {
-  title: string;
-  subtitle: string;
-  primaryCTA: {
-    text: string;
-    href: string;
-  };
-  secondaryCTA?: {
-    text: string;
-    href: string;
-  };
-}
-
-const HeroBanner: React.FC<HeroBannerProps> = ({
-  title,
-  subtitle,
-  primaryCTA,
-  secondaryCTA
-}) => {
+const HeroBanner: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-900">
       {/* Background with gradient and pattern */}
@@ -70,21 +52,25 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8 }}
         >
           <h1 className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-blue to-accent-purple bg-clip-text text-transparent">
-            {title}
+            Installez des flux IA. Livrez 3x plus vite.
           </h1>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-12 leading-relaxed">
-            {subtitle}
+          <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
+            Nous implémentons avec votre équipe des systèmes de livraison assistés par IA. 
+            <span className="text-accent-blue font-semibold"> Résultats mesurables dès la première semaine.</span>
           </p>
+          <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
+            Claude-code • CrewAI • MCP • GitHub Actions • Automatisation complète
+          </div>
         </motion.div>
 
         <motion.div
@@ -96,22 +82,20 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           <Button 
             variant="primary" 
             size="lg" 
-            href={primaryCTA.href}
+            href="/book-demo"
             className="group"
           >
-            {primaryCTA.text}
+            Réserver un diagnostic IA gratuit
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
-          {secondaryCTA && (
-            <Button 
-              variant="outline" 
-              size="lg" 
-              href={secondaryCTA.href}
-            >
-              {secondaryCTA.text}
-            </Button>
-          )}
+          <Button 
+            variant="outline" 
+            size="lg" 
+            href="/case-studies"
+          >
+            Voir nos résultats
+          </Button>
         </motion.div>
 
         {/* Trust indicators */}
@@ -122,20 +106,20 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           className="mt-16 text-center"
         >
           <p className="text-sm text-text-muted mb-4">
-            Confiance par 50+ équipes de développement
+            50+ équipes transformées • Résultats dès la première semaine
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 text-xs text-text-muted">
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
-              Livraison 3x plus rapide en moyenne
+              +67% vitesse de revue
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
-              95% de rétention client
+              +40% marges projet
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
-              Garantie résultats 30 jours
+              GitHub • Jira • Confluence
             </span>
           </div>
         </motion.div>

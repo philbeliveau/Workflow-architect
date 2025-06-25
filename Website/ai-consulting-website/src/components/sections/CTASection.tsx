@@ -7,7 +7,7 @@ import { ArrowRight, Calendar, CheckCircle, Zap } from 'lucide-react';
 
 const CTASection: React.FC = () => {
   const benefits = [
-    "Audit gratuit de 30 minutes",
+    "Diagnostic IA gratuit de 30 minutes",
     "Recommandations personnalisées",
     "Aucun engagement requis",
     "Insights exploitables immédiatement"
@@ -81,7 +81,7 @@ const CTASection: React.FC = () => {
           viewport={{ once: true }}
         >
           <p className="text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Réservez un audit gratuit de flux de travail et découvrez comment l'IA peut 
+            Réservez un diagnostic IA gratuit et découvrez comment l'IA peut 
             <span className="text-accent-blue font-semibold"> transformer la productivité de votre équipe.</span>
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ const CTASection: React.FC = () => {
               className="group text-lg px-12 py-4 h-auto"
             >
               <Calendar className="mr-3 h-6 w-6" />
-              Réserver un audit gratuit
+              Réserver un diagnostic IA gratuit
               <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>

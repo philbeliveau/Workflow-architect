@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
+import ProgressBar from '@/components/ui/ProgressBar';
 import { Users, Building, Zap, ArrowRight, CheckCircle } from 'lucide-react';
 
 const ServicesPreview: React.FC = () => {
@@ -24,7 +25,12 @@ const ServicesPreview: React.FC = () => {
       bestFor: "Développeurs solo, équipes 2-3 personnes",
       cta: "Commencer l'audit",
       href: "/services#audit",
-      featured: false
+      featured: false,
+      completionMetrics: [
+        { label: "Analyse workflow", value: 100 },
+        { label: "Implémentation IA", value: 85 },
+        { label: "Formation équipe", value: 90 }
+      ]
     },
     {
       icon: <Building className="w-8 h-8" />,
@@ -44,7 +50,12 @@ const ServicesPreview: React.FC = () => {
       bestFor: "Équipes startup (3-8 développeurs)",
       cta: "Réserver implémentation",
       href: "/services#implementation",
-      featured: true
+      featured: true,
+      completionMetrics: [
+        { label: "Refonte complète", value: 100 },
+        { label: "Intégration outils IA", value: 95 },
+        { label: "Optimisation continue", value: 92 }
+      ]
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -64,7 +75,12 @@ const ServicesPreview: React.FC = () => {
       bestFor: "Agences (8-15 développeurs)",
       cta: "Planifier consultation",
       href: "/services#transformation",
-      featured: false
+      featured: false,
+      completionMetrics: [
+        { label: "Transformation org.", value: 100 },
+        { label: "Formation changement", value: 88 },
+        { label: "Positionnement marché", value: 95 }
+      ]
     }
   ];
 
@@ -213,9 +229,25 @@ const ServicesPreview: React.FC = () => {
                 </span>
               </div>
 
+              {/* Progress Metrics */}
+              <div className="space-y-3 mb-6">
+                <h5 className="text-sm font-medium text-text-primary mb-3">
+                  Taux de réussite typique :
+                </h5>
+                {service.completionMetrics.map((metric, idx) => (
+                  <ProgressBar
+                    key={idx}
+                    label={metric.label}
+                    value={metric.value}
+                    delay={idx * 200}
+                    className="mb-2"
+                  />
+                ))}
+              </div>
+
               {/* CTA */}
               <Button 
-                variant={service.featured ? "primary" : "outline"}
+                variant={service.featured ? "brutalist" : "outline"}
                 size="lg" 
                 href={service.href}
                 className="w-full group"

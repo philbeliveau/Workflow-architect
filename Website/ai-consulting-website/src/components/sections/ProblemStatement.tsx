@@ -8,18 +8,18 @@ const ProblemStatement: React.FC = () => {
   const problems = [
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "Noyés dans les tâches répétitives",
-      description: "Vos développeurs passent 40% de leur temps sur du code standard, de la documentation et des revues de code de routine. Pendant ce temps, les demandes clients augmentent et les délais se resserrent. Vous savez que l'IA pourrait aider, mais quels outils? Comment les implémenter? Quand trouver le temps?"
+      title: "Trop de travail dev répétitif",
+      description: "Documentation manuelle, PRs qui traînent, tests répétitifs, déploiements manuels. Vos développeurs passent 3 heures par jour sur des tâches que l'IA pourrait gérer. Pendant ce temps, les features clients s'accumulent et la dette technique grandit."
     },
     {
       icon: <AlertCircle className="w-8 h-8" />,
-      title: "Résultats IA incohérents",
-      description: "Vous avez essayé ChatGPT pour la génération de code. Peut-être GitHub Copilot. Parfois ça aide, parfois ça crée plus de travail. Votre équipe se frustre avec des résultats incohérents et retourne aux anciennes habitudes. Les gains de productivité dont vous lisez semblent impossibles à atteindre."
+      title: "ChatGPT/Copilot donnent des résultats faibles",
+      description: "Vous avez essayé les outils IA grand public. Parfois ça aide, souvent ça crée plus de problèmes qu'autre chose. Votre équipe a abandonné après quelques semaines frustrantes. Il vous faut une approche systématique, pas des outils isolés."
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Pas le temps d'apprendre",
-      description: "Entre le travail client, la gestion d'équipe et les urgences, quand rechercher les outils IA? La courbe d'apprentissage semble raide, la documentation est dispersée, et vous ne pouvez pas expérimenter sur les projets clients. Vous avez besoin de solutions éprouvées, pas de complexité supplémentaire."
+      title: "Pas le temps de rechercher/implémenter",
+      description: "Entre les urgences client et la livraison des features, qui a le temps d'apprendre CrewAI, MCP, ou Claude-code? Vous voulez les bénéfices de l'IA, mais pas passer 3 mois à tout configurer. Il vous faut quelqu'un qui installe les systèmes pour vous."
     }
   ];
 
@@ -79,11 +79,11 @@ const ProblemStatement: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Petites équipes, grand écart de productivité
+            Pourquoi vous luttez à livrer vite
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Les outils IA promettent 30%+ de gains d'efficacité. La plupart des équipes n'atteignent que 10-15%. 
-            <span className="text-accent-blue font-semibold"> Nous comblons cet écart.</span>
+            Vos développeurs passent 60% de leur temps sur des tâches répétitives. 
+            <span className="text-accent-blue font-semibold"> Nous installons les systèmes qui automatisent tout ça.</span>
           </p>
         </motion.div>
 

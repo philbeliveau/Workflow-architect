@@ -76,7 +76,7 @@ const Navigation: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="primary" size="md" href="/book-demo">
-              Réserver un audit
+              Réserver un diagnostic IA gratuit
             </Button>
           </div>
 
@@ -126,7 +126,7 @@ const Navigation: React.FC = () => {
                     href="/book-demo"
                     className="w-full"
                   >
-                    Réserver un audit
+                    Réserver un diagnostic IA gratuit
                   </Button>
                 </motion.div>
               </div>

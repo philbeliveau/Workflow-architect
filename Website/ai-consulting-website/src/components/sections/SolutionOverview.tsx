@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import CodeBlock from '@/components/ui/CodeBlock';
 import { Search, Settings, TrendingUp, ArrowRight } from 'lucide-react';
 
 const SolutionOverview: React.FC = () => {
@@ -86,11 +87,11 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Implémentation IA avec vous
+            Ce que nous faisons
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Nous ne vous enseignons pas seulement les outils IA. Nous les implémentons avec votre équipe, 
-            optimisons vos flux de travail et <span className="text-accent-blue font-semibold">garantissons des résultats mesurables.</span>
+            Nous implémentons avec vous un système de livraison assistée par IA. 
+            <span className="text-accent-blue font-semibold"> Résultat : livraison plus rapide, moins de bugs, développeurs plus heureux.</span>
           </p>
         </motion.div>
 
@@ -172,6 +173,54 @@ const SolutionOverview: React.FC = () => {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Code Example */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-h2 font-bold text-text-primary mb-4">
+              Exemple de workflow automatisé
+            </h3>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Voici à quoi ressemble un système de revue de code assisté par IA que nous implémentons
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <CodeBlock
+              title="ai-workflow.tsx"
+              code={`// Configuration CrewAI pour revue automatique
+const reviewAgent = new Agent({
+  role: "Code Reviewer",
+  goal: "Analyser et améliorer la qualité du code",
+  tools: [ClaudeCodeTool, GitHubAPI, JiraIntegration]
+});
+
+// Pipeline automatisé de revue
+async function automatedReview(pullRequest: PR) {
+  const analysis = await reviewAgent.analyze({
+    code: pullRequest.changes,
+    context: await getProjectContext(),
+    standards: projectStandards
+  });
+  
+  // Création automatique des commentaires
+  await githubAPI.createReviewComments(analysis.suggestions);
+  
+  // Mise à jour du ticket Jira
+  await jiraAPI.updateIssue(pullRequest.issueKey, {
+    status: analysis.quality > 0.8 ? "Ready" : "Needs Work"
+  });
+}`}
+              language="typescript"
+            />
+          </div>
         </motion.div>
 
         {/* Bottom CTA */}

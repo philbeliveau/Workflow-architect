@@ -14,7 +14,7 @@ const FeaturedCaseStudies: React.FC = () => {
       icon: <User className="w-8 h-8" />,
       color: "accent-blue",
       situation: "Sarah était une développeuse freelance talentueuse prise dans le cycle festin-famine. Elle ne pouvait gérer que 2 projets clients à la fois, travaillait les soirs et week-ends pour respecter les délais, et s'inquiétait constamment de la qualité en se dépêchant de livrer. Son taux horaire était bloqué à 75€ car elle ne pouvait pas justifier des tarifs plus élevés avec sa vitesse de livraison actuelle.",
-      solution: "Nous avons implémenté un flux de travail IA complet qui automatisait ses tâches les plus chronophages : génération de code standard, rédaction de documentation et tests de routine. Nous avons intégré Claude pour les décisions architecturales, GitHub Copilot pour un codage plus rapide, et des scripts personnalisés pour l'automatisation du déploiement.",
+      solution: "Nous avons implémenté un flux de travail IA complet avec Claude-code pour la génération de code contextuelle, CrewAI pour orchestrer des agents spécialisés (documentation, tests, revue), et MCP pour intégrer tous les outils. Configuration spécifique : GitHub Actions pour déploiement automatique, Claude pour architecture, et scripts personnalisés connectant Jira à GitHub pour tracking automatique.",
       results: [
         { icon: TrendingUp, value: "2 → 6", label: "Projets clients simultanés", description: "Triplement de la capacité sans embauche" },
         { icon: Clock, value: "60 → 35h", label: "Heures de travail hebdomadaires", description: "Réduction de 42% du temps de travail" },
@@ -32,7 +32,7 @@ const FeaturedCaseStudies: React.FC = () => {
       icon: <Building className="w-8 h-8" />,
       color: "accent-purple",
       situation: "L'équipe de développement de TechFlow luttait avec des délais de livraison imprévisibles. Les nouveaux développeurs prenaient 3 semaines pour devenir productifs, la vélocité de sprint variait énormément, et le CTO passait plus de temps à gérer les problèmes de flux de travail qu'à la planification stratégique. Avec un financement Série A à l'horizon, ils avaient besoin de processus de développement prévisibles et évolutifs.",
-      solution: "Nous avons repensé entièrement leur flux de travail de développement autour de l'automatisation alimentée par l'IA. Nous avons implémenté des systèmes de revue de code intelligents, des pipelines de test automatisés, et des processus d'intégration assistés par l'IA. Les nouveaux développeurs reçoivent maintenant des explications de base de code alimentées par l'IA et des conseils contextuels dès le premier jour.",
+      solution: "Nous avons repensé entièrement leur flux de travail avec un système orchestré Claude-code + CrewAI. Configuration spécifique : agents CrewAI pour revue de code automatique, pipelines de test avec Claude-code, et processus d'onboarding via MCP connectant Confluence + GitHub. Nouveaux développeurs reçoivent maintenant des explications de codebase générées par Claude et des conseils contextuels via des agents spécialisés.",
       results: [
         { icon: Clock, value: "3 semaines → 3 jours", label: "Temps d'intégration développeur", description: "Réduction de 85% du temps d'intégration" },
         { icon: TrendingUp, value: "200%", label: "Augmentation vélocité sprint", description: "Livraison cohérente et prévisible" },
@@ -50,7 +50,7 @@ const FeaturedCaseStudies: React.FC = () => {
       icon: <Factory className="w-8 h-8" />,
       color: "accent-teal",
       situation: "DevCraft Agency était prise dans une pression tarifaire. Les clients demandaient une livraison plus rapide et plus de fonctionnalités tandis que la concurrence offshore faisait baisser les prix. L'agence devait se différencier par une vitesse et une qualité supérieures, pas seulement des prix compétitifs. Les marges avaient chuté de 45% à 25% sur deux ans.",
-      solution: "Nous avons implémenté des flux de travail IA à l'échelle organisationnelle qui ont transformé la façon dont ils livraient les projets clients. Différentes configurations IA pour différents types de clients, configuration et déploiement de projets automatisés, et communication client alimentée par l'IA qui mettait en avant leurs avantages technologiques.",
+      solution: "Nous avons implémenté des flux de travail IA à l'échelle organisationnelle avec CrewAI orchestrant différents agents par type de projet. Configuration spécifique : Claude-code pour génération de templates, MCP connectant GitHub + Jira + Confluence, agents spécialisés pour communication client automatique. Setup distinct pour projets e-commerce vs SaaS vs apps mobiles, avec déploiement automatique multi-environnement.",
       results: [
         { icon: DollarSign, value: "25% → 40%", label: "Marges de projet", description: "Augmentation de 60% des marges" },
         { icon: Clock, value: "50%", label: "Réduction temps livraison", description: "Livraison en moyenne deux fois plus rapide" },
