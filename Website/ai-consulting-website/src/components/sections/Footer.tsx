@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Zap, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   const quickLinks = [
@@ -186,9 +187,9 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-6 text-sm text-text-muted">
               <span>🇫🇷 Français</span>
               <span className="w-px h-4 bg-primary-700"></span>
-              <a href="/en" className="hover:text-text-secondary transition-colors">
+              <Link href="/en" className="hover:text-text-secondary transition-colors">
                 🇺🇸 English
-              </a>
+              </Link>
             </div>
           </div>
         </div>
