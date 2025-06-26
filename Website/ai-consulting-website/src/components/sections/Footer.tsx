@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Zap, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
@@ -125,12 +126,12 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-text-secondary hover:text-accent-blue transition-colors duration-200"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -144,12 +145,12 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {services.map((service) => (
                   <li key={service.name}>
-                    <a
+                    <Link
                       href={service.href}
                       className="text-text-secondary hover:text-accent-blue transition-colors duration-200"
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -163,12 +164,12 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {legal.map((item) => (
                   <li key={item.name}>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-text-secondary hover:text-accent-blue transition-colors duration-200"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -186,9 +187,9 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-6 text-sm text-text-muted">
               <span>🇫🇷 Français</span>
               <span className="w-px h-4 bg-primary-700"></span>
-              <a href="/en" className="hover:text-text-secondary transition-colors">
+              <Link href="/en" className="hover:text-text-secondary transition-colors">
                 🇺🇸 English
-              </a>
+              </Link>
             </div>
           </div>
         </div>

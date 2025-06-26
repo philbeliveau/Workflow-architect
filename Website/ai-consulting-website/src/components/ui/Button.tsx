@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -33,11 +34,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = cn(baseClasses, brutalistClasses, variants[variant], sizes[size], className);
 
     if (href) {
-      return (
-        <a href={href} className={classes}>
-          {children}
-        </a>
-      );
+      // Check if it's an internal link (starts with /) or external link (starts with http/mailto)
+      const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+      
+      if (isExternal) {
+        return (
+          <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        );
+      } else {
+        return (
+          <Link href={href} className={classes}>
+            {children}
+          </Link>
+        );
+      }
     }
 
     return (

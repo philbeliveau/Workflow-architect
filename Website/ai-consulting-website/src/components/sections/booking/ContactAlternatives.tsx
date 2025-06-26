@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle, Clock, MapPin, Calendar } from 'lucide-react';
 
@@ -137,12 +138,12 @@ const ContactAlternatives: React.FC = () => {
           Consultez nos questions fréquentes ou contactez-nous directement.
         </p>
         <div className="space-y-3">
-          <a
+          <Link
             href="/faq"
             className="inline-block text-accent-purple hover:text-accent-purple-light transition-colors duration-200 text-sm font-medium"
           >
             Voir les FAQ →
-          </a>
+          </Link>
           <br />
           <a
             href="mailto:contact@aidev-consulting.fr"
