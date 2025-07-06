@@ -3,27 +3,48 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CodeBlock from '@/components/ui/CodeBlock';
-import { Search, Settings, TrendingUp, ArrowRight } from 'lucide-react';
+import { Search, GraduationCap, Target, ArrowRight, Brain, Zap } from 'lucide-react';
 
 const SolutionOverview: React.FC = () => {
+  const viberVsAgentic = [
+    {
+      aspect: "Approche",
+      vibe: "Prompt one-shot",
+      agentic: "Orchestration planifiée",
+      icon: <Brain className="w-5 h-5" />
+    },
+    {
+      aspect: "Taux de succès",
+      vibe: "<20% en production",
+      agentic: "Prédictible et mesurable",
+      icon: <Target className="w-5 h-5" />
+    },
+    {
+      aspect: "Autonomie",
+      vibe: "Faible, piloté à la main",
+      agentic: "Élevée, agents guidés par des MCP",
+      icon: <Zap className="w-5 h-5" />
+    }
+  ];
+
   const steps = [
     {
       number: "01",
       icon: <Search className="w-8 h-8" />,
-      title: "Nous évaluons votre situation actuelle",
-      description: "Audit complet de vos processus existants - développement, gestion de projet, outils métier. Nous identifions exactement où l'IA peut avoir le plus grand impact selon votre profil (technique ou métier)."
+      title: "Analyse ciblée de vos opérations",
+      description: "On s'assoit avec vous pour comprendre vos enjeux, vos outils et vos projets. Évaluation du potentiel IA : on identifie les points d'entrée les plus prometteurs pour l'automatisation."
     },
     {
       number: "02",
-      icon: <Settings className="w-8 h-8" />,
-      title: "Nous intégrons sans perturber",
-      description: "Installation des systèmes IA adaptés à votre parcours. Pour les développeurs : orchestration d'agents avancée. Pour les dirigeants : environnement no-code sécurisé. Tout fonctionne avec vos outils actuels."
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: "Formation actionnable",
+      description: "Vous recevez nos frameworks, nos modèles de prompts, nos checklists de design. Mise en situation guidée : exemples concrets appliqués à vos cas réels, sans jamais toucher à votre infra."
     },
     {
       number: "03",
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Nous mesurons et soutenons",
-      description: "Suivi continu des métriques de performance. Optimisation régulière des systèmes. Support technique permanent. Mises à jour avec les dernières capacités IA. Votre succès est notre priorité."
+      icon: <Target className="w-8 h-8" />,
+      title: "Support asynchrone",
+      description: "Possibilité de nous recontacter pour débloquer des points spécifiques ou ajuster les pratiques. Nous ne construisons pas vos agents, nous vous donnons le manuel et la méthode."
     }
   ];
 
@@ -58,7 +79,7 @@ const SolutionOverview: React.FC = () => {
       {/* Background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-64 h-64 bg-accent-purple rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-blue rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-purple rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       {/* Background grid pattern */}
@@ -87,11 +108,11 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Notre Approche : Améliorer, Pas Remplacer
+            Du Vibe Coding à l'Agentic Coding
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Nous installons des systèmes IA qui s'intègrent à vos outils existants. 
-            <span className="text-accent-blue font-semibold"> Aucune courbe d'apprentissage. Aucun changement de processus. Juste plus d'efficacité.</span>
+            Nous ne développons pas vos agents, nous vous donnons le manuel et la méthode pour qu'ils vous obéissent vraiment. 
+            <span className="text-accent-purple font-semibold"> Formation actionnable. Résultats mesurables. Autonomie complète.</span>
           </p>
         </motion.div>
 
@@ -116,7 +137,7 @@ const SolutionOverview: React.FC = () => {
                 <div className="flex-1 space-y-6">
                   {/* Step number and title */}
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-6xl font-bold text-accent-blue/20 group-hover:text-accent-blue/40 transition-colors duration-300">
+                    <span className="text-6xl font-bold text-accent-purple/20 group-hover:text-accent-purple/40 transition-colors duration-300">
                       {step.number}
                     </span>
                     <div>
@@ -134,7 +155,7 @@ const SolutionOverview: React.FC = () => {
                   {/* Arrow for desktop */}
                   {index < steps.length - 1 && (
                     <div className="hidden lg:block">
-                      <div className="flex items-center gap-2 text-accent-blue group-hover:text-accent-blue-light transition-colors duration-300">
+                      <div className="flex items-center gap-2 text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
                         <ArrowRight className="w-5 h-5" />
                         <span className="text-sm font-medium">Étape suivante</span>
                       </div>
@@ -153,11 +174,11 @@ const SolutionOverview: React.FC = () => {
                     }}
                   >
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent-blue to-accent-purple rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent-purple to-accent-gray rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                     
                     {/* Main icon container */}
-                    <div className="relative bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 border border-accent-blue/20 rounded-3xl p-12 group-hover:border-accent-blue/40 transition-all duration-300">
-                      <div className="text-accent-blue group-hover:text-accent-blue-light transition-colors duration-300">
+                    <div className="relative bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-3xl p-12 group-hover:border-accent-purple/40 transition-all duration-300">
+                      <div className="text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
                         {step.icon}
                       </div>
                     </div>
@@ -167,7 +188,7 @@ const SolutionOverview: React.FC = () => {
                 {/* Arrow for mobile */}
                 {index < steps.length - 1 && (
                   <div className="lg:hidden flex justify-center">
-                    <div className="w-px h-12 bg-gradient-to-b from-accent-blue to-transparent"></div>
+                    <div className="w-px h-12 bg-gradient-to-b from-accent-purple to-transparent"></div>
                   </div>
                 )}
               </div>
@@ -185,41 +206,71 @@ const SolutionOverview: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-h2 font-bold text-text-primary mb-4">
-              Exemple : Revue de code automatisée (Parcours Développeur)
+              Vibe vs Agentic : Comparaison en Action
             </h3>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              Voici comment nous automatisons les revues de code avec CrewAI et Claude-code
+              La différence entre un prompt one-shot et une orchestration planifiée
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <CodeBlock
-              title="ai-workflow.tsx"
-              code={`// Configuration CrewAI pour revue automatique
-const reviewAgent = new Agent({
-  role: "Code Reviewer",
-  goal: "Analyser et améliorer la qualité du code",
-  tools: [ClaudeCodeTool, GitHubAPI, JiraIntegration]
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Vibe Coding */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <h4 className="text-xl font-semibold text-text-primary">❌ Vibe Coding</h4>
+                </div>
+                <CodeBlock
+                  title="prompt-oneshot.txt"
+                  code={`// Prompt typique "vibe"
+"Crée-moi un système de revue de code automatique"
+
+// Résultat :
+// - Code générique
+// - Pas de context projet
+// - Aucune validation
+// - Taux de succès : <20%
+// - Maintenance impossible`}
+                  language="text"
+                />
+              </div>
+              
+              {/* Agentic Coding */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-success-green rounded-full"></div>
+                  <h4 className="text-xl font-semibold text-text-primary">✅ Agentic Coding</h4>
+                </div>
+                <CodeBlock
+                  title="agentic-orchestration.ts"
+                  code={`// Orchestration structurée
+const reviewSystem = new AgentWorkflow({
+  context: await loadProjectContext(),
+  agents: [
+    new AnalyzerAgent({ role: "code-quality" }),
+    new SecurityAgent({ role: "vulnerability-scan" }),
+    new TestAgent({ role: "coverage-check" })
+  ],
+  validation: {
+    qualityThreshold: 0.8,
+    testOracles: ["compile", "security", "performance"]
+  },
+  feedback: {
+    iterative: true,
+    humanInLoop: true
+  }
 });
 
-// Pipeline automatisé de revue
-async function automatedReview(pullRequest: PR) {
-  const analysis = await reviewAgent.analyze({
-    code: pullRequest.changes,
-    context: await getProjectContext(),
-    standards: projectStandards
-  });
-  
-  // Création automatique des commentaires
-  await githubAPI.createReviewComments(analysis.suggestions);
-  
-  // Mise à jour du ticket Jira
-  await jiraAPI.updateIssue(pullRequest.issueKey, {
-    status: analysis.quality > 0.8 ? "Ready" : "Needs Work"
-  });
-}`}
-              language="typescript"
-            />
+// Résultat :
+// - Code spécifique au projet
+// - Validation automatique
+// - Taux de succès : >85%
+// - Évolutif et maintenable`}
+                  language="typescript"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -231,10 +282,10 @@ async function automatedReview(pullRequest: PR) {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-8 py-4">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-purple/10 border border-success-green/20 rounded-full px-8 py-4">
             <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
             <span className="text-text-primary font-medium">
-              Nous améliorons • Nous intégrons • Nous mesurons • Nous soutenons
+              Nous analysons • Nous formons • Nous accompagnons • Vous maîtrisez
             </span>
           </div>
         </motion.div>

@@ -63,14 +63,30 @@ const DevelopersHero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
+              {/* Attention-Grabbing Paradox Section */}
+              <div className="bg-warning-orange/10 border border-warning-orange/20 rounded-2xl p-6 mb-8">
+                <div className="inline-flex items-center gap-2 bg-warning-orange/10 border border-warning-orange/20 rounded-full px-4 py-2 mb-4">
+                  <Terminal className="w-4 h-4 text-warning-orange" />
+                  <span className="text-warning-orange text-sm font-medium">Le Paradoxe du Développement IA</span>
+                </div>
+                <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-text-primary">
+                  Pourquoi Moins de <span className="text-warning-orange">20%</span> des Développeurs
+                  <span className="block">Réussissent avec l'IA en Production</span>
+                </h2>
+                <p className="text-text-secondary mb-4 leading-relaxed">
+                  La plupart sont coincés dans le <strong>"vibe coding"</strong> - prompts flous, contexte mal défini, aucune vérification.
+                  <span className="block mt-2 text-accent-blue font-semibold">Il existe une meilleure approche : l'"agentic coding"</span>
+                </p>
+              </div>
+
               <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-4 py-2 mb-6">
                 <Terminal className="w-4 h-4 text-accent-blue" />
-                <span className="text-accent-blue text-sm font-medium">Parcours Développeur</span>
+                <span className="text-accent-blue text-sm font-medium">De ChatGPT aux Systèmes Orchestrés</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                Orchestration d'Agents
-                <span className="block text-accent-blue">Niveau Production</span>
+                Transformez Votre <span className="text-warning-orange">"Vibe Coding"</span>
+                <span className="block text-accent-blue">en "Agentic Coding"</span>
               </h1>
             </motion.div>
 
@@ -82,8 +98,8 @@ const DevelopersHero: React.FC = () => {
               <p className="text-lg text-text-secondary mb-8 leading-relaxed">
                 Nous installons des systèmes d'agents multi-tâches avec <strong>Claude-4</strong>, <strong>CrewAI</strong>, et <strong>MCP</strong>. 
                 Orchestration hierarchique, memory persistante, dashboards d'observabilité.
-                <span className="text-accent-blue font-semibold block mt-2">
-                  Onboarding : 2 semaines → 2 heures. Revues : 2-4 jours → 4-8 heures.
+                <span className="text-success-green font-semibold block mt-2">
+                  Résultats mesurés : 3x plus rapide, 90% moins de bugs, onboarding 2 semaines → 2 heures.
                 </span>
               </p>
 
@@ -203,14 +219,14 @@ tracker.log_performance(crew.get_metrics())`}
           className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {[
-            { metric: "2h", label: "Onboarding nouveau dev", icon: Terminal },
-            { metric: "4-8h", label: "Cycle de revue PR", icon: GitBranch },
-            { metric: "90%+", label: "Précision agent review", icon: Cpu },
-            { metric: "-60%", label: "Bugs en production", icon: Database }
+            { metric: "<20%", label: "Succès vibe coding", icon: Terminal, color: "text-warning-orange" },
+            { metric: "3x", label: "Plus rapide (agentic)", icon: GitBranch, color: "text-success-green" },
+            { metric: "90%", label: "Moins de bugs", icon: Cpu, color: "text-success-green" },
+            { metric: "2h", label: "Onboarding (vs 2 sem)", icon: Database, color: "text-accent-blue" }
           ].map((item, index) => (
             <div key={index} className="bg-primary-800/30 border border-primary-700 rounded-xl p-4 text-center">
-              <item.icon className="w-6 h-6 text-accent-blue mx-auto mb-2" />
-              <div className="text-2xl font-bold text-accent-blue mb-1">{item.metric}</div>
+              <item.icon className={`w-6 h-6 ${item.color || 'text-accent-blue'} mx-auto mb-2`} />
+              <div className={`text-2xl font-bold ${item.color || 'text-accent-blue'} mb-1`}>{item.metric}</div>
               <div className="text-text-secondary text-xs">{item.label}</div>
             </div>
           ))}
