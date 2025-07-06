@@ -3,6 +3,7 @@ import HeroBanner from '@/components/sections/HeroBanner';
 import TrackSelection from '@/components/sections/TrackSelection';
 import ProblemStatement from '@/components/sections/ProblemStatement';
 import SolutionOverview from '@/components/sections/SolutionOverview';
+import AboutSection from '@/components/sections/AboutSection';
 import ToolsTrustSection from '@/components/sections/ToolsTrustSection';
 import ServicesPreview from '@/components/sections/ServicesPreview';
 import ResultsShowcase from '@/components/sections/ResultsShowcase';
@@ -22,6 +23,8 @@ export default function Home() {
         <ProblemStatement />
         
         <SolutionOverview />
+        
+        <AboutSection />
         
         <ToolsTrustSection />
         
