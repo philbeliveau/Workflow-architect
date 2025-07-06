@@ -13,7 +13,7 @@ const ContactAlternatives: React.FC = () => {
       value: "contact@contextedev.com",
       description: "Réponse sous 4 heures en jours ouvrables",
       action: "mailto:contact@contextedev.com",
-      color: "accent-blue"
+      color: "accent-purple"
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -100,7 +100,7 @@ const ContactAlternatives: React.FC = () => {
       </div>
 
       {/* Response Info */}
-      <div className="bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 border border-accent-blue/20 rounded-2xl p-8">
+      <div className="bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6">
           Informations de contact
         </h3>
@@ -108,8 +108,8 @@ const ContactAlternatives: React.FC = () => {
         <div className="space-y-4">
           {responseInfo.map((info, index) => (
             <div key={index} className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-accent-blue/20 rounded-lg flex items-center justify-center">
-                <div className="text-accent-blue">
+              <div className="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center">
+                <div className="text-accent-purple">
                   {info.icon}
                 </div>
               </div>
@@ -117,7 +117,7 @@ const ContactAlternatives: React.FC = () => {
                 <h4 className="font-semibold text-text-primary text-sm">
                   {info.title}
                 </h4>
-                <p className="text-accent-blue font-medium text-sm">
+                <p className="text-accent-purple font-medium text-sm">
                   {info.value}
                 </p>
                 <p className="text-text-muted text-xs">
@@ -147,7 +147,7 @@ const ContactAlternatives: React.FC = () => {
           <br />
           <a
             href="mailto:contact@contextedev.com"
-            className="inline-block text-accent-blue hover:text-accent-blue-light transition-colors duration-200 text-sm font-medium"
+            className="inline-block text-accent-purple hover:text-accent-purple-light transition-colors duration-200 text-sm font-medium"
           >
             Poser une question par email →
           </a>

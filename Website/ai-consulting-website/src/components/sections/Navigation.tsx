@@ -55,7 +55,7 @@ const Navigation: React.FC = () => {
               className="w-12 h-12 object-contain"
             />
             <span className="text-xl font-bold text-text-primary">
-              contexte<span className="text-accent-blue">Dev</span>
+              contexte<span className="text-accent-purple">Dev</span>
             </span>
           </motion.div>
 
@@ -71,7 +71,7 @@ const Navigation: React.FC = () => {
                 >
                   {item.name}
                   <motion.div
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-blue group-hover:w-full transition-all duration-300"
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-purple group-hover:w-full transition-all duration-300"
                     whileHover={{ width: "100%" }}
                   />
                 </motion.div>

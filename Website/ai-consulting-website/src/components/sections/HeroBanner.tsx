@@ -11,9 +11,9 @@ const HeroBanner: React.FC = () => {
       {/* Background with gradient and pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-accent-blue rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-purple rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-teal rounded-full blur-3xl opacity-20 animate-pulse delay-2000"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-accent-purple rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-gray rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-purple-light rounded-full blur-3xl opacity-20 animate-pulse delay-2000"></div>
         </div>
         
         {/* Code pattern overlay */}
@@ -32,14 +32,14 @@ const HeroBanner: React.FC = () => {
       {/* Floating elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 text-accent-blue"
+          className="absolute top-1/4 left-1/4 text-accent-purple"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
           <Code size={48} />
         </motion.div>
         <motion.div
-          className="absolute top-3/4 right-1/4 text-accent-purple"
+          className="absolute top-3/4 right-1/4 text-accent-gray"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
@@ -54,7 +54,7 @@ const HeroBanner: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-blue to-accent-purple bg-clip-text text-transparent">
+          <h1 className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent">
             Tout le monde mérite l'accès aux capacités logicielles
           </h1>
         </motion.div>
@@ -66,7 +66,7 @@ const HeroBanner: React.FC = () => {
         >
           <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
             Que vous soyez développeur ou dirigeant d'entreprise, nous vous donnons les outils IA pour construire ce dont vous avez besoin.
-            <span className="text-accent-blue font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
+            <span className="text-accent-purple font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
           </p>
           <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
             Pour les développeurs : Orchestration d'agents avancés • Pour les dirigeants : Solutions métier sans code
@@ -114,11 +114,11 @@ const HeroBanner: React.FC = () => {
               Développeurs : Orchestration IA avancée
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
               Dirigeants : Solutions métier immédiates
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-accent-gray rounded-full animate-pulse"></div>
               Mesuré, pas promis
             </span>
           </div>

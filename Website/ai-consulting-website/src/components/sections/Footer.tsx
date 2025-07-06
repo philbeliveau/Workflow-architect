@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           {Array.from({ length: 144 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-accent-blue rounded-sm animate-pulse" 
+              className="bg-accent-purple rounded-sm animate-pulse" 
               style={{
                 animationDelay: `${i * 0.05}s`,
                 animationDuration: '4s'
@@ -109,15 +109,15 @@ const Footer: React.FC = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <Mail className="w-4 h-4 text-accent-blue" />
+                  <Mail className="w-4 h-4 text-accent-purple" />
                   <span className="text-sm">contact@contextedev.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <Phone className="w-4 h-4 text-accent-blue" />
+                  <Phone className="w-4 h-4 text-accent-purple" />
                   <span className="text-sm">+33 1 23 45 67 89</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <MapPin className="w-4 h-4 text-accent-blue" />
+                  <MapPin className="w-4 h-4 text-accent-purple" />
                   <span className="text-sm">Paris, France</span>
                 </div>
               </div>
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-text-secondary hover:text-accent-blue transition-colors duration-200"
+                      className="text-text-secondary hover:text-accent-purple transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                      className="text-text-secondary hover:text-accent-blue transition-colors duration-200"
+                      className="text-text-secondary hover:text-accent-purple transition-colors duration-200"
                     >
                       {service.name}
                     </Link>
@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-text-secondary hover:text-accent-blue transition-colors duration-200"
+                      className="text-text-secondary hover:text-accent-purple transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
