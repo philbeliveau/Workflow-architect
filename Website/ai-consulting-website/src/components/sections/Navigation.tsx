@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, Zap, Globe } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,15 +43,19 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="flex items-center gap-2"
+            className="flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-accent-blue to-accent-purple rounded-lg flex items-center justify-center">
-              <Zap className="w-5 h-5 text-white" />
-            </div>
+            <Image
+              src="/contextDev_Speed.png"
+              alt="contexteDev Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain"
+            />
             <span className="text-xl font-bold text-text-primary">
-              AI<span className="text-accent-blue">Dev</span>
+              contexte<span className="text-accent-blue">Dev</span>
             </span>
           </motion.div>
 

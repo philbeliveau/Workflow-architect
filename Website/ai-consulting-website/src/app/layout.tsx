@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Development Accelerator - Livrez 3x Plus Vite",
-  description: "Nous installons des systèmes de développement IA complets. Votre équipe de 4 livre comme une équipe de 12. Résultats dès la semaine 1.",
+  title: "contexteDev - Développement IA Accéléré",
+  description: "contexteDev vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
 };
 
 export default function RootLayout({

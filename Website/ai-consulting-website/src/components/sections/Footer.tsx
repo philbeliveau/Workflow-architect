@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Zap, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const quickLinks = [
@@ -87,25 +88,29 @@ const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="md:col-span-1">
               {/* Logo */}
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-r from-accent-blue to-accent-purple rounded-lg flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="/contextDev_Speed.png"
+                  alt="contexteDev Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                />
                 <span className="text-xl font-bold text-text-primary">
-                  AI<span className="text-accent-blue">Dev</span>
+                  contexte<span className="text-accent-blue">Dev</span>
                 </span>
               </div>
 
               <p className="text-text-secondary mb-6 leading-relaxed">
-                Nous transformons les petites équipes de développement en machines 
-                de productivité alimentées par l'IA avec du consulting fait-avec-vous.
+                contexteDev vous aide à construire et déployer vos solutions IA. 
+                Développeurs et dirigeants, tout le monde mérite l'accès aux capacités logicielles modernes.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-text-secondary">
                   <Mail className="w-4 h-4 text-accent-blue" />
-                  <span className="text-sm">contact@aidev-consulting.fr</span>
+                  <span className="text-sm">contact@contextedev.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
                   <Phone className="w-4 h-4 text-accent-blue" />
@@ -181,7 +186,7 @@ const Footer: React.FC = () => {
         <div className="py-6 border-t border-primary-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-text-muted text-sm">
-              © 2025 AI Dev Consulting. Tous droits réservés.
+              © 2025 contexteDev. Tous droits réservés.
             </p>
             
             <div className="flex items-center gap-6 text-sm text-text-muted">

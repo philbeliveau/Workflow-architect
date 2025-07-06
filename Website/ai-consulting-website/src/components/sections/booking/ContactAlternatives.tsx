@@ -10,9 +10,9 @@ const ContactAlternatives: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email direct",
-      value: "contact@aidev-consulting.fr",
+      value: "contact@contextedev.com",
       description: "Réponse sous 4 heures en jours ouvrables",
-      action: "mailto:contact@aidev-consulting.fr",
+      action: "mailto:contact@contextedev.com",
       color: "accent-blue"
     },
     {
@@ -146,7 +146,7 @@ const ContactAlternatives: React.FC = () => {
           </Link>
           <br />
           <a
-            href="mailto:contact@aidev-consulting.fr"
+            href="mailto:contact@contextedev.com"
             className="inline-block text-accent-blue hover:text-accent-blue-light transition-colors duration-200 text-sm font-medium"
           >
             Poser une question par email →
