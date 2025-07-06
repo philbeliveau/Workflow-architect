@@ -100,7 +100,7 @@ const Navigation: React.FC = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 bg-primary-900/98 backdrop-blur-lg border-b border-primary-700 shadow-lg"
+              className="md:hidden absolute top-full left-0 right-0 bg-primary-800/98 backdrop-blur-lg border-b border-primary-700 shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}

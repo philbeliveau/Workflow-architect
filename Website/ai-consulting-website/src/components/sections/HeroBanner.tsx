@@ -10,17 +10,17 @@ const HeroBanner: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-900">
       {/* Background with gradient and pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-20 w-72 h-72 bg-accent-purple rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-gray rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-purple-light rounded-full blur-3xl opacity-20 animate-pulse delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-purple-light rounded-full blur-3xl opacity-10 animate-pulse delay-2000"></div>
         </div>
         
         {/* Code pattern overlay */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-3">
           <div className="grid grid-cols-12 gap-4 h-full p-8">
             {Array.from({ length: 144 }, (_, i) => (
-              <div key={i} className="bg-text-secondary h-1 rounded animate-pulse" style={{
+              <div key={i} className="bg-accent-gray h-1 rounded animate-pulse" style={{
                 animationDelay: `${i * 0.1}s`,
                 animationDuration: '3s'
               }}></div>

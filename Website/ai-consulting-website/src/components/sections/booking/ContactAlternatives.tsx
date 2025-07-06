@@ -72,7 +72,7 @@ const ContactAlternatives: React.FC = () => {
             <motion.a
               key={index}
               href={method.action}
-              className="group block p-4 bg-primary-900/50 border border-primary-700 rounded-xl hover:border-accent-blue/50 transition-all duration-300"
+              className="group block p-4 bg-primary-800/50 border border-primary-700 rounded-xl hover:border-accent-purple/50 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >

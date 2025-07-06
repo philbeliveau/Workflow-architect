@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-primary-900 border-t border-primary-700 relative overflow-hidden">
+    <footer className="bg-primary-800 border-t border-primary-700 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-12 gap-2 h-full p-4">
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                 <input
                   type="email"
                   placeholder="votre@email.com"
-                  className="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
+                  className="w-full px-4 py-3 bg-primary-700 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-purple transition-colors"
                 />
               </div>
               <Button variant="primary" size="md" className="whitespace-nowrap">
