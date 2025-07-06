@@ -1,0 +1,22 @@
+[
+  {
+    "id": "entry_mcrzerd9_luinrpuqw",
+    "key": "sparc_session_value_prop_analysis",
+    "value": "\"RESEARCH FINDINGS: Value Proposition vs Website Analysis\\n\\nVALUE PROPOSITION DOCUMENT (Value-prop.md):\\n- Focus: Educational/training program for AI coding tools\\n- Target: Technical developers wanting to learn 'Agentic coding'\\n- Key concept: Vibe coder vs Agentic coder distinction\\n- Delivery: Formation program teaching MCP, test oracles, agent orchestration\\n- Tools: Cursor, Claude-code, RooCode\\n- Messaging: Technical, analytical, tool-comparison focused\\n\\nWEBSITE MESSAGING:\\n- Focus: Consulting/implementation service \\n- Target: Dual-track (developers + business leaders equally)\\n- Key concept: 'Améliorer pas remplacer' integration approach\\n- Delivery: Done-for-you consulting with ongoing support\\n- Promise: No learning curve, no process changes\\n- Messaging: Professional service, results-oriented, business ROI focused\\n\\nKEY DISCONNECTS:\\n1. Education vs Implementation service models\\n2. Technical depth vs accessibility messaging\\n3. Learning-required vs no-learning-curve promises\\n4. Developer-focused vs dual-audience approach\\n5. Tool mastery vs integration without disruption\\n\\nRECOMMENDATION: Align value proposition with actual service delivery model or adjust website messaging to reflect educational approach.\"",
+    "type": "string",
+    "namespace": "default",
+    "tags": [],
+    "metadata": {},
+    "owner": "system",
+    "accessLevel": "shared",
+    "createdAt": "2025-07-06T18:04:20.109Z",
+    "updatedAt": "2025-07-06T18:04:20.109Z",
+    "lastAccessedAt": "2025-07-06T18:04:20.109Z",
+    "version": 1,
+    "size": 1301,
+    "compressed": true,
+    "checksum": "e942c759004fce9686908017ebdfd3b681824d23b47c0ae7dd4d6b6d1b4a00eb",
+    "references": [],
+    "dependencies": []
+  }
+]
