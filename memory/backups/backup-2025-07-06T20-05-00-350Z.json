@@ -1,0 +1,114 @@
+{
+  "timestamp": "2025-07-06T20:05:00.350Z",
+  "version": "1.0",
+  "entries": [
+    {
+      "id": "entry_mcrzerd9_luinrpuqw",
+      "key": "sparc_session_value_prop_analysis",
+      "value": "\"RESEARCH FINDINGS: Value Proposition vs Website Analysis\\n\\nVALUE PROPOSITION DOCUMENT (Value-prop.md):\\n- Focus: Educational/training program for AI coding tools\\n- Target: Technical developers wanting to learn 'Agentic coding'\\n- Key concept: Vibe coder vs Agentic coder distinction\\n- Delivery: Formation program teaching MCP, test oracles, agent orchestration\\n- Tools: Cursor, Claude-code, RooCode\\n- Messaging: Technical, analytical, tool-comparison focused\\n\\nWEBSITE MESSAGING:\\n- Focus: Consulting/implementation service \\n- Target: Dual-track (developers + business leaders equally)\\n- Key concept: 'Améliorer pas remplacer' integration approach\\n- Delivery: Done-for-you consulting with ongoing support\\n- Promise: No learning curve, no process changes\\n- Messaging: Professional service, results-oriented, business ROI focused\\n\\nKEY DISCONNECTS:\\n1. Education vs Implementation service models\\n2. Technical depth vs accessibility messaging\\n3. Learning-required vs no-learning-curve promises\\n4. Developer-focused vs dual-audience approach\\n5. Tool mastery vs integration without disruption\\n\\nRECOMMENDATION: Align value proposition with actual service delivery model or adjust website messaging to reflect educational approach.\"",
+      "type": "string",
+      "namespace": "default",
+      "tags": [],
+      "metadata": {},
+      "owner": "system",
+      "accessLevel": "shared",
+      "createdAt": "2025-07-06T18:04:20.109Z",
+      "updatedAt": "2025-07-06T18:04:20.109Z",
+      "lastAccessedAt": "2025-07-06T18:04:20.109Z",
+      "version": 1,
+      "size": 1301,
+      "compressed": true,
+      "checksum": "e942c759004fce9686908017ebdfd3b681824d23b47c0ae7dd4d6b6d1b4a00eb",
+      "references": [],
+      "dependencies": []
+    },
+    {
+      "id": "entry_mcs3pxyz_hcls5y8hf",
+      "key": "sparc_session_presentation_analysis",
+      "value": "KEY PRESENTATION INSIGHTS: 'Vibe coding' vs 'Agentic coding' transformation narrative. AI Development Paradox: <20% success rate in production. Evolution from ChatGPT to orchestrated systems. Target: Freelance devs, CTOs, Agencies, Students. Results: 3x faster dev, 90% bug reduction. Tools: Pheromind, Claude-code-flow, RooCode, MCP. Hook: 'We don't build the engine, we teach you how to drive the car'. Focus on transformation story and shocking statistics to create intrigue.",
+      "type": "string",
+      "namespace": "default",
+      "tags": [],
+      "metadata": {},
+      "owner": "system",
+      "accessLevel": "shared",
+      "createdAt": "2025-07-06T20:05:00.347Z",
+      "updatedAt": "2025-07-06T20:05:00.347Z",
+      "lastAccessedAt": "2025-07-06T20:05:00.347Z",
+      "version": 1,
+      "size": 509,
+      "compressed": false,
+      "checksum": "8d55185d7905748236bbc486be083af09c1ab0896c9f6b685deef9ca9eea0b96",
+      "references": [],
+      "dependencies": []
+    }
+  ],
+  "statistics": {
+    "overview": {
+      "totalEntries": 2,
+      "totalSize": 1810,
+      "compressedEntries": 1,
+      "compressionRatio": -1.5559921414538311,
+      "indexSize": 100,
+      "memoryUsage": 9378896,
+      "diskUsage": 0
+    },
+    "distribution": {
+      "byNamespace": {
+        "default": {
+          "count": 2,
+          "size": 1810
+        }
+      },
+      "byType": {
+        "string": {
+          "count": 2,
+          "size": 1810
+        }
+      },
+      "byOwner": {
+        "system": {
+          "count": 2,
+          "size": 1810
+        }
+      },
+      "byAccessLevel": {
+        "shared": {
+          "count": 2,
+          "size": 1810
+        }
+      }
+    },
+    "temporal": {
+      "entriesCreatedLast24h": 2,
+      "entriesUpdatedLast24h": 2,
+      "entriesAccessedLast24h": 2,
+      "oldestEntry": "2025-07-06T18:04:20.109Z",
+      "newestEntry": "2025-07-06T20:05:00.347Z"
+    },
+    "performance": {
+      "averageQueryTime": 0,
+      "averageWriteTime": 0,
+      "cacheHitRatio": 0,
+      "indexEfficiency": 0.95
+    },
+    "health": {
+      "expiredEntries": 0,
+      "orphanedReferences": 0,
+      "duplicateKeys": 0,
+      "corruptedEntries": 0,
+      "recommendedCleanup": false
+    },
+    "optimization": {
+      "suggestions": [],
+      "potentialSavings": {
+        "compression": 0,
+        "cleanup": 0,
+        "deduplication": 0
+      },
+      "indexOptimization": [
+        "Consider periodic index rebuilding for optimal performance"
+      ]
+    }
+  }
+}

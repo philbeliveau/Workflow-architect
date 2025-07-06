@@ -2,24 +2,45 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertCircle, Clock, Zap } from 'lucide-react';
+import { AlertCircle, Clock, Zap, Brain, Target, Workflow } from 'lucide-react';
 
 const ProblemStatement: React.FC = () => {
   const problems = [
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "Développeurs : Temps perdu sur le travail répétitif",
-      description: "Onboarding de 3 semaines, revues manuelles interminables, documentation obsolète. Vos développeurs passent 4h+ par jour sur des tâches que l'IA pourrait automatiser instantanément."
+      title: "Développeurs : 4h+ perdues par jour",
+      description: "Onboarding de 3 semaines, revues manuelles interminables, documentation obsolète. Vos développeurs passent plus de temps sur le répétitif que sur l'innovation.",
+      stat: "4h/jour"
     },
     {
       icon: <AlertCircle className="w-8 h-8" />,
-      title: "Dirigeants : Attente sans fin des développements",
-      description: "\"Peut-être en Q3\" pour un simple tableau de bord client. Vous avez besoin d'outils internes, d'automatisations, de dashboards, mais l'équipe IT est débordée. Pendant ce temps, vous faites tout manuellement."
+      title: "Dirigeants : \"Peut-être en Q3\"",
+      description: "Un simple tableau de bord client prend des mois. L'équipe IT est débordée, vous faites tout manuellement, et les opportunités passent.",
+      stat: "3-6 mois"
+    },
+    {
+      icon: <Brain className="w-8 h-8" />,
+      title: "\"Vibe coding\" décevant",
+      description: "Taux de succès réel <20% pour du code production. Prompts flous, pas de méthode, aucune vérification. L'IA vous fait perdre du temps au lieu d'en gagner.",
+      stat: "<20%"
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Contexte mal défini",
+      description: "Pas de méthode claire pour spécifier objectifs, outputs attendus, ou contraintes. Résultat : des agents qui ne comprennent pas ce que vous voulez vraiment.",
+      stat: "0% précision"
+    },
+    {
+      icon: <Workflow className="w-8 h-8" />,
+      title: "Brouillard technologique",
+      description: "CrewAI, MCP, Claude-code... Trop d'outils, trop vite. Vous testez sans cadre, sans structure, sans méthode. Résultats inconstants.",
+      stat: "∞ outils"
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Tout le monde : L'IA est trop complexe à implémenter",
-      description: "CrewAI, MCP, Claude-code... Par où commencer ? Comment l'intégrer sans casser l'existant ? Vous voulez les bénéfices de l'IA, mais pas passer 6 mois à tout apprendre et configurer."
+      title: "Complexité d'implémentation",
+      description: "Vous voulez les bénéfices de l'IA, mais pas passer 6 mois à tout apprendre. Comment l'intégrer sans casser l'existant ?",
+      stat: "6 mois"
     }
   ];
 
@@ -52,16 +73,16 @@ const ProblemStatement: React.FC = () => {
   return (
     <section className="py-24 bg-primary-800 relative overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-3">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="grid grid-cols-8 gap-4 h-full p-8">
-            {Array.from({ length: 64 }, (_, i) => (
+          <div className="grid grid-cols-12 gap-3 h-full p-8">
+            {Array.from({ length: 144 }, (_, i) => (
               <div 
                 key={i} 
-                className="bg-text-secondary rounded-full animate-pulse" 
+                className="bg-accent-purple rounded-sm animate-pulse" 
                 style={{
-                  animationDelay: `${i * 0.1}s`,
-                  animationDuration: '4s'
+                  animationDelay: `${i * 0.05}s`,
+                  animationDuration: '5s'
                 }}
               ></div>
             ))}
@@ -79,17 +100,23 @@ const ProblemStatement: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Deux problèmes, deux solutions
+            Le paradoxe de l'IA en développement
           </h2>
-          <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Que vous soyez développeur ou dirigeant, vous perdez du temps sur des tâches que l'IA pourrait gérer. 
-            <span className="text-accent-blue font-semibold"> Nous donnons à chacun les bons outils pour son niveau.</span>
+          <p className="text-xl text-text-secondary max-w-5xl mx-auto leading-relaxed mb-4">
+            Que vous soyez développeur ou dirigeant, vous perdez du temps sur des tâches que l'IA pourrait gérer.
+            <span className="text-accent-purple font-semibold"> Mais les outils d'IA promettent des gains majeurs... et leur adoption reste décevante.</span>
           </p>
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-full px-6 py-3">
+            <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
+            <span className="text-text-secondary text-sm font-medium">
+              Il est temps de sortir du "vibe coding" pour maîtriser l'"agentic coding"
+            </span>
+          </div>
         </motion.div>
 
         {/* Problem Cards */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -98,7 +125,7 @@ const ProblemStatement: React.FC = () => {
           {problems.map((problem, index) => (
             <motion.div
               key={index}
-              className="group relative bg-primary-900/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-8 hover:border-accent-blue/50 transition-all duration-300"
+              className="group relative bg-primary-900/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-6 hover:border-accent-purple/50 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.02,
@@ -107,23 +134,28 @@ const ProblemStatement: React.FC = () => {
               }}
             >
               {/* Icon background glow */}
-              <div className="absolute top-8 left-8 w-12 h-12 bg-accent-blue/20 rounded-full blur-xl group-hover:bg-accent-blue/30 transition-all duration-300"></div>
+              <div className="absolute top-6 left-6 w-10 h-10 bg-accent-purple/20 rounded-full blur-xl group-hover:bg-accent-purple/30 transition-all duration-300"></div>
               
-              {/* Icon */}
-              <div className="relative text-accent-blue mb-6 group-hover:text-accent-blue-light transition-colors duration-300">
-                {problem.icon}
+              {/* Icon & Stat */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="relative text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
+                  {problem.icon}
+                </div>
+                <div className="bg-accent-purple/10 border border-accent-purple/20 rounded-lg px-3 py-1">
+                  <span className="text-accent-purple font-bold text-sm">{problem.stat}</span>
+                </div>
               </div>
 
               {/* Content */}
-              <h3 className="text-h3 font-semibold mb-4 text-text-primary group-hover:text-text-primary transition-colors duration-300">
+              <h3 className="text-lg font-semibold mb-3 text-text-primary group-hover:text-text-primary transition-colors duration-300">
                 {problem.title}
               </h3>
-              <p className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
+              <p className="text-text-secondary text-sm leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
                 {problem.description}
               </p>
 
               {/* Hover effect border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-blue/0 via-accent-blue/5 to-accent-purple/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-purple/0 via-accent-purple/5 to-accent-gray/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           ))}
         </motion.div>
@@ -133,14 +165,23 @@ const ProblemStatement: React.FC = () => {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 border border-accent-blue/20 rounded-full px-6 py-3">
-            <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
-            <span className="text-text-secondary text-sm">
-              Il est temps de donner à chacun les bons outils IA
-            </span>
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-h3 font-bold text-text-primary mb-4">
+              Nous vous sortons de cette spirale
+            </h3>
+            <p className="text-text-secondary mb-6 leading-relaxed">
+              Que vous soyez développeur frustré par le "vibe coding" ou dirigeant en attente depuis des mois, 
+              nous donnons à chacun les bons outils IA pour son niveau.
+            </p>
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-full px-6 py-3">
+              <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
+              <span className="text-text-secondary text-sm font-medium">
+                Méthode éprouvée • Résultats mesurables • Pas de promesses vides
+              </span>
+            </div>
           </div>
         </motion.div>
       </div>
