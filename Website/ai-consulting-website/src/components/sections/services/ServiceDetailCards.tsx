@@ -181,7 +181,7 @@ const ServiceDetailCards: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300 mb-2">
+                          <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-2">
                             {service.title}
                           </h3>
                           <p className="text-text-secondary">
@@ -247,7 +247,7 @@ const ServiceDetailCards: React.FC = () => {
 
                   {/* Right side - What's included */}
                   <div className="space-y-6">
-                    <h4 className="text-h3 font-semibold text-text-primary group-hover:text-white transition-colors duration-300">
+                    <h4 className="text-h3 font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                       Ce qui est inclus :
                     </h4>
                     

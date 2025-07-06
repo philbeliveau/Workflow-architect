@@ -187,7 +187,7 @@ const ServicesPreview: React.FC = () => {
 
               {/* Header */}
               <div className="mb-6">
-                <h3 className="text-h3 font-bold text-text-primary mb-2 group-hover:text-white transition-colors duration-300">
+                <h3 className="text-h3 font-bold text-text-primary mb-2 group-hover:text-text-primary transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-text-secondary text-sm mb-4">

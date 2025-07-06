@@ -140,7 +140,7 @@ const TrackSelection: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300 mb-2">
+                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-2">
                       {track.title}
                     </h3>
                     <p className={`text-${track.color} font-medium text-lg`}>

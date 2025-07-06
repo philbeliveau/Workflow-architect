@@ -179,7 +179,7 @@ const TechnicalStack: React.FC = () => {
                     {category.icon}
                   </div>
                 </div>
-                <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300">
+                <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                   {category.title}
                 </h3>
               </div>
@@ -198,7 +198,7 @@ const TechnicalStack: React.FC = () => {
                   >
                     {/* Tool Header */}
                     <div className="mb-4">
-                      <h4 className="text-lg font-bold text-text-primary mb-2 group-hover:text-white transition-colors duration-300">
+                      <h4 className="text-lg font-bold text-text-primary mb-2 group-hover:text-text-primary transition-colors duration-300">
                         {tool.name}
                       </h4>
                       <p className="text-text-secondary text-sm leading-relaxed">

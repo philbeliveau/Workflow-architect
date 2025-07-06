@@ -208,7 +208,7 @@ const TestimonialsGrid: React.FC = () => {
                   </span>
                 </div>
                 <div>
-                  <div className="font-semibold text-text-primary group-hover:text-white transition-colors duration-300">
+                  <div className="font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                     {testimonial.author}
                   </div>
                   <div className="text-sm text-text-muted">

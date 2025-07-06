@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                   className="w-8 h-8 object-contain"
                 />
                 <span className="text-xl font-bold text-text-primary">
-                  contexte<span className="text-accent-blue">Dev</span>
+                  contexte<span className="text-accent-purple">Dev</span>
                 </span>
               </div>
 

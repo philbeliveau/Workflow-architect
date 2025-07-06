@@ -168,13 +168,13 @@ const ResultsMetrics: React.FC = () => {
 
               {/* Value */}
               <div className="mb-4">
-                <span className={`text-4xl font-bold text-${metric.color} group-hover:text-white transition-colors duration-300`}>
+                <span className={`text-4xl font-bold text-${metric.color} group-hover:text-text-primary transition-colors duration-300`}>
                   {metric.value}
                 </span>
               </div>
 
               {/* Label */}
-              <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-white transition-colors duration-300">
+              <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-text-primary transition-colors duration-300">
                 {metric.label}
               </h3>
 
@@ -221,7 +221,7 @@ const ResultsMetrics: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-text-primary group-hover:text-white transition-colors duration-300">
+                    <h4 className="text-lg font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                       {client.type}
                     </h4>
                     <p className="text-text-muted text-sm">{client.count}</p>

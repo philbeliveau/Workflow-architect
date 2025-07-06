@@ -115,7 +115,7 @@ const ProblemStatement: React.FC = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-h3 font-semibold mb-4 text-text-primary group-hover:text-white transition-colors duration-300">
+              <h3 className="text-h3 font-semibold mb-4 text-text-primary group-hover:text-text-primary transition-colors duration-300">
                 {problem.title}
               </h3>
               <p className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">

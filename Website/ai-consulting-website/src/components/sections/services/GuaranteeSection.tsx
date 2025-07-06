@@ -126,7 +126,7 @@ const GuaranteeSection: React.FC = () => {
                     {guarantee.icon}
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-text-primary group-hover:text-white transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                   {guarantee.title}
                 </h3>
               </div>

@@ -69,7 +69,7 @@ const HeroBanner: React.FC = () => {
             <span className="text-accent-purple font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
           </p>
           <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
-            Pour les développeurs : Orchestration d'agents avancés • Pour les dirigeants : Solutions métier sans code
+            Finies les prompts "vibe" • Place aux workflows "agentic" • Pour les développeurs, les gestionnaires, les dirigeants, nous vous donnons les outils IA pour construire ce dont vous avez besoin.
           </div>
         </motion.div>
 

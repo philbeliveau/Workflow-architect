@@ -120,7 +120,7 @@ const SolutionOverview: React.FC = () => {
                       {step.number}
                     </span>
                     <div>
-                      <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300">
+                      <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                         {step.title}
                       </h3>
                     </div>

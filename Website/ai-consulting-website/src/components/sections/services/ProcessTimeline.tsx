@@ -164,7 +164,7 @@ const ProcessTimeline: React.FC = () => {
                           {phase.week}
                         </span>
                       </div>
-                      <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300 mb-4">
+                      <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-4">
                         {phase.title}
                       </h3>
                       <p className="text-lg text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
@@ -174,7 +174,7 @@ const ProcessTimeline: React.FC = () => {
 
                     {/* Activities */}
                     <div className="bg-primary-800/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-6 group-hover:border-accent-blue/30 transition-all duration-300">
-                      <h4 className="text-lg font-semibold text-text-primary mb-4 group-hover:text-white transition-colors duration-300">
+                      <h4 className="text-lg font-semibold text-text-primary mb-4 group-hover:text-text-primary transition-colors duration-300">
                         Activités clés :
                       </h4>
                       <div className="grid sm:grid-cols-2 gap-3">

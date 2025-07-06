@@ -83,7 +83,7 @@ const ContactAlternatives: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-text-primary group-hover:text-white transition-colors duration-300 mb-1">
+                  <h4 className="font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-1">
                     {method.title}
                   </h4>
                   <p className={`text-${method.color} font-medium text-sm mb-1`}>
