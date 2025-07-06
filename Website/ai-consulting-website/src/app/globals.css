@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Custom color variables based on cluely.com design */
-  --primary-900: #1a1a1a;
-  --primary-800: #2d2d2d;
-  --primary-700: #404040;
+  /* Custom color variables inspired by contextDev logo - light theme */
+  --primary-900: #f8fafc;
+  --primary-800: #f1f5f9;
+  --primary-700: #e2e8f0;
   --accent-purple: #8b5cf6;
-  --accent-teal: #14b8a6;
-  --accent-blue: #0055FE;
-  --accent-blue-light: #3b82f6;
+  --accent-teal: #06b6d4;
+  --accent-blue: #0ea5e9;
+  --accent-blue-light: #38bdf8;
   --success-green: #10b981;
   --warning-orange: #f59e0b;
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --background: #1a1a1a;
-  --foreground: #ffffff;
-  --gradient-blue: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  --gradient-purple-teal: linear-gradient(135deg, #8b5cf6 0%, #14b8a6 100%);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --gradient-blue: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  --gradient-purple-teal: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
 }
 
 @theme inline {
