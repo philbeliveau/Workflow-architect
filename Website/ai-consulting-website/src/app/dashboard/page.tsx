@@ -299,14 +299,16 @@ export default function Dashboard() {
   )
 }
 
-function StatsCard({ title, value, subtitle, icon: Icon, color, bgColor }: {
+interface StatsCardProps {
   title: string
   value: string
   subtitle: string
-  icon: any
+  icon: React.ComponentType<{ size?: number; className?: string }>
   color: string
   bgColor: string
-}) {
+}
+
+function StatsCard({ title, value, subtitle, icon: Icon, color, bgColor }: StatsCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -327,7 +329,15 @@ function StatsCard({ title, value, subtitle, icon: Icon, color, bgColor }: {
   )
 }
 
-function QuickActionCard({ action }: { action: any }) {
+interface QuickAction {
+  title: string
+  description: string
+  icon: React.ComponentType<{ size?: number }>
+  color: string
+  href: string
+}
+
+function QuickActionCard({ action }: { action: QuickAction }) {
   return (
     <Link href={action.href}>
       <motion.div

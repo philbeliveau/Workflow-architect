@@ -264,13 +264,15 @@ export default function FormationPage() {
   )
 }
 
-function QuickActionCard({ title, description, icon: Icon, color, href }: {
+interface QuickActionCardProps {
   title: string
   description: string
-  icon: any
+  icon: React.ComponentType<{ size?: number }>
   color: string
   href: string
-}) {
+}
+
+function QuickActionCard({ title, description, icon: Icon, color, href }: QuickActionCardProps) {
   return (
     <Link href={href}>
       <motion.div
