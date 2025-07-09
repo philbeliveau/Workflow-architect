@@ -12,13 +12,38 @@ Test oracles to verify output correctness
 Structured prompts with systematic design
 Role-based agent assignment for specialized tasks
 
-L'objectif est que tu développes une 
+L'objectif est que tu développes une formation en entier, et cela mise dans ses sections: 
+1.
+Section 0-2 : Comprendre la nouvelle ère et le paradoxe IA
 
+2.
+Section 3-7 : Maîtriser l'alignement et les PRD
+
+3.
+Section 8-9 : Contexte d'agents et oracles de vérification
+
+4.
+Section 10-12 : Orchestration, MCP et RooCode en action
+
+5.
+Guides Configuration : Setup environnement développeur
+
+6.
+Section 13-14 : Cas d'étude et roadmap d'implémentation
+
+Il faut que tu remplisses chacune de ses sections avec l'information dans: learn-to-flow/section
+
+Chacune de ces sections sont présentement dans la plateforme au à l'onglet: Website/ai-consulting-website/src/app/formation
+
+# UI
+* Le UI de chacune de ces sections doit être très similaire au UI du site web. 
+Il faut de la couleur, du dynamisme, des images, des liens. Il faut que ce soit compréhensif et engageant. 
 
 * Toute la présentation doit être en français
 
-## Objectif Principal
+Je veux que tu te bases sur la structure de la présentation et couvrir l'ensemble de ces thèmes dans la formation. 
 
+# Information au niveau de la formation: 
 Nous cherchons à révolutionner la façon dont les développeurs utilisent l'intelligence artificielle en passant du **"codage intuitif"** (vibe coding) au **"codage agentique"** (agentic coding). L'objectif est de transformer l'IA d'un simple assistant de codage en un système orchestré d'agents spécialisés qui travaillent ensemble de manière structurée et vérifiable.
 
 ## Analyse Détaillée des Diapositives

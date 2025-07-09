@@ -56,13 +56,13 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-gray-800 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  My Courses
+                  Formation IA Agentique
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  Access your AI training courses
+                  Guide complet pour maîtriser les outils agentiques
                 </p>
-                <Button className="w-full">
-                  View Courses
+                <Button className="w-full" href="/formation">
+                  Accéder à la Formation
                 </Button>
               </div>
 
@@ -73,7 +73,7 @@ export default function Dashboard() {
                 <p className="text-gray-400 mb-4">
                   Review your course notes
                 </p>
-                <Button className="w-full">
+                <Button className="w-full" href="/notes">
                   View Notes
                 </Button>
               </div>
@@ -85,7 +85,7 @@ export default function Dashboard() {
                 <p className="text-gray-400 mb-4">
                   Get help from instructors
                 </p>
-                <Button className="w-full">
+                <Button className="w-full" href="/questions">
                   View Q&A
                 </Button>
               </div>
