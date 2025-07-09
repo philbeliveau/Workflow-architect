@@ -3,8 +3,23 @@
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
+import { 
+  BookOpen, 
+  CheckCircle, 
+  Clock, 
+  Users, 
+  MessageSquare, 
+  FileText,
+  Play,
+  ArrowRight,
+  Target,
+  TrendingUp,
+  Award,
+  Zap
+} from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { BookOpen, CheckCircle, Clock, Users, MessageSquare, FileText } from 'lucide-react'
+import AuthenticatedLayout from '@/components/layout/AuthenticatedLayout'
 import Link from 'next/link'
 
 const trainingParcours = [
@@ -15,7 +30,9 @@ const trainingParcours = [
     sections: ['Introduction à l\'IA', 'Le paradoxe de l\'IA', 'Nouveaux paradigmes'],
     duration: '2-3 heures',
     level: 'Débutant',
-    status: 'available'
+    status: 'available',
+    completed: true,
+    progress: 100
   },
   {
     id: 'section-3-7',
@@ -24,7 +41,9 @@ const trainingParcours = [
     sections: ['Alignement IA', 'Product Requirements Document', 'Stratégies d\'alignement', 'Cas pratiques', 'Validation'],
     duration: '4-5 heures',
     level: 'Intermédiaire',
-    status: 'available'
+    status: 'available',
+    completed: true,
+    progress: 100
   },
   {
     id: 'section-8-9',
@@ -33,7 +52,9 @@ const trainingParcours = [
     sections: ['Contexte d\'agents', 'Oracles de vérification'],
     duration: '3-4 heures',
     level: 'Intermédiaire',
-    status: 'available'
+    status: 'current',
+    completed: false,
+    progress: 45
   },
   {
     id: 'section-10-12',
@@ -42,7 +63,9 @@ const trainingParcours = [
     sections: ['Orchestration d\'agents', 'Model Context Protocol (MCP)', 'RooCode en pratique'],
     duration: '5-6 heures',
     level: 'Avancé',
-    status: 'available'
+    status: 'locked',
+    completed: false,
+    progress: 0
   },
   {
     id: 'guides-config',
@@ -51,7 +74,9 @@ const trainingParcours = [
     sections: ['Installation', 'Configuration IDE', 'Outils essentiels', 'Débogage'],
     duration: '2-3 heures',
     level: 'Tous niveaux',
-    status: 'available'
+    status: 'available',
+    completed: false,
+    progress: 0
   },
   {
     id: 'section-13-14',
@@ -60,13 +85,21 @@ const trainingParcours = [
     sections: ['Cas d\'étude réels', 'Roadmap d\'implémentation'],
     duration: '3-4 heures',
     level: 'Avancé',
-    status: 'available'
+    status: 'locked',
+    completed: false,
+    progress: 0
   }
 ]
 
 export default function FormationPage() {
   const { data: session, status } = useSession()
   const router = useRouter()
+  const [stats, setStats] = useState({
+    totalProgress: 41,
+    completedSections: 2,
+    totalSections: 6,
+    studyTime: 12
+  })
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -76,139 +109,310 @@ export default function FormationPage() {
 
   if (status === 'loading') {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-white">Loading...</div>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-600">Chargement...</div>
       </div>
     )
   }
 
   if (!session) return null
 
+  const currentSection = trainingParcours.find(p => p.status === 'current')
+
   return (
-    <div className="min-h-screen bg-gray-900">
-      <div className="max-w-6xl mx-auto py-8 px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            Formation : Maîtriser les Outils Agentiques IA
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Un guide complet pour utiliser les outils agentiques IA de manière efficace. 
-            Apprenez à travers des exemples pratiques, des explications détaillées et des cas d'usage concrets.
-          </p>
+    <AuthenticatedLayout 
+      title="Formation IA Agentique"
+      subtitle="Maîtrisez les outils agentiques IA avec notre guide complet"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Progress Overview */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">Votre Progression</h2>
+                  <p className="text-blue-100">Continuez votre apprentissage</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-3xl font-bold">{stats.totalProgress}%</div>
+                  <div className="text-blue-100">Complété</div>
+                </div>
+              </div>
+              
+              <div className="w-full bg-white/20 rounded-full h-3 mb-4">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: `${stats.totalProgress}%` }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="bg-white h-3 rounded-full"
+                />
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-xl font-bold">{stats.completedSections}</div>
+                  <div className="text-blue-100 text-sm">Sections terminées</div>
+                </div>
+                <div>
+                  <div className="text-xl font-bold">{stats.totalSections - stats.completedSections}</div>
+                  <div className="text-blue-100 text-sm">Sections restantes</div>
+                </div>
+                <div>
+                  <div className="text-xl font-bold">{stats.studyTime}h</div>
+                  <div className="text-blue-100 text-sm">Temps d'étude</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="space-y-4">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-green-50 rounded-lg">
+                  <Target className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Objectif Quotidien</h3>
+                  <p className="text-sm text-gray-600">30 min d'étude</p>
+                </div>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="bg-green-500 h-2 rounded-full w-3/4"></div>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">22/30 minutes aujourd'hui</p>
+            </motion.div>
+
+            {currentSection && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
+                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+              >
+                <h3 className="font-semibold text-gray-900 mb-2">Section Actuelle</h3>
+                <p className="text-sm text-gray-600 mb-3">{currentSection.title}</p>
+                <Link href={`/formation/${currentSection.id}`}>
+                  <Button className="w-full">
+                    <Play size={16} className="mr-2" />
+                    Continuer
+                  </Button>
+                </Link>
+              </motion.div>
+            )}
+          </div>
         </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
-            <BookOpen className="w-12 h-12 text-blue-500 mx-auto mb-3" />
-            <h3 className="text-xl font-semibold text-white mb-2">6 Parcours</h3>
-            <p className="text-gray-400">Sections complètes</p>
+        {/* Quick Actions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8"
+        >
+          <h3 className="text-lg font-semibold text-gray-900 mb-6">Actions Rapides</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <QuickActionCard
+              title="Mes Notes"
+              description="Consulter mes notes"
+              icon={FileText}
+              color="from-blue-500 to-blue-600"
+              href="/notes"
+            />
+            <QuickActionCard
+              title="Forum Q&A"
+              description="Poser une question"
+              icon={MessageSquare}
+              color="from-purple-500 to-purple-600"
+              href="/questions"
+            />
+            <QuickActionCard
+              title="Ma Progression"
+              description="Voir mes statistiques"
+              icon={TrendingUp}
+              color="from-green-500 to-green-600"
+              href="/progress"
+            />
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
-            <Clock className="w-12 h-12 text-green-500 mx-auto mb-3" />
-            <h3 className="text-xl font-semibold text-white mb-2">20+ Heures</h3>
-            <p className="text-gray-400">Contenu de formation</p>
-          </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
-            <Users className="w-12 h-12 text-purple-500 mx-auto mb-3" />
-            <h3 className="text-xl font-semibold text-white mb-2">Forum Actif</h3>
-            <p className="text-gray-400">Discussions & entraide</p>
-          </div>
-        </div>
+        </motion.div>
 
-        {/* Parcours Recommandé */}
+        {/* Parcours de Formation */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Parcours Recommandé
-          </h2>
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Parcours de Formation</h2>
+              <p className="text-gray-600">Suivez le parcours recommandé pour une progression optimale</p>
+            </div>
+          </div>
+
           <div className="space-y-6">
             {trainingParcours.map((parcours, index) => (
               <ParcoursCard key={parcours.id} parcours={parcours} index={index} />
             ))}
           </div>
         </div>
-
-        {/* Call to Action */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Prêt à commencer votre formation ?
-          </h2>
-          <p className="text-gray-100 mb-6">
-            Accédez à tous les outils nécessaires pour maîtriser l'IA agentique
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button href="/notes" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-              <FileText className="w-5 h-5 mr-2" />
-              Mes Notes
-            </Button>
-            <Button href="/questions" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-              <MessageSquare className="w-5 h-5 mr-2" />
-              Forum Q&A
-            </Button>
-          </div>
-        </div>
       </div>
-    </div>
+    </AuthenticatedLayout>
   )
 }
 
-function ParcoursCard({ parcours, index }: { parcours: typeof trainingParcours[0]; index: number }) {
+function QuickActionCard({ title, description, icon: Icon, color, href }: {
+  title: string
+  description: string
+  icon: any
+  color: string
+  href: string
+}) {
+  return (
+    <Link href={href}>
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className={`bg-gradient-to-r ${color} rounded-xl p-4 text-white cursor-pointer`}
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <Icon size={20} />
+          <span className="font-semibold">{title}</span>
+        </div>
+        <p className="text-sm opacity-90">{description}</p>
+      </motion.div>
+    </Link>
+  )
+}
+
+function ParcoursCard({ parcours, index }: { 
+  parcours: typeof trainingParcours[0]
+  index: number 
+}) {
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'Débutant':
-        return 'bg-green-600'
+        return 'bg-green-100 text-green-800'
       case 'Intermédiaire':
-        return 'bg-yellow-600'
+        return 'bg-yellow-100 text-yellow-800'
       case 'Avancé':
-        return 'bg-red-600'
+        return 'bg-red-100 text-red-800'
       default:
-        return 'bg-blue-600'
+        return 'bg-blue-100 text-blue-800'
     }
   }
 
+  const getStatusIcon = () => {
+    switch (parcours.status) {
+      case 'completed':
+        return <CheckCircle className="w-6 h-6 text-green-500" />
+      case 'current':
+        return <Play className="w-6 h-6 text-blue-500" />
+      case 'locked':
+        return <Clock className="w-6 h-6 text-gray-400" />
+      default:
+        return <BookOpen className="w-6 h-6 text-gray-400" />
+    }
+  }
+
+  const isAccessible = parcours.status !== 'locked'
+
   return (
-    <div className="bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition-colors">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className={`bg-white rounded-xl shadow-sm border border-gray-200 p-6 transition-all ${
+        isAccessible ? 'hover:shadow-md' : 'opacity-60'
+      }`}
+    >
       <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center gap-4">
-          <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-            {index + 1}
+        <div className="flex items-center gap-4 flex-1">
+          <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-xl">
+            <span className="text-lg font-bold text-blue-600">{index + 1}</span>
           </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">{parcours.title}</h3>
-            <p className="text-gray-400 mb-3">{parcours.description}</p>
+          <div className="flex-1">
+            <div className="flex items-center gap-3 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900">{parcours.title}</h3>
+              {getStatusIcon()}
+            </div>
+            <p className="text-gray-600 mb-3">{parcours.description}</p>
+            <div className="flex items-center gap-4 text-sm">
+              <span className={`px-2 py-1 rounded-full ${getLevelColor(parcours.level)}`}>
+                {parcours.level}
+              </span>
+              <span className="text-gray-500">{parcours.duration}</span>
+              <span className="text-gray-500">{parcours.sections.length} modules</span>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-end gap-2">
-          <span className={`${getLevelColor(parcours.level)} text-white px-3 py-1 rounded text-sm`}>
-            {parcours.level}
-          </span>
-          <span className="text-sm text-gray-400">{parcours.duration}</span>
         </div>
       </div>
 
+      {/* Progress Bar */}
+      {parcours.progress > 0 && (
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium text-gray-700">Progression</span>
+            <span className="text-sm text-gray-500">{parcours.progress}%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${parcours.progress}%` }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Modules */}
       <div className="mb-4">
-        <h4 className="text-sm font-semibold text-gray-300 mb-2">Contenu de cette section :</h4>
+        <h4 className="text-sm font-medium text-gray-700 mb-2">Modules inclus :</h4>
         <div className="flex flex-wrap gap-2">
-          {parcours.sections.map((section: string, idx: number) => (
-            <span key={idx} className="bg-gray-700 text-gray-300 px-3 py-1 rounded text-sm">
+          {parcours.sections.map((section, idx) => (
+            <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
               {section}
             </span>
           ))}
         </div>
       </div>
 
+      {/* Action Button */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <CheckCircle className="w-5 h-5 text-green-500" />
-          <span className="text-sm text-gray-400">Disponible</span>
+          {parcours.completed && (
+            <div className="flex items-center gap-1 text-green-600">
+              <CheckCircle size={16} />
+              <span className="text-sm font-medium">Terminé</span>
+            </div>
+          )}
+          {parcours.status === 'current' && (
+            <div className="flex items-center gap-1 text-blue-600">
+              <Play size={16} />
+              <span className="text-sm font-medium">En cours</span>
+            </div>
+          )}
+          {parcours.status === 'locked' && (
+            <div className="flex items-center gap-1 text-gray-400">
+              <Clock size={16} />
+              <span className="text-sm">Bientôt disponible</span>
+            </div>
+          )}
         </div>
-        <Link href={`/formation/${parcours.id}`}>
-          <Button size="sm">
-            Commencer
-          </Button>
-        </Link>
+        
+        {isAccessible && (
+          <Link href={`/formation/${parcours.id}`}>
+            <Button variant={parcours.status === 'current' ? 'primary' : 'outline'}>
+              {parcours.completed ? 'Revoir' : parcours.status === 'current' ? 'Continuer' : 'Commencer'}
+              <ArrowRight size={16} className="ml-2" />
+            </Button>
+          </Link>
+        )}
       </div>
-    </div>
+    </motion.div>
   )
 }
