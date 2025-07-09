@@ -1,4 +1,21 @@
-Je vais vous expliquer ce que nous cherchons à accomplir ici et détailler le contenu de la présentation sur la transformation du développement IA.
+Ton objectif est de monter une formation sur l'utilisation effective des outils de code agentic. La formation est centré sur l'alignement entre les agents et l'utilisateur. 
+L'alignement est décrit par ceci: 
+The Alignment Solution: Structured AI Development
+Core Concept:
+ALIGNMENT
+Vibe Coder vs Agentic Coder
+Agentic coding is about constantly aligning AI with desired
+outputs through structured approaches.
+Unlike vibe coding's one-shot prompts, agentic coding uses:
+Clear specifications that AI can understand
+Test oracles to verify output correctness
+Structured prompts with systematic design
+Role-based agent assignment for specialized tasks
+
+L'objectif est que tu développes une 
+
+
+* Toute la présentation doit être en français
 
 ## Objectif Principal
 

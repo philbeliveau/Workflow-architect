@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Menu, X, Zap, Globe } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import AuthButton from '@/components/auth/AuthButton';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,8 +80,9 @@ const Navigation: React.FC = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Auth & CTA Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <AuthButton />
             <Button variant="primary" size="md" href="/book-demo">
               Évaluation Gratuite
             </Button>
@@ -121,11 +123,12 @@ const Navigation: React.FC = () => {
                   </Link>
                 ))}
                 <motion.div
-                  className="pt-4 border-t border-primary-700"
+                  className="pt-4 border-t border-primary-700 space-y-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
+                  <AuthButton />
                   <Button 
                     variant="primary" 
                     size="md" 
