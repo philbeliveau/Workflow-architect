@@ -75,32 +75,22 @@ export default function Dashboard() {
 
   const quickActions = [
     {
-      title: 'Continuer la Formation',
-      description: 'Section 8-9: Contexte d\'agents',
-      icon: Play,
-      color: 'from-blue-500 to-blue-600',
-      href: '/formation/section-8-9'
+      title: 'Formation',
+      description: 'Accéder aux modules de formation',
+      icon: BookOpen,
+      href: '/formation'
     },
     {
-      title: 'Prendre des Notes',
-      description: 'Créer une nouvelle note',
+      title: 'Mes Notes',
+      description: 'Gérer mes notes personnelles',
       icon: FileText,
-      color: 'from-green-500 to-green-600',
       href: '/notes'
     },
     {
-      title: 'Poser une Question',
-      description: 'Demander de l\'aide',
+      title: 'Forum Q&A',
+      description: 'Poser des questions',
       icon: MessageSquare,
-      color: 'from-purple-500 to-purple-600',
       href: '/questions'
-    },
-    {
-      title: 'Voir ma Progression',
-      description: 'Analyser mes résultats',
-      icon: BarChart3,
-      color: 'from-orange-500 to-orange-600',
-      href: '/progress'
     }
   ]
 
@@ -207,7 +197,7 @@ export default function Dashboard() {
               className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
             >
               <h3 className="text-lg font-semibold text-gray-900 mb-6">Actions Rapides</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {quickActions.map((action, index) => (
                   <QuickActionCard key={index} action={action} />
                 ))}
@@ -333,7 +323,6 @@ interface QuickAction {
   title: string
   description: string
   icon: React.ComponentType<{ size?: number }>
-  color: string
   href: string
 }
 
@@ -343,13 +332,15 @@ function QuickActionCard({ action }: { action: QuickAction }) {
       <motion.div
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className={`bg-gradient-to-r ${action.color} rounded-xl p-4 text-gray-900 cursor-pointer`}
+        className="bg-white border border-gray-200 rounded-lg p-4 hover:border-purple-300 hover:shadow-md transition-all duration-200 cursor-pointer"
       >
         <div className="flex items-center gap-3 mb-2">
-          <action.icon size={20} />
-          <span className="font-semibold">{action.title}</span>
+          <div className="p-2 bg-gray-50 rounded-lg text-gray-600">
+            <action.icon size={20} />
+          </div>
+          <span className="font-semibold text-gray-900">{action.title}</span>
         </div>
-        <p className="text-sm opacity-90">{action.description}</p>
+        <p className="text-sm text-gray-600">{action.description}</p>
       </motion.div>
     </Link>
   )
