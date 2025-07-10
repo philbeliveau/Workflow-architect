@@ -155,10 +155,10 @@ export default function Dashboard() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-semibold text-white">Ma Progression</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Ma Progression</h3>
                 <Link href="/progress">
                   <Button variant="outline" size="sm">
                     Voir Détails
@@ -169,31 +169,31 @@ export default function Dashboard() {
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-slate-300">
+                  <span className="text-sm font-medium text-gray-600">
                     Progression Générale
                   </span>
-                  <span className="text-sm text-slate-400">
+                  <span className="text-sm text-gray-500">
                     {stats.completedSections}/{stats.totalSections} sections
                   </span>
                 </div>
                 
-                <div className="w-full bg-slate-700/50 rounded-full h-3">
+                <div className="w-full bg-gray-200 rounded-full h-3">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${progressPercentage}%` }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="bg-gradient-to-r from-purple-500 to-blue-500 h-3 rounded-full shadow-lg"
+                    className="bg-purple-600 h-3 rounded-full"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center p-4 bg-green-500/20 backdrop-blur-sm rounded-lg border border-green-400/30">
                     <div className="text-2xl font-bold text-green-300">{stats.completedSections}</div>
-                    <div className="text-sm text-slate-300">Sections Terminées</div>
+                    <div className="text-sm text-gray-600">Sections Terminées</div>
                   </div>
                   <div className="text-center p-4 bg-purple-500/20 backdrop-blur-sm rounded-lg border border-purple-400/30">
                     <div className="text-2xl font-bold text-purple-300">{stats.totalSections - stats.completedSections}</div>
-                    <div className="text-sm text-slate-300">Sections Restantes</div>
+                    <div className="text-sm text-gray-600">Sections Restantes</div>
                   </div>
                 </div>
               </div>
@@ -204,9 +204,9 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-white mb-6">Actions Rapides</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">Actions Rapides</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {quickActions.map((action, index) => (
                   <QuickActionCard key={index} action={action} />
@@ -222,9 +222,9 @@ export default function Dashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-white mb-4">Activité Récente</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Activité Récente</h3>
               <div className="space-y-4">
                 {recentActivity.map((activity) => (
                   <div key={activity.id} className="flex items-start gap-3">
@@ -232,10 +232,10 @@ export default function Dashboard() {
                       <activity.icon size={16} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white truncate">
+                      <p className="text-sm font-medium text-gray-900 truncate">
                         {activity.title}
                       </p>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-gray-500">
                         {activity.action} • {activity.time}
                       </p>
                     </div>
@@ -249,7 +249,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="bg-gradient-to-br from-purple-600/80 to-purple-700/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-400/30 p-6 text-white relative overflow-hidden"
+              className="bg-gradient-to-br from-purple-600/80 to-purple-700/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-400/30 p-6 text-gray-900 relative overflow-hidden"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-white/20 rounded-lg">
@@ -257,12 +257,12 @@ export default function Dashboard() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Série d'Étude</h3>
-                  <p className="text-white/80">Continuez sur votre lancée !</p>
+                  <p className="text-gray-900/80">Continuez sur votre lancée !</p>
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-2">{stats.studyStreak}</div>
-                <div className="text-white/80">jours consécutifs</div>
+                <div className="text-gray-900/80">jours consécutifs</div>
               </div>
             </motion.div>
 
@@ -271,9 +271,9 @@ export default function Dashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-white mb-4">Réalisations</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Réalisations</h3>
               <div className="space-y-3">
                 <AchievementBadge
                   title="Premier Pas"
@@ -313,16 +313,16 @@ function StatsCard({ title, value, subtitle, icon: Icon, color, bgColor }: Stats
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
+      className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
     >
       <div className="flex items-center gap-4">
         <div className={`p-3 rounded-lg ${bgColor}`}>
           <Icon size={24} className={color} />
         </div>
         <div>
-          <div className="text-2xl font-bold text-white">{value}</div>
-          <div className="text-sm font-medium text-slate-300">{title}</div>
-          <div className="text-xs text-slate-400">{subtitle}</div>
+          <div className="text-2xl font-bold text-gray-900">{value}</div>
+          <div className="text-sm font-medium text-gray-600">{title}</div>
+          <div className="text-xs text-gray-500">{subtitle}</div>
         </div>
       </div>
     </motion.div>
@@ -343,7 +343,7 @@ function QuickActionCard({ action }: { action: QuickAction }) {
       <motion.div
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className={`bg-gradient-to-r ${action.color} rounded-xl p-4 text-white cursor-pointer`}
+        className={`bg-gradient-to-r ${action.color} rounded-xl p-4 text-gray-900 cursor-pointer`}
       >
         <div className="flex items-center gap-3 mb-2">
           <action.icon size={20} />
@@ -362,21 +362,21 @@ function AchievementBadge({ title, description, earned }: {
 }) {
   return (
     <div className={`flex items-center gap-3 p-3 rounded-lg ${
-      earned ? 'bg-yellow-500/20 backdrop-blur-sm border border-yellow-400/30' : 'bg-slate-700/40 border border-slate-600/30'
+      earned ? 'bg-yellow-50 border border-yellow-200' : 'bg-gray-50 border border-gray-200'
     }`}>
       <div className={`p-2 rounded-full ${
-        earned ? 'bg-yellow-500 text-white' : 'bg-slate-600 text-slate-400'
+        earned ? 'bg-yellow-500 text-white' : 'bg-gray-300 text-gray-600'
       }`}>
         <Award size={16} />
       </div>
       <div>
         <div className={`text-sm font-medium ${
-          earned ? 'text-yellow-200' : 'text-slate-300'
+          earned ? 'text-yellow-800' : 'text-gray-600'
         }`}>
           {title}
         </div>
         <div className={`text-xs ${
-          earned ? 'text-yellow-300' : 'text-slate-400'
+          earned ? 'text-yellow-700' : 'text-gray-500'
         }`}>
           {description}
         </div>
