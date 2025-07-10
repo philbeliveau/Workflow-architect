@@ -602,18 +602,18 @@ export default function SectionPage() {
             </Button>
           </Link>
           
-          <div className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 mb-8">
+          <div className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 mb-8 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <span className={`${getLevelColor(section.level)} text-white px-3 py-1 rounded-full text-sm font-medium`}>
                     {section.level}
                   </span>
-                  <div className="flex items-center gap-2 text-text-secondary">
+                  <div className="flex items-center gap-2 text-slate-300">
                     <Clock size={16} />
                     <span className="text-sm">{section.duration}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-text-secondary">
+                  <div className="flex items-center gap-2 text-slate-300">
                     <BookOpen size={16} />
                     <span className="text-sm">{section.content.length} modules</span>
                   </div>
@@ -622,17 +622,17 @@ export default function SectionPage() {
                 {/* Progress Bar */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-text-secondary">Progression</span>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm font-medium text-slate-300">Progression</span>
+                    <span className="text-sm text-slate-400">
                       {completedContent.length}/{section.content.length} terminés
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-slate-700/50 rounded-full h-2">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${(completedContent.length / section.content.length) * 100}%` }}
                       transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full"
+                      className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full shadow-lg"
                     />
                   </div>
                 </div>
@@ -663,9 +663,9 @@ export default function SectionPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 sticky top-8"
+              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 sticky top-8 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-text-primary mb-6">Modules du Cours</h3>
+              <h3 className="text-lg font-semibold text-white mb-6">Modules du Cours</h3>
               <nav className="space-y-3">
                 {section.content.map((item, index) => (
                   <motion.button
@@ -675,13 +675,13 @@ export default function SectionPage() {
                     whileTap={{ scale: 0.98 }}
                     className={`w-full text-left p-4 rounded-lg transition-all ${
                       activeContent === index
-                        ? 'bg-blue-50 border-2 border-blue-200 shadow-sm'
-                        : 'hover:bg-gray-50 border-2 border-transparent'
+                        ? 'bg-purple-500/20 border-2 border-purple-400/50 shadow-lg backdrop-blur-sm'
+                        : 'hover:bg-slate-700/30 border-2 border-transparent'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className={`text-sm font-medium ${
-                        activeContent === index ? 'text-blue-700' : 'text-text-primary'
+                        activeContent === index ? 'text-purple-300' : 'text-white'
                       }`}>
                         Module {index + 1}
                       </span>
@@ -690,7 +690,7 @@ export default function SectionPage() {
                       )}
                     </div>
                     <p className={`text-sm ${
-                      activeContent === index ? 'text-blue-600' : 'text-text-secondary'
+                      activeContent === index ? 'text-purple-200' : 'text-slate-300'
                     }`}>
                       {item.title}
                     </p>
@@ -706,7 +706,7 @@ export default function SectionPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-8"
+              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-8 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
             >
               {section.content[activeContent] && (
                 <ContentRenderer
@@ -738,7 +738,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-text-primary">{content.title}</h2>
+        <h2 className="text-2xl font-bold text-white">{content.title}</h2>
         <Button
           onClick={onComplete}
           disabled={isCompleted}
@@ -756,7 +756,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
       </div>
 
       <div className="prose prose-gray max-w-none">
-        <div className="text-text-secondary whitespace-pre-wrap leading-relaxed">
+        <div className="text-slate-300 whitespace-pre-wrap leading-relaxed">
           {content.content}
         </div>
       </div>
@@ -768,8 +768,8 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
           transition={{ delay: 0.3 }}
           className="mt-8"
         >
-          <h3 className="text-lg font-semibold text-text-primary mb-6 flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-blue-600" />
+          <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-blue-400" />
             Exemples Pratiques
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -779,13 +779,13 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 * index }}
-                className="bg-blue-50 border border-blue-200 p-4 rounded-lg hover:shadow-sm transition-shadow"
+                className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 p-4 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-100 rounded-lg">
+                  <div className="p-2 bg-blue-500/30 rounded-lg">
                     <BookOpen className="w-4 h-4 text-blue-600" />
                   </div>
-                  <span className="text-text-secondary font-medium">{example}</span>
+                  <span className="text-slate-200 font-medium">{example}</span>
                 </div>
               </motion.div>
             ))}
@@ -800,8 +800,8 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
           transition={{ delay: 0.4 }}
           className="mt-8"
         >
-          <h3 className="text-lg font-semibold text-text-primary mb-6 flex items-center gap-2">
-            <Award className="w-5 h-5 text-green-600" />
+          <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+            <Award className="w-5 h-5 text-green-400" />
             Cas d'Usage
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -811,13 +811,13 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 * index }}
-                className="bg-green-50 border border-green-200 p-4 rounded-lg hover:shadow-sm transition-shadow"
+                className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 p-4 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-green-100 rounded-lg">
+                  <div className="p-2 bg-green-500/30 rounded-lg">
                     <ChevronRight className="w-4 h-4 text-green-600" />
                   </div>
-                  <span className="text-text-secondary font-medium">{useCase}</span>
+                  <span className="text-slate-200 font-medium">{useCase}</span>
                 </div>
               </motion.div>
             ))}

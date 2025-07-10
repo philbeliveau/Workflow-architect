@@ -170,15 +170,15 @@ export default function QuestionsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <div className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6">
+          <div className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-accent-purple/10 rounded-lg">
                   <MessageSquare className="w-6 h-6 text-accent-purple" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-text-primary">Forum Questions & Réponses</h2>
-                  <p className="text-text-secondary">{questions.length} question{questions.length !== 1 ? 's' : ''} au total</p>
+                  <h2 className="text-xl font-semibold text-white">Forum Questions & Réponses</h2>
+                  <p className="text-slate-300">{questions.length} question{questions.length !== 1 ? 's' : ''} au total</p>
                 </div>
               </div>
               
@@ -200,13 +200,13 @@ export default function QuestionsPage() {
                   placeholder="Rechercher dans les questions..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
                 />
               </div>
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
               >
                 <option value="all">Tous les statuts</option>
                 <option value="OPEN">Ouvertes</option>
@@ -224,10 +224,10 @@ export default function QuestionsPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 mb-8"
+              className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 mb-8 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
             >
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-text-primary">Poser une Question</h2>
+                <h2 className="text-xl font-semibold text-white">Poser une Question</h2>
                 <Button
                   variant="outline"
                   size="sm"
@@ -242,14 +242,14 @@ export default function QuestionsPage() {
                   placeholder="Titre de votre question..."
                   value={newQuestion.title}
                   onChange={(e) => setNewQuestion({ ...newQuestion, title: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
                 />
                 <textarea
                   placeholder="Décrivez votre question en détail..."
                   value={newQuestion.content}
                   onChange={(e) => setNewQuestion({ ...newQuestion, content: e.target.value })}
                   rows={8}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none backdrop-blur-sm"
                 />
                 <div className="flex gap-3">
                   <Button onClick={handleCreateQuestion}>
@@ -276,13 +276,13 @@ export default function QuestionsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-16"
             >
-              <div className="p-4 bg-gray-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <MessageSquare className="w-8 h-8 text-gray-400" />
+              <div className="p-4 bg-slate-700/40 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center border border-slate-600/30">
+                <MessageSquare className="w-8 h-8 text-slate-400" />
               </div>
-              <p className="text-text-secondary text-lg mb-2">
+              <p className="text-slate-300 text-lg mb-2">
                 {searchTerm || statusFilter !== 'all' ? 'Aucune question trouvée' : 'Aucune question pour le moment'}
               </p>
-              <p className="text-gray-500">
+              <p className="text-slate-400">
                 {searchTerm || statusFilter !== 'all' ? 'Essayez d\'ajuster vos filtres' : 'Soyez le premier à poser une question !'}
               </p>
             </motion.div>
@@ -305,12 +305,12 @@ function QuestionCard({ question, index }: { question: Question, index: number }
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 hover:shadow-md transition-shadow"
+      className="bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 hover:shadow-purple-500/10 hover:shadow-2xl transition-all duration-300"
     >
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
           <div className="flex items-start justify-between mb-3">
-            <h3 className="text-lg font-semibold text-text-primary flex-1 mr-4">{question.title}</h3>
+            <h3 className="text-lg font-semibold text-white flex-1 mr-4">{question.title}</h3>
             <div className={`px-3 py-1 rounded-full border text-sm font-medium ${getStatusColor(question.status)}`}>
               <div className="flex items-center gap-2">
                 {getStatusIcon(question.status)}
@@ -318,12 +318,12 @@ function QuestionCard({ question, index }: { question: Question, index: number }
               </div>
             </div>
           </div>
-          <p className="text-text-secondary leading-relaxed mb-4">{question.content}</p>
+          <p className="text-slate-300 leading-relaxed mb-4">{question.content}</p>
         </div>
       </div>
 
       {/* Question Meta */}
-      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+      <div className="flex items-center justify-between text-sm text-slate-400 mb-4">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <User size={14} />
@@ -335,7 +335,7 @@ function QuestionCard({ question, index }: { question: Question, index: number }
           </div>
         </div>
         {question.answers.length > 0 && (
-          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+          <span className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs font-medium border border-blue-400/30">
             {question.answers.length} réponse{question.answers.length !== 1 ? 's' : ''}
           </span>
         )}
@@ -343,7 +343,7 @@ function QuestionCard({ question, index }: { question: Question, index: number }
 
       {/* Answers Section */}
       {question.answers.length > 0 && (
-        <div className="border-t border-gray-200 pt-4">
+        <div className="border-t border-slate-600/30 pt-4">
           <Button
             variant="outline"
             size="sm"
@@ -368,14 +368,14 @@ function QuestionCard({ question, index }: { question: Question, index: number }
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: answerIndex * 0.1 }}
-                    className={`rounded-lg p-4 border-l-4 ${
+                    className={`rounded-lg p-4 border-l-4 backdrop-blur-sm ${
                       answer.isOfficial 
-                        ? 'bg-blue-50 border-blue-500' 
-                        : 'bg-gray-50 border-gray-300'
+                        ? 'bg-blue-500/20 border-blue-400 shadow-lg' 
+                        : 'bg-slate-700/30 border-slate-500'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-slate-400">
                         {new Date(answer.createdAt).toLocaleDateString('fr-FR')}
                       </span>
                       {answer.isOfficial && (
@@ -385,7 +385,7 @@ function QuestionCard({ question, index }: { question: Question, index: number }
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">{answer.content}</p>
+                    <p className="text-slate-200 whitespace-pre-wrap leading-relaxed">{answer.content}</p>
                   </motion.div>
                 ))}
               </motion.div>
