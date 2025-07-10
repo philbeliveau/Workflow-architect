@@ -51,7 +51,7 @@ export default function Dashboard() {
       action: 'Terminé',
       time: 'Il y a 2 heures',
       icon: CheckCircle2,
-      color: 'text-green-600'
+      color: 'text-success-green'
     },
     {
       id: 2,
@@ -60,7 +60,7 @@ export default function Dashboard() {
       action: 'Créé',
       time: 'Il y a 4 heures',
       icon: FileText,
-      color: 'text-blue-600'
+      color: 'text-accent-purple'
     },
     {
       id: 3,
@@ -119,16 +119,16 @@ export default function Dashboard() {
             value={`${Math.round(progressPercentage)}%`}
             subtitle={`${stats.completedSections}/${stats.totalSections} sections`}
             icon={Target}
-            color="text-blue-600"
-            bgColor="bg-blue-50"
+            color="text-accent-purple"
+            bgColor="bg-accent-purple/10"
           />
           <StatsCard
             title="Notes Créées"
             value={stats.totalNotes.toString()}
             subtitle="Notes personnelles"
             icon={FileText}
-            color="text-green-600"
-            bgColor="bg-green-50"
+            color="text-success-green"
+            bgColor="bg-success-green/10"
           />
           <StatsCard
             title="Questions Posées"
@@ -143,8 +143,8 @@ export default function Dashboard() {
             value={`${stats.studyStreak} jours`}
             subtitle="Activité continue"
             icon={Zap}
-            color="text-orange-600"
-            bgColor="bg-orange-50"
+            color="text-warning-orange"
+            bgColor="bg-warning-orange/10"
           />
         </div>
 
@@ -155,10 +155,10 @@ export default function Dashboard() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-semibold text-gray-900">Ma Progression</h3>
+                <h3 className="text-lg font-semibold text-text-primary">Ma Progression</h3>
                 <Link href="/progress">
                   <Button variant="outline" size="sm">
                     Voir Détails
@@ -169,10 +169,10 @@ export default function Dashboard() {
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-text-secondary">
                     Progression Générale
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-text-muted">
                     {stats.completedSections}/{stats.totalSections} sections
                   </span>
                 </div>
@@ -187,12 +187,12 @@ export default function Dashboard() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">{stats.completedSections}</div>
+                  <div className="text-center p-4 bg-success-green/10 rounded-lg">
+                    <div className="text-2xl font-bold text-success-green">{stats.completedSections}</div>
                     <div className="text-sm text-gray-600">Sections Terminées</div>
                   </div>
-                  <div className="text-center p-4 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">{stats.totalSections - stats.completedSections}</div>
+                  <div className="text-center p-4 bg-accent-purple/10 rounded-lg">
+                    <div className="text-2xl font-bold text-accent-purple">{stats.totalSections - stats.completedSections}</div>
                     <div className="text-sm text-gray-600">Sections Restantes</div>
                   </div>
                 </div>
@@ -204,9 +204,9 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Actions Rapides</h3>
+              <h3 className="text-lg font-semibold text-text-primary mb-6">Actions Rapides</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {quickActions.map((action, index) => (
                   <QuickActionCard key={index} action={action} />
@@ -222,9 +222,9 @@ export default function Dashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Activité Récente</h3>
+              <h3 className="text-lg font-semibold text-text-primary mb-4">Activité Récente</h3>
               <div className="space-y-4">
                 {recentActivity.map((activity) => (
                   <div key={activity.id} className="flex items-start gap-3">
@@ -232,10 +232,10 @@ export default function Dashboard() {
                       <activity.icon size={16} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-900 truncate">
+                      <p className="text-sm font-medium text-text-primary truncate">
                         {activity.title}
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-text-muted">
                         {activity.action} • {activity.time}
                       </p>
                     </div>
@@ -249,7 +249,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="bg-gradient-to-br from-orange-500 to-red-500 rounded-xl shadow-sm p-6 text-white"
+              className="bg-gradient-to-br from-accent-purple to-accent-purple-light rounded-xl shadow-lg p-6 text-white relative overflow-hidden"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-white/20 rounded-lg">
@@ -257,12 +257,12 @@ export default function Dashboard() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Série d'Étude</h3>
-                  <p className="text-orange-100">Continuez sur votre lancée !</p>
+                  <p className="text-white/80">Continuez sur votre lancée !</p>
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-2">{stats.studyStreak}</div>
-                <div className="text-orange-100">jours consécutifs</div>
+                <div className="text-white/80">jours consécutifs</div>
               </div>
             </motion.div>
 
@@ -271,9 +271,9 @@ export default function Dashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Réalisations</h3>
+              <h3 className="text-lg font-semibold text-text-primary mb-4">Réalisations</h3>
               <div className="space-y-3">
                 <AchievementBadge
                   title="Premier Pas"
@@ -313,16 +313,16 @@ function StatsCard({ title, value, subtitle, icon: Icon, color, bgColor }: Stats
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+      className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
     >
       <div className="flex items-center gap-4">
         <div className={`p-3 rounded-lg ${bgColor}`}>
           <Icon size={24} className={color} />
         </div>
         <div>
-          <div className="text-2xl font-bold text-gray-900">{value}</div>
-          <div className="text-sm font-medium text-gray-700">{title}</div>
-          <div className="text-xs text-gray-500">{subtitle}</div>
+          <div className="text-2xl font-bold text-text-primary">{value}</div>
+          <div className="text-sm font-medium text-text-secondary">{title}</div>
+          <div className="text-xs text-text-muted">{subtitle}</div>
         </div>
       </div>
     </motion.div>
@@ -365,13 +365,13 @@ function AchievementBadge({ title, description, earned }: {
       earned ? 'bg-yellow-50 border border-yellow-200' : 'bg-gray-50'
     }`}>
       <div className={`p-2 rounded-full ${
-        earned ? 'bg-yellow-500 text-white' : 'bg-gray-300 text-gray-500'
+        earned ? 'bg-yellow-500 text-white' : 'bg-gray-300 text-text-muted'
       }`}>
         <Award size={16} />
       </div>
       <div>
         <div className={`text-sm font-medium ${
-          earned ? 'text-yellow-800' : 'text-gray-500'
+          earned ? 'text-yellow-800' : 'text-text-muted'
         }`}>
           {title}
         </div>

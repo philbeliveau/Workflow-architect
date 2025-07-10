@@ -110,7 +110,7 @@ export default function FormationPage() {
   if (status === 'loading') {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-600">Chargement...</div>
+        <div className="text-text-secondary">Chargement...</div>
       </div>
     )
   }
@@ -131,16 +131,16 @@ export default function FormationPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white"
+              className="bg-gradient-to-r from-accent-purple to-accent-purple-light rounded-xl p-6 text-white"
             >
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h2 className="text-2xl font-bold mb-2">Votre Progression</h2>
-                  <p className="text-blue-100">Continuez votre apprentissage</p>
+                  <p className="text-white/80">Continuez votre apprentissage</p>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold">{stats.totalProgress}%</div>
-                  <div className="text-blue-100">Complété</div>
+                  <div className="text-white/80">Complété</div>
                 </div>
               </div>
               
@@ -156,15 +156,15 @@ export default function FormationPage() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="text-xl font-bold">{stats.completedSections}</div>
-                  <div className="text-blue-100 text-sm">Sections terminées</div>
+                  <div className="text-white/80 text-sm">Sections terminées</div>
                 </div>
                 <div>
                   <div className="text-xl font-bold">{stats.totalSections - stats.completedSections}</div>
-                  <div className="text-blue-100 text-sm">Sections restantes</div>
+                  <div className="text-white/80 text-sm">Sections restantes</div>
                 </div>
                 <div>
                   <div className="text-xl font-bold">{stats.studyTime}h</div>
-                  <div className="text-blue-100 text-sm">Temps d'étude</div>
+                  <div className="text-white/80 text-sm">Temps d'étude</div>
                 </div>
               </div>
             </motion.div>
@@ -174,15 +174,15 @@ export default function FormationPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-green-50 rounded-lg">
                   <Target className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Objectif Quotidien</h3>
-                  <p className="text-sm text-gray-600">30 min d'étude</p>
+                  <h3 className="font-semibold text-text-primary">Objectif Quotidien</h3>
+                  <p className="text-sm text-text-secondary">30 min d'étude</p>
                 </div>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
@@ -196,10 +196,10 @@ export default function FormationPage() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+                className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">Section Actuelle</h3>
-                <p className="text-sm text-gray-600 mb-3">{currentSection.title}</p>
+                <h3 className="font-semibold text-text-primary mb-2">Section Actuelle</h3>
+                <p className="text-sm text-text-secondary mb-3">{currentSection.title}</p>
                 <Link href={`/formation/${currentSection.id}`}>
                   <Button className="w-full">
                     <Play size={16} className="mr-2" />
@@ -216,9 +216,9 @@ export default function FormationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8"
+          className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 mb-8"
         >
-          <h3 className="text-lg font-semibold text-gray-900 mb-6">Actions Rapides</h3>
+          <h3 className="text-lg font-semibold text-text-primary mb-6">Actions Rapides</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <QuickActionCard
               title="Mes Notes"
@@ -248,8 +248,8 @@ export default function FormationPage() {
         <div className="mb-12">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Parcours de Formation</h2>
-              <p className="text-gray-600">Suivez le parcours recommandé pour une progression optimale</p>
+              <h2 className="text-2xl font-bold text-text-primary mb-2">Parcours de Formation</h2>
+              <p className="text-text-secondary">Suivez le parcours recommandé pour une progression optimale</p>
             </div>
           </div>
 
@@ -327,7 +327,7 @@ function ParcoursCard({ parcours, index }: {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className={`bg-white rounded-xl shadow-sm border border-gray-200 p-6 transition-all ${
+      className={`bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 transition-all ${
         isAccessible ? 'hover:shadow-md' : 'opacity-60'
       }`}
     >
@@ -338,10 +338,10 @@ function ParcoursCard({ parcours, index }: {
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-lg font-semibold text-gray-900">{parcours.title}</h3>
+              <h3 className="text-lg font-semibold text-text-primary">{parcours.title}</h3>
               {getStatusIcon()}
             </div>
-            <p className="text-gray-600 mb-3">{parcours.description}</p>
+            <p className="text-text-secondary mb-3">{parcours.description}</p>
             <div className="flex items-center gap-4 text-sm">
               <span className={`px-2 py-1 rounded-full ${getLevelColor(parcours.level)}`}>
                 {parcours.level}

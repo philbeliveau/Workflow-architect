@@ -118,7 +118,7 @@ export default function NotesPage() {
     return (
       <AuthenticatedLayout title="Mes Notes" subtitle="Chargement de vos notes...">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex items-center justify-center">
-          <div className="text-gray-600">Chargement...</div>
+          <div className="text-text-secondary">Chargement...</div>
         </div>
       </AuthenticatedLayout>
     )
@@ -144,15 +144,15 @@ export default function NotesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-blue-50 rounded-lg">
-                  <FileText className="w-6 h-6 text-blue-600" />
+                <div className="p-3 bg-accent-purple/10 rounded-lg">
+                  <FileText className="w-6 h-6 text-accent-purple" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900">Centre de Notes</h2>
-                  <p className="text-gray-600">{notes.length} note{notes.length !== 1 ? 's' : ''} au total</p>
+                  <h2 className="text-xl font-semibold text-text-primary">Centre de Notes</h2>
+                  <p className="text-text-secondary">{notes.length} note{notes.length !== 1 ? 's' : ''} au total</p>
                 </div>
               </div>
               
@@ -188,10 +188,10 @@ export default function NotesPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 mb-8"
             >
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-gray-900">Créer une Nouvelle Note</h2>
+                <h2 className="text-xl font-semibold text-text-primary">Créer une Nouvelle Note</h2>
                 <Button
                   variant="outline"
                   size="sm"
@@ -243,7 +243,7 @@ export default function NotesPage() {
               <div className="p-4 bg-gray-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <BookOpen className="w-8 h-8 text-gray-400" />
               </div>
-              <p className="text-gray-600 text-lg mb-2">
+              <p className="text-text-secondary text-lg mb-2">
                 {searchTerm ? 'Aucune note trouvée' : 'Aucune note pour le moment'}
               </p>
               <p className="text-gray-500">
@@ -299,7 +299,7 @@ function NoteCard({
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+        className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6"
       >
         <div className="space-y-4">
           <input
@@ -335,10 +335,10 @@ function NoteCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -2 }}
-      className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 cursor-pointer hover:shadow-md transition-all group"
+      className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 cursor-pointer hover:shadow-md transition-all group"
     >
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 flex-1 mr-3">
+        <h3 className="text-lg font-semibold text-text-primary line-clamp-2 flex-1 mr-3">
           {note.title}
         </h3>
         <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -360,7 +360,7 @@ function NoteCard({
         </div>
       </div>
       
-      <p className="text-gray-600 line-clamp-4 mb-4 whitespace-pre-wrap leading-relaxed">
+      <p className="text-text-secondary line-clamp-4 mb-4 whitespace-pre-wrap leading-relaxed">
         {note.content}
       </p>
       

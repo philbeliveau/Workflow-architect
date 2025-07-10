@@ -551,7 +551,7 @@ export default function SectionPage() {
   if (status === 'loading') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center">
-        <div className="text-gray-600">Chargement...</div>
+        <div className="text-text-secondary">Chargement...</div>
       </div>
     )
   }
@@ -559,7 +559,7 @@ export default function SectionPage() {
   if (!session || !section) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center">
-        <div className="text-gray-600">Section introuvable</div>
+        <div className="text-text-secondary">Section introuvable</div>
       </div>
     )
   }
@@ -602,18 +602,18 @@ export default function SectionPage() {
             </Button>
           </Link>
           
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+          <div className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 mb-8">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <span className={`${getLevelColor(section.level)} text-white px-3 py-1 rounded-full text-sm font-medium`}>
                     {section.level}
                   </span>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-text-secondary">
                     <Clock size={16} />
                     <span className="text-sm">{section.duration}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-text-secondary">
                     <BookOpen size={16} />
                     <span className="text-sm">{section.content.length} modules</span>
                   </div>
@@ -622,7 +622,7 @@ export default function SectionPage() {
                 {/* Progress Bar */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Progression</span>
+                    <span className="text-sm font-medium text-text-secondary">Progression</span>
                     <span className="text-sm text-gray-500">
                       {completedContent.length}/{section.content.length} terminés
                     </span>
@@ -663,9 +663,9 @@ export default function SectionPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 sticky top-8"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Modules du Cours</h3>
+              <h3 className="text-lg font-semibold text-text-primary mb-6">Modules du Cours</h3>
               <nav className="space-y-3">
                 {section.content.map((item, index) => (
                   <motion.button
@@ -681,7 +681,7 @@ export default function SectionPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className={`text-sm font-medium ${
-                        activeContent === index ? 'text-blue-700' : 'text-gray-900'
+                        activeContent === index ? 'text-blue-700' : 'text-text-primary'
                       }`}>
                         Module {index + 1}
                       </span>
@@ -690,7 +690,7 @@ export default function SectionPage() {
                       )}
                     </div>
                     <p className={`text-sm ${
-                      activeContent === index ? 'text-blue-600' : 'text-gray-600'
+                      activeContent === index ? 'text-blue-600' : 'text-text-secondary'
                     }`}>
                       {item.title}
                     </p>
@@ -706,7 +706,7 @@ export default function SectionPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-8"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-8"
             >
               {section.content[activeContent] && (
                 <ContentRenderer
@@ -738,7 +738,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">{content.title}</h2>
+        <h2 className="text-2xl font-bold text-text-primary">{content.title}</h2>
         <Button
           onClick={onComplete}
           disabled={isCompleted}
@@ -756,7 +756,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
       </div>
 
       <div className="prose prose-gray max-w-none">
-        <div className="text-gray-700 whitespace-pre-wrap leading-relaxed">
+        <div className="text-text-secondary whitespace-pre-wrap leading-relaxed">
           {content.content}
         </div>
       </div>
@@ -768,7 +768,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
           transition={{ delay: 0.3 }}
           className="mt-8"
         >
-          <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+          <h3 className="text-lg font-semibold text-text-primary mb-6 flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-blue-600" />
             Exemples Pratiques
           </h3>
@@ -785,7 +785,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
                   <div className="p-2 bg-blue-100 rounded-lg">
                     <BookOpen className="w-4 h-4 text-blue-600" />
                   </div>
-                  <span className="text-gray-700 font-medium">{example}</span>
+                  <span className="text-text-secondary font-medium">{example}</span>
                 </div>
               </motion.div>
             ))}
@@ -800,7 +800,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
           transition={{ delay: 0.4 }}
           className="mt-8"
         >
-          <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+          <h3 className="text-lg font-semibold text-text-primary mb-6 flex items-center gap-2">
             <Award className="w-5 h-5 text-green-600" />
             Cas d'Usage
           </h3>
@@ -817,7 +817,7 @@ function ContentRenderer({ content, onComplete, isCompleted }: {
                   <div className="p-2 bg-green-100 rounded-lg">
                     <ChevronRight className="w-4 h-4 text-green-600" />
                   </div>
-                  <span className="text-gray-700 font-medium">{useCase}</span>
+                  <span className="text-text-secondary font-medium">{useCase}</span>
                 </div>
               </motion.div>
             ))}

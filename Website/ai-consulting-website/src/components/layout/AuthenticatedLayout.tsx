@@ -90,9 +90,55 @@ export default function AuthenticatedLayout({ children, title, subtitle }: Authe
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="min-h-screen bg-primary-900 relative overflow-hidden">
+      {/* Background with gradient and pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900">
+        <div className="absolute inset-0 opacity-3">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-accent-purple rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-gray rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-purple-light rounded-full blur-3xl opacity-5 animate-pulse delay-2000"></div>
+        </div>
+        
+        {/* Code pattern overlay */}
+        <div className="absolute inset-0 opacity-2">
+          <div className="grid grid-cols-12 gap-4 h-full p-8">
+            {Array.from({ length: 144 }, (_, i) => (
+              <div key={i} className="bg-accent-gray h-1 rounded animate-pulse" style={{
+                animationDelay: `${i * 0.1}s`,
+                animationDuration: '3s'
+              }}></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Floating elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 left-1/4 text-accent-purple opacity-20"
+          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <BookOpen size={24} />
+        </motion.div>
+        <motion.div
+          className="absolute top-3/4 right-1/4 text-accent-gray opacity-20"
+          animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        >
+          <FileText size={28} />
+        </motion.div>
+        <motion.div
+          className="absolute top-1/2 right-1/3 text-accent-purple-light opacity-15"
+          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        >
+          <MessageSquare size={20} />
+        </motion.div>
+      </div>
+      
       {/* Top Navigation Bar */}
-      <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+      <nav className="bg-primary-900/80 backdrop-blur-xl border-b border-accent-gray/20 shadow-sm sticky top-0 z-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -105,10 +151,10 @@ export default function AuthenticatedLayout({ children, title, subtitle }: Authe
                 className="w-10 h-10 object-contain"
               />
               <div className="hidden sm:block">
-                <span className="text-xl font-bold text-gray-900">
-                  contexte<span className="text-blue-600">Dev</span>
+                <span className="text-xl font-bold text-text-primary">
+                  contexte<span className="text-accent-purple">Dev</span>
                 </span>
-                <div className="text-xs text-gray-500">Formation IA</div>
+                <div className="text-xs text-text-muted">Formation IA</div>
               </div>
             </Link>
 
@@ -129,10 +175,10 @@ export default function AuthenticatedLayout({ children, title, subtitle }: Authe
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-3">
                 <div className="text-right">
-                  <div className="text-sm font-medium text-gray-900">{session.user.name}</div>
-                  <div className="text-xs text-gray-500">{session.user.subscription}</div>
+                  <div className="text-sm font-medium text-text-primary">{session.user.name}</div>
+                  <div className="text-xs text-text-muted">{session.user.subscription}</div>
                 </div>
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-accent-purple to-accent-purple-light rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-medium">
                     {session.user.name?.charAt(0).toUpperCase()}
                   </span>
@@ -159,7 +205,7 @@ export default function AuthenticatedLayout({ children, title, subtitle }: Authe
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-gray-200 bg-white"
+              className="lg:hidden border-t border-accent-gray/20 bg-primary-900/95 backdrop-blur-xl"
             >
               <div className="px-4 py-3 space-y-1">
                 {navigationItems.map((item) => (
@@ -178,15 +224,15 @@ export default function AuthenticatedLayout({ children, title, subtitle }: Authe
 
       {/* Page Header */}
       {(title || subtitle) && (
-        <div className="bg-white border-b border-gray-200">
+        <div className="bg-primary-900/50 backdrop-blur-sm border-b border-accent-gray/20 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex items-center justify-between">
               <div>
                 {title && (
-                  <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
+                  <h1 className="text-h2 font-bold bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent">{title}</h1>
                 )}
                 {subtitle && (
-                  <p className="mt-1 text-sm text-gray-600">{subtitle}</p>
+                  <p className="mt-1 text-sm text-text-secondary">{subtitle}</p>
                 )}
               </div>
             </div>
@@ -195,7 +241,7 @@ export default function AuthenticatedLayout({ children, title, subtitle }: Authe
       )}
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {children}
       </main>
     </div>
@@ -217,8 +263,8 @@ function NavigationItem({ item, isActive, activeSubmenu, setActiveSubmenu }: {
         href={item.href}
         className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
           isActive
-            ? 'bg-blue-100 text-blue-700'
-            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+            ? 'bg-accent-purple/20 text-accent-purple border border-accent-purple/30'
+            : 'text-text-secondary hover:text-text-primary hover:bg-primary-800/50'
         }`}
         onMouseEnter={() => hasSubmenu && setActiveSubmenu(item.name)}
         onMouseLeave={() => hasSubmenu && setActiveSubmenu(null)}
@@ -234,7 +280,7 @@ function NavigationItem({ item, isActive, activeSubmenu, setActiveSubmenu }: {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+          className="absolute top-full left-0 mt-1 w-64 bg-primary-900/95 backdrop-blur-xl rounded-lg shadow-lg border border-accent-gray/20 py-2 z-50"
           onMouseEnter={() => setActiveSubmenu(item.name)}
           onMouseLeave={() => setActiveSubmenu(null)}
         >
@@ -242,7 +288,7 @@ function NavigationItem({ item, isActive, activeSubmenu, setActiveSubmenu }: {
             <Link
               key={subItem.href}
               href={subItem.href}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+              className="block px-4 py-2 text-sm text-text-secondary hover:bg-primary-800/50 hover:text-text-primary"
             >
               {subItem.name}
             </Link>
@@ -266,8 +312,8 @@ function MobileNavigationItem({ item, isActive, onItemClick }: {
       <div
         className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium ${
           isActive
-            ? 'bg-blue-100 text-blue-700'
-            : 'text-gray-600'
+            ? 'bg-accent-purple/20 text-accent-purple'
+            : 'text-text-secondary'
         }`}
       >
         <Link
@@ -299,7 +345,7 @@ function MobileNavigationItem({ item, isActive, onItemClick }: {
             <Link
               key={subItem.href}
               href={subItem.href}
-              className="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-50"
+              className="block px-3 py-2 text-sm text-text-secondary hover:text-text-primary rounded-lg hover:bg-primary-800/50"
               onClick={onItemClick}
             >
               {subItem.name}
@@ -330,11 +376,11 @@ function UserDropdown({ onSignOut }: { onSignOut: () => void }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute right-0 top-full mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+            className="absolute right-0 top-full mt-1 w-48 bg-primary-900/95 backdrop-blur-xl rounded-lg shadow-lg border border-accent-gray/20 py-2 z-50"
           >
             <Link
               href="/profile"
-              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+              className="flex items-center gap-3 px-4 py-2 text-sm text-text-secondary hover:bg-primary-800/50"
               onClick={() => setIsOpen(false)}
             >
               <User size={16} />
@@ -342,7 +388,7 @@ function UserDropdown({ onSignOut }: { onSignOut: () => void }) {
             </Link>
             <Link
               href="/settings"
-              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+              className="flex items-center gap-3 px-4 py-2 text-sm text-text-secondary hover:bg-primary-800/50"
               onClick={() => setIsOpen(false)}
             >
               <Settings size={16} />
@@ -354,7 +400,7 @@ function UserDropdown({ onSignOut }: { onSignOut: () => void }) {
                 setIsOpen(false)
                 onSignOut()
               }}
-              className="flex items-center gap-3 w-full px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+              className="flex items-center gap-3 w-full px-4 py-2 text-sm text-red-500 hover:bg-red-500/10"
             >
               <LogOut size={16} />
               Déconnexion

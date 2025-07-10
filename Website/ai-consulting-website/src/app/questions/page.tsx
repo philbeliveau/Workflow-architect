@@ -143,7 +143,7 @@ export default function QuestionsPage() {
     return (
       <AuthenticatedLayout title="Forum Q&A" subtitle="Chargement des questions...">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex items-center justify-center">
-          <div className="text-gray-600">Chargement...</div>
+          <div className="text-text-secondary">Chargement...</div>
         </div>
       </AuthenticatedLayout>
     )
@@ -170,15 +170,15 @@ export default function QuestionsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-purple-50 rounded-lg">
-                  <MessageSquare className="w-6 h-6 text-purple-600" />
+                <div className="p-3 bg-accent-purple/10 rounded-lg">
+                  <MessageSquare className="w-6 h-6 text-accent-purple" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900">Forum Questions & Réponses</h2>
-                  <p className="text-gray-600">{questions.length} question{questions.length !== 1 ? 's' : ''} au total</p>
+                  <h2 className="text-xl font-semibold text-text-primary">Forum Questions & Réponses</h2>
+                  <p className="text-text-secondary">{questions.length} question{questions.length !== 1 ? 's' : ''} au total</p>
                 </div>
               </div>
               
@@ -224,10 +224,10 @@ export default function QuestionsPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8"
+              className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 mb-8"
             >
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-gray-900">Poser une Question</h2>
+                <h2 className="text-xl font-semibold text-text-primary">Poser une Question</h2>
                 <Button
                   variant="outline"
                   size="sm"
@@ -279,7 +279,7 @@ export default function QuestionsPage() {
               <div className="p-4 bg-gray-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <MessageSquare className="w-8 h-8 text-gray-400" />
               </div>
-              <p className="text-gray-600 text-lg mb-2">
+              <p className="text-text-secondary text-lg mb-2">
                 {searchTerm || statusFilter !== 'all' ? 'Aucune question trouvée' : 'Aucune question pour le moment'}
               </p>
               <p className="text-gray-500">
@@ -305,12 +305,12 @@ function QuestionCard({ question, index }: { question: Question, index: number }
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+      className="bg-primary-900/40 backdrop-blur-xl rounded-xl shadow-lg border border-accent-gray/20 p-6 hover:shadow-md transition-shadow"
     >
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
           <div className="flex items-start justify-between mb-3">
-            <h3 className="text-lg font-semibold text-gray-900 flex-1 mr-4">{question.title}</h3>
+            <h3 className="text-lg font-semibold text-text-primary flex-1 mr-4">{question.title}</h3>
             <div className={`px-3 py-1 rounded-full border text-sm font-medium ${getStatusColor(question.status)}`}>
               <div className="flex items-center gap-2">
                 {getStatusIcon(question.status)}
@@ -318,7 +318,7 @@ function QuestionCard({ question, index }: { question: Question, index: number }
               </div>
             </div>
           </div>
-          <p className="text-gray-600 leading-relaxed mb-4">{question.content}</p>
+          <p className="text-text-secondary leading-relaxed mb-4">{question.content}</p>
         </div>
       </div>
 
