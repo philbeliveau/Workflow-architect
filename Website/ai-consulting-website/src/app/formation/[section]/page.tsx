@@ -3112,7 +3112,7 @@ function MarkdownRenderer({ content }: { content: string }) {
         flushCurrentBlock()
         const level = line.match(/^#+/)?.[0].length || 1
         const text = line.replace(/^#+\s*/, '')
-        const HeadingTag = `h${Math.min(level, 6)}` as keyof JSX.IntrinsicElements
+        const HeadingTag = `h${Math.min(level, 6)}` as keyof React.JSX.IntrinsicElements
         
         elements.push(
           <HeadingTag key={elements.length} className={`
