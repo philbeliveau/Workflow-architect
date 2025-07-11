@@ -83,9 +83,6 @@ const Navigation: React.FC = () => {
           {/* Auth & CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <AuthButton />
-            <Button variant="outline" size="md" href="/formation">
-              Formation
-            </Button>
             <Button variant="primary" size="md" href="/book-demo">
               Évaluation Gratuite
             </Button>
