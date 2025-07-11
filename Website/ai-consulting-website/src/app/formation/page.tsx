@@ -26,8 +26,8 @@ const trainingParcours = [
   {
     id: 'section-0-2',
     title: 'Section 0-2 : Comprendre la nouvelle ère et le paradoxe IA',
-    description: 'Découvrez les fondements de l\'IA moderne et les défis actuels',
-    sections: ['Introduction à l\'IA', 'Le paradoxe de l\'IA', 'Nouveaux paradigmes'],
+    description: 'Découvrez les fondements de l\'IA moderne et les défis actuels du développement agentique',
+    sections: ['L\'urgence révolutionnaire', 'Le paradoxe en chiffres', 'Vibe vs Agentic coding', 'Architecture 4 piliers', 'Sélection stratégique modèles'],
     duration: '2-3 heures',
     level: 'Débutant',
     status: 'available',
@@ -37,8 +37,8 @@ const trainingParcours = [
   {
     id: 'section-3-7',
     title: 'Section 3-7 : Maîtriser l\'alignement et les PRD',
-    description: 'Apprenez à aligner vos agents IA et créer des PRD efficaces',
-    sections: ['Alignement IA', 'Product Requirements Document', 'Stratégies d\'alignement', 'Cas pratiques', 'Validation'],
+    description: 'Maîtrisez l\'art des PRD lisibles par l\'IA et l\'alignement parfait avec vos agents',
+    sections: ['Les 3 piliers alignement', 'Spécifications IA-ready', 'Framework Oracle', 'Templates domaines', 'Atelier PRD collaboratif'],
     duration: '4-5 heures',
     level: 'Intermédiaire',
     status: 'available',
@@ -48,46 +48,46 @@ const trainingParcours = [
   {
     id: 'section-8-9',
     title: 'Section 8-9 : Contexte d\'agents et oracles de vérification',
-    description: 'Maîtrisez le contexte des agents et les systèmes de vérification',
-    sections: ['Contexte d\'agents', 'Oracles de vérification'],
+    description: 'Résolvez le problème Oracle et structurez des contextes exécutables pour vos agents',
+    sections: ['Le problème Oracle', 'Architecture agents spécialisés', 'CLAUDE.md optimisé', 'Test oracles automatisés', 'Simulation projet'],
     duration: '3-4 heures',
     level: 'Intermédiaire',
-    status: 'current',
-    completed: false,
-    progress: 45
+    status: 'available',
+    completed: true,
+    progress: 100
   },
   {
     id: 'section-10-12',
     title: 'Section 10-12 : Orchestration, MCP et RooCode en action',
-    description: 'Orchestrez vos agents avec MCP et implémentez RooCode',
-    sections: ['Orchestration d\'agents', 'Model Context Protocol (MCP)', 'RooCode en pratique'],
+    description: 'Orchestration complète : CrewAI, AutoGen, MCP et RooCode pour des pipelines industriels',
+    sections: ['Orchestration expliquée', 'Systèmes multi-agents', 'Protocole MCP', 'Évolution SPARC', 'RooCode modes', 'Pipeline PRD→Code'],
     duration: '5-6 heures',
     level: 'Avancé',
-    status: 'locked',
-    completed: false,
-    progress: 0
+    status: 'available',
+    completed: true,
+    progress: 100
   },
   {
     id: 'guides-config',
     title: 'Guides Configuration : Setup environnement développeur',
-    description: 'Configurez votre environnement de développement pour les agents IA',
-    sections: ['Installation', 'Configuration IDE', 'Outils essentiels', 'Débogage'],
+    description: 'Configuration complète : Claude-Code, RooCode, Claude-Flow, MCP et optimisations avancées',
+    sections: ['Claude-Code setup', 'IDE optimal', 'RooCode interface', 'Claude-Flow orchestration', 'MCP écosystème', 'Tests validation', 'Troubleshooting'],
     duration: '2-3 heures',
     level: 'Tous niveaux',
     status: 'available',
-    completed: false,
-    progress: 0
+    completed: true,
+    progress: 100
   },
   {
     id: 'section-13-14',
     title: 'Section 13-14 : Cas d\'étude et roadmap d\'implémentation',
-    description: 'Cas d\'étude concrets et roadmap pour vos projets',
-    sections: ['Cas d\'étude réels', 'Roadmap d\'implémentation'],
+    description: 'Transformations réelles : équipe 2 devs = output 6 devs, roadmap 30/60/90 jours',
+    sections: ['Cas DevCorp SaaS', 'Agence TechCraft', 'Roadmap 30/60/90j', 'Vendre vision AI-first', 'Checklist transformation'],
     duration: '3-4 heures',
     level: 'Avancé',
-    status: 'locked',
-    completed: false,
-    progress: 0
+    status: 'available',
+    completed: true,
+    progress: 100
   }
 ]
 
@@ -95,10 +95,10 @@ export default function FormationPage() {
   const { data: session, status } = useSession()
   const router = useRouter()
   const [stats, setStats] = useState({
-    totalProgress: 41,
-    completedSections: 2,
+    totalProgress: 100,
+    completedSections: 6,
     totalSections: 6,
-    studyTime: 12
+    studyTime: 24
   })
 
   useEffect(() => {
