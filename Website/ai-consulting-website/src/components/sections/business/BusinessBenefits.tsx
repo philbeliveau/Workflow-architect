@@ -180,7 +180,7 @@ const BusinessBenefits: React.FC = () => {
                         <h4 className={`text-2xl font-bold text-${step.color} mb-4`}>
                           {step.step}
                         </h4>
-                        <p className="text-gray-300 text-lg font-medium">
+                        <p className="text-black text-lg font-medium">
                           {step.description}
                         </p>
                       </div>
@@ -189,7 +189,7 @@ const BusinessBenefits: React.FC = () => {
                       <div className="space-y-3">
                         {step.details.map((detail, dIndex) => (
                           <div key={dIndex}>
-                            <span className="text-gray-400 text-base leading-relaxed">
+                            <span className="text-black text-base leading-relaxed">
                               {detail}
                             </span>
                           </div>
@@ -242,7 +242,7 @@ const BusinessBenefits: React.FC = () => {
                       <h4 className={`text-2xl font-bold text-${step.color} mb-2`}>
                         {index + 1}. {step.step}
                       </h4>
-                      <p className="text-gray-300 text-lg font-medium">
+                      <p className="text-black text-lg font-medium">
                         {step.description}
                       </p>
                     </div>
@@ -251,7 +251,7 @@ const BusinessBenefits: React.FC = () => {
                   <div className="space-y-3">
                     {step.details.map((detail, dIndex) => (
                       <div key={dIndex}>
-                        <span className="text-gray-400 text-base leading-relaxed">
+                        <span className="text-black text-base leading-relaxed">
                           {detail}
                         </span>
                       </div>
@@ -268,6 +268,25 @@ const BusinessBenefits: React.FC = () => {
               </motion.div>
             ))}
           </div>
+        </motion.div>
+
+        {/* Link to Case Studies */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <a 
+            href="/case-studies" 
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold text-lg rounded-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Voir nos cas d'étude
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </motion.div>
 
       </div>

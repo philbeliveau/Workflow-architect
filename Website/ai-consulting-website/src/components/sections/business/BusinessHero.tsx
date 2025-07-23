@@ -203,13 +203,12 @@ const BusinessHero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6"
+          className="mt-16 grid grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {[
             { metric: "3 jours", label: "Vs 'peut-être en Q3'", icon: Calendar, color: "text-success-green" },
             { metric: "€0", label: "Coût développeur", icon: Users, color: "text-accent-teal" },
             { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase, color: "text-accent-purple" },
-            { metric: "Orchestré", label: "Systèmes IA avancés", icon: Building, color: "text-accent-blue" }
           ].map((item, index) => (
             <div key={index} className="bg-primary-800/30 border border-primary-700 rounded-xl p-4 text-center">
               <item.icon className={`w-6 h-6 ${item.color || 'text-accent-purple'} mx-auto mb-2`} />
