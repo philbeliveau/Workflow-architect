@@ -1,47 +1,92 @@
-Ton objectif est de monter une formation sur l'utilisation effective des outils de code agentic. La formation est centré sur l'alignement entre les agents et l'utilisateur. 
-L'alignement est décrit par ceci: 
-The Alignment Solution: Structured AI Development
-Core Concept:
-ALIGNMENT
-Vibe Coder vs Agentic Coder
-Agentic coding is about constantly aligning AI with desired
-outputs through structured approaches.
-Unlike vibe coding's one-shot prompts, agentic coding uses:
-Clear specifications that AI can understand
-Test oracles to verify output correctness
-Structured prompts with systematic design
-Role-based agent assignment for specialized tasks
+Objectif de la formation
 
-L'objectif est que tu développes une formation en entier, et cela mise dans ses sections: 
-1.
+Titre : Maîtriser l’Alignement Agentique pour la Productivité Développeur IA
+
+Objectif Global :
+Construire une formation immersive qui transforme la façon dont les développeurs interagissent avec les agents IA, en mettant l’accent sur l’alignement entre l’utilisateur humain et les systèmes agentiques. Contrairement à l'approche de "vibe coding" où l'on envoie des prompts au hasard, le codage agentique repose sur des approches structurées, des spécifications claires, des oracles de test et une répartition des rôles entre agents.
+
+La formation permettra aux participants de passer du bricolage à l’ingénierie IA en suivant une méthodologie reproductible.
+
+Structure de la formation
+*pour chacune des section, tu dois aller voir les ressources détaillés dans: learn-to-flow/section, pour t'aider à remplir tes sections. 
+
 Section 0-2 : Comprendre la nouvelle ère et le paradoxe IA
 
-2.
+Introduction à l’époque agentique
+
+Le paradoxe : adoptions massives mais gains limités
+
+Problèmes courants : onboarding lent, burnout, fragmentation des outils
+
+État du marché : freelance, small teams, agences techniques
+
+Étude des données (StackOverflow, McKinsey, Bain)
+
 Section 3-7 : Maîtriser l'alignement et les PRD
 
-3.
+Qu'est-ce que l’alignement ?
+
+Les composantes de l'alignement : intention, spécification, feedback
+
+Écriture d’un bon PRD : structure, langage, exemples concrets
+
+Analyse de PRD réels (ex. contextDev)
+
+Atelier : écriture collaborative d’un PRD pour un projet AI-native
+
 Section 8-9 : Contexte d'agents et oracles de vérification
 
-4.
+Comprendre les agents et leurs rôles : builder, tester, reviewer, etc.
+
+Comment structurer un contexte exécutable pour les agents (Claude.md, memory tokens, etc.)
+
+Écriture de test oracles : JSON vérifiables, fonctions de scoring, validations conditionnelles
+
+Atelier : simulation d’un projet avec test agents + oracles
+
 Section 10-12 : Orchestration, MCP et RooCode en action
 
-5.
+Introduction à l’orchestration : CrewAI, Autogen, MCP
+
+Le protocole MCP : définition des tâches, partage du contexte, passage de message
+
+RooCode : visualisation et exécution distribuée
+
+Mise en place d’un pipeline complet : PRD → spec → tests → implémentation
+
 Guides Configuration : Setup environnement développeur
 
-6.
-Section 13-14 : Cas d'étude et roadmap d'implémentation
+Installer Claude-code, Autogen, CrewAI localement
 
-Il faut que tu remplisses chacune de ses sections avec l'information dans: learn-to-flow/section
+Prompt engineering tools : Promptfoo, LangGraph, LangSmith
 
-Chacune de ces sections sont présentement dans la plateforme au à l'onglet: Website/ai-consulting-website/src/app/formation
+Gestion du contexte longue durée : vectordb, retrievers, metadata
 
-# UI
-* Le UI de chacune de ces sections doit être très similaire au UI du site web. 
-Il faut de la couleur, du dynamisme, des images, des liens. Il faut que ce soit compréhensif et engageant. 
+Templates Claude.md + git workflows associés
 
-* Toute la présentation doit être en français
+Section 13-14 : Cas d’étude et roadmap d’implémentation
 
-Je veux que tu te bases sur la structure de la présentation et couvrir l'ensemble de ces thèmes dans la formation. 
+Cas d’étude : équipe de 2 devs = delivery x3 grâce aux agents
+
+De la démo à l’industrialisation : comment passer à l’échelle
+
+Modèle de roadmap 30/60/90 jours
+
+Comment vendre une vision AI-first à ses clients / son équipe
+
+Spécifications UX / UI pour chaque section
+
+Utiliser des couleurs calme sur fond comme sur ai-consulting-website
+
+Illustrations interactives (arborescence de rôles, diagrammes d’orchestration, timelines)
+
+Boutons d’ancrage vers les guides techniques et les templates
+
+Encadrés d’exemples de prompts / PRD / oracles
+
+Appels à l’action ("Télécharger le template Claude.md", "Tester un agent"...)
+
+Chaque module doit donner envie de passer au suivant : structure en "récit d’équipe technique qui gagne en puissance avec les agents".
 
 # Thèmes majeurs de la formation:
 Nous cherchons à révolutionner la façon dont les développeurs utilisent l'intelligence artificielle en passant du **"codage intuitif"** (vibe coding) au **"codage agentique"** (agentic coding). L'objectif est de transformer l'IA d'un simple assistant de codage en un système orchestré d'agents spécialisés qui travaillent ensemble de manière structurée et vérifiable.
@@ -78,9 +123,9 @@ Nous cherchons à révolutionner la façon dont les développeurs utilisent l'in
 
 ### Choisir la Bonne IA**
 - **Stratégie de sélection** selon le rôle :
-  - Claude-3 Opus pour l'architecture
-  - Claude-3 Sonnet pour le développement
-  - Gemini-1.5 Pro pour le débogage
+  - Claude-4 Opus pour l'architecture
+  - Claude-4 Sonnet pour le développement
+  - Gemini-2.5 Pro pour le débogage
 - **Optimisation coûts/qualité**
 
 ### **Diapositive 7 : Spécifications Lisibles par l'IA**
