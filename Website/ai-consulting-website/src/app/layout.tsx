@@ -1,27 +1,37 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import SessionProvider from "@/components/auth/SessionProvider";
+import "./globals.css";
 
-type Props = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "contexteDev - Développement IA Accéléré",
+  description: "contexteDev vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params
-}: Props) {
-  const { locale } = await params;
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
-
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang={locale}>
-      <body suppressHydrationWarning={true}>
-        <NextIntlClientProvider messages={messages}>
+    <html lang="fr">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
+        <SessionProvider session={undefined}>
           {children}
-        </NextIntlClientProvider>
+        </SessionProvider>
       </body>
     </html>
   );

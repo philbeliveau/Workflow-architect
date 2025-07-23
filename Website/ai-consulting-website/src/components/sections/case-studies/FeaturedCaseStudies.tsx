@@ -149,7 +149,7 @@ const FeaturedCaseStudies: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300 mb-2">
+                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-2">
                       {caseStudy.type}
                     </h3>
                     <p className="text-lg text-accent-blue font-medium">
@@ -163,7 +163,7 @@ const FeaturedCaseStudies: React.FC = () => {
                   <div className="space-y-8">
                     {/* Situation */}
                     <div>
-                      <h4 className="text-h3 font-semibold text-text-primary mb-4 group-hover:text-white transition-colors duration-300">
+                      <h4 className="text-h3 font-semibold text-text-primary mb-4 group-hover:text-text-primary transition-colors duration-300">
                         Situation initiale
                       </h4>
                       <p className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
@@ -173,7 +173,7 @@ const FeaturedCaseStudies: React.FC = () => {
 
                     {/* Solution */}
                     <div>
-                      <h4 className="text-h3 font-semibold text-text-primary mb-4 group-hover:text-white transition-colors duration-300">
+                      <h4 className="text-h3 font-semibold text-text-primary mb-4 group-hover:text-text-primary transition-colors duration-300">
                         Notre solution
                       </h4>
                       <p className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
@@ -183,7 +183,7 @@ const FeaturedCaseStudies: React.FC = () => {
 
                     {/* Quote */}
                     <div className="bg-gradient-to-r from-accent-blue/5 to-accent-purple/5 border border-accent-blue/20 rounded-2xl p-6">
-                      <blockquote className="text-text-primary italic leading-relaxed mb-4 group-hover:text-white transition-colors duration-300">
+                      <blockquote className="text-text-primary italic leading-relaxed mb-4 group-hover:text-text-primary transition-colors duration-300">
                         "{caseStudy.quote}"
                       </blockquote>
                       <div className="flex items-center gap-3">
@@ -192,7 +192,7 @@ const FeaturedCaseStudies: React.FC = () => {
                             {caseStudy.author.split(' ').map(n => n[0]).join('')}
                           </span>
                         </div>
-                        <span className="text-text-primary font-medium group-hover:text-white transition-colors duration-300">
+                        <span className="text-text-primary font-medium group-hover:text-text-primary transition-colors duration-300">
                           — {caseStudy.author}
                         </span>
                       </div>
@@ -201,7 +201,7 @@ const FeaturedCaseStudies: React.FC = () => {
 
                   {/* Right side - Results */}
                   <div className="space-y-6">
-                    <h4 className="text-h3 font-semibold text-text-primary mb-6 group-hover:text-white transition-colors duration-300">
+                    <h4 className="text-h3 font-semibold text-text-primary mb-6 group-hover:text-text-primary transition-colors duration-300">
                       Résultats mesurables
                     </h4>
                     

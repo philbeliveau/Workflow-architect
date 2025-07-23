@@ -141,13 +141,13 @@ const ResultsShowcase: React.FC = () => {
 
               {/* Value */}
               <div className="mb-4">
-                <span className={`text-4xl font-bold text-${metric.color} group-hover:text-white transition-colors duration-300`}>
+                <span className={`text-4xl font-bold text-${metric.color} group-hover:text-text-primary transition-colors duration-300`}>
                   {metric.value}
                 </span>
               </div>
 
               {/* Label */}
-              <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-white transition-colors duration-300">
+              <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-text-primary transition-colors duration-300">
                 {metric.label}
               </h3>
 
@@ -208,7 +208,7 @@ const ResultsShowcase: React.FC = () => {
                     </span>
                   </div>
                   <div>
-                    <div className="font-semibold text-text-primary group-hover:text-white transition-colors duration-300">
+                    <div className="font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                       {testimonial.author}
                     </div>
                     <div className="text-sm text-text-muted">

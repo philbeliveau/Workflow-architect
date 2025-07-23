@@ -10,17 +10,17 @@ const ServicesPreview: React.FC = () => {
   const services = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Parcours Développeur - Starter",
-      subtitle: "Orchestration d'agents pour petites équipes",
-      price: "4 500€",
-      duration: "2 semaines",
-      description: "Installation d'un système d'agents Claude pour automatiser les revues de code, génération de docs, et tests. Idéal pour découvrir la puissance de l'orchestration IA.",
+      title: "Parcours Développeur - Formation",
+      subtitle: "Maîtrisez l'orchestration d'agents IA",
+      price: "2 900€",
+      duration: "Formation + outils + 30j support",
+      description: "Formation complète pour maîtriser l'orchestration d'agents IA. Vous repartez avec frameworks, templates, et méthodologies pour être autonome.",
       features: [
-        "Configuration Claude-code + CrewAI de base",
-        "Agents pour revue automatique et documentation",
-        "Intégration GitHub/Jira/Slack",
-        "Dashboards de monitoring des agents",
-        "Formation technique 8h + support 30j"
+        "Formation orchestration agents (8h intensive)",
+        "Frameworks et templates prêts à l'emploi",
+        "Méthodologies Agentic vs Vibe coding",
+        "Outils de monitoring et validation",
+        "Support technique 30j + ressources complètes"
       ],
       bestFor: "Développeurs solo, startups 2-4 devs",
       cta: "Démarrer Orchestration",
@@ -35,16 +35,16 @@ const ServicesPreview: React.FC = () => {
     {
       icon: <Building className="w-8 h-8" />,
       title: "Parcours Business - Autonomie",
-      subtitle: "Environnement no-code pour dirigeants",
-      price: "6 500€",
-      duration: "1 semaine",
-      description: "Configuration d'un environnement IA sécurisé pour construire vos propres dashboards clients, outils internes et automatisations. Sans attendre l'équipe IT.",
+      subtitle: "Devenez autonome avec l'IA métier",
+      price: "3 900€",
+      duration: "Formation + environnement + 60j support",
+      description: "Formation pour utiliser l'IA en autonomie : dashboards, automatisations, outils internes. Vous construisez sans attendre l'équipe IT.",
       features: [
-        "Environnement Claude Business configuré",
-        "Templates tableaux de bord et outils internes",
-        "Intégrations CRM/Spreadsheets/DB sécurisées",
-        "Formation personnalisée 4h",
-        "Support hotline business 60j"
+        "Formation IA métier (4h personnalisée)",
+        "Environnement sécurisé pré-configuré",
+        "Templates dashboards et outils internes",
+        "Intégrations CRM/Spreadsheets simplifiées",
+        "Support hotline business 60j inclus"
       ],
       bestFor: "CEOs, founders, chefs de projet",
       cta: "Gagner en Autonomie",
@@ -58,17 +58,17 @@ const ServicesPreview: React.FC = () => {
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Entreprise - Les Deux Parcours",
-      subtitle: "Solution complète tech + business",
-      price: "15 000€",
-      duration: "4 semaines",
-      description: "Combinaison des deux parcours : orchestration d'agents avancée pour les devs + environnement business pour les dirigeants. L'organisation complète boostée par l'IA.",
+      title: "Entreprise - Formation Complète",
+      subtitle: "Toute l'équipe formée aux workflows IA",
+      price: "7 900€",
+      duration: "Formation équipe + accompagnement 90j",
+      description: "Formation complète de l'équipe : développeurs ET dirigeants maîtrisent l'IA. Approche cohérente dans toute l'organisation.",
       features: [
-        "Orchestration complète (MCPs, frameworks avancés)",
-        "Environnement business no-code sécurisé",
-        "Dashboards unifiés tech + business",
-        "Formation différenciée par profil",
-        "Support continu 90j + optimisations"
+        "Formation développeurs (orchestration avancée)",
+        "Formation dirigeants (IA métier autonome)",
+        "Méthodologies cohérentes dans l'organisation",
+        "Templates et frameworks pour tous",
+        "Accompagnement continu 90j inclus"
       ],
       bestFor: "Entreprises 8-20 personnes",
       cta: "Transformation Complète",
@@ -117,7 +117,7 @@ const ServicesPreview: React.FC = () => {
             {Array.from({ length: 36 }, (_, i) => (
               <div 
                 key={i} 
-                className="bg-accent-blue rounded-lg animate-pulse" 
+                className="bg-accent-purple rounded-lg animate-pulse" 
                 style={{
                   animationDelay: `${i * 0.2}s`,
                   animationDuration: '4s'
@@ -141,9 +141,15 @@ const ServicesPreview: React.FC = () => {
             Services Par Parcours
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Des solutions spécifiques pour développeurs et dirigeants. 
-            <span className="text-accent-blue font-semibold"> Nous mesurons les résultats, nous ne promettons pas.</span>
+            Formation pratique et outils IA à prix accessible. Pas de consulting à 50k€. 
+            <span className="text-accent-purple font-semibold"> Nous formons, nous outillons, vous maîtrisez.</span>
           </p>
+          <div className="mt-6 inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-purple/10 border border-success-green/20 rounded-full px-6 py-3">
+            <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
+            <span className="text-text-secondary text-sm font-medium">
+              Base abordable + support sur mesure si besoin
+            </span>
+          </div>
         </motion.div>
 
         {/* Service Cards */}
@@ -159,9 +165,9 @@ const ServicesPreview: React.FC = () => {
               key={index}
               className={`group relative ${
                 service.featured 
-                  ? 'bg-gradient-to-b from-accent-blue/10 to-accent-purple/10 border-2 border-accent-blue scale-105' 
+                  ? 'bg-gradient-to-b from-accent-purple/10 to-accent-gray/10 border-2 border-accent-purple scale-105' 
                   : 'bg-primary-900/50 border border-primary-700'
-              } backdrop-blur-sm rounded-3xl p-8 hover:border-accent-blue/50 transition-all duration-300`}
+              } backdrop-blur-sm rounded-3xl p-8 hover:border-accent-purple/50 transition-all duration-300`}
               variants={cardVariants}
               whileHover={{ 
                 scale: service.featured ? 1.05 : 1.02,
@@ -172,29 +178,29 @@ const ServicesPreview: React.FC = () => {
               {/* Featured badge */}
               {service.featured && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-accent-blue to-accent-purple text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="bg-gradient-to-r from-accent-purple to-accent-gray text-white px-4 py-1 rounded-full text-sm font-medium">
                     Plus populaire
                   </div>
                 </div>
               )}
 
               {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-accent-blue/20 to-accent-purple/20 rounded-2xl mb-6 group-hover:from-accent-blue/30 group-hover:to-accent-purple/30 transition-all duration-300">
-                <div className="text-accent-blue group-hover:text-accent-blue-light transition-colors duration-300">
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-accent-purple/20 to-accent-gray/20 rounded-2xl mb-6 group-hover:from-accent-purple/30 group-hover:to-accent-gray/30 transition-all duration-300">
+                <div className="text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
                   {service.icon}
                 </div>
               </div>
 
               {/* Header */}
               <div className="mb-6">
-                <h3 className="text-h3 font-bold text-text-primary mb-2 group-hover:text-white transition-colors duration-300">
+                <h3 className="text-h3 font-bold text-text-primary mb-2 group-hover:text-text-primary transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-text-secondary text-sm mb-4">
                   {service.subtitle}
                 </p>
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-2xl font-bold text-accent-blue">
+                  <span className="text-2xl font-bold text-accent-purple">
                     {service.price}
                   </span>
                   <span className="text-text-muted text-sm">
@@ -221,8 +227,8 @@ const ServicesPreview: React.FC = () => {
               </div>
 
               {/* Best for */}
-              <div className="bg-accent-blue/5 border border-accent-blue/20 rounded-lg p-3 mb-6">
-                <span className="text-accent-blue text-sm font-medium">
+              <div className="bg-accent-purple/5 border border-accent-purple/20 rounded-lg p-3 mb-6">
+                <span className="text-accent-purple text-sm font-medium">
                   Idéal pour: {service.bestFor}
                 </span>
               </div>
@@ -265,11 +271,19 @@ const ServicesPreview: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-6 py-3">
-            <CheckCircle className="w-5 h-5 text-success-green" />
-            <span className="text-text-secondary">
-              Chaque parcours adapté aux besoins spécifiques. Mesures d'impact incluses.
-            </span>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-success-green/10 to-accent-purple/10 border border-success-green/20 rounded-2xl p-6">
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-success-green flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="text-lg font-semibold text-text-primary mb-2">Prix transparents, valeur réelle</h4>
+                  <p className="text-text-secondary leading-relaxed">
+                    Pas de consulting à 50k€. Formation pratique + outils + support inclus. 
+                    <span className="text-accent-purple font-medium">Besoin d'accompagnement personnalisé ? Support sur mesure disponible.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

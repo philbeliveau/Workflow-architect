@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle, Clock, MapPin, Calendar } from 'lucide-react';
 import Link from 'next/link';
@@ -10,10 +11,10 @@ const ContactAlternatives: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email direct",
-      value: "contact@aidev-consulting.fr",
+      value: "contact@contextedev.com",
       description: "Réponse sous 4 heures en jours ouvrables",
-      action: "mailto:contact@aidev-consulting.fr",
-      color: "accent-blue"
+      action: "mailto:contact@contextedev.com",
+      color: "accent-purple"
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -72,7 +73,7 @@ const ContactAlternatives: React.FC = () => {
             <motion.a
               key={index}
               href={method.action}
-              className="group block p-4 bg-primary-900/50 border border-primary-700 rounded-xl hover:border-accent-blue/50 transition-all duration-300"
+              className="group block p-4 bg-primary-800/50 border border-primary-700 rounded-xl hover:border-accent-purple/50 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
@@ -83,7 +84,7 @@ const ContactAlternatives: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-text-primary group-hover:text-white transition-colors duration-300 mb-1">
+                  <h4 className="font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-1">
                     {method.title}
                   </h4>
                   <p className={`text-${method.color} font-medium text-sm mb-1`}>
@@ -100,7 +101,7 @@ const ContactAlternatives: React.FC = () => {
       </div>
 
       {/* Response Info */}
-      <div className="bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 border border-accent-blue/20 rounded-2xl p-8">
+      <div className="bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6">
           Informations de contact
         </h3>
@@ -108,8 +109,8 @@ const ContactAlternatives: React.FC = () => {
         <div className="space-y-4">
           {responseInfo.map((info, index) => (
             <div key={index} className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-accent-blue/20 rounded-lg flex items-center justify-center">
-                <div className="text-accent-blue">
+              <div className="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center">
+                <div className="text-accent-purple">
                   {info.icon}
                 </div>
               </div>
@@ -117,7 +118,7 @@ const ContactAlternatives: React.FC = () => {
                 <h4 className="font-semibold text-text-primary text-sm">
                   {info.title}
                 </h4>
-                <p className="text-accent-blue font-medium text-sm">
+                <p className="text-accent-purple font-medium text-sm">
                   {info.value}
                 </p>
                 <p className="text-text-muted text-xs">
@@ -146,8 +147,8 @@ const ContactAlternatives: React.FC = () => {
           </Link>
           <br />
           <a
-            href="mailto:contact@aidev-consulting.fr"
-            className="inline-block text-accent-blue hover:text-accent-blue-light transition-colors duration-200 text-sm font-medium"
+            href="mailto:contact@contextedev.com"
+            className="inline-block text-accent-purple hover:text-accent-purple-light transition-colors duration-200 text-sm font-medium"
           >
             Poser une question par email →
           </a>

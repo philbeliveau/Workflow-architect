@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Custom color variables based on cluely.com design */
-  --primary-900: #1a1a1a;
-  --primary-800: #2d2d2d;
-  --primary-700: #404040;
+  /* Custom color variables inspired by contextDev logo - light theme with gray and purple */
+  --primary-900: #ffffff;
+  --primary-800: #f8fafc;
+  --primary-700: #f1f5f9;
   --accent-purple: #8b5cf6;
-  --accent-teal: #14b8a6;
-  --accent-blue: #0055FE;
-  --accent-blue-light: #3b82f6;
+  --accent-purple-light: #a855f7;
+  --accent-gray: #6b7280;
+  --accent-gray-light: #9ca3af;
   --success-green: #10b981;
   --warning-orange: #f59e0b;
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --background: #1a1a1a;
-  --foreground: #ffffff;
-  --gradient-blue: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  --gradient-purple-teal: linear-gradient(135deg, #8b5cf6 0%, #14b8a6 100%);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  --gradient-gray-purple: linear-gradient(135deg, #6b7280 0%, #8b5cf6 100%);
 }
 
 @theme inline {
@@ -25,9 +25,9 @@
   --color-primary-800: var(--primary-800);
   --color-primary-700: var(--primary-700);
   --color-accent-purple: var(--accent-purple);
-  --color-accent-teal: var(--accent-teal);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-blue-light: var(--accent-blue-light);
+  --color-accent-purple-light: var(--accent-purple-light);
+  --color-accent-gray: var(--accent-gray);
+  --color-accent-gray-light: var(--accent-gray-light);
   --color-success-green: var(--success-green);
   --color-warning-orange: var(--warning-orange);
   --color-text-primary: var(--text-primary);
@@ -88,10 +88,10 @@ body {
   line-height: var(--line-height-h3);
 }
 
-.bg-gradient-blue {
-  background: var(--gradient-blue);
+.bg-gradient-purple {
+  background: var(--gradient-purple);
 }
 
-.bg-gradient-purple-teal {
-  background: var(--gradient-purple-teal);
+.bg-gradient-gray-purple {
+  background: var(--gradient-gray-purple);
 }

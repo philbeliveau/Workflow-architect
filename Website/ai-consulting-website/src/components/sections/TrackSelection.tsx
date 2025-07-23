@@ -4,31 +4,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Code, Briefcase, ArrowRight, Cpu, Users, Zap, BarChart3 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-
 const TrackSelection: React.FC = () => {
-  const t = useTranslations('trackSelection');
   
   const tracks = [
     {
       id: "developers",
       icon: <Code className="w-12 h-12" />,
-      title: t('developers.title'),
-      subtitle: t('developers.subtitle'),
-      description: t('developers.description'),
+      title: "Développeurs & Équipes Tech",
+      subtitle: "Orchestration d'agents avancée",
+      description: "Accélérez votre développement avec des systèmes d'agents intelligents, l'orchestration Claude-code, et des workflows automatisés.",
       features: [
-        t('developers.features.0'),
-        t('developers.features.1'),
-        t('developers.features.2'),
-        t('developers.features.3'),
-        t('developers.features.4')
+        "Agents Claude pour revue de code automatique",
+        "Orchestration CrewAI et MCP avancée",
+        "Dashboards d'observabilité des agents",
+        "Bibliothèques de prompts internes",
+        "Intégration GitHub/Jira/Slack complète"
       ],
       benefits: [
-        { icon: Cpu, text: t('developers.benefits.0') },
-        { icon: Zap, text: t('developers.benefits.1') },
-        { icon: BarChart3, text: t('developers.benefits.2') }
+        { icon: Cpu, text: "Onboarding: 2 semaines → 2 heures" },
+        { icon: Zap, text: "Cycle de revue: 2-4 jours → 4-8 heures" },
+        { icon: BarChart3, text: "Bugs production: -60-80%" }
       ],
-      cta: t('developers.cta'),
+      cta: "Explorer le Parcours Technique",
       href: "/developers",
       color: "accent-blue",
       gradient: "from-accent-blue/10 to-accent-purple/10"
@@ -36,22 +33,22 @@ const TrackSelection: React.FC = () => {
     {
       id: "business",
       icon: <Briefcase className="w-12 h-12" />,
-      title: t('business.title'),
-      subtitle: t('business.subtitle'),
-      description: t('business.description'),
+      title: "Dirigeants & Chefs d'Entreprise",
+      subtitle: "Solutions métier sans code",
+      description: "Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.",
       features: [
-        t('business.features.0'),
-        t('business.features.1'),
-        t('business.features.2'),
-        t('business.features.3'),
-        t('business.features.4')
+        "Environnement IA configuré pour vos besoins",
+        "Du langage naturel aux applications fonctionnelles",
+        "Templates d'intégration CRM/spreadsheets/bases de données",
+        "Système de déploiement sécurisé",
+        "Formation personnalisée incluse"
       ],
       benefits: [
-        { icon: Users, text: t('business.benefits.0') },
-        { icon: Zap, text: t('business.benefits.1') },
-        { icon: BarChart3, text: t('business.benefits.2') }
+        { icon: Users, text: "Tableaux de bord clients automatiques" },
+        { icon: Zap, text: "Outils internes en jours, pas mois" },
+        { icon: BarChart3, text: "Automatisation des processus métier" }
       ],
-      cta: t('business.cta'),
+      cta: "Explorer le Parcours Business",
       href: "/business",
       color: "accent-purple",
       gradient: "from-accent-purple/10 to-accent-teal/10"
@@ -112,11 +109,11 @@ const TrackSelection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            {t('title')}
+            Choisissez Votre Parcours
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            {t('subtitle')}
-            <span className="text-accent-blue font-semibold"> {t('highlight')}</span>
+            Deux approches distinctes pour deux besoins différents.
+            <span className="text-accent-blue font-semibold"> Même excellence, outils adaptés.</span>
           </p>
         </motion.div>
 
@@ -143,7 +140,7 @@ const TrackSelection: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-white transition-colors duration-300 mb-2">
+                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-2">
                       {track.title}
                     </h3>
                     <p className={`text-${track.color} font-medium text-lg`}>
@@ -208,21 +205,21 @@ const TrackSelection: React.FC = () => {
         >
           <div className="bg-primary-800/50 border border-primary-700 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-h3 font-bold text-text-primary mb-4">
-              {t('keyInsight.title')}
+              L'idée clé : Adapter la bonne personne au bon problème
             </h3>
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div>
-                <h4 className="text-accent-blue font-semibold mb-2">{t('keyInsight.clientDashboard')}</h4>
-                <p className="text-text-secondary text-sm">{t('keyInsight.clientSolution')}</p>
+                <h4 className="text-accent-blue font-semibold mb-2">Tableau de bord client ?</h4>
+                <p className="text-text-secondary text-sm">→ Le dirigeant peut le construire</p>
               </div>
               <div>
-                <h4 className="text-accent-purple font-semibold mb-2">{t('keyInsight.authSystem')}</h4>
-                <p className="text-text-secondary text-sm">{t('keyInsight.authSolution')}</p>
+                <h4 className="text-accent-purple font-semibold mb-2">Système d'authentification ?</h4>
+                <p className="text-text-secondary text-sm">→ Le développeur professionnel s'en charge</p>
               </div>
             </div>
             <div className="mt-6">
               <Button variant="outline" size="md" href="/book-demo">
-                {t('keyInsight.notSure')}
+                Pas sûr ? Parlons-en ensemble
               </Button>
             </div>
           </div>

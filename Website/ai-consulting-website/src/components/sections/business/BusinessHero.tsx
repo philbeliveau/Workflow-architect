@@ -51,14 +51,30 @@ const BusinessHero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
+              {/* Attention-Grabbing Paradox Section */}
+              <div className="bg-warning-orange/10 border border-warning-orange/20 rounded-2xl p-6 mb-8">
+                <div className="inline-flex items-center gap-2 bg-warning-orange/10 border border-warning-orange/20 rounded-full px-4 py-2 mb-4">
+                  <Briefcase className="w-4 h-4 text-warning-orange" />
+                  <span className="text-warning-orange text-sm font-medium">Le Paradoxe du Développement IA</span>
+                </div>
+                <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-text-primary">
+                  Pourquoi Vos Outils IA
+                  <span className="block">Promettent Plus Qu'Ils Ne <span className="text-warning-orange">Livrent</span></span>
+                </h2>
+                <p className="text-text-secondary mb-4 leading-relaxed">
+                  Votre équipe dit <strong>"peut-être en Q3"</strong> pour un simple tableau de bord. Pendant ce temps, 
+                  <span className="block mt-2 text-accent-purple font-semibold">vos concurrents utilisent déjà les systèmes orchestrés.</span>
+                </p>
+              </div>
+
               <div className="inline-flex items-center gap-2 bg-accent-purple/10 border border-accent-purple/20 rounded-full px-4 py-2 mb-6">
                 <Briefcase className="w-4 h-4 text-accent-purple" />
-                <span className="text-accent-purple text-sm font-medium">Parcours Business</span>
+                <span className="text-accent-purple text-sm font-medium">Transformation Business</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                Construisez Vos Outils
-                <span className="block text-accent-purple">Sans Attendre l'IT</span>
+                Nous Ne Construisons Pas le Moteur,
+                <span className="block text-accent-purple">Nous Vous Apprenons à Conduire</span>
               </h1>
             </motion.div>
 
@@ -70,8 +86,8 @@ const BusinessHero: React.FC = () => {
               <p className="text-lg text-text-secondary mb-8 leading-relaxed">
                 Tableau de bord client ? Outil de gestion interne ? Automatisation de processus ? 
                 <strong> Décrivez ce dont vous avez besoin, obtenez une application fonctionnelle.</strong>
-                <span className="text-accent-purple font-semibold block mt-2">
-                  Plus d'attente. Plus de "peut-être en Q3". Vous avez l'autonomie.
+                <span className="text-success-green font-semibold block mt-2">
+                  Construisez vos outils sans attendre l'IT. De "peut-être en Q3" à "fait en 3 jours".
                 </span>
               </p>
 
@@ -205,14 +221,14 @@ const BusinessHero: React.FC = () => {
           className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {[
-            { metric: "Jours", label: "Pas mois pour vos outils", icon: Calendar },
-            { metric: "€0", label: "Coût développeur", icon: Users },
-            { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase },
-            { metric: "Sécurisé", label: "Environnement professionnel", icon: Building }
+            { metric: "3 jours", label: "Vs 'peut-être en Q3'", icon: Calendar, color: "text-success-green" },
+            { metric: "€0", label: "Coût développeur", icon: Users, color: "text-accent-teal" },
+            { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase, color: "text-accent-purple" },
+            { metric: "Orchestré", label: "Systèmes IA avancés", icon: Building, color: "text-accent-blue" }
           ].map((item, index) => (
             <div key={index} className="bg-primary-800/30 border border-primary-700 rounded-xl p-4 text-center">
-              <item.icon className="w-6 h-6 text-accent-purple mx-auto mb-2" />
-              <div className="text-2xl font-bold text-accent-purple mb-1">{item.metric}</div>
+              <item.icon className={`w-6 h-6 ${item.color || 'text-accent-purple'} mx-auto mb-2`} />
+              <div className={`text-2xl font-bold ${item.color || 'text-accent-purple'} mb-1`}>{item.metric}</div>
               <div className="text-text-secondary text-xs">{item.label}</div>
             </div>
           ))}

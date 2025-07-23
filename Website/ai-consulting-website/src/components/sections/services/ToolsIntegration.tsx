@@ -169,7 +169,7 @@ const ToolsIntegration: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-h3 font-bold text-text-primary group-hover:text-white transition-colors duration-300 mb-2">
+                  <h3 className="text-h3 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300 mb-2">
                     {tool.name}
                   </h3>
                 </div>
@@ -182,7 +182,7 @@ const ToolsIntegration: React.FC = () => {
 
               {/* Features */}
               <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-text-primary group-hover:text-white transition-colors duration-300">
+                <h4 className="text-lg font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
                   Fonctionnalités clés :
                 </h4>
                 <div className="grid grid-cols-1 gap-2">
