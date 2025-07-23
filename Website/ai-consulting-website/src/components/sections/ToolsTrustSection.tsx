@@ -7,49 +7,37 @@ import { Github, Settings, Database, FileText, Zap, Code, Brain } from 'lucide-r
 const ToolsTrustSection: React.FC = () => {
   const tools = [
     {
-      name: "Claude",
-      icon: <Brain className="w-8 h-8" />,
-      description: "Code génération & architecture",
-      color: "bg-[#d97706]"
-    },
-    {
-      name: "GitHub",
-      icon: <Github className="w-8 h-8" />,
-      description: "Actions & automatisation",
-      color: "bg-[#1f2937]"
-    },
-    {
-      name: "CrewAI",
-      icon: <Zap className="w-8 h-8" />,
-      description: "Agents multi-tâches",
-      color: "bg-[#7c3aed]"
-    },
-    {
-      name: "Jira",
-      icon: <Settings className="w-8 h-8" />,
-      description: "Gestion automatisée",
-      color: "bg-[#0052cc]"
-    },
-    {
       name: "Cursor",
       icon: <Code className="w-8 h-8" />,
       description: "Édition assistée",
       color: "bg-[#000000]"
     },
     {
-      name: "Confluence",
-      icon: <FileText className="w-8 h-8" />,
-      description: "Documentation auto",
+      name: "Roo code",
+      icon: <Settings className="w-8 h-8" />,
+      description: "Orchestration et agents spécialisés",
+      color: "bg-[#0052cc]"
+    },
+    {
+      name: "Claude-code",
+      icon: <Brain className="w-8 h-8" />,
+      description: "Code génération & architecture",
+      color: "bg-[#d97706]"
+    },
+    {
+      name: "Wrapper d'orchestration",
+      icon: <Zap className="w-8 h-8" />,
+      description: "Orchestration d'agents",
+      color: "bg-[#7c3aed]"
+    },
+    {
+      name: "Banque d'agents",
+      icon: <Database className="w-8 h-8" />,
+      description: "Agents spécialisés",
       color: "bg-[#172b4d]"
     }
   ];
 
-  const metrics = [
-    { value: "+67%", label: "vitesse de revue" },
-    { value: "+40%", label: "marges projet" },
-    { value: "3 jours", label: "vs 3 semaines onboarding" },
-    { value: "95%", label: "rétention client" }
-  ];
 
   return (
     <section className="py-24 bg-gradient-to-br from-primary-800 to-primary-900 relative overflow-hidden">
@@ -82,7 +70,7 @@ const ToolsTrustSection: React.FC = () => {
             Outils que nous maîtrisons
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Nous installons et configurons les outils IA les plus performants 
+            Garde le même UI, les outils sont des wrapper autour de claude-code 
             <span className="text-accent-blue font-semibold"> pour des résultats en production.</span>
           </p>
         </motion.div>
@@ -126,30 +114,6 @@ const ToolsTrustSection: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Metrics Section */}
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={index}
-              className="text-center bg-primary-900/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-6 hover:border-accent-blue/50 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="text-3xl font-bold text-accent-blue mb-2">
-                {metric.value}
-              </div>
-              <div className="text-text-secondary text-sm">
-                {metric.label}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* Bottom Text */}
         <motion.div

@@ -69,7 +69,7 @@ const CTASection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Prêt à débloquer votre potentiel ?
+            Prêt à vous formez?
           </h2>
         </motion.div>
 

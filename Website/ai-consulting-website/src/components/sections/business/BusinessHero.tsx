@@ -51,21 +51,6 @@ const BusinessHero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Attention-Grabbing Paradox Section */}
-              <div className="bg-warning-orange/10 border border-warning-orange/20 rounded-2xl p-6 mb-8">
-                <div className="inline-flex items-center gap-2 bg-warning-orange/10 border border-warning-orange/20 rounded-full px-4 py-2 mb-4">
-                  <Briefcase className="w-4 h-4 text-warning-orange" />
-                  <span className="text-warning-orange text-sm font-medium">Le Paradoxe du Développement IA</span>
-                </div>
-                <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-text-primary">
-                  Pourquoi Vos Outils IA
-                  <span className="block">Promettent Plus Qu'Ils Ne <span className="text-warning-orange">Livrent</span></span>
-                </h2>
-                <p className="text-text-secondary mb-4 leading-relaxed">
-                  Votre équipe dit <strong>"peut-être en Q3"</strong> pour un simple tableau de bord. Pendant ce temps, 
-                  <span className="block mt-2 text-accent-purple font-semibold">vos concurrents utilisent déjà les systèmes orchestrés.</span>
-                </p>
-              </div>
 
               <div className="inline-flex items-center gap-2 bg-accent-purple/10 border border-accent-purple/20 rounded-full px-4 py-2 mb-6">
                 <Briefcase className="w-4 h-4 text-accent-purple" />
@@ -73,8 +58,8 @@ const BusinessHero: React.FC = () => {
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                Nous Ne Construisons Pas le Moteur,
-                <span className="block text-accent-purple">Nous Vous Apprenons à Conduire</span>
+                <span className="text-accent-blue">Construisez vos outils sans attendre l'IT.</span>
+                <span className="block text-accent-purple">De "peut-être en Q3" à "fait en 3 jours".</span>
               </h1>
             </motion.div>
 

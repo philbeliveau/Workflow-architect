@@ -108,7 +108,7 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Du Vibe Coding à l'Agentic Coding
+            Du Vibe Coding à une approche de programmation structuré
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Nous ne développons pas vos agents, nous vous donnons le manuel et la méthode pour qu'ils vous obéissent vraiment. 
@@ -196,99 +196,7 @@ const SolutionOverview: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Code Example */}
-        <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-h2 font-bold text-text-primary mb-4">
-              Vibe vs Agentic : Comparaison en Action
-            </h3>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              La différence entre un prompt one-shot et une orchestration planifiée
-            </p>
-          </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Vibe Coding */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <h4 className="text-xl font-semibold text-text-primary">❌ Vibe Coding</h4>
-                </div>
-                <CodeBlock
-                  title="prompt-oneshot.txt"
-                  code={`// Prompt typique "vibe"
-"Crée-moi un système de revue de code automatique"
 
-// Résultat :
-// - Code générique
-// - Pas de context projet
-// - Aucune validation
-// - Taux de succès : <20%
-// - Maintenance impossible`}
-                  language="text"
-                />
-              </div>
-              
-              {/* Agentic Coding */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-3 h-3 bg-success-green rounded-full"></div>
-                  <h4 className="text-xl font-semibold text-text-primary">✅ Agentic Coding</h4>
-                </div>
-                <CodeBlock
-                  title="agentic-orchestration.ts"
-                  code={`// Orchestration structurée
-const reviewSystem = new AgentWorkflow({
-  context: await loadProjectContext(),
-  agents: [
-    new AnalyzerAgent({ role: "code-quality" }),
-    new SecurityAgent({ role: "vulnerability-scan" }),
-    new TestAgent({ role: "coverage-check" })
-  ],
-  validation: {
-    qualityThreshold: 0.8,
-    testOracles: ["compile", "security", "performance"]
-  },
-  feedback: {
-    iterative: true,
-    humanInLoop: true
-  }
-});
-
-// Résultat :
-// - Code spécifique au projet
-// - Validation automatique
-// - Taux de succès : >85%
-// - Évolutif et maintenable`}
-                  language="typescript"
-                />
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-purple/10 border border-success-green/20 rounded-full px-8 py-4">
-            <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
-            <span className="text-text-primary font-medium">
-              Nous analysons • Nous formons • Nous accompagnons • Vous maîtrisez
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

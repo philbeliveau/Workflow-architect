@@ -8,30 +8,30 @@ const ResultsShowcase: React.FC = () => {
   const metrics = [
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      value: "67%",
-      label: "Revues de code plus rapides",
+      value: "X10 - 100",
+      label: "Vitesse de revue de code",
       description: "grâce à l'analyse automatisée et aux suggestions intelligentes",
       color: "accent-blue"
     },
     {
+      icon: <Users className="w-8 h-8" />,
+      value: "Engager 5X moins d'effectif",
+      label: "marges projet",
+      description: "en livrant la même qualité avec moins de personnel",
+      color: "success-green"
+    },
+    {
       icon: <Clock className="w-8 h-8" />,
-      value: "3 jours",
-      label: "vs 3 semaines d'intégration",
+      value: "2 jours onboarding vs 2 semaines",
+      label: "Intégration rapide",
       description: "avec la familiarisation de base de code alimentée par l'IA",
       color: "accent-purple"
     },
     {
       icon: <DollarSign className="w-8 h-8" />,
-      value: "40%",
-      label: "Marges projet plus élevées",
-      description: "en livrant la même qualité en 60% du temps",
-      color: "success-green"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      value: "95%",
-      label: "Taux de rétention client",
-      description: "car une livraison cohérente construit une confiance inébranlable",
+      value: "10 - 100X",
+      label: "complexité des projets",
+      description: "projets plus ambitieux réalisables avec la même équipe",
       color: "accent-teal"
     }
   ];
@@ -101,13 +101,6 @@ const ResultsShowcase: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Résultats réels, équipes réelles
-          </h2>
-          <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Nos clients n'utilisent pas seulement les outils IA – ils réalisent des 
-            <span className="text-accent-blue font-semibold"> transformations de productivité mesurables.</span>
-          </p>
         </motion.div>
 
         {/* Metrics Grid */}
@@ -159,83 +152,7 @@ const ResultsShowcase: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Testimonials */}
-        <motion.div
-          className="space-y-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-h2 font-bold text-text-primary mb-4">
-              Ce que disent nos clients
-            </h3>
-          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="group bg-primary-800/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-8 hover:border-accent-blue/50 transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -5,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                {/* Stars */}
-                <div className="flex gap-1 mb-6">
-                  {Array.from({ length: testimonial.rating }, (_, i) => (
-                    <Star key={i} className="w-5 h-5 text-warning-orange fill-current" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <blockquote className="text-text-secondary leading-relaxed mb-6 group-hover:text-text-primary/90 transition-colors duration-300">
-                  "{testimonial.quote}"
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-accent-blue to-accent-purple rounded-full flex items-center justify-center">
-                    <span className="text-white font-semibold">
-                      {testimonial.author.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-text-primary group-hover:text-text-primary transition-colors duration-300">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-sm text-text-muted">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-8 py-4">
-            <CheckCircle className="w-6 h-6 text-success-green" />
-            <span className="text-text-primary font-medium text-lg">
-              Rejoignez 95% de nos clients qui renouvellent pour l'optimisation continue
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

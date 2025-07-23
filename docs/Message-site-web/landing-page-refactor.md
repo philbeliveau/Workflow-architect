@@ -266,17 +266,81 @@ Lorsque acheter les formations en papier sont 500$.
 Du Vibe Coding à l'Agentic Coding
 
 # Pour ce message: 
-Du Vibe Coding à une approche de programmation structuré et à la fine pointe 
+Du Vibe Coding à une approche de programmation structuré
 
 # 17
 ## Message à changer: 
+Développeurs & Équipes Tech
+Orchestration d'agents avancée
+Accélérez votre développement avec des systèmes d'agents intelligents, l'orchestration Claude-code, et des workflows automatisés.
+Ce que vous obtenez :
+Agents Claude pour revue de code automatique
+Orchestration CrewAI et MCP avancée
+Dashboards d'observabilité des agents
+Bibliothèques de prompts internes
+Intégration GitHub/Jira/Slack complète
+Résultats typiques :
+Onboarding: 2 semaines → 2 heures
+Cycle de revue: 2-4 jours → 4-8 heures
+Bugs production: -60-80%
+
 
 # Pour ce message: 
+Développeurs, Scientifique de données & Équipes Tech
+Orchestration d'agents, ingénierie de contexte
+Accélérez votre développement avec des systèmes d'agents IA, l'orchestration Claude-code et monter en puissance vos vos équipes avec notre méthodologie.
+Ce que vous obtenez :
+Vulgarisation du nouveau paradigme de programmation IA
+Confiuration de vos environnements 
+Configuration et présentation de MCP avancés
+Wrapper Claude-code pour l'orchestration d'agents 
+Méthodologie pour développer des products requirements 
+Apprendre à aligner vos IA pour réduire les bugs de développement
+Bibliothèques de prompts internes
+Apprendre à travailler efficacement avec les agents
+Apprendre à développer des systèmes très complexes
+Apprendre à couvrir tout la chaîne de valeurs, de la recherche, au besoin d'affaire, au PRD, à l'alignement avec les développeurs, au développement, à la livraison
+
+Résultats typiques :
+Onboarding: 2 semaines → 2 heures
+Cycle de revue: 2-4 jours → 4-8 heures
+Réduction du temps à debugger significativement
 
 # 18
 ## Message à changer: 
+Dirigeants & Chefs d'Entreprise
+Solutions métier sans code
+
+Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.
+
+Ce que vous obtenez :
+Ce que vous obtenez :
+Environnement IA configuré pour vos besoins
+Du langage naturel aux applications fonctionnelles
+Templates d'intégration CRM/spreadsheets/bases de données
+Système de déploiement sécurisé
+Formation personnalisée incluse
+Résultats typiques :
+Tableaux de bord clients automatiques
+Outils internes en jours, pas mois
+Automatisation des processus métier
+
 
 # Pour ce message: 
+Dirigeants & PO, analyste d'affaires
+Programmer en langage naturel
+
+Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.
+Ce que vous obtenez :
+Environnement IA configuré pour vos besoins
+Du langage naturel aux applications fonctionnelles
+Templates d'intégration CRM/spreadsheets/bases de données
+Formation personnalisée incluse
+Support 30 jours
+Résultats typiques :
+Tableaux de bord clients automatiques
+Outils internes en jours, pas mois
+Automatisation des processus métier
 
 # 19
 ## Message à changer:
@@ -284,228 +348,3 @@ Du Vibe Coding à une approche de programmation structuré et à la fine pointe
 # Pour ce message: 
 
 
-
-# Développeur page: https://ai-consulting-website-three.vercel.app/developers
-# 1
-## Message à changer: 
-Le Paradoxe du Développement IA
-Pourquoi Moins de 20% des Développeurs
-Réussissent avec l'IA en Production
-La plupart sont coincés dans le "vibe coding" - prompts flous, contexte mal défini, aucune vérification.
-Il existe une meilleure approche : l'"agentic coding"
-# Pour ce message: 
-
-# 1
-## Message à changer: 
-
-# Pour ce message: 
-# 2
-## Message à changer: 
-
-# Pour ce message: 
-# 4
-## Message à changer: 
-
-# Pour ce message: 
-# 5
-## Message à changer: 
-
-# Pour ce message: 
-
-# Business page: https://ai-consulting-website-three.vercel.app/business
-# 1
-## Message à changer: 
-
-# Pour ce message: 
-
-# 1
-## Message à changer: 
-
-# Pour ce message: 
-# 2
-## Message à changer: 
-
-# Pour ce message: 
-# 4
-## Message à changer: 
-
-# Pour ce message: 
-# 5
-## Message à changer: 
-
-# Pour ce message: 
-
-
-
-# Case-studies page: https://ai-consulting-website-three.vercel.app/case-studies
-# 1
-## Message à changer: 
-ésultats agrégés sur tous nos clients
-Plus de 50 équipes transformées avec des résultats mesurables et reproductibles
-
-3x
-Amélioration moyenne de la vélocité
-Across all client transformations
-
-67%
-Réduction temps de livraison
-From initial audit to production
-
-40%
-Augmentation marges moyennes
-Through efficiency improvements
-
-95%
-Taux de rétention client
-Long-term partnership success
-
-30 jours
-Temps pour premiers résultats
-Initial productivity gains visible
-
-50+
-Équipes transformées
-Successfully implemented solutions
-
-Résultats par type de client
-Chaque type d'équipe bénéficie de transformations adaptées à leurs défis spécifiques
-
-Développeurs Solo
-23 clients
-
-Amélioration moyenne
-2.8x plus rapide
-Métrique clé
-Revenue per hour doubled
-Équipes Startup
-18 équipes
-
-Amélioration moyenne
-3.2x vélocité sprint
-Métrique clé
-Developer onboarding: 3 days vs 3 weeks
-Agences
-12 agences
-
-Amélioration moyenne
-45% marges améliorées
-Métrique clé
-Client capacity increased by 60%
-# Pour ce message: 
-Tout enlever.
-
-# 1
-## Message à changer: 
-Études de cas détaillées
-Découvrez les transformations complètes de nos clients avec des métriques détaillées, des solutions spécifiques et des résultats mesurables.
-
-# Pour ce message: 
-Enlever cette partie
-# 2
-## Message à changer: 
-Développeuse Indépendante Full-Stack
-Défi : Gérer 2 projets clients en travaillant 60+ heures par semaine
-
-Situation initiale
-Sarah était une développeuse freelance talentueuse prise dans le cycle festin-famine. Elle ne pouvait gérer que 2 projets clients à la fois, travaillait les soirs et week-ends pour respecter les délais, et s'inquiétait constamment de la qualité en se dépêchant de livrer. Son taux horaire était bloqué à 75€ car elle ne pouvait pas justifier des tarifs plus élevés avec sa vitesse de livraison actuelle.
-
-Notre solution
-Nous avons implémenté un flux de travail IA complet avec Claude-code pour la génération de code contextuelle, CrewAI pour orchestrer des agents spécialisés (documentation, tests, revue), et MCP pour intégrer tous les outils. Configuration spécifique : GitHub Actions pour déploiement automatique, Claude pour architecture, et scripts personnalisés connectant Jira à GitHub pour tracking automatique.
-
-"Je pensais devoir embaucher des employés pour faire évoluer mon entreprise. Au lieu de ça, je me suis mise à l'échelle moi-même. Les flux de travail IA gèrent tout le travail répétitif, donc je peux me concentrer sur la résolution créative de problèmes pour laquelle les clients paient vraiment des tarifs premium."
-SC
-— Sarah Chen
-Résultats mesurables
-2 → 6
-Projets clients simultanés
-Triplement de la capacité sans embauche
-
-60 → 35h
-Heures de travail hebdomadaires
-Réduction de 42% du temps de travail
-
-75€ → 150€
-Taux horaire
-Doublement des revenus par heure
-
-# Pour ce message: 
-À venir...
-
-# 4
-## Message à changer: 
-Équipe de développement 4 personnes chez une startup SaaS
-Défi : Vélocité de sprint incohérente et intégration développeur de 3 semaines
-
-Situation initiale
-L'équipe de développement de TechFlow luttait avec des délais de livraison imprévisibles. Les nouveaux développeurs prenaient 3 semaines pour devenir productifs, la vélocité de sprint variait énormément, et le CTO passait plus de temps à gérer les problèmes de flux de travail qu'à la planification stratégique. Avec un financement Série A à l'horizon, ils avaient besoin de processus de développement prévisibles et évolutifs.
-
-Notre solution
-Nous avons repensé entièrement leur flux de travail avec un système orchestré Claude-code + CrewAI. Configuration spécifique : agents CrewAI pour revue de code automatique, pipelines de test avec Claude-code, et processus d'onboarding via MCP connectant Confluence + GitHub. Nouveaux développeurs reçoivent maintenant des explications de codebase générées par Claude et des conseils contextuels via des agents spécialisés.
-
-"Notre équipe de 4 personnes livre maintenant des fonctionnalités plus vite que notre ancienne équipe de 8 personnes. Les flux de travail IA ne nous rendent pas seulement plus rapides – ils nous rendent plus prévisibles, ce qui est crucial pour la confiance des investisseurs et le moral de l'équipe."
-MRCcT
-— Marcus Rodriguez, CTO chez TechFlow
-Résultats mesurables
-3 semaines → 3 jours
-Temps d'intégration développeur
-Réduction de 85% du temps d'intégration
-
-200%
-Augmentation vélocité sprint
-Livraison cohérente et prévisible
-
-45%
-Amélioration qualité code
-Scores de qualité significativement améliorés
-
-95%
-Précision engagement sprint
-Prédictibilité quasi-parfaite
-
-Résultat additionnel :
-Réduction de 60% de la dette technique grâce à la refactorisation automatisée et amélioration significative de la confiance de l'équipe.
-
-Obtenir des résultats similaires
-
-# Pour ce message: 
-À venir...
-
-# 5
-## Message à changer: 
-
-startup
-"L'implémentation IA a transformé notre processus de développement. Nous livrons maintenant des fonctionnalités en jours au lieu de semaines, et nos développeurs sont plus heureux car ils travaillent sur des problèmes intéressants au lieu de tâches répétitives."
-5x plus rapide
-90% moins répétitif
-Satisfaction équipe +60%
-AK
-Alex Kumar
-Lead Developer • InnovateTech
-Solo Dev
-"Avant, je passais 70% de mon temps sur de la documentation et des tests de routine. Maintenant, c'est automatisé et je peux me concentrer sur l'architecture et les fonctionnalités complexes. Mes clients obtiennent une bien meilleure valeur."
-70% temps économisé
-Qualité +40%
-Clients plus satisfaits
-MD
-Marie Dubois
-Développeuse Freelance • MD Development
-agency
-"La transformation de notre agence a été remarquable. Nous gérons maintenant 40% plus de projets avec la même équipe, nos marges se sont améliorées de 35%, et nous avons une liste d'attente de 6 mois. L'IA est notre avantage concurrentiel."
-40% plus projets
-35% marges
-6 mois d'attente
-TW
-Thomas Weber
-Directeur Technique • CodeCraft Solutions
-Satisfaction client exceptionnelle
-95%
-Taux de rétention
-4.9/5
-Note moyenne
-50+
-Équipes satisfaites
-100% des clients recommandent nos services
-Résultats mesurables garantis
-
-# Pour ce message: 
-À enlever

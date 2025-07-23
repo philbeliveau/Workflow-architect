@@ -141,7 +141,8 @@ const TechnicalStack: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Header */}
+        {/* Header - Hidden */}
+        <div style={{ display: 'none' }}>
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -157,8 +158,10 @@ const TechnicalStack: React.FC = () => {
             <span className="text-accent-blue font-semibold"> Pas d'outils isolés, mais un écosystème intégré.</span>
           </p>
         </motion.div>
+        </div>
 
-        {/* Stack Categories */}
+        {/* Hide this section for now but keep in code */}
+        <div style={{ display: 'none' }}>
         <motion.div
           className="space-y-16"
           variants={containerVariants}
@@ -231,8 +234,10 @@ const TechnicalStack: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+        </div>
 
-        {/* Bottom Technical Info */}
+        {/* Bottom Technical Info - Hidden */}
+        <div style={{ display: 'none' }}>
         <motion.div
           className="mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -268,6 +273,7 @@ const TechnicalStack: React.FC = () => {
             </div>
           </div>
         </motion.div>
+        </div>
       </div>
     </section>
   );

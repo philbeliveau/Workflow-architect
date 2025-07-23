@@ -7,18 +7,6 @@ import { AlertCircle, Clock, Zap, Brain, Target, Workflow } from 'lucide-react';
 const ProblemStatement: React.FC = () => {
   const problems = [
     {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Développeurs : 4h+ perdues par jour",
-      description: "Onboarding de 3 semaines, revues manuelles interminables, documentation obsolète. Vos développeurs passent plus de temps sur le répétitif que sur l'innovation.",
-      stat: "4h/jour"
-    },
-    {
-      icon: <AlertCircle className="w-8 h-8" />,
-      title: "Dirigeants : \"Peut-être en Q3\"",
-      description: "Un simple tableau de bord client prend des mois. L'équipe IT est débordée, vous faites tout manuellement, et les opportunités passent.",
-      stat: "3-6 mois"
-    },
-    {
       icon: <Brain className="w-8 h-8" />,
       title: "\"Vibe coding\" décevant",
       description: "Taux de succès réel <20% pour du code production. Prompts flous, pas de méthode, aucune vérification. L'IA vous fait perdre du temps au lieu d'en gagner.",
@@ -32,14 +20,8 @@ const ProblemStatement: React.FC = () => {
     },
     {
       icon: <Workflow className="w-8 h-8" />,
-      title: "Brouillard technologique",
-      description: "CrewAI, MCP, Claude-code... Trop d'outils, trop vite. Vous testez sans cadre, sans structure, sans méthode. Résultats inconstants.",
-      stat: "∞ outils"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Complexité d'implémentation",
-      description: "Vous voulez les bénéfices de l'IA, mais pas passer 6 mois à tout apprendre. Comment l'intégrer sans casser l'existant ?",
+      title: "Brouillard technologique et complexité d'implémentation",
+      description: "CrewAI, MCP, Claude-code... Trop d'outils, trop vite. Vous testez sans cadre, sans structure, sans méthode. Vous voulez les bénéfices de l'IA, mais pas passer 6 mois à tout apprendre. Comment l'intégrer sans casser l'existant ?",
       stat: "6 mois"
     }
   ];
@@ -103,13 +85,12 @@ const ProblemStatement: React.FC = () => {
             Le paradoxe de l'IA en développement
           </h2>
           <p className="text-xl text-text-secondary max-w-5xl mx-auto leading-relaxed mb-4">
-            Que vous soyez développeur ou dirigeant, vous perdez du temps sur des tâches que l'IA pourrait gérer.
             <span className="text-accent-purple font-semibold"> Mais les outils d'IA promettent des gains majeurs... et leur adoption reste décevante.</span>
           </p>
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-full px-6 py-3">
             <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
             <span className="text-text-secondary text-sm font-medium">
-              Il est temps de sortir du "vibe coding" pour maîtriser l'"agentic coding"
+              Sortir du "vibe coding" pour maîtriser le context engineering
             </span>
           </div>
         </motion.div>
@@ -169,19 +150,6 @@ const ProblemStatement: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-h3 font-bold text-text-primary mb-4">
-              Nous vous sortons de cette spirale
-            </h3>
-            <p className="text-text-secondary mb-6 leading-relaxed">
-              Que vous soyez développeur frustré par le "vibe coding" ou dirigeant en attente depuis des mois, 
-              nous donnons à chacun les bons outils IA pour son niveau.
-            </p>
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-full px-6 py-3">
-              <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
-              <span className="text-text-secondary text-sm font-medium">
-                Méthode éprouvée • Résultats mesurables • Pas de promesses vides
-              </span>
-            </div>
           </div>
         </motion.div>
       </div>

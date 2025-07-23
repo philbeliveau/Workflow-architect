@@ -33,7 +33,7 @@ const AboutSection: React.FC = () => {
     {
       icon: <Award className="w-5 h-5" />,
       title: "Expert en IA",
-      description: "Plus de 10 ans d'expérience en développement IA"
+      description: "5 ans d'expérience en développement IA"
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
@@ -111,7 +111,7 @@ const AboutSection: React.FC = () => {
             
             <div className="text-text-secondary leading-relaxed space-y-4">
               <p>
-                Avec plus d'une décennie d'expérience dans le développement logiciel et 
+                Avec 5 ans d'expérience dans le développement logiciel et 
                 l'intelligence artificielle, Philippe a accompagné des dizaines d'entreprises 
                 dans leur transformation numérique.
               </p>
@@ -121,8 +121,7 @@ const AboutSection: React.FC = () => {
                 qui génèrent de la valeur dès le premier jour.
               </p>
               <p>
-                Ancien directeur technique dans plusieurs scale-ups, Philippe combine expertise 
-                technique poussée et vision business pour des résultats mesurables.
+                Expert technique avec une vision business pour des résultats mesurables.
               </p>
             </div>
           </motion.div>

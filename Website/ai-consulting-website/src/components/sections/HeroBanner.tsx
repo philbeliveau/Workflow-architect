@@ -69,7 +69,7 @@ const HeroBanner: React.FC = () => {
             <span className="text-accent-purple font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
           </p>
           <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
-            Finies les prompts "vibe" • Place aux workflows "agentic" • Pour les développeurs, les gestionnaires, les dirigeants, nous vous donnons les outils IA pour construire ce dont vous avez besoin.
+            Formation qui aide à passer du "vibe coding" à une approche plus structurée, en orchestrant des agents IA pour automatiser et fiabiliser le développement.
           </div>
         </motion.div>
 
@@ -94,7 +94,7 @@ const HeroBanner: React.FC = () => {
             size="lg" 
             href="/book-demo"
           >
-            Évaluation Gratuite
+            Prêt à vous formez?
           </Button>
         </motion.div>
 
@@ -106,22 +106,8 @@ const HeroBanner: React.FC = () => {
           className="mt-16 text-center"
         >
           <p className="text-sm text-text-muted mb-4">
-            Nous améliorons, nous n'remplaçons pas • Nous intégrons, nous ne perturbons pas
+            L'objectif est de réduire drastiquement le temps passé à débugger, tout en rendant possible la création de systèmes bien plus complexes.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 text-xs text-text-muted">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
-              Développeurs : Orchestration IA avancée
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
-              Dirigeants : Solutions métier immédiates
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-accent-gray rounded-full animate-pulse"></div>
-              Mesuré, pas promis
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>

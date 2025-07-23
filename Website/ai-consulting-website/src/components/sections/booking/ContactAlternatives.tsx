@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle, Clock, MapPin, Calendar } from 'lucide-react';
-import Link from 'next/link';
 
 const ContactAlternatives: React.FC = () => {
   const contactMethods = [

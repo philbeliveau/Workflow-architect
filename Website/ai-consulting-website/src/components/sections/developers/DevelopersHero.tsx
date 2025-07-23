@@ -63,21 +63,6 @@ const DevelopersHero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Attention-Grabbing Paradox Section */}
-              <div className="bg-warning-orange/10 border border-warning-orange/20 rounded-2xl p-6 mb-8">
-                <div className="inline-flex items-center gap-2 bg-warning-orange/10 border border-warning-orange/20 rounded-full px-4 py-2 mb-4">
-                  <Terminal className="w-4 h-4 text-warning-orange" />
-                  <span className="text-warning-orange text-sm font-medium">Le Paradoxe du Développement IA</span>
-                </div>
-                <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-text-primary">
-                  Pourquoi Moins de <span className="text-warning-orange">20%</span> des Développeurs
-                  <span className="block">Réussissent avec l'IA en Production</span>
-                </h2>
-                <p className="text-text-secondary mb-4 leading-relaxed">
-                  La plupart sont coincés dans le <strong>"vibe coding"</strong> - prompts flous, contexte mal défini, aucune vérification.
-                  <span className="block mt-2 text-accent-blue font-semibold">Il existe une meilleure approche : l'"agentic coding"</span>
-                </p>
-              </div>
 
               <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-4 py-2 mb-6">
                 <Terminal className="w-4 h-4 text-accent-blue" />
@@ -85,8 +70,8 @@ const DevelopersHero: React.FC = () => {
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                Transformez Votre <span className="text-warning-orange">"Vibe Coding"</span>
-                <span className="block text-accent-blue">en "Agentic Coding"</span>
+                Transformez Votre <span className="text-text-primary">"Vibe Coding"</span>
+                <span className="block text-accent-blue">en "Programmation Agentique"</span>
               </h1>
             </motion.div>
 
@@ -96,8 +81,7 @@ const DevelopersHero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-                Nous installons des systèmes d'agents multi-tâches avec <strong>Claude-4</strong>, <strong>CrewAI</strong>, et <strong>MCP</strong>. 
-                Orchestration hierarchique, memory persistante, dashboards d'observabilité.
+                Nous vous formons à utiliser des systèmes d'orchestrations d'agents, qui clarifie, code, rafine, debug, test, optimize continuellement pour s'assurer que le code générer est aligné avec ce que vous cherchez.
                 <span className="text-success-green font-semibold block mt-2">
                   Résultats mesurés : 3x plus rapide, 90% moins de bugs, onboarding 2 semaines → 2 heures.
                 </span>
@@ -110,8 +94,8 @@ const DevelopersHero: React.FC = () => {
                     Stack IA Avancé
                   </h3>
                   <ul className="text-text-secondary text-sm space-y-1">
-                    <li>• Claude-4 + fine-tuning custom</li>
-                    <li>• CrewAI + LangChain orchestration</li>
+                    <li>• Claude-code + wrapper multi-agents</li>
+                    <li>• Roocode + modes custom</li>
                     <li>• MCPs pour intégrations natives</li>
                   </ul>
                 </div>
@@ -186,23 +170,6 @@ doc_generator = Agent(
     tools=[RepoAnalyzer(), DocumentationTemplate()],
     memory=PersistentMemory("documentation_context")
 )
-
-# Orchestration avec hiérarchie et délégation
-crew = Crew(
-    agents=[code_reviewer, doc_generator],
-    tasks=[review_task, documentation_task],
-    process=Process.hierarchical,
-    manager_llm=Claude4(),
-    verbose=True,
-    memory=True
-)
-
-# Exécution avec observabilité complète
-result = crew.kickoff(inputs={
-    "repository": repo_context,
-    "pr_diff": pull_request.changes,
-    "coding_standards": team_standards
-})
 
 # Métriques automatiques
 tracker.log_performance(crew.get_metrics())`}
