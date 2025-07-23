@@ -8,79 +8,74 @@ const BusinessBenefits: React.FC = () => {
   const valueChainSteps = [
     {
       step: "Recherche",
-      icon: <Search className="w-8 h-8" />,
-      color: "accent-blue",
+      icon: <Search className="w-10 h-10" />,
+      color: "purple-400",
       description: "Intelligence web avec MCP",
       details: [
-        "Recherche automatisée type Perplexity",
-        "Analyse de marché en temps réel",
-        "Veille concurrentielle intelligente",
-        "Sources fiables et contextualisées"
+        "Recherche automatisée",
+        "Analyse de marché",
+        "Veille concurrentielle"
       ]
     },
     {
       step: "Product Owner",
-      icon: <Users className="w-8 h-8" />,
-      color: "accent-purple", 
+      icon: <Users className="w-10 h-10" />,
+      color: "purple-500", 
       description: "Organisation et alignement",
       details: [
-        "Agents organisent le travail automatiquement",
-        "Alignement objectifs business <→ technique",
-        "Priorisation intelligente des features",
-        "Roadmap dynamique et adaptative"
+        "Organisation automatique",
+        "Alignement business ↔ technique",
+
       ]
     },
     {
       step: "Développeur",
-      icon: <Code className="w-8 h-8" />,
-      color: "accent-teal",
+      icon: <Code className="w-10 h-10" />,
+      color: "purple-600",
       description: "Plan et estimation",
       details: [
-        "Architecture technique optimale",
-        "Estimations précises basées sur l'historique",
-        "Stack technologique recommandée",
-        "Risques identifiés et mitigation"
+        "Architecture optimale",
+        "Estimations précises",
+        "Stack recommandée"
       ]
     },
     {
       step: "Aligneur",
-      icon: <CheckCircle className="w-8 h-8" />,
-      color: "success-green",
+      icon: <CheckCircle className="w-10 h-10" />,
+      color: "purple-700",
       description: "Code et debug autonome",
       details: [
-        "Développement avec validation continue",
-        "Debug automatique et résolution d'erreurs",
-        "Tests unitaires et d'intégration",
-        "Code review par agents spécialisés"
+        "Validation continue",
+        "Debug automatique",
+        "Tests complets"
       ]
     },
     {
       step: "Livreur",
-      icon: <Rocket className="w-8 h-8" />,
-      color: "warning-orange",
+      icon: <Rocket className="w-10 h-10" />,
+      color: "purple-800",
       description: "Preuve de concept convaincante",
       details: [
-        "Déploiement automatisé sécurisé",
-        "Documentation technique complète",
-        "Formation utilisateur intégrée",
-        "Monitoring et maintenance proactive"
+        "Déploiement sécurisé",
+        "Documentation complète",
+        "Monitoring proactif"
       ]
     }
   ];
 
   const superPower = {
-    title: "Le Super Pouvoir du Business Analyst",
-    description: "Toute la chaîne de valeur accessible depuis votre terminal",
+    title: "Le levier du Business Analyst",
+    description: "Toute la chaîne de valeur est désormais accessible depuis son terminal. Recherche, conception, livraison — sans goulot d’étranglement.",
     benefits: [
       {
         icon: <Brain className="w-6 h-6" />,
-        title: "Intelligence Augmentée",
+        title: "Intelligence opérationnelle",
         description: "De l'idée à l'implémentation sans friction technique"
       },
       {
         icon: <Globe className="w-6 h-6" />,
-        title: "Autonomie Complète", 
-        description: "Plus besoin d'attendre les équipes techniques"
+        title: "Autonomie stratégique", 
+        description: "Plus besoin d'attendre les équipes techniques pour livrer une preuve de concept"
       },
       {
         icon: <Database className="w-6 h-6" />,
@@ -102,13 +97,10 @@ const BusinessBenefits: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Bénéfices Business
+            Transformer votre effectif
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Toute la chaîne de valeur, du chercheur au livreur, se situe maintenant dans votre terminal.
-            <span className="text-accent-purple font-semibold block mt-2">
-              Le business analyst possède maintenant un super pouvoir.
-            </span>
           </p>
         </motion.div>
 
@@ -161,48 +153,43 @@ const BusinessBenefits: React.FC = () => {
           transition={{ duration: 1, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold text-text-primary text-center mb-12">
-            🔄 Flow Diagram de la Chaîne de Valeur Complète
-          </h3>
-
           {/* Desktop Flow - Horizontal */}
           <div className="hidden lg:block relative">
             {/* Connection Lines */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-blue via-accent-purple via-accent-teal via-success-green to-warning-orange opacity-30 transform -translate-y-1/2"></div>
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 via-purple-500 via-purple-600 via-purple-700 to-purple-800 opacity-40 transform -translate-y-1/2"></div>
             
             <div className="flex items-center justify-between gap-4">
               {valueChainSteps.map((step, index) => (
                 <React.Fragment key={step.step}>
                   <motion.div
-                    className="group relative flex-1 max-w-xs"
+                    className="group relative w-72"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.2 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.02 }}
                   >
-                    <div className={`bg-gradient-to-br from-${step.color}/10 to-${step.color}/5 border-2 border-${step.color}/30 rounded-2xl p-6 h-80 flex flex-col justify-between hover:border-${step.color}/60 transition-all duration-300 relative z-10`}>
+                    <div className={`bg-gradient-to-br from-${step.color}/10 to-${step.color}/5 border-2 border-${step.color}/30 rounded-2xl p-10 h-[32rem] min-h-[32rem] flex flex-col justify-between hover:border-${step.color}/60 transition-all duration-300 relative z-10 shadow-lg hover:shadow-xl`}>
                       {/* Step Header */}
                       <div className="text-center mb-4">
-                        <div className={`w-16 h-16 bg-gradient-to-r from-${step.color}/20 to-${step.color}/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-${step.color}/30 group-hover:to-${step.color}/50 transition-all duration-300`}>
+                        <div className={`w-20 h-20 bg-gradient-to-r from-${step.color}/20 to-${step.color}/40 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:from-${step.color}/30 group-hover:to-${step.color}/50 transition-all duration-300`}>
                           <div className={`text-${step.color}`}>
                             {step.icon}
                           </div>
                         </div>
-                        <h4 className={`text-lg font-bold text-${step.color} mb-2`}>
+                        <h4 className={`text-2xl font-bold text-${step.color} mb-4`}>
                           {step.step}
                         </h4>
-                        <p className="text-text-secondary text-sm">
+                        <p className="text-gray-300 text-lg font-medium">
                           {step.description}
                         </p>
                       </div>
 
                       {/* Details */}
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         {step.details.map((detail, dIndex) => (
-                          <div key={dIndex} className="flex items-start gap-2">
-                            <div className={`w-1.5 h-1.5 bg-${step.color} rounded-full mt-2 flex-shrink-0`}></div>
-                            <span className="text-text-secondary text-xs leading-relaxed">
+                          <div key={dIndex}>
+                            <span className="text-gray-400 text-base leading-relaxed">
                               {detail}
                             </span>
                           </div>
@@ -210,8 +197,8 @@ const BusinessBenefits: React.FC = () => {
                       </div>
 
                       {/* Step Number */}
-                      <div className="absolute -top-3 -left-3 w-8 h-8 bg-primary-900 border-2 border-accent-blue rounded-full flex items-center justify-center">
-                        <span className="text-accent-blue font-bold text-sm">{index + 1}</span>
+                      <div className={`absolute -top-5 -left-5 w-12 h-12 bg-gray-900 border-3 border-${step.color} rounded-full flex items-center justify-center shadow-lg`}>
+                        <span className={`text-${step.color} font-bold text-lg`}>{index + 1}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -225,7 +212,7 @@ const BusinessBenefits: React.FC = () => {
                       transition={{ delay: (index * 0.2) + 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <ArrowRight className="w-6 h-6 text-accent-blue animate-pulse" />
+                      <ArrowRight className="w-6 h-6 text-purple-500 animate-pulse" />
                     </motion.div>
                   )}
                 </React.Fragment>
@@ -244,28 +231,27 @@ const BusinessBenefits: React.FC = () => {
                 transition={{ delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className={`bg-gradient-to-br from-${step.color}/10 to-${step.color}/5 border-2 border-${step.color}/30 rounded-2xl p-6`}>
+                <div className={`bg-gradient-to-br from-${step.color}/10 to-${step.color}/5 border-2 border-${step.color}/30 rounded-2xl p-8`}>
                   <div className="flex items-start gap-4 mb-4">
-                    <div className={`w-12 h-12 bg-gradient-to-r from-${step.color}/20 to-${step.color}/40 rounded-full flex items-center justify-center flex-shrink-0`}>
+                    <div className={`w-16 h-16 bg-gradient-to-r from-${step.color}/20 to-${step.color}/40 rounded-full flex items-center justify-center flex-shrink-0`}>
                       <div className={`text-${step.color}`}>
                         {step.icon}
                       </div>
                     </div>
                     <div>
-                      <h4 className={`text-lg font-bold text-${step.color} mb-1`}>
+                      <h4 className={`text-2xl font-bold text-${step.color} mb-2`}>
                         {index + 1}. {step.step}
                       </h4>
-                      <p className="text-text-secondary text-sm">
+                      <p className="text-gray-300 text-lg font-medium">
                         {step.description}
                       </p>
                     </div>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {step.details.map((detail, dIndex) => (
-                      <div key={dIndex} className="flex items-start gap-2">
-                        <div className={`w-1.5 h-1.5 bg-${step.color} rounded-full mt-2 flex-shrink-0`}></div>
-                        <span className="text-text-secondary text-xs leading-relaxed">
+                      <div key={dIndex}>
+                        <span className="text-gray-400 text-base leading-relaxed">
                           {detail}
                         </span>
                       </div>
@@ -276,7 +262,7 @@ const BusinessBenefits: React.FC = () => {
                 {/* Vertical Arrow */}
                 {index < valueChainSteps.length - 1 && (
                   <div className="flex justify-center py-4">
-                    <ArrowRight className="w-6 h-6 text-accent-blue rotate-90" />
+                    <ArrowRight className="w-6 h-6 text-purple-500 rotate-90" />
                   </div>
                 )}
               </motion.div>
@@ -284,41 +270,6 @@ const BusinessBenefits: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Key Benefits Summary */}
-        <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          {[
-            {
-              title: "🚀 Rapidité Exécution",
-              description: "De l'idée au prototype en 3 jours au lieu de trimestres d'attente",
-              color: "success-green"
-            },
-            {
-              title: "🎯 Autonomie Totale",
-              description: "Plus de dépendance aux équipes techniques pour vos besoins métier",
-              color: "accent-purple"
-            },
-            {
-              title: "💡 Innovation Continue",
-              description: "Testez et itérez rapidement vos idées avec feedback immédiat",
-              color: "accent-blue"
-            }
-          ].map((benefit, index) => (
-            <div key={index} className={`bg-primary-900/50 border border-${benefit.color}/30 rounded-2xl p-6 text-center hover:border-${benefit.color}/60 transition-all duration-300`}>
-              <h4 className={`text-${benefit.color} font-bold mb-3`}>
-                {benefit.title}
-              </h4>
-              <p className="text-text-secondary text-sm leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
