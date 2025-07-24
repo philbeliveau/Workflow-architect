@@ -24,7 +24,7 @@ export default function LegalPage() {
               <div className="leading-relaxed">
                 <p><strong>contexteDev</strong></p>
                 <p>Représenté par Philippe Béliveau</p>
-                <p>Email : <a href="mailto:contact@contextedev.com" className="text-accent-purple hover:underline">contact@contextedev.com</a></p>
+                <p>Email : <a href="mailto:philbeliv@gmail.com" className="text-accent-purple hover:underline">philbeliv@gmail.com</a></p>
               </div>
             </section>
 
@@ -55,8 +55,8 @@ export default function LegalPage() {
               </h2>
               <p className="leading-relaxed">
                 Pour toute question concernant ces mentions légales : 
-                <a href="mailto:contact@contextedev.com" className="text-accent-purple hover:underline ml-1">
-                  contact@contextedev.com
+                <a href="mailto:philbeliv@gmail.com" className="text-accent-purple hover:underline ml-1">
+                  philbeliv@gmail.com
                 </a>
               </p>
             </section>

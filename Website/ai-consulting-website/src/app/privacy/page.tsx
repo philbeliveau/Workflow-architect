@@ -53,7 +53,7 @@ export default function PrivacyPage() {
               </h2>
               <p className="leading-relaxed">
                 Pour toute question concernant cette politique de confidentialité, 
-                contactez-nous à : <a href="mailto:contact@contextedev.com" className="text-accent-purple hover:underline">contact@contextedev.com</a>
+                contactez-nous à : <a href="mailto:philbeliv@gmail.com" className="text-accent-purple hover:underline">philbeliv@gmail.com</a>
               </p>
             </section>
           </div>

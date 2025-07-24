@@ -10,15 +10,15 @@ const ContactAlternatives: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email direct",
-      value: "contact@contextedev.com",
+      value: "philbeliv@gmail.com",
       description: "Réponse sous 4 heures en jours ouvrables",
-      action: "mailto:contact@contextedev.com",
+      action: "mailto:philbeliv@gmail.com",
       color: "accent-purple"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
-      value: "+33 1 23 45 67 89",
+      value: "+1 514-773-4780",
       description: "Lundi-Vendredi, 9h-18h (heure de Paris)",
       action: "tel:+33123456789",
       color: "accent-purple"
@@ -146,7 +146,7 @@ const ContactAlternatives: React.FC = () => {
           </Link>
           <br />
           <a
-            href="mailto:contact@contextedev.com"
+            href="mailto:philbeliv@gmail.com"
             className="inline-block text-accent-purple hover:text-accent-purple-light transition-colors duration-200 text-sm font-medium"
           >
             Poser une question par email →

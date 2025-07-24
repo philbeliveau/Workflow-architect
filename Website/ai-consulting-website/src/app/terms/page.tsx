@@ -42,8 +42,8 @@ export default function TermsPage() {
               </h2>
               <p className="leading-relaxed">
                 Pour toute question, contactez-nous à : 
-                <a href="mailto:contact@contextedev.com" className="text-accent-purple hover:underline ml-1">
-                  contact@contextedev.com
+                <a href="mailto:philbeliv@gmail.com" className="text-accent-purple hover:underline ml-1">
+                  philbeliv@gmail.com
                 </a>
               </p>
             </section>

@@ -52,60 +52,62 @@ const HeroBanner: React.FC = memo(() => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-42">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <h1 
-            className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent"
+            className="text-hero font-bold mb-8 bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent"
             role="banner"
             aria-label="Titre principal: Passez du vibe coding à une méthode structurée"
           >
             Passez du "vibe coding" à une méthode structurée.
           </h1>
+          <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
+            Orchestrez des agents IA pour automatiser, fiabiliser et accélérer le développement logiciel.
+          </p>
+          <div className="text-lg text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
+            Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour sortir du flou, et adopter une approche claire, organisée et puissante grâce à la programmation agentique.
+          </div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Orchestrez des agents IA pour automatiser, fiabiliser et accélérer le développement logiciel.
-          </p>
-          <div className="text-base text-text-muted max-w-3xl mx-auto mb-8">
-            Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour sortir du flou, et adopter une approche claire, organisée et puissante grâce à la programmation agentique.
-          </div>
-          
-          <div className="bg-primary-800/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto mb-12 border border-primary-700">
-            <div className="text-left">
-              <p className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
-                💼 Laissez vos agents IA travailler à votre place, pendant des heures, avec :
-              </p>
-              <ul className="space-y-3 text-text-secondary">
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-purple font-bold">•</span>
-                  Gestion automatique des erreurs et des exceptions
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-purple font-bold">•</span>
-                  Structuration des tests et des fonctionnalités dès le départ
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-purple font-bold">•</span>
-                  Meilleure compréhension du contexte global de votre projet
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-purple font-bold">•</span>
-                  Connexion fluide à tous vos outils via des MCP intelligents
-                </li>
-              </ul>
-              <p className="text-accent-purple font-semibold text-lg mt-6">
-                → Vous bénéficiez maintenant des capacités d'une équipe complète.<br/>
-                C'est maintenant une réalité, et vous pouvez y accéder !
-              </p>
+          <div className="bg-primary-800/30 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-primary-700/50">
+            <div className="text-center">
+              <h2 className="text-xl font-bold text-text-primary mb-8">
+                Laissez vos agents IA travailler à votre place, pendant des heures, avec :
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6 text-left mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-text-secondary">Gestion automatique des erreurs et des exceptions</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-text-secondary">Structuration des tests et des fonctionnalités dès le départ</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-text-secondary">Meilleure compréhension du contexte global de votre projet</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-text-secondary">Connexion fluide à tous vos outils via des MCP intelligents</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-accent-purple font-semibold text-xl leading-relaxed">
+                  → Vous bénéficiez maintenant des capacités d'une équipe complète.
+                </p>
+                <p className="text-accent-purple font-semibold text-xl">
+                  C'est maintenant une réalité, et vous pouvez y accéder !
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
