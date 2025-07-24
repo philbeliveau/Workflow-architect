@@ -8,19 +8,19 @@ import { ArrowRight, Terminal, GitBranch, Cpu, Database } from 'lucide-react';
 
 const DevelopersHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-900 pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-dark pt-20">
       {/* Technical Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-accent-blue rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-purple rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-primary-blue/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-red/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         {/* Code pattern overlay */}
         <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 gap-4 h-full p-8">
             {Array.from({ length: 144 }, (_, i) => (
-              <div key={i} className="bg-text-secondary h-1 rounded animate-pulse" style={{
+              <div key={i} className="bg-primary-blue/20 h-1 rounded animate-pulse" style={{
                 animationDelay: `${i * 0.1}s`,
                 animationDuration: '3s'
               }}></div>
@@ -32,21 +32,21 @@ const DevelopersHero: React.FC = () => {
       {/* Floating technical elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 text-accent-blue"
+          className="absolute top-1/4 left-1/4 text-primary-blue/60"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
           <Terminal size={48} />
         </motion.div>
         <motion.div
-          className="absolute top-3/4 right-1/4 text-accent-purple"
+          className="absolute top-3/4 right-1/4 text-accent-red/60"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
           <GitBranch size={56} />
         </motion.div>
         <motion.div
-          className="absolute top-1/2 left-1/6 text-accent-teal"
+          className="absolute top-1/2 left-1/6 text-hover-interactive/60"
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         >
@@ -64,9 +64,9 @@ const DevelopersHero: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
 
-              <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-4 py-2 mb-6">
-                <Terminal className="w-4 h-4 text-accent-blue" />
-                <span className="text-accent-blue text-sm font-medium">De ChatGPT aux Systèmes Orchestrés</span>
+              <div className="inline-flex items-center gap-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full px-4 py-2 mb-6">
+                <Terminal className="w-4 h-4 text-primary-blue" />
+                <span className="text-primary-blue text-sm font-medium">De ChatGPT aux Systèmes Orchestrés</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">

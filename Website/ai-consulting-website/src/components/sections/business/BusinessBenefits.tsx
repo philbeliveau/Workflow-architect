@@ -9,7 +9,7 @@ const BusinessBenefits: React.FC = () => {
     {
       step: "Recherche",
       icon: <Search className="w-10 h-10" />,
-      color: "purple-400",
+      color: "primary-blue",
       description: "Intelligence web avec MCP",
       details: [
         "Recherche automatisée",
@@ -86,7 +86,7 @@ const BusinessBenefits: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-primary-800">
+    <section className="py-24 bg-background-dark-alt">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -112,7 +112,7 @@ const BusinessBenefits: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-accent-purple/10 to-accent-blue/10 border border-accent-purple/20 rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-accent-red/10 to-primary-blue/10 border border-accent-red/20 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-accent-purple mb-4">
               ⚡ {superPower.title}
             </h3>

@@ -30,23 +30,24 @@ const Navigation: React.FC = memo(() => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  // Navigation items based on current page
+  // Always use the same navigation items for consistency
   const getNavItems = () => {
     if (pathname === '/') {
       return [
-        { name: 'Accueil', href: '#accueil' },
-        { name: 'Parcours', href: '#parcours' },
-        { name: 'Problème', href: '#probleme' },
-        { name: 'Solution', href: '#solution' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'Accueil', href: '#accueil', isActive: true },
+        { name: 'Parcours', href: '#parcours', isActive: false },
+        { name: 'Problème', href: '#probleme', isActive: false },
+        { name: 'Solution', href: '#solution', isActive: false },
+        { name: 'Contact', href: '#contact', isActive: false }
       ];
     } else {
+      // For specialized pages, show main sections but link back to home page sections
       return [
-        { name: 'Accueil', href: '/' },
-        { name: 'Développeurs', href: '/developers' },
-        { name: 'Business', href: '/business' },
-        { name: 'Services', href: '/services' },
-        { name: 'Contact', href: '/#contact' }
+        { name: 'Accueil', href: '/#accueil', isActive: false },
+        { name: 'Parcours', href: '/#parcours', isActive: pathname === '/developers' || pathname === '/business' },
+        { name: 'Problème', href: '/#probleme', isActive: false },
+        { name: 'Solution', href: '/#solution', isActive: false },
+        { name: 'Contact', href: '/#contact', isActive: false }
       ];
     }
   };
@@ -99,9 +100,11 @@ const Navigation: React.FC = memo(() => {
                 <Component key={item.name} {...linkProps}>
                   <motion.div
                     className={`transition-colors duration-200 relative group cursor-pointer ${
-                      isScrolled 
-                        ? 'text-text-light hover:text-primary-blue' 
-                        : 'text-text-secondary hover:text-text-light'
+                      item.isActive 
+                        ? 'text-primary-blue' 
+                        : isScrolled 
+                          ? 'text-text-light hover:text-primary-blue' 
+                          : 'text-text-secondary hover:text-text-light'
                     }`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -109,7 +112,9 @@ const Navigation: React.FC = memo(() => {
                   >
                     {item.name}
                     <motion.div
-                      className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-red group-hover:w-full transition-all duration-300"
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-accent-red transition-all duration-300 ${
+                        item.isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`}
                       whileHover={{ width: "100%" }}
                     />
                   </motion.div>
@@ -161,7 +166,11 @@ const Navigation: React.FC = memo(() => {
                   return (
                     <Component key={item.name} {...linkProps}>
                       <motion.div
-                        className="block text-text-light hover:text-primary-blue transition-colors duration-200 py-2 cursor-pointer"
+                        className={`block transition-colors duration-200 py-2 cursor-pointer ${
+                          item.isActive 
+                            ? 'text-primary-blue font-semibold' 
+                            : 'text-text-light hover:text-primary-blue'
+                        }`}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
