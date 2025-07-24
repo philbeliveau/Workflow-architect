@@ -79,32 +79,32 @@ const HeroBanner: React.FC = memo(() => {
         >
           <div className="bg-accent-panels/90 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-cta-highlight/30">
             <div className="text-center">
-              <h2 className="text-xl font-bold text-primary-dark mb-8">
+              <h2 className="text-xl font-bold text-white mb-8">
                 Laissez vos agents IA travailler à votre place, pendant des heures, avec :
               </h2>
               <div className="grid md:grid-cols-2 gap-6 text-left mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-primary-dark">Gestion automatique des erreurs et des exceptions</p>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-white">Gestion automatique des erreurs et des exceptions</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-primary-dark">Structuration des tests et des fonctionnalités dès le départ</p>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-white">Structuration des tests et des fonctionnalités dès le départ</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-primary-dark">Meilleure compréhension du contexte global de votre projet</p>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-white">Meilleure compréhension du contexte global de votre projet</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-primary-dark">Connexion fluide à tous vos outils via des MCP intelligents</p>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-white">Connexion fluide à tous vos outils via des MCP intelligents</p>
                 </div>
               </div>
               <div className="text-center">
-                <p className="text-primary-dark font-semibold text-xl leading-relaxed">
+                <p className="text-white font-semibold text-xl leading-relaxed">
                   → Vous bénéficiez maintenant des capacités d'une équipe complète.
                 </p>
-                <p className="text-primary-dark font-semibold text-xl">
+                <p className="text-white font-semibold text-xl">
                   C'est maintenant une réalité, et vous pouvez y accéder !
                 </p>
               </div>

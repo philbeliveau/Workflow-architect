@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* NEWCODE Brand Colors - DARK FIRST UI (Reversed) */
-  --primary-dark: #1c1c1c;          /* Deep Graphite - Full-page background */
-  --background-base: #1c1c1c;       /* Deep Graphite - Main background (REVERSED) */
-  --dark-accent: #2f2f2f;           /* Charcoal Gray - Navigation, cards, footer */
-  --text-light: #f7f5f3;            /* Paper White - Main readable content text */
-  --neutral-support: #b4b4b4;       /* Soft Ash Gray - Dividers, secondary UI labels */
-  --cta-highlight: #c19d62;         /* Metallic Bronze - Button backgrounds, hover indicators */
-  --hover-effect: #e1caa3;          /* Pale Gold Tint - Button hover, icon accents */
-  --accent-panels: #d3af81;         /* Muted Beige - Section backgrounds, emphasis areas (REVERSED) */
+  /* NEWCODE Brand Colors - Dark Green Minimal UI */
+  --primary-dark: #3a4f41;          /* Dark Green - Full-page background */
+  --background-base: #3a4f41;       /* Dark Green - Main background */
+  --dark-accent: #2a3b30;           /* Deeper Dark Green - Navigation, cards, footer */
+  --text-light: #ffffff;            /* White - Main readable content text */
+  --neutral-support: #5a6b60;       /* Muted green - dividers, UI separators */
+  --cta-highlight: #d4af37;         /* Gold - Button backgrounds, hover indicators */
+  --hover-effect: #d4af37;          /* Gold - Button hover, icon accents */
+  --accent-panels: #455350;         /* Darker green tint - Section backgrounds, cards */
   --success-green: #10b981;
   --warning-orange: #f59e0b;
-  --text-primary: #f7f5f3;          /* Paper White - Main text (REVERSED) */
-  --text-secondary: #b4b4b4;        /* Soft Ash Gray - Secondary text (REVERSED) */
-  --text-muted: #b4b4b4;
-  --background: #1c1c1c;            /* Deep Graphite - Background (REVERSED) */
-  --foreground: #f7f5f3;            /* Paper White - Foreground text (REVERSED) */
-  --gradient-bronze: linear-gradient(135deg, #c19d62 0%, #e1caa3 100%);
-  --gradient-dark: linear-gradient(135deg, #1c1c1c 0%, #2f2f2f 100%);
-  --gradient-beige-on-dark: linear-gradient(135deg, #d3af81 0%, #e1caa3 100%);
+  --text-primary: #ffffff;          /* White - Main text */
+  --text-secondary: #cfcfcf;        /* Light gray - Secondary text */
+  --text-muted: #cfcfcf;
+  --background: #3a4f41;            /* Dark Green - Background */
+  --foreground: #ffffff;            /* White - Foreground text */
+  --gradient-bronze: linear-gradient(135deg, #d4af37 0%, #d4af37 100%);
+  --gradient-dark: linear-gradient(135deg, #3a4f41 0%, #2a3b30 100%);
+  --gradient-beige-on-dark: linear-gradient(135deg, #455350 0%, #3a4f41 100%);
 }
 
 @theme inline {
