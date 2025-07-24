@@ -185,16 +185,24 @@ const TrackSelection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* CTA */}
-                <Button 
-                  variant="primary"
-                  size="lg" 
-                  href={track.href}
-                  className="w-full group"
-                >
-                  {track.cta}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Button>
+                {/* CTA - Enhanced */}
+                <div className="mt-8 pt-6 border-t border-text-muted/20">
+                  <Button 
+                    variant="primary"
+                    size="lg" 
+                    href={track.href}
+                    className="w-full group relative overflow-hidden bg-gradient-to-r from-accent-red to-accent-red/90 hover:from-accent-red/90 hover:to-accent-red shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-bold text-lg py-4"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center justify-center">
+                      {track.cta}
+                      <ArrowRight className="ml-3 h-6 w-6 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+                    </span>
+                  </Button>
+                  <p className="text-center text-text-muted text-sm mt-3 font-medium">
+                    {track.id === 'developers' ? '🚀 Pour développeurs & équipes tech' : '💼 Pour dirigeants & analystes'}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

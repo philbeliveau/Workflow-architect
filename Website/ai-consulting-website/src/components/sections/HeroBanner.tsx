@@ -77,7 +77,7 @@ const HeroBanner: React.FC = memo(() => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-slate-600/40 shadow-2xl shadow-slate-900/50">
+          <div className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-accent-red/40 shadow-2xl shadow-black/30">
             <div className="text-center">
               <h2 className="text-xl font-bold text-slate-100 mb-8 tracking-wide">
                 Laissez vos agents IA travailler à votre place, pendant des heures, avec :
