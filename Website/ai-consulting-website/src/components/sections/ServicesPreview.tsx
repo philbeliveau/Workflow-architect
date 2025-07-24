@@ -272,18 +272,6 @@ const ServicesPreview: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-success-green/10 to-accent-purple/10 border border-success-green/20 rounded-2xl p-6">
-              <div className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-success-green flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-lg font-semibold text-text-primary mb-2">Prix transparents, valeur réelle</h4>
-                  <p className="text-text-secondary leading-relaxed">
-                    Pas de consulting à 50k€. Formation pratique + outils + support inclus. 
-                    <span className="text-accent-purple font-medium">Besoin d'accompagnement personnalisé ? Support sur mesure disponible.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>

@@ -77,7 +77,7 @@ const ToolsTrustSection: React.FC = () => {
 
         {/* Tools Grid with Brutalist Style */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-20"
+          className="flex flex-wrap justify-center gap-6 mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -97,8 +97,8 @@ const ToolsTrustSection: React.FC = () => {
                 <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 rounded-xl"></div>
                 <div className={`relative ${tool.color} border-3 border-black rounded-xl p-6 transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 cursor-pointer`}>
                   {/* Icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className="text-white">
+                  <div className="flex justify-center items-center mb-4">
+                    <div className="text-white flex justify-center items-center">
                       {tool.icon}
                     </div>
                   </div>
@@ -115,21 +115,6 @@ const ToolsTrustSection: React.FC = () => {
         </motion.div>
 
 
-        {/* Bottom Text */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-8 py-4">
-            <Settings className="w-6 h-6 text-success-green" />
-            <span className="text-text-primary font-medium">
-              Installation complète • Configuration optimisée • Formation équipe
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

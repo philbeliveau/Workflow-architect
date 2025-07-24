@@ -108,7 +108,7 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Du Vibe Coding à une approche de programmation structuré
+            Du Vibe Coding à une approche de programmation structurée
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Nous ne développons pas vos agents, nous vous donnons le manuel et la méthode pour qu'ils vous obéissent vraiment. 

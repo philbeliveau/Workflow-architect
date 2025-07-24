@@ -1,41 +1,49 @@
+import { lazy, Suspense } from 'react';
 import Navigation from '@/components/sections/Navigation';
 import HeroBanner from '@/components/sections/HeroBanner';
-import TrackSelection from '@/components/sections/TrackSelection';
-import ProblemStatement from '@/components/sections/ProblemStatement';
-import SolutionOverview from '@/components/sections/SolutionOverview';
-import AboutSection from '@/components/sections/AboutSection';
-import ToolsTrustSection from '@/components/sections/ToolsTrustSection';
-import ServicesPreview from '@/components/sections/ServicesPreview';
-import ResultsShowcase from '@/components/sections/ResultsShowcase';
-import CTASection from '@/components/sections/CTASection';
-import Footer from '@/components/sections/Footer';
+import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
+
+// Lazy load components that are below the fold
+const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
+const ProblemStatement = lazy(() => import('@/components/sections/ProblemStatement'));
+const SolutionOverview = lazy(() => import('@/components/sections/SolutionOverview'));
+const CTASection = lazy(() => import('@/components/sections/CTASection'));
+const Footer = lazy(() => import('@/components/sections/Footer'));
+
+const SectionFallback = () => (
+  <div className="flex items-center justify-center py-16">
+    <LoadingSpinner size="lg" aria-label="Chargement de la section..." />
+  </div>
+);
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Navigation />
       
-      <main>
+      <main id="main-content">
         <HeroBanner />
         
-        <TrackSelection />
+        <Suspense fallback={<SectionFallback />}>
+          <TrackSelection />
+        </Suspense>
         
-        <ProblemStatement />
+        <Suspense fallback={<SectionFallback />}>
+          <ProblemStatement />
+        </Suspense>
         
-        <SolutionOverview />
+        <Suspense fallback={<SectionFallback />}>
+          <SolutionOverview />
+        </Suspense>
         
-        <AboutSection />
-        
-        <ToolsTrustSection />
-        
-        <ServicesPreview />
-        
-        <ResultsShowcase />
-        
-        <CTASection />
+        <Suspense fallback={<SectionFallback />}>
+          <CTASection />
+        </Suspense>
       </main>
       
-      <Footer />
+      <Suspense fallback={<SectionFallback />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

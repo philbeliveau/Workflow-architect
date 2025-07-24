@@ -14,16 +14,16 @@ const TrackSelection: React.FC = () => {
       subtitle: "Orchestration d'agents, ingénierie de contexte",
       description: "Accélérez votre développement avec des systèmes d'agents IA, l'orchestration Claude-code et monter en puissance vos vos équipes avec notre méthodologie.",
       features: [
-        "Vulgarisation du nouveau paradigme de programmation IA",
-        "Configuration de vos environnements",
-        "Configuration et présentation de MCP avancés",
-        "Wrapper Claude-code pour l'orchestration d'agents",
-        "Méthodologie pour développer des products requirements",
-        "Apprendre à aligner vos IA pour réduire les bugs de développement",
-        "Bibliothèques de prompts internes",
-        "Apprendre à travailler efficacement avec les agents",
-        "Apprendre à développer des systèmes très complexes",
-        "Apprendre à couvrir tout la chaîne de valeurs, de la recherche, au besoin d'affaire, au PRD, à l'alignement avec les développeurs, au développement, à la livraison"
+        "• Vulgarisation du nouveau paradigme de programmation IA",
+        "• Configuration de vos environnements",
+        "• Configuration et présentation de MCP avancés",
+        "• Wrapper Claude-code pour l'orchestration d'agents",
+        "• Méthodologie pour développer des products requirements",
+        "• Apprendre à aligner vos IA pour réduire les bugs de développement",
+        "• Bibliothèques de prompts internes",
+        "• Apprendre à travailler efficacement avec les agents",
+        "• Apprendre à développer des systèmes très complexes",
+        "• Apprendre à couvrir tout la chaîne de valeurs, de la recherche, au besoin d'affaire, au PRD, à l'alignement avec les développeurs, au développement, à la livraison"
       ],
       benefits: [
         { icon: Cpu, text: "Onboarding: 2 semaines → 2 heures" },
@@ -42,11 +42,11 @@ const TrackSelection: React.FC = () => {
       subtitle: "Programmer en langage naturel",
       description: "Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.",
       features: [
-        "Environnement IA configuré pour vos besoins",
-        "Du langage naturel aux applications fonctionnelles",
-        "Templates d'intégration CRM/spreadsheets/bases de données",
-        "Formation personnalisée incluse",
-        "Support 30 jours"
+        "• Environnement IA configuré pour vos besoins",
+        "• Du langage naturel aux applications fonctionnelles",
+        "• Templates d'intégration CRM/spreadsheets/bases de données",
+        "• Formation personnalisée incluse",
+        "• Support 30 jours"
       ],
       benefits: [
         { icon: Users, text: "Tableaux de bord clients automatiques" },

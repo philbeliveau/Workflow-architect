@@ -29,6 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <a href="#main-content" className="skip-link">
+          Passer au contenu principal
+        </a>
         <SessionProvider session={undefined}>
           {children}
         </SessionProvider>

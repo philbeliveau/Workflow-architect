@@ -1,9 +1,43 @@
 import Navigation from '@/components/sections/Navigation';
 import Footer from '@/components/sections/Footer';
-import { BookOpen, Clock, Users, TrendingUp, ArrowRight } from 'lucide-react';
+import { BookOpen, Code, Brain, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 
 export default function BlogPage() {
+  const techBlogs = [
+    {
+      id: 'gayed-trading-signals-swarm',
+      title: 'Comment j\'ai Transformé 5 Papiers Académiques en Signaux de Trading Automatisés en 4 Heures',
+      excerpt: 'Imaginez-vous devant une pile de 5 papiers académiques de Michael Gayed sur les signaux de trading, une analyse de 47 pages par Manus AI, et la mission d\'implémenter tout ça en code fonctionnel. Normalement, ça prendrait des semaines à une équipe. Moi ? 4 heures.',
+      date: '2025-01-10',
+      readTime: '15 min',
+      category: 'FinTech & Trading',
+      tags: ['Trading', 'Swarms', 'FinTech', 'Signals'],
+      featured: true,
+      context: {
+        challenge: 'Implémenter 5 signaux financiers complexes de Michael Gayed',
+        solution: 'Swarm de 8 agents IA spécialisés travaillant en parallèle',
+        results: ['4h de développement vs 3 semaines équipe', '93.8% précision moyenne', '99.97% uptime production']
+      }
+    },
+    {
+      id: 'claude-alignment-techniques',
+      title: 'Comment J\'ai Contraint Claude : Techniques d\'Alignement et Persistance des Contraintes',
+      excerpt: 'Quand j\'ai commencé à travailler avec Claude sur l\'extraction de données personnelles (PII), j\'ai rapidement découvert un problème majeur : Claude avait tendance à prendre des raccourcis.',
+      date: '2025-01-15',
+      readTime: '12 min',
+      category: 'IA & Développement',
+      tags: ['Claude', 'PII', 'Alignement', 'Architecture'],
+      featured: false,
+      context: {
+        challenge: 'Claude prenait des raccourcis dans l\'extraction de données personnelles',
+        solution: 'Architecture de contraintes avec CLAUDE.md et mémoire persistante',
+        results: ['+66.6% performance vs version non-alignée', '100% conformité fonctionnelle', '0% erreur production 6 mois']
+      }
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -15,113 +49,142 @@ export default function BlogPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <BookOpen className="w-8 h-8 text-accent-purple" />
               <h1 className="text-h1 font-bold text-text-primary">
-                Blog contexteDev
+                Blog Technique contexteDev
               </h1>
             </div>
             <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-              Insights, guides pratiques et actualités sur l'IA, le développement logiciel 
-              et la transformation numérique.
+              Articles techniques approfondis sur l'IA, l'architecture logicielle, 
+              et les solutions innovantes de développement.
             </p>
           </div>
 
-          {/* Featured Case Study */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-primary-800/50 rounded-2xl border border-primary-700 overflow-hidden">
-              {/* Header */}
-              <div className="p-8 border-b border-primary-700">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent-purple/20 rounded-xl flex items-center justify-center">
-                    <Users className="w-6 h-6 text-accent-purple" />
-                  </div>
-                  <div>
-                    <span className="text-accent-purple text-sm font-medium">Étude de Cas</span>
-                    <h2 className="text-h2 font-bold text-text-primary">
-                      Développeuse Indépendante Full-Stack
+          {/* Featured Technical Articles Side by Side */}
+          <div className="max-w-7xl mx-auto mb-16">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {techBlogs.map(blog => (
+                <div key={blog.id} className="bg-primary-800/50 rounded-2xl border border-primary-700 overflow-hidden">
+                  {/* Header */}
+                  <div className="p-6 border-b border-primary-700">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center">
+                        <Brain className="w-5 h-5 text-accent-purple" />
+                      </div>
+                      <div>
+                        <span className="text-accent-purple text-xs font-medium">{blog.category}</span>
+                        <div className="flex items-center gap-2 text-xs text-text-secondary">
+                          <span>{blog.date}</span>
+                          <span>•</span>
+                          <span>{blog.readTime}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-xl font-bold text-text-primary mb-3 leading-tight">
+                      {blog.title}
                     </h2>
+                    <p className="text-sm text-text-secondary">
+                      {blog.excerpt}
+                    </p>
+                  </div>
+
+                  {/* Content Preview */}
+                  <div className="p-6">
+                    <div className="space-y-6">
+                      {/* Challenge & Solution Context */}
+                      <div>
+                        <h3 className="text-sm font-semibold text-text-primary mb-2">Le Défi</h3>
+                        <p className="text-text-secondary text-sm mb-3">{blog.context.challenge}</p>
+                        
+                        <h3 className="text-sm font-semibold text-text-primary mb-2">Ma Solution</h3>
+                        <p className="text-text-secondary text-sm">{blog.context.solution}</p>
+                      </div>
+
+                      {/* Results */}
+                      <div className="bg-primary-900/50 rounded-lg p-4">
+                        <h3 className="text-sm font-semibold text-text-primary mb-3 flex items-center gap-2">
+                          <Code className="w-4 h-4 text-accent-green" />
+                          Résultats Concrets
+                        </h3>
+                        <div className="space-y-2">
+                          {blog.context.results.map((result, index) => (
+                            <div key={index} className="flex items-start gap-2">
+                              <div className="w-1 h-1 bg-accent-green rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-xs text-text-secondary">{result}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1">
+                        {blog.tags.slice(0, 3).map(tag => (
+                          <span key={tag} className="bg-primary-700/50 text-text-secondary px-2 py-1 rounded text-xs">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      <Link href={`/blog/${blog.id}`}>
+                        <Button variant="primary" size="sm" className="w-full">
+                          Lire l'article
+                          <ArrowRight className="ml-2 h-3 w-3" />
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-                <p className="text-lg text-text-secondary">
-                  Comment gérer 2 projets clients en parallèle avec 60+ heures par semaine sans burnout
+              ))}
+            </div>
+          </div>
+
+          {/* Future Articles */}
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-h2 font-bold text-text-primary mb-8 text-center">
+              Prochains Articles Techniques
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-primary-800/30 rounded-xl border border-primary-700 p-6 text-center">
+                <div className="w-12 h-12 bg-accent-blue/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Code className="w-6 h-6 text-accent-blue" />
+                </div>
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
+                  Architecture Microservices
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  Patterns avancés et optimisations performance
                 </p>
+                <div className="mt-4 text-xs text-accent-blue">
+                  Bientôt disponible
+                </div>
               </div>
-
-              {/* Content Preview */}
-              <div className="p-8">
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  {/* Challenge */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">Le Défi</h3>
-                    <ul className="space-y-2 text-text-secondary">
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Startup FinTech : 40h/semaine React/Node.js</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
-                        <span>E-commerce B2B : 25h/semaine microservices</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
-                        <span>65h/semaine + admin = risque de burnout</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Solution */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">La Solution</h3>
-                    <ul className="space-y-2 text-text-secondary">
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-green rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Time-boxing par domaines techniques</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-green rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Architecture de workflow parallèle</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-green rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Communication client structurée</span>
-                      </li>
-                    </ul>
-                  </div>
+              
+              <div className="bg-primary-800/30 rounded-xl border border-primary-700 p-6 text-center">
+                <div className="w-12 h-12 bg-accent-green/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Brain className="w-6 h-6 text-accent-green" />
                 </div>
-
-                {/* Results */}
-                <div className="bg-primary-900/50 rounded-xl p-6 mb-8">
-                  <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-accent-green" />
-                    Résultats Mesurés
-                  </h3>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-accent-green mb-1">-9%</div>
-                      <div className="text-sm text-text-secondary">Heures travaillées</div>
-                      <div className="text-xs text-text-secondary">62h vs 68h/semaine</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-accent-green mb-1">+35%</div>
-                      <div className="text-sm text-text-secondary">Qualité du code</div>
-                      <div className="text-xs text-text-secondary">8.4/10 vs 6.2/10</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-accent-green mb-1">94%</div>
-                      <div className="text-sm text-text-secondary">Respect des délais</div>
-                      <div className="text-xs text-text-secondary">vs 70% avant</div>
-                    </div>
-                  </div>
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
+                  LLM Engineering
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  Techniques avancées de prompt engineering
+                </p>
+                <div className="mt-4 text-xs text-accent-green">
+                  Bientôt disponible
                 </div>
-
-                {/* CTA */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="primary" href="/book-demo" className="flex-1">
-                    Discuter de votre situation
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" href="mailto:contact@contextedev.ca" className="flex-1">
-                    <Clock className="mr-2 h-4 w-4" />
-                    Consultation rapide
-                  </Button>
+              </div>
+              
+              <div className="bg-primary-800/30 rounded-xl border border-primary-700 p-6 text-center">
+                <div className="w-12 h-12 bg-accent-purple/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-6 h-6 text-accent-purple" />
+                </div>
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
+                  DevOps & IA
+                </h3>
+                <p className="text-text-secondary text-sm">
+                  Intégration IA dans les pipelines CI/CD
+                </p>
+                <div className="mt-4 text-xs text-accent-purple">
+                  Bientôt disponible
                 </div>
               </div>
             </div>
@@ -135,6 +198,6 @@ export default function BlogPage() {
 }
 
 export const metadata = {
-  title: "Blog - contexteDev",
-  description: "Articles et insights sur l'IA, le développement logiciel et la transformation numérique par les experts de contexteDev.",
+  title: "Blog Technique - contexteDev",
+  description: "Articles techniques approfondis sur l'IA, l'architecture logicielle et les solutions innovantes de développement par les experts de contexteDev.",
 };

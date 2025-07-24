@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, Zap, Globe } from 'lucide-react';
@@ -8,18 +8,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import AuthButton from '@/components/auth/AuthButton';
 
-const Navigation: React.FC = () => {
+const Navigation: React.FC = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
   }, []);
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   const navItems = [
     { name: 'Accueil', href: '/' },
@@ -90,9 +98,11 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-text-primary p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
+            className="md:hidden text-text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-purple"
+            onClick={toggleMobileMenu}
+            aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -102,11 +112,14 @@ const Navigation: React.FC = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
+              id="mobile-menu"
               className="md:hidden absolute top-full left-0 right-0 bg-primary-800/98 backdrop-blur-lg border-b border-primary-700 shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
+              role="navigation"
+              aria-label="Menu mobile"
             >
               <div className="px-6 py-4 space-y-4">
                 {navItems.map((item, index) => (
@@ -116,7 +129,7 @@ const Navigation: React.FC = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={closeMobileMenu}
                     >
                       {item.name}
                     </motion.div>
@@ -145,6 +158,8 @@ const Navigation: React.FC = () => {
       </nav>
     </motion.header>
   );
-};
+});
+
+Navigation.displayName = 'Navigation';
 
 export default Navigation;

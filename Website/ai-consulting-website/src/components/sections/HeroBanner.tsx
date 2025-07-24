@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Code, Zap } from 'lucide-react';
-const HeroBanner: React.FC = () => {
+const HeroBanner: React.FC = memo(() => {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-900">
@@ -35,6 +35,8 @@ const HeroBanner: React.FC = () => {
           className="absolute top-1/4 left-1/4 text-accent-purple"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          style={{ willChange: 'transform' }}
+          aria-hidden="true"
         >
           <Code size={48} />
         </motion.div>
@@ -42,6 +44,8 @@ const HeroBanner: React.FC = () => {
           className="absolute top-3/4 right-1/4 text-accent-gray"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          style={{ willChange: 'transform' }}
+          aria-hidden="true"
         >
           <Zap size={56} />
         </motion.div>
@@ -54,8 +58,12 @@ const HeroBanner: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent">
-            Tout le monde mérite l'accès aux capacités logicielles
+          <h1 
+            className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent"
+            role="banner"
+            aria-label="Titre principal: Passez du vibe coding à une méthode structurée"
+          >
+            Passez du "vibe coding" à une méthode structurée.
           </h1>
         </motion.div>
 
@@ -65,11 +73,40 @@ const HeroBanner: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Que vous soyez développeur ou dirigeant d'entreprise, nous vous donnons les outils IA pour construire ce dont vous avez besoin.
-            <span className="text-accent-purple font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
+            Orchestrez des agents IA pour automatiser, fiabiliser et accélérer le développement logiciel.
           </p>
-          <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
-            Formation qui aide à passer du "vibe coding" à une approche plus structurée, en orchestrant des agents IA pour automatiser et fiabiliser le développement.
+          <div className="text-base text-text-muted max-w-3xl mx-auto mb-8">
+            Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour sortir du flou, et adopter une approche claire, organisée et puissante grâce à la programmation agentique.
+          </div>
+          
+          <div className="bg-primary-800/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto mb-12 border border-primary-700">
+            <div className="text-left">
+              <p className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
+                💼 Laissez vos agents IA travailler à votre place, pendant des heures, avec :
+              </p>
+              <ul className="space-y-3 text-text-secondary">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent-purple font-bold">•</span>
+                  Gestion automatique des erreurs et des exceptions
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent-purple font-bold">•</span>
+                  Structuration des tests et des fonctionnalités dès le départ
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent-purple font-bold">•</span>
+                  Meilleure compréhension du contexte global de votre projet
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent-purple font-bold">•</span>
+                  Connexion fluide à tous vos outils via des MCP intelligents
+                </li>
+              </ul>
+              <p className="text-accent-purple font-semibold text-lg mt-6">
+                → Vous bénéficiez maintenant des capacités d'une équipe complète.<br/>
+                C'est maintenant une réalité, et vous pouvez y accéder !
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -85,7 +122,7 @@ const HeroBanner: React.FC = () => {
             href="#track-selection"
             className="group"
           >
-            Découvrir Mon Parcours
+            Découvrir les parcours
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
@@ -94,24 +131,15 @@ const HeroBanner: React.FC = () => {
             size="lg" 
             href="/book-demo"
           >
-            Prêt à vous formez?
+            Évaluation Gratuite
           </Button>
         </motion.div>
 
-        {/* Trust indicators */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-sm text-text-muted mb-4">
-            L'objectif est de réduire drastiquement le temps passé à débugger, tout en rendant possible la création de systèmes bien plus complexes.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
-};
+});
+
+HeroBanner.displayName = 'HeroBanner';
 
 export default HeroBanner;
