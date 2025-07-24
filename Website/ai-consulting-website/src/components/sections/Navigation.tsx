@@ -5,10 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, Zap, Globe } from 'lucide-react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Navigation: React.FC = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
@@ -27,13 +30,28 @@ const Navigation: React.FC = memo(() => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  const navItems = [
-    { name: 'Accueil', href: '#accueil' },
-    { name: 'Parcours', href: '#parcours' },
-    { name: 'Problème', href: '#probleme' },
-    { name: 'Solution', href: '#solution' },
-    { name: 'Contact', href: '#contact' }
-  ];
+  // Navigation items based on current page
+  const getNavItems = () => {
+    if (pathname === '/') {
+      return [
+        { name: 'Accueil', href: '#accueil' },
+        { name: 'Parcours', href: '#parcours' },
+        { name: 'Problème', href: '#probleme' },
+        { name: 'Solution', href: '#solution' },
+        { name: 'Contact', href: '#contact' }
+      ];
+    } else {
+      return [
+        { name: 'Accueil', href: '/' },
+        { name: 'Développeurs', href: '/developers' },
+        { name: 'Business', href: '/business' },
+        { name: 'Services', href: '/services' },
+        { name: 'Contact', href: '/#contact' }
+      ];
+    }
+  };
+  
+  const navItems = getNavItems();
 
   return (
     <motion.header
@@ -49,47 +67,55 @@ const Navigation: React.FC = memo(() => {
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
-            className="flex items-center gap-3"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <Image
-              src="/newcode.png"
-              alt="NEWCODE Logo"
-              width={48}
-              height={48}
-              className="w-12 h-12 object-contain"
-            />
-            <span className={`text-xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-text-light' : 'text-text-light'
-            }`}>
-              NEW<span className="text-accent-red">CODE</span>
-            </span>
-          </motion.div>
+          <Link href="/">
+            <motion.div
+              className="flex items-center gap-3"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Image
+                src="/newcode.png"
+                alt="NEWCODE Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+              />
+              <span className={`text-xl font-bold transition-colors duration-300 ${
+                isScrolled ? 'text-text-light' : 'text-text-light'
+              }`}>
+                NEW<span className="text-accent-red">CODE</span>
+              </span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <a key={item.name} href={item.href}>
-                <motion.div
-                  className={`transition-colors duration-200 relative group cursor-pointer ${
-                    isScrolled 
-                      ? 'text-text-light hover:text-primary-blue' 
-                      : 'text-text-secondary hover:text-text-light'
-                  }`}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {item.name}
+            {navItems.map((item, index) => {
+              const isExternal = item.href.startsWith('#') || item.href.startsWith('/#');
+              const Component = isExternal ? 'a' : Link;
+              const linkProps = isExternal ? { href: item.href } : { href: item.href };
+              
+              return (
+                <Component key={item.name} {...linkProps}>
                   <motion.div
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-red group-hover:w-full transition-all duration-300"
-                    whileHover={{ width: "100%" }}
-                  />
-                </motion.div>
-              </a>
-            ))}
+                    className={`transition-colors duration-200 relative group cursor-pointer ${
+                      isScrolled 
+                        ? 'text-text-light hover:text-primary-blue' 
+                        : 'text-text-secondary hover:text-text-light'
+                    }`}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {item.name}
+                    <motion.div
+                      className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-red group-hover:w-full transition-all duration-300"
+                      whileHover={{ width: "100%" }}
+                    />
+                  </motion.div>
+                </Component>
+              );
+            })}
           </div>
 
           {/* CTA Button */}
@@ -127,19 +153,25 @@ const Navigation: React.FC = memo(() => {
               aria-label="Menu mobile"
             >
               <div className="px-6 py-4 space-y-4">
-                {navItems.map((item, index) => (
-                  <a key={item.name} href={item.href}>
-                    <motion.div
-                      className="block text-text-light hover:text-primary-blue transition-colors duration-200 py-2 cursor-pointer"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      onClick={closeMobileMenu}
-                    >
-                      {item.name}
-                    </motion.div>
-                  </a>
-                ))}
+                {navItems.map((item, index) => {
+                  const isExternal = item.href.startsWith('#') || item.href.startsWith('/#');
+                  const Component = isExternal ? 'a' : Link;
+                  const linkProps = isExternal ? { href: item.href } : { href: item.href };
+                  
+                  return (
+                    <Component key={item.name} {...linkProps}>
+                      <motion.div
+                        className="block text-text-light hover:text-primary-blue transition-colors duration-200 py-2 cursor-pointer"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        onClick={closeMobileMenu}
+                      >
+                        {item.name}
+                      </motion.div>
+                    </Component>
+                  );
+                })}
                 <motion.div
                   className="pt-4 border-t border-primary-blue/30"
                   initial={{ opacity: 0 }}
