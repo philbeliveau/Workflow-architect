@@ -55,7 +55,8 @@ const HeroBanner: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-hero font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-gray to-accent-purple bg-clip-text text-transparent">
-            Tout le monde mérite l'accès aux capacités logicielles
+            Passez du "vibe coding" à une méthode structurée.<br />
+            Orchestrez des agents IA pour automatiser, fiabiliser et accélérer le développement logiciel.
           </h1>
         </motion.div>
 
@@ -65,11 +66,35 @@ const HeroBanner: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Que vous soyez développeur ou dirigeant d'entreprise, nous vous donnons les outils IA pour construire ce dont vous avez besoin.
-            <span className="text-accent-purple font-semibold"> Plus d'attente. Plus d'obstacles techniques.</span>
+            Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel,
+            nous vous donnons les clés pour sortir du flou, et adopter une approche claire, organisée et puissante grâce à la programmation agentique.
           </p>
-          <div className="text-base text-text-muted max-w-3xl mx-auto mb-12">
-            Finies les prompts "vibe" • Place aux workflows "agentic" • Pour les développeurs, les gestionnaires, les dirigeants, nous vous donnons les outils IA pour construire ce dont vous avez besoin.
+          
+          <div className="text-base text-text-secondary max-w-3xl mx-auto mb-8">
+            <p className="mb-4">
+              Laissez vos agents IA travailler à votre place, pendant des heures, avec :
+            </p>
+            <ul className="text-left space-y-2 mb-6">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                <span>la Gestion automatique des erreurs et des exceptions</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                <span>une Structuration des tests et des fonctionnalités dès le départ</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                <span>une Meilleure compréhension du contexte global de votre projet</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent-purple rounded-full mt-2 flex-shrink-0"></div>
+                <span>Connexion fluide à tous vos outils via des MCP intelligents</span>
+              </li>
+            </ul>
+            <p className="text-accent-purple font-semibold text-lg">
+              —> Vous bénéficiez maintenant des capacités d'une équipe complète. C'est maintenant une réalité, et vous pouvez y accéder !
+            </p>
           </div>
         </motion.div>
 
@@ -85,7 +110,7 @@ const HeroBanner: React.FC = () => {
             href="#track-selection"
             className="group"
           >
-            Découvrir Mon Parcours
+            Découvrir les parcours
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
