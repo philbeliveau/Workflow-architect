@@ -109,15 +109,15 @@ const ServicesPreview: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-800 to-primary-900 relative overflow-hidden">
+    <section className="py-24 bg-background-base relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-3">
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="grid grid-cols-6 gap-8 h-full p-8">
             {Array.from({ length: 36 }, (_, i) => (
               <div 
                 key={i} 
-                className="bg-accent-purple rounded-lg animate-pulse" 
+                className="bg-accent-panels rounded-lg animate-pulse" 
                 style={{
                   animationDelay: `${i * 0.2}s`,
                   animationDuration: '4s'
@@ -165,9 +165,9 @@ const ServicesPreview: React.FC = () => {
               key={index}
               className={`group relative ${
                 service.featured 
-                  ? 'bg-gradient-to-b from-accent-purple/10 to-accent-gray/10 border-2 border-accent-purple scale-105' 
-                  : 'bg-primary-900/50 border border-primary-700'
-              } backdrop-blur-sm rounded-3xl p-8 hover:border-accent-purple/50 transition-all duration-300`}
+                  ? 'bg-accent-panels/90 border-2 border-cta-highlight scale-105' 
+                  : 'bg-accent-panels/30 border border-cta-highlight/20'
+              } backdrop-blur-sm rounded-3xl p-8 hover:border-cta-highlight/50 transition-all duration-300`}
               variants={cardVariants}
               whileHover={{ 
                 scale: service.featured ? 1.05 : 1.02,
@@ -185,8 +185,8 @@ const ServicesPreview: React.FC = () => {
               )}
 
               {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-accent-purple/20 to-accent-gray/20 rounded-2xl mb-6 group-hover:from-accent-purple/30 group-hover:to-accent-gray/30 transition-all duration-300">
-                <div className="text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
+              <div className="flex items-center justify-center w-16 h-16 bg-primary-dark/20 rounded-2xl mb-6 group-hover:bg-primary-dark/30 transition-all duration-300">
+                <div className="text-primary-dark group-hover:text-primary-dark transition-colors duration-300">
                   {service.icon}
                 </div>
               </div>
@@ -200,7 +200,7 @@ const ServicesPreview: React.FC = () => {
                   {service.subtitle}
                 </p>
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-2xl font-bold text-accent-purple">
+                  <span className="text-2xl font-bold text-primary-dark">
                     {service.price}
                   </span>
                   <span className="text-text-muted text-sm">
@@ -227,8 +227,8 @@ const ServicesPreview: React.FC = () => {
               </div>
 
               {/* Best for */}
-              <div className="bg-accent-purple/5 border border-accent-purple/20 rounded-lg p-3 mb-6">
-                <span className="text-accent-purple text-sm font-medium">
+              <div className="bg-primary-dark/10 border border-primary-dark/20 rounded-lg p-3 mb-6">
+                <span className="text-primary-dark text-sm font-medium">
                   Idéal pour: {service.bestFor}
                 </span>
               </div>

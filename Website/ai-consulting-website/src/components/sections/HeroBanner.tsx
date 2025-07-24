@@ -8,19 +8,19 @@ const HeroBanner: React.FC = memo(() => {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-base">
-      {/* Background with gradient and pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-base via-hover-effect to-background-base">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-cta-highlight rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-dark-accent rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-hover-effect rounded-full blur-3xl opacity-10 animate-pulse delay-2000"></div>
+      {/* Background with gradient and pattern - Dark UI First */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background-base via-dark-accent to-background-base">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-accent-panels rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-cta-highlight rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-panels rounded-full blur-3xl opacity-15 animate-pulse delay-2000"></div>
         </div>
         
         {/* Code pattern overlay */}
-        <div className="absolute inset-0 opacity-3">
+        <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 gap-4 h-full p-8">
             {Array.from({ length: 144 }, (_, i) => (
-              <div key={i} className="bg-neutral-support h-1 rounded animate-pulse" style={{
+              <div key={i} className="bg-accent-panels h-1 rounded animate-pulse" style={{
                 animationDelay: `${i * 0.1}s`,
                 animationDuration: '3s'
               }}></div>
@@ -32,7 +32,7 @@ const HeroBanner: React.FC = memo(() => {
       {/* Floating elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 text-cta-highlight"
+          className="absolute top-1/4 left-1/4 text-accent-panels"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           style={{ willChange: 'transform' }}
@@ -41,7 +41,7 @@ const HeroBanner: React.FC = memo(() => {
           <Code size={48} />
         </motion.div>
         <motion.div
-          className="absolute top-3/4 right-1/4 text-dark-accent"
+          className="absolute top-3/4 right-1/4 text-cta-highlight"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           style={{ willChange: 'transform' }}
@@ -59,16 +59,16 @@ const HeroBanner: React.FC = memo(() => {
           transition={{ duration: 0.8 }}
         >
           <h1 
-            className="text-hero font-bold mb-8 bg-gradient-to-r from-primary-dark via-dark-accent to-cta-highlight bg-clip-text text-transparent"
+            className="text-hero font-bold mb-8 bg-gradient-to-r from-text-light via-accent-panels to-cta-highlight bg-clip-text text-transparent"
             role="banner"
             aria-label="Titre principal: Passez du vibe coding à une méthode structurée"
           >
             Passez du "vibe coding" à une méthode structurée.
           </h1>
-          <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
+          <p className="text-xl md:text-2xl text-text-primary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
             Orchestrez des agents IA pour automatiser, fiabiliser et accélérer le développement logiciel.
           </p>
-          <div className="text-lg text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
+          <div className="text-lg text-text-secondary max-w-4xl mx-auto mb-12 leading-relaxed">
             Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour sortir du flou, et adopter une approche claire, organisée et puissante grâce à la programmation agentique.
           </div>
         </motion.div>
@@ -77,34 +77,34 @@ const HeroBanner: React.FC = memo(() => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="bg-text-light/30 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-neutral-support/50">
+          <div className="bg-accent-panels/90 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-cta-highlight/30">
             <div className="text-center">
               <h2 className="text-xl font-bold text-primary-dark mb-8">
                 Laissez vos agents IA travailler à votre place, pendant des heures, avec :
               </h2>
               <div className="grid md:grid-cols-2 gap-6 text-left mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-cta-highlight rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-text-secondary">Gestion automatique des erreurs et des exceptions</p>
+                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-primary-dark">Gestion automatique des erreurs et des exceptions</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-cta-highlight rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-text-secondary">Structuration des tests et des fonctionnalités dès le départ</p>
+                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-primary-dark">Structuration des tests et des fonctionnalités dès le départ</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-cta-highlight rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-text-secondary">Meilleure compréhension du contexte global de votre projet</p>
+                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-primary-dark">Meilleure compréhension du contexte global de votre projet</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-cta-highlight rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-text-secondary">Connexion fluide à tous vos outils via des MCP intelligents</p>
+                  <div className="w-2 h-2 bg-primary-dark rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-primary-dark">Connexion fluide à tous vos outils via des MCP intelligents</p>
                 </div>
               </div>
               <div className="text-center">
-                <p className="text-cta-highlight font-semibold text-xl leading-relaxed">
+                <p className="text-primary-dark font-semibold text-xl leading-relaxed">
                   → Vous bénéficiez maintenant des capacités d'une équipe complète.
                 </p>
-                <p className="text-cta-highlight font-semibold text-xl">
+                <p className="text-primary-dark font-semibold text-xl">
                   C'est maintenant une réalité, et vous pouvez y accéder !
                 </p>
               </div>

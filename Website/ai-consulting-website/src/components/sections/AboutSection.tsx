@@ -50,12 +50,12 @@ const AboutSection: React.FC = () => {
   return (
     <section className="py-20 bg-background-base relative overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-3">
+      <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-16 gap-2 h-full p-4">
           {Array.from({ length: 256 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-cta-highlight rounded-sm animate-pulse" 
+              className="bg-accent-panels rounded-sm animate-pulse" 
               style={{
                 animationDelay: `${i * 0.02}s`,
                 animationDuration: '4s'
@@ -73,7 +73,7 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-h1 font-bold text-primary-dark mb-4">
+          <h2 className="text-h1 font-bold text-text-primary mb-4">
             Rencontrez Notre Équipe d'Experts
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
@@ -103,7 +103,7 @@ const AboutSection: React.FC = () => {
               />
             </div>
             
-            <h3 className="text-h3 font-bold text-primary-dark mb-2">
+            <h3 className="text-h3 font-bold text-text-primary mb-2">
               Philippe Béliveau
             </h3>
             <p className="text-cta-highlight font-semibold mb-4">
@@ -133,7 +133,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             
-            <h3 className="text-h3 font-bold text-primary-dark mb-2">
+            <h3 className="text-h3 font-bold text-text-primary mb-2">
               Partenaire Expert
             </h3>
             <p className="text-accent-blue font-semibold mb-4">
@@ -163,7 +163,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             
-            <h3 className="text-h3 font-bold text-primary-dark mb-2">
+            <h3 className="text-h3 font-bold text-text-primary mb-2">
               Partenaire Technique
             </h3>
             <p className="text-accent-gray font-semibold mb-4">
