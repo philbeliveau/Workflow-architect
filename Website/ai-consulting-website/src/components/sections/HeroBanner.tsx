@@ -7,9 +7,9 @@ import { ArrowRight, Code, Zap } from 'lucide-react';
 const HeroBanner: React.FC = memo(() => {
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-dark">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
       {/* Background with gradient and pattern - Dark UI First */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
+      <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-primary-blue/30 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-red/30 rounded-full blur-3xl animate-pulse delay-1000"></div>

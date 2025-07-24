@@ -75,7 +75,7 @@ const SolutionOverview: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-64 h-64 bg-accent-purple rounded-full blur-3xl animate-pulse"></div>

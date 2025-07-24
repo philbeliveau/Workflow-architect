@@ -200,7 +200,7 @@ const TrackSelection: React.FC = () => {
                     </span>
                   </Button>
                   <p className="text-center text-text-muted text-sm mt-3 font-medium">
-                    {track.id === 'developers' ? '🚀 Pour développeurs & équipes tech' : '💼 Pour dirigeants & analystes'}
+                    {track.id === 'developers' ? 'Pour développeurs & équipes tech' : 'Pour dirigeants & analystes'}
                   </p>
                 </div>
               </div>
