@@ -39,7 +39,7 @@ const Navigation: React.FC = memo(() => {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-accent-panels/95 backdrop-blur-lg shadow-lg border-b border-primary-dark/30' 
+          ? 'bg-background-dark-alt/95 backdrop-blur-lg shadow-lg border-b border-primary-blue/30' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -62,9 +62,9 @@ const Navigation: React.FC = memo(() => {
               className="w-12 h-12 object-contain"
             />
             <span className={`text-xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-primary-dark' : 'text-text-primary'
+              isScrolled ? 'text-text-light' : 'text-text-light'
             }`}>
-              NEW<span className="text-cta-highlight">CODE</span>
+              NEW<span className="text-accent-red">CODE</span>
             </span>
           </motion.div>
 
@@ -75,8 +75,8 @@ const Navigation: React.FC = memo(() => {
                 <motion.div
                   className={`transition-colors duration-200 relative group cursor-pointer ${
                     isScrolled 
-                      ? 'text-primary-dark hover:text-primary-dark/80' 
-                      : 'text-text-secondary hover:text-text-primary'
+                      ? 'text-text-light hover:text-primary-blue' 
+                      : 'text-text-secondary hover:text-text-light'
                   }`}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ const Navigation: React.FC = memo(() => {
                 >
                   {item.name}
                   <motion.div
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cta-highlight group-hover:w-full transition-all duration-300"
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-red group-hover:w-full transition-all duration-300"
                     whileHover={{ width: "100%" }}
                   />
                 </motion.div>
@@ -101,8 +101,8 @@ const Navigation: React.FC = memo(() => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cta-highlight transition-colors duration-300 ${
-              isScrolled ? 'text-primary-dark' : 'text-text-primary'
+            className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red transition-colors duration-300 ${
+              isScrolled ? 'text-text-light' : 'text-text-light'
             }`}
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
@@ -118,7 +118,7 @@ const Navigation: React.FC = memo(() => {
           {isMobileMenuOpen && (
             <motion.div
               id="mobile-menu"
-              className="md:hidden absolute top-full left-0 right-0 bg-accent-panels/98 backdrop-blur-lg border-b border-primary-dark/30 shadow-lg"
+              className="md:hidden absolute top-full left-0 right-0 bg-background-dark-alt/98 backdrop-blur-lg border-b border-primary-blue/30 shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -130,7 +130,7 @@ const Navigation: React.FC = memo(() => {
                 {navItems.map((item, index) => (
                   <a key={item.name} href={item.href}>
                     <motion.div
-                      className="block text-primary-dark hover:text-text-secondary transition-colors duration-200 py-2 cursor-pointer"
+                      className="block text-text-light hover:text-primary-blue transition-colors duration-200 py-2 cursor-pointer"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -141,7 +141,7 @@ const Navigation: React.FC = memo(() => {
                   </a>
                 ))}
                 <motion.div
-                  className="pt-4 border-t border-primary-dark/30"
+                  className="pt-4 border-t border-primary-blue/30"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}

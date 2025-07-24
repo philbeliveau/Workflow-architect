@@ -1,25 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  /* NEWCODE Brand Colors - Dark Green Minimal UI */
-  --primary-dark: #3a4f41;          /* Dark Green - Full-page background */
-  --background-base: #3a4f41;       /* Dark Green - Main background */
-  --dark-accent: #2a3b30;           /* Deeper Dark Green - Navigation, cards, footer */
-  --text-light: #ffffff;            /* White - Main readable content text */
-  --neutral-support: #5a6b60;       /* Muted green - dividers, UI separators */
-  --cta-highlight: #d4af37;         /* Gold - Button backgrounds, hover indicators */
-  --hover-effect: #d4af37;          /* Gold - Button hover, icon accents */
-  --accent-panels: #455350;         /* Darker green tint - Section backgrounds, cards */
+  /* Brand Colors - Red & Blue Professional */
+  --primary-blue: #74a6be;          /* Refined cool blue - clarity, structure, professionalism */
+  --accent-red: #a7292e;            /* Sharp deep red - action, confidence, urgency */
+  --background-dark: #121212;       /* Clean, modern dark background */
+  --background-dark-alt: #1a1a1a;   /* Alternative dark background */
+  --text-light: #ffffff;            /* Pure white - strong contrast */
+  --text-secondary: #c4c4c4;        /* Secondary text - hierarchy without clutter */
+  --text-muted: #8a8a8a;            /* Muted text - subtle hierarchy */
+  --hover-interactive: #569da0;     /* Desaturated teal - subtle, non-distracting */
+  --hover-soft: rgba(255, 255, 255, 0.1); /* Soft white hover */
+  
+  /* Legacy mappings for compatibility */
+  --primary-dark: #121212;
+  --background-base: #121212;
+  --dark-accent: #1a1a1a;
+  --neutral-support: #8a8a8a;
+  --cta-highlight: #a7292e;
+  --hover-effect: #569da0;
+  --accent-panels: #1a1a1a;
   --success-green: #10b981;
   --warning-orange: #f59e0b;
-  --text-primary: #ffffff;          /* White - Main text */
-  --text-secondary: #cfcfcf;        /* Light gray - Secondary text */
-  --text-muted: #cfcfcf;
-  --background: #3a4f41;            /* Dark Green - Background */
-  --foreground: #ffffff;            /* White - Foreground text */
-  --gradient-bronze: linear-gradient(135deg, #d4af37 0%, #d4af37 100%);
-  --gradient-dark: linear-gradient(135deg, #3a4f41 0%, #2a3b30 100%);
-  --gradient-beige-on-dark: linear-gradient(135deg, #455350 0%, #3a4f41 100%);
+  --text-primary: #ffffff;
+  --background: #121212;
+  --foreground: #ffffff;
+  
+  /* Brand gradients */
+  --gradient-primary: linear-gradient(135deg, #74a6be 0%, #569da0 100%);
+  --gradient-accent: linear-gradient(135deg, #a7292e 0%, #74a6be 100%);
+  --gradient-dark: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
 }
 
 @theme inline {
@@ -120,7 +130,11 @@ html {
 }
 
 .bg-gradient-bronze {
-  background: var(--gradient-bronze);
+  background: var(--gradient-accent);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
 }
 
 .bg-gradient-dark {
@@ -161,10 +175,10 @@ html {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
-    --cta-highlight: #c19d62;
-    --dark-accent: #1c1c1c;
-    --text-primary: #000000;
-    --text-secondary: #1c1c1c;
-    --background: #ffffff;
+    --accent-red: #cc0000;
+    --primary-blue: #0066cc;
+    --background-dark: #000000;
+    --text-light: #ffffff;
+    --text-secondary: #ffffff;
   }
 }

@@ -31,14 +31,14 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-dark-accent border-t border-neutral-support relative overflow-hidden">
+    <footer className="bg-background-dark-alt border-t border-text-muted relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-12 gap-2 h-full p-4">
           {Array.from({ length: 144 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-cta-highlight rounded-sm animate-pulse" 
+              className="bg-accent-red rounded-sm animate-pulse" 
               style={{
                 animationDelay: `${i * 0.05}s`,
                 animationDuration: '4s'
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Newsletter Section */}
-        <div className="py-16 border-b border-neutral-support">
+        <div className="py-16 border-b border-text-muted">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                 <input
                   type="email"
                   placeholder="votre@email.com"
-                  className="w-full px-4 py-3 bg-primary-dark border border-neutral-support rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-cta-highlight transition-colors"
+                  className="w-full px-4 py-3 bg-background-dark border border-text-muted rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-accent-red transition-colors"
                 />
               </div>
               <Button variant="primary" size="md" className="whitespace-nowrap">
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                   className="w-8 h-8 object-contain"
                 />
                 <span className="text-xl font-bold text-text-light">
-                  NEW<span className="text-cta-highlight">CODE</span>
+                  NEW<span className="text-accent-red">CODE</span>
                 </span>
               </div>
 
@@ -109,15 +109,15 @@ const Footer: React.FC = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <Mail className="w-4 h-4 text-cta-highlight" />
+                  <Mail className="w-4 h-4 text-accent-red" />
                   <span className="text-sm">philbeliv@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <Phone className="w-4 h-4 text-cta-highlight" />
+                  <Phone className="w-4 h-4 text-accent-red" />
                   <span className="text-sm">+1 514-773-4780</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <MapPin className="w-4 h-4 text-cta-highlight" />
+                  <MapPin className="w-4 h-4 text-accent-red" />
                   <span className="text-sm">Montréal, Québec</span>
                 </div>
               </div>

@@ -17,14 +17,14 @@ const Button = memo(React.forwardRef<HTMLButtonElement, ButtonProps>(
     
     const brutalistClasses = variant === 'brutalist' 
       ? "border-3 border-black rounded-xl relative overflow-hidden transition-all duration-300 ease-cubic-bezier(0.175, 0.885, 0.32, 1.275) hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[2px] active:translate-y-[2px] shadow-[4px_4px_0px_#000000] hover:shadow-[8px_8px_0px_#000000] active:shadow-[2px_2px_0px_#000000]"
-      : "rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-cta-highlight";
+      : "rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-accent-red";
     
     const variants = {
-      primary: "bg-cta-highlight hover:bg-hover-effect text-text-light shadow-lg hover:shadow-xl focus-visible:ring-cta-highlight",
-      secondary: "bg-dark-accent hover:bg-neutral-support text-text-light shadow-lg hover:shadow-xl focus-visible:ring-dark-accent",
-      outline: "border-2 border-cta-highlight text-cta-highlight hover:bg-cta-highlight hover:text-text-light focus-visible:ring-cta-highlight",
-      ghost: "text-text-secondary hover:text-primary-dark hover:bg-background-base focus-visible:ring-neutral-support",
-      brutalist: "bg-cta-highlight text-text-light font-bold border-black focus-visible:ring-cta-highlight"
+      primary: "bg-accent-red hover:bg-hover-interactive text-text-light shadow-lg hover:shadow-xl focus-visible:ring-accent-red",
+      secondary: "bg-primary-blue hover:bg-hover-interactive text-text-light shadow-lg hover:shadow-xl focus-visible:ring-primary-blue",
+      outline: "border-2 border-accent-red text-accent-red hover:bg-accent-red hover:text-text-light focus-visible:ring-accent-red",
+      ghost: "text-text-secondary hover:text-primary-blue hover:bg-hover-soft focus-visible:ring-primary-blue",
+      brutalist: "bg-accent-red text-text-light font-bold border-black focus-visible:ring-accent-red"
     };
     
     const sizes = {

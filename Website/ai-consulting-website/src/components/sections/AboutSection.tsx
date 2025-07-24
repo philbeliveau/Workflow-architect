@@ -55,7 +55,7 @@ const AboutSection: React.FC = () => {
           {Array.from({ length: 256 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-accent-panels rounded-sm animate-pulse" 
+              className="bg-primary-blue rounded-sm animate-pulse" 
               style={{
                 animationDelay: `${i * 0.02}s`,
                 animationDuration: '4s'
@@ -106,7 +106,7 @@ const AboutSection: React.FC = () => {
             <h3 className="text-h3 font-bold text-text-primary mb-2">
               Philippe Béliveau
             </h3>
-            <p className="text-cta-highlight font-semibold mb-4">
+            <p className="text-accent-red font-semibold mb-4">
               Fondateur & Expert IA
             </p>
             
@@ -273,7 +273,7 @@ const AboutSection: React.FC = () => {
               La technologie doit servir vos objectifs, pas l'inverse."
             </blockquote>
             <div className="mt-6 text-center">
-              <cite className="text-cta-highlight font-semibold not-italic text-lg">
+              <cite className="text-accent-red font-semibold not-italic text-lg">
                 — Philippe Béliveau
               </cite>
             </div>

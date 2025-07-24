@@ -32,8 +32,8 @@ const TrackSelection: React.FC = () => {
       ],
       cta: "Explorer le Parcours Technique",
       href: "/developers",
-      color: "accent-blue",
-      gradient: "from-accent-blue/10 to-accent-purple/10"
+      color: "primary-blue",
+      gradient: "from-primary-blue/10 to-accent-red/10"
     },
     {
       id: "business",
@@ -56,7 +56,7 @@ const TrackSelection: React.FC = () => {
       cta: "Explorer le Parcours Business",
       href: "/business",
       color: "accent-purple",
-      gradient: "from-accent-purple/10 to-accent-teal/10"
+      gradient: "from-accent-red/10 to-primary-blue/10"
     }
   ];
 
@@ -87,14 +87,14 @@ const TrackSelection: React.FC = () => {
   };
 
   return (
-    <section id="track-selection" className="py-24 bg-gradient-to-br from-primary-900 to-primary-800 relative overflow-hidden">
+    <section id="track-selection" className="py-24 bg-gradient-to-br from-background-dark to-background-dark-alt relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-8 gap-4 h-full p-8">
           {Array.from({ length: 64 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-accent-blue rounded-lg animate-pulse" 
+              className="bg-primary-blue rounded-lg animate-pulse" 
               style={{
                 animationDelay: `${i * 0.1}s`,
                 animationDuration: '4s'
@@ -118,7 +118,7 @@ const TrackSelection: React.FC = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Deux approches distinctes pour deux besoins différents.
-            <span className="text-accent-blue font-semibold"> Même excellence, outils adaptés.</span>
+            <span className="text-primary-blue font-semibold"> Même excellence, outils adaptés.</span>
           </p>
         </motion.div>
 
@@ -136,7 +136,7 @@ const TrackSelection: React.FC = () => {
               className="group"
               variants={cardVariants}
             >
-              <div className={`relative bg-gradient-to-br ${track.gradient} border border-primary-700 rounded-3xl p-8 hover:border-${track.color}/50 transition-all duration-300 h-full`}>
+              <div className={`relative bg-gradient-to-br ${track.gradient} border border-text-muted/30 rounded-3xl p-8 hover:border-${track.color}/50 transition-all duration-300 h-full`}>
                 {/* Icon and header */}
                 <div className="flex items-start gap-6 mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-r from-${track.color}/20 to-${track.color}/30 rounded-2xl flex items-center justify-center group-hover:from-${track.color}/30 group-hover:to-${track.color}/40 transition-all duration-300`}>

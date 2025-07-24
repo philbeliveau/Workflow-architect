@@ -117,7 +117,7 @@ const ServicesPreview: React.FC = () => {
             {Array.from({ length: 36 }, (_, i) => (
               <div 
                 key={i} 
-                className="bg-accent-panels rounded-lg animate-pulse" 
+                className="bg-primary-blue rounded-lg animate-pulse" 
                 style={{
                   animationDelay: `${i * 0.2}s`,
                   animationDuration: '4s'
@@ -165,8 +165,8 @@ const ServicesPreview: React.FC = () => {
               key={index}
               className={`group relative ${
                 service.featured 
-                  ? 'bg-accent-panels/90 border-2 border-cta-highlight scale-105' 
-                  : 'bg-accent-panels/30 border border-cta-highlight/20'
+                  ? 'bg-background-dark-alt/90 border-2 border-accent-red scale-105' 
+                  : 'bg-background-dark-alt/30 border border-accent-red/20'
               } backdrop-blur-sm rounded-3xl p-8 hover:border-cta-highlight/50 transition-all duration-300`}
               variants={cardVariants}
               whileHover={{ 
