@@ -22,23 +22,33 @@ export default function Home() {
       <Navigation />
       
       <main id="main-content">
-        <HeroBanner />
+        <section id="accueil">
+          <HeroBanner />
+        </section>
         
-        <Suspense fallback={<SectionFallback />}>
-          <TrackSelection />
-        </Suspense>
+        <section id="parcours">
+          <Suspense fallback={<SectionFallback />}>
+            <TrackSelection />
+          </Suspense>
+        </section>
         
-        <Suspense fallback={<SectionFallback />}>
-          <ProblemStatement />
-        </Suspense>
+        <section id="probleme">
+          <Suspense fallback={<SectionFallback />}>
+            <ProblemStatement />
+          </Suspense>
+        </section>
         
-        <Suspense fallback={<SectionFallback />}>
-          <SolutionOverview />
-        </Suspense>
+        <section id="solution">
+          <Suspense fallback={<SectionFallback />}>
+            <SolutionOverview />
+          </Suspense>
+        </section>
         
-        <Suspense fallback={<SectionFallback />}>
-          <CTASection />
-        </Suspense>
+        <section id="contact">
+          <Suspense fallback={<SectionFallback />}>
+            <CTASection />
+          </Suspense>
+        </section>
       </main>
       
       <Suspense fallback={<SectionFallback />}>

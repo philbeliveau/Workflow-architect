@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "contexteDev - Développement IA Accéléré",
-  description: "contexteDev vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
+  title: "NEWCODE - Développement IA Accéléré",
+  description: "NEWCODE vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
 };
 
 export default function RootLayout({

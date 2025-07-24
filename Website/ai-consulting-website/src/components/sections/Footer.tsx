@@ -31,14 +31,14 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-primary-800 border-t border-primary-700 relative overflow-hidden">
+    <footer className="bg-dark-accent border-t border-neutral-support relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-12 gap-2 h-full p-4">
           {Array.from({ length: 144 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-accent-purple rounded-sm animate-pulse" 
+              className="bg-cta-highlight rounded-sm animate-pulse" 
               style={{
                 animationDelay: `${i * 0.05}s`,
                 animationDuration: '4s'
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Newsletter Section */}
-        <div className="py-16 border-b border-primary-700">
+        <div className="py-16 border-b border-neutral-support">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-h2 font-bold text-text-primary mb-4">
+            <h3 className="text-h2 font-bold text-text-light mb-4">
               Restez à jour avec l'IA
             </h3>
             <p className="text-text-secondary mb-8 leading-relaxed">
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                 <input
                   type="email"
                   placeholder="votre@email.com"
-                  className="w-full px-4 py-3 bg-primary-700 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-purple transition-colors"
+                  className="w-full px-4 py-3 bg-primary-dark border border-neutral-support rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-cta-highlight transition-colors"
                 />
               </div>
               <Button variant="primary" size="md" className="whitespace-nowrap">
@@ -90,34 +90,34 @@ const Footer: React.FC = () => {
               {/* Logo */}
               <div className="flex items-center gap-3 mb-6">
                 <Image
-                  src="/contextDev_Speed.png"
-                  alt="contexteDev Logo"
+                  src="/newcode.png"
+                  alt="NEWCODE Logo"
                   width={32}
                   height={32}
                   className="w-8 h-8 object-contain"
                 />
-                <span className="text-xl font-bold text-text-primary">
-                  contexte<span className="text-accent-purple">Dev</span>
+                <span className="text-xl font-bold text-text-light">
+                  NEW<span className="text-cta-highlight">CODE</span>
                 </span>
               </div>
 
               <p className="text-text-secondary mb-6 leading-relaxed">
-                contexteDev vous aide à construire et déployer vos solutions IA. 
+                NEWCODE vous aide à construire et déployer vos solutions IA. 
                 Développeurs et dirigeants, tout le monde mérite l'accès aux capacités logicielles modernes.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <Mail className="w-4 h-4 text-accent-purple" />
+                  <Mail className="w-4 h-4 text-cta-highlight" />
                   <span className="text-sm">philbeliv@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <Phone className="w-4 h-4 text-accent-purple" />
+                  <Phone className="w-4 h-4 text-cta-highlight" />
                   <span className="text-sm">+1 514-773-4780</span>
                 </div>
                 <div className="flex items-center gap-3 text-text-secondary">
-                  <MapPin className="w-4 h-4 text-accent-purple" />
+                  <MapPin className="w-4 h-4 text-cta-highlight" />
                   <span className="text-sm">Montréal, Québec</span>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-text-primary mb-6">
+              <h4 className="text-lg font-semibold text-text-light mb-6">
                 Navigation
               </h4>
               <ul className="space-y-3">
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-text-secondary hover:text-accent-purple transition-colors duration-200"
+                      className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
 
             {/* Services */}
             <div>
-              <h4 className="text-lg font-semibold text-text-primary mb-6">
+              <h4 className="text-lg font-semibold text-text-light mb-6">
                 Services
               </h4>
               <ul className="space-y-3">
@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                      className="text-text-secondary hover:text-accent-purple transition-colors duration-200"
+                      className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
                     >
                       {service.name}
                     </Link>
@@ -163,7 +163,7 @@ const Footer: React.FC = () => {
 
             {/* Legal */}
             <div>
-              <h4 className="text-lg font-semibold text-text-primary mb-6">
+              <h4 className="text-lg font-semibold text-text-light mb-6">
                 Légal
               </h4>
               <ul className="space-y-3">
@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-text-secondary hover:text-accent-purple transition-colors duration-200"
+                      className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -183,15 +183,15 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-primary-700">
+        <div className="py-6 border-t border-neutral-support">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-text-muted text-sm">
-              © 2025 contexteDev. Tous droits réservés.
+              © 2025 NEWCODE. Tous droits réservés.
             </p>
             
             <div className="flex items-center gap-6 text-sm text-text-muted">
               <span>🇫🇷 Français</span>
-              <span className="w-px h-4 bg-primary-700"></span>
+              <span className="w-px h-4 bg-neutral-support"></span>
               <Link href="/en" className="hover:text-text-secondary transition-colors">
                 🇺🇸 English
               </Link>

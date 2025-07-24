@@ -48,14 +48,14 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-primary-800 relative overflow-hidden">
+    <section className="py-20 bg-background-base relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-3">
         <div className="grid grid-cols-16 gap-2 h-full p-4">
           {Array.from({ length: 256 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-accent-purple rounded-sm animate-pulse" 
+              className="bg-cta-highlight rounded-sm animate-pulse" 
               style={{
                 animationDelay: `${i * 0.02}s`,
                 animationDuration: '4s'
@@ -73,7 +73,7 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-h1 font-bold text-text-primary mb-4">
+          <h2 className="text-h1 font-bold text-primary-dark mb-4">
             Rencontrez Notre Équipe d'Experts
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
@@ -93,7 +93,7 @@ const AboutSection: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="relative mb-6 inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-purple to-accent-gray rounded-2xl blur-lg opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cta-highlight to-dark-accent rounded-2xl blur-lg opacity-20"></div>
               <Image
                 src="/philippe-beliveau.png"
                 alt="Philippe Béliveau"
@@ -103,10 +103,10 @@ const AboutSection: React.FC = () => {
               />
             </div>
             
-            <h3 className="text-h3 font-bold text-text-primary mb-2">
+            <h3 className="text-h3 font-bold text-primary-dark mb-2">
               Philippe Béliveau
             </h3>
-            <p className="text-accent-purple font-semibold mb-4">
+            <p className="text-cta-highlight font-semibold mb-4">
               Fondateur & Expert IA
             </p>
             
@@ -133,7 +133,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             
-            <h3 className="text-h3 font-bold text-text-primary mb-2">
+            <h3 className="text-h3 font-bold text-primary-dark mb-2">
               Partenaire Expert
             </h3>
             <p className="text-accent-blue font-semibold mb-4">
@@ -163,7 +163,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             
-            <h3 className="text-h3 font-bold text-text-primary mb-2">
+            <h3 className="text-h3 font-bold text-primary-dark mb-2">
               Partenaire Technique
             </h3>
             <p className="text-accent-gray font-semibold mb-4">
@@ -210,7 +210,7 @@ const AboutSection: React.FC = () => {
                         </div>
                       </div>
                       <div>
-                        <h5 className="font-bold text-text-primary mb-2">
+                        <h5 className="font-bold text-primary-dark mb-2">
                           {skill.title}
                         </h5>
                         <p className="text-text-secondary text-sm leading-relaxed">
@@ -237,13 +237,13 @@ const AboutSection: React.FC = () => {
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <div className="w-12 h-12 bg-accent-gray/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <div className="text-accent-gray">
+                      <div className="w-12 h-12 bg-dark-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <div className="text-dark-accent">
                           {achievement.icon}
                         </div>
                       </div>
                       <div>
-                        <h5 className="font-bold text-text-primary mb-2">
+                        <h5 className="font-bold text-primary-dark mb-2">
                           {achievement.title}
                         </h5>
                         <p className="text-text-secondary text-sm leading-relaxed">
@@ -266,14 +266,14 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-3xl p-8">
+          <div className="bg-gradient-to-r from-cta-highlight/10 to-dark-accent/10 border border-cta-highlight/20 rounded-3xl p-8">
             <blockquote className="text-text-secondary italic leading-relaxed text-lg text-center">
               "Mon objectif est simple : que chaque développeur et chaque dirigeant puisse 
               exploiter la puissance de l'IA sans se perdre dans la complexité technique. 
               La technologie doit servir vos objectifs, pas l'inverse."
             </blockquote>
             <div className="mt-6 text-center">
-              <cite className="text-accent-purple font-semibold not-italic text-lg">
+              <cite className="text-cta-highlight font-semibold not-italic text-lg">
                 — Philippe Béliveau
               </cite>
             </div>

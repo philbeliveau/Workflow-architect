@@ -4,9 +4,7 @@ import React, { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, Zap, Globe } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
-import AuthButton from '@/components/auth/AuthButton';
 
 const Navigation: React.FC = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,18 +28,18 @@ const Navigation: React.FC = memo(() => {
   }, [handleScroll]);
 
   const navItems = [
-    { name: 'Accueil', href: '/' },
-    { name: 'Développeurs', href: '/developers' },
-    { name: 'Business', href: '/business' },
-    { name: 'Cas d\'étude', href: '/case-studies' },
-    { name: 'Services', href: '/services' }
+    { name: 'Accueil', href: '#accueil' },
+    { name: 'Parcours', href: '#parcours' },
+    { name: 'Problème', href: '#probleme' },
+    { name: 'Solution', href: '#solution' },
+    { name: 'Contact', href: '#contact' }
   ];
 
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-primary-900/95 backdrop-blur-lg shadow-lg border-b border-primary-700' 
+          ? 'bg-dark-accent/95 backdrop-blur-lg shadow-lg border-b border-neutral-support' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -57,40 +55,39 @@ const Navigation: React.FC = memo(() => {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Image
-              src="/contextDev_Speed.png"
-              alt="contexteDev Logo"
+              src="/newcode.png"
+              alt="NEWCODE Logo"
               width={48}
               height={48}
               className="w-12 h-12 object-contain"
             />
-            <span className="text-xl font-bold text-text-primary">
-              contexte<span className="text-accent-purple">Dev</span>
+            <span className="text-xl font-bold text-primary-dark">
+              NEW<span className="text-cta-highlight">CODE</span>
             </span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <Link key={item.name} href={item.href}>
+              <a key={item.name} href={item.href}>
                 <motion.div
-                  className="text-text-secondary hover:text-text-primary transition-colors duration-200 relative group cursor-pointer"
+                  className="text-text-secondary hover:text-primary-dark transition-colors duration-200 relative group cursor-pointer"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
                   {item.name}
                   <motion.div
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-purple group-hover:w-full transition-all duration-300"
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cta-highlight group-hover:w-full transition-all duration-300"
                     whileHover={{ width: "100%" }}
                   />
                 </motion.div>
-              </Link>
+              </a>
             ))}
           </div>
 
-          {/* Auth & CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <AuthButton />
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center">
             <Button variant="primary" size="md" href="/book-demo">
               Évaluation Gratuite
             </Button>
@@ -98,7 +95,7 @@ const Navigation: React.FC = memo(() => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-purple"
+            className="md:hidden text-primary-dark p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cta-highlight"
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
             aria-expanded={isMobileMenuOpen}
@@ -113,7 +110,7 @@ const Navigation: React.FC = memo(() => {
           {isMobileMenuOpen && (
             <motion.div
               id="mobile-menu"
-              className="md:hidden absolute top-full left-0 right-0 bg-primary-800/98 backdrop-blur-lg border-b border-primary-700 shadow-lg"
+              className="md:hidden absolute top-full left-0 right-0 bg-background-base/98 backdrop-blur-lg border-b border-neutral-support shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -123,9 +120,9 @@ const Navigation: React.FC = memo(() => {
             >
               <div className="px-6 py-4 space-y-4">
                 {navItems.map((item, index) => (
-                  <Link key={item.name} href={item.href}>
+                  <a key={item.name} href={item.href}>
                     <motion.div
-                      className="block text-text-secondary hover:text-text-primary transition-colors duration-200 py-2 cursor-pointer"
+                      className="block text-text-secondary hover:text-primary-dark transition-colors duration-200 py-2 cursor-pointer"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -133,15 +130,14 @@ const Navigation: React.FC = memo(() => {
                     >
                       {item.name}
                     </motion.div>
-                  </Link>
+                  </a>
                 ))}
                 <motion.div
-                  className="pt-4 border-t border-primary-700 space-y-4"
+                  className="pt-4 border-t border-neutral-support"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <AuthButton />
                   <Button 
                     variant="primary" 
                     size="md" 

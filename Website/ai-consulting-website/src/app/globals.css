@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* Custom color variables inspired by contextDev logo - light theme with gray and purple */
-  --primary-900: #ffffff;
-  --primary-800: #f8fafc;
-  --primary-700: #f1f5f9;
-  --accent-purple: #8b5cf6;
-  --accent-purple-light: #a855f7;
-  --accent-gray: #6b7280;
-  --accent-gray-light: #9ca3af;
+  /* NEWCODE Brand Colors - Structured velocity, designed with clarity */
+  --primary-dark: #1c1c1c;          /* Deep Graphite - Main text, logo, buttons */
+  --background-base: #d3af81;       /* Muted Beige - Light theme bg, print, section breaks */
+  --dark-accent: #2f2f2f;           /* Charcoal Gray - Navigation, cards, footer */
+  --text-light: #f7f5f3;            /* Paper White - Light-on-dark typography */
+  --neutral-support: #b4b4b4;       /* Soft Ash Gray - Secondary text, borders */
+  --cta-highlight: #c19d62;         /* Metallic Bronze - Buttons, active nav, icons */
+  --hover-effect: #e1caa3;          /* Lighter beige tint - Hover effects */
   --success-green: #10b981;
   --warning-orange: #f59e0b;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --background: #ffffff;
-  --foreground: #1e293b;
-  --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-  --gradient-gray-purple: linear-gradient(135deg, #6b7280 0%, #8b5cf6 100%);
+  --text-primary: #1c1c1c;
+  --text-secondary: #2f2f2f;
+  --text-muted: #b4b4b4;
+  --background: #d3af81;
+  --foreground: #1c1c1c;
+  --gradient-bronze: linear-gradient(135deg, #c19d62 0%, #e1caa3 100%);
+  --gradient-dark: linear-gradient(135deg, #1c1c1c 0%, #2f2f2f 100%);
 }
 
 @theme inline {
-  --color-primary-900: var(--primary-900);
-  --color-primary-800: var(--primary-800);
-  --color-primary-700: var(--primary-700);
-  --color-accent-purple: var(--accent-purple);
-  --color-accent-purple-light: var(--accent-purple-light);
-  --color-accent-gray: var(--accent-gray);
-  --color-accent-gray-light: var(--accent-gray-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-background-base: var(--background-base);
+  --color-dark-accent: var(--dark-accent);
+  --color-text-light: var(--text-light);
+  --color-neutral-support: var(--neutral-support);
+  --color-cta-highlight: var(--cta-highlight);
+  --color-hover-effect: var(--hover-effect);
   --color-success-green: var(--success-green);
   --color-warning-orange: var(--warning-orange);
   --color-text-primary: var(--text-primary);
@@ -75,7 +75,7 @@ html {
 
 /* Focus management for accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-purple);
+  outline: 2px solid var(--cta-highlight);
   outline-offset: 2px;
 }
 
@@ -116,12 +116,12 @@ html {
   line-height: var(--line-height-h3);
 }
 
-.bg-gradient-purple {
-  background: var(--gradient-purple);
+.bg-gradient-bronze {
+  background: var(--gradient-bronze);
 }
 
-.bg-gradient-gray-purple {
-  background: var(--gradient-gray-purple);
+.bg-gradient-dark {
+  background: var(--gradient-dark);
 }
 
 /* Utility classes for better UX */
@@ -129,8 +129,8 @@ html {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--accent-purple);
-  color: white;
+  background: var(--cta-highlight);
+  color: var(--text-light);
   padding: 8px;
   text-decoration: none;
   border-radius: 0 0 4px 4px;
@@ -158,10 +158,10 @@ html {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
-    --accent-purple: #8b5cf6;
-    --accent-gray: #374151;
+    --cta-highlight: #c19d62;
+    --dark-accent: #1c1c1c;
     --text-primary: #000000;
-    --text-secondary: #374151;
+    --text-secondary: #1c1c1c;
     --background: #ffffff;
   }
 }
