@@ -69,10 +69,7 @@ Message 4 : Écrire solution
             Orchestration d'Agents
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Comment surmonter les limitations de Claude Code avec l'orchestration intelligente.
-            <span className="text-primary-blue font-semibold block mt-2">
-              De l'approche séquentielle à l'orchestration parallèle avancée.
-            </span>
+            Le prochain niveau de Claude Code avec l'orchestration intelligente et les agents spécialisés.
           </p>
         </motion.div>
 
@@ -210,6 +207,23 @@ Message 4 : Écrire solution
           </div>
         </motion.div>
 
+        {/* Transition to SPARC */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gradient-to-r from-primary-blue/10 via-accent-red/10 to-primary-blue/10 rounded-2xl p-8 max-w-4xl mx-auto">
+            <p className="text-lg text-text-secondary leading-relaxed mb-4">
+              Maintenant que vous comprenez les limitations de Claude Code et les avantages de l'orchestration,
+            </p>
+            <p className="text-xl font-semibold text-primary-blue">
+              découvrons comment SPARC transforme concrètement votre processus de développement 👇
+            </p>
+          </div>
+        </motion.div>
 
       </div>
     </section>

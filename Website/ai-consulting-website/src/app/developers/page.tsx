@@ -3,6 +3,7 @@ import DevelopersHero from '@/components/sections/developers/DevelopersHero';
 import TechnicalStack from '@/components/sections/developers/TechnicalStack';
 import AdvancedFeatures from '@/components/sections/developers/AdvancedFeatures';
 import AgentOrchestration from '@/components/sections/developers/AgentOrchestration';
+import SPARCDelegation from '@/components/sections/developers/SPARCDelegation';
 import TechnicalCaseStudies from '@/components/sections/developers/TechnicalCaseStudies';
 import DeveloperCTA from '@/components/sections/developers/DeveloperCTA';
 import Footer from '@/components/sections/Footer';
@@ -17,6 +18,7 @@ export default function DevelopersPage() {
         <TechnicalStack />
         <AdvancedFeatures />
         <AgentOrchestration />
+        <SPARCDelegation />
         <TechnicalCaseStudies />
         <DeveloperCTA />
       </main>

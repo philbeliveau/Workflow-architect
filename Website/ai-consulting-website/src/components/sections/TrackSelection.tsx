@@ -14,6 +14,7 @@ const TrackSelection: React.FC = () => {
       subtitle: "Orchestration d'agents, ingénierie de contexte",
       description: "Accélérez votre développement avec des systèmes d'agents IA, l'orchestration Claude-code et monter en puissance vos vos équipes avec notre méthodologie.",
       features: [
+        "• Constante mise à jours des avancements IA dans le développement logiciel",
         "• Vulgarisation du nouveau paradigme de programmation IA",
         "• Configuration de vos environnements",
         "• Configuration et présentation de MCP avancés",
@@ -42,10 +43,17 @@ const TrackSelection: React.FC = () => {
       subtitle: "Programmer en langage naturel",
       description: "Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.",
       features: [
+        "• Introduction aux agents IA et au différent éditeurs de code sur le marché",
+        "• Constante mise à jours des avancements IA dans le développement logiciel",
+        "• Vulgarisation du nouveau paradigme de programmation IA",
         "• Environnement IA configuré pour vos besoins",
+        "• Configuration et présentation de MCP avancés",
         "• Du langage naturel aux applications fonctionnelles",
         "• Templates d'intégration CRM/spreadsheets/bases de données",
         "• Formation personnalisée incluse",
+        "• Méthodologie pour développer des products requirements",
+        "• Apprendre à aligner vos IA pour réduire les bugs de développement",
+        "• Bibliothèques de prompts internes",
         "• Support 30 jours"
       ],
       benefits: [
