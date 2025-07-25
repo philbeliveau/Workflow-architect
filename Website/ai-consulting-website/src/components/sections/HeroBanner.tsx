@@ -16,14 +16,18 @@ const HeroBanner: React.FC = memo(() => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-blue/10 rounded-full blur-3xl opacity-15 animate-pulse delay-2000"></div>
         </div>
         
-        {/* Code pattern overlay */}
+        {/* Background grid pattern with squares */}
         <div className="absolute inset-0 opacity-5">
-          <div className="grid grid-cols-12 gap-4 h-full p-8">
+          <div className="grid grid-cols-12 gap-2 h-full p-4">
             {Array.from({ length: 144 }, (_, i) => (
-              <div key={i} className="bg-primary-blue/20 h-1 rounded animate-pulse" style={{
-                animationDelay: `${i * 0.1}s`,
-                animationDuration: '3s'
-              }}></div>
+              <div 
+                key={i} 
+                className="bg-text-secondary rounded-sm animate-pulse" 
+                style={{
+                  animationDelay: `${i * 0.05}s`,
+                  animationDuration: '3s'
+                }}
+              ></div>
             ))}
           </div>
         </div>
