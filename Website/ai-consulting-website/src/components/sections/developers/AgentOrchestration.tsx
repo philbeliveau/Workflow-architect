@@ -11,45 +11,50 @@ const AgentOrchestration: React.FC = () => {
       title: "Exécution Séquentielle",
       icon: <Code className="w-6 h-6" />,
       color: "warning-orange",
-      description: "Un seul cycle à la fois - pas de parallélisation",
+      description: "Claude Code traite un message à la fois",
       example: `// Claude Code (séquentiel)
 Message 1 : Lire fichier 1
 Message 2 : Lire fichier 2  
 Message 3 : Analyser
 Message 4 : Écrire solution
-// Résultat : 4 cycles → lent`
+// Résultat : 4 cycles → lent`,
+      details: [
+        "Aucune parallélisation intégrée des tâches",
+        "Chaque appel d'outil se fait séquentiellement dans un message",
+        "Temps d'attente cumulatif sur les grandes opérations"
+      ]
     },
     {
-      title: "Aucune Coordination Multi-Agent",
+      title: "Approche Mono-Agent",
       icon: <GitBranch className="w-6 h-6" />,
       color: "warning-orange", 
-      description: "Un seul 'cerveau' pour tous les problèmes",
+      description: "Une seule instance IA gérant tous les aspects",
       details: [
-        "Un seul 'cerveau' pour tous les problèmes",
-        "Pas de spécialisation selon les rôles (ex. analyste, codeur, testeur)",
-        "Approche monolithique et rigide"
+        "Aucune spécialisation de rôles (architecte vs codeur vs testeur)",
+        "Approche monolithique de résolution de problèmes",
+        "Pas de perspectives multiples sur les défis complexes"
       ]
     },
     {
-      title: "Mémoire Limitée",
+      title: "Mémoire de Session Limitée",
       icon: <Database className="w-6 h-6" />,
       color: "warning-orange",
-      description: "Aucune persistance entre sessions",
+      description: "Aucune persistance entre les sessions CLI",
       details: [
-        "Aucune mémoire persistante entre les sessions",
-        "Perte du contexte projet dès que l'onglet est fermé", 
-        "Redémarre à zéro à chaque fois"
+        "Le contexte se remet à zéro quand tu fermes/rouvres",
+        "Doit rétablir la compréhension du projet à chaque fois", 
+        "Perte des décisions et apprentissages précédents"
       ]
     },
     {
-      title: "Scalabilité Faible",
+      title: "Défis de Scalabilité",
       icon: <Zap className="w-6 h-6" />,
       color: "warning-orange",
-      description: "Performance réduite sur projets complexes",
+      description: "Performance dégradée sur très grandes bases de code",
       details: [
-        "Mal adapté aux projets complexes ou à grande échelle",
-        "Pas d'automatisation de la coordination ou des optimisations",
-        "Risque de performance réduite sur les projets lourds"
+        "Aucune coordination automatique pour workflows complexes multi-étapes",
+        "Décomposition manuelle des tâches requise",
+        "Gestion limitée des projets d'entreprise à grande échelle"
       ]
     }
   ];
