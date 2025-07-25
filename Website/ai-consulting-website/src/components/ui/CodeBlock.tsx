@@ -19,16 +19,26 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   className,
   showHeader = true
 }) => {
-  // Simple syntax highlighting for TypeScript/React
+  // Simple syntax highlighting for different languages
   const highlightCode = (code: string) => {
+    if (language === 'json') {
+      return code
+        .replace(/"([^"]*)":/g, '<span class="text-blue-400">"$1"</span>:')
+        .replace(/:\s*"([^"]*)"/g, ': <span class="text-green-400">"$1"</span>')
+        .replace(/:\s*(true|false|null)/g, ': <span class="text-purple-400">$1</span>')
+        .replace(/:\s*(\d+)/g, ': <span class="text-yellow-400">$1</span>')
+        .replace(/([{}\[\],])/g, '<span class="text-slate-400">$1</span>');
+    }
+    
+    // TypeScript/React highlighting
     return code
       .replace(/(&lt;)([A-Z][a-zA-Z]*)/g, '<span class="text-slate-500">$1</span><span class="text-pink-400">$2</span>')
       .replace(/(&lt;\/?)([A-Z][a-zA-Z]*)/g, '<span class="text-slate-500">$1</span><span class="text-pink-400">$2</span>')
       .replace(/(className|value|href|type)=/g, '<span class="text-violet-400">$1</span><span class="text-slate-500">=</span>')
-      .replace(/"([^"]*)"/g, '<span class="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-blue-500/10"><span class="relative text-blue-400">"$1"</span></span>')
-      .replace(/\{([^}]*)\}/g, '<span class="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-blue-500/10"><span class="relative text-blue-400">{$1}</span></span>')
+      .replace(/"([^"]*)"/g, '<span class="text-blue-400">"$1"</span>')
+      .replace(/\{([^}]*)\}/g, '<span class="text-blue-400">{$1}</span>')
       .replace(/(const|let|var|function|return|export|import|from)/g, '<span class="text-purple-400">$1</span>')
-      .replace(/(\d+)/g, '<span class="text-blue-400">$1</span>');
+      .replace(/(\d+)/g, '<span class="text-yellow-400">$1</span>');
   };
 
   return (

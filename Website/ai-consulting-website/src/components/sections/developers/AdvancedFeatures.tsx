@@ -21,9 +21,9 @@ const AdvancedFeatures: React.FC = () => {
     {
       phase: "Pseudocode",
       icon: <Code className="w-6 h-6" />,
-      color: "text-purple-600",
-      bgColor: "purple-50",
-      borderColor: "purple-300",
+      color: "text-primary-blue",
+      bgColor: "primary-blue/10",
+      borderColor: "primary-blue/30",
       description: "Crée une roadmap logique de l'application",
       features: [
         "Crée une roadmap logique de l'application",
@@ -33,9 +33,9 @@ const AdvancedFeatures: React.FC = () => {
     {
       phase: "Architecture",
       icon: <GitBranch className="w-6 h-6" />,
-      color: "text-purple-700",
-      bgColor: "purple-100",
-      borderColor: "purple-400",
+      color: "text-accent-red",
+      bgColor: "accent-red/10",
+      borderColor: "accent-red/30",
       description: "Définit les composants du système",
       features: [
         "Définit les composants du système",
@@ -45,9 +45,9 @@ const AdvancedFeatures: React.FC = () => {
     {
       phase: "Refinement", 
       icon: <TestTube className="w-6 h-6" />,
-      color: "text-purple-800",
-      bgColor: "purple-200",
-      borderColor: "purple-500",
+      color: "text-success-green",
+      bgColor: "success-green/10",
+      borderColor: "success-green/30",
       description: "Optimise les performances par calculs",
       features: [
         "Améliore la maintenabilité du code",
@@ -57,9 +57,9 @@ const AdvancedFeatures: React.FC = () => {
     {
       phase: "Completion",
       icon: <Rocket className="w-6 h-6" />,
-      color: "text-purple-900",
-      bgColor: "purple-300",
-      borderColor: "purple-600",
+      color: "text-hover-interactive",
+      bgColor: "hover-interactive/10",
+      borderColor: "hover-interactive/30",
       description: "Tests et déploiement avec monitoring",
       features: [
         "Tests unitaires, d'intégration et système",
@@ -69,7 +69,7 @@ const AdvancedFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-primary-800">
+    <section className="py-24 bg-background-dark-alt">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -93,7 +93,7 @@ const AdvancedFeatures: React.FC = () => {
           viewport={{ once: true }}
         >
           {/* Flow Container */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-full overflow-hidden">
             {orchestratorFlow.map((phase, index) => (
               <React.Fragment key={phase.phase}>
                 {/* Phase Card */}
@@ -105,7 +105,7 @@ const AdvancedFeatures: React.FC = () => {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className={`bg-${phase.bgColor} border-2 border-${phase.borderColor} rounded-2xl p-6 w-64 h-96 flex flex-col justify-between hover:border-${phase.borderColor.replace('300', '500').replace('400', '600').replace('500', '700').replace('600', '800')} transition-all duration-300`}>
+                  <div className={`bg-${phase.bgColor} border-2 border-${phase.borderColor} rounded-2xl p-4 min-h-[384px] flex flex-col justify-between hover:border-${phase.borderColor.replace('/30', '/50')} transition-all duration-300`}>
                     {/* Phase Header */}
                     <div className="text-center mb-4">
                       <div className={`w-16 h-16 bg-white border-2 border-${phase.borderColor} rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300`}>
@@ -116,7 +116,7 @@ const AdvancedFeatures: React.FC = () => {
                       <h3 className={`text-xl font-bold ${phase.color} mb-2`}>
                         Phase {index + 1}: {phase.phase}
                       </h3>
-                      <p className="text-gray-600 text-sm">
+                      <p className={`${phase.phase === 'Specification' ? 'text-gray-700' : 'text-text-light'} text-sm`}>
                         {phase.description}
                       </p>
                     </div>
@@ -126,7 +126,7 @@ const AdvancedFeatures: React.FC = () => {
                       {phase.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-start gap-2">
                           <div className={`w-2 h-2 ${phase.color.replace('text-', 'bg-')} rounded-full mt-2 flex-shrink-0`}></div>
-                          <span className="text-gray-700 text-sm leading-relaxed">
+                          <span className={`${phase.phase === 'Specification' ? 'text-gray-800' : 'text-text-light'} text-sm leading-relaxed`}>
                             {feature}
                           </span>
                         </div>
@@ -144,40 +144,10 @@ const AdvancedFeatures: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* Arrow between phases */}
-                {index < orchestratorFlow.length - 1 && (
-                  <motion.div
-                    className="hidden lg:flex items-center"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (index * 0.2) + 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <ChevronRight className="w-8 h-8 text-accent-blue animate-pulse" />
-                  </motion.div>
-                )}
               </React.Fragment>
             ))}
           </div>
 
-          {/* Role Definition Box */}
-          <motion.div
-            className="mt-24 bg-gray-50 border border-gray-300 rounded-2xl p-8 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-black font-bold mb-6 text-center text-lg">
-              Définition du Rôle d'Orchestrateur
-            </h4>
-            <div className="bg-white border border-gray-200 rounded-lg p-6 font-mono text-sm text-gray-700 leading-relaxed">
-              <p className="text-purple-600 mb-3 font-semibold">"roleDefinition":</p>
-              <p className="italic">
-                "You are entrusted with the overall project goal. Your paramount function is to gain a comprehensive understanding of the current project state by meticulously querying the project_memorys and user_preferences databases and reading key project files. You must analyze the project's status at a granular level, understanding which classes and functions have been planned, specified, and implemented. You then intelligently delegate to the next appropriate SPARC phase orchestrator after securing user approval. You must not write to any state databases. Your operational cycle concludes when you use attempt_completion after successfully delegating a task."
-              </p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -55,7 +55,7 @@ Message 4 : Écrire solution
   ];
 
   return (
-    <section className="py-24 bg-primary-900">
+    <section className="py-24 bg-background-dark">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -70,7 +70,7 @@ Message 4 : Écrire solution
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Comment surmonter les limitations de Claude Code avec l'orchestration intelligente.
-            <span className="text-accent-blue font-semibold block mt-2">
+            <span className="text-primary-blue font-semibold block mt-2">
               De l'approche séquentielle à l'orchestration parallèle avancée.
             </span>
           </p>
@@ -96,7 +96,7 @@ Message 4 : Écrire solution
               {claudeCodeLimitations.map((limitation, index) => (
                 <motion.div
                   key={limitation.title}
-                  className="bg-primary-800/50 rounded-2xl p-6"
+                  className="bg-background-dark-alt/50 rounded-2xl p-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -119,7 +119,7 @@ Message 4 : Écrire solution
                   </div>
 
                   {limitation.example && (
-                    <div className="bg-primary-900/50 rounded-lg p-4 font-mono text-xs text-text-secondary leading-relaxed">
+                    <div className="bg-background-dark-alt/50 rounded-lg p-4 font-mono text-xs text-text-secondary leading-relaxed">
                       <pre className="whitespace-pre-wrap">{limitation.example}</pre>
                     </div>
                   )}
@@ -138,8 +138,8 @@ Message 4 : Écrire solution
               ))}
             </div>
 
-            <div className="mt-8 bg-primary-900/50 rounded-lg p-4 text-center">
-              <p className="text-accent-blue font-semibold text-lg">
+            <div className="mt-8 bg-background-dark-alt/50 rounded-lg p-4 text-center">
+              <p className="text-primary-blue font-semibold text-lg">
                 💡 L'orchestration d'agents vient résoudre toutes ces limites en activant le travail parallèle, la spécialisation par rôle, la mémoire persistante, et l'auto-organisation des tâches.
               </p>
             </div>
@@ -154,8 +154,8 @@ Message 4 : Écrire solution
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="bg-accent-blue/10 border border-accent-blue/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-accent-blue mb-6 text-center">
+          <div className="bg-primary-blue/10 border border-primary-blue/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-primary-blue mb-6 text-center">
               La Solution d'Orchestration
             </h3>
 
@@ -168,11 +168,11 @@ Message 4 : Écrire solution
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-accent-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-4 h-4 text-accent-blue" />
+                    <div className="w-8 h-8 bg-primary-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-4 h-4 text-primary-blue" />
                     </div>
                     <div>
-                      <h4 className="text-accent-blue font-semibold mb-1">Principe BatchTool</h4>
+                      <h4 className="text-primary-blue font-semibold mb-1">Principe BatchTool</h4>
                       <p className="text-text-secondary text-sm">
                         Encapsule plusieurs actions MCP dans un seul message pour l'exécution parallèle
                       </p>
@@ -180,11 +180,11 @@ Message 4 : Écrire solution
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-accent-purple/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <GitBranch className="w-4 h-4 text-accent-purple" />
+                    <div className="w-8 h-8 bg-accent-red/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <GitBranch className="w-4 h-4 text-accent-red" />
                     </div>
                     <div>
-                      <h4 className="text-accent-purple font-semibold mb-1">Coordination Intelligente</h4>
+                      <h4 className="text-accent-red font-semibold mb-1">Coordination Intelligente</h4>
                       <p className="text-text-secondary text-sm">
                         Réduction de la latence réseau, du nombre de tokens, et du temps de coordination
                       </p>
@@ -205,7 +205,7 @@ Message 4 : Écrire solution
 
             {/* Arrow pointing to benefits */}
             <div className="text-center mt-8">
-              <ArrowRight className="w-8 h-8 text-accent-blue mx-auto animate-bounce" />
+              <ArrowRight className="w-8 h-8 text-primary-blue mx-auto animate-bounce" />
             </div>
           </div>
         </motion.div>

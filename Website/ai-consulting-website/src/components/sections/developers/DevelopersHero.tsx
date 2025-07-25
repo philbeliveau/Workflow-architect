@@ -70,8 +70,8 @@ const DevelopersHero: React.FC = () => {
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                Transformez Votre <span className="text-text-primary">"Vibe Coding"</span>
-                <span className="block text-accent-blue">en "Programmation Agentique"</span>
+                Maîtrisez les agents IA. <span className="text-text-primary">Développez plus vite,</span>
+                <span className="block text-primary-blue">avec plus de méthode.</span>
               </h1>
             </motion.div>
 
@@ -88,8 +88,8 @@ const DevelopersHero: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-primary-800/50 border border-primary-700 rounded-lg p-4">
-                  <h3 className="text-accent-blue font-semibold mb-2 flex items-center gap-2">
+                <div className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-lg p-4">
+                  <h3 className="text-primary-blue font-semibold mb-2 flex items-center gap-2">
                     <Cpu className="w-4 h-4" />
                     Stack IA Avancé
                   </h3>
@@ -100,8 +100,8 @@ const DevelopersHero: React.FC = () => {
                   </ul>
                 </div>
                 
-                <div className="bg-primary-800/50 border border-primary-700 rounded-lg p-4">
-                  <h3 className="text-accent-purple font-semibold mb-2 flex items-center gap-2">
+                <div className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-lg p-4">
+                  <h3 className="text-primary-blue font-semibold mb-2 flex items-center gap-2">
                     <Database className="w-4 h-4" />
                     Observabilité Complète
                   </h3>
@@ -147,33 +147,44 @@ const DevelopersHero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <CodeBlock
-              title="crew_orchestration.py"
-              code={`# Configuration CrewAI avec Claude-4 et observabilité
-from crewai import Agent, Task, Crew
-from claude_mcp import ClaudeCodeTool
-from observability import AgentTracker
-
-# Agent de revue de code avec mémoire persistante
-code_reviewer = Agent(
-    role="Senior Code Reviewer",
-    goal="Analyser et améliorer la qualité du code",
-    backstory="Expert en architecture et best practices",
-    tools=[ClaudeCodeTool(), GitHubAPI(), JiraIntegration()],
-    memory=PersistentMemory("code_review_context"),
-    verbose=True
-)
-
-# Agent de documentation automatique
-doc_generator = Agent(
-    role="Technical Writer",
-    goal="Générer documentation technique complète",
-    tools=[RepoAnalyzer(), DocumentationTemplate()],
-    memory=PersistentMemory("documentation_context")
-)
-
-# Métriques automatiques
-tracker.log_performance(crew.get_metrics())`}
-              language="python"
+              title="custom_modes.json"
+              code={`{
+  "customModes": [
+    {
+      "slug": "architect",
+      "name": "🏗️ Architect",
+      "roleDefinition": "Design scalable system architecture",
+      "customInstructions": "Create mermaid diagrams, define APIs, ensure modularity",
+      "groups": ["read", "edit"],
+      "source": "project"
+    },
+    {
+      "slug": "code",
+      "name": "🧠 Auto-Coder", 
+      "roleDefinition": "Write clean, modular code",
+      "customInstructions": "Clean architecture, no hardcoded values, <500 lines/file",
+      "groups": ["read", "edit", "browser", "mcp", "command"],
+      "source": "project"
+    },
+    {
+      "slug": "tdd",
+      "name": "🧪 Tester (TDD)",
+      "roleDefinition": "Test-driven development approach",
+      "customInstructions": "Write tests first, minimal implementation, refactor",
+      "groups": ["read", "edit", "browser", "mcp", "command"],
+      "source": "project"
+    },
+    {
+      "slug": "debug",
+      "name": "🪲 Debugger",
+      "roleDefinition": "Troubleshoot bugs and errors",
+      "customInstructions": "Use logs/traces, isolate issues, modular fixes",
+      "groups": ["read", "edit", "browser", "mcp", "command"],
+      "source": "project"
+    }
+  ]
+}`}
+              language="json"
             />
           </motion.div>
         </div>
@@ -189,11 +200,11 @@ tracker.log_performance(crew.get_metrics())`}
             { metric: "<20%", label: "Succès vibe coding", icon: Terminal, color: "text-warning-orange" },
             { metric: "3x", label: "Plus rapide (agentic)", icon: GitBranch, color: "text-success-green" },
             { metric: "90%", label: "Moins de bugs", icon: Cpu, color: "text-success-green" },
-            { metric: "2h", label: "Onboarding (vs 2 sem)", icon: Database, color: "text-accent-blue" }
+            { metric: "2h", label: "Onboarding (vs 2 sem)", icon: Database, color: "text-primary-blue" }
           ].map((item, index) => (
-            <div key={index} className="bg-primary-800/30 border border-primary-700 rounded-xl p-4 text-center">
-              <item.icon className={`w-6 h-6 ${item.color || 'text-accent-blue'} mx-auto mb-2`} />
-              <div className={`text-2xl font-bold ${item.color || 'text-accent-blue'} mb-1`}>{item.metric}</div>
+            <div key={index} className="bg-background-dark-alt/30 border border-primary-blue/30 rounded-xl p-4 text-center">
+              <item.icon className={`w-6 h-6 ${item.color || 'text-primary-blue'} mx-auto mb-2`} />
+              <div className={`text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{item.metric}</div>
               <div className="text-text-secondary text-xs">{item.label}</div>
             </div>
           ))}

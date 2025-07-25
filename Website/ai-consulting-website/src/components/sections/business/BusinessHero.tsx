@@ -7,34 +7,50 @@ import { ArrowRight, Briefcase, Users, BarChart3, Calendar, Building, Lightbulb 
 
 const BusinessHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-accent-red/5 to-background-dark pt-20">
-      {/* Friendly Background Pattern */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark pt-20">
+      {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-accent-red/30 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-blue/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-blue/20 rounded-full blur-3xl opacity-20 animate-pulse delay-2000"></div>
         </div>
+        
+        {/* Background grid pattern with squares */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="grid grid-cols-12 gap-2 h-full p-4">
+            {Array.from({ length: 144 }, (_, i) => (
+              <div 
+                key={i} 
+                className="bg-text-secondary rounded-sm animate-pulse" 
+                style={{
+                  animationDelay: `${i * 0.05}s`,
+                  animationDuration: '3s'
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Floating business elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 text-accent-purple"
+          className="absolute top-1/4 left-1/4 text-primary-blue/40"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
           <BarChart3 size={48} />
         </motion.div>
         <motion.div
-          className="absolute top-3/4 right-1/4 text-accent-teal"
+          className="absolute top-3/4 right-1/4 text-accent-red/60"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
           <Calendar size={56} />
         </motion.div>
         <motion.div
-          className="absolute top-1/2 left-1/6 text-accent-blue"
+          className="absolute top-1/2 left-1/6 text-primary-blue/50"
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         >
@@ -52,14 +68,14 @@ const BusinessHero: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
 
-              <div className="inline-flex items-center gap-2 bg-accent-purple/10 border border-accent-purple/20 rounded-full px-4 py-2 mb-6">
-                <Briefcase className="w-4 h-4 text-accent-purple" />
-                <span className="text-accent-purple text-sm font-medium">Transformation Business</span>
+              <div className="inline-flex items-center gap-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full px-4 py-2 mb-6">
+                <Briefcase className="w-4 h-4 text-primary-blue" />
+                <span className="text-primary-blue text-sm font-medium">Transformation Business</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                <span className="text-accent-blue">Construisez vos outils sans attendre l'IT.</span>
-                <span className="block text-accent-purple">De "peut-être en Q3" à "fait en 3 jours".</span>
+                <span className="text-primary-blue">Construisez vos outils sans attendre l'IT.</span>
+                <span className="block text-accent-red">De "peut-être en Q3" à "fait en 3 jours".</span>
               </h1>
             </motion.div>
 
@@ -77,8 +93,8 @@ const BusinessHero: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-1 gap-4 mb-8">
-                <div className="bg-primary-800/50 border border-primary-700 rounded-lg p-4">
-                  <h3 className="text-accent-purple font-semibold mb-3 flex items-center gap-2">
+                <div className="bg-background-accent-grey/50 border border-primary-blue/30 rounded-lg p-4">
+                  <h3 className="text-primary-blue font-semibold mb-3 flex items-center gap-2">
                     <Lightbulb className="w-4 h-4" />
                     Ce Que Vous Pourrez Construire
                   </h3>
@@ -138,7 +154,7 @@ const BusinessHero: React.FC = () => {
             className="space-y-6"
           >
             {/* Dashboard Preview */}
-            <div className="bg-gradient-to-r from-accent-purple/10 to-accent-teal/10 border border-accent-purple/20 rounded-2xl p-6">
+            <div className="bg-gradient-to-r from-primary-blue/10 to-accent-red/10 border border-primary-blue/20 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-3 h-3 bg-red-500/30 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500/30 rounded-full"></div>
@@ -152,17 +168,17 @@ const BusinessHero: React.FC = () => {
                   <span className="bg-success-green/20 text-success-green px-2 py-1 rounded text-xs">En cours</span>
                 </div>
                 
-                <div className="w-full bg-primary-700 rounded-full h-2">
-                  <div className="bg-accent-purple h-2 rounded-full" style={{ width: '75%' }}></div>
+                <div className="w-full bg-background-dark-alt rounded-full h-2">
+                  <div className="bg-primary-blue h-2 rounded-full" style={{ width: '75%' }}></div>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-accent-purple font-bold">75%</div>
+                    <div className="text-primary-blue font-bold">75%</div>
                     <div className="text-text-secondary text-xs">Avancement</div>
                   </div>
                   <div>
-                    <div className="text-accent-teal font-bold">15j</div>
+                    <div className="text-accent-red font-bold">15j</div>
                     <div className="text-text-secondary text-xs">Restants</div>
                   </div>
                   <div>
@@ -174,15 +190,15 @@ const BusinessHero: React.FC = () => {
             </div>
 
             {/* Simple App Preview */}
-            <div className="bg-gradient-to-r from-accent-teal/10 to-accent-blue/10 border border-accent-teal/20 rounded-2xl p-6">
+            <div className="bg-gradient-to-r from-accent-red/10 to-primary-blue/10 border border-accent-red/20 rounded-2xl p-6">
               <h4 className="text-text-primary font-semibold mb-3 flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-accent-teal" />
+                <Calendar className="w-4 h-4 text-accent-red" />
                 Système de Réservation
               </h4>
               
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                  <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
                   <span className="text-text-secondary">9h00 - Réunion stratégie (Disponible)</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
@@ -190,7 +206,7 @@ const BusinessHero: React.FC = () => {
                   <span className="text-text-secondary">14h00 - Demo produit (Réservé)</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                  <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
                   <span className="text-text-secondary">16h00 - Consultation (Disponible)</span>
                 </div>
               </div>
@@ -207,12 +223,12 @@ const BusinessHero: React.FC = () => {
         >
           {[
             { metric: "3 jours", label: "Vs 'peut-être en Q3'", icon: Calendar, color: "text-success-green" },
-            { metric: "€0", label: "Coût développeur", icon: Users, color: "text-accent-teal" },
-            { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase, color: "text-accent-purple" },
+            { metric: "€0", label: "Coût développeur", icon: Users, color: "text-primary-blue" },
+            { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase, color: "text-accent-red" },
           ].map((item, index) => (
-            <div key={index} className="bg-primary-800/30 border border-primary-700 rounded-xl p-4 text-center">
-              <item.icon className={`w-6 h-6 ${item.color || 'text-accent-purple'} mx-auto mb-2`} />
-              <div className={`text-2xl font-bold ${item.color || 'text-accent-purple'} mb-1`}>{item.metric}</div>
+            <div key={index} className="bg-background-accent-grey/30 border border-primary-blue/30 rounded-xl p-4 text-center">
+              <item.icon className={`w-6 h-6 ${item.color || 'text-primary-blue'} mx-auto mb-2`} />
+              <div className={`text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{item.metric}</div>
               <div className="text-text-secondary text-xs">{item.label}</div>
             </div>
           ))}

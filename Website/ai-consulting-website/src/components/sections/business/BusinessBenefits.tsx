@@ -20,7 +20,7 @@ const BusinessBenefits: React.FC = () => {
     {
       step: "Product Owner",
       icon: <Users className="w-10 h-10" />,
-      color: "purple-500", 
+      color: "primary-blue", 
       description: "Organisation et alignement",
       details: [
         "Organisation automatique",
@@ -31,7 +31,7 @@ const BusinessBenefits: React.FC = () => {
     {
       step: "Développeur",
       icon: <Code className="w-10 h-10" />,
-      color: "purple-600",
+      color: "accent-red",
       description: "Plan et estimation",
       details: [
         "Architecture optimale",
@@ -42,7 +42,7 @@ const BusinessBenefits: React.FC = () => {
     {
       step: "Aligneur",
       icon: <CheckCircle className="w-10 h-10" />,
-      color: "purple-700",
+      color: "primary-blue",
       description: "Code et debug autonome",
       details: [
         "Validation continue",
@@ -53,7 +53,7 @@ const BusinessBenefits: React.FC = () => {
     {
       step: "Livreur",
       icon: <Rocket className="w-10 h-10" />,
-      color: "purple-800",
+      color: "accent-red",
       description: "Preuve de concept convaincante",
       details: [
         "Déploiement sécurisé",
@@ -112,8 +112,8 @@ const BusinessBenefits: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-accent-red/10 to-primary-blue/10 border border-accent-red/20 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-accent-purple mb-4">
+          <div className="bg-gradient-to-r from-primary-blue/10 to-accent-red/10 border border-primary-blue/20 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-primary-blue mb-4">
               ⚡ {superPower.title}
             </h3>
             <p className="text-text-secondary text-lg mb-8">
@@ -124,16 +124,16 @@ const BusinessBenefits: React.FC = () => {
               {superPower.benefits.map((benefit, index) => (
                 <motion.div
                   key={benefit.title}
-                  className="bg-primary-900/50 rounded-xl p-6"
+                  className="bg-background-accent-grey/50 rounded-xl p-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-accent-purple mb-3 flex justify-center">
+                  <div className="text-primary-blue mb-3 flex justify-center">
                     {benefit.icon}
                   </div>
-                  <h4 className="text-accent-purple font-bold mb-2">
+                  <h4 className="text-primary-blue font-bold mb-2">
                     {benefit.title}
                   </h4>
                   <p className="text-text-secondary text-sm leading-relaxed">
@@ -156,7 +156,7 @@ const BusinessBenefits: React.FC = () => {
           {/* Desktop Flow - Horizontal */}
           <div className="hidden lg:block relative">
             {/* Connection Lines */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 via-purple-500 via-purple-600 via-purple-700 to-purple-800 opacity-40 transform -translate-y-1/2"></div>
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-blue via-primary-blue via-accent-red via-accent-red to-accent-red opacity-40 transform -translate-y-1/2"></div>
             
             <div className="flex items-center justify-between gap-4">
               {valueChainSteps.map((step, index) => (
@@ -180,7 +180,7 @@ const BusinessBenefits: React.FC = () => {
                         <h4 className={`text-2xl font-bold text-${step.color} mb-4`}>
                           {step.step}
                         </h4>
-                        <p className="text-black text-lg font-medium">
+                        <p className="text-text-primary text-lg font-medium">
                           {step.description}
                         </p>
                       </div>
@@ -189,7 +189,7 @@ const BusinessBenefits: React.FC = () => {
                       <div className="space-y-3">
                         {step.details.map((detail, dIndex) => (
                           <div key={dIndex}>
-                            <span className="text-black text-base leading-relaxed">
+                            <span className="text-text-secondary text-base leading-relaxed">
                               {detail}
                             </span>
                           </div>
@@ -197,7 +197,7 @@ const BusinessBenefits: React.FC = () => {
                       </div>
 
                       {/* Step Number */}
-                      <div className={`absolute -top-5 -left-5 w-12 h-12 bg-gray-900 border-3 border-${step.color} rounded-full flex items-center justify-center shadow-lg`}>
+                      <div className={`absolute -top-5 -left-5 w-12 h-12 bg-background-dark border-3 border-${step.color} rounded-full flex items-center justify-center shadow-lg`}>
                         <span className={`text-${step.color} font-bold text-lg`}>{index + 1}</span>
                       </div>
                     </div>
@@ -212,7 +212,7 @@ const BusinessBenefits: React.FC = () => {
                       transition={{ delay: (index * 0.2) + 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <ArrowRight className="w-6 h-6 text-purple-500 animate-pulse" />
+                      <ArrowRight className="w-6 h-6 text-primary-blue animate-pulse" />
                     </motion.div>
                   )}
                 </React.Fragment>
@@ -242,7 +242,7 @@ const BusinessBenefits: React.FC = () => {
                       <h4 className={`text-2xl font-bold text-${step.color} mb-2`}>
                         {index + 1}. {step.step}
                       </h4>
-                      <p className="text-black text-lg font-medium">
+                      <p className="text-text-primary text-lg font-medium">
                         {step.description}
                       </p>
                     </div>
@@ -262,7 +262,7 @@ const BusinessBenefits: React.FC = () => {
                 {/* Vertical Arrow */}
                 {index < valueChainSteps.length - 1 && (
                   <div className="flex justify-center py-4">
-                    <ArrowRight className="w-6 h-6 text-purple-500 rotate-90" />
+                    <ArrowRight className="w-6 h-6 text-primary-blue rotate-90" />
                   </div>
                 )}
               </motion.div>
@@ -280,7 +280,7 @@ const BusinessBenefits: React.FC = () => {
         >
           <a 
             href="/case-studies" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold text-lg rounded-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-blue to-accent-red text-white font-bold text-lg rounded-xl hover:from-accent-red hover:to-primary-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Voir nos cas d'étude
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

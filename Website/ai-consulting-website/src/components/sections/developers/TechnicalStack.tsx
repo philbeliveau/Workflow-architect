@@ -9,7 +9,7 @@ const TechnicalStack: React.FC = () => {
     {
       title: "LLM Core & Orchestration",
       icon: <Brain className="w-8 h-8" />,
-      color: "accent-blue",
+      color: "primary-blue",
       tools: [
         {
           name: "Claude-4 Sonnet",
@@ -31,7 +31,7 @@ const TechnicalStack: React.FC = () => {
     {
       title: "Development Integration",
       icon: <GitBranch className="w-8 h-8" />,
-      color: "accent-purple",
+      color: "primary-blue",
       tools: [
         {
           name: "Claude.dev Extension",
@@ -123,14 +123,14 @@ const TechnicalStack: React.FC = () => {
   };
 
   return (
-    <section id="technical-stack" className="py-24 bg-gradient-to-br from-primary-800 to-primary-900 relative overflow-hidden">
+    <section id="technical-stack" className="py-24 bg-gradient-to-br from-background-dark to-background-dark-alt relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-8 gap-4 h-full p-8">
           {Array.from({ length: 64 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-accent-blue rounded-lg animate-pulse" 
+              className="bg-primary-blue rounded-lg animate-pulse" 
               style={{
                 animationDelay: `${i * 0.1}s`,
                 animationDuration: '4s'
@@ -155,7 +155,7 @@ const TechnicalStack: React.FC = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Nous déployons une infrastructure IA complète, optimisée pour votre environnement de développement. 
-            <span className="text-accent-blue font-semibold"> Pas d'outils isolés, mais un écosystème intégré.</span>
+            <span className="text-primary-blue font-semibold"> Pas d'outils isolés, mais un écosystème intégré.</span>
           </p>
         </motion.div>
         </div>
@@ -192,7 +192,7 @@ const TechnicalStack: React.FC = () => {
                 {category.tools.map((tool, toolIndex) => (
                   <motion.div
                     key={tool.name}
-                    className="bg-primary-900/50 border border-primary-700 rounded-2xl p-6 hover:border-accent-blue/50 transition-all duration-300"
+                    className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-2xl p-6 hover:border-primary-blue/50 transition-all duration-300"
                     whileHover={{ 
                       scale: 1.02,
                       y: -5,
@@ -245,7 +245,7 @@ const TechnicalStack: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-primary-800/50 border border-primary-700 rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-2xl p-8 max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div className="flex items-start gap-3">
                 <Shield className="w-6 h-6 text-success-green flex-shrink-0 mt-1" />
@@ -256,17 +256,17 @@ const TechnicalStack: React.FC = () => {
               </div>
               
               <div className="flex items-start gap-3">
-                <Network className="w-6 h-6 text-accent-blue flex-shrink-0 mt-1" />
+                <Network className="w-6 h-6 text-primary-blue flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-accent-blue font-semibold mb-2">API-First</h4>
+                  <h4 className="text-primary-blue font-semibold mb-2">API-First</h4>
                   <p className="text-text-secondary text-sm">Architecture modulaire, intégrations natives, webhooks temps réel</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
-                <Database className="w-6 h-6 text-accent-purple flex-shrink-0 mt-1" />
+                <Database className="w-6 h-6 text-primary-blue flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-accent-purple font-semibold mb-2">Scaling Auto</h4>
+                  <h4 className="text-primary-blue font-semibold mb-2">Scaling Auto</h4>
                   <p className="text-text-secondary text-sm">Load balancing agents, memory distribuée, optimisation continue</p>
                 </div>
               </div>

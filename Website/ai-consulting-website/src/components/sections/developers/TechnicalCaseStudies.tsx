@@ -31,9 +31,9 @@ const TechnicalCaseStudies: React.FC = () => {
     {
       phase: "Test Sécurité",
       agent: "Security Agent",
-      color: "text-purple-600",
-      bgColor: "purple-50",
-      borderColor: "purple-300",
+      color: "text-primary-blue",
+      bgColor: "primary-blue/10",
+      borderColor: "primary-blue/30",
       description: "Analyse les vulnérabilités",
       actions: [
         "Scanne les vulnérabilités OWASP",
@@ -45,9 +45,9 @@ const TechnicalCaseStudies: React.FC = () => {
     {
       phase: "Alignement",
       agent: "Alignment Agent",
-      color: "text-purple-700",
-      bgColor: "purple-100",
-      borderColor: "purple-400",
+      color: "text-accent-red",
+      bgColor: "accent-red/10",
+      borderColor: "accent-red/30",
       description: "Vérifie les exigences",
       actions: [
         "Compare avec les exigences de sécurité",
@@ -59,9 +59,9 @@ const TechnicalCaseStudies: React.FC = () => {
     {
       phase: "Enforcement",
       agent: "Quality Agent", 
-      color: "text-purple-800",
-      bgColor: "purple-200",
-      borderColor: "purple-500",
+      color: "text-success-green",
+      bgColor: "success-green/10",
+      borderColor: "success-green/30",
       description: "Applique les corrections",
       actions: [
         "Corrige les vulnérabilités détectées",
@@ -73,9 +73,9 @@ const TechnicalCaseStudies: React.FC = () => {
     {
       phase: "Vérification",
       agent: "Sub-Agent Verifier",
-      color: "text-purple-900",
-      bgColor: "purple-300",
-      borderColor: "purple-600",
+      color: "text-hover-interactive",
+      bgColor: "hover-interactive/10",
+      borderColor: "hover-interactive/30",
       description: "Vérifie le code généré",
       actions: [
         "Tests de sécurité automatisés",
@@ -87,7 +87,7 @@ const TechnicalCaseStudies: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-primary-900">
+    <section className="py-24 bg-background-dark">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -102,7 +102,7 @@ const TechnicalCaseStudies: React.FC = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Exemple concret : comment nos agents IA collaboratifs gèrent les préoccupations de sécurité
-            <span className="text-accent-blue font-semibold block mt-2">
+            <span className="text-primary-blue font-semibold block mt-2">
               avec un cycle constant de développement, test, alignement et vérification.
             </span>
           </p>
@@ -130,22 +130,22 @@ const TechnicalCaseStudies: React.FC = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 text-sm">
-              <div className="bg-primary-800/50 rounded-lg p-4">
+              <div className="bg-background-dark-alt/50 rounded-lg p-4">
                 <h4 className="text-warning-orange font-semibold mb-2">🔍 Problème Identifié</h4>
                 <p className="text-text-secondary leading-relaxed">
                   {caseStudy.scenario}
                 </p>
               </div>
               
-              <div className="bg-primary-800/50 rounded-lg p-4">
+              <div className="bg-background-dark-alt/50 rounded-lg p-4">
                 <h4 className="text-success-green font-semibold mb-2">💡 Solution Proposée</h4>
                 <p className="text-text-secondary leading-relaxed">
                   {caseStudy.solution}
                 </p>
               </div>
               
-              <div className="bg-primary-800/50 rounded-lg p-4">
-                <h4 className="text-accent-blue font-semibold mb-2">🏗️ Environnement</h4>
+              <div className="bg-background-dark-alt/50 rounded-lg p-4">
+                <h4 className="text-primary-blue font-semibold mb-2">🏗️ Environnement</h4>
                 <p className="text-text-secondary leading-relaxed">
                   {caseStudy.environment}
                 </p>
@@ -170,10 +170,10 @@ const TechnicalCaseStudies: React.FC = () => {
           <div className="relative">
             {/* Central Hub */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-32 h-32 bg-gradient-to-r from-accent-blue/20 to-accent-purple/20 rounded-full border-2 border-accent-blue/30 flex items-center justify-center">
+              <div className="w-32 h-32 bg-gradient-to-r from-primary-blue/20 to-accent-red/20 rounded-full border-2 border-primary-blue/30 flex items-center justify-center">
                 <div className="text-center">
-                  <Zap className="w-8 h-8 text-accent-blue mx-auto mb-2" />
-                  <span className="text-accent-blue font-bold text-sm">Cycle<br/>Continu</span>
+                  <Zap className="w-8 h-8 text-primary-blue mx-auto mb-2" />
+                  <span className="text-primary-blue font-bold text-sm">Cycle<br/>Continu</span>
                 </div>
               </div>
             </div>
@@ -190,13 +190,13 @@ const TechnicalCaseStudies: React.FC = () => {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className={`bg-${agent.bgColor} border-2 border-${agent.borderColor} rounded-2xl p-6 h-[480px] flex flex-col justify-between hover:border-${agent.borderColor.replace('300', '500').replace('400', '600').replace('500', '700').replace('600', '800')} transition-all duration-300`}>
+                  <div className={`bg-${agent.bgColor} border-2 border-${agent.borderColor} rounded-2xl p-6 h-[480px] flex flex-col justify-between hover:border-${agent.borderColor.replace('/30', '/50')} transition-all duration-300`}>
                     {/* Agent Header */}
                     <div className="text-center mb-4">
                       <h4 className={`text-lg font-bold ${agent.color} mb-1`}>
                         {agent.agent}
                       </h4>
-                      <p className="text-gray-600 text-sm mb-2">
+                      <p className={`${agent.phase === 'Développement' ? 'text-gray-700' : 'text-text-light'} text-sm mb-2`}>
                         {agent.description}
                       </p>
                       <div className={`inline-block bg-${agent.bgColor} border border-${agent.borderColor} rounded-full px-3 py-1`}>
@@ -208,11 +208,11 @@ const TechnicalCaseStudies: React.FC = () => {
 
                     {/* Actions */}
                     <div className="space-y-3 mb-4 flex-grow">
-                      <h5 className="text-gray-800 font-semibold text-sm mb-2">Actions :</h5>
+                      <h5 className={`${agent.phase === 'Développement' ? 'text-gray-900' : 'text-text-light'} font-semibold text-sm mb-2`}>Actions :</h5>
                       {agent.actions.map((action, aIndex) => (
                         <div key={aIndex} className="flex items-start gap-2">
                           <div className={`w-2 h-2 ${agent.color.replace('text-', 'bg-')} rounded-full mt-2 flex-shrink-0`}></div>
-                          <span className="text-gray-700 text-xs leading-relaxed">
+                          <span className={`${agent.phase === 'Développement' ? 'text-gray-800' : 'text-text-light'} text-xs leading-relaxed`}>
                             {action}
                           </span>
                         </div>
@@ -221,7 +221,7 @@ const TechnicalCaseStudies: React.FC = () => {
 
                     {/* Concerns */}
                     <div className="space-y-2">
-                      <h5 className="text-gray-800 font-semibold text-sm mb-2">Détecte :</h5>
+                      <h5 className={`${agent.phase === 'Développement' ? 'text-gray-900' : 'text-text-light'} font-semibold text-sm mb-2`}>Détecte :</h5>
                       {agent.concerns.map((concern, cIndex) => (
                         <div key={cIndex} className="flex items-start gap-2">
                           <div className={`w-2 h-2 ${agent.color.replace('text-', 'bg-')} rounded-full mt-2 flex-shrink-0`}></div>
