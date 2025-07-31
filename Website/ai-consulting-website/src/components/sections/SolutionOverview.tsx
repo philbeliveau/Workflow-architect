@@ -32,19 +32,19 @@ const SolutionOverview: React.FC = () => {
       number: "01",
       icon: <Search className="w-8 h-8" />,
       title: "Analyse ciblée de vos opérations",
-      description: "On s'assoit avec vous pour comprendre vos enjeux, vos outils et vos projets. Évaluation du potentiel IA : on identifie les points d'entrée les plus prometteurs pour l'automatisation."
+      description: "On s'assoit avec vous pour comprendre vos enjeux, vos outils et vos projets. Évaluation du potentiel IA : on identifie les points d'entrée les plus prometteurs pour accélérer vos développeurs."
     },
     {
       number: "02",
       icon: <GraduationCap className="w-8 h-8" />,
       title: "Formation actionnable",
-      description: "Vous recevez nos frameworks, nos modèles de prompts, nos checklists de design. Mise en situation guidée : exemples concrets appliqués à vos cas réels, sans jamais toucher à votre infra."
+      description: "Vous recevez nos frameworks, nos modèles de prompts, nos checklists de design. Mise en situation guidée : exemples concrets appliqués à vos cas réels."
     },
     {
       number: "03",
       icon: <Target className="w-8 h-8" />,
       title: "Support asynchrone",
-      description: "Possibilité de nous recontacter pour débloquer des points spécifiques ou ajuster les pratiques. Nous ne construisons pas vos agents, nous vous donnons le manuel et la méthode."
+      description: "Veille constante sur les nouvelles pratiques et possibilité de nous recontacter pour débloquer des points spécifiques ou ajuster les pratiques. Nous ne construisons pas vos agents, nous vous donnons le manuel et la méthode."
     }
   ];
 
