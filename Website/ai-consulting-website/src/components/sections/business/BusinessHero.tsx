@@ -4,8 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Briefcase, Users, BarChart3, Calendar, Building, Lightbulb } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const BusinessHero: React.FC = () => {
+  const t = useTranslations('business');
+  const metrics = t.raw('metrics');
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark pt-20">
       {/* Background Pattern */}
@@ -70,12 +74,12 @@ const BusinessHero: React.FC = () => {
 
               <div className="inline-flex items-center gap-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full px-4 py-2 mb-6">
                 <Briefcase className="w-4 h-4 text-primary-blue" />
-                <span className="text-primary-blue text-sm font-medium">Transformation Business</span>
+                <span className="text-primary-blue text-sm font-medium">{t('badge')}</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                <span className="text-primary-blue">Construisez vos outils sans attendre l'IT.</span>
-                <span className="block text-accent-red">De "peut-être en Q3" à "fait en 3 jours".</span>
+                <span className="text-primary-blue">{t('title')}</span>
+                <span className="block text-accent-red">{t('subtitle')}</span>
               </h1>
             </motion.div>
 
@@ -85,35 +89,31 @@ const BusinessHero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-                Tableau de bord client ? Outil de gestion interne ? Automatisation de processus ? 
-                <strong> Décrivez ce dont vous avez besoin, obtenez une application fonctionnelle.</strong>
-                <span className="text-success-green font-semibold block mt-2">
-                  Construisez vos outils sans attendre l'IT. De "peut-être en Q3" à "fait en 3 jours".
-                </span>
+                {t('description')}
               </p>
 
               <div className="grid grid-cols-1 gap-4 mb-8">
                 <div className="bg-background-accent-grey/50 border border-primary-blue/30 rounded-lg p-4">
                   <h3 className="text-primary-blue font-semibold mb-3 flex items-center gap-2">
                     <Lightbulb className="w-4 h-4" />
-                    Ce Que Vous Pourrez Construire
+                    {t('whatYouCanBuild')}
                   </h3>
                   <div className="grid grid-cols-2 gap-4 text-text-secondary text-sm">
                     <div>
-                      <strong>• Tableaux de bord clients</strong><br/>
-                      Statut projet, métriques, rapports
+                      <strong>• {t('examples.dashboards')}</strong><br/>
+                      {t('examples.dashboardsDesc')}
                     </div>
                     <div>
-                      <strong>• Outils internes</strong><br/>
-                      Gestion inventaire, workflows équipe
+                      <strong>• {t('examples.tools')}</strong><br/>
+                      {t('examples.toolsDesc')}
                     </div>
                     <div>
-                      <strong>• Automatisations</strong><br/>
-                      Connecter vos outils existants
+                      <strong>• {t('examples.automation')}</strong><br/>
+                      {t('examples.automationDesc')}
                     </div>
                     <div>
-                      <strong>• Apps simples</strong><br/>
-                      Portails clients, systèmes de réservation
+                      <strong>• {t('examples.apps')}</strong><br/>
+                      {t('examples.appsDesc')}
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const BusinessHero: React.FC = () => {
                 href="/book-demo"
                 className="group"
               >
-                Voir Comment Ça Marche
+                {t('cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -141,7 +141,7 @@ const BusinessHero: React.FC = () => {
                 size="lg" 
                 href="#business-examples"
               >
-                Exemples Concrets
+                {t('cta.secondary')}
               </Button>
             </motion.div>
           </div>
@@ -159,13 +159,13 @@ const BusinessHero: React.FC = () => {
                 <div className="w-3 h-3 bg-red-500/30 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500/30 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-500/30 rounded-full"></div>
-                <span className="text-text-secondary text-sm ml-2">Tableau de Bord Client</span>
+                <span className="text-text-secondary text-sm ml-2">{t('dashboard.title')}</span>
               </div>
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-text-primary font-medium">Projet Website Refonte</span>
-                  <span className="bg-success-green/20 text-success-green px-2 py-1 rounded text-xs">En cours</span>
+                  <span className="text-text-primary font-medium">{t('dashboard.project')}</span>
+                  <span className="bg-success-green/20 text-success-green px-2 py-1 rounded text-xs">{t('dashboard.status')}</span>
                 </div>
                 
                 <div className="w-full bg-background-dark-alt rounded-full h-2">
@@ -175,15 +175,15 @@ const BusinessHero: React.FC = () => {
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <div className="text-primary-blue font-bold">75%</div>
-                    <div className="text-text-secondary text-xs">Avancement</div>
+                    <div className="text-text-secondary text-xs">{t('dashboard.progress')}</div>
                   </div>
                   <div>
                     <div className="text-accent-red font-bold">15j</div>
-                    <div className="text-text-secondary text-xs">Restants</div>
+                    <div className="text-text-secondary text-xs">{t('dashboard.remaining')}</div>
                   </div>
                   <div>
                     <div className="text-success-green font-bold">€15k</div>
-                    <div className="text-text-secondary text-xs">Budget</div>
+                    <div className="text-text-secondary text-xs">{t('dashboard.budget')}</div>
                   </div>
                 </div>
               </div>
@@ -193,21 +193,21 @@ const BusinessHero: React.FC = () => {
             <div className="bg-gradient-to-r from-accent-red/10 to-primary-blue/10 border border-accent-red/20 rounded-2xl p-6">
               <h4 className="text-text-primary font-semibold mb-3 flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-accent-red" />
-                Système de Réservation
+                {t('booking.title')}
               </h4>
               
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
-                  <span className="text-text-secondary">9h00 - Réunion stratégie (Disponible)</span>
+                  <span className="text-text-secondary">9h00 - {t('booking.meeting')} ({t('booking.available')})</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-2 h-2 bg-warning-orange rounded-full"></div>
-                  <span className="text-text-secondary">14h00 - Demo produit (Réservé)</span>
+                  <span className="text-text-secondary">14h00 - {t('booking.demo')} ({t('booking.reserved')})</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
-                  <span className="text-text-secondary">16h00 - Consultation (Disponible)</span>
+                  <span className="text-text-secondary">16h00 - {t('booking.consultation')} ({t('booking.available')})</span>
                 </div>
               </div>
             </div>
@@ -221,17 +221,20 @@ const BusinessHero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 grid grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {[
-            { metric: "3 jours", label: "Vs 'peut-être en Q3'", icon: Calendar, color: "text-success-green" },
-            { metric: "€0", label: "Coût développeur", icon: Users, color: "text-primary-blue" },
-            { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase, color: "text-accent-red" },
-          ].map((item, index) => (
-            <div key={index} className="bg-background-accent-grey/30 border border-primary-blue/30 rounded-xl p-4 text-center">
-              <item.icon className={`w-6 h-6 ${item.color || 'text-primary-blue'} mx-auto mb-2`} />
-              <div className={`text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{item.metric}</div>
-              <div className="text-text-secondary text-xs">{item.label}</div>
-            </div>
-          ))}
+          {metrics.map((item: {value: string, label: string}, index: number) => {
+            const icons = [Calendar, Users, Briefcase];
+            const colors = ["text-success-green", "text-primary-blue", "text-accent-red"];
+            const IconComponent = icons[index];
+            const colorClass = colors[index];
+            
+            return (
+              <div key={index} className="bg-background-accent-grey/30 border border-primary-blue/30 rounded-xl p-4 text-center">
+                <IconComponent className={`w-6 h-6 ${colorClass} mx-auto mb-2`} />
+                <div className={`text-2xl font-bold ${colorClass} mb-1`}>{item.value}</div>
+                <div className="text-text-secondary text-xs">{item.label}</div>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

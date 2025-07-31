@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NEWCODE - Développement IA Accéléré",
-  description: "NEWCODE vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
+  title: "NEWCODE",
+  description: "AI Development Solutions",
 };
 
 export default function RootLayout({
@@ -24,14 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <a href="#main-content" className="skip-link">
-          Passer au contenu principal
-        </a>
         <SessionProvider session={undefined}>
           {children}
         </SessionProvider>

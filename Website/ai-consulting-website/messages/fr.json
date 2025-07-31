@@ -1,0 +1,154 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "tracks": "Parcours", 
+    "problem": "Problème",
+    "solution": "Solution",
+    "contact": "Contact",
+    "freeEvaluation": "Évaluation Gratuite",
+    "closeMobileMenu": "Fermer le menu mobile",
+    "openMobileMenu": "Ouvrir le menu mobile"
+  },
+  "hero": {
+    "title": "Maîtrisez les outils d'aujourd'hui. Codez comme ceux de demain.",
+    "subtitle": "Les agents IA ne sont pas un outil en plus — c'est une nouvelle façon de travailler et de développer.",
+    "description": "Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour structurer, clarifier et accélérer votre travail grâce aux agents IA.",
+    "cta": {
+      "primary": "Découvrir les parcours",
+      "secondary": "Évaluation Gratuite"
+    },
+    "benefits": {
+      "title": "Transformez votre façon de travailler. Restez à jour. Adoptez les meilleures pratiques IA :",
+      "items": [
+          "Nous vous montrons le pouvoir des agents directement dans votre éditeur de code",
+          "Nous mettons à jour votre stack IA avec les bons outils, les bonnes pratiques, au bon moment",
+          "Nous vulgarisons les nouvelles approches de programmation",
+          "Nous vous apprenons à programmer plus rapidement",
+          "Nous vous aidons à construire des applications de plus en plus complexes",
+          "Nous outillons votre effectif non-technique"
+        ],
+      "conclusion": "→ Vous bénéficiez maintenant des capacités d'une équipe complète."
+    }
+  },
+  "business": {
+    "badge": "Transformation Business",
+    "title": "Construisez vos outils sans attendre l'IT.",
+    "subtitle": "De \"peut-être en Q3\" à \"fait en 3 jours\".",
+    "description": "Tableau de bord client ? Outil de gestion interne ? Automatisation de processus ? Décrivez ce dont vous avez besoin, obtenez une application fonctionnelle.",
+    "whatYouCanBuild": "Ce Que Vous Pourrez Construire",
+    "examples": {
+      "dashboards": "Tableaux de bord clients",
+      "dashboardsDesc": "Statut projet, métriques, rapports",
+      "tools": "Outils internes",
+      "toolsDesc": "Gestion inventaire, workflows équipe",
+      "automation": "Automatisations",
+      "automationDesc": "Connecter vos outils existants",
+      "apps": "Apps simples",
+      "appsDesc": "Portails clients, systèmes de réservation"
+    },
+    "cta": {
+      "primary": "Voir Comment Ça Marche",
+      "secondary": "Exemples Concrets"
+    },
+    "metrics": [
+      {"value": "3 jours", "label": "Vs 'peut-être en Q3'"},
+      {"value": "€0", "label": "Coût développeur"},
+      {"value": "100%", "label": "Contrôle sur vos besoins"}
+    ],
+    "dashboard": {
+      "title": "Tableau de Bord Client",
+      "project": "Projet Website Refonte",
+      "status": "En cours",
+      "progress": "Avancement",
+      "remaining": "Restants",
+      "budget": "Budget"
+    },
+    "booking": {
+      "title": "Système de Réservation",
+      "available": "Disponible",
+      "reserved": "Réservé",
+      "meeting": "Réunion stratégie",
+      "demo": "Demo produit",
+      "consultation": "Consultation"
+    }
+  },
+  "developers": {
+    "badge": "De ChatGPT aux Systèmes Orchestrés",
+    "title": "Maîtrisez les agents IA. Développez plus vite, avec plus de méthode.",
+    "description": "Nous vous formons à utiliser des systèmes d'orchestrations d'agents, qui clarifie, code, rafine, debug, test, optimize continuellement pour s'assurer que le code générer est aligné avec ce que vous cherchez.",
+    "results": "Résultats mesurés : 3x plus rapide, 90% moins de bugs, onboarding 2 semaines → 2 heures.",
+    "advancedStack": {
+      "title": "Stack IA Avancé",
+      "items": [
+        "Claude-code + wrapper multi-agents",
+        "Roocode + modes custom",
+        "MCPs pour intégrations natives"
+      ]
+    },
+    "observability": {
+      "title": "Observabilité Complète",
+      "items": [
+        "Dashboards temps réel",
+        "Tracing des tâches d'agents",
+        "Métriques de performance"
+      ]
+    },
+    "cta": {
+      "primary": "Configuration Technique Gratuite",
+      "secondary": "Voir la Stack Complète"
+    },
+    "config": {
+      "title": "Configuration Avancée",
+      "description": "Modes personnalisés d'agents IA : Architecte, Auto-Coder, Testeur TDD, et Debugger avec instructions spécialisées."
+    },
+    "metrics": [
+      {"value": "<20%", "label": "Succès vibe coding"},
+      {"value": "3x", "label": "Plus rapide (agentic)"},
+      {"value": "90%", "label": "Moins de bugs"},
+      {"value": "2h", "label": "Onboarding (vs 2 sem)"}
+    ]
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Restez à jour avec l'IA",
+      "description": "Recevez des guides pratiques, des études de cas et des insights sur l'IA directement dans votre boîte mail. Pas de spam, que du contenu de valeur.",
+      "placeholder": "votre@email.com",
+      "subscribe": "S'abonner"
+    },
+    "company": {
+      "description": "NEWCODE vous aide à construire et déployer vos solutions IA. Développeurs et dirigeants, tout le monde mérite l'accès aux capacités logicielles modernes."
+    },
+    "sections": {
+      "navigation": "Navigation",
+      "services": "Services", 
+      "legal": "Légal"
+    },
+    "quickLinks": [
+      {"name": "Accueil", "href": "/"},
+      {"name": "Services", "href": "/services"},
+      {"name": "Cas d'étude", "href": "/case-studies"},
+      {"name": "Blog", "href": "/blog"},
+      {"name": "À propos", "href": "/about"}
+    ],
+    "services": [
+      {"name": "Audit de flux", "href": "/services#audit"},
+      {"name": "Implémentation complète", "href": "/services#implementation"},
+      {"name": "Transformation agence", "href": "/services#transformation"},
+      {"name": "Formation équipe", "href": "/services#training"}
+    ],
+    "legal": [
+      {"name": "Confidentialité", "href": "/privacy"},
+      {"name": "Conditions", "href": "/terms"},
+      {"name": "Cookies", "href": "/cookies"},
+      {"name": "Mentions légales", "href": "/legal"}
+    ],
+    "copyright": "© 2025 NEWCODE. Tous droits réservés.",
+    "language": {
+      "french": "🇫🇷 Français",
+      "english": "🇺🇸 English"
+    }
+  },
+  "common": {
+    "loading": "Chargement de la section..."
+  }
+}

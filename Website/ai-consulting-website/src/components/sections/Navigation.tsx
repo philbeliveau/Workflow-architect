@@ -7,11 +7,13 @@ import { Menu, X, Zap, Globe } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const Navigation: React.FC = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations('navigation');
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
@@ -32,22 +34,22 @@ const Navigation: React.FC = memo(() => {
 
   // Always use the same navigation items for consistency
   const getNavItems = () => {
-    if (pathname === '/') {
+    if (pathname.endsWith('/')) {
       return [
-        { name: 'Accueil', href: '#accueil', isActive: true },
-        { name: 'Parcours', href: '#parcours', isActive: false },
-        { name: 'Problème', href: '#probleme', isActive: false },
-        { name: 'Solution', href: '#solution', isActive: false },
-        { name: 'Contact', href: '#contact', isActive: false }
+        { name: t('home'), href: '#accueil', isActive: true },
+        { name: t('tracks'), href: '#parcours', isActive: false },
+        { name: t('problem'), href: '#probleme', isActive: false },
+        { name: t('solution'), href: '#solution', isActive: false },
+        { name: t('contact'), href: '#contact', isActive: false }
       ];
     } else {
       // For specialized pages, show main sections but link back to home page sections
       return [
-        { name: 'Accueil', href: '/#accueil', isActive: false },
-        { name: 'Parcours', href: '/#parcours', isActive: pathname === '/developers' || pathname === '/business' },
-        { name: 'Problème', href: '/#probleme', isActive: false },
-        { name: 'Solution', href: '/#solution', isActive: false },
-        { name: 'Contact', href: '/#contact', isActive: false }
+        { name: t('home'), href: '/#accueil', isActive: false },
+        { name: t('tracks'), href: '/#parcours', isActive: pathname.includes('/developers') || pathname.includes('/business') },
+        { name: t('problem'), href: '/#probleme', isActive: false },
+        { name: t('solution'), href: '/#solution', isActive: false },
+        { name: t('contact'), href: '/#contact', isActive: false }
       ];
     }
   };
@@ -126,7 +128,7 @@ const Navigation: React.FC = memo(() => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
             <Button variant="primary" size="md" href="/book-demo">
-              Évaluation Gratuite
+              {t('freeEvaluation')}
             </Button>
           </div>
 
@@ -136,7 +138,7 @@ const Navigation: React.FC = memo(() => {
               isScrolled ? 'text-text-light' : 'text-text-light'
             }`}
             onClick={toggleMobileMenu}
-            aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
+            aria-label={isMobileMenuOpen ? t('closeMobileMenu') : t('openMobileMenu')}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -193,7 +195,7 @@ const Navigation: React.FC = memo(() => {
                     href="/book-demo"
                     className="w-full"
                   >
-                    Évaluation Gratuite
+                    {t('freeEvaluation')}
                   </Button>
                 </motion.div>
               </div>

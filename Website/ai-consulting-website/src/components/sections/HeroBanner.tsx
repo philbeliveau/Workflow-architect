@@ -4,7 +4,10 @@ import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Code, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 const HeroBanner: React.FC = memo(() => {
+  const t = useTranslations('hero');
+  const benefits = t.raw('benefits.items');
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
@@ -65,15 +68,14 @@ const HeroBanner: React.FC = memo(() => {
           <h1 
             className="text-hero font-bold mb-8 bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent"
             role="banner"
-            aria-label="Titre principal: Maîtrisez les outils d'aujourd'hui. Codez comme ceux de demain."
           >
-            Maîtrisez les outils d'aujourd'hui. Codez comme ceux de demain.
+            {t('title')}
           </h1>
           <p className="text-xl md:text-2xl text-text-primary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
-            Les agents IA ne sont pas un outil en plus — c'est une nouvelle façon de travailler et de développer.
+            {t('subtitle')}
           </p>
           <div className="text-lg text-text-secondary max-w-4xl mx-auto mb-12 leading-relaxed">
-            Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour structurer, clarifier et accélérer votre travail grâce aux agents IA.
+            {t('description')}
           </div>
         </motion.div>
         <motion.div
@@ -84,38 +86,19 @@ const HeroBanner: React.FC = memo(() => {
           <div className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-accent-red/40 shadow-2xl shadow-black/30">
             <div className="text-center">
               <h2 className="text-xl font-bold text-slate-100 mb-8 tracking-wide">
-              Transformez votre façon de travailler. Restez à jour. Adoptez les meilleures pratiques IA :
-                {/* Laissez vos agents IA travailler à votre place, pendant des heures, avec : */}
+                {t('benefits.title')}
               </h2>
               <div className="grid md:grid-cols-2 gap-6 text-left mb-8">
-              <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Mettez à jour en continu votre stack IA avec les outils les plus récents</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Automatisez la gestion des erreurs et des cas d’exception</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Comprenez le contexte global de vos projets dès le départ</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Identifiez les bons cas d’usage pour vos agents IA</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Structurez vos tests et vos fonctionnalités dès la conception</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Connectez facilement tous vos outils via des MCP intelligents</p>
-                </div>
+                {benefits.map((benefit: string, index: number) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
+                    <p className="text-slate-200 font-medium">{benefit}</p>
+                  </div>
+                ))}
               </div>
               <div className="text-center">
                 <p className="text-slate-100 font-bold text-xl leading-relaxed tracking-wide bg-gradient-to-r from-slate-200 to-white bg-clip-text text-transparent">
-                  → Vous bénéficiez maintenant des capacités d'une équipe complète.
+                  {t('benefits.conclusion')}
                 </p>
               </div>
             </div>
@@ -134,7 +117,7 @@ const HeroBanner: React.FC = memo(() => {
             href="#track-selection"
             className="group"
           >
-            Découvrir les parcours
+            {t('cta.primary')}
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
@@ -143,7 +126,7 @@ const HeroBanner: React.FC = memo(() => {
             size="lg" 
             href="/book-demo"
           >
-            Évaluation Gratuite
+            {t('cta.secondary')}
           </Button>
         </motion.div>
 

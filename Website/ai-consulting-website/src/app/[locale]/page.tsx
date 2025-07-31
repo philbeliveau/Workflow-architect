@@ -1,7 +1,10 @@
+'use client';
+
 import { lazy, Suspense } from 'react';
 import Navigation from '@/components/sections/Navigation';
 import HeroBanner from '@/components/sections/HeroBanner';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
+import { useTranslations } from 'next-intl';
 
 // Lazy load components that are below the fold
 const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
@@ -10,11 +13,14 @@ const SolutionOverview = lazy(() => import('@/components/sections/SolutionOvervi
 const CTASection = lazy(() => import('@/components/sections/CTASection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
 
-const SectionFallback = () => (
-  <div className="flex items-center justify-center py-16">
-    <LoadingSpinner size="lg" aria-label="Chargement de la section..." />
-  </div>
-);
+const SectionFallback = () => {
+  const t = useTranslations('common');
+  return (
+    <div className="flex items-center justify-center py-16">
+      <LoadingSpinner size="lg" aria-label={t('loading')} />
+    </div>
+  );
+};
 
 export default function Home() {
   return (

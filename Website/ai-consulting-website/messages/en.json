@@ -1,0 +1,154 @@
+{
+  "navigation": {
+    "home": "Home",
+    "tracks": "Tracks", 
+    "problem": "Problem",
+    "solution": "Solution",
+    "contact": "Contact",
+    "freeEvaluation": "Free Assessment",
+    "closeMobileMenu": "Close mobile menu",
+    "openMobileMenu": "Open mobile menu"
+  },
+  "hero": {
+    "title": "Master today's tools. Code like tomorrow's developers.",
+    "subtitle": "AI agents aren't just another tool — they're a new way to work and develop.",
+    "description": "Whether you're a developer, data scientist, product manager, or any software development professional, we give you the keys to structure, clarify, and accelerate your work with AI agents.",
+    "cta": {
+      "primary": "Explore Tracks",
+      "secondary": "Free Assessment"
+    },
+    "benefits": {
+      "title": "Transform how you work. Stay current. Adopt AI best practices:",
+      "items": [
+        "Continuously update your AI stack with the latest tools",
+        "Automate error handling and edge case management",
+        "Understand the global context of your projects from the start",
+        "Identify the right use cases for your AI agents",
+        "Structure your tests and features from conception",
+        "Easily connect all your tools through intelligent MCPs"
+      ],
+      "conclusion": "→ You now benefit from the capabilities of a complete team."
+    }
+  },
+  "business": {
+    "badge": "Business Transformation",
+    "title": "Build your tools without waiting for IT.",
+    "subtitle": "From \"maybe in Q3\" to \"done in 3 days\".",
+    "description": "Client dashboard? Internal management tool? Process automation? Describe what you need, get a functional application.",
+    "whatYouCanBuild": "What You Can Build",
+    "examples": {
+      "dashboards": "Client dashboards",
+      "dashboardsDesc": "Project status, metrics, reports",
+      "tools": "Internal tools",
+      "toolsDesc": "Inventory management, team workflows",
+      "automation": "Automations",
+      "automationDesc": "Connect your existing tools",
+      "apps": "Simple apps",
+      "appsDesc": "Client portals, booking systems"
+    },
+    "cta": {
+      "primary": "See How It Works",
+      "secondary": "Concrete Examples"
+    },
+    "metrics": [
+      {"value": "3 days", "label": "Vs 'maybe in Q3'"},
+      {"value": "$0", "label": "Developer cost"},
+      {"value": "100%", "label": "Control over your needs"}
+    ],
+    "dashboard": {
+      "title": "Client Dashboard",
+      "project": "Website Redesign Project",
+      "status": "In Progress",
+      "progress": "Progress",
+      "remaining": "Remaining",
+      "budget": "Budget"
+    },
+    "booking": {
+      "title": "Booking System",
+      "available": "Available",
+      "reserved": "Reserved",
+      "meeting": "Strategy meeting",
+      "demo": "Product demo",
+      "consultation": "Consultation"
+    }
+  },
+  "developers": {
+    "badge": "From ChatGPT to Orchestrated Systems",
+    "title": "Master AI agents. Develop faster, with more method.",
+    "description": "We train you to use agent orchestration systems that clarify, code, refine, debug, test, and optimize continuously to ensure generated code aligns with what you're looking for.",
+    "results": "Measured results: 3x faster, 90% fewer bugs, onboarding 2 weeks → 2 hours.",
+    "advancedStack": {
+      "title": "Advanced AI Stack",
+      "items": [
+        "Claude-code + multi-agent wrapper",
+        "Roocode + custom modes",
+        "MCPs for native integrations"
+      ]
+    },
+    "observability": {
+      "title": "Complete Observability",
+      "items": [
+        "Real-time dashboards",
+        "Agent task tracing",
+        "Performance metrics"
+      ]
+    },
+    "cta": {
+      "primary": "Free Technical Setup",
+      "secondary": "See Complete Stack"
+    },
+    "config": {
+      "title": "Advanced Configuration",
+      "description": "Custom AI agent modes: Architect, Auto-Coder, TDD Tester, and Debugger with specialized instructions."
+    },
+    "metrics": [
+      {"value": "<20%", "label": "Vibe coding success"},
+      {"value": "3x", "label": "Faster (agentic)"},
+      {"value": "90%", "label": "Fewer bugs"},
+      {"value": "2h", "label": "Onboarding (vs 2 weeks)"}
+    ]
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Stay updated with AI",
+      "description": "Receive practical guides, case studies, and AI insights directly in your inbox. No spam, only valuable content.",
+      "placeholder": "your@email.com",
+      "subscribe": "Subscribe"
+    },
+    "company": {
+      "description": "NEWCODE helps you build and deploy your AI solutions. Developers and leaders, everyone deserves access to modern software capabilities."
+    },
+    "sections": {
+      "navigation": "Navigation",
+      "services": "Services", 
+      "legal": "Legal"
+    },
+    "quickLinks": [
+      {"name": "Home", "href": "/"},
+      {"name": "Services", "href": "/services"},
+      {"name": "Case Studies", "href": "/case-studies"},
+      {"name": "Blog", "href": "/blog"},
+      {"name": "About", "href": "/about"}
+    ],
+    "services": [
+      {"name": "Workflow audit", "href": "/services#audit"},
+      {"name": "Complete implementation", "href": "/services#implementation"},
+      {"name": "Agency transformation", "href": "/services#transformation"},
+      {"name": "Team training", "href": "/services#training"}
+    ],
+    "legal": [
+      {"name": "Privacy", "href": "/privacy"},
+      {"name": "Terms", "href": "/terms"},
+      {"name": "Cookies", "href": "/cookies"},
+      {"name": "Legal Notice", "href": "/legal"}
+    ],
+    "copyright": "© 2025 NEWCODE. All rights reserved.",
+    "language": {
+      "french": "🇫🇷 French",
+      "english": "🇺🇸 English"
+    }
+  },
+  "common": {
+    "loading": "Loading section..."
+  }
+}
