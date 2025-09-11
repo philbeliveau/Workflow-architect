@@ -159,7 +159,7 @@ Structure finale:
   "developers": {
     "badge": "De ChatGPT aux Systèmes Orchestrés",
     "title": "Maîtrisez les agents IA. Développez plus vite, avec plus de méthode.",
-    "description": "Nous vous formons à utiliser des systèmes d'orchestrations d'agents, qui clarifie, code, rafine, debug, test, optimize continuellement pour s'assurer que le code générer est aligné avec ce que vous cherchez.",
+    "description": "Nous vous formons à utiliser des systèmes d’orchestration d’agents capables de clarifier, coder, affiner, déboguer, tester et optimiser en continu afin de garantir que le code généré corresponde exactement à vos besoins.",
     "results": "Résultats mesurés : 3x plus rapide, 90% moins de bugs, onboarding 2 semaines → 2 heures.",
     "metrics": [
       {"value": "<20%", "label": "Succès vibe coding"},
