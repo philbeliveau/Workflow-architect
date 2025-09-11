@@ -6,6 +6,7 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 // Lazy load components that are below the fold
 const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
 const ProblemStatement = lazy(() => import('@/components/sections/ProblemStatement'));
+const TrainingContent = lazy(() => import('@/components/sections/TrainingContent'));
 const SolutionOverview = lazy(() => import('@/components/sections/SolutionOverview'));
 const CTASection = lazy(() => import('@/components/sections/CTASection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
@@ -26,15 +27,21 @@ export default function Home() {
           <HeroBanner />
         </section>
         
+        <section id="probleme">
+          <Suspense fallback={<SectionFallback />}>
+            <ProblemStatement />
+          </Suspense>
+        </section>
+        
         <section id="parcours">
           <Suspense fallback={<SectionFallback />}>
             <TrackSelection />
           </Suspense>
         </section>
         
-        <section id="probleme">
+        <section id="formation">
           <Suspense fallback={<SectionFallback />}>
-            <ProblemStatement />
+            <TrainingContent />
           </Suspense>
         </section>
         

@@ -12,6 +12,9 @@ const config: Config = {
         // Brand Colors - Red & Blue Professional
         'primary-blue': '#74a6be',
         'accent-red': '#a7292e',
+        'accent-yellow': '#fbbf24',
+        'accent-yellow-light': '#fcd34d',
+        'accent-yellow-dark': '#d97706',
         'background-dark': '#2a2a2a',
         'background-dark-alt': '#353535',
         'background-light-grey': '#404040',

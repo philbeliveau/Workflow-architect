@@ -101,7 +101,7 @@ const TechnicalCaseStudies: React.FC = () => {
             Cas d'Usage Techniques
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Exemple concret : comment nos agents IA collaboratifs gèrent les préoccupations de sécurité
+            Comment nos agents IA collaboratifs gèrent les préoccupations de sécurité
             <span className="text-primary-blue font-semibold block mt-2">
               avec un cycle constant de développement, test, alignement et vérification.
             </span>
@@ -116,38 +116,47 @@ const TechnicalCaseStudies: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="bg-warning-orange/10 border border-warning-orange/20 rounded-2xl p-8">
-            <div className="flex items-start gap-4 mb-6">
-              <AlertTriangle className="w-8 h-8 text-warning-orange flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-2xl font-bold text-warning-orange mb-2">
-                  {caseStudy.title}
+          <div className="bg-gradient-to-r from-warning-orange/10 to-accent-red/10 border border-warning-orange/20 rounded-2xl p-6">
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center gap-3 mb-3">
+                <Shield className="w-6 h-6 text-warning-orange" />
+                <h3 className="text-xl font-bold text-warning-orange">
+                  Cas d'Usage Sécurité
                 </h3>
-                <p className="text-text-primary text-lg">
-                  {caseStudy.subtitle}
-                </p>
               </div>
+              <p className="text-text-primary text-base max-w-2xl mx-auto">
+                Comment nos agents IA collaboratifs détectent et corrigent les vulnérabilités automatiquement
+              </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 text-sm">
-              <div className="bg-background-dark-alt/50 rounded-lg p-4">
-                <h4 className="text-warning-orange font-semibold mb-2">🔍 Problème Identifié</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  {caseStudy.scenario}
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-accent-red/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <AlertTriangle className="w-6 h-6 text-accent-red" />
+                </div>
+                <h4 className="text-accent-red font-semibold mb-2">Problème</h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Débordements de tampon et failles de sécurité non détectées
                 </p>
               </div>
               
-              <div className="bg-background-dark-alt/50 rounded-lg p-4">
-                <h4 className="text-success-green font-semibold mb-2">💡 Solution Proposée</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  {caseStudy.solution}
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-success-green/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-6 h-6 text-success-green" />
+                </div>
+                <h4 className="text-success-green font-semibold mb-2">Solution</h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Agents spécialisés en sécurité travaillant en collaboration
                 </p>
               </div>
               
-              <div className="bg-background-dark-alt/50 rounded-lg p-4">
-                <h4 className="text-primary-blue font-semibold mb-2">🏗️ Environnement</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  {caseStudy.environment}
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle className="w-6 h-6 text-primary-blue" />
+                </div>
+                <h4 className="text-primary-blue font-semibold mb-2">Résultat</h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Code sécurisé validé et prêt pour la production
                 </p>
               </div>
             </div>
@@ -168,13 +177,17 @@ const TechnicalCaseStudies: React.FC = () => {
           
           {/* Circular Flow Visualization */}
           <div className="relative">
-            {/* Central Hub */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-32 h-32 bg-gradient-to-r from-primary-blue/20 to-accent-red/20 rounded-full border-2 border-primary-blue/30 flex items-center justify-center">
-                <div className="text-center">
-                  <Zap className="w-8 h-8 text-primary-blue mx-auto mb-2" />
-                  <span className="text-primary-blue font-bold text-sm">Cycle<br/>Continu</span>
-                </div>
+            {/* Top Flow Line - First to Last Card */}
+            <div className="absolute -top-8 left-0 right-0 z-10 hidden lg:block">
+              <div className="relative h-2">
+                <div className="absolute top-1/2 transform -translate-y-1/2 left-[10%] right-[10%] h-1 bg-gradient-to-r from-primary-blue to-accent-red rounded-full"></div>
+              </div>
+            </div>
+
+            {/* Bottom Flow Line - Last to First Card */}
+            <div className="absolute -bottom-8 left-0 right-0 z-10 hidden lg:block">
+              <div className="relative h-2">
+                <div className="absolute top-1/2 transform -translate-y-1/2 left-[10%] right-[10%] h-1 bg-gradient-to-l from-primary-blue to-accent-red rounded-full"></div>
               </div>
             </div>
 
