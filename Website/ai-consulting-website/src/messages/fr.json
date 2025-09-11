@@ -349,6 +349,189 @@
       "supporting_text": "3 jours de prototype valent mieux que 18 mois de spec"
     }
   },
+  "developers": {
+    "hero": {
+      "badge": "De ChatGPT aux Systèmes Orchestrés",
+      "title": "Maîtrisez les agents IA. Développez plus vite,",
+      "title_highlight": "avec plus de méthode.",
+      "description": "Nous vous formons à utiliser des systèmes d'orchestration d'agents capables de clarifier, coder, affiner, déboguer, tester et optimiser en continu pour garantir que le code généré correspond exactement à vos besoins.",
+      "stack": {
+        "title": "Stack IA Avancée",
+        "items": [
+          "Claude-code + wrapper multi-agents",
+          "Roocode + modes personnalisés", 
+          "MCPs pour intégrations natives"
+        ]
+      },
+      "cta": {
+        "primary": "Réserver Évaluation Gratuite",
+        "secondary": "Découvrir la Formation"
+      }
+    },
+    "stats": {
+      "success_rate": {
+        "value": "<20%",
+        "label": "Succès vibe coding"
+      },
+      "speed_improvement": {
+        "value": "3x",
+        "label": "Plus rapide (agentique)"
+      },
+      "bug_reduction": {
+        "value": "90%",
+        "label": "Moins de bugs"
+      },
+      "onboarding": {
+        "value": "2h",
+        "label": "Onboarding (vs 2 semaines)"
+      }
+    },
+    "tech_watch": {
+      "title": "Veille Technologique Continue",
+      "description": "Nous vous tenons informé des nouvelles stacks de développement logiciel, MCPs, et meilleures pratiques.",
+      "features": [
+        {
+          "title": "Nouvelles Stacks de Développement",
+          "description": "Restez à jour avec les dernières technologies et frameworks émergents"
+        },
+        {
+          "title": "Protocoles MCP Avancés",
+          "description": "Découvrez les dernières innovations en Model Context Protocol"
+        },
+        {
+          "title": "Meilleures Pratiques",
+          "description": "Intégrez les standards de l'industrie et les patterns éprouvés"
+        }
+      ]
+    },
+    "orchestration": {
+      "title": "Orchestration d'Agents",
+      "description": "Le niveau supérieur de Claude Code avec orchestration intelligente et agents spécialisés.",
+      "solution": {
+        "title": "La Solution d'Orchestration",
+        "description": "Notre système d'orchestration est un wrapper qui transforme Claude Code en plateforme collaborative avancée. Il permet l'exécution parallèle, la spécialisation des agents, et couvre tout le cycle de développement.",
+        "principles": [
+          {
+            "title": "Principe BatchTool",
+            "description": "Encapsule plusieurs actions MCP en un seul message pour l'exécution parallèle"
+          },
+          {
+            "title": "Coordination Intelligente", 
+            "description": "Réduit la latence réseau, le nombre de tokens, et le temps de coordination"
+          }
+        ]
+      }
+    },
+    "case_studies": {
+      "title": "Cas d'Usage Techniques",
+      "description": "Comment nos agents IA collaboratifs gèrent les préoccupations de sécurité",
+      "description_highlight": "avec un cycle constant de développement, test, alignement et vérification.",
+      "security": {
+        "title": "Cas d'Usage Sécurité",
+        "description": "Comment nos agents IA collaboratifs détectent et corrigent automatiquement les vulnérabilités",
+        "problem": {
+          "title": "Problème",
+          "description": "Débordements de tampon et vulnérabilités de sécurité non détectées"
+        },
+        "solution": {
+          "title": "Solution",
+          "description": "Agents de sécurité spécialisés travaillant en collaboration"
+        },
+        "result": {
+          "title": "Résultat", 
+          "description": "Code sécurisé validé et prêt pour la production"
+        }
+      },
+      "cycle": {
+        "title": "🔄 Cycle Constant d'Agents Collaboratifs",
+        "agents": [
+          {
+            "name": "Agent Codeur",
+            "role": "Génère le code initial",
+            "phase": "Développement",
+            "actions": [
+              "Écrit le code selon les spécifications",
+              "Applique les patterns de sécurité connus",
+              "Utilise les meilleures pratiques du langage"
+            ],
+            "detects": [
+              "Débordements de tampon potentiels",
+              "Validation d'entrée insuffisante"
+            ]
+          },
+          {
+            "name": "Agent Sécurité",
+            "role": "Analyse les vulnérabilités",
+            "phase": "Test Sécurité",
+            "actions": [
+              "Scanne les vulnérabilités OWASP",
+              "Détecte les débordements de tampon",
+              "Valide la gestion des entrées utilisateur"
+            ],
+            "detects": [
+              "CVEs détectées",
+              "Patterns dangereux identifiés"
+            ]
+          },
+          {
+            "name": "Agent Alignement",
+            "role": "Vérifie les exigences",
+            "phase": "Alignement",
+            "actions": [
+              "Compare avec les exigences de sécurité",
+              "Valide l'alignement architectural",
+              "Confirme les standards d'entreprise"
+            ],
+            "detects": [
+              "Non-conformité aux standards",
+              "Exigences manquantes"
+            ]
+          },
+          {
+            "name": "Agent Qualité",
+            "role": "Applique les corrections",
+            "phase": "Application",
+            "actions": [
+              "Corrige les vulnérabilités détectées",
+              "Met à jour la documentation",
+              "Optimise le code sécurisé"
+            ],
+            "detects": [
+              "Corrections appliquées",
+              "Standards respectés"
+            ]
+          },
+          {
+            "name": "Sous-Agent Vérificateur",
+            "role": "Vérifie le code généré",
+            "phase": "Vérification",
+            "actions": [
+              "Tests de sécurité automatisés",
+              "Métriques de qualité",
+              "Validation continue"
+            ],
+            "detects": [
+              "Code vérifié et sécurisé",
+              "Prêt pour la production"
+            ]
+          }
+        ]
+      }
+    },
+    "cta": {
+      "title": "Prêt à Transformer Votre Développement ?",
+      "description": "Évaluation gratuite adaptée à votre profil technique. Nous analyserons vos besoins et vous montrerons exactement comment implémenter l'orchestration d'agents IA.",
+      "benefits": [
+        "Évaluation technique gratuite de 30 minutes",
+        "Recommandations personnalisées de stack IA",
+        "Démonstration d'orchestration d'agents en direct",
+        "Feuille de route d'implémentation immédiate"
+      ],
+      "button": "Réserver Évaluation Technique",
+      "supporting_text": "Consultation technique gratuite sans argumentaire de vente. Juste des insights exploitables sur votre workflow de développement et les possibilités d'intégration IA.",
+      "guarantee": "Pas de vente, pas d'engagement, que des solutions"
+    }
+  },
   "booking": {
     "hero": {
       "title": "Réservez votre audit gratuit de flux de travail",
