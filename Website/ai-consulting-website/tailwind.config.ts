@@ -6,18 +6,6 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  safelist: [
-    'text-accent-yellow',
-    'text-accent-yellow/60',
-    'text-accent-yellow/30',
-    'bg-accent-yellow/20',
-    'bg-accent-yellow/30',
-    'border-accent-yellow/50',
-    'hover:border-accent-yellow/50',
-    'from-accent-yellow/0',
-    'via-accent-yellow/5',
-    'to-accent-yellow/0',
-  ],
   theme: {
     extend: {
       colors: {
