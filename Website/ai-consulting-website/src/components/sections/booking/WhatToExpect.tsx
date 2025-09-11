@@ -3,49 +3,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Search, Target, TrendingUp, FileText } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const WhatToExpect: React.FC = () => {
+  const tSteps = useTranslations('booking.what_to_expect');
+  const tReceive = useTranslations('booking.what_you_receive');
+  const tPrepare = useTranslations('booking.how_to_prepare');
   const agenda = [
     {
-      duration: "5 min",
-      title: "Présentation et contexte",
-      description: "Nous apprenons à connaître votre équipe, vos projets actuels et vos objectifs de productivité.",
+      duration: tSteps('steps.0.duration'),
+      title: tSteps('steps.0.title'),
+      description: tSteps('steps.0.description'),
       icon: <Search className="w-5 h-5" />
     },
     {
-      duration: "15 min",
-      title: "Analyse du flux de travail",
-      description: "Nous examinons votre processus de développement actuel, identifions les goulots d'étranglement et les opportunités d'automatisation.",
+      duration: tSteps('steps.1.duration'),
+      title: tSteps('steps.1.title'),
+      description: tSteps('steps.1.description'),
       icon: <Target className="w-5 h-5" />
     },
     {
-      duration: "8 min",
-      title: "Recommandations spécifiques",
-      description: "Nous partageons 3-5 améliorations IA spécifiques que vous pouvez implémenter immédiatement pour des gains rapides.",
+      duration: tSteps('steps.2.duration'),
+      title: tSteps('steps.2.title'),
+      description: tSteps('steps.2.description'),
       icon: <TrendingUp className="w-5 h-5" />
     },
     {
-      duration: "2 min",
-      title: "Prochaines étapes",
-      description: "Nous discutons des options pour une transformation plus approfondie si vous êtes intéressé.",
+      duration: tSteps('steps.3.duration'),
+      title: tSteps('steps.3.title'),
+      description: tSteps('steps.3.description'),
       icon: <FileText className="w-5 h-5" />
     }
   ];
 
   const benefits = [
-    "Analyse gratuite de votre flux de travail de développement actuel",
-    "Identification des 3 plus grandes opportunités d'amélioration IA",
-    "Recommandations d'outils spécifiques pour votre pile technologique",
-    "Plan d'action avec gains rapides implémentables en 1-2 semaines",
-    "Estimation du ROI potentiel de l'automatisation IA",
-    "Guide de ressources personnalisé envoyé après l'appel"
+    tReceive('items.0'),
+    tReceive('items.1'),
+    tReceive('items.2'),
+    tReceive('items.3'),
+    tReceive('items.4'),
+    tReceive('items.5')
   ];
 
   const preparation = [
-    "Réfléchissez à vos principaux défis de productivité actuels",
-    "Préparez une vue d'ensemble de votre pile technologique",
-    "Notez les tâches répétitives qui prennent le plus de temps",
-    "Ayez une idée de vos objectifs de croissance à 6-12 mois"
+    tPrepare('steps.0'),
+    tPrepare('steps.1'),
+    tPrepare('steps.2'),
+    tPrepare('steps.3')
   ];
 
   return (
@@ -59,7 +63,7 @@ const WhatToExpect: React.FC = () => {
       <div className="bg-primary-800/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6 flex items-center gap-3">
           <Clock className="w-6 h-6 text-accent-blue" />
-          À quoi s'attendre pendant l'appel
+          {tSteps('title')}
         </h3>
 
         <div className="space-y-6">
@@ -92,7 +96,7 @@ const WhatToExpect: React.FC = () => {
       <div className="bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6 flex items-center gap-3">
           <CheckCircle className="w-6 h-6 text-success-green" />
-          Ce que vous recevrez
+          {tReceive('title')}
         </h3>
 
         <div className="space-y-3">
@@ -111,7 +115,7 @@ const WhatToExpect: React.FC = () => {
       <div className="bg-primary-800/30 border border-accent-purple/20 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6 flex items-center gap-3">
           <Target className="w-6 h-6 text-accent-purple" />
-          Comment se préparer
+          {tPrepare('title')}
         </h3>
 
         <div className="space-y-3">
@@ -129,8 +133,7 @@ const WhatToExpect: React.FC = () => {
 
         <div className="mt-6 p-4 bg-accent-purple/5 border border-accent-purple/20 rounded-lg">
           <p className="text-text-secondary text-sm">
-            <strong className="text-accent-purple">Note :</strong> Aucune préparation technique n'est requise. 
-            Nous nous concentrons sur la compréhension de vos défis et objectifs plutôt que sur les détails techniques.
+            <strong className="text-accent-purple">Note :</strong> {tPrepare('note')}
           </p>
         </div>
       </div>

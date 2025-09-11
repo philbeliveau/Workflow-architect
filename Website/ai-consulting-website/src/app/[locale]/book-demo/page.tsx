@@ -4,6 +4,27 @@ import BookingForm from '@/components/sections/booking/BookingForm';
 import WhatToExpect from '@/components/sections/booking/WhatToExpect';
 import ContactAlternatives from '@/components/sections/booking/ContactAlternatives';
 import Footer from '@/components/sections/Footer';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  if (locale === 'en') {
+    return {
+      title: "Book a Demo - NEWCODE",
+      description: "Book your free assessment and discover how AI can transform your processes. Personalized audit included.",
+    };
+  }
+  
+  return {
+    title: "Réserver une démo - NEWCODE",
+    description: "Réservez votre évaluation gratuite et découvrez comment l'IA peut transformer vos processus. Audit personnalisé inclus.",
+  };
+}
 
 export default function BookDemoPage() {
   return (
@@ -29,8 +50,3 @@ export default function BookDemoPage() {
     </div>
   );
 }
-
-export const metadata = {
-  title: "Réserver une démo - contexteDev",
-  description: "Réservez votre évaluation gratuite et découvrez comment l'IA peut transformer vos processus. Audit personnalisé inclus.",
-};

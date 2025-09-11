@@ -4,30 +4,35 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle, Clock, MapPin, Calendar } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const ContactAlternatives: React.FC = () => {
+  const tContact = useTranslations('booking.contact_alternatives');
+  const tInfo = useTranslations('booking.contact_info');
+  const tFaq = useTranslations('booking.faq_section');
+  const tTestimonial = useTranslations('booking.testimonial');
   const contactMethods = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: "Email direct",
-      value: "philbeliv@gmail.com",
-      description: "Réponse sous 4 heures en jours ouvrables",
+      title: tContact('email.title'),
+      value: tContact('email.address'),
+      description: tContact('email.response_time'),
       action: "mailto:philbeliv@gmail.com",
       color: "accent-purple"
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Téléphone",
-      value: "+1 514-773-4780",
-      description: "Lundi-Vendredi, 9h-18h (heure de Paris)",
+      title: tContact('phone.title'),
+      value: tContact('phone.number'),
+      description: tContact('phone.availability'),
       action: "tel:+33123456789",
       color: "accent-purple"
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
-      title: "Chat en direct",
-      value: "Support instantané",
-      description: "Disponible pendant les heures ouvrables",
+      title: tContact('live_chat.title'),
+      value: tContact('live_chat.description'),
+      description: tContact('live_chat.availability'),
       action: "#",
       color: "success-green"
     }
@@ -36,21 +41,21 @@ const ContactAlternatives: React.FC = () => {
   const responseInfo = [
     {
       icon: <Clock className="w-5 h-5" />,
-      title: "Temps de réponse",
-      value: "4 heures maximum",
-      description: "En jours ouvrables"
+      title: tInfo('response_time.title'),
+      value: tInfo('response_time.value'),
+      description: tInfo('response_time.note')
     },
     {
       icon: <Calendar className="w-5 h-5" />,
-      title: "Disponibilité",
-      value: "Lundi - Vendredi",
-      description: "9h00 - 18h00 (Paris)"
+      title: tInfo('availability.title'),
+      value: tInfo('availability.value'),
+      description: tInfo('availability.hours')
     },
     {
       icon: <MapPin className="w-5 h-5" />,
-      title: "Fuseau horaire",
-      value: "Europe/Paris",
-      description: "UTC+1/UTC+2"
+      title: tInfo('timezone.title'),
+      value: tInfo('timezone.value'),
+      description: tInfo('timezone.note')
     }
   ];
 
@@ -64,7 +69,7 @@ const ContactAlternatives: React.FC = () => {
       {/* Contact Methods */}
       <div className="bg-primary-800/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6">
-          Autres moyens de nous contacter
+          {tContact('title')}
         </h3>
 
         <div className="space-y-4">
@@ -102,7 +107,7 @@ const ContactAlternatives: React.FC = () => {
       {/* Response Info */}
       <div className="bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-2xl p-8">
         <h3 className="text-h3 font-bold text-text-primary mb-6">
-          Informations de contact
+          {tInfo('title')}
         </h3>
 
         <div className="space-y-4">
@@ -132,24 +137,24 @@ const ContactAlternatives: React.FC = () => {
       {/* FAQ Link */}
       <div className="bg-primary-800/30 border border-accent-purple/20 rounded-xl p-6 text-center">
         <h4 className="font-semibold text-text-primary mb-3">
-          Des questions avant de réserver ?
+          {tFaq('title')}
         </h4>
         <p className="text-text-secondary text-sm mb-4">
-          Consultez nos questions fréquentes ou contactez-nous directement.
+          {tFaq('description')}
         </p>
         <div className="space-y-3">
           <Link
             href="/faq"
             className="inline-block text-accent-purple hover:text-accent-purple-light transition-colors duration-200 text-sm font-medium"
           >
-            Voir les FAQ →
+            {tFaq('links.faq')}
           </Link>
           <br />
           <a
             href="mailto:philbeliv@gmail.com"
             className="inline-block text-accent-purple hover:text-accent-purple-light transition-colors duration-200 text-sm font-medium"
           >
-            Poser une question par email →
+            {tFaq('links.email')}
           </a>
         </div>
       </div>
@@ -157,16 +162,15 @@ const ContactAlternatives: React.FC = () => {
       {/* Testimonial */}
       <div className="bg-gradient-to-r from-success-green/10 to-accent-teal/10 border border-success-green/20 rounded-2xl p-6">
         <blockquote className="text-text-secondary italic text-sm leading-relaxed mb-4">
-          "L'audit gratuit m'a donné 3 recommandations spécifiques que j'ai pu implémenter 
-          immédiatement. En une semaine, j'ai économisé 6 heures de travail répétitif."
+          "{tTestimonial('quote')}"
         </blockquote>
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-to-r from-success-green to-accent-teal rounded-full flex items-center justify-center">
             <span className="text-white font-semibold text-xs">AL</span>
           </div>
           <div>
-            <div className="text-text-primary font-medium text-sm">Alexandre L.</div>
-            <div className="text-text-muted text-xs">Développeur Full-Stack</div>
+            <div className="text-text-primary font-medium text-sm">{tTestimonial('author.name')}</div>
+            <div className="text-text-muted text-xs">{tTestimonial('author.title')}</div>
           </div>
         </div>
       </div>

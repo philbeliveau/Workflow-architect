@@ -248,6 +248,290 @@
       "other": "🇺🇸 English"
     }
   },
+  "business": {
+    "hero": {
+      "badge": "Le Code n'était pas le Goulot",
+      "title": "De l'idée métier",
+      "title_highlight": "aux spécifications validées",
+      "description": "Le vrai goulot d'étranglement ? Définir les bonnes user stories, prioriser les bonnes fonctionnalités, valider les bons parcours utilisateurs.",
+      "description_highlight": "Les agents IA transforment vos besoins métier en prototypes testables pour valider les specs avant un développement coûteux.",
+      "process": {
+        "title": "Du Business aux Spécifications",
+        "steps": [
+          {
+            "title": "Définir User Stories",
+            "description": "Besoins utilisateurs → fonctionnalités concrètes"
+          },
+          {
+            "title": "Prioriser & UI/UX",
+            "description": "Roadmap + maquettes interactives"
+          },
+          {
+            "title": "Prototype Fonctionnel",
+            "description": "Les agents IA génèrent une interface testable"
+          },
+          {
+            "title": "Specs Validées",
+            "description": "Cahier des charges basé sur la réalité"
+          }
+        ]
+      },
+      "cta": {
+        "primary": "Apprendre la Méthode",
+        "secondary": "Voir le Processus"
+      }
+    },
+    "stats": {
+      "time": {
+        "value": "3 jours",
+        "label": "Vs 'peut-être en Q3'"
+      },
+      "cost": {
+        "value": "0€",
+        "label": "Coût développeur"
+      },
+      "control": {
+        "value": "100%",
+        "label": "Contrôle sur vos besoins"
+      }
+    },
+    "benefits": {
+      "title": "Le Code n'était pas le Goulot",
+      "description": "Le vrai problème ? Comprendre ce qu'il faut construire, pas comment le construire.",
+      "description_highlight": "Les agents IA transforment vos idées en prototypes testables en 3 jours.",
+      "features": [
+        {
+          "title": "Comprendre les Besoins",
+          "description": "90% des projets échouent parce qu'on construit la mauvaise chose"
+        },
+        {
+          "title": "Valider Rapidement",
+          "description": "De 18 mois de spec à 3 jours de prototype testé avec de vrais utilisateurs"
+        },
+        {
+          "title": "Éliminer le Gaspillage",
+          "description": "Arrêter de construire des fonctionnalités que personne n'utilise"
+        }
+      ],
+      "process": {
+        "title": "🔄 Le Nouveau Processus de Développement couvert par les agents IA",
+        "description": "Au lieu de 18 mois de spec → 6 mois de dev → échec, faites 3 jours de prototype → test utilisateur → itération",
+        "steps": [
+          {
+            "title": "Identifier",
+            "description": "Le vrai problème utilisateur"
+          },
+          {
+            "title": "Prototyper",
+            "description": "3 jours, code jetable"
+          },
+          {
+            "title": "Tester",
+            "description": "Feedback utilisateurs réels"
+          },
+          {
+            "title": "Itérer",
+            "description": "Améliorer ou pivoter"
+          },
+          {
+            "title": "Spécifier",
+            "description": "Cahier des charges validé"
+          }
+        ]
+      }
+    },
+    "cta": {
+      "title": "Arrêtez de construire la mauvaise chose",
+      "description": "Apprenez à utiliser les agents IA pour valider vos idées avec de vrais utilisateurs",
+      "description_highlight": "avant",
+      "description_end": "de perdre des mois en développement.",
+      "button": "Apprendre la Méthode",
+      "supporting_text": "3 jours de prototype valent mieux que 18 mois de spec"
+    }
+  },
+  "booking": {
+    "hero": {
+      "title": "Réservez votre audit gratuit de flux de travail",
+      "subtitle": "Appel de 30 minutes pour identifier vos plus grandes opportunités de productivité",
+      "description": "En 30 minutes, nous analyserons votre processus de développement actuel et identifierons les trois plus grandes opportunités d'accélération alimentée par l'IA.",
+      "description_highlight": "Pas d'argumentaire de vente, pas d'engagement requis",
+      "description_end": "– juste des insights exploitables que vous pouvez implémenter immédiatement.",
+      "benefits": [
+        "30 minutes seulement",
+        "Recommandations personnalisées", 
+        "Insights exploitables",
+        "Aucun engagement"
+      ],
+      "trust_indicators": [
+        "50+ équipes auditées",
+        "Recommandations spécifiques", 
+        "Résultats immédiats"
+      ]
+    },
+    "form": {
+      "title": "Réserver votre audit gratuit",
+      "fields": {
+        "full_name": {
+          "label": "Nom complet *",
+          "placeholder": "Votre nom"
+        },
+        "email": {
+          "label": "Email *",
+          "placeholder": "votre@email.com"
+        },
+        "company": {
+          "label": "Entreprise / Organisation",
+          "placeholder": "Nom de votre entreprise"
+        },
+        "team_size": {
+          "label": "Taille de l'équipe de développement *",
+          "placeholder": "Sélectionnez la taille",
+          "options": [
+            "Développeur solo",
+            "2-3 développeurs",
+            "4-8 développeurs", 
+            "9-15 développeurs",
+            "15+ développeurs"
+          ]
+        },
+        "main_challenge": {
+          "label": "Principal défi actuel *",
+          "placeholder": "Sélectionnez votre défi",
+          "options": [
+            "Vélocité de développement incohérente",
+            "Intégration développeur trop lente",
+            "Trop de tâches répétitives",
+            "Maintenir la qualité à vitesse",
+            "Difficultés d'évolution équipe",
+            "Marges projet en baisse",
+            "Autre défi"
+          ]
+        },
+        "service_interest": {
+          "label": "Service qui vous intéresse",
+          "placeholder": "Sélectionnez un service",
+          "options": [
+            "Audit & Gains Rapides (2 500€)",
+            "Implémentation Complète (15 000€)",
+            "Transformation Agence (35 000€)",
+            "Pas sûr / Découvrir les options"
+          ]
+        },
+        "preferred_time": {
+          "label": "Créneaux préférés",
+          "placeholder": "Sélectionnez un créneau",
+          "options": [
+            "Matin (9h-12h)",
+            "Après-midi (14h-17h)",
+            "Flexible"
+          ]
+        },
+        "additional_message": {
+          "label": "Message additionnel (optionnel)",
+          "placeholder": "Dites-nous en plus sur vos défis ou objectifs spécifiques..."
+        }
+      },
+      "button": "Réserver mon audit gratuit",
+      "privacy_notice": "En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe concernant votre audit gratuit. Nous respectons votre vie privée et ne partagerons jamais vos informations."
+    },
+    "what_to_expect": {
+      "title": "À quoi s'attendre pendant l'appel",
+      "steps": [
+        {
+          "title": "Présentation et contexte",
+          "duration": "5 min",
+          "description": "Nous apprenons à connaître votre équipe, vos projets actuels et vos objectifs de productivité."
+        },
+        {
+          "title": "Analyse du flux de travail", 
+          "duration": "15 min",
+          "description": "Nous examinons votre processus de développement actuel, identifions les goulots d'étranglement et les opportunités d'automatisation."
+        },
+        {
+          "title": "Recommandations spécifiques",
+          "duration": "8 min",
+          "description": "Nous partageons 3-5 améliorations IA spécifiques que vous pouvez implémenter immédiatement pour des gains rapides."
+        },
+        {
+          "title": "Prochaines étapes",
+          "duration": "2 min", 
+          "description": "Nous discutons des options pour une transformation plus approfondie si vous êtes intéressé."
+        }
+      ]
+    },
+    "what_you_receive": {
+      "title": "Ce que vous recevrez",
+      "items": [
+        "Analyse gratuite de votre flux de travail de développement actuel",
+        "Identification des 3 plus grandes opportunités d'amélioration IA",
+        "Recommandations d'outils spécifiques pour votre pile technologique",
+        "Plan d'action avec gains rapides implémentables en 1-2 semaines",
+        "Estimation du ROI potentiel de l'automatisation IA",
+        "Guide de ressources personnalisé envoyé après l'appel"
+      ]
+    },
+    "how_to_prepare": {
+      "title": "Comment se préparer",
+      "steps": [
+        "Réfléchissez à vos principaux défis de productivité actuels",
+        "Préparez une vue d'ensemble de votre pile technologique",
+        "Notez les tâches répétitives qui prennent le plus de temps",
+        "Ayez une idée de vos objectifs de croissance à 6-12 mois"
+      ],
+      "note": "Aucune préparation technique n'est requise. Nous nous concentrons sur la compréhension de vos défis et objectifs plutôt que sur les détails techniques."
+    },
+    "contact_alternatives": {
+      "title": "Autres moyens de nous contacter",
+      "email": {
+        "title": "Email direct",
+        "address": "philbeliv@gmail.com",
+        "response_time": "Réponse sous 4 heures en jours ouvrables"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "number": "+1 514-773-4780",
+        "availability": "Lundi-Vendredi, 9h-18h (heure de Paris)"
+      },
+      "live_chat": {
+        "title": "Chat en direct", 
+        "description": "Support instantané",
+        "availability": "Disponible pendant les heures ouvrables"
+      }
+    },
+    "contact_info": {
+      "title": "Informations de contact",
+      "response_time": {
+        "title": "Temps de réponse",
+        "value": "4 heures maximum",
+        "note": "En jours ouvrables"
+      },
+      "availability": {
+        "title": "Disponibilité", 
+        "value": "Lundi - Vendredi",
+        "hours": "9h00 - 18h00 (Paris)"
+      },
+      "timezone": {
+        "title": "Fuseau horaire",
+        "value": "Europe/Paris", 
+        "note": "UTC+1/UTC+2"
+      }
+    },
+    "faq_section": {
+      "title": "Des questions avant de réserver ?",
+      "description": "Consultez nos questions fréquentes ou contactez-nous directement.",
+      "links": {
+        "faq": "Voir les FAQ →",
+        "email": "Poser une question par email →"
+      }
+    },
+    "testimonial": {
+      "quote": "L'audit gratuit m'a donné 3 recommandations spécifiques que j'ai pu implémenter immédiatement. En une semaine, j'ai économisé 6 heures de travail répétitif.",
+      "author": {
+        "name": "Alexandre L.",
+        "title": "Développeur Full-Stack"
+      }
+    }
+  },
   "metadata": {
     "home": {
       "title": "NEWCODE - Développement IA Accéléré",
@@ -260,6 +544,10 @@
     "business": {
       "title": "Business - NEWCODE",
       "description": "Solutions métier sans code basées sur l'IA. Automatisez vos processus et gagnez en efficacité sans équipe technique."
+    },
+    "book_demo": {
+      "title": "Réserver une démo - NEWCODE",
+      "description": "Réservez votre évaluation gratuite et découvrez comment l'IA peut transformer vos processus. Audit personnalisé inclus."
     }
   }
 }

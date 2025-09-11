@@ -5,8 +5,12 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import CodeBlock from '@/components/ui/CodeBlock';
 import { ArrowRight, Terminal, GitBranch, Cpu, Database } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const DevelopersHero: React.FC = () => {
+  const t = useTranslations('developers.hero');
+  const statsT = useTranslations('developers.stats');
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-dark pt-16 sm:pt-20">
       {/* Technical Background Pattern */}
@@ -66,12 +70,11 @@ const DevelopersHero: React.FC = () => {
 
               <div className="inline-flex items-center gap-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full px-4 py-2 mb-6">
                 <Terminal className="w-4 h-4 text-primary-blue" />
-                <span className="text-primary-blue text-sm font-medium">De ChatGPT aux Systèmes Orchestrés</span>
+                <span className="text-primary-blue text-sm font-medium">{t('badge')}</span>
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-text-primary">
-                Maîtrisez les agents IA. <span className="text-text-primary">Développez plus vite,</span>
-                <span className="block text-primary-blue">avec plus de méthode.</span>
+                {t('title')} <span className="block text-primary-blue">{t('title_highlight')}</span>
               </h1>
             </motion.div>
 
@@ -81,19 +84,19 @@ const DevelopersHero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-base sm:text-lg text-text-secondary mb-6 md:mb-8 leading-relaxed">
-                Nous vous formons à utiliser des systèmes d’orchestration d’agents capables de clarifier, coder, affiner, déboguer, tester et optimiser en continu afin de garantir que le code généré corresponde exactement à vos besoins.
+                {t('description')}
               </p>
 
               <div className="grid grid-cols-1 gap-3 md:gap-4 mb-6 md:mb-8 max-w-md">
                 <div className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-lg p-3 md:p-4">
                   <h3 className="text-primary-blue font-semibold mb-1 md:mb-2 flex items-center gap-2 text-sm md:text-base">
                     <Cpu className="w-3 h-3 md:w-4 md:h-4" />
-                    Stack IA Avancé
+                    {t('stack.title')}
                   </h3>
                   <ul className="text-text-secondary text-xs md:text-sm space-y-1">
-                    <li>• Claude-code + wrapper multi-agents</li>
-                    <li>• Roocode + modes custom</li>
-                    <li>• MCPs pour intégrations natives</li>
+                    {[0, 1, 2].map((index) => (
+                      <li key={index}>• {t(`stack.items.${index}`)}</li>
+                    ))}
                   </ul>
                 </div>
                 
@@ -112,7 +115,7 @@ const DevelopersHero: React.FC = () => {
                 href="/book-demo"
                 className="group"
               >
-                Réserver Évaluation Gratuite
+                {t('cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -121,7 +124,7 @@ const DevelopersHero: React.FC = () => {
                 size="lg" 
                 href="#technical-stack"
               >
-                Découvrir la Formation
+                {t('cta.secondary')}
               </Button>
             </motion.div>
           </div>
@@ -178,10 +181,10 @@ const DevelopersHero: React.FC = () => {
             <div className="sm:hidden bg-background-dark-alt/50 border border-primary-blue/30 rounded-lg p-4">
               <h3 className="text-primary-blue font-semibold mb-2 flex items-center gap-2">
                 <Terminal className="w-4 h-4" />
-                Configuration Avancée
+                {t('stack.title')}
               </h3>
               <p className="text-text-secondary text-sm">
-                Modes personnalisés d'agents IA : Architecte, Auto-Coder, Testeur TDD, et Debugger avec instructions spécialisées.
+                {t('description')}
               </p>
             </div>
           </motion.div>
@@ -195,15 +198,15 @@ const DevelopersHero: React.FC = () => {
           className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6"
         >
           {[
-            { metric: "<20%", label: "Succès vibe coding", icon: Terminal, color: "text-warning-orange" },
-            { metric: "3x", label: "Plus rapide (agentic)", icon: GitBranch, color: "text-success-green" },
-            { metric: "90%", label: "Moins de bugs", icon: Cpu, color: "text-success-green" },
-            { metric: "2h", label: "Onboarding (vs 2 sem)", icon: Database, color: "text-primary-blue" }
+            { key: 'success_rate', icon: Terminal, color: "text-warning-orange" },
+            { key: 'speed_improvement', icon: GitBranch, color: "text-success-green" },
+            { key: 'bug_reduction', icon: Cpu, color: "text-success-green" },
+            { key: 'onboarding', icon: Database, color: "text-primary-blue" }
           ].map((item, index) => (
             <div key={index} className="bg-background-dark-alt/30 border border-primary-blue/30 rounded-xl p-3 md:p-4 text-center">
               <item.icon className={`w-4 h-4 md:w-6 md:h-6 ${item.color || 'text-primary-blue'} mx-auto mb-1 md:mb-2`} />
-              <div className={`text-lg md:text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{item.metric}</div>
-              <div className="text-text-secondary text-xs md:text-sm">{item.label}</div>
+              <div className={`text-lg md:text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{statsT(`${item.key}.value`)}</div>
+              <div className="text-text-secondary text-xs md:text-sm">{statsT(`${item.key}.label`)}</div>
             </div>
           ))}
         </motion.div>

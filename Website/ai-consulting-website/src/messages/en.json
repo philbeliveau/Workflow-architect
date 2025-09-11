@@ -248,6 +248,478 @@
       "other": "🇫🇷 Français"
     }
   },
+  "developers": {
+    "hero": {
+      "badge": "From ChatGPT to Orchestrated Systems",
+      "title": "Master AI agents. Develop faster,",
+      "title_highlight": "with more method.",
+      "description": "We train you to use agent orchestration systems capable of clarifying, coding, refining, debugging, testing and continuously optimizing to ensure that the generated code exactly matches your needs.",
+      "stack": {
+        "title": "Advanced AI Stack",
+        "items": [
+          "Claude-code + multi-agent wrapper",
+          "Roocode + custom modes",
+          "MCPs for native integrations"
+        ]
+      },
+      "cta": {
+        "primary": "Book Free Assessment",
+        "secondary": "Discover Training"
+      }
+    },
+    "stats": {
+      "success_rate": {
+        "value": "<20%",
+        "label": "Vibe coding success"
+      },
+      "speed_improvement": {
+        "value": "3x",
+        "label": "Faster (agentic)"
+      },
+      "bug_reduction": {
+        "value": "90%",
+        "label": "Fewer bugs"
+      },
+      "onboarding": {
+        "value": "2h",
+        "label": "Onboarding (vs 2 weeks)"
+      }
+    },
+    "tech_watch": {
+      "title": "Continuous Technology Watch",
+      "description": "We keep you informed about new software development stacks, MCPs, and best practices.",
+      "features": [
+        {
+          "title": "New Development Stacks",
+          "description": "Stay up to date with the latest emerging technologies and frameworks"
+        },
+        {
+          "title": "Advanced MCP Protocols",
+          "description": "Discover the latest innovations in Model Context Protocol"
+        },
+        {
+          "title": "Best Practices",
+          "description": "Integrate industry standards and proven patterns"
+        }
+      ]
+    },
+    "orchestration": {
+      "title": "Agent Orchestration",
+      "description": "The next level of Claude Code with intelligent orchestration and specialized agents.",
+      "solution": {
+        "title": "The Orchestration Solution",
+        "description": "Our orchestration system is a wrapper that transforms Claude Code into an advanced collaborative platform. It enables parallel execution, agent specialization, and covers the entire development cycle.",
+        "principles": [
+          {
+            "title": "BatchTool Principle",
+            "description": "Encapsulates multiple MCP actions in a single message for parallel execution"
+          },
+          {
+            "title": "Intelligent Coordination",
+            "description": "Reduces network latency, token count, and coordination time"
+          }
+        ]
+      }
+    },
+    "case_studies": {
+      "title": "Technical Use Cases",
+      "description": "How our collaborative AI agents handle security concerns",
+      "description_highlight": "with a constant cycle of development, testing, alignment and verification.",
+      "security": {
+        "title": "Security Use Case",
+        "description": "How our collaborative AI agents automatically detect and fix vulnerabilities",
+        "problem": {
+          "title": "Problem",
+          "description": "Buffer overflows and undetected security vulnerabilities"
+        },
+        "solution": {
+          "title": "Solution", 
+          "description": "Specialized security agents working in collaboration"
+        },
+        "result": {
+          "title": "Result",
+          "description": "Validated secure code ready for production"
+        }
+      },
+      "cycle": {
+        "title": "🔄 Constant Cycle of Collaborative Agents",
+        "agents": [
+          {
+            "name": "Coding Agent",
+            "role": "Generates initial code",
+            "phase": "Development",
+            "actions": [
+              "Writes code according to specifications",
+              "Applies known security patterns",
+              "Uses language best practices"
+            ],
+            "detects": [
+              "Potential buffer overflows",
+              "Insufficient input validation"
+            ]
+          },
+          {
+            "name": "Security Agent",
+            "role": "Analyzes vulnerabilities",
+            "phase": "Security Testing",
+            "actions": [
+              "Scans for OWASP vulnerabilities",
+              "Detects buffer overflows",
+              "Validates user input handling"
+            ],
+            "detects": [
+              "CVEs detected",
+              "Dangerous patterns identified"
+            ]
+          },
+          {
+            "name": "Alignment Agent",
+            "role": "Verifies requirements",
+            "phase": "Alignment",
+            "actions": [
+              "Compares with security requirements",
+              "Validates architectural alignment",
+              "Confirms enterprise standards"
+            ],
+            "detects": [
+              "Non-compliance with standards",
+              "Missing requirements"
+            ]
+          },
+          {
+            "name": "Quality Agent",
+            "role": "Applies corrections",
+            "phase": "Enforcement",
+            "actions": [
+              "Fixes detected vulnerabilities",
+              "Updates documentation",
+              "Optimizes secure code"
+            ],
+            "detects": [
+              "Applied corrections",
+              "Standards respected"
+            ]
+          },
+          {
+            "name": "Sub-Agent Verifier",
+            "role": "Verifies generated code",
+            "phase": "Verification",
+            "actions": [
+              "Automated security tests",
+              "Quality metrics",
+              "Continuous validation"
+            ],
+            "detects": [
+              "Verified and secure code",
+              "Ready for production"
+            ]
+          }
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Development?",
+      "description": "Free assessment tailored to your technical profile. We'll analyze your needs and show you exactly how to implement AI agent orchestration.",
+      "benefits": [
+        "Free 30-minute technical assessment",
+        "Personalized AI stack recommendations",
+        "Live agent orchestration demonstration",
+        "Immediate implementation roadmap"
+      ],
+      "button": "Book Technical Assessment",
+      "supporting_text": "Free technical consultation without sales pitch. Just actionable insights on your development workflow and AI integration possibilities.",
+      "guarantee": "No sales, no commitment, just solutions"
+    }
+  },
+  "business": {
+    "hero": {
+      "badge": "Code wasn't the Bottleneck",
+      "title": "From business idea",
+      "title_highlight": "to validated specifications",
+      "description": "The real bottleneck? Defining the right user stories, prioritizing the right features, and validating the right user journeys.",
+      "description_highlight": "AI agents transform your business needs into testable prototypes to validate specs before expensive development.",
+      "process": {
+        "title": "From Business to Specifications",
+        "steps": [
+          {
+            "title": "Define User Stories",
+            "description": "User needs → concrete features"
+          },
+          {
+            "title": "Prioritize & UI/UX",
+            "description": "Roadmap + interactive mockups"
+          },
+          {
+            "title": "Functional Prototype",
+            "description": "AI agents generate testable interface"
+          },
+          {
+            "title": "Validated Specs",
+            "description": "Requirements based on reality"
+          }
+        ]
+      },
+      "cta": {
+        "primary": "Learn the Method",
+        "secondary": "See the Process"
+      }
+    },
+    "stats": {
+      "time": {
+        "value": "3 days",
+        "label": "Vs 'maybe in Q3'"
+      },
+      "cost": {
+        "value": "€0",
+        "label": "Developer cost"
+      },
+      "control": {
+        "value": "100%",
+        "label": "Control over your needs"
+      }
+    },
+    "benefits": {
+      "title": "Code wasn't the Bottleneck",
+      "description": "The real problem? Understanding what to build, not how to build it.",
+      "description_highlight": "AI agents transform your ideas into testable prototypes in 3 days.",
+      "features": [
+        {
+          "title": "Understand Needs",
+          "description": "90% of projects fail because they build the wrong thing"
+        },
+        {
+          "title": "Validate Quickly",
+          "description": "From 18 months of spec to 3 days of prototype tested with real users"
+        },
+        {
+          "title": "Eliminate Waste",
+          "description": "Stop building features that nobody uses"
+        }
+      ],
+      "process": {
+        "title": "🔄 The New Development Process covered by AI agents",
+        "description": "Instead of 18 months of spec → 6 months of dev → failure, do 3 days of prototype → user testing → iteration",
+        "steps": [
+          {
+            "number": "1",
+            "title": "Identify",
+            "description": "The real user problem"
+          },
+          {
+            "number": "2", 
+            "title": "Prototype",
+            "description": "3 days, throwaway code"
+          },
+          {
+            "number": "3",
+            "title": "Test",
+            "description": "Real user feedback"
+          },
+          {
+            "number": "4",
+            "title": "Iterate", 
+            "description": "Improve or pivot"
+          },
+          {
+            "number": "5",
+            "title": "Specify",
+            "description": "Validated requirements"
+          }
+        ]
+      }
+    },
+    "cta": {
+      "title": "Stop building the wrong thing",
+      "description": "Learn to use AI agents to validate your ideas with real users",
+      "description_highlight": "before",
+      "description_end": "wasting months in development.",
+      "button": "Learn the Method",
+      "supporting_text": "3 days of prototype beats 18 months of spec"
+    }
+  },
+  "booking": {
+    "hero": {
+      "title": "Book your free workflow audit",
+      "subtitle": "30-minute call to identify your biggest productivity opportunities",
+      "description": "In 30 minutes, we'll analyze your current development process and identify the three biggest AI-powered acceleration opportunities.",
+      "description_highlight": "No sales pitch, no commitment required",
+      "description_end": "– just actionable insights you can implement immediately.",
+      "benefits": [
+        "30 minutes only",
+        "Personalized recommendations", 
+        "Actionable insights",
+        "No commitment"
+      ],
+      "trust_indicators": [
+        "50+ teams audited",
+        "Specific recommendations", 
+        "Immediate results"
+      ]
+    },
+    "form": {
+      "title": "Book your free audit",
+      "fields": {
+        "full_name": {
+          "label": "Full name *",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email *",
+          "placeholder": "your@email.com"
+        },
+        "company": {
+          "label": "Company / Organization",
+          "placeholder": "Your company name"
+        },
+        "team_size": {
+          "label": "Development team size *",
+          "placeholder": "Select size",
+          "options": [
+            "Solo developer",
+            "2-3 developers",
+            "4-8 developers", 
+            "9-15 developers",
+            "15+ developers"
+          ]
+        },
+        "main_challenge": {
+          "label": "Main current challenge *",
+          "placeholder": "Select your challenge",
+          "options": [
+            "Inconsistent development velocity",
+            "Developer onboarding too slow",
+            "Too many repetitive tasks",
+            "Maintaining quality at speed",
+            "Team scaling difficulties",
+            "Project margins declining",
+            "Other challenge"
+          ]
+        },
+        "service_interest": {
+          "label": "Service of interest",
+          "placeholder": "Select a service",
+          "options": [
+            "Audit & Quick Wins (€2,500)",
+            "Complete Implementation (€15,000)",
+            "Agency Transformation (€35,000)",
+            "Not sure / Discover options"
+          ]
+        },
+        "preferred_time": {
+          "label": "Preferred time slots",
+          "placeholder": "Select a time slot",
+          "options": [
+            "Morning (9am-12pm)",
+            "Afternoon (2pm-5pm)",
+            "Flexible"
+          ]
+        },
+        "additional_message": {
+          "label": "Additional message (optional)",
+          "placeholder": "Tell us more about your specific challenges or goals..."
+        }
+      },
+      "button": "Book my free audit",
+      "privacy_notice": "By submitting this form, you agree to be contacted by our team regarding your free audit. We respect your privacy and will never share your information."
+    },
+    "what_to_expect": {
+      "title": "What to expect during the call",
+      "steps": [
+        {
+          "title": "Introduction and context",
+          "duration": "5 min",
+          "description": "We get to know your team, current projects and productivity goals."
+        },
+        {
+          "title": "Workflow analysis", 
+          "duration": "15 min",
+          "description": "We examine your current development process, identify bottlenecks and automation opportunities."
+        },
+        {
+          "title": "Specific recommendations",
+          "duration": "8 min",
+          "description": "We share 3-5 specific AI improvements you can implement immediately for quick wins."
+        },
+        {
+          "title": "Next steps",
+          "duration": "2 min", 
+          "description": "We discuss options for deeper transformation if you're interested."
+        }
+      ]
+    },
+    "what_you_receive": {
+      "title": "What you'll receive",
+      "items": [
+        "Free analysis of your current development workflow",
+        "Identification of the 3 biggest AI improvement opportunities",
+        "Specific tool recommendations for your tech stack",
+        "Action plan with quick wins implementable in 1-2 weeks",
+        "Potential ROI estimate from AI automation",
+        "Personalized resource guide sent after the call"
+      ]
+    },
+    "how_to_prepare": {
+      "title": "How to prepare",
+      "steps": [
+        "Think about your main current productivity challenges",
+        "Prepare an overview of your tech stack",
+        "Note repetitive tasks that take the most time",
+        "Have an idea of your 6-12 month growth goals"
+      ],
+      "note": "No technical preparation required. We focus on understanding your challenges and goals rather than technical details."
+    },
+    "contact_alternatives": {
+      "title": "Other ways to contact us",
+      "email": {
+        "title": "Direct email",
+        "address": "philbeliv@gmail.com",
+        "response_time": "Response within 4 hours on business days"
+      },
+      "phone": {
+        "title": "Phone",
+        "number": "+1 514-773-4780",
+        "availability": "Monday-Friday, 9am-6pm (Paris time)"
+      },
+      "live_chat": {
+        "title": "Live chat", 
+        "description": "Instant support",
+        "availability": "Available during business hours"
+      }
+    },
+    "contact_info": {
+      "title": "Contact Information",
+      "response_time": {
+        "title": "Response time",
+        "value": "4 hours maximum",
+        "note": "On business days"
+      },
+      "availability": {
+        "title": "Availability", 
+        "value": "Monday - Friday",
+        "hours": "9:00am - 6:00pm (Paris)"
+      },
+      "timezone": {
+        "title": "Time zone",
+        "value": "Europe/Paris", 
+        "note": "UTC+1/UTC+2"
+      }
+    },
+    "faq_section": {
+      "title": "Questions before booking?",
+      "description": "Check our frequently asked questions or contact us directly.",
+      "links": {
+        "faq": "View FAQ →",
+        "email": "Ask a question by email →"
+      }
+    },
+    "testimonial": {
+      "quote": "The free audit gave me 3 specific recommendations I could implement immediately. In one week, I saved 6 hours of repetitive work.",
+      "author": {
+        "name": "Alexandre L.",
+        "title": "Full-Stack Developer"
+      }
+    }
+  },
   "metadata": {
     "home": {
       "title": "NEWCODE - Accelerated AI Development",
@@ -260,6 +732,14 @@
     "business": {
       "title": "Business - NEWCODE",
       "description": "No-code business solutions based on AI. Automate your processes and gain efficiency without a technical team."
+    },
+    "developers": {
+      "title": "Developers - NEWCODE",
+      "description": "Advanced AI agent orchestration solutions for developers. Automate your workflows and multiply your productivity."
+    },
+    "book_demo": {
+      "title": "Book a Demo - NEWCODE",
+      "description": "Book your free assessment and discover how AI can transform your processes. Personalized audit included."
     }
   }
 }

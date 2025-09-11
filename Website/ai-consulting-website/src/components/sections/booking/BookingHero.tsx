@@ -3,8 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, CheckCircle, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const BookingHero: React.FC = () => {
+  const t = useTranslations('booking.hero');
   return (
     <section className="py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 relative overflow-hidden">
       {/* Background elements */}
@@ -70,7 +72,7 @@ const BookingHero: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-h1 font-bold mb-6 bg-gradient-to-r from-text-primary via-accent-blue to-accent-purple bg-clip-text text-transparent">
-            Réservez votre audit gratuit de flux de travail
+            {t('title')}
           </h1>
         </motion.div>
 
@@ -80,7 +82,7 @@ const BookingHero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <p className="text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Appel de 30 minutes pour identifier vos plus grandes opportunités de productivité
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -90,11 +92,9 @@ const BookingHero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           <p className="text-lg text-text-secondary max-w-5xl mx-auto leading-relaxed">
-            En 30 minutes, nous analyserons votre processus de développement actuel et identifierons 
-            les trois plus grandes opportunités d'accélération alimentée par l'IA. 
-            <span className="text-accent-blue font-semibold"> Pas d'argumentaire de vente, 
-            pas d'engagement requis</span> – juste des insights exploitables que vous pouvez 
-            implémenter immédiatement.
+            {t('description')}{' '}
+            <span className="text-accent-blue font-semibold">{t('description_highlight')}</span>{' '}
+            {t('description_end')}
           </p>
         </motion.div>
 
@@ -106,10 +106,10 @@ const BookingHero: React.FC = () => {
           className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { icon: Clock, text: "30 minutes seulement" },
-            { icon: CheckCircle, text: "Recommandations personnalisées" },
-            { icon: Zap, text: "Insights exploitables" },
-            { icon: Calendar, text: "Aucun engagement" }
+            { icon: Clock, text: t('benefits.0') },
+            { icon: CheckCircle, text: t('benefits.1') },
+            { icon: Zap, text: t('benefits.2') },
+            { icon: Calendar, text: t('benefits.3') }
           ].map((benefit, index) => (
             <div key={index} className="flex items-center gap-3 text-left">
               <div className="w-10 h-10 bg-gradient-to-r from-accent-blue/20 to-accent-purple/20 rounded-lg flex items-center justify-center">
@@ -131,15 +131,15 @@ const BookingHero: React.FC = () => {
         >
           <span className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
-            50+ équipes auditées
+            {t('trust_indicators.0')}
           </span>
           <span className="flex items-center gap-2">
             <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
-            Recommandations spécifiques
+            {t('trust_indicators.1')}
           </span>
           <span className="flex items-center gap-2">
             <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
-            Résultats immédiats
+            {t('trust_indicators.2')}
           </span>
         </motion.div>
       </div>

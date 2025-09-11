@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Calendar, Send, User, Building, Users, Target, Clock } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const BookingForm: React.FC = () => {
+  const t = useTranslations('booking.form');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,34 +35,34 @@ const BookingForm: React.FC = () => {
   };
 
   const teamSizes = [
-    { value: 'solo', label: 'Développeur solo' },
-    { value: '2-3', label: '2-3 développeurs' },
-    { value: '4-8', label: '4-8 développeurs' },
-    { value: '9-15', label: '9-15 développeurs' },
-    { value: '15+', label: '15+ développeurs' }
+    { value: 'solo', label: t('fields.team_size.options.0') },
+    { value: '2-3', label: t('fields.team_size.options.1') },
+    { value: '4-8', label: t('fields.team_size.options.2') },
+    { value: '9-15', label: t('fields.team_size.options.3') },
+    { value: '15+', label: t('fields.team_size.options.4') }
   ];
 
   const challenges = [
-    { value: 'velocity', label: 'Vélocité de développement incohérente' },
-    { value: 'onboarding', label: 'Intégration développeur trop lente' },
-    { value: 'repetitive', label: 'Trop de tâches répétitives' },
-    { value: 'quality', label: 'Maintenir la qualité à vitesse' },
-    { value: 'scaling', label: 'Difficultés d\'évolution équipe' },
-    { value: 'margins', label: 'Marges projet en baisse' },
-    { value: 'other', label: 'Autre défi' }
+    { value: 'velocity', label: t('fields.main_challenge.options.0') },
+    { value: 'onboarding', label: t('fields.main_challenge.options.1') },
+    { value: 'repetitive', label: t('fields.main_challenge.options.2') },
+    { value: 'quality', label: t('fields.main_challenge.options.3') },
+    { value: 'scaling', label: t('fields.main_challenge.options.4') },
+    { value: 'margins', label: t('fields.main_challenge.options.5') },
+    { value: 'other', label: t('fields.main_challenge.options.6') }
   ];
 
   const timeSlots = [
-    { value: 'morning', label: 'Matin (9h-12h)' },
-    { value: 'afternoon', label: 'Après-midi (14h-17h)' },
-    { value: 'flexible', label: 'Flexible' }
+    { value: 'morning', label: t('fields.preferred_time.options.0') },
+    { value: 'afternoon', label: t('fields.preferred_time.options.1') },
+    { value: 'flexible', label: t('fields.preferred_time.options.2') }
   ];
 
   const services = [
-    { value: 'audit', label: 'Audit & Gains Rapides (2 500€)' },
-    { value: 'implementation', label: 'Implémentation Complète (15 000€)' },
-    { value: 'transformation', label: 'Transformation Agence (35 000€)' },
-    { value: 'unsure', label: 'Pas sûr / Découvrir les options' }
+    { value: 'audit', label: t('fields.service_interest.options.0') },
+    { value: 'implementation', label: t('fields.service_interest.options.1') },
+    { value: 'transformation', label: t('fields.service_interest.options.2') },
+    { value: 'unsure', label: t('fields.service_interest.options.3') }
   ];
 
   return (
@@ -73,7 +75,7 @@ const BookingForm: React.FC = () => {
       <div className="flex items-center gap-3 mb-8">
         <Calendar className="w-6 h-6 text-accent-blue" />
         <h2 className="text-h3 font-bold text-text-primary">
-          Réserver votre audit gratuit
+          {t('title')}
         </h2>
       </div>
 
@@ -83,7 +85,7 @@ const BookingForm: React.FC = () => {
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
               <User className="w-4 h-4 inline mr-2" />
-              Nom complet *
+              {t('fields.full_name.label')}
             </label>
             <input
               type="text"
@@ -93,12 +95,12 @@ const BookingForm: React.FC = () => {
               onChange={handleInputChange}
               required
               className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
-              placeholder="Votre nom"
+              placeholder={t('fields.full_name.placeholder')}
             />
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-              Email *
+              {t('fields.email.label')}
             </label>
             <input
               type="email"
@@ -108,7 +110,7 @@ const BookingForm: React.FC = () => {
               onChange={handleInputChange}
               required
               className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
-              placeholder="votre@email.com"
+              placeholder={t('fields.email.placeholder')}
             />
           </div>
         </div>
@@ -117,7 +119,7 @@ const BookingForm: React.FC = () => {
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-text-primary mb-2">
             <Building className="w-4 h-4 inline mr-2" />
-            Entreprise / Organisation
+            {t('fields.company.label')}
           </label>
           <input
             type="text"
@@ -126,7 +128,7 @@ const BookingForm: React.FC = () => {
             value={formData.company}
             onChange={handleInputChange}
             className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
-            placeholder="Nom de votre entreprise"
+            placeholder={t('fields.company.placeholder')}
           />
         </div>
 
@@ -134,7 +136,7 @@ const BookingForm: React.FC = () => {
         <div>
           <label htmlFor="teamSize" className="block text-sm font-medium text-text-primary mb-2">
             <Users className="w-4 h-4 inline mr-2" />
-            Taille de l'équipe de développement *
+            {t('fields.team_size.label')}
           </label>
           <select
             id="teamSize"
@@ -144,7 +146,7 @@ const BookingForm: React.FC = () => {
             required
             className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary focus:outline-none focus:border-accent-blue transition-colors"
           >
-            <option value="">Sélectionnez la taille</option>
+            <option value="">{t('fields.team_size.placeholder')}</option>
             {teamSizes.map((size) => (
               <option key={size.value} value={size.value}>
                 {size.label}
@@ -157,7 +159,7 @@ const BookingForm: React.FC = () => {
         <div>
           <label htmlFor="challenge" className="block text-sm font-medium text-text-primary mb-2">
             <Target className="w-4 h-4 inline mr-2" />
-            Principal défi actuel *
+            {t('fields.main_challenge.label')}
           </label>
           <select
             id="challenge"
@@ -167,7 +169,7 @@ const BookingForm: React.FC = () => {
             required
             className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary focus:outline-none focus:border-accent-blue transition-colors"
           >
-            <option value="">Sélectionnez votre défi</option>
+            <option value="">{t('fields.main_challenge.placeholder')}</option>
             {challenges.map((challenge) => (
               <option key={challenge.value} value={challenge.value}>
                 {challenge.label}
@@ -179,7 +181,7 @@ const BookingForm: React.FC = () => {
         {/* Service Interest */}
         <div>
           <label htmlFor="serviceInterest" className="block text-sm font-medium text-text-primary mb-2">
-            Service qui vous intéresse
+            {t('fields.service_interest.label')}
           </label>
           <select
             id="serviceInterest"
@@ -188,7 +190,7 @@ const BookingForm: React.FC = () => {
             onChange={handleInputChange}
             className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary focus:outline-none focus:border-accent-blue transition-colors"
           >
-            <option value="">Sélectionnez un service</option>
+            <option value="">{t('fields.service_interest.placeholder')}</option>
             {services.map((service) => (
               <option key={service.value} value={service.value}>
                 {service.label}
@@ -201,7 +203,7 @@ const BookingForm: React.FC = () => {
         <div>
           <label htmlFor="preferredTime" className="block text-sm font-medium text-text-primary mb-2">
             <Clock className="w-4 h-4 inline mr-2" />
-            Créneaux préférés
+            {t('fields.preferred_time.label')}
           </label>
           <select
             id="preferredTime"
@@ -210,7 +212,7 @@ const BookingForm: React.FC = () => {
             onChange={handleInputChange}
             className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary focus:outline-none focus:border-accent-blue transition-colors"
           >
-            <option value="">Sélectionnez un créneau</option>
+            <option value="">{t('fields.preferred_time.placeholder')}</option>
             {timeSlots.map((slot) => (
               <option key={slot.value} value={slot.value}>
                 {slot.label}
@@ -222,7 +224,7 @@ const BookingForm: React.FC = () => {
         {/* Message */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
-            Message additionnel (optionnel)
+            {t('fields.additional_message.label')}
           </label>
           <textarea
             id="message"
@@ -231,7 +233,7 @@ const BookingForm: React.FC = () => {
             onChange={handleInputChange}
             rows={4}
             className="w-full px-4 py-3 bg-primary-900 border border-primary-700 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors resize-none"
-            placeholder="Dites-nous en plus sur vos défis ou objectifs spécifiques..."
+            placeholder={t('fields.additional_message.placeholder')}
           />
         </div>
 
@@ -243,14 +245,13 @@ const BookingForm: React.FC = () => {
           className="w-full group text-lg py-4 h-auto"
         >
           <Send className="mr-3 h-5 w-5" />
-          Réserver mon audit gratuit
+          {t('button')}
           <Calendar className="ml-3 h-5 w-5 transition-transform group-hover:scale-110" />
         </Button>
 
         {/* Privacy Note */}
         <p className="text-xs text-text-muted text-center leading-relaxed">
-          En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe concernant 
-          votre audit gratuit. Nous respectons votre vie privée et ne partagerons jamais vos informations.
+          {t('privacy_notice')}
         </p>
       </form>
     </motion.div>

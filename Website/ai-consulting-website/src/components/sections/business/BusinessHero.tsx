@@ -4,8 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Briefcase, Users, BarChart3, Calendar, Building, Lightbulb } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const BusinessHero: React.FC = () => {
+  const t = useTranslations('business.hero');
+  const statsT = useTranslations('business.stats');
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark pt-20">
       {/* Background Pattern */}
@@ -70,12 +74,12 @@ const BusinessHero: React.FC = () => {
 
               <div className="inline-flex items-center gap-2 bg-accent-red/10 border border-accent-red/20 rounded-full px-4 py-2 mb-6">
                 <Lightbulb className="w-4 h-4 text-accent-red" />
-                <span className="text-accent-red text-sm font-medium">Le Code n'était pas le Goulot</span>
+                <span className="text-accent-red text-sm font-medium">{t('badge')}</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                <span className="text-primary-blue">De l'idée d'affaires</span>
-                <span className="block text-accent-red">aux specifications validées</span>
+                <span className="text-primary-blue">{t('title')}</span>
+                <span className="block text-accent-red">{t('title_highlight')}</span>
               </h1>
             </motion.div>
 
@@ -85,13 +89,9 @@ const BusinessHero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-                Le vrai goulot ? Définir les <strong>bonnes user stories</strong>, prioriser les <strong>bonnes fonctionnalités</strong>, 
-                et valider les <strong>bons parcours utilisateur</strong>. 
+                {t('description')}
                 <span className="text-primary-blue font-semibold block mt-2">
-                  Les agents IA transforment vos besoins business en prototypes testables 
-                </span>
-                <span className="text-accent-red font-semibold block">
-                  pour valider les specs avant le développement coûteux.
+                  {t('description_highlight')}
                 </span>
               </p>
 
@@ -109,7 +109,7 @@ const BusinessHero: React.FC = () => {
                 href="/formation"
                 className="group"
               >
-                Apprendre la Méthode
+                {t('cta.primary')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -118,7 +118,7 @@ const BusinessHero: React.FC = () => {
                 size="lg" 
                 href="#validation-process"
               >
-                Voir le Processus
+                {t('cta.secondary')}
               </Button>
             </motion.div>
           </div>
@@ -133,25 +133,15 @@ const BusinessHero: React.FC = () => {
             <div className="bg-background-accent-grey/50 border border-primary-blue/30 rounded-lg p-6">
               <h3 className="text-primary-blue font-semibold mb-4 flex items-center gap-2">
                 <Lightbulb className="w-5 h-5" />
-                Du Business aux Spécifications
+                {t('process.title')}
               </h3>
               <div className="space-y-4 text-text-secondary text-sm">
-                <div>
-                  <strong className="text-text-primary">• Définir les User Stories</strong><br/>
-                  Besoins utilisateur → fonctionnalités concrètes
-                </div>
-                <div>
-                  <strong className="text-text-primary">• Prioriser & UI/UX</strong><br/>
-                  Roadmap + maquettes interactives
-                </div>
-                <div>
-                  <strong className="text-text-primary">• Prototype Fonctionnel</strong><br/>
-                  Agents IA génèrent l'interface testable
-                </div>
-                <div>
-                  <strong className="text-text-primary">• Specs Validées</strong><br/>
-                  Cahier des charges basé sur du réel
-                </div>
+                {[0, 1, 2, 3].map((index) => (
+                  <div key={index}>
+                    <strong className="text-text-primary">• {t(`process.steps.${index}.title`)}</strong><br/>
+                    {t(`process.steps.${index}.description`)}
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -165,14 +155,14 @@ const BusinessHero: React.FC = () => {
           className="mt-16 grid grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {[
-            { metric: "3 jours", label: "Vs 'peut-être en Q3'", icon: Calendar, color: "text-success-green" },
-            { metric: "€0", label: "Coût développeur", icon: Users, color: "text-primary-blue" },
-            { metric: "100%", label: "Contrôle sur vos besoins", icon: Briefcase, color: "text-accent-red" },
+            { key: "time", icon: Calendar, color: "text-success-green" },
+            { key: "cost", icon: Users, color: "text-primary-blue" },
+            { key: "control", icon: Briefcase, color: "text-accent-red" },
           ].map((item, index) => (
             <div key={index} className="bg-background-accent-grey/30 border border-primary-blue/30 rounded-xl p-4 text-center">
               <item.icon className={`w-6 h-6 ${item.color || 'text-primary-blue'} mx-auto mb-2`} />
-              <div className={`text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{item.metric}</div>
-              <div className="text-text-secondary text-xs">{item.label}</div>
+              <div className={`text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{statsT(`${item.key}.value`)}</div>
+              <div className="text-text-secondary text-xs">{statsT(`${item.key}.label`)}</div>
             </div>
           ))}
         </motion.div>

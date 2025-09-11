@@ -104,10 +104,10 @@ const TrainingContent: React.FC = () => {
                 transition: { duration: 0.2 }
               }}
             >
-              {/* Module number */}
-              <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-accent-red to-accent-red/80 rounded-full flex items-center justify-center">
+              {/* Module number - removed per user request */}
+              {/* <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-accent-red to-accent-red/80 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">{index + 1}</span>
-              </div>
+              </div> */}
 
               {/* Icon */}
               <div className="mb-4">

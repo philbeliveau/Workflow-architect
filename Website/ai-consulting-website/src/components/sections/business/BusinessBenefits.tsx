@@ -4,56 +4,61 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Search, Target, Layers, Zap, Rocket, ArrowRight, Brain, CheckCircle, Code } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const BusinessBenefits: React.FC = () => {
+  const t = useTranslations('business.benefits');
+  const processT = useTranslations('business.benefits.process');
+  const ctaT = useTranslations('business.cta');
+
   const prototypeSteps = [
     {
-      step: "Identifier",
+      step: processT('steps.0.title'),
       icon: <Search className="w-8 h-8" />,
       color: "primary-blue",
-      description: "Le vrai problème utilisateur"
+      description: processT('steps.0.description')
     },
     {
-      step: "Prototyper",
+      step: processT('steps.1.title'),
       icon: <Zap className="w-8 h-8" />,
       color: "accent-red", 
-      description: "3 jours, code jetable"
+      description: processT('steps.1.description')
     },
     {
-      step: "Tester",
+      step: processT('steps.2.title'),
       icon: <Target className="w-8 h-8" />,
       color: "primary-blue",
-      description: "Feedback utilisateurs réels"
+      description: processT('steps.2.description')
     },
     {
-      step: "Itérer",
+      step: processT('steps.3.title'),
       icon: <Layers className="w-8 h-8" />,
       color: "accent-red",
-      description: "Améliorer ou pivoter"
+      description: processT('steps.3.description')
     },
     {
-      step: "Spécifier",
+      step: processT('steps.4.title'),
       icon: <CheckCircle className="w-8 h-8" />,
       color: "primary-blue",
-      description: "Cahier des charges validé"
+      description: processT('steps.4.description')
     }
   ];
 
   const realBottlenecks = [
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "Comprendre les Besoins",
-      description: "90% des projets échouent parce qu'on construit la mauvaise chose"
+      title: t('features.0.title'),
+      description: t('features.0.description')
     },
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Valider Rapidement",
-      description: "De 18 mois de spec à 3 jours de prototype testé avec de vrais utilisateurs"
+      title: t('features.1.title'),
+      description: t('features.1.description')
     },
     {
       icon: <Rocket className="w-6 h-6" />,
-      title: "Éliminer le Gaspillage",
-      description: "Arrêter de construire des fonctionnalités que personne n'utilise"
+      title: t('features.2.title'),
+      description: t('features.2.description')
     }
   ];
 
@@ -70,13 +75,10 @@ const BusinessBenefits: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Le Code n'était pas le Goulot
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Le vrai problème ? Comprendre <span className="text-primary-blue font-semibold">ce qu'il faut construire</span>, pas comment le construire.
-            <span className="text-accent-red font-semibold block mt-2">
-              Les agents IA transforment vos idées en prototypes testables en 3 jours.
-            </span>
+            {t('description')} <span className="text-primary-blue font-semibold">{t('description_highlight')}</span>
           </p>
         </motion.div>
 
@@ -126,10 +128,10 @@ const BusinessBenefits: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-text-primary mb-4">
-              🔄 Le Nouveau Processus de Développement couvert par les agents IA
+              {processT('title')}
             </h3>
             <p className="text-text-secondary text-lg max-w-3xl mx-auto">
-              Au lieu de 18 mois de spec → 6 mois de dev → échec, faites 3 jours de prototype → test utilisateur → itération
+              {processT('description')}
             </p>
           </div>
 
@@ -239,24 +241,25 @@ const BusinessBenefits: React.FC = () => {
         >
           <div className="bg-gradient-to-r from-primary-blue/5 to-accent-red/5 border border-primary-blue/20 rounded-2xl p-8">
             <h4 className="text-2xl font-bold text-text-primary mb-4">
-              Arrêtez de construire la mauvaise chose
+              {ctaT('title')}
             </h4>
             <p className="text-text-secondary text-lg mb-6 max-w-2xl mx-auto">
-              Apprenez à utiliser les agents IA pour valider vos idées avec de vrais utilisateurs 
-              <strong className="text-primary-blue"> avant </strong> de perdre des mois en développement.
+              {ctaT('description')}
+              <strong className="text-primary-blue"> {ctaT('description_highlight')} </strong>
+              {ctaT('description_end')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
                 href="/formation" 
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-blue to-accent-red text-white font-bold text-lg rounded-xl hover:from-accent-red hover:to-primary-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Apprendre la Méthode
+{ctaT('button')}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <div className="text-text-secondary text-sm">
-                3 jours de prototype valent mieux que 18 mois de spec
+                {ctaT('supporting_text')}
               </div>
             </div>
           </div>
