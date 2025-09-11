@@ -1,0 +1,265 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "developers": "Developers",
+    "business": "Business",
+    "case-studies": "Case Studies",
+    "formation": "Training",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "free-assessment": "Free Assessment",
+    "tracks": "Tracks",
+    "problem": "Problem",
+    "solution": "Solution"
+  },
+  "hero": {
+    "title": "Master Agentic Development",
+    "subtitle": "Reduce software development complexity by delegating to AI agents.",
+    "steps": {
+      "formation": {
+        "title": "Training",
+        "description": "Expert teams in AI agents"
+      },
+      "mastery": {
+        "title": "Mastery",
+        "description": "Orchestration and delegation"
+      },
+      "autonomy": {
+        "title": "Autonomy",
+        "description": "Complete manual and methods"
+      }
+    },
+    "summary": "Complete method to transform your teams",
+    "cta": {
+      "training": "Our training",
+      "guide": "Our guide"
+    }
+  },
+  "sections": {
+    "loading": "Loading section...",
+    "home": "Home",
+    "problem": "Problem",
+    "track": "Track",
+    "training": "Training",
+    "solution": "Solution",
+    "contact": "Contact"
+  },
+  "problem": {
+    "title": "Why train in agentic development?",
+    "challenges": {
+      "title": "Change is fast & brutal",
+      "items": [
+        "Large companies show us that code is becoming majority AI and agent generated",
+        "Available tools often lead to irrelevant results",
+        "No one shows how to use them professionally",
+        "Controlling these agents and aligning them with our needs is key"
+      ]
+    },
+    "promises": {
+      "title": "What we enable you to do",
+      "items": [
+        "Understand the new paradigm and leverage it",
+        "Do the work of 5 people with one",
+        "Move from *vibe coding* to adopt structured, reliable and reproducible programming",
+        "Scale your projects without increasing your workforce",
+        "Delegate to specialized agents, and put their power at your service",
+        "Cover the entire software development cycle with agents"
+      ]
+    }
+  },
+  "tracks": {
+    "title": "Who is the training for?",
+    "subtitle": "Training accessible to all, adapted to technical and non-technical roles.",
+    "developers": {
+      "title": "Developers & Tech Teams",
+      "subtitle": "Agent orchestration, context engineering",
+      "description": "Master AI agent orchestration to accelerate your development.",
+      "features": {
+        "title": "What you get:",
+        "items": [
+          "Agentic paradigm explained",
+          "Configured MCP environments",
+          "Specs and prompts methodology",
+          "Complex projects from A to Z"
+        ]
+      },
+      "benefits": {
+        "title": "Typical results:",
+        "items": [
+          "Onboarding: 2 weeks → 2h",
+          "Cycles: 2-4 days → 4-8h"
+        ]
+      },
+      "cta": "Technical Track",
+      "footer": "For developers & tech teams"
+    },
+    "business": {
+      "title": "Leaders & Analysts",
+      "subtitle": "Natural language programming",
+      "description": "Understand agentic project management and create your internal tools.",
+      "features": {
+        "title": "What you get:",
+        "items": [
+          "Agentic project management",
+          "Custom dashboards",
+          "Specification-driven development",
+          "30-day support included"
+        ]
+      },
+      "benefits": {
+        "title": "Typical results:",
+        "items": [
+          "Automatic dashboards",
+          "Tools in days, not months"
+        ]
+      },
+      "cta": "Business Track",
+      "footer": "For leaders & analysts"
+    }
+  },
+  "training": {
+    "title": "Training Content",
+    "subtitle": "8 structured modules to master agentic programming from A to Z.",
+    "modules": [
+      {
+        "title": "Understanding current software development challenges",
+        "description": "Identify real bottlenecks and understand how AI agents can alleviate the workload."
+      },
+      {
+        "title": "Fundamentals of agentic programming",
+        "description": "Difference between vibe coding and agentic programming. Principles for structuring workflow with agents."
+      },
+      {
+        "title": "Overview of tools and practices",
+        "description": "State of the art latest code editors and AI tools. Technology watch of development environments."
+      },
+      {
+        "title": "Hands-on practice with Claude Code and essential tools",
+        "description": "Setting up a work environment. Concrete examples of use for generation and automation."
+      },
+      {
+        "title": "Specialized agents and MCP",
+        "description": "Understanding the role of dedicated agents. How to keep agents aligned and manage complexity."
+      },
+      {
+        "title": "Practical demonstrations",
+        "description": "Create a website from a description. Build a dashboard in a few steps."
+      },
+      {
+        "title": "Productivity and efficiency",
+        "description": "Tips, shortcuts and best practices to code faster and cleaner."
+      },
+      {
+        "title": "From code to deployment",
+        "description": "Deployment basics to put projects into production quickly and efficiently."
+      }
+    ]
+  },
+  "solution": {
+    "title": "Our transformation method",
+    "subtitle": "Practical training, complete guide and support towards autonomy.",
+    "subtitle_highlight": "Master the tools, implement the methods, transform your processes.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Intensive training",
+        "description": "Master Claude Code, MCP servers and the art of working with specialized agents. Training adapted to technical and non-technical profiles."
+      },
+      {
+        "number": "02",
+        "title": "Complete development cycle",
+        "description": "Learn how agents cover the entire cycle: from design to testing, from deployment to maintenance. Accessible even to non-technical users."
+      },
+      {
+        "number": "03",
+        "title": "Guide and autonomy",
+        "description": "Complete manual, prompt templates, ready configurations and Circle community. Your teams work efficiently with agents in complete autonomy."
+      }
+    ],
+    "next_step": "Next step"
+  },
+  "cta": {
+    "title": "Ready to get trained?",
+    "subtitle": "Free assessment tailored to your profile. We'll analyze your needs and show you",
+    "subtitle_highlight": "exactly what you can build with AI.",
+    "benefits": [
+      "Free 30-minute assessment",
+      "Personalized recommendations by profile",
+      "Concrete demonstration",
+      "Immediate implementation plan"
+    ],
+    "button": "Book Free Assessment",
+    "supporting_text": "Free assessment without sales pitch. Just actionable insights on your needs and possible solutions.",
+    "guarantee": "No sales, no commitment, just solutions",
+    "social_proof": {
+      "teams": "50+ teams transformed",
+      "results": "Results in first week",
+      "satisfaction": "95% satisfaction"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Stay up to date with AI",
+      "description": "Receive practical guides, case studies and insights on AI directly in your inbox. No spam, just valuable content.",
+      "placeholder": "your@email.com",
+      "button": "Subscribe"
+    },
+    "company_description": "NEWCODE helps you build and deploy your AI solutions. Developers and leaders, everyone deserves access to modern software capabilities.",
+    "sections": {
+      "navigation": "Navigation",
+      "services": "Services",
+      "legal": "Legal"
+    },
+    "quick_links": [
+      { "name": "Home", "href": "/" },
+      { "name": "Services", "href": "/services" },
+      { "name": "Case Studies", "href": "/case-studies" },
+      { "name": "Blog", "href": "/blog" },
+      { "name": "About", "href": "/about" }
+    ],
+    "services_links": [
+      { "name": "Flow Audit", "href": "/services#audit" },
+      { "name": "Complete Implementation", "href": "/services#implementation" },
+      { "name": "Agency Transformation", "href": "/services#transformation" },
+      { "name": "Team Training", "href": "/services#training" }
+    ],
+    "legal_links": [
+      { "name": "Privacy", "href": "/privacy" },
+      { "name": "Terms", "href": "/terms" },
+      { "name": "Cookies", "href": "/cookies" },
+      { "name": "Legal Notice", "href": "/legal" }
+    ],
+    "copyright": "© 2025 NEWCODE. All rights reserved.",
+    "language": {
+      "current": "🇺🇸 English",
+      "other": "🇫🇷 Français"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "NEWCODE - Accelerated AI Development",
+      "description": "NEWCODE helps you build and deploy your AI solutions. Everyone deserves access to modern software capabilities."
+    },
+    "about": {
+      "title": "About - NEWCODE",
+      "description": "Discover Philippe Béliveau, founder of NEWCODE. Expert in AI and software development, passionate about technological democratization."
+    },
+    "business": {
+      "title": "Business - NEWCODE",
+      "description": "No-code business solutions based on AI. Automate your processes and gain efficiency without a technical team."
+    }
+  }
+}

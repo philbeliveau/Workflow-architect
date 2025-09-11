@@ -3,23 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertCircle, Clock, Zap, Brain, Target, Workflow, TrendingUp, Users, Rocket, CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const ProblemStatement: React.FC = () => {
-  const challenges = [
-    "Les grands groupes nous le montrent, le code devient généré majoritairement par IA et agents",
-    "Les outils disponibles amènent souvent à des résultats non pertinents",
-    "Personne ne montre comment les utiliser professionnellement",
-    "Contrôler ces agents et les aligner sur nos besoins est la clé"
-  ];
-
-  const promises = [
-    "Comprendre le nouveau paradigme et en tirer parti",
-    "Faire le travail de 5 personnes avec une seule",
-    "Sortir du *vibe coding* pour adopter une programmation structurée, fiable et reproductible",
-    "Scaler vos projets sans augmenter vos effectifs",
-    "Déléguez aux agents spécialisés, et mettez leur puissance à votre service",
-    "Couvrir tout le cycle de développement logiciel avec les agents"
-  ];
+  const t = useTranslations('problem');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -77,7 +64,7 @@ const ProblemStatement: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Pourquoi se former au développement agentique ?
+            {t('title')}
           </h2>
         </motion.div>
 
@@ -105,17 +92,17 @@ const ProblemStatement: React.FC = () => {
                 <TrendingUp className="w-6 h-6 text-accent-purple" />
               </div>
               <h3 className="text-h2 font-bold text-text-primary">
-                Le changement est rapide & brutal
+                {t('challenges.title')}
               </h3>
             </div>
             
             {/* Liste des défis */}
             <div className="space-y-4">
-              {challenges.map((challenge, index) => (
+              {[0, 1, 2, 3].map((index) => (
                 <div key={index} className="flex items-start gap-4 group/item">
                   <CheckCircle className="w-3 h-3 text-accent-purple mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200 drop-shadow-lg" />
                   <span className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
-                    {challenge}
+                    {t(`challenges.items.${index}`)}
                   </span>
                 </div>
               ))}
@@ -141,17 +128,17 @@ const ProblemStatement: React.FC = () => {
                 <Rocket className="w-6 h-6 text-accent-yellow" />
               </div>
               <h3 className="text-h2 font-bold text-text-primary">
-                Ce qu'on vous permet de faire
+                {t('promises.title')}
               </h3>
             </div>
             
             {/* Liste des promesses */}
             <div className="space-y-4">
-              {promises.map((promise, index) => (
+              {[0, 1, 2, 3, 4, 5].map((index) => (
                 <div key={index} className="flex items-start gap-4 group/item">
                   <CheckCircle className="w-3 h-3 text-accent-yellow mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200 drop-shadow-lg" />
                   <span className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
-                    {promise}
+                    {t(`promises.items.${index}`)}
                   </span>
                 </div>
               ))}

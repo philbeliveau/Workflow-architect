@@ -4,14 +4,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Calendar, CheckCircle, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const CTASection: React.FC = () => {
-  const benefits = [
-    "Évaluation gratuite 30 min",
-    "Recommandations personnalisées par profil",
-    "Démonstration concrète",
-    "Plan d'implémentation immédiat"
-  ];
+  const t = useTranslations('cta');
 
   return (
     <section className="py-24 bg-gradient-to-br from-primary-900 via-accent-blue/5 to-primary-900 relative overflow-hidden">
@@ -69,7 +65,7 @@ const CTASection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Prêt à vous formez?
+            {t('title')}
           </h2>
         </motion.div>
 
@@ -81,8 +77,8 @@ const CTASection: React.FC = () => {
           viewport={{ once: true }}
         >
           <p className="text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-            Évaluation gratuite adaptée à votre profil. Nous analyserons vos besoins et vous montrerons 
-            <span className="text-accent-blue font-semibold"> exactement ce que vous pourrez construire avec l'IA.</span>
+            {t('subtitle')}{' '}
+            <span className="text-accent-blue font-semibold">{t('subtitle_highlight')}</span>
           </p>
         </motion.div>
 
@@ -94,7 +90,7 @@ const CTASection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {benefits.map((benefit, index) => (
+          {[0, 1, 2, 3].map((index) => (
             <motion.div
               key={index}
               className="flex items-center gap-3 text-left"
@@ -103,7 +99,7 @@ const CTASection: React.FC = () => {
             >
               <CheckCircle className="w-5 h-5 text-success-green flex-shrink-0" />
               <span className="text-text-secondary text-sm">
-                {benefit}
+                {t(`benefits.${index}`)}
               </span>
             </motion.div>
           ))}
@@ -125,15 +121,14 @@ const CTASection: React.FC = () => {
               className="group text-lg px-12 py-4 h-auto"
             >
               <Calendar className="mr-3 h-6 w-6" />
-              Réserver Évaluation Gratuite
+              {t('button')}
               <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 
           {/* Supporting text */}
           <p className="text-text-muted text-sm">
-            Évaluation gratuite sans argumentaire commercial. Juste des insights exploitables 
-            sur vos besoins et les solutions possibles.
+            {t('supporting_text')}
           </p>
         </motion.div>
 
@@ -149,7 +144,7 @@ const CTASection: React.FC = () => {
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-success-green/10 to-accent-blue/10 border border-success-green/20 rounded-full px-6 py-3">
             <CheckCircle className="w-5 h-5 text-success-green" />
             <span className="text-text-secondary font-medium">
-              Pas de vente, pas d'engagement, juste des solutions
+              {t('guarantee')}
             </span>
           </div>
 
@@ -157,15 +152,15 @@ const CTASection: React.FC = () => {
           <div className="flex flex-wrap justify-center items-center gap-8 text-xs text-text-muted">
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
-              50+ équipes transformées
+              {t('social_proof.teams')}
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
-              Résultats en première semaine
+              {t('social_proof.results')}
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
-              Satisfaction 95%
+              {t('social_proof.satisfaction')}
             </span>
           </div>
         </motion.div>

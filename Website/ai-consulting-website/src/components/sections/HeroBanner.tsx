@@ -4,7 +4,10 @@ import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Code, Zap, Users, Bot, BookOpen } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 const HeroBanner: React.FC = memo(() => {
+  const t = useTranslations('hero');
+  const tSections = useTranslations('sections');
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
@@ -65,12 +68,12 @@ const HeroBanner: React.FC = memo(() => {
           <h1 
             className="text-hero font-bold mb-8 bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent"
             role="banner"
-            aria-label="Titre principal: Maîtrisez le développement agentique"
+            aria-label={t('title')}
           >
-            Maîtrisez le développement agentique
+            {t('title')}
           </h1>
           <p className="text-xl md:text-2xl text-text-primary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
-            Réduire la complexité du développement logiciel en déléguant aux agents IA.
+            {t('subtitle')}
           </p>
         </motion.div>
         <motion.div
@@ -87,8 +90,8 @@ const HeroBanner: React.FC = memo(() => {
                   <div className="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center mb-2">
                     <Users className="w-6 h-6 text-primary-blue" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-100 mb-1">Formation</span>
-                  <span className="text-xs text-slate-400 leading-tight">Équipes expertes en agents IA</span>
+                  <span className="text-sm font-semibold text-slate-100 mb-1">{t('steps.formation.title')}</span>
+                  <span className="text-xs text-slate-400 leading-tight">{t('steps.formation.description')}</span>
                 </div>
 
                 <ArrowRight className="w-5 h-5 text-accent-red/60 hidden md:block" />
@@ -99,8 +102,8 @@ const HeroBanner: React.FC = memo(() => {
                   <div className="w-12 h-12 bg-accent-red/20 rounded-lg flex items-center justify-center mb-2">
                     <Bot className="w-6 h-6 text-accent-red" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-100 mb-1">Maîtrise</span>
-                  <span className="text-xs text-slate-400 leading-tight">Orchestration et délégation</span>
+                  <span className="text-sm font-semibold text-slate-100 mb-1">{t('steps.mastery.title')}</span>
+                  <span className="text-xs text-slate-400 leading-tight">{t('steps.mastery.description')}</span>
                 </div>
 
                 <ArrowRight className="w-5 h-5 text-accent-red/60 hidden md:block" />
@@ -111,14 +114,14 @@ const HeroBanner: React.FC = memo(() => {
                   <div className="w-12 h-12 bg-accent-purple/20 rounded-lg flex items-center justify-center mb-2">
                     <BookOpen className="w-6 h-6 text-accent-purple" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-100 mb-1">Autonomie</span>
-                  <span className="text-xs text-slate-400 leading-tight">Manuel et méthodes complètes</span>
+                  <span className="text-sm font-semibold text-slate-100 mb-1">{t('steps.autonomy.title')}</span>
+                  <span className="text-xs text-slate-400 leading-tight">{t('steps.autonomy.description')}</span>
                 </div>
               </div>
 
               {/* Enhanced summary */}
               <p className="text-slate-200 text-sm font-medium">
-                Méthode complète pour transformer vos équipes
+                {t('summary')}
               </p>
             </div>
           </div>
@@ -188,7 +191,7 @@ const HeroBanner: React.FC = memo(() => {
             href="#track-selection"
             className="group"
           >
-            Notre formation
+            {t('cta.training')}
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
@@ -197,7 +200,7 @@ const HeroBanner: React.FC = memo(() => {
             size="lg" 
             href="/guide"
           >
-            Notre guide
+            {t('cta.guide')}
           </Button>
         </motion.div>
 

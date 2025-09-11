@@ -6,29 +6,14 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Zap, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useParams, useRouter } from 'next/navigation';
 
 const Footer: React.FC = () => {
-  const quickLinks = [
-    { name: 'Accueil', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Cas d\'étude', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'À propos', href: '/about' }
-  ];
-
-  const services = [
-    { name: 'Audit de flux', href: '/services#audit' },
-    { name: 'Implémentation complète', href: '/services#implementation' },
-    { name: 'Transformation agence', href: '/services#transformation' },
-    { name: 'Formation équipe', href: '/services#training' }
-  ];
-
-  const legal = [
-    { name: 'Confidentialité', href: '/privacy' },
-    { name: 'Conditions', href: '/terms' },
-    { name: 'Cookies', href: '/cookies' },
-    { name: 'Mentions légales', href: '/legal' }
-  ];
+  const t = useTranslations('footer');
+  const params = useParams();
+  const router = useRouter();
+  const currentLocale = params?.locale as string || 'fr';
 
   return (
     <footer className="bg-background-dark-alt border-t border-text-muted relative overflow-hidden">
@@ -59,23 +44,22 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-h2 font-bold text-text-light mb-4">
-              Restez à jour avec l'IA
+              {t('newsletter.title')}
             </h3>
             <p className="text-text-secondary mb-8 leading-relaxed">
-              Recevez des guides pratiques, des études de cas et des insights sur l'IA 
-              directement dans votre boîte mail. Pas de spam, que du contenu de valeur.
+              {t('newsletter.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
               <div className="flex-1 w-full">
                 <input
                   type="email"
-                  placeholder="votre@email.com"
+                  placeholder={t('newsletter.placeholder')}
                   className="w-full px-4 py-3 bg-background-dark border border-text-muted rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-accent-red transition-colors"
                 />
               </div>
               <Button variant="primary" size="md" className="whitespace-nowrap">
-                S'abonner
+                {t('newsletter.button')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -99,8 +83,7 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-text-secondary mb-6 leading-relaxed">
-                NEWCODE vous aide à construire et déployer vos solutions IA. 
-                Développeurs et dirigeants, tout le monde mérite l'accès aux capacités logicielles modernes.
+                {t('company_description')}
               </p>
 
               {/* Contact Info */}
@@ -123,16 +106,16 @@ const Footer: React.FC = () => {
             {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold text-text-light mb-6">
-                Navigation
+                {t('sections.navigation')}
               </h4>
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <li key={link.name}>
+                {[0, 1, 2, 3, 4].map((index) => (
+                  <li key={index}>
                     <Link
-                      href={link.href}
+                      href={t(`quick_links.${index}.href`)}
                       className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
                     >
-                      {link.name}
+                      {t(`quick_links.${index}.name`)}
                     </Link>
                   </li>
                 ))}
@@ -142,16 +125,16 @@ const Footer: React.FC = () => {
             {/* Services */}
             <div>
               <h4 className="text-lg font-semibold text-text-light mb-6">
-                Services
+                {t('sections.services')}
               </h4>
               <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service.name}>
+                {[0, 1, 2, 3].map((index) => (
+                  <li key={index}>
                     <Link
-                      href={service.href}
+                      href={t(`services_links.${index}.href`)}
                       className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
                     >
-                      {service.name}
+                      {t(`services_links.${index}.name`)}
                     </Link>
                   </li>
                 ))}
@@ -161,16 +144,16 @@ const Footer: React.FC = () => {
             {/* Legal */}
             <div>
               <h4 className="text-lg font-semibold text-text-light mb-6">
-                Légal
+                {t('sections.legal')}
               </h4>
               <ul className="space-y-3">
-                {legal.map((item) => (
-                  <li key={item.name}>
+                {[0, 1, 2, 3].map((index) => (
+                  <li key={index}>
                     <Link
-                      href={item.href}
+                      href={t(`legal_links.${index}.href`)}
                       className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
                     >
-                      {item.name}
+                      {t(`legal_links.${index}.name`)}
                     </Link>
                   </li>
                 ))}
@@ -183,14 +166,17 @@ const Footer: React.FC = () => {
         <div className="py-6 border-t border-neutral-support">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-text-muted text-sm">
-              © 2025 NEWCODE. Tous droits réservés.
+              {t('copyright')}
             </p>
             
             <div className="flex items-center gap-6 text-sm text-text-muted">
-              <span>🇫🇷 Français</span>
+              <span>{t('language.current')}</span>
               <span className="w-px h-4 bg-neutral-support"></span>
-              <Link href="/en" className="hover:text-text-secondary transition-colors">
-                🇺🇸 English
+              <Link 
+                href={currentLocale === 'fr' ? '/en' : '/fr'} 
+                className="hover:text-text-secondary transition-colors"
+              >
+                {t('language.other')}
               </Link>
             </div>
           </div>

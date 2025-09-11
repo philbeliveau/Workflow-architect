@@ -3,57 +3,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Wrench, Eye, Code2, Bot, Zap, Target, Rocket } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const TrainingContent: React.FC = () => {
-  const modules = [
-    {
-      number: "1",
-      icon: <Brain className="w-6 h-6" />,
-      title: "Comprendre les enjeux actuels du développement logiciel",
-      description: "Identifier les vrais goulots d'étranglement et comprendre comment les agents IA peuvent alléger la charge."
-    },
-    {
-      number: "2", 
-      icon: <Target className="w-6 h-6" />,
-      title: "Fondamentaux de la programmation agentique",
-      description: "Différence entre vibe coding et programmation agentique. Principes pour structurer un workflow avec des agents."
-    },
-    {
-      number: "3",
-      icon: <Eye className="w-6 h-6" />,
-      title: "Panorama des outils et pratiques",
-      description: "État des lieux des derniers éditeurs de code et outils IA. Veille technologique des environnements de développement."
-    },
-    {
-      number: "4",
-      icon: <Code2 className="w-6 h-6" />,
-      title: "Mise en pratique avec Claude Code et outils incontournables",
-      description: "Configuration d'un environnement de travail. Exemples d'utilisation concrète pour génération et automatisation."
-    },
-    {
-      number: "5",
-      icon: <Bot className="w-6 h-6" />,
-      title: "Agents spécialisés et MCP",
-      description: "Comprendre le rôle des agents dédiés. Comment garder les agents alignés et gérer la complexité."
-    },
-    {
-      number: "6",
-      icon: <Wrench className="w-6 h-6" />,
-      title: "Démonstrations pratiques",
-      description: "Créer un site web à partir d'une description. Construire un tableau de bord en quelques étapes."
-    },
-    {
-      number: "7",
-      icon: <Zap className="w-6 h-6" />,
-      title: "Productivité et efficacité",
-      description: "Astuces, raccourcis et bonnes pratiques pour coder plus vite et plus proprement."
-    },
-    {
-      number: "8",
-      icon: <Rocket className="w-6 h-6" />,
-      title: "Du code au déploiement",
-      description: "Bases du déploiement pour mettre en production ses projets rapidement et efficacement."
-    }
+  const t = useTranslations('training');
+  
+  const moduleIcons = [
+    <Brain className="w-6 h-6" />,
+    <Target className="w-6 h-6" />,
+    <Eye className="w-6 h-6" />,
+    <Code2 className="w-6 h-6" />,
+    <Bot className="w-6 h-6" />,
+    <Wrench className="w-6 h-6" />,
+    <Zap className="w-6 h-6" />,
+    <Rocket className="w-6 h-6" />
   ];
 
   const containerVariants = {
@@ -108,10 +71,18 @@ const TrainingContent: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Contenu de la formation
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            <span className="text-accent-red font-semibold">8 modules structurés</span> pour maîtriser la programmation agentique de A à Z.
+            {t('subtitle').includes('structured') ? (
+              <>
+                <span className="text-accent-red font-semibold">8 structured modules</span> {t('subtitle').replace('8 structured modules', '')}
+              </>
+            ) : (
+              <>
+                <span className="text-accent-red font-semibold">8 modules structurés</span> {t('subtitle').replace('8 modules structurés', '')}
+              </>
+            )}
           </p>
         </motion.div>
 
@@ -123,7 +94,7 @@ const TrainingContent: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {modules.map((module, index) => (
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
             <motion.div
               key={index}
               className="group relative bg-gradient-to-br from-primary-900/50 to-primary-800/30 backdrop-blur-sm border border-primary-700 rounded-2xl p-6 hover:border-accent-red/50 transition-all duration-300 hover:scale-105"
@@ -135,24 +106,24 @@ const TrainingContent: React.FC = () => {
             >
               {/* Module number */}
               <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-accent-red to-accent-red/80 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">{module.number}</span>
+                <span className="text-white font-bold text-sm">{index + 1}</span>
               </div>
 
               {/* Icon */}
               <div className="mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-accent-red/20 to-accent-red/10 rounded-xl flex items-center justify-center group-hover:from-accent-red/30 group-hover:to-accent-red/20 transition-all duration-300">
                   <div className="text-accent-red group-hover:text-accent-red-light transition-colors duration-300">
-                    {module.icon}
+                    {moduleIcons[index]}
                   </div>
                 </div>
               </div>
 
               {/* Content */}
               <h3 className="text-lg font-semibold mb-3 text-text-primary group-hover:text-text-primary transition-colors duration-300 leading-tight">
-                {module.title}
+                {t(`modules.${index}.title`)}
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
-                {module.description}
+                {t(`modules.${index}.description`)}
               </p>
 
               {/* Hover effect */}

@@ -4,50 +4,55 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Code, Briefcase, ArrowRight, Cpu, Users, Zap, BarChart3 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+
 const TrackSelection: React.FC = () => {
+  const t = useTranslations('tracks');
   
   const tracks = [
     {
       id: "developers",
       icon: <Code className="w-12 h-12" />,
-      title: "Développeurs & Équipes Tech",
-      subtitle: "Orchestration d'agents, ingénierie de contexte",
-      description: "Maîtrisez l'orchestration d'agents IA pour accélérer votre développement.",
+      title: t('developers.title'),
+      subtitle: t('developers.subtitle'),
+      description: t('developers.description'),
       features: [
-        "Paradigme agentique expliqué",
-        "Environnements MCP configurés",
-        "Méthodologie specs et prompts",
-        "Projets complexes de A à Z"
+        t('developers.features.items.0'),
+        t('developers.features.items.1'),
+        t('developers.features.items.2'),
+        t('developers.features.items.3')
       ],
       benefits: [
-        { icon: Cpu, text: "Onboarding: 2 semaines → 2h" },
-        { icon: Zap, text: "Cycles: 2-4 jours → 4-8h" }
+        { icon: Cpu, text: t('developers.benefits.items.0') },
+        { icon: Zap, text: t('developers.benefits.items.1') }
       ],
-      cta: "Parcours Technique",
+      cta: t('developers.cta'),
       href: "/developers",
       color: "primary-blue",
-      gradient: "from-primary-blue/10 to-accent-red/10"
+      gradient: "from-primary-blue/10 to-accent-red/10",
+      footer: t('developers.footer')
     },
     {
       id: "business",
       icon: <Briefcase className="w-12 h-12" />,
-      title: "Dirigeants & Analystes",
-      subtitle: "Programmation en langage naturel",
-      description: "Comprenez la gestion de projets agentiques et créez vos outils internes.",
+      title: t('business.title'),
+      subtitle: t('business.subtitle'),
+      description: t('business.description'),
       features: [
-        "Gestion projets agentiques",
-        "Tableaux de bord personnalisés", 
-        "Développement par spécifications",
-        "Support 30 jours inclus"
+        t('business.features.items.0'),
+        t('business.features.items.1'),
+        t('business.features.items.2'),
+        t('business.features.items.3')
       ],
       benefits: [
-        { icon: Users, text: "Tableaux de bord automatiques" },
-        { icon: Zap, text: "Outils en jours, pas mois" }
+        { icon: Users, text: t('business.benefits.items.0') },
+        { icon: Zap, text: t('business.benefits.items.1') }
       ],
-      cta: "Parcours Business",
+      cta: t('business.cta'),
       href: "/business",
       color: "accent-purple",
-      gradient: "from-accent-red/10 to-primary-blue/10"
+      gradient: "from-accent-red/10 to-primary-blue/10",
+      footer: t('business.footer')
     }
   ];
 
@@ -105,10 +110,10 @@ const TrackSelection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            À qui s'adresse la formation ?
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            <span className="text-primary-blue font-semibold">Une formation accessible à tous,</span> adaptée aux rôles techniques et non-techniques.
+            <span className="text-primary-blue font-semibold">{t('subtitle')}</span>
           </p>
         </motion.div>
 
@@ -151,9 +156,9 @@ const TrackSelection: React.FC = () => {
 
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="text-text-primary font-semibold mb-3">Ce que vous obtenez :</h4>
+                  <h4 className="text-text-primary font-semibold mb-3">{t(`${track.id}.features.title`)}</h4>
                   <ul className="space-y-2">
-                    {track.features.map((feature, idx) => (
+                    {track.features.map((feature: string, idx: number) => (
                       <li key={idx} className="flex items-start gap-2 text-text-secondary text-sm">
                         <div className={`w-1.5 h-1.5 bg-${track.color} rounded-full mt-2 flex-shrink-0`}></div>
                         <span>{feature}</span>
@@ -164,7 +169,7 @@ const TrackSelection: React.FC = () => {
 
                 {/* Benefits */}
                 <div className="mb-8">
-                  <h4 className="text-text-primary font-semibold mb-3">Résultats typiques :</h4>
+                  <h4 className="text-text-primary font-semibold mb-3">{t(`${track.id}.benefits.title`)}</h4>
                   <div className="space-y-3">
                     {track.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-center gap-3">
@@ -190,7 +195,7 @@ const TrackSelection: React.FC = () => {
                     </span>
                   </Button>
                   <p className="text-center text-text-muted text-sm mt-3 font-medium">
-                    {track.id === 'developers' ? 'Pour développeurs & équipes tech' : 'Pour dirigeants & analystes'}
+                    {track.footer}
                   </p>
                 </div>
               </div>

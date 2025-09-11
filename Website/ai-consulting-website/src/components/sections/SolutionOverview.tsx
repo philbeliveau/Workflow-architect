@@ -4,48 +4,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CodeBlock from '@/components/ui/CodeBlock';
 import { Search, GraduationCap, Target, ArrowRight, Brain, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const SolutionOverview: React.FC = () => {
-  const viberVsAgentic = [
-    {
-      aspect: "Approche",
-      vibe: "Prompt one-shot",
-      agentic: "Orchestration planifiée",
-      icon: <Brain className="w-5 h-5" />
-    },
-    {
-      aspect: "Taux de succès",
-      vibe: "<20% en production",
-      agentic: "Prédictible et mesurable",
-      icon: <Target className="w-5 h-5" />
-    },
-    {
-      aspect: "Autonomie",
-      vibe: "Faible, piloté à la main",
-      agentic: "Élevée, agents guidés par des MCP",
-      icon: <Zap className="w-5 h-5" />
-    }
-  ];
-
-  const steps = [
-    {
-      number: "01",
-      icon: <GraduationCap className="w-8 h-8" />,
-      title: "Formation intensive",
-      description: "Maîtrisez Claude Code, les MCP servers et l'art de travailler avec des agents spécialisés. Formation adaptée aux profils techniques et non-techniques."
-    },
-    {
-      number: "02",
-      icon: <Target className="w-8 h-8" />,
-      title: "Cycle de développement complet",
-      description: "Apprenez comment les agents couvrent tout le cycle : de la conception aux tests, du déploiement à la maintenance. Accessible même aux non-techniques."
-    },
-    {
-      number: "03",
-      icon: <Search className="w-8 h-8" />,
-      title: "Guide et autonomie",
-      description: "Manuel complet, templates de prompts, configurations prêtes et communauté Circle. Vos équipes travaillent efficacement avec les agents en toute autonomie."
-    }
+  const t = useTranslations('solution');
+  
+  const stepIcons = [
+    <GraduationCap className="w-8 h-8" />,
+    <Target className="w-8 h-8" />,
+    <Search className="w-8 h-8" />
   ];
 
   const containerVariants = {
@@ -108,11 +75,11 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Notre méthode de transformation
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Formation pratique, guide complet et accompagnement vers l'autonomie. 
-            <span className="text-accent-purple font-semibold"> Maîtrisez les outils, implémentez les méthodes, transformez vos processus.</span>
+            {t('subtitle')}{' '}
+            <span className="text-accent-purple font-semibold">{t('subtitle_highlight')}</span>
           </p>
         </motion.div>
 
@@ -124,7 +91,7 @@ const SolutionOverview: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {steps.map((step, index) => (
+          {[0, 1, 2].map((index) => (
             <motion.div
               key={index}
               className="group"
@@ -138,26 +105,26 @@ const SolutionOverview: React.FC = () => {
                   {/* Step number and title */}
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-6xl font-bold text-accent-purple/20 group-hover:text-accent-purple/40 transition-colors duration-300">
-                      {step.number}
+                      {t(`steps.${index}.number`)}
                     </span>
                     <div>
                       <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300">
-                        {step.title}
+                        {t(`steps.${index}.title`)}
                       </h3>
                     </div>
                   </div>
 
                   {/* Description */}
                   <p className="text-lg text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
-                    {step.description}
+                    {t(`steps.${index}.description`)}
                   </p>
 
                   {/* Arrow for desktop */}
-                  {index < steps.length - 1 && (
+                  {index < 2 && (
                     <div className="hidden lg:block">
                       <div className="flex items-center gap-2 text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
                         <ArrowRight className="w-5 h-5" />
-                        <span className="text-sm font-medium">Étape suivante</span>
+                        <span className="text-sm font-medium">{t('next_step')}</span>
                       </div>
                     </div>
                   )}
@@ -179,14 +146,14 @@ const SolutionOverview: React.FC = () => {
                     {/* Main icon container */}
                     <div className="relative bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-3xl p-12 group-hover:border-accent-purple/40 transition-all duration-300">
                       <div className="text-accent-purple group-hover:text-accent-purple-light transition-colors duration-300">
-                        {step.icon}
+                        {stepIcons[index]}
                       </div>
                     </div>
                   </motion.div>
                 </div>
 
                 {/* Arrow for mobile */}
-                {index < steps.length - 1 && (
+                {index < 2 && (
                   <div className="lg:hidden flex justify-center">
                     <div className="w-px h-12 bg-gradient-to-b from-accent-purple to-transparent"></div>
                   </div>

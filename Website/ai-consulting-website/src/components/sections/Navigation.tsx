@@ -5,13 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, Zap, Globe } from 'lucide-react';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 const Navigation: React.FC = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const t = useTranslations('navigation');
+  const locale = useLocale();
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
@@ -25,6 +29,31 @@ const Navigation: React.FC = memo(() => {
     setIsMobileMenuOpen(false);
   }, []);
 
+  const switchLanguage = useCallback((newLocale: string) => {
+    // Get the path segments
+    const pathSegments = pathname.split('/').filter(Boolean);
+    
+    // Check if first segment is a locale (fr or en)
+    const currentLocaleInPath = ['fr', 'en'].includes(pathSegments[0]) ? pathSegments[0] : null;
+    
+    // Get the path without locale
+    let basePath = '';
+    if (currentLocaleInPath) {
+      basePath = '/' + pathSegments.slice(1).join('/');
+    } else {
+      basePath = pathname;
+    }
+    
+    // Clean up the base path
+    if (basePath === '/' || basePath === '') {
+      basePath = '';
+    }
+    
+    // Build the new path
+    const newPath = `/${newLocale}${basePath}`;
+    router.push(newPath);
+  }, [pathname, router]);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -32,22 +61,28 @@ const Navigation: React.FC = memo(() => {
 
   // Always use the same navigation items for consistency
   const getNavItems = () => {
-    if (pathname === '/') {
+    const currentPath = pathname.replace(`/${locale}`, '') || '/';
+    // Use locale-appropriate anchors
+    const anchors = locale === 'fr' 
+      ? { home: '#accueil', tracks: '#parcours', problem: '#probleme', solution: '#solution', contact: '#contact' }
+      : { home: '#home', tracks: '#tracks', problem: '#problem', solution: '#solution', contact: '#contact' };
+      
+    if (currentPath === '/') {
       return [
-        { name: 'Accueil', href: '#accueil', isActive: true },
-        { name: 'Parcours', href: '#parcours', isActive: false },
-        { name: 'Problème', href: '#probleme', isActive: false },
-        { name: 'Solution', href: '#solution', isActive: false },
-        { name: 'Contact', href: '#contact', isActive: false }
+        { name: t('home'), href: anchors.home, isActive: true },
+        { name: t('tracks'), href: anchors.tracks, isActive: false },
+        { name: t('problem'), href: anchors.problem, isActive: false },
+        { name: t('solution'), href: anchors.solution, isActive: false },
+        { name: t('contact'), href: anchors.contact, isActive: false }
       ];
     } else {
       // For specialized pages, show main sections but link back to home page sections
       return [
-        { name: 'Accueil', href: '/#accueil', isActive: false },
-        { name: 'Parcours', href: '/#parcours', isActive: pathname === '/developers' || pathname === '/business' },
-        { name: 'Problème', href: '/#probleme', isActive: false },
-        { name: 'Solution', href: '/#solution', isActive: false },
-        { name: 'Contact', href: '/#contact', isActive: false }
+        { name: t('home'), href: `/${anchors.home}`, isActive: false },
+        { name: t('tracks'), href: `/${anchors.tracks}`, isActive: currentPath === '/developers' || currentPath === '/business' },
+        { name: t('problem'), href: `/${anchors.problem}`, isActive: false },
+        { name: t('solution'), href: `/${anchors.solution}`, isActive: false },
+        { name: t('contact'), href: `/${anchors.contact}`, isActive: false }
       ];
     }
   };
@@ -75,7 +110,7 @@ const Navigation: React.FC = memo(() => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Image
-                src="/images/logo-newcode.jpeg"
+                src="/newcode-logo.jpeg"
                 alt="NEWCODE Logo"
                 width={120}
                 height={48}
@@ -118,10 +153,19 @@ const Navigation: React.FC = memo(() => {
             })}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center">
+          {/* Language Switcher & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Globe className="w-4 h-4 text-text-secondary" />
+              <button
+                onClick={() => switchLanguage(locale === 'fr' ? 'en' : 'fr')}
+                className="text-sm text-text-secondary hover:text-primary-blue transition-colors duration-200 uppercase font-medium"
+              >
+                {locale === 'fr' ? 'EN' : 'FR'}
+              </button>
+            </div>
             <Button variant="primary" size="md" href="/book-demo">
-              Évaluation Gratuite
+              {locale === 'fr' ? 'Évaluation Gratuite' : 'Free Assessment'}
             </Button>
           </div>
 
@@ -131,7 +175,7 @@ const Navigation: React.FC = memo(() => {
               isScrolled ? 'text-text-light' : 'text-text-light'
             }`}
             onClick={toggleMobileMenu}
-            aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
+            aria-label={isMobileMenuOpen ? (locale === 'fr' ? "Fermer le menu mobile" : "Close mobile menu") : (locale === 'fr' ? "Ouvrir le menu mobile" : "Open mobile menu")}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -150,7 +194,7 @@ const Navigation: React.FC = memo(() => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               role="navigation"
-              aria-label="Menu mobile"
+              aria-label={locale === 'fr' ? "Menu mobile" : "Mobile menu"}
             >
               <div className="px-6 py-4 space-y-4">
                 {navItems.map((item, index) => {
@@ -177,18 +221,27 @@ const Navigation: React.FC = memo(() => {
                   );
                 })}
                 <motion.div
-                  className="pt-4 border-t border-primary-blue/30"
+                  className="pt-4 border-t border-primary-blue/30 space-y-3"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
+                  <div className="flex items-center justify-center gap-2 py-2">
+                    <Globe className="w-4 h-4 text-text-secondary" />
+                    <button
+                      onClick={() => switchLanguage(locale === 'fr' ? 'en' : 'fr')}
+                      className="text-sm text-text-secondary hover:text-primary-blue transition-colors duration-200 uppercase font-medium"
+                    >
+                      {locale === 'fr' ? 'EN' : 'FR'}
+                    </button>
+                  </div>
                   <Button 
                     variant="primary" 
                     size="md" 
                     href="/book-demo"
                     className="w-full"
                   >
-                    Évaluation Gratuite
+                    {locale === 'fr' ? 'Évaluation Gratuite' : 'Free Assessment'}
                   </Button>
                 </motion.div>
               </div>

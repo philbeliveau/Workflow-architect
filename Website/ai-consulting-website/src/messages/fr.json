@@ -1,0 +1,265 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "menu": "Menu"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "developers": "Développeurs",
+    "business": "Entreprises",
+    "case-studies": "Cas d'études",
+    "formation": "Formation",
+    "signin": "Se connecter",
+    "signup": "S'inscrire",
+    "dashboard": "Tableau de bord",
+    "free-assessment": "Évaluation Gratuite",
+    "tracks": "Parcours",
+    "problem": "Problème",
+    "solution": "Solution"
+  },
+  "hero": {
+    "title": "Maîtrisez le développement agentique",
+    "subtitle": "Réduire la complexité du développement logiciel en déléguant aux agents IA.",
+    "steps": {
+      "formation": {
+        "title": "Formation",
+        "description": "Équipes expertes en agents IA"
+      },
+      "mastery": {
+        "title": "Maîtrise",
+        "description": "Orchestration et délégation"
+      },
+      "autonomy": {
+        "title": "Autonomie",
+        "description": "Manuel et méthodes complètes"
+      }
+    },
+    "summary": "Méthode complète pour transformer vos équipes",
+    "cta": {
+      "training": "Notre formation",
+      "guide": "Notre guide"
+    }
+  },
+  "sections": {
+    "loading": "Chargement de la section...",
+    "home": "Accueil",
+    "problem": "Problème",
+    "track": "Parcours",
+    "training": "Formation",
+    "solution": "Solution",
+    "contact": "Contact"
+  },
+  "problem": {
+    "title": "Pourquoi se former au développement agentique ?",
+    "challenges": {
+      "title": "Le changement est rapide & brutal",
+      "items": [
+        "Les grands groupes nous le montrent, le code devient généré majoritairement par IA et agents",
+        "Les outils disponibles amènent souvent à des résultats non pertinents",
+        "Personne ne montre comment les utiliser professionnellement",
+        "Contrôler ces agents et les aligner sur nos besoins est la clé"
+      ]
+    },
+    "promises": {
+      "title": "Ce qu'on vous permet de faire",
+      "items": [
+        "Comprendre le nouveau paradigme et en tirer parti",
+        "Faire le travail de 5 personnes avec une seule",
+        "Sortir du *vibe coding* pour adopter une programmation structurée, fiable et reproductible",
+        "Scaler vos projets sans augmenter vos effectifs",
+        "Déléguez aux agents spécialisés, et mettez leur puissance à votre service",
+        "Couvrir tout le cycle de développement logiciel avec les agents"
+      ]
+    }
+  },
+  "tracks": {
+    "title": "À qui s'adresse la formation ?",
+    "subtitle": "Une formation accessible à tous, adaptée aux rôles techniques et non-techniques.",
+    "developers": {
+      "title": "Développeurs & Équipes Tech",
+      "subtitle": "Orchestration d'agents, ingénierie de contexte",
+      "description": "Maîtrisez l'orchestration d'agents IA pour accélérer votre développement.",
+      "features": {
+        "title": "Ce que vous obtenez :",
+        "items": [
+          "Paradigme agentique expliqué",
+          "Environnements MCP configurés",
+          "Méthodologie specs et prompts",
+          "Projets complexes de A à Z"
+        ]
+      },
+      "benefits": {
+        "title": "Résultats typiques :",
+        "items": [
+          "Onboarding: 2 semaines → 2h",
+          "Cycles: 2-4 jours → 4-8h"
+        ]
+      },
+      "cta": "Parcours Technique",
+      "footer": "Pour développeurs & équipes tech"
+    },
+    "business": {
+      "title": "Dirigeants & Analystes",
+      "subtitle": "Programmation en langage naturel",
+      "description": "Comprenez la gestion de projets agentiques et créez vos outils internes.",
+      "features": {
+        "title": "Ce que vous obtenez :",
+        "items": [
+          "Gestion projets agentiques",
+          "Tableaux de bord personnalisés",
+          "Développement par spécifications",
+          "Support 30 jours inclus"
+        ]
+      },
+      "benefits": {
+        "title": "Résultats typiques :",
+        "items": [
+          "Tableaux de bord automatiques",
+          "Outils en jours, pas mois"
+        ]
+      },
+      "cta": "Parcours Business",
+      "footer": "Pour dirigeants & analystes"
+    }
+  },
+  "training": {
+    "title": "Contenu de la formation",
+    "subtitle": "8 modules structurés pour maîtriser la programmation agentique de A à Z.",
+    "modules": [
+      {
+        "title": "Comprendre les enjeux actuels du développement logiciel",
+        "description": "Identifier les vrais goulots d'étranglement et comprendre comment les agents IA peuvent alléger la charge."
+      },
+      {
+        "title": "Fondamentaux de la programmation agentique",
+        "description": "Différence entre vibe coding et programmation agentique. Principes pour structurer un workflow avec des agents."
+      },
+      {
+        "title": "Panorama des outils et pratiques",
+        "description": "État des lieux des derniers éditeurs de code et outils IA. Veille technologique des environnements de développement."
+      },
+      {
+        "title": "Mise en pratique avec Claude Code et outils incontournables",
+        "description": "Configuration d'un environnement de travail. Exemples d'utilisation concrète pour génération et automatisation."
+      },
+      {
+        "title": "Agents spécialisés et MCP",
+        "description": "Comprendre le rôle des agents dédiés. Comment garder les agents alignés et gérer la complexité."
+      },
+      {
+        "title": "Démonstrations pratiques",
+        "description": "Créer un site web à partir d'une description. Construire un tableau de bord en quelques étapes."
+      },
+      {
+        "title": "Productivité et efficacité",
+        "description": "Astuces, raccourcis et bonnes pratiques pour coder plus vite et plus proprement."
+      },
+      {
+        "title": "Du code au déploiement",
+        "description": "Bases du déploiement pour mettre en production ses projets rapidement et efficacement."
+      }
+    ]
+  },
+  "solution": {
+    "title": "Notre méthode de transformation",
+    "subtitle": "Formation pratique, guide complet et accompagnement vers l'autonomie.",
+    "subtitle_highlight": "Maîtrisez les outils, implémentez les méthodes, transformez vos processus.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Formation intensive",
+        "description": "Maîtrisez Claude Code, les MCP servers et l'art de travailler avec des agents spécialisés. Formation adaptée aux profils techniques et non-techniques."
+      },
+      {
+        "number": "02",
+        "title": "Cycle de développement complet",
+        "description": "Apprenez comment les agents couvrent tout le cycle : de la conception aux tests, du déploiement à la maintenance. Accessible même aux non-techniques."
+      },
+      {
+        "number": "03",
+        "title": "Guide et autonomie",
+        "description": "Manuel complet, templates de prompts, configurations prêtes et communauté Circle. Vos équipes travaillent efficacement avec les agents en toute autonomie."
+      }
+    ],
+    "next_step": "Étape suivante"
+  },
+  "cta": {
+    "title": "Prêt à vous formez?",
+    "subtitle": "Évaluation gratuite adaptée à votre profil. Nous analyserons vos besoins et vous montrerons",
+    "subtitle_highlight": "exactement ce que vous pourrez construire avec l'IA.",
+    "benefits": [
+      "Évaluation gratuite 30 min",
+      "Recommandations personnalisées par profil",
+      "Démonstration concrète",
+      "Plan d'implémentation immédiat"
+    ],
+    "button": "Réserver Évaluation Gratuite",
+    "supporting_text": "Évaluation gratuite sans argumentaire commercial. Juste des insights exploitables sur vos besoins et les solutions possibles.",
+    "guarantee": "Pas de vente, pas d'engagement, juste des solutions",
+    "social_proof": {
+      "teams": "50+ équipes transformées",
+      "results": "Résultats en première semaine",
+      "satisfaction": "Satisfaction 95%"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Restez à jour avec l'IA",
+      "description": "Recevez des guides pratiques, des études de cas et des insights sur l'IA directement dans votre boîte mail. Pas de spam, que du contenu de valeur.",
+      "placeholder": "votre@email.com",
+      "button": "S'abonner"
+    },
+    "company_description": "NEWCODE vous aide à construire et déployer vos solutions IA. Développeurs et dirigeants, tout le monde mérite l'accès aux capacités logicielles modernes.",
+    "sections": {
+      "navigation": "Navigation",
+      "services": "Services",
+      "legal": "Légal"
+    },
+    "quick_links": [
+      { "name": "Accueil", "href": "/" },
+      { "name": "Services", "href": "/services" },
+      { "name": "Cas d'étude", "href": "/case-studies" },
+      { "name": "Blog", "href": "/blog" },
+      { "name": "À propos", "href": "/about" }
+    ],
+    "services_links": [
+      { "name": "Audit de flux", "href": "/services#audit" },
+      { "name": "Implémentation complète", "href": "/services#implementation" },
+      { "name": "Transformation agence", "href": "/services#transformation" },
+      { "name": "Formation équipe", "href": "/services#training" }
+    ],
+    "legal_links": [
+      { "name": "Confidentialité", "href": "/privacy" },
+      { "name": "Conditions", "href": "/terms" },
+      { "name": "Cookies", "href": "/cookies" },
+      { "name": "Mentions légales", "href": "/legal" }
+    ],
+    "copyright": "© 2025 NEWCODE. Tous droits réservés.",
+    "language": {
+      "current": "🇫🇷 Français",
+      "other": "🇺🇸 English"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "NEWCODE - Développement IA Accéléré",
+      "description": "NEWCODE vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes."
+    },
+    "about": {
+      "title": "À propos - NEWCODE",
+      "description": "Découvrez Philippe Béliveau, fondateur de NEWCODE. Expert en IA et développement logiciel, passionné par la démocratisation technologique."
+    },
+    "business": {
+      "title": "Business - NEWCODE",
+      "description": "Solutions métier sans code basées sur l'IA. Automatisez vos processus et gagnez en efficacité sans équipe technique."
+    }
+  }
+}
