@@ -10,23 +10,20 @@ const TrackSelection: React.FC = () => {
     {
       id: "developers",
       icon: <Code className="w-12 h-12" />,
-      title: "Développeurs, Scientifique de données & Équipes Tech",
+      title: "Développeurs & Équipes Tech",
       subtitle: "Orchestration d'agents, ingénierie de contexte",
-      description: "Accélérez votre développement avec des systèmes d'agents IA, l'orchestration Claude-code et monter en puissance vos équipes avec notre méthodologie.",
+      description: "Maîtrisez l'orchestration d'agents IA pour accélérer votre développement.",
       features: [
-        "• Veille IA appliquée au développement logiciel",
-        "• Paradigme agentique expliqué simplement",
-        "• Environnements et MCP configurés pour vous",
-        "• Wrapper Claude-code pour orchestrer vos agents",
-        "• Méthodologie pour specs, prompts, et alignement",
-        "• Travail agentique sur projets complexes, de A à Z"
+        "Paradigme agentique expliqué",
+        "Environnements MCP configurés",
+        "Méthodologie specs et prompts",
+        "Projets complexes de A à Z"
       ],
       benefits: [
-        { icon: Cpu, text: "Onboarding: 2 semaines → 2 heures" },
-        { icon: Zap, text: "Cycle de revue: 2-4 jours → 4-8 heures" },
-        { icon: BarChart3, text: "Réduction du temps à débugger significativement" }
+        { icon: Cpu, text: "Onboarding: 2 semaines → 2h" },
+        { icon: Zap, text: "Cycles: 2-4 jours → 4-8h" }
       ],
-      cta: "Explorer le Parcours Technique",
+      cta: "Parcours Technique",
       href: "/developers",
       color: "primary-blue",
       gradient: "from-primary-blue/10 to-accent-red/10"
@@ -34,22 +31,20 @@ const TrackSelection: React.FC = () => {
     {
       id: "business",
       icon: <Briefcase className="w-12 h-12" />,
-      title: "Dirigeants & PO, analyste d'affaires",
-      subtitle: "Programmer en langage naturel",
-      description: "Construisez vos propres tableaux de bord, outils internes et automatisations sans attendre l'équipe de développement.",
+      title: "Dirigeants & Analystes",
+      subtitle: "Programmation en langage naturel",
+      description: "Comprenez la gestion de projets agentiques et créez vos outils internes.",
       features: [
-        "• Mise en place d’agents IA sur vos outils",
-        "• Environnement IA configuré pour vous",
-        "• Vulgarisation + formation ciblée",
-        "• Apprendre à développer par spécifications et prompts",
-        "• Support 30 jours inclus"
+        "Gestion projets agentiques",
+        "Tableaux de bord personnalisés", 
+        "Développement par spécifications",
+        "Support 30 jours inclus"
       ],
       benefits: [
-        { icon: Users, text: "Tableaux de bord clients automatiques" },
-        { icon: Zap, text: "Outils internes en jours, pas mois" },
-        { icon: BarChart3, text: "Automatisation des processus métier" }
+        { icon: Users, text: "Tableaux de bord automatiques" },
+        { icon: Zap, text: "Outils en jours, pas mois" }
       ],
-      cta: "Explorer le Parcours Business",
+      cta: "Parcours Business",
       href: "/business",
       color: "accent-purple",
       gradient: "from-accent-red/10 to-primary-blue/10"
@@ -84,18 +79,18 @@ const TrackSelection: React.FC = () => {
 
   return (
     <section id="track-selection" className="py-24 bg-gradient-to-br from-background-dark to-background-dark-alt relative overflow-hidden">
-      {/* Background elements */}
+      {/* Background grid pattern with squares - Same as Hero */}
       <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-8 gap-4 h-full p-8">
-          {Array.from({ length: 64 }, (_, i) => (
+        <div className="grid grid-cols-12 gap-2 h-full p-4">
+          {Array.from({ length: 144 }, (_, i) => (
             <div 
               key={i} 
-              className="bg-primary-blue rounded-lg animate-pulse" 
+              className="bg-text-secondary rounded-sm animate-pulse" 
               style={{
-                animationDelay: `${i * 0.1}s`,
-                animationDuration: '4s'
+                animationDelay: `${i * 0.05}s`,
+                animationDuration: '3s'
               }}
-            />
+            ></div>
           ))}
         </div>
       </div>
@@ -110,11 +105,10 @@ const TrackSelection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Quel est votre parcours ?
+            À qui s'adresse la formation ?
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Notre formation s'adapte aux rôles techniques et non-techniques.
-            <span className="text-primary-blue font-semibold"> Chaque parcours peut varier selon le besoin.</span>
+            <span className="text-primary-blue font-semibold">Une formation accessible à tous,</span> adaptée aux rôles techniques et non-techniques.
           </p>
         </motion.div>
 

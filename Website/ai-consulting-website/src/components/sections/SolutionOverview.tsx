@@ -30,21 +30,21 @@ const SolutionOverview: React.FC = () => {
   const steps = [
     {
       number: "01",
-      icon: <Search className="w-8 h-8" />,
-      title: "Analyse ciblée de vos opérations",
-      description: "Nous analysons vos processus actuels et formons vos équipes aux derniers outils IA. Évaluation du potentiel IA : nous identifions les points d'entrée les plus prometteurs pour accélérer vos développeurs."
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: "Formation intensive",
+      description: "Maîtrisez Claude Code, les MCP servers et l'art de travailler avec des agents spécialisés. Formation adaptée aux profils techniques et non-techniques."
     },
     {
       number: "02",
-      icon: <GraduationCap className="w-8 h-8" />,
-      title: "Formation actionnable",
-      description: "Vous recevez nos frameworks, nos modèles de prompts, nos checklists de design. Mise en situation guidée : exemples concrets appliqués à vos cas réels."
+      icon: <Target className="w-8 h-8" />,
+      title: "Cycle de développement complet",
+      description: "Apprenez comment les agents couvrent tout le cycle : de la conception aux tests, du déploiement à la maintenance. Accessible même aux non-techniques."
     },
     {
       number: "03",
-      icon: <Target className="w-8 h-8" />,
-      title: "Support asynchrone",
-      description: "Veille constante sur les nouvelles pratiques et possibilité de nous recontacter pour débloquer des points spécifiques ou ajuster les pratiques. Nous ne construisons pas vos agents, nous vous donnons le manuel et la méthode."
+      icon: <Search className="w-8 h-8" />,
+      title: "Guide et autonomie",
+      description: "Manuel complet, templates de prompts, configurations prêtes et communauté Circle. Vos équipes travaillent efficacement avec les agents en toute autonomie."
     }
   ];
 
@@ -108,11 +108,11 @@ const SolutionOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Du Vibe Coding à une approche de programmation structurée
+            Notre méthode de transformation
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Nous ne développons pas vos agents, nous vous donnons le manuel et la méthode pour qu'ils vous obéissent vraiment. 
-            <span className="text-accent-purple font-semibold"> Formation actionnable. Résultats mesurables. Autonomie complète.</span>
+            Formation pratique, guide complet et accompagnement vers l'autonomie. 
+            <span className="text-accent-purple font-semibold"> Maîtrisez les outils, implémentez les méthodes, transformez vos processus.</span>
           </p>
         </motion.div>
 

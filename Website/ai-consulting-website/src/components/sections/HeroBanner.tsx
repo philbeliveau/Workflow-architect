@@ -3,7 +3,7 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Code, Zap } from 'lucide-react';
+import { ArrowRight, Code, Zap, Users, Bot, BookOpen } from 'lucide-react';
 const HeroBanner: React.FC = memo(() => {
   
   return (
@@ -65,12 +65,12 @@ const HeroBanner: React.FC = memo(() => {
           <h1 
             className="text-hero font-bold mb-8 bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent"
             role="banner"
-            aria-label="Titre principal: NEWCODE — Maîtrisez la programmation agentique"
+            aria-label="Titre principal: Maîtrisez le développement agentique"
           >
-            NEWCODE — Maîtrisez la programmation agentique
+            Maîtrisez le développement agentique
           </h1>
           <p className="text-xl md:text-2xl text-text-primary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
-            Reprendre notre place là où la valeur se crée vraiment : en tant qu'architectes, décideurs et stratèges, plutôt qu'exécutants à faible valeur ajoutée.
+            Réduire la complexité du développement logiciel en déléguant aux agents IA.
           </p>
         </motion.div>
         <motion.div
@@ -78,18 +78,48 @@ const HeroBanner: React.FC = memo(() => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-accent-red/40 shadow-2xl shadow-black/30">
+          <div className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto mb-12 border border-accent-red/40 shadow-xl">
             <div className="text-center">
-              <h2 className="text-xl font-bold text-slate-100 mb-8 tracking-wide">
-                Ce que nous faisons
-              </h2>
-              <div className="text-left mb-8 space-y-4">
-                <p className="text-slate-200 font-medium leading-relaxed">
-                  Nous formons les équipes à maîtriser la programmation avec les agents IA et leur donnons le manuel d'utilisation clé en main.
-                </p>
+              {/* Compact 3 Steps */}
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+                {/* Step 1 */}
+                <div className="flex flex-col items-center text-center max-w-[140px]">
+                  <div className="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center mb-2">
+                    <Users className="w-6 h-6 text-primary-blue" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-100 mb-1">Formation</span>
+                  <span className="text-xs text-slate-400 leading-tight">Équipes expertes en agents IA</span>
+                </div>
+
+                <ArrowRight className="w-5 h-5 text-accent-red/60 hidden md:block" />
+                <ArrowRight className="w-4 h-4 text-accent-red/60 rotate-90 md:hidden" />
+
+                {/* Step 2 */}
+                <div className="flex flex-col items-center text-center max-w-[140px]">
+                  <div className="w-12 h-12 bg-accent-red/20 rounded-lg flex items-center justify-center mb-2">
+                    <Bot className="w-6 h-6 text-accent-red" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-100 mb-1">Maîtrise</span>
+                  <span className="text-xs text-slate-400 leading-tight">Orchestration et délégation</span>
+                </div>
+
+                <ArrowRight className="w-5 h-5 text-accent-red/60 hidden md:block" />
+                <ArrowRight className="w-4 h-4 text-accent-red/60 rotate-90 md:hidden" />
+
+                {/* Step 3 */}
+                <div className="flex flex-col items-center text-center max-w-[140px]">
+                  <div className="w-12 h-12 bg-accent-purple/20 rounded-lg flex items-center justify-center mb-2">
+                    <BookOpen className="w-6 h-6 text-accent-purple" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-100 mb-1">Autonomie</span>
+                  <span className="text-xs text-slate-400 leading-tight">Manuel et méthodes complètes</span>
+                </div>
               </div>
-              <div className="text-center">
-              </div>
+
+              {/* Enhanced summary */}
+              <p className="text-slate-200 text-sm font-medium">
+                Méthode complète pour transformer vos équipes
+              </p>
             </div>
           </div>
         </motion.div>
@@ -158,16 +188,16 @@ const HeroBanner: React.FC = memo(() => {
             href="#track-selection"
             className="group"
           >
-            Découvrir les parcours
+            Notre formation
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
           
           <Button 
             variant="outline" 
             size="lg" 
-            href="/book-demo"
+            href="/guide"
           >
-            Évaluation Gratuite
+            Notre guide
           </Button>
         </motion.div>
 
