@@ -1,13 +1,13 @@
 {
-  "buildCommand": "cd Website/ai-consulting-website && npm run build",
-  "devCommand": "cd Website/ai-consulting-website && npm run dev",
-  "installCommand": "cd Website/ai-consulting-website && npm install",
-  "outputDirectory": "Website/ai-consulting-website/.next",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "rootDirectory": "Website/ai-consulting-website",
   "framework": "nextjs",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "runtime": "nodejs18.x"
     }
-  ]
+  }
 }
