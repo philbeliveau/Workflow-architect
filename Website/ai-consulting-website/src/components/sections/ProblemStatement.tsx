@@ -8,21 +8,21 @@ const ProblemStatement: React.FC = () => {
   const problems = [
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "\"Vibe coding\" décevant",
-      description: "Taux de succès réel <20% pour du code production. Prompts flous, pas de méthode, aucune vérification. L'IA vous fait perdre du temps au lieu d'en gagner.",
-      stat: "<20%"
+      title: "Processus de communication brisé",
+      description: "Code reviews, transfert de connaissances, coordination et communication humaine. Ces processus nécessitent réflexion, compréhension partagée et jugement éclairé.",
+      stat: "80-90%"
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Contexte mal défini",
-      description: "Pas de méthode claire pour spécifier objectifs, outputs attendus, ou contraintes. Résultat : des agents qui ne comprennent pas ce que vous voulez vraiment.",
-      stat: "0% précision"
+      title: "Spécifications perdues",
+      description: "On jette les prompts mais garde le code généré. C'est comme détruire le code source et versionner le binaire. La spécification contient l'intention et les valeurs.",
+      stat: "Critique"
     },
     {
       icon: <Workflow className="w-8 h-8" />,
-      title: "Brouillard technologique et complexité d'implémentation",
-      description: "CrewAI, MCP, Claude-code... Trop d'outils, trop vite. Vous testez sans cadre, sans structure, sans méthode. Vous voulez les bénéfices de l'IA, mais pas passer 6 mois à tout apprendre. Comment l'intégrer sans casser l'existant ?",
-      stat: "6 mois"
+      title: "La fausse promesse de vitesse",
+      description: "L'IA génère plus de code plus vite, mais augmente la charge de review et maintenance. Le coût de comprendre et faire confiance au code : plus élevé que jamais.",
+      stat: "Complexité ↑"
     }
   ];
 
@@ -82,15 +82,15 @@ const ProblemStatement: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Le paradoxe de l'IA en développement
+            Le code n'était jamais le goulot d'étranglement
           </h2>
           <p className="text-xl text-text-secondary max-w-5xl mx-auto leading-relaxed mb-4">
-            <span className="text-accent-purple font-semibold"> Mais les outils d'IA promettent des gains majeurs... et leur adoption reste décevante.</span>
+            <span className="text-accent-purple font-semibold"> La communication structurée est le vrai bottleneck. Comprendre quoi construire, pourquoi le construire, et savoir si c'est construit correctement.</span>
           </p>
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-purple/10 to-accent-gray/10 border border-accent-purple/20 rounded-full px-6 py-3">
             <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
             <span className="text-text-secondary text-sm font-medium">
-              Sortir du "vibe coding" pour maîtriser le context engineering
+              80-90% de la valeur réside dans la communication structurée
             </span>
           </div>
         </motion.div>

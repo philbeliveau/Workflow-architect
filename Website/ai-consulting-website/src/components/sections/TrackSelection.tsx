@@ -18,7 +18,7 @@ const TrackSelection: React.FC = () => {
         "• Paradigme agentique expliqué simplement",
         "• Environnements et MCP configurés pour vous",
         "• Wrapper Claude-code pour orchestrer vos agents",
-        "• Méthodo pour specs, prompts, et alignement",
+        "• Méthodologie pour specs, prompts, et alignement",
         "• Travail agentique sur projets complexes, de A à Z"
       ],
       benefits: [
@@ -41,7 +41,7 @@ const TrackSelection: React.FC = () => {
         "• Mise en place d’agents IA sur vos outils",
         "• Environnement IA configuré pour vous",
         "• Vulgarisation + formation ciblée",
-        "• Méthodo claire pour specs et prompts",
+        "• Apprendre à développer par spécifications et prompts",
         "• Support 30 jours inclus"
       ],
       benefits: [
@@ -110,11 +110,11 @@ const TrackSelection: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Choisissez Votre Parcours
+            Quel est votre parcours ?
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Deux approches distinctes pour deux besoins différents.
-            <span className="text-primary-blue font-semibold"> Même excellence, outils adaptés.</span>
+            Notre formation s'adapte aux rôles techniques et non-techniques.
+            <span className="text-primary-blue font-semibold"> Chaque parcours peut varier selon le besoin.</span>
           </p>
         </motion.div>
 

@@ -88,17 +88,14 @@ const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="md:col-span-1">
               {/* Logo */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center mb-6">
                 <Image
-                  src="/newcode.png"
+                  src="/images/logo-newcode.jpeg"
                   alt="NEWCODE Logo"
-                  width={32}
+                  width={80}
                   height={32}
-                  className="w-8 h-8 object-contain"
+                  className="h-8 w-auto object-contain"
                 />
-                <span className="text-xl font-bold text-text-light">
-                  NEW<span className="text-accent-red">CODE</span>
-                </span>
               </div>
 
               <p className="text-text-secondary mb-6 leading-relaxed">

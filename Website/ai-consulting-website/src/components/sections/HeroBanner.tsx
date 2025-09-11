@@ -65,16 +65,13 @@ const HeroBanner: React.FC = memo(() => {
           <h1 
             className="text-hero font-bold mb-8 bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent"
             role="banner"
-            aria-label="Titre principal: Maîtrisez les outils d'aujourd'hui. Codez comme ceux de demain."
+            aria-label="Titre principal: NEWCODE — Maîtrisez la programmation agentique"
           >
-            Maîtrisez les outils d'aujourd'hui. Codez comme ceux de demain.
+            NEWCODE — Maîtrisez la programmation agentique
           </h1>
           <p className="text-xl md:text-2xl text-text-primary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
-            Les agents IA ne sont pas un outil en plus — c'est une nouvelle façon de travailler et de développer.
+            Reprendre notre place là où la valeur se crée vraiment : en tant qu'architectes, décideurs et stratèges, plutôt qu'exécutants à faible valeur ajoutée.
           </p>
-          <div className="text-lg text-text-secondary max-w-4xl mx-auto mb-12 leading-relaxed">
-            Que vous soyez développeur, data scientist, chef de produit ou tout acteur du développement logiciel, nous vous donnons les clés pour structurer, clarifier et accélérer votre travail grâce aux agents IA.
-          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -84,48 +81,75 @@ const HeroBanner: React.FC = memo(() => {
           <div className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-3xl p-10 max-w-4xl mx-auto mb-12 border border-accent-red/40 shadow-2xl shadow-black/30">
             <div className="text-center">
               <h2 className="text-xl font-bold text-slate-100 mb-8 tracking-wide">
-              Transformez votre façon de travailler. Restez à jour. Adoptez les meilleures pratiques IA :
-                {/* Laissez vos agents IA travailler à votre place, pendant des heures, avec : */}
+                Ce que nous faisons
               </h2>
-              <div className="grid md:grid-cols-2 gap-6 text-left mb-8">
-              <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Mettez à jour en continu votre stack IA avec les outils les plus récents</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Automatisez la gestion des erreurs et des cas d’exception</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Comprenez le contexte global de vos projets dès le départ</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Identifiez les bons cas d’usage pour vos agents IA</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Structurez vos tests et vos fonctionnalités dès la conception</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-slate-300 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                  <p className="text-slate-200 font-medium">Connectez facilement tous vos outils via des MCP intelligents</p>
-                </div>
-              </div>
-              <div className="text-center">
-                <p className="text-slate-100 font-bold text-xl leading-relaxed tracking-wide bg-gradient-to-r from-slate-200 to-white bg-clip-text text-transparent">
-                  → Vous bénéficiez maintenant des capacités d'une équipe complète.
+              <div className="text-left mb-8 space-y-4">
+                <p className="text-slate-200 font-medium leading-relaxed">
+                  Nous formons les équipes à maîtriser la programmation avec les agents IA et leur donnons le manuel d'utilisation clé en main.
                 </p>
               </div>
+              <div className="text-center">
+              </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* New Background Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="relative"
+        >
+          {/* Background elements for this section */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-48 h-48 bg-accent-red/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-primary-blue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+          
+          {/* Background grid pattern */}
+          <div className="absolute inset-0 opacity-3">
+            <div className="grid grid-cols-8 gap-2 h-full p-4">
+              {Array.from({ length: 64 }, (_, i) => (
+                <div 
+                  key={i} 
+                  className="bg-text-secondary rounded-sm animate-pulse" 
+                  style={{
+                    animationDelay: `${i * 0.08}s`,
+                    animationDuration: '4s'
+                  }}
+                ></div>
+              ))}
+            </div>
+          </div>
+
+          {/* Floating elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <motion.div
+              className="absolute top-1/3 left-1/5 text-accent-red/30"
+              animate={{ y: [0, -15, 0], rotate: [0, -3, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              style={{ willChange: 'transform' }}
+              aria-hidden="true"
+            >
+              <Zap size={32} />
+            </motion.div>
+            <motion.div
+              className="absolute bottom-1/3 right-1/5 text-primary-blue/30"
+              animate={{ y: [0, 18, 0], rotate: [0, 4, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              style={{ willChange: 'transform' }}
+              aria-hidden="true"
+            >
+              <Code size={28} />
+            </motion.div>
           </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <Button 

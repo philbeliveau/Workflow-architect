@@ -82,12 +82,9 @@ const DevelopersHero: React.FC = () => {
             >
               <p className="text-base sm:text-lg text-text-secondary mb-6 md:mb-8 leading-relaxed">
                 Nous vous formons à utiliser des systèmes d'orchestrations d'agents, qui clarifie, code, rafine, debug, test, optimize continuellement pour s'assurer que le code générer est aligné avec ce que vous cherchez.
-                <span className="text-success-green font-semibold block mt-2">
-                  Résultats mesurés : 3x plus rapide, 90% moins de bugs, onboarding 2 semaines → 2 heures.
-                </span>
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
+              <div className="grid grid-cols-1 gap-3 md:gap-4 mb-6 md:mb-8 max-w-md">
                 <div className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-lg p-3 md:p-4">
                   <h3 className="text-primary-blue font-semibold mb-1 md:mb-2 flex items-center gap-2 text-sm md:text-base">
                     <Cpu className="w-3 h-3 md:w-4 md:h-4" />
@@ -100,17 +97,6 @@ const DevelopersHero: React.FC = () => {
                   </ul>
                 </div>
                 
-                <div className="bg-background-dark-alt/50 border border-primary-blue/30 rounded-lg p-3 md:p-4">
-                  <h3 className="text-primary-blue font-semibold mb-1 md:mb-2 flex items-center gap-2 text-sm md:text-base">
-                    <Database className="w-3 h-3 md:w-4 md:h-4" />
-                    Observabilité Complète
-                  </h3>
-                  <ul className="text-text-secondary text-xs md:text-sm space-y-1">
-                    <li>• Dashboards temps réel</li>
-                    <li>• Tracing des tâches d'agents</li>
-                    <li>• Métriques de performance</li>
-                  </ul>
-                </div>
               </div>
             </motion.div>
 
@@ -126,7 +112,7 @@ const DevelopersHero: React.FC = () => {
                 href="/book-demo"
                 className="group"
               >
-                Configuration Technique Gratuite
+                Réserver Évaluation Gratuite
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -135,7 +121,7 @@ const DevelopersHero: React.FC = () => {
                 size="lg" 
                 href="#technical-stack"
               >
-                Voir la Stack Complète
+                Découvrir la Formation
               </Button>
             </motion.div>
           </div>

@@ -32,7 +32,7 @@ const SolutionOverview: React.FC = () => {
       number: "01",
       icon: <Search className="w-8 h-8" />,
       title: "Analyse ciblée de vos opérations",
-      description: "On s'assoit avec vous pour comprendre vos enjeux, vos outils et vos projets. Évaluation du potentiel IA : on identifie les points d'entrée les plus prometteurs pour accélérer vos développeurs."
+      description: "Nous analysons vos processus actuels et formons vos équipes aux derniers outils IA. Évaluation du potentiel IA : nous identifions les points d'entrée les plus prometteurs pour accélérer vos développeurs."
     },
     {
       number: "02",

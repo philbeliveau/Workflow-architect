@@ -70,22 +70,17 @@ const Navigation: React.FC = memo(() => {
           {/* Logo */}
           <Link href="/">
             <motion.div
-              className="flex items-center gap-3"
+              className="flex items-center"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Image
-                src="/newcode.png"
+                src="/images/logo-newcode.jpeg"
                 alt="NEWCODE Logo"
-                width={48}
+                width={120}
                 height={48}
-                className="w-12 h-12 object-contain"
+                className="h-12 w-auto object-contain"
               />
-              <span className={`text-xl font-bold transition-colors duration-300 ${
-                isScrolled ? 'text-text-light' : 'text-text-light'
-              }`}>
-                NEW<span className="text-accent-red">CODE</span>
-              </span>
             </motion.div>
           </Link>
 

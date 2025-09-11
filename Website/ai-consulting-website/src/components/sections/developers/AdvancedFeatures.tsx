@@ -2,14 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageSquare, Slack, Github, Database, Cpu, Network } from 'lucide-react';
+import { MessageSquare, Slack, Github, Cpu, Network } from 'lucide-react';
 
 const AdvancedFeatures: React.FC = () => {
   const mcpConnections = [
     { name: "Client Instance", icon: <Cpu className="w-6 h-6" />, color: "text-primary-blue" },
     { name: "Slack", icon: <Slack className="w-6 h-6" />, color: "text-success-green" },
     { name: "GitHub", icon: <Github className="w-6 h-6" />, color: "text-accent-red" },
-    { name: "Database", icon: <Database className="w-6 h-6" />, color: "text-warning-orange" },
   ];
 
   return (
@@ -87,7 +86,7 @@ const AdvancedFeatures: React.FC = () => {
             <div className="relative flex items-center justify-center scale-75 sm:scale-90 lg:scale-100">
               {/* Connection Lines using div */}
               {mcpConnections.map((connection, index) => {
-                const angle = (index * 90) + 45;
+                const angle = (index * 120) + 30;
                 const lineLength = 60; // Distance from MCP edge to node edge (reduced for mobile)
                 
                 return (
@@ -128,7 +127,7 @@ const AdvancedFeatures: React.FC = () => {
 
               {/* Connection Nodes */}
               {mcpConnections.map((connection, index) => {
-                const angle = (index * 90) + 45;
+                const angle = (index * 120) + 30;
                 const radius = 110; // Reduced radius for mobile
                 const x = Math.cos(angle * Math.PI / 180) * radius;
                 const y = Math.sin(angle * Math.PI / 180) * radius;
