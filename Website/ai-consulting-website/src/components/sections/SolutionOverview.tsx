@@ -10,9 +10,9 @@ const SolutionOverview: React.FC = () => {
   const t = useTranslations('solution');
   
   const stepIcons = [
-    <GraduationCap className="w-8 h-8" />,
-    <Target className="w-8 h-8" />,
-    <Search className="w-8 h-8" />
+    <GraduationCap key={0} className="w-8 h-8" />,
+    <Target key={1} className="w-8 h-8" />,
+    <Search key={2} className="w-8 h-8" />
   ];
 
   const containerVariants = {

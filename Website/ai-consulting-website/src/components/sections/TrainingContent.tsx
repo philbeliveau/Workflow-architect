@@ -9,14 +9,14 @@ const TrainingContent: React.FC = () => {
   const t = useTranslations('training');
   
   const moduleIcons = [
-    <Brain className="w-6 h-6" />,
-    <Target className="w-6 h-6" />,
-    <Eye className="w-6 h-6" />,
-    <Code2 className="w-6 h-6" />,
-    <Bot className="w-6 h-6" />,
-    <Wrench className="w-6 h-6" />,
-    <Zap className="w-6 h-6" />,
-    <Rocket className="w-6 h-6" />
+    <Brain key={0} className="w-6 h-6" />,
+    <Target key={1} className="w-6 h-6" />,
+    <Eye key={2} className="w-6 h-6" />,
+    <Code2 key={3} className="w-6 h-6" />,
+    <Bot key={4} className="w-6 h-6" />,
+    <Wrench key={5} className="w-6 h-6" />,
+    <Zap key={6} className="w-6 h-6" />,
+    <Rocket key={7} className="w-6 h-6" />
   ];
 
   const containerVariants = {

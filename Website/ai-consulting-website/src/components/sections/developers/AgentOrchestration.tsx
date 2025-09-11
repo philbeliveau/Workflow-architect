@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { AlertTriangle, ArrowRight, Code, Zap, GitBranch, Database } from 'lucide-react';
 import CodeBlock from '@/components/ui/CodeBlock';
 
@@ -128,10 +129,12 @@ Message 4 : Écrire solution
 
               {/* Right: Diagram */}
               <div className="flex justify-center">
-                <img 
+                <Image 
                   src="/image/diagram_modes.svg" 
                   alt="Diagram des modes d'orchestration" 
                   className="max-w-full h-auto"
+                  width={600}
+                  height={400}
                 />
               </div>
             </div>
