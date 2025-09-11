@@ -127,7 +127,7 @@ const ProblemStatement: React.FC = () => {
 
           {/* Column 2: Promises */}
           <motion.div
-            className="group relative bg-primary-900/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-8 hover:border-primary-blue/50 transition-all duration-300"
+            className="group relative bg-primary-900/50 backdrop-blur-sm border border-primary-700 rounded-2xl p-8 hover:border-accent-yellow/50 transition-all duration-300"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.02,
@@ -137,8 +137,8 @@ const ProblemStatement: React.FC = () => {
           >
             {/* Header avec icône */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-primary-blue/20 rounded-xl flex items-center justify-center group-hover:bg-primary-blue/30 transition-all duration-300">
-                <Rocket className="w-6 h-6 text-primary-blue" />
+              <div className="w-12 h-12 bg-accent-yellow/20 rounded-xl flex items-center justify-center group-hover:bg-accent-yellow/30 transition-all duration-300">
+                <Rocket className="w-6 h-6 text-accent-yellow" />
               </div>
               <h3 className="text-h2 font-bold text-text-primary">
                 Ce qu'on vous permet de faire
@@ -149,7 +149,7 @@ const ProblemStatement: React.FC = () => {
             <div className="space-y-4">
               {promises.map((promise, index) => (
                 <div key={index} className="flex items-start gap-4 group/item">
-                  <CheckCircle className="w-3 h-3 text-primary-blue mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200 drop-shadow-lg" />
+                  <CheckCircle className="w-3 h-3 text-accent-yellow mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200 drop-shadow-lg" />
                   <span className="text-text-secondary leading-relaxed group-hover:text-text-primary/90 transition-colors duration-300">
                     {promise}
                   </span>
@@ -158,7 +158,7 @@ const ProblemStatement: React.FC = () => {
             </div>
 
             {/* Hover effect border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-blue/0 via-primary-blue/5 to-primary-blue/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-yellow/0 via-accent-yellow/5 to-accent-yellow/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </motion.div>
         </motion.div>
 

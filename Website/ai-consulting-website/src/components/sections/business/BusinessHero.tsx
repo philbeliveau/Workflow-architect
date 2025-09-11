@@ -68,14 +68,14 @@ const BusinessHero: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
 
-              <div className="inline-flex items-center gap-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full px-4 py-2 mb-6">
-                <Briefcase className="w-4 h-4 text-primary-blue" />
-                <span className="text-primary-blue text-sm font-medium">Transformation Business</span>
+              <div className="inline-flex items-center gap-2 bg-accent-red/10 border border-accent-red/20 rounded-full px-4 py-2 mb-6">
+                <Lightbulb className="w-4 h-4 text-accent-red" />
+                <span className="text-accent-red text-sm font-medium">Le Code n'était pas le Goulot</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-text-primary">
-                <span className="text-primary-blue">Construisez vos outils sans attendre l'IT.</span>
-                <span className="block text-accent-red">De "peut-être en Q3" à "fait en 3 jours".</span>
+                <span className="text-primary-blue">De l'idée d'affaires</span>
+                <span className="block text-accent-red">aux specifications validées</span>
               </h1>
             </motion.div>
 
@@ -85,39 +85,16 @@ const BusinessHero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-                Tableau de bord client ? Outil de gestion interne ? Automatisation de processus ? 
-                <strong> Décrivez ce dont vous avez besoin, obtenez une application fonctionnelle.</strong>
-                <span className="text-success-green font-semibold block mt-2">
-                  Construisez vos outils sans attendre l'IT. De "peut-être en Q3" à "fait en 3 jours".
+                Le vrai goulot ? Définir les <strong>bonnes user stories</strong>, prioriser les <strong>bonnes fonctionnalités</strong>, 
+                et valider les <strong>bons parcours utilisateur</strong>. 
+                <span className="text-primary-blue font-semibold block mt-2">
+                  Les agents IA transforment vos besoins business en prototypes testables 
+                </span>
+                <span className="text-accent-red font-semibold block">
+                  pour valider les specs avant le développement coûteux.
                 </span>
               </p>
 
-              <div className="grid grid-cols-1 gap-4 mb-8">
-                <div className="bg-background-accent-grey/50 border border-primary-blue/30 rounded-lg p-4">
-                  <h3 className="text-primary-blue font-semibold mb-3 flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4" />
-                    Ce Que Vous Pourrez Construire
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4 text-text-secondary text-sm">
-                    <div>
-                      <strong>• Tableaux de bord clients</strong><br/>
-                      Statut projet, métriques, rapports
-                    </div>
-                    <div>
-                      <strong>• Outils internes</strong><br/>
-                      Gestion inventaire, workflows équipe
-                    </div>
-                    <div>
-                      <strong>• Automatisations</strong><br/>
-                      Connecter vos outils existants
-                    </div>
-                    <div>
-                      <strong>• Apps simples</strong><br/>
-                      Portails clients, systèmes de réservation
-                    </div>
-                  </div>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div
@@ -129,85 +106,51 @@ const BusinessHero: React.FC = () => {
               <Button 
                 variant="primary" 
                 size="lg" 
-                href="/book-demo"
+                href="/formation"
                 className="group"
               >
-                Voir Comment Ça Marche
+                Apprendre la Méthode
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg" 
-                href="#business-examples"
+                href="#validation-process"
               >
-                Exemples Concrets
+                Voir le Processus
               </Button>
             </motion.div>
           </div>
 
-          {/* Right: Visual Examples */}
+          {/* Right: New Validation Process */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="space-y-6"
           >
-            {/* Dashboard Preview */}
-            <div className="bg-gradient-to-r from-primary-blue/10 to-accent-red/10 border border-primary-blue/20 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-3 h-3 bg-red-500/30 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500/30 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500/30 rounded-full"></div>
-                <span className="text-text-secondary text-sm ml-2">Tableau de Bord Client</span>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-text-primary font-medium">Projet Website Refonte</span>
-                  <span className="bg-success-green/20 text-success-green px-2 py-1 rounded text-xs">En cours</span>
+            <div className="bg-background-accent-grey/50 border border-primary-blue/30 rounded-lg p-6">
+              <h3 className="text-primary-blue font-semibold mb-4 flex items-center gap-2">
+                <Lightbulb className="w-5 h-5" />
+                Du Business aux Spécifications
+              </h3>
+              <div className="space-y-4 text-text-secondary text-sm">
+                <div>
+                  <strong className="text-text-primary">• Définir les User Stories</strong><br/>
+                  Besoins utilisateur → fonctionnalités concrètes
                 </div>
-                
-                <div className="w-full bg-background-dark-alt rounded-full h-2">
-                  <div className="bg-primary-blue h-2 rounded-full" style={{ width: '75%' }}></div>
+                <div>
+                  <strong className="text-text-primary">• Prioriser & UI/UX</strong><br/>
+                  Roadmap + maquettes interactives
                 </div>
-                
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className="text-primary-blue font-bold">75%</div>
-                    <div className="text-text-secondary text-xs">Avancement</div>
-                  </div>
-                  <div>
-                    <div className="text-accent-red font-bold">15j</div>
-                    <div className="text-text-secondary text-xs">Restants</div>
-                  </div>
-                  <div>
-                    <div className="text-success-green font-bold">€15k</div>
-                    <div className="text-text-secondary text-xs">Budget</div>
-                  </div>
+                <div>
+                  <strong className="text-text-primary">• Prototype Fonctionnel</strong><br/>
+                  Agents IA génèrent l'interface testable
                 </div>
-              </div>
-            </div>
-
-            {/* Simple App Preview */}
-            <div className="bg-gradient-to-r from-accent-red/10 to-primary-blue/10 border border-accent-red/20 rounded-2xl p-6">
-              <h4 className="text-text-primary font-semibold mb-3 flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-accent-red" />
-                Système de Réservation
-              </h4>
-              
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
-                  <span className="text-text-secondary">9h00 - Réunion stratégie (Disponible)</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-warning-orange rounded-full"></div>
-                  <span className="text-text-secondary">14h00 - Demo produit (Réservé)</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
-                  <span className="text-text-secondary">16h00 - Consultation (Disponible)</span>
+                <div>
+                  <strong className="text-text-primary">• Specs Validées</strong><br/>
+                  Cahier des charges basé sur du réel
                 </div>
               </div>
             </div>

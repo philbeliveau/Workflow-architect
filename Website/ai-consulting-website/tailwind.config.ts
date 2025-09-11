@@ -6,12 +6,27 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'text-accent-yellow',
+    'text-accent-yellow/60',
+    'text-accent-yellow/30',
+    'bg-accent-yellow/20',
+    'bg-accent-yellow/30',
+    'border-accent-yellow/50',
+    'hover:border-accent-yellow/50',
+    'from-accent-yellow/0',
+    'via-accent-yellow/5',
+    'to-accent-yellow/0',
+  ],
   theme: {
     extend: {
       colors: {
         // Brand Colors - Red & Blue Professional
         'primary-blue': '#74a6be',
         'accent-red': '#a7292e',
+        'accent-yellow': '#fbbf24',
+        'accent-yellow-light': '#fcd34d',
+        'accent-yellow-dark': '#d97706',
         'background-dark': '#2a2a2a',
         'background-dark-alt': '#353535',
         'background-light-grey': '#404040',

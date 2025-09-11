@@ -12,7 +12,7 @@ const HeroBanner: React.FC = memo(() => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-primary-blue/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-red/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-yellow/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-blue/10 rounded-full blur-3xl opacity-15 animate-pulse delay-2000"></div>
         </div>
         
@@ -45,7 +45,7 @@ const HeroBanner: React.FC = memo(() => {
           <Code size={48} />
         </motion.div>
         <motion.div
-          className="absolute top-3/4 right-1/4 text-accent-red/60"
+          className="absolute top-3/4 right-1/4 text-accent-yellow/60"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           style={{ willChange: 'transform' }}
@@ -134,7 +134,7 @@ const HeroBanner: React.FC = memo(() => {
           {/* Background elements for this section */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-10 right-10 w-48 h-48 bg-accent-red/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 left-10 w-64 h-64 bg-primary-blue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-accent-yellow/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
           
           {/* Background grid pattern */}
@@ -156,7 +156,7 @@ const HeroBanner: React.FC = memo(() => {
           {/* Floating elements */}
           <div className="absolute inset-0 pointer-events-none">
             <motion.div
-              className="absolute top-1/3 left-1/5 text-accent-red/30"
+              className="absolute top-1/3 left-1/5 text-accent-yellow/30"
               animate={{ y: [0, -15, 0], rotate: [0, -3, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               style={{ willChange: 'transform' }}

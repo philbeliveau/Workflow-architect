@@ -81,7 +81,7 @@ const DevelopersHero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-base sm:text-lg text-text-secondary mb-6 md:mb-8 leading-relaxed">
-                Nous vous formons à utiliser des systèmes d'orchestrations d'agents, qui clarifie, code, rafine, debug, test, optimize continuellement pour s'assurer que le code générer est aligné avec ce que vous cherchez.
+                Nous vous formons à utiliser des systèmes d’orchestration d’agents capables de clarifier, coder, affiner, déboguer, tester et optimiser en continu afin de garantir que le code généré corresponde exactement à vos besoins.
               </p>
 
               <div className="grid grid-cols-1 gap-3 md:gap-4 mb-6 md:mb-8 max-w-md">
