@@ -26,8 +26,14 @@
     "solution": "Solution"
   },
   "hero": {
-    "title": "Master Agentic Development",
-    "subtitle": "Reduce software development complexity by delegating to AI agents.",
+    "title": "Don't Stay a Spectator to AI",
+    "subtitle": "Transform your business knowledge into functional applications — go from 'the one with the idea' to 'the one who realizes it'",
+    "statistic": {
+      "icon": "💡",
+      "text": "Nearly 60% of custom enterprise apps are developed outside of IT",
+      "subtext": "📈 Technology is no longer a limitation"
+    },
+    "supporting_message": "Transform your business knowledge into functional applications — go from the one with the idea to the one who realizes it.",
     "steps": {
       "formation": {
         "title": "Training",
@@ -44,8 +50,8 @@
     },
     "summary": "Complete method to transform your teams",
     "cta": {
-      "primary": "Get Started",
-      "secondary": "Learn More",
+      "primary": "Start My Transformation",
+      "secondary": "See the Method",
       "training": "Our training",
       "guide": "Our guide"
     }
@@ -83,6 +89,55 @@
     }
   },
   "tracks": {
+    "header": {
+      "badge": "NEWCODE Training",
+      "title": "Choose Your Training",
+      "subtitle": "Two tracks adapted to your level to master agentic programming"
+    },
+    "formations": {
+      "debutant": {
+        "title": "Beginner Training",
+        "subtitle": "From zero to your first application",
+        "description": "Perfect for entrepreneurs, freelancers and complete beginners. Create your first functional application without any prior technical experience.",
+        "duration": "6 intensive hours",
+        "level": "Beginner",
+        "price": "$300 CAD",
+        "features": [
+          "Fundamentals of agentic AI",
+          "First steps with Claude Code and Bolt",
+          "Create your first application",
+          "Deployment and going live"
+        ],
+        "benefits": [
+          "Functional app in 6h",
+          "Community support included",
+          "Ready-to-use templates"
+        ],
+        "cta": "Choose Beginner Training",
+        "footer": "Start your transformation today"
+      },
+      "avance": {
+        "title": "Advanced Training",
+        "subtitle": "Master agent orchestration",
+        "description": "Ideal for developers, data scientists and product managers. Learn to orchestrate complex agents and create professional applications.",
+        "duration": "12 intensive hours",
+        "level": "Advanced",
+        "price": "$300 CAD",
+        "features": [
+          "Orchestration with Claude Flow",
+          "Specialized agents and MCP servers",
+          "API and database integrations",
+          "Complex workflows and pro deployment"
+        ],
+        "benefits": [
+          "Complex and scalable applications",
+          "Multi-agent orchestration",
+          "Personalized support"
+        ],
+        "cta": "Choose Advanced Training",
+        "footer": "For ambitious professionals"
+      }
+    },
     "title": "Who is the training for?",
     "subtitle": "Training accessible to all, adapted to technical and non-technical roles.",
     "developers": {
@@ -1636,5 +1691,11 @@
         "button": "Discover our training"
       }
     }
+  },
+  "tech_stack": {
+    "title": "Professional Tools",
+    "subtitle": "Master tomorrow's technology stack",
+    "description": "In one training, learn to orchestrate these tools like a senior developer.",
+    "cta_button": "GET STARTED"
   }
 }

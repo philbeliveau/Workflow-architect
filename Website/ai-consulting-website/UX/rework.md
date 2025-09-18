@@ -210,3 +210,7 @@ Enleve tout, et redefinie tout pour avoir ce look: Workflow-architect/Workflow-a
 Ceci nest qu'un exemple, ne copie pas le contenue de l'image. Le contenue de ces deux boites devrait etre au sujet de nos deux formations, debutant et FORMATION AVANCÉE
 
 # 15 Mettre Rencontrez l'équipe, avant la section Question FAQ 
+
+# 16 
+Changer etape 1, pour: Vos idées et votre créativé
+Change etape 2, pour: Transformer vos idées en langage pour 

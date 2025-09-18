@@ -117,6 +117,55 @@
     "community_caption": "Notre communauté active où les apprenants partagent leurs créations"
   },
   "tracks": {
+    "header": {
+      "badge": "Formation NEWCODE",
+      "title": "Choisissez votre formation",
+      "subtitle": "Deux parcours adaptés à votre niveau pour maîtriser la programmation agentique"
+    },
+    "formations": {
+      "debutant": {
+        "title": "Formation Débutant",
+        "subtitle": "De zéro à votre première application",
+        "description": "Parfait pour les entrepreneurs, freelancers et débutants complets. Créez votre première application fonctionnelle sans aucune expérience technique préalable.",
+        "duration": "6 heures intensives",
+        "level": "Débutant",
+        "price": "300$ CAD",
+        "features": [
+          "Fondements de l'IA agentique",
+          "Premiers pas avec Claude Code et Bolt",
+          "Créer votre première application",
+          "Déploiement et mise en ligne"
+        ],
+        "benefits": [
+          "Application fonctionnelle en 6h",
+          "Support communautaire inclus",
+          "Templates prêts à l'emploi"
+        ],
+        "cta": "Choisir Formation Débutant",
+        "footer": "Commencez votre transformation dès aujourd'hui"
+      },
+      "avance": {
+        "title": "Formation Avancée",
+        "subtitle": "Maîtrisez l'orchestration d'agents",
+        "description": "Idéal pour les développeurs, data scientists et product managers. Apprenez à orchestrer des agents complexes et créer des applications professionnelles.",
+        "duration": "12 heures intensives",
+        "level": "Avancé",
+        "price": "300$ CAD",
+        "features": [
+          "Orchestration avec Claude Flow",
+          "Agents spécialisés et MCP servers",
+          "Intégrations APIs et bases de données",
+          "Workflows complexes et déploiement pro"
+        ],
+        "benefits": [
+          "Applications complexes et évolutives",
+          "Orchestration multi-agents",
+          "Accompagnement personnalisé"
+        ],
+        "cta": "Choisir Formation Avancée",
+        "footer": "Pour les professionnels ambitieux"
+      }
+    },
     "title": "Qui peut devenir créateur ?",
     "subtitle": "Empowerment-focused messaging with pain point → solution transformation narrative.",
     "developers": {
@@ -1806,6 +1855,12 @@
         "timeframe": "Janvier 2024"
       }
     }
+  },
+  "tech_stack": {
+    "title": "Les outils des professionnels",
+    "subtitle": "Maîtrisez la stack technologique de demain",
+    "description": "En une formation, apprenez à orchestrer ces outils comme un développeur senior.",
+    "cta_button": "LANCEZ-VOUS"
   },
   "contact_cta": {
     "title": "Une question spécifique ?",

@@ -47,10 +47,11 @@ const CloudTool: React.FC<CloudToolProps> = memo(({ name, icon, position, index,
 CloudTool.displayName = 'CloudTool';
 
 const TechStackShowcase: React.FC = memo(() => {
-  const t = useTranslations();
+  const t = useTranslations('tech_stack');
   
   const cloudTools = [
     { name: "Cursor", icon: <Code className="w-8 h-8" />, position: { top: "10%", left: "5%" }, color: "text-gray-200" },
+    { name: "FastAPI", icon: <Zap className="w-8 h-8" />, position: { top: "10%", left: "25%" }, color: "text-gray-200" },
     { name: "Node.js", icon: <Server className="w-8 h-8" />, position: { top: "15%", left: "70%" }, color: "text-slate-200" },
     { name: "Next.js", icon: <Globe className="w-8 h-8" />, position: { top: "40%", left: "15%" }, color: "text-zinc-200" },
     { name: "Tailwind", icon: <Zap className="w-8 h-8" />, position: { top: "45%", left: "80%" }, color: "text-stone-200" },
@@ -80,17 +81,16 @@ const TechStackShowcase: React.FC = memo(() => {
           className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4">
-            Les outils des professionnels
+            {t('title')}
           </h2>
           <p className="text-xl text-text-primary max-w-3xl mx-auto mb-6">
-            Maîtrisez la stack technologique de demain
+            {t('subtitle')}
           </p>
           
           {/* Value proposition text */}
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-lg text-text-secondary leading-relaxed">
-              <span className="text-accent-yellow font-semibold">En une formation</span>, apprenez à orchestrer 
-              ces outils comme un développeur senior.
+              {t('description')}
             </p>
           </div>
         </motion.div>
@@ -108,7 +108,7 @@ const TechStackShowcase: React.FC = memo(() => {
             <div className="bg-gradient-to-br from-accent-yellow to-accent-red text-background-dark font-bold text-xl md:text-3xl px-8 py-4 rounded-2xl border-4 border-background-dark shadow-[8px_8px_0_#000000] hover:shadow-[12px_12px_0_#000000] hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-6 h-6 md:w-8 md:h-8" />
-                <span>LANCEZ-VOUS</span>
+                <span>{t('cta_button')}</span>
                 <Bot className="w-6 h-6 md:w-8 md:h-8" />
               </div>
             </div>

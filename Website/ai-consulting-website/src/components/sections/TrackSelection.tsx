@@ -13,56 +13,46 @@ const TrackSelection: React.FC = () => {
     {
       id: "debutant",
       icon: <Code className="w-12 h-12" />,
-      title: "Formation Débutant",
-      subtitle: "De zéro à votre première application",
-      description: "Parfait pour les entrepreneurs, freelancers et débutants complets. Créez votre première application fonctionnelle sans aucune expérience technique préalable.",
-      duration: "6 heures intensives",
-      level: "Débutant",
-      price: "300$ CAD",
-      features: [
-        "Fondements de l'IA agentique",
-        "Premiers pas avec Claude Code et Bolt",
-        "Créer votre première application",
-        "Déploiement et mise en ligne"
-      ],
+      title: t('formations.debutant.title'),
+      subtitle: t('formations.debutant.subtitle'),
+      description: t('formations.debutant.description'),
+      duration: t('formations.debutant.duration'),
+      level: t('formations.debutant.level'),
+      price: t('formations.debutant.price'),
+      features: t('formations.debutant.features'),
       benefits: [
-        { icon: Zap, text: "Application fonctionnelle en 6h" },
-        { icon: Users, text: "Support communautaire inclus" },
-        { icon: BookOpen, text: "Templates prêts à l'emploi" }
+        { icon: Zap, text: t('formations.debutant.benefits.0') },
+        { icon: Users, text: t('formations.debutant.benefits.1') },
+        { icon: BookOpen, text: t('formations.debutant.benefits.2') }
       ],
-      cta: "Choisir Formation Débutant",
+      cta: t('formations.debutant.cta'),
       href: "/formation-debutant",
       color: "success-green",
       gradient: "from-success-green/20 via-success-green/10 to-success-green/5",
       badge: "",
-      footer: "Commencez votre transformation dès aujourd'hui"
+      footer: t('formations.debutant.footer')
     },
     {
       id: "avance",
       icon: <Zap className="w-12 h-12" />,
-      title: "Formation Avancée",
-      subtitle: "Maîtrisez l'orchestration d'agents",
-      description: "Idéal pour les développeurs, data scientists et product managers. Apprenez à orchestrer des agents complexes et créer des applications professionnelles.",
-      duration: "12 heures intensives",
-      level: "Avancé",
-      price: "300$ CAD",
-      features: [
-        "Orchestration avec Claude Flow",
-        "Agents spécialisés et MCP servers",
-        "Intégrations APIs et bases de données",
-        "Workflows complexes et déploiement pro"
-      ],
+      title: t('formations.avance.title'),
+      subtitle: t('formations.avance.subtitle'),
+      description: t('formations.avance.description'),
+      duration: t('formations.avance.duration'),
+      level: t('formations.avance.level'),
+      price: t('formations.avance.price'),
+      features: t('formations.avance.features'),
       benefits: [
-        { icon: Cpu, text: "Applications complexes et évolutives" },
-        { icon: Zap, text: "Orchestration multi-agents" },
-        { icon: Star, text: "Accompagnement personnalisé" }
+        { icon: Cpu, text: t('formations.avance.benefits.0') },
+        { icon: Zap, text: t('formations.avance.benefits.1') },
+        { icon: Star, text: t('formations.avance.benefits.2') }
       ],
-      cta: "Choisir Formation Avancée",
+      cta: t('formations.avance.cta'),
       href: "/formation-avance",
       color: "primary-blue",
       gradient: "from-primary-blue/20 via-primary-blue/10 to-accent-purple/5",
       badge: "",
-      footer: "Pour les professionnels ambitieux"
+      footer: t('formations.avance.footer')
     }
   ];
 
@@ -124,15 +114,15 @@ const TrackSelection: React.FC = () => {
               <BookOpen className="w-6 h-6 text-primary-blue" />
             </div>
             <span className="text-lg font-semibold text-primary-blue bg-primary-blue/10 px-4 py-2 rounded-full">
-              Formation NEWCODE
+              {t('header.badge')}
             </span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-text-light">
-            Choisissez votre formation
+            {t('header.title')}
           </h2>
           <p className="text-xl text-text-primary max-w-4xl mx-auto leading-relaxed">
-            Deux parcours adaptés à votre niveau pour maîtriser la <span className="text-primary-blue font-semibold">programmation agentique</span>
+            {t('header.subtitle')}
           </p>
         </motion.div>
 

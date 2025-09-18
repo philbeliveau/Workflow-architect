@@ -103,10 +103,10 @@ const HeroBanner: React.FC = memo(() => {
                   </div>
                   <div>
                     <p className="text-lg md:text-xl font-semibold text-text-light mb-2">
-                      60% des apps d'entreprise sont développées hors IT
+                      {t('statistic.text')}
                     </p>
                     <p className="text-text-primary leading-relaxed">
-                      La technique n'est plus une limite — maîtrisez les outils pour concrétiser vos idées.
+                      {t('statistic.subtext')}
                     </p>
                   </div>
                 </div>
