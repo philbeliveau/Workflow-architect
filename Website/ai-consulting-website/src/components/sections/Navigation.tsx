@@ -70,21 +70,17 @@ const Navigation: React.FC = memo(() => {
     if (currentPath === '/') {
       return [
         { name: t('home'), href: anchors.home, isActive: true },
-        { name: t('tracks'), href: anchors.tracks, isActive: false },
-        { name: t('problem'), href: anchors.problem, isActive: false },
-        { name: t('solution'), href: anchors.solution, isActive: false },
+        { name: t('tracks'), href: '#formation', isActive: false },
         { name: t('blog'), href: '/blog', isActive: false },
         { name: t('contact'), href: anchors.contact, isActive: false }
       ];
     } else {
       // For specialized pages, show main sections but link back to home page sections
       return [
-        { name: t('home'), href: `/${anchors.home}`, isActive: false },
-        { name: t('tracks'), href: `/${anchors.tracks}`, isActive: currentPath === '/developers' || currentPath === '/business' },
-        { name: t('problem'), href: `/${anchors.problem}`, isActive: false },
-        { name: t('solution'), href: `/${anchors.solution}`, isActive: false },
+        { name: t('home'), href: `/#accueil`, isActive: false },
+        { name: t('tracks'), href: `/#formation`, isActive: currentPath === '/developers' || currentPath === '/business' },
         { name: t('blog'), href: '/blog', isActive: currentPath.includes('/blog') },
-        { name: t('contact'), href: `/${anchors.contact}`, isActive: false }
+        { name: t('contact'), href: `/#contact`, isActive: false }
       ];
     }
   };

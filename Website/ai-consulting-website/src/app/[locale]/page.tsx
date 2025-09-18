@@ -8,10 +8,9 @@ import { getTranslations } from 'next-intl/server';
 const FormationOverview = lazy(() => import('@/components/sections/FormationOverview'));
 const TechStackShowcase = lazy(() => import('@/components/sections/TechStackShowcase'));
 const TargetAudienceInteractive = lazy(() => import('@/components/sections/TargetAudienceInteractive'));
-const PricingPackages = lazy(() => import('@/components/sections/PricingPackages'));
+const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
 const FAQSection = lazy(() => import('@/components/sections/FAQSection'));
 const TeamSection = lazy(() => import('@/components/sections/TeamSection'));
-const CTASection = lazy(() => import('@/components/sections/CTASection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
 
 const SectionFallback = () => (
@@ -60,11 +59,12 @@ export default async function Home({
           </Suspense>
         </section>
         
-        <section id={sectionIds.pricing}>
+        <section id="track-selection">
           <Suspense fallback={<SectionFallback />}>
-            <PricingPackages />
+            <TrackSelection />
           </Suspense>
         </section>
+        
         
         <section id={sectionIds.team}>
           <Suspense fallback={<SectionFallback />}>
@@ -78,11 +78,6 @@ export default async function Home({
           </Suspense>
         </section>
         
-        <section id={sectionIds.contact}>
-          <Suspense fallback={<SectionFallback />}>
-            <CTASection />
-          </Suspense>
-        </section>
       </main>
       
       <Suspense fallback={<SectionFallback />}>

@@ -59,7 +59,7 @@ const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onS
       <div className="space-y-2 mb-4">
         <p className="text-sm text-text-secondary font-medium">Défis actuels :</p>
         <ul className="space-y-1">
-          {segment.pain_points.slice(0, 2).map((point: string, idx: number) => (
+          {(segment.pain_points || []).slice(0, 2).map((point: string, idx: number) => (
             <li key={idx} className="text-sm text-text-primary">
               {point}
             </li>
@@ -71,7 +71,7 @@ const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onS
       <div className="space-y-2">
         <p className="text-sm text-text-secondary font-medium">Transformation :</p>
         <ul className="space-y-1">
-          {segment.transformation.slice(0, 2).map((transform: string, idx: number) => (
+          {(segment.transformation || []).slice(0, 2).map((transform: string, idx: number) => (
             <li key={idx} className="text-sm text-text-primary">
               {transform}
             </li>
@@ -131,6 +131,22 @@ const TargetAudienceInteractive: React.FC = memo(() => {
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-accent-purple/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-success-green/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      {/* Background grid pattern with squares - Same as hero section */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="grid grid-cols-12 gap-2 h-full p-4">
+          {Array.from({ length: 144 }, (_, i) => (
+            <div 
+              key={i} 
+              className="bg-text-secondary rounded-sm animate-pulse" 
+              style={{
+                animationDelay: `${i * 0.05}s`,
+                animationDuration: '3s'
+              }}
+            ></div>
+          ))}
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">

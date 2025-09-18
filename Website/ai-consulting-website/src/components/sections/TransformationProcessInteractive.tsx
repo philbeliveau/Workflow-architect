@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect, memo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Play, 
@@ -19,7 +19,8 @@ import {
   Database,
   Globe,
   MonitorSpeaker,
-  Activity
+  Activity,
+  ArrowRight
 } from 'lucide-react';
 
 interface TransformationStage {
@@ -40,8 +41,8 @@ interface TransformationProcessInteractiveProps {
 const stages: TransformationStage[] = [
   {
     id: 'chaos',
-    title: 'Étape 1',
-    description: 'Voir étape 1',
+    title: 'Ideation',
+    description: 'Clarifier la vision',
     icon: null,
     color: 'text-accent-red',
     bgColor: 'from-accent-red/20 via-background-dark to-background-dark-alt',
@@ -55,8 +56,8 @@ const stages: TransformationStage[] = [
   },
   {
     id: 'specification',
-    title: 'Étape 2',
-    description: 'Voir étape 2',
+    title: 'Specification',
+    description: 'Architecturer avec l\'IA',
     icon: null,
     color: 'text-primary-blue',
     bgColor: 'from-primary-blue/20 via-background-dark to-background-dark-alt',
@@ -69,8 +70,8 @@ const stages: TransformationStage[] = [
   },
   {
     id: 'completion',
-    title: 'Étape 3',
-    description: 'Voir étape 3',
+    title: 'Réalisation',
+    description: 'Déployer en production',
     icon: null,
     color: 'text-accent-yellow',
     bgColor: 'from-accent-yellow/20 via-background-dark to-background-dark-alt',
@@ -91,9 +92,9 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
       text: concept,
       x: 5 + (i % 6) * 15, // More controlled spacing horizontally
       y: 10 + Math.floor(i / 6) * 15, // Vertical spacing to prevent overlap
-      opacity: 0.4 + Math.random() * 0.5,
-      size: 0.6 + Math.random() * 0.3, // Smaller size range to prevent overlap
-      speed: 0.5 + Math.random() * 1.5
+      opacity: 0.4 + (i * 0.03) % 0.5, // Deterministic opacity based on index
+      size: 0.6 + (i * 0.02) % 0.3, // Deterministic size based on index
+      speed: 0.5 + (i * 0.1) % 1.5 // Deterministic speed based on index
     }))
   );
 
@@ -125,10 +126,10 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
               opacity: element.opacity
             }}
             animate={{
-              x: [0, Math.sin(element.id) * 10, 0], // Reduced movement
-              y: [0, Math.cos(element.id) * 8, 0], // Reduced movement
+              x: [0, (element.id % 2 === 0 ? 1 : -1) * 10, 0], // Deterministic movement
+              y: [0, (element.id % 3 === 0 ? 1 : -1) * 8, 0], // Deterministic movement
               opacity: [element.opacity * 0.7, element.opacity, element.opacity * 0.5],
-              rotate: [0, Math.sin(element.id) * 5, 0] // Reduced rotation
+              rotate: [0, (element.id % 2 === 0 ? 1 : -1) * 5, 0] // Deterministic rotation
             }}
             transition={{
               duration: 8 + element.speed,
@@ -196,8 +197,8 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
               }}
               animate={{
                 y: [0, -10, 0],
-                x: [0, Math.sin(index) * 5, 0],
-                rotate: [0, Math.sin(index * 2) * 3, 0]
+                x: [0, (index % 2 === 0 ? 1 : -1) * 5, 0],
+                rotate: [0, (index % 2 === 0 ? 1 : -1) * 3, 0]
               }}
               transition={{
                 duration: 3 + index * 0.5,
@@ -724,16 +725,19 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
     let interval: number;
     
     if (isPlaying) {
-      console.log('Starting auto-play with stages:', stages.map(s => s.title));
+      console.log('🚀 Starting auto-play with stages:', stages.map((s, i) => `${i}: ${s.title} (${s.id})`));
+      
       interval = window.setInterval(() => {
         setProgress(prev => {
-          const newProgress = prev + (100 / (duration / 100));
+          const increment = 100 / (duration / 200); // Slower increment (200ms intervals)
+          const newProgress = prev + increment;
           
           if (newProgress >= 100) {
             // Stage is complete, move to next stage
+            console.log(`⏭️ Stage complete, transitioning...`);
             setCurrentStage(current => {
               const nextStage = (current + 1) % stages.length;
-              console.log(`🔄 STAGE TRANSITION: ${current} (${stages[current]?.title}) → ${nextStage} (${stages[nextStage]?.title})`);
+              console.log(`🔄 TRANSITION: ${current} (${stages[current]?.title}) → ${nextStage} (${stages[nextStage]?.title})`);
               return nextStage;
             });
             return 0; // Reset progress for next stage
@@ -741,10 +745,15 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
           
           return newProgress;
         });
-      }, 100);
+      }, 200); // Slower interval - 200ms instead of 100ms
     }
     
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+        console.log('🛑 Auto-play stopped');
+      }
+    };
   }, [isPlaying, duration]);
 
   const handlePlay = () => setIsPlaying(!isPlaying);
@@ -755,8 +764,13 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
     setProgress(0);
   };
 
-  const renderStageVisualization = (stageIndex: number) => {
+  const renderStageVisualization = useCallback((stageIndex: number) => {
     const stage = stages[stageIndex];
+    
+    if (!stage) {
+      console.warn(`⚠️ No stage found for index ${stageIndex}`);
+      return null;
+    }
     
     switch (stage.id) {
       case 'chaos':
@@ -766,9 +780,10 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
       case 'completion':
         return <LivingApplication concepts={stage.concepts} />;
       default:
+        console.warn(`⚠️ Unknown stage id: ${stage.id}`);
         return null;
     }
-  };
+  }, []);
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark overflow-hidden">
@@ -780,79 +795,38 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
 
-        {/* Timeline Horizontale - Étapes en ligne */}
-        <div className="flex justify-center mb-12">
-          <div className="flex items-center space-x-8">
-            {stages.map((stage, index) => (
-              <React.Fragment key={stage.id}>
-                {/* Étape */}
-                <div className="relative flex flex-col items-center">
-                  <motion.div
-                    className={`relative z-10 w-16 h-16 rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
-                      index <= currentStage 
-                        ? `${stage.color} border-current bg-current/20 shadow-lg` 
-                        : 'text-text-secondary border-text-secondary/30 bg-background-dark'
-                    }`}
-                    animate={{
-                      scale: index === currentStage ? 1.2 : 1,
-                      boxShadow: index === currentStage 
-                        ? "0 0 30px rgba(59, 130, 246, 0.3)" 
-                        : "0 0 0px rgba(59, 130, 246, 0)"
-                    }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {stage.icon}
-                  </motion.div>
-                  
-                  {/* Numéro d'étape */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-accent-red to-primary-blue rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg z-20">
-                    {index + 1}
-                  </div>
-                  
-                  {/* Titre sous l'icône */}
-                  <div className="mt-4 text-center max-w-xs">
-                    <h4 className={`font-bold text-sm mb-2 ${stage.color}`}>
-                      {stage.title}
-                    </h4>
-                    <p className="text-xs text-text-secondary leading-relaxed">
-                      {stage.description}
-                    </p>
-                    {/* Manual navigation button for testing */}
-                    <button
-                      onClick={() => setCurrentStage(index)}
-                      className="mt-2 px-2 py-1 text-xs bg-primary-blue/20 text-primary-blue rounded hover:bg-primary-blue/30 transition-colors"
-                    >
-                      Voir étape {index + 1}
-                    </button>
-                  </div>
-                </div>
 
-                {/* Flèche entre les étapes */}
-                {index < stages.length - 1 && (
-                  <motion.div
-                    className="flex items-center text-accent-red/60"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <div className="w-8 h-0.5 bg-gradient-to-r from-current to-transparent"></div>
-                    <div className="w-0 h-0 border-l-4 border-l-current border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
-                  </motion.div>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
+        {/* Visualisation principale - Format responsive et bien centré */}
+        <div className="relative h-[500px] md:h-[600px] w-full max-w-4xl mx-auto mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
+          
+          {/* Transition Arrow */}
+          <AnimatePresence>
+            <motion.div
+              key={`arrow-${currentStage}`}
+              className="absolute top-1/2 right-8 z-20 pointer-events-none"
+              initial={{ opacity: 0, x: -20, scale: 0.5 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 20, scale: 1.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <div className="bg-gradient-to-r from-primary-blue to-accent-yellow p-3 rounded-full shadow-lg border-2 border-white/20">
+                <ArrowRight className="w-8 h-8 text-white" />
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-        {/* Visualisation principale - Format vertical immersif et allongé */}
-        <div className="relative h-[800px] w-[600px] mx-auto mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStage}
               className="absolute inset-0"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -30, scale: 0.95 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "-100%", opacity: 0 }}
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                x: { type: "spring", stiffness: 100, damping: 20 }
+              }}
             >
               {renderStageVisualization(currentStage)}
             </motion.div>

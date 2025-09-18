@@ -3,7 +3,7 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Code, Zap, Users, Bot, BookOpen, Star, Play } from 'lucide-react';
+import { ArrowRight, Code, Zap, Users, Bot, BookOpen, Star, Play, BarChart3 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import TransformationProcessInteractive from './TransformationProcessInteractive';
 import Image from 'next/image';
@@ -82,44 +82,37 @@ const HeroBanner: React.FC = memo(() => {
               </div>
             </h1>
             
-            <div className="space-y-4">
+            {/* Main subtitle */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="space-y-6"
+            >
               <p className="text-xl md:text-2xl text-text-primary leading-relaxed font-medium">
                 {t('subtitle')}
               </p>
               
-            </div>
-            
-            {/* Tech Stack Display */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-4"
-            >
-              <p className="text-sm text-text-secondary uppercase tracking-wider font-semibold flex items-center">
-                <Star className="w-4 h-4 mr-2 text-accent-yellow" />
-                Outils que vous maîtriserez
-              </p>
-              
-              <div className="flex flex-wrap items-center gap-3">
-                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-primary-blue/20 backdrop-blur-sm hover:border-primary-blue/40 transition-colors">
-                  <Bot className="w-5 h-5 text-primary-blue mr-2" />
-                  <span className="text-text-light text-sm font-medium">Claude AI</span>
-                </div>
-                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-text-secondary/20 backdrop-blur-sm hover:border-text-secondary/40 transition-colors">
-                  <Code className="w-5 h-5 text-text-light mr-2" />
-                  <span className="text-text-light text-sm font-medium">GitHub</span>
-                </div>
-                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-success-green/20 backdrop-blur-sm hover:border-success-green/40 transition-colors">
-                  <Zap className="w-5 h-5 text-success-green mr-2" />
-                  <span className="text-text-light text-sm font-medium">Next.js</span>
-                </div>
-                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-accent-yellow/20 backdrop-blur-sm hover:border-accent-yellow/40 transition-colors">
-                  <Play className="w-5 h-5 text-accent-yellow mr-2" />
-                  <span className="text-text-light text-sm font-medium">+ 20 autres</span>
+              {/* Statistics & Social Proof */}
+              <div className="bg-background-accent-grey/30 backdrop-blur-sm rounded-2xl p-6 border border-text-secondary/20">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-accent-yellow/20 rounded-xl flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6 text-accent-yellow" />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-lg md:text-xl font-semibold text-text-light mb-2">
+                      60% des apps d'entreprise sont développées hors IT
+                    </p>
+                    <p className="text-text-primary leading-relaxed">
+                      La technique n'est plus une limite — maîtrisez les outils pour concrétiser vos idées.
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
+            
             
             
             {/* Call-to-Action Buttons */}

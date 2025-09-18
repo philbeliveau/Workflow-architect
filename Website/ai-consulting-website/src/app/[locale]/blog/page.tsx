@@ -65,21 +65,6 @@ export default function BlogPage() {
         solution: 'Swarm de 8 agents IA spécialisés travaillant en parallèle',
         results: ['4h de développement vs 3 semaines équipe', '93.8% précision moyenne', '99.97% uptime production']
       }
-    },
-    {
-      id: 'claude-alignment-techniques',
-      title: 'Comment J\'ai Contraint Claude : Techniques d\'Alignement et Persistance des Contraintes',
-      excerpt: 'Quand j\'ai commencé à travailler avec Claude sur l\'extraction de données personnelles (PII), j\'ai rapidement découvert un problème majeur : Claude avait tendance à prendre des raccourcis.',
-      date: '2025-01-15',
-      readTime: '12 min',
-      category: 'IA & Développement',
-      tags: ['Claude', 'PII', 'Alignement', 'Architecture'],
-      featured: false,
-      context: {
-        challenge: 'Claude prenait des raccourcis dans l\'extraction de données personnelles',
-        solution: 'Architecture de contraintes avec CLAUDE.md et mémoire persistante',
-        results: ['+66.6% performance vs version non-alignée', '100% conformité fonctionnelle', '0% erreur production 6 mois']
-      }
     }
   ];
 

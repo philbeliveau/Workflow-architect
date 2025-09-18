@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { Zap, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Zap, Mail, MapPin, Phone } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useParams, useRouter } from 'next/navigation';
 
@@ -34,37 +34,6 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Newsletter Section */}
-        <div className="py-16 border-b border-text-muted">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-h2 font-bold text-text-light mb-4">
-              {t('newsletter.title')}
-            </h3>
-            <p className="text-text-secondary mb-8 leading-relaxed">
-              {t('newsletter.description')}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-              <div className="flex-1 w-full">
-                <input
-                  type="email"
-                  placeholder={t('newsletter.placeholder')}
-                  className="w-full px-4 py-3 bg-background-dark border border-text-muted rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-accent-red transition-colors"
-                />
-              </div>
-              <Button variant="primary" size="md" className="whitespace-nowrap">
-                {t('newsletter.button')}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </motion.div>
-        </div>
 
         {/* Main Footer Content */}
         <div className="py-16">

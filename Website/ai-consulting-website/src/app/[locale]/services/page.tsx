@@ -4,7 +4,6 @@ import ServiceDetailCards from '@/components/sections/services/ServiceDetailCard
 import ProcessTimeline from '@/components/sections/services/ProcessTimeline';
 import ToolsIntegration from '@/components/sections/services/ToolsIntegration';
 import GuaranteeSection from '@/components/sections/services/GuaranteeSection';
-import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/sections/Footer';
 
 export default function ServicesPage() {
@@ -18,7 +17,6 @@ export default function ServicesPage() {
         <ProcessTimeline />
         <ToolsIntegration />
         <GuaranteeSection />
-        <CTASection />
       </main>
       
       <Footer />

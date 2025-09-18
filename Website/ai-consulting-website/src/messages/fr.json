@@ -227,32 +227,7 @@
     ],
     "next_step": "Étape suivante"
   },
-  "cta": {
-    "title": "Prêt à vous formez?",
-    "subtitle": "Évaluation gratuite adaptée à votre profil. Nous analyserons vos besoins et vous montrerons",
-    "subtitle_highlight": "exactement ce que vous pourrez construire avec l'IA.",
-    "benefits": [
-      "Évaluation gratuite 30 min",
-      "Recommandations personnalisées par profil",
-      "Démonstration concrète",
-      "Plan d'implémentation immédiat"
-    ],
-    "button": "Réserver Évaluation Gratuite",
-    "supporting_text": "Évaluation gratuite sans argumentaire commercial. Juste des insights exploitables sur vos besoins et les solutions possibles.",
-    "guarantee": "Pas de vente, pas d'engagement, juste des solutions",
-    "social_proof": {
-      "teams": "50+ équipes transformées",
-      "results": "Résultats en première semaine",
-      "satisfaction": "Satisfaction 95%"
-    }
-  },
   "footer": {
-    "newsletter": {
-      "title": "Restez à jour avec l'IA",
-      "description": "Recevez des guides pratiques, des études de cas et des insights sur l'IA directement dans votre boîte mail. Pas de spam, que du contenu de valeur.",
-      "placeholder": "votre@email.com",
-      "button": "S'abonner"
-    },
     "company_description": "NEWCODE vous aide à construire et déployer vos solutions IA. Développeurs et dirigeants, tout le monde mérite l'accès aux capacités logicielles modernes.",
     "sections": {
       "navigation": "Navigation",

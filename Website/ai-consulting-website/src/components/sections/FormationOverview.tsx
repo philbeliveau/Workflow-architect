@@ -18,6 +18,22 @@ const FormationOverview: React.FC = memo(() => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-blue/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
+      {/* Background grid pattern with squares */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="grid grid-cols-12 gap-2 h-full p-4">
+          {Array.from({ length: 144 }, (_, i) => (
+            <div 
+              key={i} 
+              className="bg-text-secondary rounded-sm animate-pulse" 
+              style={{
+                animationDelay: `${i * 0.05}s`,
+                animationDuration: '3s'
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -35,10 +51,10 @@ const FormationOverview: React.FC = memo(() => {
           </p>
         </motion.div>
 
-        {/* Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 items-center">
+        {/* Two-Column Layout inspired by the reference image */}
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-16 items-start">
           
-          {/* Left Column: Formation Overview */}
+          {/* Left Column: Course Overview */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -46,76 +62,98 @@ const FormationOverview: React.FC = memo(() => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            {/* Formation Cards */}
+            <div>
+              <h3 className="text-3xl font-bold text-text-light mb-4">
+                Aperçu de la Formation
+              </h3>
+              <p className="text-lg text-text-primary mb-8">
+                {t('value_proposition')}
+              </p>
+            </div>
+
+            {/* Course Overview Items */}
             <div className="space-y-6">
               
-              {/* Formation Débutant */}
+              {/* Duration & Format Combined */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-gradient-to-br from-accent-yellow/10 to-accent-yellow/5 border border-accent-yellow/30 rounded-2xl p-8 backdrop-blur-sm hover:border-accent-yellow/50 transition-all duration-300"
+                className="flex items-start space-x-4"
               >
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-accent-yellow mb-2">
-                      {t('formation_beginner.title')}
-                    </h3>
-                    <p className="text-lg text-text-light font-medium">
-                      {t('formation_beginner.subtitle')}
-                    </p>
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-yellow/20 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-accent-yellow rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 bg-accent-yellow rounded-full"></div>
                   </div>
-                  
-                  <ul className="space-y-2">
-                    {t.raw('formation_beginner.features').map((feature: string, index: number) => (
-                      <li key={index} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-accent-yellow rounded-full"></div>
-                        <span className="text-text-primary">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <blockquote className="text-accent-yellow font-semibold text-lg italic border-l-4 border-accent-yellow pl-4">
-                    "{t('formation_beginner.quote')}"
-                  </blockquote>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-accent-yellow mb-2">Durée & Format</h4>
+                  <p className="text-text-primary">
+                    <strong>6 à 12 heures de formation intensive</strong> en ligne avec support communautaire. Suivez les leçons à votre rythme avec un accompagnement personnalisé. Cours mis à jour en continu — l'IA évolue, notre formation aussi.
+                  </p>
                 </div>
               </motion.div>
 
-              {/* Formation Avancée */}
+              {/* Skill Level */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gradient-to-br from-primary-blue/10 to-primary-blue/5 border border-primary-blue/30 rounded-2xl p-8 backdrop-blur-sm hover:border-primary-blue/50 transition-all duration-300"
+                className="flex items-start space-x-4"
               >
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary-blue mb-2">
-                      {t('formation_advanced.title')}
-                    </h3>
-                    <p className="text-lg text-text-light font-medium">
-                      {t('formation_advanced.subtitle')}
-                    </p>
+                <div className="flex-shrink-0 w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-primary-blue rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
                   </div>
-                  
-                  <ul className="space-y-2">
-                    {t.raw('formation_advanced.features').map((feature: string, index: number) => (
-                      <li key={index} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
-                        <span className="text-text-primary">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <blockquote className="text-primary-blue font-semibold text-lg italic border-l-4 border-primary-blue pl-4">
-                    "{t('formation_advanced.quote')}"
-                  </blockquote>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-primary-blue mb-2">Niveau</h4>
+                  <p className="text-text-primary">
+                    Débutants complets aux développeurs expérimentés souhaitant maîtriser les techniques agentiques. Aucun prérequis technique nécessaire pour commencer.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* What you get */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex items-start space-x-4"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-purple/20 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-accent-purple rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 bg-accent-purple rounded-full"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-accent-purple mb-2">Ce que vous obtenez</h4>
+                  <p className="text-text-primary">
+                    Formation complète, communauté active, templates prêts à l'emploi, sessions live, réseau de développeurs et entrepreneurs, et des amitiés durables.
+                  </p>
                 </div>
               </motion.div>
             </div>
 
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="pt-6"
+            >
+              <Button 
+                size="lg" 
+                className="bg-primary-blue hover:bg-primary-blue/90 px-8 py-4 text-lg font-bold"
+              >
+                {t('cta')}
+                <ArrowRight className="w-5 h-5 ml-3" />
+              </Button>
+            </motion.div>
           </motion.div>
           
           {/* Right Column: Circle Community Visual */}
@@ -126,10 +164,10 @@ const FormationOverview: React.FC = memo(() => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
+            <div className="relative aspect-[4/3] max-w-2xl mx-auto">
               {/* Circle Community Image */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-primary-blue/30"
               >
@@ -138,7 +176,7 @@ const FormationOverview: React.FC = memo(() => {
                   alt="Communauté Circle Newcode avec discussions et partage de projets"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
                 />
                 
                 {/* Overlay with community stats */}
@@ -163,15 +201,7 @@ const FormationOverview: React.FC = memo(() => {
                 </div>
               </motion.div>
               
-              {/* Floating elements around the image */}
-              <motion.div
-                className="absolute -top-4 -right-4 bg-primary-blue/20 border border-primary-blue/40 rounded-lg px-3 py-2 backdrop-blur-sm"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <span className="text-primary-blue text-sm font-medium">🚀 Communauté</span>
-              </motion.div>
-              
+              {/* Floating elements */}
               <motion.div
                 className="absolute -bottom-4 -left-4 bg-success-green/20 border border-success-green/40 rounded-lg px-3 py-2 backdrop-blur-sm"
                 animate={{ y: [0, 10, 0] }}

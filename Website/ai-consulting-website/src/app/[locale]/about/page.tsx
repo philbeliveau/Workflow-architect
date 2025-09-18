@@ -1,6 +1,5 @@
 import Navigation from '@/components/sections/Navigation';
 import AboutSection from '@/components/sections/AboutSection';
-import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/sections/Footer';
 
 export default function AboutPage() {
@@ -10,7 +9,6 @@ export default function AboutPage() {
       
       <main className="pt-20">
         <AboutSection />
-        <CTASection />
       </main>
       
       <Footer />

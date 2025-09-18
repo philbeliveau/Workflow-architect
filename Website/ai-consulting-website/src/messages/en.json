@@ -44,6 +44,8 @@
     },
     "summary": "Complete method to transform your teams",
     "cta": {
+      "primary": "Get Started",
+      "secondary": "Learn More",
       "training": "Our training",
       "guide": "Our guide"
     }
@@ -191,32 +193,7 @@
     ],
     "next_step": "Next step"
   },
-  "cta": {
-    "title": "Ready to get trained?",
-    "subtitle": "Free assessment tailored to your profile. We'll analyze your needs and show you",
-    "subtitle_highlight": "exactly what you can build with AI.",
-    "benefits": [
-      "Free 30-minute assessment",
-      "Personalized recommendations by profile",
-      "Concrete demonstration",
-      "Immediate implementation plan"
-    ],
-    "button": "Book Free Assessment",
-    "supporting_text": "Free assessment without sales pitch. Just actionable insights on your needs and possible solutions.",
-    "guarantee": "No sales, no commitment, just solutions",
-    "social_proof": {
-      "teams": "50+ teams transformed",
-      "results": "Results in first week",
-      "satisfaction": "95% satisfaction"
-    }
-  },
   "footer": {
-    "newsletter": {
-      "title": "Stay up to date with AI",
-      "description": "Receive practical guides, case studies and insights on AI directly in your inbox. No spam, just valuable content.",
-      "placeholder": "your@email.com",
-      "button": "Subscribe"
-    },
     "company_description": "NEWCODE helps you build and deploy your AI solutions. Developers and leaders, everyone deserves access to modern software capabilities.",
     "sections": {
       "navigation": "Navigation",
@@ -1067,6 +1044,226 @@
     "book_demo": {
       "title": "Book a Demo - NEWCODE",
       "description": "Book your free assessment and discover how AI can transform your processes. Personalized audit included."
+    }
+  },
+  "formation_overview": {
+    "title": "Training Overview",
+    "subtitle": "Comprehensive agentic development training for all skill levels",
+    "value_proposition": "Transform your development workflow with AI agents. Learn to orchestrate specialized agents for faster, more efficient software development.",
+    "cta": "Start Your Training",
+    "community_caption": "Join our community of agentic developers",
+    "beginner": {
+      "title": "Beginner Level",
+      "description": "Perfect for non-technical professionals",
+      "duration": "6 hours",
+      "format": "Interactive workshop"
+    },
+    "intermediate": {
+      "title": "Intermediate Level", 
+      "description": "For developers with basic experience",
+      "duration": "8 hours",
+      "format": "Hands-on coding sessions"
+    },
+    "expert": {
+      "title": "Expert Level",
+      "description": "Advanced agent orchestration techniques", 
+      "duration": "12 hours",
+      "format": "Deep-dive workshops"
+    }
+  },
+  "target_audience": {
+    "title": "Who is this training for?",
+    "subtitle": "Training accessible to all, adapted to technical and non-technical roles",
+    "segments": {
+      "entrepreneurs": {
+        "title": "Entrepreneurs",
+        "headline": "From idea to deployed application",
+        "pain_points": [
+          "Dependence on developers for every idea",
+          "Prohibitive development costs",
+          "Too long product validation delays",
+          "Difficulty to iterate quickly"
+        ],
+        "transformation": [
+          "Create your own functional prototypes",
+          "Validate your ideas in a few hours",
+          "Iterate without technical constraints",
+          "Launch your MVP autonomously"
+        ],
+        "success_metrics": "Idea validation time: 2 months → 48h | Prototyping cost: -85%"
+      },
+      "intrapreneurs": {
+        "title": "Intrapreneurs",
+        "headline": "Innovate within your organization",
+        "pain_points": [
+          "IT processes too slow for innovation",
+          "Tight budgets for exploratory projects",
+          "Difficulty convincing without proof of concept",
+          "Dependence on internal technical resources"
+        ],
+        "transformation": [
+          "Build proof of concepts internally",
+          "Demonstrate innovation without waiting for IT",
+          "Accelerate internal processes",
+          "Lead digital transformation initiatives"
+        ],
+        "success_metrics": "Project approval rate: +75% | Innovation cycle: 6 months → 3 weeks"
+      },
+      "tech_enthusiasts": {
+        "title": "Tech Enthusiasts",
+        "headline": "From curiosity to mastery",
+        "pain_points": [
+          "Scattered learning without clear direction",
+          "Difficulty staying up to date with AI tools",
+          "Gap between theory and practical application",
+          "Lack of structured methodology"
+        ],
+        "transformation": [
+          "Master cutting-edge tools systematically",
+          "Build impressive projects for your portfolio",
+          "Become an AI expert in your field",
+          "Create tangible value with your skills"
+        ],
+        "success_metrics": "Learning efficiency: +300% | Portfolio projects: 0 → 5 in 3 months"
+      },
+      "experienced_developers": {
+        "title": "Experienced Developers",
+        "headline": "Multiply your productivity",
+        "pain_points": [
+          "Repetitive coding tasks",
+          "Difficulty keeping up with new technologies",
+          "Pressure to deliver faster",
+          "Manual processes that could be automated"
+        ],
+        "transformation": [
+          "Automate repetitive tasks with agents",
+          "Focus on high-value architecture",
+          "Deliver projects 3-5x faster",
+          "Stay ahead of technological evolution"
+        ],
+        "success_metrics": "Development speed: +400% | Code quality: +60% | Job satisfaction: +90%"
+      },
+      "creative_professionals": {
+        "title": "Creative Professionals",
+        "headline": "Bring your ideas to life",
+        "pain_points": [
+          "Technical barriers to implement ideas",
+          "Dependence on developers for digital projects",
+          "Limited by traditional tools",
+          "Ideas remain conceptual"
+        ],
+        "transformation": [
+          "Transform concepts into functional applications",
+          "Create without technical limitations",
+          "Build interactive experiences",
+          "Monetize your creativity digitally"
+        ],
+        "success_metrics": "Idea-to-reality time: 6 months → 1 week | Creative output: +250%"
+      },
+      "business_professionals": {
+        "title": "Business Professionals",
+        "headline": "Optimize your processes",
+        "pain_points": [
+          "Manual repetitive processes",
+          "Difficulty accessing and analyzing data",
+          "Dependence on IT for simple tools",
+          "Inefficient workflows"
+        ],
+        "transformation": [
+          "Automate business processes",
+          "Create custom analysis dashboards",
+          "Build internal tools independently",
+          "Optimize team productivity"
+        ],
+        "success_metrics": "Process efficiency: +200% | Data accessibility: +500% | Tool creation: weeks → hours"
+      }
+    },
+    "roles": {
+      "developers": {
+        "title": "Developers & Tech Teams",
+        "description": "Learn agent orchestration and automation"
+      },
+      "managers": {
+        "title": "Project Managers",
+        "description": "Understand agentic workflows and coordination"
+      },
+      "analysts": {
+        "title": "Business Analysts", 
+        "description": "Transform requirements into agent specifications"
+      },
+      "entrepreneurs": {
+        "title": "Entrepreneurs",
+        "description": "Build prototypes with AI agents"
+      },
+      "consultants": {
+        "title": "Consultants",
+        "description": "Deliver faster solutions to clients"
+      },
+      "students": {
+        "title": "Students",
+        "description": "Future-proof your career with AI skills"
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions about our agentic development training",
+    "categories": {
+      "formation": "Training",
+      "support": "Support", 
+      "practical": "Practical",
+      "after": "After Training",
+      "technical": "Technical"
+    },
+    "questions": {
+      "experience_required": {
+        "q": "Do I need programming experience?",
+        "a": "No prior programming experience required. Our training is designed for all skill levels."
+      },
+      "time_to_results": {
+        "q": "How quickly will I see results?",
+        "a": "Most participants build their first AI agent within the first week of training."
+      },
+      "industry_fit": {
+        "q": "Will this work for my industry?",
+        "a": "Yes, agentic development principles apply across all industries and use cases."
+      },
+      "vs_traditional": {
+        "q": "How is this different from traditional coding?",
+        "a": "Instead of writing code line by line, you orchestrate AI agents to build applications through natural language."
+      },
+      "support_when_stuck": {
+        "q": "What if I get stuck?",
+        "a": "We provide 30 days of support via our Circle community and direct access to instructors."
+      },
+      "guarantee": {
+        "q": "Is there a satisfaction guarantee?",
+        "a": "Yes, we offer a 30-day money-back guarantee if you're not satisfied with the training."
+      },
+      "payment_options": {
+        "q": "What payment options are available?",
+        "a": "We accept all major credit cards and offer payment plans for corporate training."
+      },
+      "funding_eligible": {
+        "q": "Is this eligible for training funding?",
+        "a": "Yes, our training qualifies for most professional development and corporate training budgets."
+      },
+      "after_training": {
+        "q": "What happens after the training?",
+        "a": "You get lifetime access to our Circle community, updates to training materials, and ongoing support."
+      },
+      "stay_updated": {
+        "q": "How do I stay updated with new AI tools?",
+        "a": "Our Circle community provides regular updates on new tools, techniques, and best practices."
+      },
+      "hardware_requirements": {
+        "q": "What hardware do I need?",
+        "a": "Any modern computer with internet access. All AI processing happens in the cloud."
+      },
+      "mac_pc_compatible": {
+        "q": "Does this work on Mac and PC?",
+        "a": "Yes, our training works on all operating systems including Mac, Windows, and Linux."
+      }
     }
   },
   "team": {
