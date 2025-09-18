@@ -661,131 +661,64 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
           </p>
         </motion.div>
 
-        {/* Timeline Verticale - Design immersif */}
+        {/* Timeline Horizontale - Étapes en ligne */}
         <div className="flex justify-center mb-12">
-          <div className="relative">
-            {/* Ligne verticale principale avec effets */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-2 bg-gradient-to-b from-accent-red/40 via-primary-blue/40 to-accent-yellow/40 transform -translate-x-1/2 rounded-full shadow-lg" />
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent-red via-primary-blue to-accent-yellow transform -translate-x-1/2 rounded-full" />
-            
-            {/* Étapes avec labels */}
-            <div className="space-y-24">
-              {stages.map((stage, index) => (
-                <div key={stage.id} className="relative flex items-center">
-                  {/* Icône de l'étape améliorée */}
+          <div className="flex items-center space-x-8">
+            {stages.map((stage, index) => (
+              <React.Fragment key={stage.id}>
+                {/* Étape */}
+                <div className="relative flex flex-col items-center">
                   <motion.div
-                    className={`relative z-10 w-20 h-20 rounded-2xl border-4 flex items-center justify-center transition-all duration-500 ${
+                    className={`relative z-10 w-16 h-16 rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
                       index <= currentStage 
-                        ? `${stage.color} border-current bg-current/20 shadow-2xl backdrop-blur-sm` 
-                        : 'text-text-secondary border-text-secondary/30 bg-slate-800/50 backdrop-blur-sm'
+                        ? `${stage.color} border-current bg-current/20 shadow-lg` 
+                        : 'text-text-secondary border-text-secondary/30 bg-background-dark'
                     }`}
                     animate={{
-                      scale: index === currentStage ? 1.3 : 1,
+                      scale: index === currentStage ? 1.2 : 1,
                       boxShadow: index === currentStage 
-                        ? "0 0 40px rgba(59, 130, 246, 0.4), 0 0 80px rgba(59, 130, 246, 0.2)" 
-                        : "0 0 0px rgba(59, 130, 246, 0)",
-                      rotateY: index === currentStage ? [0, 10, -10, 0] : 0
+                        ? "0 0 30px rgba(59, 130, 246, 0.3)" 
+                        : "0 0 0px rgba(59, 130, 246, 0)"
                     }}
-                    transition={{ 
-                      duration: 0.8,
-                      rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                    }}
+                    transition={{ duration: 0.5 }}
                   >
                     {stage.icon}
-                    
-                    {/* Particules autour de l'étape active */}
-                    {index === currentStage && (
-                      <>
-                        {Array.from({ length: 4 }, (_, i) => (
-                          <motion.div
-                            key={i}
-                            className="absolute w-2 h-2 bg-current rounded-full"
-                            style={{
-                              top: '50%',
-                              left: '50%',
-                              marginTop: '-4px',
-                              marginLeft: '-4px'
-                            }}
-                            animate={{
-                              rotate: 360,
-                              x: [0, 35 * Math.cos((i * 90) * Math.PI / 180)],
-                              y: [0, 35 * Math.sin((i * 90) * Math.PI / 180)],
-                              opacity: [1, 0.3, 1]
-                            }}
-                            transition={{
-                              duration: 3,
-                              repeat: Infinity,
-                              ease: "linear",
-                              delay: i * 0.2
-                            }}
-                          />
-                        ))}
-                      </>
-                    )}
                   </motion.div>
                   
-                  {/* Labels étendus à droite */}
-                  <motion.div
-                    className="absolute left-24 top-1/2 transform -translate-y-1/2 bg-slate-900/80 backdrop-blur-sm rounded-xl p-4 border border-primary-blue/30 max-w-xs"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ 
-                      opacity: index <= currentStage ? 1 : 0.5,
-                      x: 0,
-                      scale: index === currentStage ? 1.05 : 1
-                    }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
+                  {/* Numéro d'étape */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-accent-red to-primary-blue rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg z-20">
+                    {index + 1}
+                  </div>
+                  
+                  {/* Titre sous l'icône */}
+                  <div className="mt-4 text-center max-w-xs">
                     <h4 className={`font-bold text-sm mb-2 ${stage.color}`}>
                       {stage.title}
                     </h4>
                     <p className="text-xs text-text-secondary leading-relaxed">
                       {stage.description}
                     </p>
-                  </motion.div>
-                  
-                  {/* Ligne de progression avec flux d'énergie */}
-                  {index < stages.length - 1 && (
-                    <motion.div
-                      className="absolute left-1/2 top-20 w-2 h-24 transform -translate-x-1/2 rounded-full overflow-hidden bg-slate-700/30"
-                    >
-                      <motion.div
-                        className="w-full bg-gradient-to-b from-current via-primary-blue to-accent-yellow"
-                        initial={{ height: '0%' }}
-                        animate={{ 
-                          height: index < currentStage ? '100%' : '0%',
-                        }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                      />
-                      
-                      {/* Flux d'énergie */}
-                      {index < currentStage && (
-                        <motion.div
-                          className="absolute inset-0 w-full bg-gradient-to-b from-white/30 to-transparent"
-                          animate={{
-                            y: ['-100%', '100%']
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "linear"
-                          }}
-                        />
-                      )}
-                    </motion.div>
-                  )}
-                  
-                  {/* Numéro d'étape stylisé */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br from-accent-red to-primary-blue rounded-full flex items-center justify-center text-white font-bold text-sm shadow-xl z-20 border-2 border-white/20">
-                    {index + 1}
                   </div>
                 </div>
-              ))}
-            </div>
+
+                {/* Flèche entre les étapes */}
+                {index < stages.length - 1 && (
+                  <motion.div
+                    className="flex items-center text-accent-red/60"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <div className="w-8 h-0.5 bg-gradient-to-r from-current to-transparent"></div>
+                    <div className="w-0 h-0 border-l-4 border-l-current border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+                  </motion.div>
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
 
-        {/* Visualisation principale - Format vertical immersif */}
-        <div className="relative h-[600px] mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
+        {/* Visualisation principale - Format vertical immersif et allongé */}
+        <div className="relative h-[800px] mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStage}
