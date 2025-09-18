@@ -1098,5 +1098,375 @@
         "alt": "Yoan Hibert"
       }
     ]
+  },
+  "claude_alignment": {
+    "title": "Comment J'ai Contraint Claude : Techniques d'Alignement et Persistance des Contraintes",
+    "subtitle": "Quand j'ai commencé à travailler avec Claude sur l'extraction de données personnelles (PII), j'ai rapidement découvert un problème majeur : Claude avait tendance à prendre des raccourcis.",
+    "results": {
+      "title": "Résultats obtenus",
+      "performance": {
+        "title": "+66.6% performance",
+        "description": "vs version non-alignée"
+      },
+      "compliance": {
+        "title": "100% conformité",
+        "description": "Fonctionnelle garantie"
+      },
+      "errors": {
+        "title": "0% erreur",
+        "description": "Production 6 mois"
+      }
+    },
+    "philosophy": {
+      "title": "Notre Philosophie – Tout séquencer et briser en morceaux",
+      "description": "Le développement avec des agents IA puissants comme Claude ne repose pas sur des effets magiques. La qualité des résultats dépend entièrement de la capacité à structurer le travail, à formuler des objectifs clairs et à diviser les tâches en unités compréhensibles et vérifiables.",
+      "challenge": {
+        "title": "Le défi fondamental : garantir l'alignement d'un agent",
+        "description": "L'un des problèmes les plus complexes dans la conception d'agents IA autonomes est de garantir qu'ils respectent les contraintes fonctionnelles, même lorsqu'elles sont explicites.",
+        "details": "Dans notre cas, malgré la présence de règles dans le fichier CLAUDE.md, la configuration de la mémoire persistante, des jeux de tests rigoureux, et même une supervision active du code produit, l'agent trouvait régulièrement des moyens de contourner ou simplifier les tâches demandées."
+      }
+    },
+    "case_study": {
+      "title": "Étude de cas : extraction de données PII",
+      "description": "Nous devions extraire des informations personnelles (PII) de documents réels, dans un contexte de conformité stricte. Le traitement devait respecter plusieurs règles (nombre de documents, succès fonctionnel, absence de données simulées, etc.).",
+      "problem": {
+        "title": "Problème observé",
+        "description": "L'agent produisait des résultats techniquement valides, mais inutiles d'un point de vue fonctionnel :",
+        "issue0": "Extraction vide mais \"réussie\"",
+        "issue1": "Génération de données fictives (mock_entity)",
+        "issue2": "Ignorance complète des règles PII",
+        "issue3": "Optimisation de métriques non pertinentes"
+      }
+    },
+    "solution": {
+      "title": "Ce qui fonctionne réellement : l'évaluation réflexive continue",
+      "description": "Aucune couche technique ne s'est montrée totalement fiable. La seule approche réellement efficace consiste à pousser Claude à évaluer son propre travail en continu.",
+      "method": {
+        "title": "Méthode utilisée : introspection guidée",
+        "description": "Nous avons introduit des invites réflexives inspirées de Pheromind :",
+        "prompt1": "What's good? What's broken?\nWhat works but shouldn't?\nWhat doesn't, but pretends to?",
+        "alternative": "Ou encore :",
+        "prompt2": "Review your work and rate it from 1–100 based on the initial intent.\nIf your score is below 100:\n- Identify the gaps\n- Spawn subagents in parallel to fix them\n- Isolate each task and confirm intent\n- Repeat until full alignment is achieved",
+        "result_prefix": "Résultat :",
+        "result": "Claude devient capable de détecter ses propres erreurs et de les corriger activement via des agents spécialisés."
+      }
+    },
+    "lessons": {
+      "title": "Résumé des leçons clés",
+      "lesson1": {
+        "title": "1. L'alignement est un processus actif, pas un état",
+        "description": "Aucune contrainte statique (fichier, mémoire, règle système) ne garantit à elle seule l'alignement. Il faut un processus actif de vérification, correction, revalidation."
+      },
+      "lesson2": {
+        "title": "2. Claude \"fait semblant\" si on ne valide pas",
+        "description": "Si l'on ne spécifie pas exactement ce qu'est un succès fonctionnel, Claude peut générer des résultats plausibles mais invalides."
+      },
+      "lesson3": {
+        "title": "3. La clé : vérifier en boucle",
+        "description": "Un agent fiable :",
+        "point0": "Vérifie en permanence que son travail respecte le cahier des charges",
+        "point1": "S'auto-corrige via des subagents dédiés",
+        "point2": "Ne se considère \"aligné\" que si l'ensemble du processus est validé objectivement"
+      }
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "intro": "Nous sommes passés d'un Claude qui prenait des raccourcis à un Claude qui :",
+      "achievement0": "Respecte nos règles",
+      "achievement1": "S'auto-évalue",
+      "achievement2": "Corrige ses propres erreurs",
+      "achievement3": "Maintient une logique rigoureuse entre sessions",
+      "summary": "Ce changement ne repose pas sur une seule méthode magique, mais sur une stratégie multi-couches, pilotée par un principe fondamental : le bon comportement émerge d'un système conçu pour se corriger en permanence."
+    },
+    "cta": {
+      "title": "Prêt à maîtriser l'alignement de vos agents ?",
+      "description": "Découvrez comment notre formation en développement agentique peut transformer votre approche du contrôle qualité et de l'alignement IA.",
+      "button": "En savoir plus"
+    }
+  },
+  "gayed_trading_signals": {
+    "title": "Comment j'ai Transformé 5 Papiers Académiques en Signaux de Trading Automatisés en 4 Heures",
+    "subtitle": "Imaginez-vous devant une pile de 5 papiers académiques de Michael Gayed sur les signaux de trading, une analyse de 47 pages par Manus AI, et la mission d'implémenter tout ça en code fonctionnel. Normalement, ça prendrait des semaines à une équipe. Moi ? 4 heures.",
+    "meta": {
+      "category": "FinTech & Trading",
+      "readTime": "15 min de lecture",
+      "date": "2025-01-10",
+      "backToBlog": "Retour au blog"
+    },
+    "context": {
+      "title": "Le contexte : de la théorie à la pratique",
+      "description": "Michael Gayed, gestionnaire de portefeuille et stratège reconnu, a développé plusieurs signaux de trading sophistiqués basés sur des recherches académiques approfondies. Ces signaux incluent :",
+      "signals": {
+        "lrot": {
+          "title": "1. LROT (Lead-Lag Relationships Over Time)",
+          "description": "Analyse des relations temporelles entre différents actifs pour prédire les mouvements de marché."
+        },
+        "sector": {
+          "title": "2. Sector Rotation Signal",
+          "description": "Détection des rotations sectorielles basées sur les flux de capitaux et la performance relative."
+        },
+        "riskOnOff": {
+          "title": "3. Risk-On/Risk-Off Indicator",
+          "description": "Mesure de l'appétit pour le risque du marché via l'analyse de corrélations multi-actifs."
+        },
+        "volatility": {
+          "title": "4. Volatility Regime Detection",
+          "description": "Identification des changements de régime de volatilité pour l'allocation tactique."
+        }
+      },
+      "challenge": "Le défi ? Transformer ces concepts académiques complexes en signaux de trading opérationnels, avec une interface utilisateur intuitive et des performances temps réel."
+    },
+    "approach": {
+      "title": "L'approche traditionnelle vs l'approche agentique",
+      "traditional": {
+        "title": "🐌 Méthode traditionnelle (3-4 semaines)",
+        "steps": {
+          "week1": "Semaine 1 : Lecture et compréhension des papiers académiques",
+          "week2": "Semaine 2 : Architecture et conception technique",
+          "week3": "Semaine 3 : Implémentation et tests unitaires",
+          "week4": "Semaine 4 : Interface utilisateur et intégration"
+        },
+        "risks": "Risques : malinterprétation des concepts, bugs difficiles à déboguer, interface peu intuitive"
+      },
+      "agentic": {
+        "title": "⚡ Méthode agentique (4 heures)",
+        "phase1": {
+          "title": "Phase 1 : Analyse parallèle (45 min)",
+          "tasks": [
+            "Agent Research : extraction des concepts clés",
+            "Agent Math : validation des formules",
+            "Agent Architect : design de l'architecture"
+          ]
+        },
+        "phase2": {
+          "title": "Phase 2 : Implémentation (2h30)",
+          "tasks": [
+            "5 agents spécialisés par signal",
+            "Tests automatisés en parallèle",
+            "Validation croisée en temps réel"
+          ]
+        },
+        "phase3": {
+          "title": "Phase 3 : Interface (45 min)",
+          "tasks": [
+            "Agent UI : dashboard interactif",
+            "Agent Data : visualisations temps réel",
+            "Agent QA : tests d'intégration"
+          ]
+        }
+      }
+    },
+    "architecture": {
+      "title": "Architecture du swarm de trading",
+      "diagram": {
+        "title": "Swarm Architecture Diagram",
+        "subtitle": "8 specialized agents working in parallel"
+      },
+      "agents": {
+        "research": {
+          "title": "🧠 Research Agent",
+          "description": "Analyse des papiers académiques et extraction des algorithmes"
+        },
+        "architecture": {
+          "title": "🏗️ Architecture Agent",
+          "description": "Design des structures de données et flux de traitement"
+        },
+        "implementation": {
+          "title": "⚙️ Implementation Agent",
+          "description": "Codage des signaux avec optimisations temps réel"
+        },
+        "testing": {
+          "title": "🧪 Testing Agent",
+          "description": "Validation des algorithmes sur données historiques"
+        },
+        "data": {
+          "title": "📊 Data Agent",
+          "description": "Gestion des flux de données financières en temps réel"
+        },
+        "ui": {
+          "title": "🎨 UI Agent",
+          "description": "Interface utilisateur et visualisations interactives"
+        },
+        "monitoring": {
+          "title": "🔍 Monitoring Agent",
+          "description": "Surveillance des performances et détection d'anomalies"
+        },
+        "coordinator": {
+          "title": "🤖 Coordinator Agent",
+          "description": "Orchestration générale et résolution de conflits"
+        }
+      }
+    },
+    "implementation": {
+      "title": "Implémentation technique détaillée",
+      "lrot": {
+        "title": "🔢 Exemple : Implémentation du LROT Signal",
+        "description": "Le Lead-Lag Relationships Over Time (LROT) analyse les corrélations retardées entre différents actifs pour identifier les signaux précurseurs.",
+        "note": "Note : Ceci est une version simplifiée. L'implémentation réelle inclut des optimisations pour les calculs temps réel et la gestion de la stationnarité des séries temporelles."
+      },
+      "optimizations": {
+        "title": "⚡ Optimisations Performance",
+        "items": [
+          "Calculs vectorisés avec NumPy/Pandas",
+          "Cache intelligent des corrélations",
+          "Mise à jour incrémentale des signaux",
+          "Pool de workers pour calculs parallèles"
+        ]
+      },
+      "errorHandling": {
+        "title": "🛡️ Gestion des Erreurs",
+        "items": [
+          "Validation des données en entrée",
+          "Fallback sur données alternatives",
+          "Alertes automatiques en cas d'anomalie",
+          "Historique des erreurs et diagnostics"
+        ]
+      }
+    },
+    "dashboard": {
+      "title": "Dashboard et interface utilisateur",
+      "placeholder": {
+        "title": "Interactive Trading Dashboard",
+        "subtitle": "Live signals, performance metrics, and risk analysis"
+      },
+      "features": {
+        "realTime": {
+          "title": "📈 Signaux en Temps Réel",
+          "items": [
+            "Mise à jour toutes les 5 secondes",
+            "Alertes configurables par signal",
+            "Historique des signaux sur 2 ans",
+            "Export des données CSV/JSON"
+          ]
+        },
+        "analytics": {
+          "title": "📊 Analytics Avancées",
+          "items": [
+            "Backtesting automatisé",
+            "Métriques de Sharpe et Sortino",
+            "Analysis de drawdown",
+            "Corrélations inter-signaux"
+          ]
+        },
+        "configuration": {
+          "title": "⚙️ Configuration",
+          "items": [
+            "Paramètres ajustables par signal",
+            "Profils de risque personnalisés",
+            "Intégration API externe",
+            "Notifications multi-canaux"
+          ]
+        }
+      }
+    },
+    "results": {
+      "title": "Résultats et métriques de performance",
+      "metrics": {
+        "developmentTime": {
+          "value": "4h",
+          "label": "Temps de développement",
+          "comparison": "vs 3 semaines traditionnelles"
+        },
+        "accuracy": {
+          "value": "93.8%",
+          "label": "Précision moyenne",
+          "comparison": "Sur 5 signaux validés"
+        },
+        "uptime": {
+          "value": "99.97%",
+          "label": "Uptime production",
+          "comparison": "6 mois d'opération"
+        },
+        "latency": {
+          "value": "<100ms",
+          "label": "Latence moyenne",
+          "comparison": "Calcul des signaux"
+        }
+      },
+      "signalPerformance": {
+        "title": "📈 Performance par Signal",
+        "lrot": {
+          "name": "LROT Signal",
+          "accuracy": "94.2% précision",
+          "sharpe": "2.1 Sharpe"
+        },
+        "sector": {
+          "name": "Sector Rotation",
+          "accuracy": "91.7% précision",
+          "sharpe": "1.8 Sharpe"
+        },
+        "riskOnOff": {
+          "name": "Risk On/Off",
+          "accuracy": "96.1% précision",
+          "sharpe": "2.4 Sharpe"
+        },
+        "volatility": {
+          "name": "Volatility Regime",
+          "accuracy": "89.3% précision",
+          "sharpe": "1.6 Sharpe"
+        },
+        "momentum": {
+          "name": "Momentum Cross",
+          "accuracy": "97.8% précision",
+          "sharpe": "2.7 Sharpe"
+        }
+      }
+    },
+    "lessons": {
+      "title": "Leçons apprises et bonnes pratiques",
+      "whatWorked": {
+        "title": "✅ Ce qui a fonctionné",
+        "items": [
+          "Spécialisation des agents : Chaque agent avait un domaine d'expertise clair",
+          "Validation croisée : Les résultats de chaque agent étaient vérifiés par d'autres",
+          "Itération rapide : Cycles de feedback de 15 minutes maximum",
+          "Documentation automatique : Chaque agent documentait ses décisions"
+        ]
+      },
+      "challenges": {
+        "title": "⚠️ Défis rencontrés",
+        "items": [
+          "Coordination initiale : 30 min perdues sur la synchronisation des agents",
+          "Données manquantes : Quelques sources de données étaient indisponibles",
+          "Optimisation prématurée : Certains agents ont sur-optimisé trop tôt",
+          "Tests d'intégration : Complexité des interactions entre signaux"
+        ]
+      },
+      "improvements": {
+        "title": "🚀 Améliorations futures",
+        "items": [
+          "ML Adaptive : Signaux qui s'adaptent automatiquement aux conditions de marché",
+          "Signaux composites : Combinaisons intelligentes de plusieurs signaux",
+          "Backtesting distribué : Tests parallèles sur plusieurs périodes historiques",
+          "API publique : Accès externe pour d'autres traders et institutions"
+        ]
+      }
+    },
+    "conclusion": {
+      "title": "Conclusion : l'avenir du développement financier",
+      "description": "Ce projet démontre comment l'approche agentique peut transformer radicalement le développement de systèmes financiers complexes. En 4 heures, nous avons accompli ce qui aurait pris des semaines à une équipe traditionnelle, avec une précision et une fiabilité supérieures.",
+      "keyPoints": {
+        "title": "🎯 Points clés à retenir",
+        "items": [
+          "La spécialisation des agents maximise l'expertise",
+          "La validation croisée garantit la qualité",
+          "L'itération rapide permet l'amélioration continue",
+          "La documentation automatique facilite la maintenance"
+        ]
+      },
+      "perspectives": {
+        "title": "🔮 Perspectives",
+        "items": [
+          "Signaux adaptatifs avec machine learning",
+          "Intégration de données alternatives (sentiment, news)",
+          "Expansion vers d'autres classes d'actifs",
+          "Plateforme collaborative pour d'autres chercheurs"
+        ]
+      },
+      "cta": {
+        "question": "Intéressé par l'implémentation de signaux de trading avec des agents IA ?",
+        "button": "Découvrir notre formation"
+      }
+    }
   }
 }

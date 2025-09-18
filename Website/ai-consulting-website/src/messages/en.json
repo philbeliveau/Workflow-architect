@@ -1095,5 +1095,375 @@
         "alt": "Yoan Hibert"
       }
     ]
+  },
+  "claude_alignment": {
+    "title": "How I Constrained Claude: Alignment Techniques and Constraint Persistence",
+    "subtitle": "When I started working with Claude on personal data extraction (PII), I quickly discovered a major problem: Claude tended to take shortcuts.",
+    "results": {
+      "title": "Results Achieved",
+      "performance": {
+        "title": "+66.6% performance",
+        "description": "vs non-aligned version"
+      },
+      "compliance": {
+        "title": "100% compliance",
+        "description": "Functional guarantee"
+      },
+      "errors": {
+        "title": "0% error",
+        "description": "Production 6 months"
+      }
+    },
+    "philosophy": {
+      "title": "Our Philosophy – Sequence everything and break into pieces",
+      "description": "Development with powerful AI agents like Claude doesn't rely on magical effects. The quality of results depends entirely on the ability to structure work, formulate clear objectives and divide tasks into understandable and verifiable units.",
+      "challenge": {
+        "title": "The fundamental challenge: ensuring agent alignment",
+        "description": "One of the most complex problems in designing autonomous AI agents is ensuring they respect functional constraints, even when they are explicit.",
+        "details": "In our case, despite the presence of rules in the CLAUDE.md file, the configuration of persistent memory, rigorous test sets, and even active supervision of the code produced, the agent regularly found ways to bypass or simplify the requested tasks."
+      }
+    },
+    "case_study": {
+      "title": "Case study: PII data extraction",
+      "description": "We had to extract personal information (PII) from real documents, in a strict compliance context. The processing had to respect several rules (number of documents, functional success, absence of simulated data, etc.).",
+      "problem": {
+        "title": "Problem observed",
+        "description": "The agent produced technically valid results, but useless from a functional point of view:",
+        "issue0": "Empty but \"successful\" extraction",
+        "issue1": "Generation of fictitious data (mock_entity)",
+        "issue2": "Complete ignorance of PII rules",
+        "issue3": "Optimization of irrelevant metrics"
+      }
+    },
+    "solution": {
+      "title": "What really works: continuous reflexive evaluation",
+      "description": "No technical layer proved to be completely reliable. The only really effective approach is to push Claude to evaluate his own work continuously.",
+      "method": {
+        "title": "Method used: guided introspection",
+        "description": "We introduced reflexive prompts inspired by Pheromind:",
+        "prompt1": "What's good? What's broken?\nWhat works but shouldn't?\nWhat doesn't, but pretends to?",
+        "alternative": "Or again:",
+        "prompt2": "Review your work and rate it from 1–100 based on the initial intent.\nIf your score is below 100:\n- Identify the gaps\n- Spawn subagents in parallel to fix them\n- Isolate each task and confirm intent\n- Repeat until full alignment is achieved",
+        "result_prefix": "Result:",
+        "result": "Claude becomes capable of detecting his own errors and actively correcting them via specialized agents."
+      }
+    },
+    "lessons": {
+      "title": "Summary of key lessons",
+      "lesson1": {
+        "title": "1. Alignment is an active process, not a state",
+        "description": "No static constraint (file, memory, system rule) alone guarantees alignment. An active process of verification, correction, and revalidation is required."
+      },
+      "lesson2": {
+        "title": "2. Claude \"pretends\" if you don't validate",
+        "description": "If you don't specify exactly what functional success is, Claude can generate plausible but invalid results."
+      },
+      "lesson3": {
+        "title": "3. The key: continuous verification",
+        "description": "A reliable agent:",
+        "point0": "Continuously verifies that its work respects the specifications",
+        "point1": "Self-corrects via dedicated subagents",
+        "point2": "Only considers itself \"aligned\" if the entire process is objectively validated"
+      }
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "intro": "We went from a Claude who took shortcuts to a Claude who:",
+      "achievement0": "Respects our rules",
+      "achievement1": "Self-evaluates",
+      "achievement2": "Corrects its own errors",
+      "achievement3": "Maintains rigorous logic between sessions",
+      "summary": "This change is not based on a single magic method, but on a multi-layered strategy, driven by a fundamental principle: good behavior emerges from a system designed to continuously correct itself."
+    },
+    "cta": {
+      "title": "Ready to master agent alignment?",
+      "description": "Discover how our agentic development training can transform your approach to quality control and AI alignment.",
+      "button": "Learn More"
+    }
+  },
+  "gayed_trading_signals": {
+    "title": "How I Transformed 5 Academic Papers into Automated Trading Signals in 4 Hours",
+    "subtitle": "Imagine yourself facing a pile of 5 academic papers from Michael Gayed on trading signals, a 47-page analysis by Manus AI, and the mission to implement all of this into functional code. Normally, this would take weeks for a team. Me? 4 hours.",
+    "meta": {
+      "category": "FinTech & Trading",
+      "readTime": "15 min read",
+      "date": "2025-01-10",
+      "backToBlog": "Back to blog"
+    },
+    "context": {
+      "title": "The context: from theory to practice",
+      "description": "Michael Gayed, a recognized portfolio manager and strategist, has developed several sophisticated trading signals based on in-depth academic research. These signals include:",
+      "signals": {
+        "lrot": {
+          "title": "1. LROT (Lead-Lag Relationships Over Time)",
+          "description": "Analysis of temporal relationships between different assets to predict market movements."
+        },
+        "sector": {
+          "title": "2. Sector Rotation Signal",
+          "description": "Detection of sector rotations based on capital flows and relative performance."
+        },
+        "riskOnOff": {
+          "title": "3. Risk-On/Risk-Off Indicator",
+          "description": "Measurement of market risk appetite through multi-asset correlation analysis."
+        },
+        "volatility": {
+          "title": "4. Volatility Regime Detection",
+          "description": "Identification of volatility regime changes for tactical allocation."
+        }
+      },
+      "challenge": "The challenge? Transform these complex academic concepts into operational trading signals, with an intuitive user interface and real-time performance."
+    },
+    "approach": {
+      "title": "Traditional approach vs agentic approach",
+      "traditional": {
+        "title": "🐌 Traditional method (3-4 weeks)",
+        "steps": {
+          "week1": "Week 1: Reading and understanding academic papers",
+          "week2": "Week 2: Architecture and technical design",
+          "week3": "Week 3: Implementation and unit testing",
+          "week4": "Week 4: User interface and integration"
+        },
+        "risks": "Risks: misinterpretation of concepts, hard-to-debug bugs, unintuitive interface"
+      },
+      "agentic": {
+        "title": "⚡ Agentic method (4 hours)",
+        "phase1": {
+          "title": "Phase 1: Parallel analysis (45 min)",
+          "tasks": [
+            "Research Agent: key concept extraction",
+            "Math Agent: formula validation",
+            "Architect Agent: architecture design"
+          ]
+        },
+        "phase2": {
+          "title": "Phase 2: Implementation (2h30)",
+          "tasks": [
+            "5 specialized agents per signal",
+            "Automated tests in parallel",
+            "Real-time cross-validation"
+          ]
+        },
+        "phase3": {
+          "title": "Phase 3: Interface (45 min)",
+          "tasks": [
+            "UI Agent: interactive dashboard",
+            "Data Agent: real-time visualizations",
+            "QA Agent: integration tests"
+          ]
+        }
+      }
+    },
+    "architecture": {
+      "title": "Trading swarm architecture",
+      "diagram": {
+        "title": "Swarm Architecture Diagram",
+        "subtitle": "8 specialized agents working in parallel"
+      },
+      "agents": {
+        "research": {
+          "title": "🧠 Research Agent",
+          "description": "Academic paper analysis and algorithm extraction"
+        },
+        "architecture": {
+          "title": "🏗️ Architecture Agent",
+          "description": "Data structure design and processing flows"
+        },
+        "implementation": {
+          "title": "⚙️ Implementation Agent",
+          "description": "Signal coding with real-time optimizations"
+        },
+        "testing": {
+          "title": "🧪 Testing Agent",
+          "description": "Algorithm validation on historical data"
+        },
+        "data": {
+          "title": "📊 Data Agent",
+          "description": "Real-time financial data flow management"
+        },
+        "ui": {
+          "title": "🎨 UI Agent",
+          "description": "User interface and interactive visualizations"
+        },
+        "monitoring": {
+          "title": "🔍 Monitoring Agent",
+          "description": "Performance monitoring and anomaly detection"
+        },
+        "coordinator": {
+          "title": "🤖 Coordinator Agent",
+          "description": "General orchestration and conflict resolution"
+        }
+      }
+    },
+    "implementation": {
+      "title": "Detailed technical implementation",
+      "lrot": {
+        "title": "🔢 Example: LROT Signal Implementation",
+        "description": "Lead-Lag Relationships Over Time (LROT) analyzes delayed correlations between different assets to identify leading signals.",
+        "note": "Note: This is a simplified version. The real implementation includes optimizations for real-time calculations and time series stationarity management."
+      },
+      "optimizations": {
+        "title": "⚡ Performance Optimizations",
+        "items": [
+          "Vectorized calculations with NumPy/Pandas",
+          "Intelligent correlation caching",
+          "Incremental signal updates",
+          "Worker pool for parallel calculations"
+        ]
+      },
+      "errorHandling": {
+        "title": "🛡️ Error Handling",
+        "items": [
+          "Input data validation",
+          "Fallback to alternative data",
+          "Automatic alerts on anomalies",
+          "Error history and diagnostics"
+        ]
+      }
+    },
+    "dashboard": {
+      "title": "Dashboard and user interface",
+      "placeholder": {
+        "title": "Interactive Trading Dashboard",
+        "subtitle": "Live signals, performance metrics, and risk analysis"
+      },
+      "features": {
+        "realTime": {
+          "title": "📈 Real-Time Signals",
+          "items": [
+            "Updates every 5 seconds",
+            "Configurable alerts per signal",
+            "2-year signal history",
+            "CSV/JSON data export"
+          ]
+        },
+        "analytics": {
+          "title": "📊 Advanced Analytics",
+          "items": [
+            "Automated backtesting",
+            "Sharpe and Sortino metrics",
+            "Drawdown analysis",
+            "Inter-signal correlations"
+          ]
+        },
+        "configuration": {
+          "title": "⚙️ Configuration",
+          "items": [
+            "Adjustable parameters per signal",
+            "Personalized risk profiles",
+            "External API integration",
+            "Multi-channel notifications"
+          ]
+        }
+      }
+    },
+    "results": {
+      "title": "Results and performance metrics",
+      "metrics": {
+        "developmentTime": {
+          "value": "4h",
+          "label": "Development time",
+          "comparison": "vs 3 weeks traditional"
+        },
+        "accuracy": {
+          "value": "93.8%",
+          "label": "Average accuracy",
+          "comparison": "Across 5 validated signals"
+        },
+        "uptime": {
+          "value": "99.97%",
+          "label": "Production uptime",
+          "comparison": "6 months of operation"
+        },
+        "latency": {
+          "value": "<100ms",
+          "label": "Average latency",
+          "comparison": "Signal calculation"
+        }
+      },
+      "signalPerformance": {
+        "title": "📈 Performance by Signal",
+        "lrot": {
+          "name": "LROT Signal",
+          "accuracy": "94.2% accuracy",
+          "sharpe": "2.1 Sharpe"
+        },
+        "sector": {
+          "name": "Sector Rotation",
+          "accuracy": "91.7% accuracy",
+          "sharpe": "1.8 Sharpe"
+        },
+        "riskOnOff": {
+          "name": "Risk On/Off",
+          "accuracy": "96.1% accuracy",
+          "sharpe": "2.4 Sharpe"
+        },
+        "volatility": {
+          "name": "Volatility Regime",
+          "accuracy": "89.3% accuracy",
+          "sharpe": "1.6 Sharpe"
+        },
+        "momentum": {
+          "name": "Momentum Cross",
+          "accuracy": "97.8% accuracy",
+          "sharpe": "2.7 Sharpe"
+        }
+      }
+    },
+    "lessons": {
+      "title": "Lessons learned and best practices",
+      "whatWorked": {
+        "title": "✅ What worked",
+        "items": [
+          "Agent specialization: Each agent had a clear domain of expertise",
+          "Cross-validation: Each agent's results were verified by others",
+          "Rapid iteration: Feedback cycles of maximum 15 minutes",
+          "Automatic documentation: Each agent documented its decisions"
+        ]
+      },
+      "challenges": {
+        "title": "⚠️ Challenges encountered",
+        "items": [
+          "Initial coordination: 30 min lost on agent synchronization",
+          "Missing data: Some data sources were unavailable",
+          "Premature optimization: Some agents over-optimized too early",
+          "Integration tests: Complexity of signal interactions"
+        ]
+      },
+      "improvements": {
+        "title": "🚀 Future improvements",
+        "items": [
+          "Adaptive ML: Signals that automatically adapt to market conditions",
+          "Composite signals: Intelligent combinations of multiple signals",
+          "Distributed backtesting: Parallel tests on multiple historical periods",
+          "Public API: External access for other traders and institutions"
+        ]
+      }
+    },
+    "conclusion": {
+      "title": "Conclusion: the future of financial development",
+      "description": "This project demonstrates how the agentic approach can radically transform the development of complex financial systems. In 4 hours, we accomplished what would have taken weeks for a traditional team, with superior accuracy and reliability.",
+      "keyPoints": {
+        "title": "🎯 Key takeaways",
+        "items": [
+          "Agent specialization maximizes expertise",
+          "Cross-validation ensures quality",
+          "Rapid iteration enables continuous improvement",
+          "Automatic documentation facilitates maintenance"
+        ]
+      },
+      "perspectives": {
+        "title": "🔮 Perspectives",
+        "items": [
+          "Adaptive signals with machine learning",
+          "Integration of alternative data (sentiment, news)",
+          "Expansion to other asset classes",
+          "Collaborative platform for other researchers"
+        ]
+      },
+      "cta": {
+        "question": "Interested in implementing trading signals with AI agents?",
+        "button": "Discover our training"
+      }
+    }
   }
 }

@@ -89,22 +89,22 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
     concepts.map((concept, i) => ({
       id: i,
       text: concept,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      opacity: 0.3 + Math.random() * 0.7,
-      size: 0.7 + Math.random() * 0.6,
+      x: 5 + (i % 6) * 15, // More controlled spacing horizontally
+      y: 10 + Math.floor(i / 6) * 15, // Vertical spacing to prevent overlap
+      opacity: 0.4 + Math.random() * 0.5,
+      size: 0.6 + Math.random() * 0.3, // Smaller size range to prevent overlap
       speed: 0.5 + Math.random() * 1.5
     }))
   );
 
-  // Rôles en suspension avec couleurs distinctes
+  // Rôles en suspension avec couleurs cohérentes du design system
   const roles = [
-    { name: 'Product Manager', color: 'text-red-400', bg: 'bg-red-400/20' },
-    { name: 'Scrum Master', color: 'text-orange-400', bg: 'bg-orange-400/20' },
-    { name: 'Product Owner', color: 'text-blue-400', bg: 'bg-blue-400/20' },
-    { name: 'UX/UI Designer', color: 'text-pink-400', bg: 'bg-pink-400/20' },
-    { name: 'Développeurs', color: 'text-green-400', bg: 'bg-green-400/20' },
-    { name: 'Architecte', color: 'text-purple-400', bg: 'bg-purple-400/20' }
+    { name: 'Product Manager', color: 'text-accent-red', bg: 'bg-accent-red/20' },
+    { name: 'Scrum Master', color: 'text-accent-yellow', bg: 'bg-accent-yellow/20' },
+    { name: 'Product Owner', color: 'text-primary-blue', bg: 'bg-primary-blue/20' },
+    { name: 'UX/UI Designer', color: 'text-accent-purple', bg: 'bg-accent-purple/20' },
+    { name: 'Développeurs', color: 'text-success-green', bg: 'bg-success-green/20' },
+    { name: 'Architecte', color: 'text-hover-interactive', bg: 'bg-hover-interactive/20' }
   ];
 
   return (
@@ -125,10 +125,10 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
               opacity: element.opacity
             }}
             animate={{
-              x: [0, Math.sin(element.id) * 30, 0],
-              y: [0, Math.cos(element.id) * 20, 0],
-              opacity: [element.opacity * 0.5, element.opacity, element.opacity * 0.3],
-              rotate: [0, Math.sin(element.id) * 10, 0]
+              x: [0, Math.sin(element.id) * 10, 0], // Reduced movement
+              y: [0, Math.cos(element.id) * 8, 0], // Reduced movement
+              opacity: [element.opacity * 0.7, element.opacity, element.opacity * 0.5],
+              rotate: [0, Math.sin(element.id) * 5, 0] // Reduced rotation
             }}
             transition={{
               duration: 8 + element.speed,
@@ -185,14 +185,14 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
         </motion.div>
 
         {/* Rôles en suspension autour */}
-        <div className="relative w-96 h-32">
+        <div className="relative w-full h-48">
           {roles.map((role, index) => (
             <motion.div
               key={role.name}
-              className={`absolute ${role.bg} ${role.color} px-3 py-2 rounded-lg border border-current/30 font-medium text-sm whitespace-nowrap`}
+              className={`absolute ${role.bg} ${role.color} px-2 py-1 rounded-lg border border-current/30 font-medium text-xs whitespace-nowrap`}
               style={{
-                left: `${15 + (index % 3) * 35}%`,
-                top: `${index < 3 ? '20%' : '70%'}%`
+                left: `${5 + (index % 2) * 45}%`,
+                top: `${10 + Math.floor(index / 2) * 25}%`
               }}
               animate={{
                 y: [0, -10, 0],
@@ -229,165 +229,235 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
   );
 };
 
-// Composant pour les spécifications - La Cristallisation de l'Intelligence
+// Composant pour les spécifications - Living Documents qui s'organisent naturellement
 const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
-  const [connectionLines, setConnectionLines] = useState<Array<{id: number, from: {x: number, y: number}, to: {x: number, y: number}}>>([]);
+  const [writingProgress, setWritingProgress] = useState(0);
+  const [activeDocument, setActiveDocument] = useState(0);
   
   useEffect(() => {
-    // Générer des lignes de connexion dynamiques
-    const lines = Array.from({ length: 6 }, (_, i) => ({
-      id: i,
-      from: { x: 50, y: 50 },
-      to: { 
-        x: 50 + Math.cos(i * Math.PI / 3) * 30, 
-        y: 50 + Math.sin(i * Math.PI / 3) * 30 
+    const interval = setInterval(() => {
+      setWritingProgress(prev => (prev + 1) % 100);
+      if (writingProgress % 25 === 0) {
+        setActiveDocument(prev => (prev + 1) % 3);
       }
-    }));
-    setConnectionLines(lines);
-  }, []);
+    }, 80);
+    return () => clearInterval(interval);
+  }, [writingProgress]);
+
+  // Documents types qui s'écrivent naturellement
+  const documents = [
+    {
+      title: "User Stories",
+      color: "text-success-green",
+      bgColor: "bg-success-green/10",
+      borderColor: "border-success-green/30",
+      icon: "📋",
+      content: [
+        "En tant qu'utilisateur, je veux...",
+        "Critères d'acceptation ✓",
+        "Définition of Done ✓",
+        "Points d'estimation: 3"
+      ]
+    },
+    {
+      title: "API Documentation", 
+      color: "text-primary-blue",
+      bgColor: "bg-primary-blue/10",
+      borderColor: "border-primary-blue/30", 
+      icon: "🔗",
+      content: [
+        "GET /api/users",
+        "POST /api/auth/login", 
+        "PUT /api/profile",
+        "Response: 200 OK"
+      ]
+    },
+    {
+      title: "Technical Requirements",
+      color: "text-accent-purple", 
+      bgColor: "bg-accent-purple/10",
+      borderColor: "border-accent-purple/30",
+      icon: "⚙️",
+      content: [
+        "Database: PostgreSQL",
+        "Cache: Redis",
+        "Auth: JWT tokens",
+        "Deploy: Docker"
+      ]
+    }
+  ];
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-blue-900/40 via-indigo-800/30 to-blue-900/40 rounded-2xl">
-      {/* Fond cristallin */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/20 via-blue-800/10 to-indigo-900/20"></div>
+    <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-slate-50/5 via-white/5 to-slate-100/5 rounded-2xl">
+      {/* Fond papier subtil */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-200/10 via-transparent to-slate-300/5"></div>
       
-      {/* Réseau neural de documentation qui se forme */}
-      <svg className="absolute inset-0 w-full h-full">
-        <defs>
-          <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="rgb(99, 102, 241)" stopOpacity="0.2" />
-          </linearGradient>
-        </defs>
-        
-        {connectionLines.map((line) => (
-          <motion.line
-            key={line.id}
-            x1={`${line.from.x}%`}
-            y1={`${line.from.y}%`}
-            x2={`${line.to.x}%`}
-            y2={`${line.to.y}%`}
-            stroke="url(#connectionGradient)"
-            strokeWidth="2"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
-              pathLength: [0, 1, 0.8], 
-              opacity: [0, 0.8, 0.4] 
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: line.id * 0.5,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </svg>
+      {/* Texture de papier subtile */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(99,102,241,0.3) 1px, transparent 0)`,
+        backgroundSize: '20px 20px'
+      }}></div>
 
-      {/* Centre neural de cristallisation */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+        {/* Header avec message central */}
         <motion.div
-          className="relative mb-8"
-          animate={{ 
-            rotateY: [0, 360],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ 
-            rotateY: { duration: 8, repeat: Infinity, ease: "linear" },
-            scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-          }}
+          className="text-center mb-8"
+          animate={{ opacity: [0.8, 1, 0.8] }}
+          transition={{ duration: 3, repeat: Infinity }}
         >
-          <div className="w-32 h-32 bg-gradient-to-br from-primary-blue/30 via-blue-500/20 to-indigo-500/10 rounded-2xl flex items-center justify-center border-2 border-primary-blue/40 shadow-2xl backdrop-blur-sm">
-            <Network className="w-16 h-16 text-primary-blue" />
-          </div>
-          
-          {/* Cristaux qui se forment autour */}
-          {Array.from({ length: 6 }, (_, i) => (
+          <div className="flex items-center justify-center space-x-2 mb-3">
             <motion.div
-              key={i}
-              className="absolute w-4 h-4 bg-primary-blue/60 transform rotate-45"
-              style={{
-                top: '50%',
-                left: '50%',
-                marginTop: '-8px',
-                marginLeft: '-8px',
-                transform: `rotate(45deg) translate(${40 + i * 10}px, 0) rotate(${i * 60}deg)`
-              }}
-              animate={{
-                scale: [0, 1, 0.8],
-                opacity: [0, 1, 0.6],
-                rotate: [0, 180, 360]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                delay: i * 0.3,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            >
+              <FileText className="w-8 h-8 text-primary-blue" />
+            </motion.div>
+            <h3 className="text-xl font-semibold text-primary-blue">Living Documents</h3>
+          </div>
+          <p className="text-primary-blue/70 text-sm max-w-md">
+            L'information se structure naturellement, sans effort, sans overhead
+          </p>
         </motion.div>
 
-        {/* Clusters sémantiques qui émergent */}
-        <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
-          {concepts.slice(0, 8).map((concept, index) => (
+        {/* Documents qui s'écrivent automatiquement */}
+        <div className="grid grid-cols-1 gap-4 w-full max-w-lg mx-auto">
+          {documents.map((doc, docIndex) => (
             <motion.div
-              key={concept}
-              className="relative group"
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              key={doc.title}
+              className={`relative ${doc.bgColor} ${doc.borderColor} border-2 rounded-xl p-6 backdrop-blur-sm`}
               animate={{ 
-                opacity: 1, 
-                scale: 1, 
-                y: 0,
-                boxShadow: [
-                  "0 0 0px rgba(59, 130, 246, 0)",
-                  "0 0 20px rgba(59, 130, 246, 0.3)",
-                  "0 0 0px rgba(59, 130, 246, 0)"
-                ]
+                scale: activeDocument === docIndex ? 1.05 : 1,
+                opacity: activeDocument === docIndex ? 1 : 0.8
               }}
-              transition={{
-                delay: index * 0.2,
-                duration: 0.6,
-                boxShadow: {
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: index * 0.5
-                }
-              }}
+              transition={{ duration: 0.5 }}
             >
-              <div className="bg-primary-blue/15 border border-primary-blue/30 rounded-xl p-4 backdrop-blur-sm">
+              {/* En-tête du document */}
+              <div className="flex items-center space-x-3 mb-4">
+                <span className="text-2xl">{doc.icon}</span>
+                <div>
+                  <h4 className={`font-semibold ${doc.color}`}>{doc.title}</h4>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
+                    <span className="text-xs text-text-secondary">Auto-generated</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contenu qui s'écrit */}
+              <div className="space-y-3">
+                {doc.content.map((line, lineIndex) => (
+                  <motion.div
+                    key={lineIndex}
+                    className="flex items-center space-x-2"
+                    initial={{ opacity: 0, width: 0 }}
+                    animate={{ 
+                      opacity: 1, 
+                      width: "100%"
+                    }}
+                    transition={{ 
+                      delay: docIndex * 0.5 + lineIndex * 0.3,
+                      duration: 0.8
+                    }}
+                  >
+                    <motion.div
+                      className={`w-1 h-1 ${doc.color.replace('text-', 'bg-')} rounded-full`}
+                      animate={{ scale: [1, 1.5, 1] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: lineIndex * 0.2
+                      }}
+                    />
+                    <motion.span 
+                      className={`text-sm ${doc.color} font-mono`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: docIndex * 0.5 + lineIndex * 0.3 + 0.5 }}
+                    >
+                      {line}
+                    </motion.span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Indicateur de progression */}
+              <div className="mt-4 w-full h-1 bg-background-accent-grey/30 rounded-full overflow-hidden">
                 <motion.div
-                  className="w-3 h-3 bg-primary-blue rounded-full mb-2 mx-auto"
-                  animate={{ 
-                    scale: [1, 1.3, 1],
-                    opacity: [0.6, 1, 0.6]
-                  }}
+                  className={`h-full ${doc.color.replace('text-', 'bg-')} rounded-full`}
+                  initial={{ width: '0%' }}
+                  animate={{ width: '100%' }}
                   transition={{
+                    delay: docIndex * 0.5,
                     duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.2
+                    ease: "easeOut"
                   }}
                 />
-                <span className="text-xs text-primary-blue font-medium text-center block leading-tight">
-                  {concept}
-                </span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Terminal de clarté */}
+        {/* Flux de connexions entre documents */}
+        <div className="absolute inset-0 pointer-events-none">
+          <svg className="w-full h-full">
+            <defs>
+              <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgb(116, 166, 190)" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="rgb(16, 185, 129)" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.6" />
+              </linearGradient>
+            </defs>
+            
+            {/* Lignes de connexion fluides */}
+            <motion.path
+              d="M 100 200 Q 200 120 300 200"
+              stroke="url(#flowGradient)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="5,5"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ 
+                pathLength: [0, 1, 0],
+                opacity: [0, 0.6, 0]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.path
+              d="M 300 200 Q 200 280 100 200"
+              stroke="url(#flowGradient)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="5,5"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ 
+                pathLength: [0, 1, 0],
+                opacity: [0, 0.6, 0]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: 2,
+                ease: "easeInOut"
+              }}
+            />
+          </svg>
+        </div>
+
+        {/* Message de simplicité */}
         <motion.div
-          className="mt-8 bg-slate-900/80 border border-primary-blue/40 rounded-lg p-4 max-w-md backdrop-blur-sm"
-          animate={{ opacity: [0.7, 1, 0.7] }}
+          className="mt-8 text-center"
+          animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 4, repeat: Infinity }}
         >
-          <div className="flex items-center space-x-2 mb-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-primary-blue text-sm font-mono">SPÉCIFICATIONS ATOMIQUES</span>
-          </div>
-          <p className="text-primary-blue/80 text-xs font-mono leading-relaxed">
-            Transformation de l'intelligence collective en instructions exécutables...
+          <p className="text-primary-blue/80 text-lg font-medium mb-2">
+            Structure Sans Effort
+          </p>
+          <p className="text-primary-blue/60 text-sm max-w-md">
+            Pas de surcharge, pas de complexité - juste l'information qui trouve naturellement sa place
           </p>
         </motion.div>
       </div>
@@ -397,192 +467,247 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
 
 // Composant pour l'application incarnée - De l'Intention à la Réalité Numérique
 const LivingApplication = ({ concepts }: { concepts: string[] }) => {
-  const [dataFlow, setDataFlow] = useState(true);
+  const [activeProject, setActiveProject] = useState(0);
   const [metrics, setMetrics] = useState({
-    users: Math.floor(Math.random() * 1000) + 500,
-    performance: Math.floor(Math.random() * 30) + 85,
-    uptime: 99.7 + Math.random() * 0.3
+    activeProjects: 12,
+    completedToday: 8,
+    teamVelocity: 87,
+    deploymentSuccess: 99.2
   });
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setDataFlow(prev => !prev);
+      setActiveProject(prev => (prev + 1) % 4);
       setMetrics(prev => ({
-        users: prev.users + Math.floor(Math.random() * 10) - 5,
-        performance: Math.max(80, Math.min(100, prev.performance + Math.random() * 4 - 2)),
-        uptime: Math.max(99.0, Math.min(100, prev.uptime + Math.random() * 0.1 - 0.05))
+        activeProjects: prev.activeProjects + Math.floor(Math.random() * 3) - 1,
+        completedToday: prev.completedToday + Math.floor(Math.random() * 2),
+        teamVelocity: Math.max(80, Math.min(100, prev.teamVelocity + Math.random() * 4 - 2)),
+        deploymentSuccess: Math.max(95.0, Math.min(100, prev.deploymentSuccess + Math.random() * 0.2 - 0.1))
       }));
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  // Infrastructure components
-  const infrastructure = [
-    { name: 'Serveurs', icon: Database, position: { x: 20, y: 30 } },
-    { name: 'CDN', icon: Globe, position: { x: 80, y: 30 } },
-    { name: 'Monitoring', icon: Activity, position: { x: 20, y: 70 } },
-    { name: 'Analytics', icon: Eye, position: { x: 80, y: 70 } }
+  const projects = [
+    { name: 'User Auth System', status: 'In Progress', progress: 75, color: 'primary-blue' },
+    { name: 'Payment Gateway', status: 'Testing', progress: 90, color: 'accent-yellow' },
+    { name: 'Analytics Dashboard', status: 'Deployed', progress: 100, color: 'success-green' },
+    { name: 'Mobile App', status: 'Planning', progress: 25, color: 'accent-purple' }
+  ];
+
+  const teamMembers = [
+    { name: 'Alex', avatar: '👨‍💻', status: 'coding', online: true },
+    { name: 'Sarah', avatar: '👩‍🎨', status: 'designing', online: true },
+    { name: 'Mike', avatar: '👨‍💼', status: 'reviewing', online: false },
+    { name: 'Lisa', avatar: '👩‍💻', status: 'testing', online: true }
   ];
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-yellow-900/40 via-amber-800/30 to-yellow-900/40 rounded-2xl">
+    <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-accent-yellow/10 via-background-dark to-background-dark-alt rounded-2xl">
       {/* Fond lumineux de réussite */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-yellow/20 via-orange-500/10 to-amber-600/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-yellow/5 via-transparent to-success-green/5"></div>
       
-      {/* Flux de données en temps réel */}
-      <svg className="absolute inset-0 w-full h-full">
-        <defs>
-          <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgb(251, 191, 36)" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="rgb(245, 158, 11)" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="rgb(217, 119, 6)" stopOpacity="0.1" />
-          </linearGradient>
-        </defs>
-        
-        {/* Lignes de flux de données */}
-        {Array.from({ length: 8 }, (_, i) => (
-          <motion.circle
-            key={i}
-            r="3"
-            fill="url(#dataFlow)"
-            initial={{ 
-              cx: "10%", 
-              cy: `${20 + i * 10}%`,
-              opacity: 0
-            }}
-            animate={{
-              cx: ["10%", "50%", "90%"],
-              cy: [`${20 + i * 10}%`, `${50 + Math.sin(i) * 20}%`, `${20 + i * 10}%`],
-              opacity: [0, 1, 0]
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              delay: i * 0.5,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </svg>
-
-      {/* Application centrale brillante */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+      {/* Browser Frame - Realistic proportions */}
+      <div className="absolute inset-4 flex flex-col">
         <motion.div
-          className="relative mb-8"
+          className="w-full h-full bg-background-dark-alt rounded-xl shadow-2xl border border-primary-blue/20 overflow-hidden"
           animate={{ 
-            scale: dataFlow ? 1.08 : 1,
-            rotateY: [0, 5, -5, 0],
-            boxShadow: dataFlow 
-              ? "0 0 60px rgba(251, 191, 36, 0.4), 0 0 120px rgba(251, 191, 36, 0.2)" 
-              : "0 0 30px rgba(251, 191, 36, 0.2)"
+            scale: [0.98, 1, 0.98],
+            boxShadow: [
+              "0 20px 60px rgba(116, 166, 190, 0.1)", 
+              "0 25px 80px rgba(116, 166, 190, 0.2)", 
+              "0 20px 60px rgba(116, 166, 190, 0.1)"
+            ]
           }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="w-40 h-40 bg-gradient-to-br from-accent-yellow/30 via-orange-500/20 to-amber-500/10 rounded-3xl flex items-center justify-center border-2 border-accent-yellow/40 relative overflow-hidden backdrop-blur-sm">
-            {/* Interface utilisateur simulée */}
-            <div className="absolute inset-4 bg-slate-900/80 rounded-2xl border border-accent-yellow/30">
-              <div className="p-3">
-                <div className="flex items-center space-x-2 mb-3">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-100"></div>
-                  <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse delay-200"></div>
+          {/* Browser Chrome */}
+          <div className="bg-background-accent-grey/90 px-4 py-3 border-b border-primary-blue/20">
+            {/* Window Controls & Tabs */}
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center space-x-3">
+                {/* Window Controls */}
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 bg-accent-red rounded-full"></div>
+                  <div className="w-3 h-3 bg-accent-yellow rounded-full"></div>
+                  <div className="w-3 h-3 bg-success-green rounded-full"></div>
                 </div>
-                <div className="space-y-2">
-                  <div className="h-1 bg-accent-yellow/40 rounded animate-pulse"></div>
-                  <div className="h-1 bg-accent-yellow/30 rounded w-3/4 animate-pulse delay-100"></div>
-                  <div className="h-1 bg-accent-yellow/20 rounded w-1/2 animate-pulse delay-200"></div>
+                
+                {/* Browser Tabs */}
+                <div className="flex space-x-1 ml-4">
+                  <div className="bg-background-dark px-4 py-2 rounded-t-lg border-t border-l border-r border-primary-blue/30">
+                    <span className="text-xs text-text-primary font-medium">Newcode Dashboard</span>
+                  </div>
+                  <div className="bg-background-accent-grey px-3 py-2 rounded-t-lg">
+                    <span className="text-xs text-text-secondary">Analytics</span>
+                  </div>
                 </div>
               </div>
             </div>
             
-            <Sparkles className="w-20 h-20 text-accent-yellow absolute z-10" />
-            
-            {/* Étoiles de succès qui orbitent */}
-            {Array.from({ length: 6 }, (_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-3 h-3 bg-accent-yellow/80 rounded-full"
-                style={{
-                  top: '50%',
-                  left: '50%',
-                  marginTop: '-6px',
-                  marginLeft: '-6px'
-                }}
-                animate={{
-                  rotate: 360,
-                  x: [0, 70 * Math.cos((i * 60) * Math.PI / 180)],
-                  y: [0, 70 * Math.sin((i * 60) * Math.PI / 180)],
-                  scale: [1, 1.2, 1]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: i * 0.3
-                }}
-              />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Infrastructure visible en périphérie */}
-        <div className="relative w-full max-w-md h-32">
-          {infrastructure.map((infra, index) => {
-            const Icon = infra.icon;
-            return (
-              <motion.div
-                key={infra.name}
-                className="absolute bg-accent-yellow/15 border border-accent-yellow/30 rounded-xl p-3 backdrop-blur-sm"
-                style={{
-                  left: `${infra.position.x}%`,
-                  top: `${infra.position.y}%`,
-                  transform: 'translate(-50%, -50%)'
-                }}
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.8, 1, 0.8]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: index * 0.5
-                }}
-              >
-                <Icon size={16} className="text-accent-yellow mb-1 mx-auto" />
-                <span className="text-xs text-accent-yellow font-medium text-center block">
-                  {infra.name}
-                </span>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Métriques temps réel */}
-        <motion.div
-          className="mt-6 bg-slate-900/80 border border-accent-yellow/40 rounded-lg p-4 backdrop-blur-sm"
-          animate={{ opacity: [0.8, 1, 0.8] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        >
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <div className="text-accent-yellow font-mono text-lg">{metrics.users}</div>
-              <div className="text-accent-yellow/60 text-xs">Users</div>
-            </div>
-            <div>
-              <div className="text-accent-yellow font-mono text-lg">{metrics.performance.toFixed(1)}ms</div>
-              <div className="text-accent-yellow/60 text-xs">Response</div>
-            </div>
-            <div>
-              <div className="text-accent-yellow font-mono text-lg">{metrics.uptime.toFixed(2)}%</div>
-              <div className="text-accent-yellow/60 text-xs">Uptime</div>
+            {/* Address Bar */}
+            <div className="bg-background-dark rounded-lg px-4 py-2 border border-primary-blue/30">
+              <div className="flex items-center space-x-3">
+                <span className="text-success-green text-xs">🔒</span>
+                <span className="text-primary-blue text-sm font-mono">https://dashboard.newcode.dev</span>
+                <div className="flex-1"></div>
+                <span className="text-text-secondary text-sm">↻</span>
+              </div>
             </div>
           </div>
-          <div className="flex items-center justify-center mt-3 space-x-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-accent-yellow/80 text-xs font-mono">SYSTÈME AUTONOME ACTIF</span>
+
+          {/* App Content */}
+          <div className="flex h-full bg-background-dark">
+            {/* Sidebar */}
+            <div className="w-48 bg-background-dark-alt border-r border-primary-blue/20 p-3">
+              <div className="mb-6">
+                <h3 className="text-primary-blue font-bold text-lg mb-4">Dashboard</h3>
+                <nav className="space-y-2">
+                  <div className="bg-primary-blue/20 text-primary-blue px-3 py-2 rounded-lg text-sm font-medium">
+                    📊 Overview
+                  </div>
+                  <div className="text-text-secondary px-3 py-2 text-sm hover:text-text-primary">
+                    📋 Projects
+                  </div>
+                  <div className="text-text-secondary px-3 py-2 text-sm hover:text-text-primary">
+                    👥 Team
+                  </div>
+                  <div className="text-text-secondary px-3 py-2 text-sm hover:text-text-primary">
+                    📈 Analytics
+                  </div>
+                </nav>
+              </div>
+
+              {/* Team Status */}
+              <div className="bg-background-accent-grey/50 rounded-lg p-3">
+                <h4 className="text-text-primary font-medium text-sm mb-3">Team Status</h4>
+                <div className="space-y-2">
+                  {teamMembers.map((member, index) => (
+                    <motion.div
+                      key={member.name}
+                      className="flex items-center space-x-2"
+                      animate={{ opacity: [0.7, 1, 0.7] }}
+                      transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                    >
+                      <span className="text-lg">{member.avatar}</span>
+                      <div className="flex-1">
+                        <div className="text-xs text-text-primary">{member.name}</div>
+                        <div className="text-xs text-text-secondary">{member.status}</div>
+                      </div>
+                      <div className={`w-2 h-2 rounded-full ${member.online ? 'bg-success-green animate-pulse' : 'bg-text-secondary/30'}`}></div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="flex-1 p-4 overflow-y-auto">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-text-primary">Project Dashboard</h2>
+                  <p className="text-text-secondary">Track your team's progress in real-time</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">👤</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Metrics Grid */}
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <motion.div
+                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-primary-blue/20"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                >
+                  <div className="text-2xl font-bold text-primary-blue">{metrics.activeProjects}</div>
+                  <div className="text-sm text-text-secondary">Active Projects</div>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-success-green/20"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                >
+                  <div className="text-2xl font-bold text-success-green">{metrics.completedToday}</div>
+                  <div className="text-sm text-text-secondary">Completed Today</div>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-accent-yellow/20"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                >
+                  <div className="text-2xl font-bold text-accent-yellow">{metrics.teamVelocity}%</div>
+                  <div className="text-sm text-text-secondary">Team Velocity</div>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-accent-purple/20"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                >
+                  <div className="text-2xl font-bold text-accent-purple">{metrics.deploymentSuccess.toFixed(1)}%</div>
+                  <div className="text-sm text-text-secondary">Deploy Success</div>
+                </motion.div>
+              </div>
+
+              {/* Active Projects */}
+              <div className="bg-background-accent-grey/50 rounded-xl p-4">
+                <h3 className="text-lg font-semibold text-text-primary mb-4">Active Projects</h3>
+                <div className="space-y-3">
+                  {projects.map((project, index) => (
+                    <motion.div
+                      key={project.name}
+                      className={`bg-background-dark rounded-lg p-4 border ${
+                        index === activeProject 
+                          ? 'border-primary-blue/50 shadow-lg shadow-primary-blue/20' 
+                          : 'border-text-secondary/20'
+                      }`}
+                      animate={{ 
+                        opacity: index === activeProject ? 1 : 0.7,
+                        scale: index === activeProject ? 1.02 : 1
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-medium text-text-primary">{project.name}</h4>
+                        <span className={`text-xs px-2 py-1 rounded-full bg-${project.color}/20 text-${project.color}`}>
+                          {project.status}
+                        </span>
+                      </div>
+                      <div className="w-full bg-background-accent-grey/30 rounded-full h-2">
+                        <motion.div
+                          className={`h-2 bg-${project.color} rounded-full`}
+                          initial={{ width: '0%' }}
+                          animate={{ width: `${project.progress}%` }}
+                          transition={{ duration: 1, delay: index * 0.2 }}
+                        />
+                      </div>
+                      <div className="text-xs text-text-secondary mt-1">{project.progress}% complete</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Success indicator */}
+      <motion.div
+        className="absolute bottom-4 right-4 bg-success-green/20 border border-success-green/40 rounded-lg px-3 py-2 backdrop-blur-sm"
+        animate={{ opacity: [0.8, 1, 0.8] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <div className="flex items-center space-x-2">
+          <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
+          <span className="text-success-green text-xs font-mono">LIVE APPLICATION</span>
+        </div>
+      </motion.div>
     </div>
   );
 };
@@ -599,13 +724,22 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
     let interval: number;
     
     if (isPlaying) {
+      console.log('Starting auto-play with stages:', stages.map(s => s.title));
       interval = window.setInterval(() => {
         setProgress(prev => {
-          if (prev >= 100) {
-            setCurrentStage(current => (current + 1) % stages.length);
-            return 0;
+          const newProgress = prev + (100 / (duration / 100));
+          
+          if (newProgress >= 100) {
+            // Stage is complete, move to next stage
+            setCurrentStage(current => {
+              const nextStage = (current + 1) % stages.length;
+              console.log(`🔄 STAGE TRANSITION: ${current} (${stages[current]?.title}) → ${nextStage} (${stages[nextStage]?.title})`);
+              return nextStage;
+            });
+            return 0; // Reset progress for next stage
           }
-          return prev + (100 / (duration / 100));
+          
+          return newProgress;
         });
       }, 100);
     }
@@ -645,21 +779,6 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-h1 font-bold mb-6 bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent">
-            Transformation Interactive
-          </h2>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Observez l'évolution du chaos vers l'application fonctionnelle
-          </p>
-        </motion.div>
 
         {/* Timeline Horizontale - Étapes en ligne */}
         <div className="flex justify-center mb-12">
@@ -698,6 +817,13 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
                     <p className="text-xs text-text-secondary leading-relaxed">
                       {stage.description}
                     </p>
+                    {/* Manual navigation button for testing */}
+                    <button
+                      onClick={() => setCurrentStage(index)}
+                      className="mt-2 px-2 py-1 text-xs bg-primary-blue/20 text-primary-blue rounded hover:bg-primary-blue/30 transition-colors"
+                    >
+                      Voir étape {index + 1}
+                    </button>
                   </div>
                 </div>
 
@@ -718,7 +844,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
         </div>
 
         {/* Visualisation principale - Format vertical immersif et allongé */}
-        <div className="relative h-[800px] mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
+        <div className="relative h-[800px] w-[600px] mx-auto mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStage}
@@ -755,39 +881,6 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8 space-y-2">
-          <div className="flex justify-between text-sm text-text-secondary">
-            <span>Étape {currentStage + 1} de {stages.length}</span>
-            <span>{Math.round(progress)}%</span>
-          </div>
-          <div className="w-full h-2 bg-background-accent-grey/30 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-gradient-to-r from-accent-red to-primary-blue"
-              style={{ width: `${progress}%` }}
-              transition={{ duration: 0.1 }}
-            />
-          </div>
-        </div>
-
-        {/* Controls */}
-        <div className="flex justify-center space-x-4 mb-12">
-          <button
-            onClick={handlePlay}
-            className="flex items-center space-x-2 px-6 py-3 bg-primary-blue hover:bg-primary-blue/90 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
-          >
-            {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-            <span className="font-medium">{isPlaying ? 'Pause' : 'Jouer'}</span>
-          </button>
-          
-          <button
-            onClick={handleReset}
-            className="flex items-center space-x-2 px-6 py-3 bg-background-accent-grey hover:bg-background-light-grey text-text-light rounded-lg transition-all duration-200 border border-primary-blue/30 shadow-lg hover:shadow-xl"
-          >
-            <RotateCcw className="w-5 h-5" />
-            <span className="font-medium">Recommencer</span>
-          </button>
-        </div>
 
         {/* Description */}
         <motion.div

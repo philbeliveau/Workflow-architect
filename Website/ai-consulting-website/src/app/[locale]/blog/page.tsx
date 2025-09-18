@@ -7,6 +7,36 @@ import Link from 'next/link';
 export default function BlogPage() {
   const techBlogs = [
     {
+      id: 'claude-alignment-techniques',
+      title: 'Comment J\'ai Contraint Claude : Techniques d\'Alignement et Persistance des Contraintes',
+      excerpt: 'Quand j\'ai commencé à travailler avec Claude sur l\'extraction de données personnelles (PII), j\'ai rapidement découvert un problème majeur : Claude avait tendance à prendre des raccourcis.',
+      date: '2025-01-18',
+      readTime: '12 min',
+      category: 'IA & Développement',
+      tags: ['Claude', 'PII', 'Alignement', 'Architecture'],
+      featured: true,
+      context: {
+        challenge: 'Claude prenait des raccourcis dans l\'extraction de données personnelles',
+        solution: 'Architecture de contraintes avec CLAUDE.md et mémoire persistante',
+        results: ['+66.6% performance vs version non-alignée', '100% conformité fonctionnelle', '0% erreur production 6 mois']
+      }
+    },
+    {
+      id: 'sparc-methodology',
+      title: 'SPARC : La Méthodologie qui Structure le Développement par IA',
+      excerpt: 'Découvrez comment diviser intelligemment vos projets en étapes vérifiables pour obtenir des résultats fiables avec les agents IA. Une approche structurée en 5 phases.',
+      date: '2025-01-18',
+      readTime: '14 min',
+      category: 'Methodology',
+      tags: ['SPARC', 'AI', 'Development', 'Methodology'],
+      featured: true,
+      context: {
+        challenge: 'Éviter les échecs dans le développement avec des agents IA',
+        solution: 'Méthodologie SPARC en 5 phases : Spécification, Pseudocode, Architecture, Refinement, Code',
+        results: ['3-5x plus rapide', 'Zéro ambiguïté', 'Résultats vérifiables']
+      }
+    },
+    {
       id: 'bmad-methodology',
       title: 'BMAD Method: Structured AI-Driven Development',
       excerpt: 'Discover the complete workflow that transforms project ideas into production-ready applications through intelligent agent collaboration and structured planning.',

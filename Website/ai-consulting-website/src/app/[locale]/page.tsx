@@ -5,7 +5,7 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { getTranslations } from 'next-intl/server';
 
 // Lazy load components that are below the fold
-const TransformationProcess = lazy(() => import('@/components/sections/TransformationProcess'));
+const TransformationProcessInteractive = lazy(() => import('@/components/sections/TransformationProcessInteractive'));
 const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
 const ProblemStatement = lazy(() => import('@/components/sections/ProblemStatement'));
 const TrainingContent = lazy(() => import('@/components/sections/TrainingContent'));
@@ -43,7 +43,7 @@ export default async function Home({
         
         <section id="transformation">
           <Suspense fallback={<SectionFallback />}>
-            <TransformationProcess />
+            <TransformationProcessInteractive autoPlay={true} duration={5000} />
           </Suspense>
         </section>
         
