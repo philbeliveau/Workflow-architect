@@ -715,6 +715,76 @@
       }
     }
   },
+  "methodology": {
+    "title": "Collaboration Multi-Agents en Action",
+    "subtitle": "Regardez plusieurs agents IA collaborer en temps réel pour transformer la complexité en solutions structurées",
+    "agents": {
+      "architect": {
+        "name": "Architecte Système",
+        "role": "Conçoit la structure globale",
+        "status": "analyse"
+      },
+      "researcher": {
+        "name": "Agent Recherche",
+        "role": "Collecte les exigences",
+        "status": "recherche"
+      },
+      "coder": {
+        "name": "Générateur de Code",
+        "role": "Implémente les fonctionnalités",
+        "status": "codage"
+      },
+      "tester": {
+        "name": "Agent Qualité",
+        "role": "Assure la fiabilité",
+        "status": "test"
+      },
+      "security": {
+        "name": "Agent Sécurité",
+        "role": "Valide la sécurité",
+        "status": "scan"
+      }
+    },
+    "workflow": {
+      "title": "Collaboration d'Agents IA en Action",
+      "live_collaboration": "Collaboration Live",
+      "real_time_processing": "Traitement Temps Réel",
+      "connected": "Connecté",
+      "progress": "Progrès",
+      "current_tasks": "Tâches Actuelles",
+      "live_output": "Sortie Live",
+      "tasks": [
+        "Analyse des exigences",
+        "Traitement des structures de données",
+        "Optimisation des performances"
+      ],
+      "outputs": {
+        "analyzing": "> Analyse de l'architecture système...",
+        "researching": "> Collecte des exigences domaine...",
+        "coding": "> Génération de la structure des composants...",
+        "testing": "> Exécution des tests de validation...",
+        "scanning": "> Scan des vulnérabilités de sécurité..."
+      }
+    },
+    "results": {
+      "title": "Du Chaos à la Structure : Agents IA Travaillant Ensemble",
+      "subtitle": "Regardez comment plusieurs agents IA spécialisés collaborent pour transformer des exigences complexes en solutions structurées et déployables. Chaque agent apporte une expertise unique tout en maintenant une coordination parfaite.",
+      "stats": {
+        "agents_count": "5 Agents",
+        "agents_description": "Travaillant en Parallèle",
+        "speed_improvement": "85% Plus Rapide",
+        "speed_description": "Que le Développement Traditionnel",
+        "structure_quality": "100% Structuré",
+        "structure_description": "Sortie Organisée"
+      },
+      "cta": "Découvrez la Méthodologie"
+    },
+    "methodology_cta": {
+      "title": "Prêt à Découvrir Notre Méthodologie ?",
+      "description": "Expérimentez la puissance du développement IA structuré. De la complexité éparpillée aux résultats organisés et prévisibles.",
+      "button": "Expérimentez la Méthodologie"
+    }
+  },
   "metadata": {
     "home": {
       "title": "NEWCODE - Développement IA Accéléré",

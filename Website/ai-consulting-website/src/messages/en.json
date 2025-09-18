@@ -720,6 +720,76 @@
       }
     }
   },
+  "methodology": {
+    "title": "Multi-Agent Collaboration in Action",
+    "subtitle": "Watch multiple AI agents collaborate in real-time to transform complexity into structured solutions",
+    "agents": {
+      "architect": {
+        "name": "System Architect",
+        "role": "Designs overall structure",
+        "status": "analyzing"
+      },
+      "researcher": {
+        "name": "Research Agent",
+        "role": "Gathers requirements",
+        "status": "researching"
+      },
+      "coder": {
+        "name": "Code Generator",
+        "role": "Implements features",
+        "status": "coding"
+      },
+      "tester": {
+        "name": "Quality Agent",
+        "role": "Ensures reliability",
+        "status": "testing"
+      },
+      "security": {
+        "name": "Security Agent",
+        "role": "Validates security",
+        "status": "scanning"
+      }
+    },
+    "workflow": {
+      "title": "AI Agent Collaboration in Action",
+      "live_collaboration": "Live Collaboration",
+      "real_time_processing": "Real-time Processing",
+      "connected": "Connected",
+      "progress": "Progress",
+      "current_tasks": "Current Tasks",
+      "live_output": "Live Output",
+      "tasks": [
+        "Analyzing requirements",
+        "Processing data structures",
+        "Optimizing performance"
+      ],
+      "outputs": {
+        "analyzing": "> Analyzing system architecture...",
+        "researching": "> Gathering domain requirements...",
+        "coding": "> Generating component structure...",
+        "testing": "> Running validation tests...",
+        "scanning": "> Security vulnerability scan..."
+      }
+    },
+    "results": {
+      "title": "From Chaos to Structure: AI Agents Working Together",
+      "subtitle": "Watch how multiple specialized AI agents collaborate to transform complex requirements into structured, deployable solutions. Each agent brings unique expertise while maintaining perfect coordination.",
+      "stats": {
+        "agents_count": "5 Agents",
+        "agents_description": "Working in Parallel",
+        "speed_improvement": "85% Faster",
+        "speed_description": "Than Traditional Development",
+        "structure_quality": "100% Structured",
+        "structure_description": "Organized Output"
+      },
+      "cta": "Experience the Methodology"
+    },
+    "methodology_cta": {
+      "title": "Ready to Experience Our Methodology?",
+      "description": "Experience the power of structured AI development. From scattered complexity to organized, predictable results.",
+      "button": "Experience the Methodology"
+    }
+  },
   "metadata": {
     "home": {
       "title": "NEWCODE - Accelerated AI Development",

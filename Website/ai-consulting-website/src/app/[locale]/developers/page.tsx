@@ -1,6 +1,7 @@
 import Navigation from '@/components/sections/Navigation';
 import DevelopersHero from '@/components/sections/developers/DevelopersHero';
 import TechnicalStack from '@/components/sections/developers/TechnicalStack';
+import MethodologyShowcase from '@/components/sections/MethodologyShowcase';
 import AdvancedFeatures from '@/components/sections/developers/AdvancedFeatures';
 import AgentOrchestration from '@/components/sections/developers/AgentOrchestration';
 import TechnicalCaseStudies from '@/components/sections/developers/TechnicalCaseStudies';
@@ -40,6 +41,7 @@ export default function DevelopersPage() {
         <AdvancedFeatures />
         <AgentOrchestration />
         <TechnicalCaseStudies />
+        <MethodologyShowcase />
         <DeveloperCTA />
       </main>
       
