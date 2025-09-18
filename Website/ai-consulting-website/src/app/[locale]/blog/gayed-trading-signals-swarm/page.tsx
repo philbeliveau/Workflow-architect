@@ -133,25 +133,25 @@ export default async function GayedTradingSignalsPage({
                     <div>
                       <h4 className="font-semibold text-primary-blue">{t('approach.agentic.phase1.title')}</h4>
                       <ul className="text-sm text-text-secondary space-y-1">
-                        {t('approach.agentic.phase1.tasks', { returnObjects: true }).map((task: string, index: number) => (
-                          <li key={index}>• {task}</li>
-                        ))}
+                        <li>• {t('approach.agentic.phase1.task1')}</li>
+                        <li>• {t('approach.agentic.phase1.task2')}</li>
+                        <li>• {t('approach.agentic.phase1.task3')}</li>
                       </ul>
                     </div>
                     <div>
                       <h4 className="font-semibold text-primary-blue">{t('approach.agentic.phase2.title')}</h4>
                       <ul className="text-sm text-text-secondary space-y-1">
-                        {t('approach.agentic.phase2.tasks', { returnObjects: true }).map((task: string, index: number) => (
-                          <li key={index}>• {task}</li>
-                        ))}
+                        <li>• {t('approach.agentic.phase2.task1')}</li>
+                        <li>• {t('approach.agentic.phase2.task2')}</li>
+                        <li>• {t('approach.agentic.phase2.task3')}</li>
                       </ul>
                     </div>
                     <div>
                       <h4 className="font-semibold text-primary-blue">{t('approach.agentic.phase3.title')}</h4>
                       <ul className="text-sm text-text-secondary space-y-1">
-                        {t('approach.agentic.phase3.tasks', { returnObjects: true }).map((task: string, index: number) => (
-                          <li key={index}>• {task}</li>
-                        ))}
+                        <li>• {t('approach.agentic.phase3.task1')}</li>
+                        <li>• {t('approach.agentic.phase3.task2')}</li>
+                        <li>• {t('approach.agentic.phase3.task3')}</li>
                       </ul>
                     </div>
                   </div>

@@ -26,8 +26,14 @@
     "solution": "Solution"
   },
   "hero": {
-    "title": "Maîtrisez le développement agentique",
-    "subtitle": "Réduire la complexité du développement logiciel en déléguant aux agents IA.",
+    "title": "Ne restez plus spectateur de l'IA",
+    "subtitle": "Transformez vos connaissances métier en applications fonctionnelles — passez de 'celui qui a l'idée' à 'celui qui la réalise'",
+    "statistic": {
+      "icon": "💡",
+      "text": "Près de 60% des apps personnalisées en entreprise sont développées hors de l'IT",
+      "subtext": "📈 La technique n'est plus une limite"
+    },
+    "supporting_message": "Transformez vos connaissances métier en applications fonctionnelles — passez de celui qui a l'idée à celui qui la réalise.",
     "steps": {
       "formation": {
         "title": "Formation",
@@ -44,8 +50,8 @@
     },
     "summary": "Méthode complète pour transformer vos équipes",
     "cta": {
-      "training": "Notre formation",
-      "guide": "Notre guide"
+      "primary": "Commencer ma transformation",
+      "secondary": "Voir la méthode"
     }
   },
   "sections": {
@@ -80,9 +86,39 @@
       ]
     }
   },
+  "formation_overview": {
+    "title": "FORMATION NEWCODE",
+    "subtitle": "Deux parcours pour maîtriser la programmation agentique",
+    "formation_beginner": {
+      "title": "FORMATION DÉBUTANT",
+      "subtitle": "De zéro à votre première application",
+      "features": [
+        "6 heures intensives",
+        "Aucun prérequis technique",
+        "Outils visuels (Bolt, Lovable)",
+        "Résultat : Site ou app fonctionnel déployé"
+      ],
+      "quote": "Créez votre première application sans écrire une ligne de code"
+    },
+    "formation_advanced": {
+      "title": "FORMATION AVANCÉE",
+      "subtitle": "Maîtrisez l'orchestration d'agents",
+      "features": [
+        "Méthodologie SPARC complète",
+        "Claude Flow et agents spécialisés",
+        "Projets complexes et déploiement pro",
+        "Intégration bases de données et APIs"
+      ],
+      "quote": "Développez des applications de niveau professionnel"
+    },
+    "value_proposition": "Des connaissances métier aux applications fonctionnelles",
+    "subtitle_value": "Notre méthode transforme votre expertise en créations numériques",
+    "cta": "CHOISIR MA FORMATION",
+    "community_caption": "Notre communauté active où les apprenants partagent leurs créations"
+  },
   "tracks": {
-    "title": "À qui s'adresse la formation ?",
-    "subtitle": "Une formation accessible à tous, adaptée aux rôles techniques et non-techniques.",
+    "title": "Qui peut devenir créateur ?",
+    "subtitle": "Empowerment-focused messaging with pain point → solution transformation narrative.",
     "developers": {
       "title": "Développeurs & Équipes Tech",
       "subtitle": "Orchestration d'agents, ingénierie de contexte",
@@ -90,7 +126,7 @@
       "features": {
         "title": "Ce que vous obtenez :",
         "items": [
-          "Paradigme agentique expliqué",
+          "Orchestration d'agents IA avancée",
           "Environnements MCP configurés",
           "Méthodologie specs et prompts",
           "Projets complexes de A à Z"
@@ -1232,27 +1268,21 @@
         "title": "⚡ Méthode agentique (4 heures)",
         "phase1": {
           "title": "Phase 1 : Analyse parallèle (45 min)",
-          "tasks": [
-            "Agent Research : extraction des concepts clés",
-            "Agent Math : validation des formules",
-            "Agent Architect : design de l'architecture"
-          ]
+          "task1": "Agent Research : extraction des concepts clés",
+          "task2": "Agent Math : validation des formules",
+          "task3": "Agent Architect : design de l'architecture"
         },
         "phase2": {
           "title": "Phase 2 : Implémentation (2h30)",
-          "tasks": [
-            "5 agents spécialisés par signal",
-            "Tests automatisés en parallèle",
-            "Validation croisée en temps réel"
-          ]
+          "task1": "5 agents spécialisés par signal",
+          "task2": "Tests automatisés en parallèle",
+          "task3": "Validation croisée en temps réel"
         },
         "phase3": {
           "title": "Phase 3 : Interface (45 min)",
-          "tasks": [
-            "Agent UI : dashboard interactif",
-            "Agent Data : visualisations temps réel",
-            "Agent QA : tests d'intégration"
-          ]
+          "task1": "Agent UI : dashboard interactif",
+          "task2": "Agent Data : visualisations temps réel",
+          "task3": "Agent QA : tests d'intégration"
         }
       }
     },
@@ -1306,21 +1336,17 @@
       },
       "optimizations": {
         "title": "⚡ Optimisations Performance",
-        "items": [
-          "Calculs vectorisés avec NumPy/Pandas",
-          "Cache intelligent des corrélations",
-          "Mise à jour incrémentale des signaux",
-          "Pool de workers pour calculs parallèles"
-        ]
+        "item1": "Calculs vectorisés avec NumPy/Pandas",
+        "item2": "Cache intelligent des corrélations",
+        "item3": "Mise à jour incrémentale des signaux",
+        "item4": "Pool de workers pour calculs parallèles"
       },
       "errorHandling": {
         "title": "🛡️ Gestion des Erreurs",
-        "items": [
-          "Validation des données en entrée",
-          "Fallback sur données alternatives",
-          "Alertes automatiques en cas d'anomalie",
-          "Historique des erreurs et diagnostics"
-        ]
+        "item1": "Validation des données en entrée",
+        "item2": "Fallback sur données alternatives",
+        "item3": "Alertes automatiques en cas d'anomalie",
+        "item4": "Historique des erreurs et diagnostics"
       }
     },
     "dashboard": {
@@ -1332,30 +1358,24 @@
       "features": {
         "realTime": {
           "title": "📈 Signaux en Temps Réel",
-          "items": [
-            "Mise à jour toutes les 5 secondes",
-            "Alertes configurables par signal",
-            "Historique des signaux sur 2 ans",
-            "Export des données CSV/JSON"
-          ]
+          "item1": "Mise à jour toutes les 5 secondes",
+          "item2": "Alertes configurables par signal",
+          "item3": "Historique des signaux sur 2 ans",
+          "item4": "Export des données CSV/JSON"
         },
         "analytics": {
           "title": "📊 Analytics Avancées",
-          "items": [
-            "Backtesting automatisé",
-            "Métriques de Sharpe et Sortino",
-            "Analysis de drawdown",
-            "Corrélations inter-signaux"
-          ]
+          "item1": "Backtesting automatisé",
+          "item2": "Métriques de Sharpe et Sortino",
+          "item3": "Analysis de drawdown",
+          "item4": "Corrélations inter-signaux"
         },
         "configuration": {
           "title": "⚙️ Configuration",
-          "items": [
-            "Paramètres ajustables par signal",
-            "Profils de risque personnalisés",
-            "Intégration API externe",
-            "Notifications multi-canaux"
-          ]
+          "item1": "Paramètres ajustables par signal",
+          "item2": "Profils de risque personnalisés",
+          "item3": "Intégration API externe",
+          "item4": "Notifications multi-canaux"
         }
       }
     },
@@ -1416,30 +1436,24 @@
       "title": "Leçons apprises et bonnes pratiques",
       "whatWorked": {
         "title": "✅ Ce qui a fonctionné",
-        "items": [
-          "Spécialisation des agents : Chaque agent avait un domaine d'expertise clair",
-          "Validation croisée : Les résultats de chaque agent étaient vérifiés par d'autres",
-          "Itération rapide : Cycles de feedback de 15 minutes maximum",
-          "Documentation automatique : Chaque agent documentait ses décisions"
-        ]
+        "item1": "Spécialisation des agents : Chaque agent avait un domaine d'expertise clair",
+        "item2": "Validation croisée : Les résultats de chaque agent étaient vérifiés par d'autres",
+        "item3": "Itération rapide : Cycles de feedback de 15 minutes maximum",
+        "item4": "Documentation automatique : Chaque agent documentait ses décisions"
       },
       "challenges": {
         "title": "⚠️ Défis rencontrés",
-        "items": [
-          "Coordination initiale : 30 min perdues sur la synchronisation des agents",
-          "Données manquantes : Quelques sources de données étaient indisponibles",
-          "Optimisation prématurée : Certains agents ont sur-optimisé trop tôt",
-          "Tests d'intégration : Complexité des interactions entre signaux"
-        ]
+        "item1": "Coordination initiale : 30 min perdues sur la synchronisation des agents",
+        "item2": "Données manquantes : Quelques sources de données étaient indisponibles",
+        "item3": "Optimisation prématurée : Certains agents ont sur-optimisé trop tôt",
+        "item4": "Tests d'intégration : Complexité des interactions entre signaux"
       },
       "improvements": {
         "title": "🚀 Améliorations futures",
-        "items": [
-          "ML Adaptive : Signaux qui s'adaptent automatiquement aux conditions de marché",
-          "Signaux composites : Combinaisons intelligentes de plusieurs signaux",
-          "Backtesting distribué : Tests parallèles sur plusieurs périodes historiques",
-          "API publique : Accès externe pour d'autres traders et institutions"
-        ]
+        "item1": "ML Adaptive : Signaux qui s'adaptent automatiquement aux conditions de marché",
+        "item2": "Signaux composites : Combinaisons intelligentes de plusieurs signaux",
+        "item3": "Backtesting distribué : Tests parallèles sur plusieurs périodes historiques",
+        "item4": "API publique : Accès externe pour d'autres traders et institutions"
       }
     },
     "conclusion": {
@@ -1447,26 +1461,381 @@
       "description": "Ce projet démontre comment l'approche agentique peut transformer radicalement le développement de systèmes financiers complexes. En 4 heures, nous avons accompli ce qui aurait pris des semaines à une équipe traditionnelle, avec une précision et une fiabilité supérieures.",
       "keyPoints": {
         "title": "🎯 Points clés à retenir",
-        "items": [
-          "La spécialisation des agents maximise l'expertise",
-          "La validation croisée garantit la qualité",
-          "L'itération rapide permet l'amélioration continue",
-          "La documentation automatique facilite la maintenance"
-        ]
+        "item1": "La spécialisation des agents maximise l'expertise",
+        "item2": "La validation croisée garantit la qualité",
+        "item3": "L'itération rapide permet l'amélioration continue",
+        "item4": "La documentation automatique facilite la maintenance"
       },
       "perspectives": {
         "title": "🔮 Perspectives",
-        "items": [
-          "Signaux adaptatifs avec machine learning",
-          "Intégration de données alternatives (sentiment, news)",
-          "Expansion vers d'autres classes d'actifs",
-          "Plateforme collaborative pour d'autres chercheurs"
-        ]
+        "item1": "Signaux adaptatifs avec machine learning",
+        "item2": "Intégration de données alternatives (sentiment, news)",
+        "item3": "Expansion vers d'autres classes d'actifs",
+        "item4": "Plateforme collaborative pour d'autres chercheurs"
       },
       "cta": {
         "question": "Intéressé par l'implémentation de signaux de trading avec des agents IA ?",
         "button": "Découvrir notre formation"
       }
     }
+  },
+  "target_audience": {
+    "title": "À qui s'adresse la formation?",
+    "subtitle": "Chaque profil a ses défis spécifiques. Découvrez comment notre formation transforme votre situation.",
+    "interaction": {
+      "title": "👆 Cliquez sur votre profil",
+      "description": "Découvrez comment notre méthode résout vos défis spécifiques"
+    },
+    "segments": {
+      "entrepreneurs": {
+        "title": "Entrepreneurs",
+        "headline": "De l'idée à l'application déployée",
+        "pain_points": [
+          "Dépendance aux développeurs pour chaque idée",
+          "Coûts de développement prohibitifs",
+          "Délais de validation produit trop longs",
+          "Difficulté à itérer rapidement"
+        ],
+        "transformation": [
+          "Créez vos propres prototypes fonctionnels",
+          "Validez vos idées en quelques heures",
+          "Itérez sans contraintes techniques",
+          "Lancez votre MVP en autonomie"
+        ],
+        "success_metrics": "Temps de validation d'idée : 2 mois → 48h | Coût de prototypage : -85%"
+      },
+      "intrapreneurs": {
+        "title": "Intrapreneurs",
+        "headline": "Innovez dans votre organisation",
+        "pain_points": [
+          "Processus IT trop lents pour l'innovation",
+          "Budgets serrés pour les projets exploratoires",
+          "Difficulté à convaincre sans preuve de concept",
+          "Dépendance aux ressources techniques internes"
+        ],
+        "transformation": [
+          "Créez des démos convaincantes rapidement",
+          "Contournez les processus IT pour l'innovation",
+          "Prouvez la valeur avant de demander des ressources",
+          "Montrez l'impact métier avec des prototypes"
+        ],
+        "success_metrics": "Temps de proof-of-concept : 6 mois → 1 semaine | Taux d'approbation projets : +200%"
+      },
+      "tech_enthusiasts": {
+        "title": "Tech Enthusiasts",
+        "headline": "Passez du hobby aux applications pros",
+        "pain_points": [
+          "Projets personnels qui restent inachevés",
+          "Manque de méthodologie pour les gros projets",
+          "Difficultés avec l'architecture complexe",
+          "Pas assez de temps pour tout apprendre"
+        ],
+        "transformation": [
+          "Finalisez enfin vos projets ambitieux",
+          "Maîtrisez l'architecture d'applications complètes",
+          "Accélérez votre apprentissage avec les agents",
+          "Créez un portfolio professionnel impressionnant"
+        ],
+        "success_metrics": "Projets complétés : +300% | Temps de développement : -60% | Qualité du code : Pro"
+      },
+      "experienced_developers": {
+        "title": "Développeurs Expérimentés",
+        "headline": "Multipliez votre productivité",
+        "pain_points": [
+          "Routine et répétitivité dans les tâches",
+          "Pression pour livrer toujours plus vite",
+          "Obsolescence face aux nouveaux outils IA",
+          "Difficultés à rester à jour avec l'évolution rapide"
+        ],
+        "transformation": [
+          "Déléguez les tâches répétitives aux agents",
+          "Concentrez-vous sur l'architecture et la créativité",
+          "Maîtrisez les outils d'avant-garde",
+          "Devenez l'expert IA de votre équipe"
+        ],
+        "success_metrics": "Productivité : +400% | Tâches répétitives : -80% | Satisfaction au travail : ⭐⭐⭐⭐⭐"
+      },
+      "creative_generalists": {
+        "title": "Créatifs Généralistes",
+        "headline": "Donnez vie à vos idées créatives",
+        "pain_points": [
+          "Idées créatives limitées par la technique",
+          "Dépendance aux développeurs pour concrétiser",
+          "Frustration face à la complexité du code",
+          "Impossibilité de prototyper ses concepts"
+        ],
+        "transformation": [
+          "Transformez vos concepts en applications fonctionnelles",
+          "Prototypez vos idées les plus folles",
+          "Créez sans barrières techniques",
+          "Devenez un créateur numérique complet"
+        ],
+        "success_metrics": "Idées concrétisées : +500% | Autonomie créative : 100% | Projets réalisés par mois : x10"
+      },
+      "product_managers": {
+        "title": "Product Managers",
+        "headline": "De la spécification au prototype",
+        "pain_points": [
+          "Communication difficile avec les équipes tech",
+          "Impossibilité de tester les idées rapidement",
+          "Dépendance totale aux développeurs",
+          "Difficultés à prioriser sans prototypes"
+        ],
+        "transformation": [
+          "Créez vos propres prototypes interactifs",
+          "Testez vos hypothèses produit instantanément",
+          "Communiquez mieux avec vos équipes techniques",
+          "Prenez des décisions basées sur du concret"
+        ],
+        "success_metrics": "Vitesse de validation : +800% | Qualité des specs : Pro | Alignement équipe : 95%"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Choisissez votre transformation",
+    "subtitle": "Des solutions adaptées à chaque niveau, du premier pas à l'expertise complète",
+    "tiers": {
+      "guide": {
+        "name": "Le Guide Newcode",
+        "tagline": "Découverte autonome",
+        "description": "Manuel complet de développement agentique",
+        "price": "197€",
+        "price_early": "97€",
+        "includes_title": "Ce que vous obtenez :",
+        "includes": [
+          "Manuel de 200+ pages",
+          "Méthodologie SPARC complète",
+          "25+ prompts prêts à l'emploi",
+          "Checklist de déploiement",
+          "Templates de projets",
+          "Accès aux mises à jour"
+        ],
+        "perfect_for_title": "Parfait pour :",
+        "perfect_for": [
+          "Autodidactes motivés",
+          "Budget serré mais forte motivation",
+          "Apprentissage à votre rythme",
+          "Complément à une formation"
+        ],
+        "cta": "Commencez votre parcours en autonomie",
+        "button": "Obtenir le Guide"
+      },
+      "essential": {
+        "name": "Formation Essentielle",
+        "tagline": "Accompagnement personnalisé",
+        "price": "1,497€",
+        "price_early": "997€",
+        "access": "Accès immédiat",
+        "includes_title": "Formation + communauté :",
+        "includes": [
+          "6h de formation intensive live",
+          "Le Guide Newcode inclus",
+          "Accès communauté Circle à vie",
+          "Support direct 30 jours",
+          "Enregistrements des sessions",
+          "Projets pratiques guidés"
+        ],
+        "perfect_for_title": "Parfait pour :",
+        "perfect_for": [
+          "Premiers pas en développement agentique",
+          "Besoin d'accompagnement personnalisé",
+          "Apprentissage structuré et progressif",
+          "Accès à une communauté d'experts"
+        ],
+        "cta": "L'équilibre parfait entre autonomie et support",
+        "button": "Rejoindre la Formation"
+      },
+      "premium": {
+        "name": "Formation Premium",
+        "tagline": "Transformation complète",
+        "price": "2,997€",
+        "price_early": "1,997€",
+        "next_session": "Prochaine session : 15 janvier",
+        "includes_title": "Formation + Mentoring :",
+        "includes": [
+          "12h de formation avancée",
+          "Mentoring 1-to-1 (3 sessions)",
+          "Projets réels avec feedback",
+          "Certification officielle",
+          "Accès VIP communauté",
+          "Kit d'outils complet",
+          "Support prioritaire 90 jours"
+        ],
+        "perfect_for_title": "Parfait pour :",
+        "perfect_for": [
+          "Professionnels et entrepreneurs ambitieux",
+          "Projets complexes et mission-critical",
+          "Besoin de certification reconnue",
+          "Transformation complète des compétences"
+        ],
+        "cta": "Devenez un expert reconnu du développement agentique",
+        "button": "Transformation Premium"
+      },
+      "enterprise": {
+        "name": "Formation Entreprise",
+        "tagline": "Solution sur mesure",
+        "price": "Sur devis",
+        "consultation": "Consultation gratuite",
+        "includes_title": "Solution complète :",
+        "includes": [
+          "Formation équipe personnalisée",
+          "Accompagnement sur vos projets réels",
+          "Mise en place de workflows",
+          "Formation des formateurs internes",
+          "Support technique dédié",
+          "Intégration avec vos outils existants"
+        ],
+        "perfect_for_title": "Parfait pour :",
+        "perfect_for": [
+          "Équipes de 5+ personnes",
+          "Organisations avec besoins spécifiques",
+          "Intégration avec infrastructure existante",
+          "Formation de formateurs internes"
+        ],
+        "cta": "Transformez toute votre organisation",
+        "button": "Consultation Gratuite"
+      }
+    },
+    "guarantee": {
+      "title": "Garantie Satisfaction 30 jours",
+      "description": "Nous sommes convaincus de la valeur de notre formation. Si vous n'êtes pas entièrement satisfait dans les 30 premiers jours, nous vous remboursons intégralement, sans question."
+    }
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Tout ce que vous devez savoir avant de commencer votre transformation",
+    "categories": {
+      "formation": "Formation",
+      "support": "Support",
+      "practical": "Pratique",
+      "after": "Après la formation",
+      "technical": "Technique"
+    },
+    "questions": {
+      "experience_required": {
+        "q": "Dois-je avoir de l'expérience en programmation ?",
+        "a": "Non ! Notre Formation Essentielle est conçue pour les débutants complets. Nous commençons par les bases et vous accompagnons étape par étape. Seule la Formation Premium demande quelques notions techniques de base."
+      },
+      "time_to_results": {
+        "q": "Combien de temps avant de voir des résultats ?",
+        "a": "Dès la première session de 2h, vous créerez votre première application fonctionnelle. En 48h de pratique, vous maîtriserez les outils essentiels. En 2 semaines, vous serez autonome sur des projets simples."
+      },
+      "industry_fit": {
+        "q": "Cette formation convient-elle à mon secteur d'activité ?",
+        "a": "Absolument ! La programmation agentique s'applique à tous les secteurs : finance, santé, e-commerce, marketing, RH, logistique... Les principes sont universels, nous adaptons les exemples à votre domaine."
+      },
+      "vs_traditional": {
+        "q": "Quelle différence avec une formation de développement classique ?",
+        "a": "Formation classique = 6+ mois pour être opérationnel. Notre approche agentique = 6h pour créer votre première app. Nous enseignons la délégation intelligente aux IA, pas la syntaxe de programmation."
+      },
+      "support_when_stuck": {
+        "q": "Que se passe-t-il si je bloque sur un projet ?",
+        "a": "Support multi-niveaux : communauté Circle active (réponse < 2h), sessions de debugging hebdomadaires, documentation complète avec +100 cas d'usage, et accès direct à nos experts."
+      },
+      "guarantee": {
+        "q": "Y a-t-il une garantie de résultats ?",
+        "a": "Garantie 30 jours satisfait ou remboursé + Garantie de résultats : si vous ne créez pas d'application fonctionnelle en 30 jours, nous vous offrons 3 sessions individuelles gratuites."
+      },
+      "payment_options": {
+        "q": "Quelles sont les options de paiement ?",
+        "a": "Paiement en 1x (prix early bird), 3x sans frais, ou 6x avec frais minimes. Pour les entreprises : facture 30 jours et prise en charge OPCO possible."
+      },
+      "funding_eligible": {
+        "q": "La formation est-elle éligible aux financements ?",
+        "a": "Oui ! Prise en charge possible via OPCO, CPF (dossier en cours), et financement entreprise. Nous vous aidons dans les démarches administratives."
+      },
+      "after_training": {
+        "q": "Qu'est-ce qui se passe après la formation ?",
+        "a": "Accès à vie à la communauté Circle, mises à jour gratuites du contenu, sessions de suivi trimestrielles, et programme de certification continue pour rester à jour."
+      },
+      "stay_updated": {
+        "q": "Comment rester à jour avec l'évolution rapide de l'IA ?",
+        "a": "Veille technologique hebdomadaire, mises à jour automatiques des outils, sessions 'nouveautés' mensuelles, et accès anticipé aux nouvelles méthodologies."
+      },
+      "hardware_requirements": {
+        "q": "De quel matériel ai-je besoin ?",
+        "a": "Un ordinateur récent (Mac/PC) avec navigateur web moderne et connexion internet stable. Aucun logiciel spécialisé requis - tout fonctionne dans le navigateur."
+      },
+      "mac_pc_compatible": {
+        "q": "La formation fonctionne-t-elle sur Mac et PC ?",
+        "a": "Parfaitement ! Nos outils sont 100% web-based et fonctionnent identiquement sur Mac, PC, et même Linux. Aucune différence d'expérience selon votre OS."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ils ont franchi le pas",
+    "subtitle": "Découvrez comment nos apprenants ont transformé leur façon de développer avec l'IA",
+    "metrics": {
+      "title": "Résultats mesurés sur 6 mois",
+      "subtitle": "Impact réel sur les carrières et les projets de nos apprenants"
+    },
+    "items": {
+      "marie_entrepreneur": {
+        "name": "Marie Dubois",
+        "role": "Fondatrice",
+        "company": "GreenTech Solutions",
+        "category": "entrepreneur",
+        "category_label": "Entrepreneur",
+        "quote": "En 3 mois, j'ai développé et lancé mon SaaS de gestion énergétique. Newcode m'a permis de transformer mon expertise métier en application fonctionnelle sans dépendre d'une équipe technique.",
+        "achievement": "SaaS lancé avec 50+ clients en 3 mois, économie de 80k€ en coûts de développement",
+        "timeframe": "Mars 2024"
+      },
+      "thomas_developer": {
+        "name": "Thomas Martin",
+        "role": "Développeur Senior",
+        "company": "Digital Factory",
+        "category": "developer",
+        "category_label": "Développeur",
+        "quote": "J'ai multiplié ma productivité par 5. Ce qui me prenait 2 semaines, je le fais maintenant en 2 jours. La méthode Newcode a révolutionné ma façon de coder avec l'IA.",
+        "achievement": "Promotion Lead Developer + 35% d'augmentation, délais projet réduits de 70%",
+        "timeframe": "Avril 2024"
+      },
+      "sophie_intrapreneur": {
+        "name": "Sophie Bernard",
+        "role": "Chef de Projet Digital",
+        "company": "Banque Nationale",
+        "category": "intrapreneur",
+        "category_label": "Intrapreneur",
+        "quote": "J'ai pu proposer et développer un prototype d'app interne en une semaine. Mon N+2 était bluffé et le projet a été validé avec un budget de 200k€.",
+        "achievement": "Prototype validé → projet 200k€ approuvé, promotion Chef de Produit Digital",
+        "timeframe": "Mai 2024"
+      },
+      "lucas_creative": {
+        "name": "Lucas Petit",
+        "role": "Designer UX/UI",
+        "company": "Freelance",
+        "category": "creative",
+        "category_label": "Créatif",
+        "quote": "Sans aucune base en code, j'ai créé mon portfolio interactif et 3 applications pour mes clients. Mes tarifs ont doublé car je livre du concret.",
+        "achievement": "Tarifs doublés (150€→300€/jour), 3 apps livrées, portfolio technique créé",
+        "timeframe": "Juin 2024"
+      },
+      "alex_tech": {
+        "name": "Alexandre Roy",
+        "role": "Étudiant Ingénieur",
+        "company": "École Polytechnique",
+        "category": "tech_enthusiast",
+        "category_label": "Passionné Tech",
+        "quote": "La formation m'a donné une longueur d'avance énorme. J'ai décroché un stage chez une startup AI grâce aux projets que j'ai pu montrer.",
+        "achievement": "Stage startup AI obtenu, 2 projets IA dans le portfolio, offre d'embauche",
+        "timeframe": "Février 2024"
+      },
+      "clara_pm": {
+        "name": "Clara Moreau",
+        "role": "Product Manager",
+        "company": "TechCorp",
+        "category": "product_manager",
+        "category_label": "Product Manager",
+        "quote": "Je prototype maintenant toutes mes features avant de briefer les devs. Ça évite 80% des allers-retours et les équipes me font plus confiance.",
+        "achievement": "Délais produit réduits de 50%, satisfaction équipe +40%, promotion Senior PM",
+        "timeframe": "Janvier 2024"
+      }
+    }
+  },
+  "contact_cta": {
+    "title": "Une question spécifique ?",
+    "description": "Notre équipe d'experts est disponible pour répondre à toutes vos questions personnalisées.",
+    "button": "Nous contacter",
+    "response_time": "Réponse sous 24h"
   }
 }

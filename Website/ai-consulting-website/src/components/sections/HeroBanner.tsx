@@ -3,8 +3,10 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Code, Zap, Users, Bot, BookOpen } from 'lucide-react';
+import { ArrowRight, Code, Zap, Users, Bot, BookOpen, Star, Play } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import TransformationProcessInteractive from './TransformationProcessInteractive';
+import Image from 'next/image';
 const HeroBanner: React.FC = memo(() => {
   const t = useTranslations('hero');
   const tSections = useTranslations('sections');
@@ -58,151 +60,108 @@ const HeroBanner: React.FC = memo(() => {
         </motion.div>
       </div>
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-42">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 
-            className="text-hero font-bold mb-8 bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent"
-            role="banner"
-            aria-label={t('title')}
+      {/* Main content - Two-column layout */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 mt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center min-h-[70vh]">
+          {/* Left Column: Main Messaging */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            {t('title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-text-primary max-w-4xl mx-auto mb-10 leading-relaxed font-medium">
-            {t('subtitle')}
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto mb-12 border border-accent-red/40 shadow-xl">
-            <div className="text-center">
-              {/* Compact 3 Steps */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center text-center max-w-[140px]">
-                  <div className="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center mb-2">
-                    <Users className="w-6 h-6 text-primary-blue" />
-                  </div>
-                  <span className="text-sm font-semibold text-slate-100 mb-1">{t('steps.formation.title')}</span>
-                  <span className="text-xs text-slate-400 leading-tight">{t('steps.formation.description')}</span>
+            <h1 
+              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-text-light via-primary-blue to-accent-red bg-clip-text text-transparent"
+              role="banner"
+              aria-label={t('title')}
+            >
+              {t('title')}
+              <div className="inline-flex items-center ml-4 relative">
+                <Zap className="w-8 h-8 md:w-12 md:h-12 text-accent-yellow animate-pulse" />
+                <div className="absolute inset-0 w-8 h-8 md:w-12 md:h-12 bg-accent-yellow/20 rounded-full animate-ping"></div>
+              </div>
+            </h1>
+            
+            <div className="space-y-4">
+              <p className="text-xl md:text-2xl text-text-primary leading-relaxed font-medium">
+                {t('subtitle')}
+              </p>
+              
+            </div>
+            
+            {/* Tech Stack Display */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="space-y-4"
+            >
+              <p className="text-sm text-text-secondary uppercase tracking-wider font-semibold flex items-center">
+                <Star className="w-4 h-4 mr-2 text-accent-yellow" />
+                Outils que vous maîtriserez
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-primary-blue/20 backdrop-blur-sm hover:border-primary-blue/40 transition-colors">
+                  <Bot className="w-5 h-5 text-primary-blue mr-2" />
+                  <span className="text-text-light text-sm font-medium">Claude AI</span>
                 </div>
-
-                <ArrowRight className="w-5 h-5 text-accent-red/60 hidden md:block" />
-                <ArrowRight className="w-4 h-4 text-accent-red/60 rotate-90 md:hidden" />
-
-                {/* Step 2 */}
-                <div className="flex flex-col items-center text-center max-w-[140px]">
-                  <div className="w-12 h-12 bg-accent-red/20 rounded-lg flex items-center justify-center mb-2">
-                    <Bot className="w-6 h-6 text-accent-red" />
-                  </div>
-                  <span className="text-sm font-semibold text-slate-100 mb-1">{t('steps.mastery.title')}</span>
-                  <span className="text-xs text-slate-400 leading-tight">{t('steps.mastery.description')}</span>
+                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-text-secondary/20 backdrop-blur-sm hover:border-text-secondary/40 transition-colors">
+                  <Code className="w-5 h-5 text-text-light mr-2" />
+                  <span className="text-text-light text-sm font-medium">GitHub</span>
                 </div>
-
-                <ArrowRight className="w-5 h-5 text-accent-red/60 hidden md:block" />
-                <ArrowRight className="w-4 h-4 text-accent-red/60 rotate-90 md:hidden" />
-
-                {/* Step 3 */}
-                <div className="flex flex-col items-center text-center max-w-[140px]">
-                  <div className="w-12 h-12 bg-accent-purple/20 rounded-lg flex items-center justify-center mb-2">
-                    <BookOpen className="w-6 h-6 text-accent-purple" />
-                  </div>
-                  <span className="text-sm font-semibold text-slate-100 mb-1">{t('steps.autonomy.title')}</span>
-                  <span className="text-xs text-slate-400 leading-tight">{t('steps.autonomy.description')}</span>
+                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-success-green/20 backdrop-blur-sm hover:border-success-green/40 transition-colors">
+                  <Zap className="w-5 h-5 text-success-green mr-2" />
+                  <span className="text-text-light text-sm font-medium">Next.js</span>
+                </div>
+                <div className="flex items-center bg-background-accent-grey/60 rounded-lg px-4 py-2 border border-accent-yellow/20 backdrop-blur-sm hover:border-accent-yellow/40 transition-colors">
+                  <Play className="w-5 h-5 text-accent-yellow mr-2" />
+                  <span className="text-text-light text-sm font-medium">+ 20 autres</span>
                 </div>
               </div>
-
-              {/* Enhanced summary */}
-              <p className="text-slate-200 text-sm font-medium">
-                {t('summary')}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* New Background Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="relative"
-        >
-          {/* Background elements for this section */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 right-10 w-48 h-48 bg-accent-red/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 left-10 w-64 h-64 bg-accent-yellow/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-          
-          {/* Background grid pattern */}
-          <div className="absolute inset-0 opacity-3">
-            <div className="grid grid-cols-8 gap-2 h-full p-4">
-              {Array.from({ length: 64 }, (_, i) => (
-                <div 
-                  key={i} 
-                  className="bg-text-secondary rounded-sm animate-pulse" 
-                  style={{
-                    animationDelay: `${i * 0.08}s`,
-                    animationDuration: '4s'
-                  }}
-                ></div>
-              ))}
-            </div>
-          </div>
-
-          {/* Floating elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              className="absolute top-1/3 left-1/5 text-accent-yellow/30"
-              animate={{ y: [0, -15, 0], rotate: [0, -3, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              style={{ willChange: 'transform' }}
-              aria-hidden="true"
-            >
-              <Zap size={32} />
             </motion.div>
+            
+            
+            {/* Call-to-Action Buttons */}
             <motion.div
-              className="absolute bottom-1/3 right-1/5 text-primary-blue/30"
-              animate={{ y: [0, 18, 0], rotate: [0, 4, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              style={{ willChange: 'transform' }}
-              aria-hidden="true"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4"
             >
-              <Code size={28} />
+              <Button 
+                variant="primary" 
+                size="lg" 
+                href="#formation-overview"
+                className="group"
+              >
+                {t('cta.primary')}
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="lg" 
+                href="#transformation"
+              >
+                {t('cta.secondary')}
+              </Button>
             </motion.div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
-          <Button 
-            variant="primary" 
-            size="lg" 
-            href="#track-selection"
-            className="group"
-          >
-            {t('cta.training')}
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
+          </motion.div>
           
-          <Button 
-            variant="outline" 
-            size="lg" 
-            href="/guide"
+          {/* Right Column: Transformation Process */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative"
           >
-            {t('cta.guide')}
-          </Button>
-        </motion.div>
+            <div className="aspect-square max-w-lg mx-auto lg:mx-0">
+              <TransformationProcessInteractive autoPlay={true} duration={5000} />
+            </div>
+          </motion.div>
+        </div>
+        {/* This content has been moved to the new two-column layout above */}
 
       </div>
     </section>

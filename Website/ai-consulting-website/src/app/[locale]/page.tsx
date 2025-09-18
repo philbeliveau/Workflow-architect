@@ -5,11 +5,11 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { getTranslations } from 'next-intl/server';
 
 // Lazy load components that are below the fold
-const TransformationProcessInteractive = lazy(() => import('@/components/sections/TransformationProcessInteractive'));
-const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
-const ProblemStatement = lazy(() => import('@/components/sections/ProblemStatement'));
-const TrainingContent = lazy(() => import('@/components/sections/TrainingContent'));
-const SolutionOverview = lazy(() => import('@/components/sections/SolutionOverview'));
+const FormationOverview = lazy(() => import('@/components/sections/FormationOverview'));
+const TechStackShowcase = lazy(() => import('@/components/sections/TechStackShowcase'));
+const TargetAudienceInteractive = lazy(() => import('@/components/sections/TargetAudienceInteractive'));
+const PricingPackages = lazy(() => import('@/components/sections/PricingPackages'));
+const FAQSection = lazy(() => import('@/components/sections/FAQSection'));
 const TeamSection = lazy(() => import('@/components/sections/TeamSection'));
 const CTASection = lazy(() => import('@/components/sections/CTASection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
@@ -29,8 +29,8 @@ export default async function Home({
   
   // Use locale-appropriate section IDs
   const sectionIds = locale === 'fr' 
-    ? { home: 'accueil', tracks: 'parcours', problem: 'probleme', solution: 'solution', contact: 'contact' }
-    : { home: 'home', tracks: 'tracks', problem: 'problem', solution: 'solution', contact: 'contact' };
+    ? { home: 'accueil', formation: 'formation', tools: 'outils', audience: 'public', pricing: 'tarifs', faq: 'faq', team: 'equipe', contact: 'contact' }
+    : { home: 'home', formation: 'formation', tools: 'tools', audience: 'audience', pricing: 'pricing', faq: 'faq', team: 'team', contact: 'contact' };
 
   return (
     <div className="min-h-screen">
@@ -41,39 +41,40 @@ export default async function Home({
           <HeroBanner />
         </section>
         
-        <section id="transformation">
+        
+        <section id={sectionIds.formation}>
           <Suspense fallback={<SectionFallback />}>
-            <TransformationProcessInteractive autoPlay={true} duration={5000} />
+            <FormationOverview />
           </Suspense>
         </section>
         
-        <section id={sectionIds.problem}>
+        <section id={sectionIds.tools}>
           <Suspense fallback={<SectionFallback />}>
-            <ProblemStatement />
+            <TechStackShowcase />
           </Suspense>
         </section>
         
-        <section id={sectionIds.tracks}>
+        <section id={sectionIds.audience}>
           <Suspense fallback={<SectionFallback />}>
-            <TrackSelection />
+            <TargetAudienceInteractive />
           </Suspense>
         </section>
         
-        <section id="formation">
+        <section id={sectionIds.pricing}>
           <Suspense fallback={<SectionFallback />}>
-            <TrainingContent />
+            <PricingPackages />
           </Suspense>
         </section>
         
-        <section id={sectionIds.solution}>
-          <Suspense fallback={<SectionFallback />}>
-            <SolutionOverview />
-          </Suspense>
-        </section>
-        
-        <section id="team">
+        <section id={sectionIds.team}>
           <Suspense fallback={<SectionFallback />}>
             <TeamSection />
+          </Suspense>
+        </section>
+        
+        <section id={sectionIds.faq}>
+          <Suspense fallback={<SectionFallback />}>
+            <FAQSection />
           </Suspense>
         </section>
         

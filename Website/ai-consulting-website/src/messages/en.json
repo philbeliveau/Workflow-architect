@@ -1229,27 +1229,21 @@
         "title": "⚡ Agentic method (4 hours)",
         "phase1": {
           "title": "Phase 1: Parallel analysis (45 min)",
-          "tasks": [
-            "Research Agent: key concept extraction",
-            "Math Agent: formula validation",
-            "Architect Agent: architecture design"
-          ]
+          "task1": "Research Agent: key concept extraction",
+          "task2": "Math Agent: formula validation",
+          "task3": "Architect Agent: architecture design"
         },
         "phase2": {
           "title": "Phase 2: Implementation (2h30)",
-          "tasks": [
-            "5 specialized agents per signal",
-            "Automated tests in parallel",
-            "Real-time cross-validation"
-          ]
+          "task1": "5 specialized agents per signal",
+          "task2": "Automated tests in parallel",
+          "task3": "Real-time cross-validation"
         },
         "phase3": {
           "title": "Phase 3: Interface (45 min)",
-          "tasks": [
-            "UI Agent: interactive dashboard",
-            "Data Agent: real-time visualizations",
-            "QA Agent: integration tests"
-          ]
+          "task1": "UI Agent: interactive dashboard",
+          "task2": "Data Agent: real-time visualizations",
+          "task3": "QA Agent: integration tests"
         }
       }
     },
@@ -1303,21 +1297,17 @@
       },
       "optimizations": {
         "title": "⚡ Performance Optimizations",
-        "items": [
-          "Vectorized calculations with NumPy/Pandas",
-          "Intelligent correlation caching",
-          "Incremental signal updates",
-          "Worker pool for parallel calculations"
-        ]
+        "item1": "Vectorized calculations with NumPy/Pandas",
+        "item2": "Intelligent correlation caching",
+        "item3": "Incremental signal updates",
+        "item4": "Worker pool for parallel calculations"
       },
       "errorHandling": {
         "title": "🛡️ Error Handling",
-        "items": [
-          "Input data validation",
-          "Fallback to alternative data",
-          "Automatic alerts on anomalies",
-          "Error history and diagnostics"
-        ]
+        "item1": "Input data validation",
+        "item2": "Fallback to alternative data",
+        "item3": "Automatic alerts on anomalies",
+        "item4": "Error history and diagnostics"
       }
     },
     "dashboard": {
@@ -1329,30 +1319,24 @@
       "features": {
         "realTime": {
           "title": "📈 Real-Time Signals",
-          "items": [
-            "Updates every 5 seconds",
-            "Configurable alerts per signal",
-            "2-year signal history",
-            "CSV/JSON data export"
-          ]
+          "item1": "Updates every 5 seconds",
+          "item2": "Configurable alerts per signal",
+          "item3": "2-year signal history",
+          "item4": "CSV/JSON data export"
         },
         "analytics": {
           "title": "📊 Advanced Analytics",
-          "items": [
-            "Automated backtesting",
-            "Sharpe and Sortino metrics",
-            "Drawdown analysis",
-            "Inter-signal correlations"
-          ]
+          "item1": "Automated backtesting",
+          "item2": "Sharpe and Sortino metrics",
+          "item3": "Drawdown analysis",
+          "item4": "Inter-signal correlations"
         },
         "configuration": {
           "title": "⚙️ Configuration",
-          "items": [
-            "Adjustable parameters per signal",
-            "Personalized risk profiles",
-            "External API integration",
-            "Multi-channel notifications"
-          ]
+          "item1": "Adjustable parameters per signal",
+          "item2": "Personalized risk profiles",
+          "item3": "External API integration",
+          "item4": "Multi-channel notifications"
         }
       }
     },
@@ -1413,30 +1397,24 @@
       "title": "Lessons learned and best practices",
       "whatWorked": {
         "title": "✅ What worked",
-        "items": [
-          "Agent specialization: Each agent had a clear domain of expertise",
-          "Cross-validation: Each agent's results were verified by others",
-          "Rapid iteration: Feedback cycles of maximum 15 minutes",
-          "Automatic documentation: Each agent documented its decisions"
-        ]
+        "item1": "Agent specialization: Each agent had a clear domain of expertise",
+        "item2": "Cross-validation: Each agent's results were verified by others",
+        "item3": "Rapid iteration: Feedback cycles of maximum 15 minutes",
+        "item4": "Automatic documentation: Each agent documented its decisions"
       },
       "challenges": {
         "title": "⚠️ Challenges encountered",
-        "items": [
-          "Initial coordination: 30 min lost on agent synchronization",
-          "Missing data: Some data sources were unavailable",
-          "Premature optimization: Some agents over-optimized too early",
-          "Integration tests: Complexity of signal interactions"
-        ]
+        "item1": "Initial coordination: 30 min lost on agent synchronization",
+        "item2": "Missing data: Some data sources were unavailable",
+        "item3": "Premature optimization: Some agents over-optimized too early",
+        "item4": "Integration tests: Complexity of signal interactions"
       },
       "improvements": {
         "title": "🚀 Future improvements",
-        "items": [
-          "Adaptive ML: Signals that automatically adapt to market conditions",
-          "Composite signals: Intelligent combinations of multiple signals",
-          "Distributed backtesting: Parallel tests on multiple historical periods",
-          "Public API: External access for other traders and institutions"
-        ]
+        "item1": "Adaptive ML: Signals that automatically adapt to market conditions",
+        "item2": "Composite signals: Intelligent combinations of multiple signals",
+        "item3": "Distributed backtesting: Parallel tests on multiple historical periods",
+        "item4": "Public API: External access for other traders and institutions"
       }
     },
     "conclusion": {
@@ -1444,21 +1422,17 @@
       "description": "This project demonstrates how the agentic approach can radically transform the development of complex financial systems. In 4 hours, we accomplished what would have taken weeks for a traditional team, with superior accuracy and reliability.",
       "keyPoints": {
         "title": "🎯 Key takeaways",
-        "items": [
-          "Agent specialization maximizes expertise",
-          "Cross-validation ensures quality",
-          "Rapid iteration enables continuous improvement",
-          "Automatic documentation facilitates maintenance"
-        ]
+        "item1": "Agent specialization maximizes expertise",
+        "item2": "Cross-validation ensures quality",
+        "item3": "Rapid iteration enables continuous improvement",
+        "item4": "Automatic documentation facilitates maintenance"
       },
       "perspectives": {
         "title": "🔮 Perspectives",
-        "items": [
-          "Adaptive signals with machine learning",
-          "Integration of alternative data (sentiment, news)",
-          "Expansion to other asset classes",
-          "Collaborative platform for other researchers"
-        ]
+        "item1": "Adaptive signals with machine learning",
+        "item2": "Integration of alternative data (sentiment, news)",
+        "item3": "Expansion to other asset classes",
+        "item4": "Collaborative platform for other researchers"
       },
       "cta": {
         "question": "Interested in implementing trading signals with AI agents?",

@@ -40,9 +40,9 @@ interface TransformationProcessInteractiveProps {
 const stages: TransformationStage[] = [
   {
     id: 'chaos',
-    title: 'Le Chaos Conceptuel',
-    description: 'L\'Univers des Intentions Non-Structurées - Intelligence collective dispersée',
-    icon: <Brain className="w-12 h-12" />,
+    title: 'Étape 1',
+    description: 'Voir étape 1',
+    icon: null,
     color: 'text-accent-red',
     bgColor: 'from-accent-red/20 via-background-dark to-background-dark-alt',
     concepts: [
@@ -55,9 +55,9 @@ const stages: TransformationStage[] = [
   },
   {
     id: 'specification',
-    title: 'L\'Architecture Documentaire',
-    description: 'La Cristallisation de l\'Intelligence - Spécifications atomiques et exécutables',
-    icon: <Network className="w-12 h-12" />,
+    title: 'Étape 2',
+    description: 'Voir étape 2',
+    icon: null,
     color: 'text-primary-blue',
     bgColor: 'from-primary-blue/20 via-background-dark to-background-dark-alt',
     concepts: [
@@ -69,9 +69,9 @@ const stages: TransformationStage[] = [
   },
   {
     id: 'completion',
-    title: 'L\'Application Incarnée',
-    description: 'De l\'Intention à la Réalité Numérique - Système autonome et vivant',
-    icon: <Sparkles className="w-12 h-12" />,
+    title: 'Étape 3',
+    description: 'Voir étape 3',
+    icon: null,
     color: 'text-accent-yellow',
     bgColor: 'from-accent-yellow/20 via-background-dark to-background-dark-alt',
     concepts: [
@@ -882,30 +882,6 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
         </div>
 
 
-        {/* Description */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-gradient-to-br from-background-accent-grey/90 to-background-light-grey/90 backdrop-blur-sm rounded-2xl p-8 border border-primary-blue/40 shadow-xl"
-        >
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <Users className="w-6 h-6 text-primary-blue mr-3" />
-              <span className="text-lg font-semibold text-text-light">
-                Notre Méthodologie
-              </span>
-            </div>
-            <p className="text-text-secondary leading-relaxed text-lg">
-              Les équipes <strong className="text-primary-blue">apprennent à communiquer avec des 
-              agents IA</strong> pour passer directement de leurs idées à des prototypes fonctionnels sans coder. 
-              Notre formation enseigne le <strong className="text-accent-yellow">"développement par spécification"</strong> où 
-              les participants maîtrisent l'art de donner des instructions précises aux IA pour créer des applications, 
-              <strong className="text-accent-red"> rendant le développement logiciel accessible à tous</strong>.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
