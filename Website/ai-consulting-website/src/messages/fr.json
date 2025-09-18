@@ -781,7 +781,6 @@
       }
     },
     "workflow": {
-      "title": "Collaboration d'Agents IA en Action",
       "current_tasks": "Tâches Actuelles",
       "tasks": [
         "Analyse des exigences",
@@ -805,7 +804,241 @@
       "description": "Cliquez sur n'importe quelle étape pour en savoir plus sur les interactions d'agents. Chaque étape montre comment vous pouvez collaborer avec des agents IA spécialisés pour structurer votre processus de développement.",
       "simulate": "Simuler",
       "reset": "Réinitialiser",
-      "running": "En cours..."
+      "running": "En cours...",
+      "steps": {
+        "start": {
+          "title": "Idée de Projet",
+          "description": "Chaque grande application commence par une idée. La méthode BMAD aide à structurer et valider votre concept."
+        },
+        "research-phase": {
+          "title": "Phase de Recherche",
+          "description": "L'agent Analyste effectue une recherche de marché complète, une analyse concurrentielle et crée un brief de projet stratégique."
+        },
+        "project-brief": {
+          "title": "Brief de Projet",
+          "description": "Brief de projet complet avec insights de recherche, analyse de marché et direction stratégique claire."
+        },
+        "pm-planning": {
+          "title": "Planification PM",
+          "description": "Le Product Manager crée un PRD détaillé avec exigences fonctionnelles, non-fonctionnelles, epics et user stories."
+        },
+        "ux-decision": {
+          "title": "UX Requis ?",
+          "description": "Point de décision : Ce projet nécessite-t-il des spécifications UX et un design front-end détaillé ?"
+        },
+        "ux-design": {
+          "title": "Design UX",
+          "description": "L'Expert UX crée des spécifications front-end complètes, wireframes et système de design."
+        },
+        "architecture": {
+          "title": "Architecture Système",
+          "description": "L'Architecte conçoit l'architecture technique, sélectionne les technologies et définit l'API."
+        },
+        "qa-validation": {
+          "title": "Validation QA",
+          "description": "L'Assurance Qualité examine l'architecture pour les tests, la sécurité et l'atténuation des risques."
+        },
+        "final-review": {
+          "title": "Révision Finale",
+          "description": "Le Product Owner valide l'alignement de tous les documents et la préparation pour le développement."
+        },
+        "development-ready": {
+          "title": "🚀 Développement Prêt",
+          "description": "Tous les documents sont validés et alignés. Transition vers l'IDE pour commencer le cycle de développement avec vos agents de codage."
+        }
+      },
+      "legend": {
+        "user_interaction": "Interaction Utilisateur Disponible",
+        "current_step": "Étape Actuelle",
+        "completed_step": "Étape Terminée",
+        "workflow_connection": "Connexion Workflow"
+      },
+      "interaction": {
+        "title": "💬 Interaction Utilisateur",
+        "description": "À cette étape, vous pouvez discuter des exigences, poser des questions et fournir des retours au {agent}. L'agent sollicitera votre contribution pour s'assurer que la sortie répond à vos besoins spécifiques."
+      }
+    },
+    "content": {
+      "introduction": {
+        "title": "Qu'est-ce que la Méthode BMAD ?",
+        "description": "BMAD (Brownfield Method for Agile Development) est un framework structuré qui transforme les idées de projet en applications prêtes pour la production grâce à la collaboration d'agents intelligents et au traitement humain-dans-la-boucle.",
+        "principles": {
+          "natural_language": {
+            "title": "Langage Naturel d'Abord",
+            "description": "Utilise le langage naturel pour un flux de travail assisté par IA avec une documentation claire et lisible."
+          },
+          "agent_collaboration": {
+            "title": "Collaboration d'Agents",
+            "description": "Des agents spécialisés travaillent ensemble tout en vous gardant en contrôle des décisions."
+          },
+          "full_lifecycle": {
+            "title": "Cycle de Vie Complet",
+            "description": "Couvre l'idéation jusqu'au déploiement avec des processus structurés et répétables."
+          }
+        }
+      },
+      "features": {
+        "title": "Caractéristiques Clés de la Méthode BMAD",
+        "items": {
+          "human_loop": {
+            "title": "Traitement Humain-dans-la-Boucle",
+            "description": "Chaque agent sollicite activement votre contribution et vos retours tout au long du processus, s'assurant que la sortie correspond à votre vision."
+          },
+          "decision_points": {
+            "title": "Points de Décision Structurés",
+            "description": "Des points de décision clairs où vous choisissez la voie à suivre, de la profondeur de recherche aux exigences UX."
+          },
+          "document_driven": {
+            "title": "Développement Dirigé par Documents",
+            "description": "Documentation complète créée avant que le codage ne commence, assurant des exigences et une architecture claires."
+          },
+          "validation": {
+            "title": "Validation & Alignement",
+            "description": "Plusieurs points de contrôle de validation s'assurent que tous les documents et exigences sont cohérents et complets."
+          },
+          "ide_transition": {
+            "title": "Transition IDE Sans Couture",
+            "description": "Passation en douceur de la planification web au développement basé sur IDE avec des documents correctement préparés."
+          },
+          "ai_optimized": {
+            "title": "Sortie Optimisée IA",
+            "description": "Tous les documents sont structurés pour une consommation optimale par les agents et outils de développement IA."
+          }
+        }
+      },
+      "phases": {
+        "title": "Phases de Développement BMAD",
+        "items": {
+          "discovery": {
+            "title": "Découverte & Recherche",
+            "description": "Phase de recherche de marché et d'analyse concurrentielle optionnelle mais puissante",
+            "steps": {
+              "0": "Recherche de Marché",
+              "1": "Analyse Concurrentielle", 
+              "2": "Création de Brief Stratégique"
+            }
+          },
+          "requirements": {
+            "title": "Définition des Exigences",
+            "description": "Collecte d'exigences complète avec collaboration humaine",
+            "steps": {
+              "0": "Création PRD",
+              "1": "Exigences Fonctionnelles",
+              "2": "Exigences Non-Fonctionnelles",
+              "3": "User Stories"
+            }
+          },
+          "design": {
+            "title": "Design & Architecture",
+            "description": "Spécifications UX et conception d'architecture technique",
+            "steps": {
+              "0": "Spécifications UX",
+              "1": "Architecture Système",
+              "2": "Sélection Technologie",
+              "3": "Design API"
+            }
+          },
+          "validation": {
+            "title": "Validation & Passation",
+            "description": "Assurance qualité et préparation pour le développement",
+            "steps": {
+              "0": "Alignement Documents",
+              "1": "Révision Qualité",
+              "2": "Préparation IDE",
+              "3": "Passation Développement"
+            }
+          }
+        }
+      },
+      "agents": {
+        "title": "Rencontrez Votre Équipe d'Agents IA",
+        "responsibilities": "Responsabilités",
+        "interaction_title": "Comment Vous Interagissez",
+        "items": {
+          "analyst": {
+            "name": "Agent Analyste",
+            "role": "Recherche Marché & Stratégie",
+            "responsibilities": {
+              "0": "Effectue une recherche de marché complète",
+              "1": "Réalise une analyse concurrentielle",
+              "2": "Crée des briefs de projet stratégiques",
+              "3": "Valide les opportunités commerciales",
+              "4": "Fournit des insights basés sur les données"
+            },
+            "interaction": "Discute des conditions de marché, du public cible et de la stratégie commerciale avec vous pour s'assurer que le projet s'aligne avec les besoins du marché."
+          },
+          "pm": {
+            "name": "Product Manager",
+            "role": "Exigences & Planification",
+            "responsibilities": {
+              "0": "Crée des PRD détaillés (Documents d'Exigences Produit)",
+              "1": "Définit les exigences fonctionnelles et non-fonctionnelles",
+              "2": "Structure les epics et user stories",
+              "3": "Gère la portée et les priorités du projet",
+              "4": "Assure l'alignement des parties prenantes"
+            },
+            "interaction": "Travaille avec vous pour comprendre exactement ce que vous voulez construire, posant des questions détaillées sur les fonctionnalités, contraintes et critères de succès."
+          },
+          "ux": {
+            "name": "Expert UX",
+            "role": "Expérience Utilisateur & Design",
+            "responsibilities": {
+              "0": "Crée des spécifications front-end",
+              "1": "Conçoit des systèmes d'interface utilisateur",
+              "2": "Génère des prompts UI optimisés IA",
+              "3": "Assure la conformité d'accessibilité",
+              "4": "Optimise les flux d'expérience utilisateur"
+            },
+            "interaction": "Collabore sur les décisions d'expérience utilisateur, les préférences de design et les exigences d'interface pour créer des applications intuitives."
+          },
+          "architect": {
+            "name": "Architecte Système",
+            "role": "Architecture Technique",
+            "responsibilities": {
+              "0": "Conçoit l'architecture système",
+              "1": "Sélectionne les stacks technologiques",
+              "2": "Planifie les structures de base de données",
+              "3": "Définit les spécifications API",
+              "4": "Assure la scalabilité et la performance"
+            },
+            "interaction": "Discute des préférences techniques, exigences de scalabilité et besoins d'intégration pour construire une architecture système robuste."
+          },
+          "qa": {
+            "name": "Spécialiste QA",
+            "role": "Assurance Qualité",
+            "responsibilities": {
+              "0": "Effectue une évaluation précoce des risques",
+              "1": "Conçoit des stratégies de test",
+              "2": "Examine l'architecture pour la testabilité",
+              "3": "Identifie les problèmes potentiels",
+              "4": "Assure les standards de qualité"
+            },
+            "interaction": "Examine votre projet pour les risques potentiels et préoccupations de qualité, suggérant des stratégies de test et améliorations de qualité."
+          },
+          "po": {
+            "name": "Product Owner",
+            "role": "Coordination & Validation",
+            "responsibilities": {
+              "0": "Exécute les checklists de validation maître",
+              "1": "Assure l'alignement des documents",
+              "2": "Coordonne entre les agents",
+              "3": "Gère la fragmentation des documents",
+              "4": "Facilite les passations fluides"
+            },
+            "interaction": "S'assure que tous les documents de planification sont cohérents et complets, coordonnant les retours entre vous et les autres agents."
+          }
+        }
+      },
+      "conclusion": {
+        "title": "Pourquoi Choisir la Méthode BMAD ?",
+        "description": "BMAD transforme les démarrages de projet chaotiques en flux de travail structurés dirigés par agents. Des idées éparses aux spécifications prêtes pour la production, avec vous en contrôle à chaque étape.",
+        "metrics": {
+          "faster_planning": "Planification Plus Rapide",
+          "structured_output": "Sortie Structurée",
+          "specialized_agents": "Agents Spécialisés"
+        },
+        "cta": "Apprenez Notre Implémentation BMAD"
+      }
     },
     "benefits": {
       "title": "Avantages Clés",

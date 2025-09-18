@@ -785,15 +785,6 @@
         "status": "scanning"
       }
     },
-    "workflow": {
-      "title": "AI Agent Collaboration in Action",
-      "current_tasks": "Current Tasks",
-      "tasks": [
-        "Analyzing requirements",
-        "Processing data structures",
-        "Optimizing performance"
-      ]
-    },
     "results": {
     },
     "methodology_cta": {
@@ -810,7 +801,241 @@
       "description": "Click on any step to learn more about agent interactions. Each step shows how you can collaborate with specialized AI agents to structure your development process.",
       "simulate": "Simulate",
       "reset": "Reset",
-      "running": "Running..."
+      "running": "Running...",
+      "steps": {
+        "start": {
+          "title": "Project Idea",
+          "description": "Every great application begins with an idea. The BMAD method helps structure and validate your concept."
+        },
+        "research-phase": {
+          "title": "Research Phase",
+          "description": "The Analyst agent conducts comprehensive market research, competitive analysis, and creates a strategic project brief."
+        },
+        "project-brief": {
+          "title": "Project Brief",
+          "description": "Comprehensive project brief with research insights, market analysis, and clear strategic direction."
+        },
+        "pm-planning": {
+          "title": "PM Planning",
+          "description": "Product Manager creates detailed PRD with functional requirements, non-functional requirements, epics, and user stories."
+        },
+        "ux-decision": {
+          "title": "UX Required?",
+          "description": "Decision point: Does this project require UX specifications and detailed front-end design?"
+        },
+        "ux-design": {
+          "title": "UX Design",
+          "description": "UX Expert creates comprehensive front-end specifications, wireframes, and design system."
+        },
+        "architecture": {
+          "title": "System Architecture",
+          "description": "Architect designs technical architecture, selects technologies, and defines API specifications."
+        },
+        "qa-validation": {
+          "title": "QA Validation",
+          "description": "Quality Assurance reviews architecture for testing, security, and risk mitigation."
+        },
+        "final-review": {
+          "title": "Final Review",
+          "description": "Product Owner validates all documents are aligned and ready for development."
+        },
+        "development-ready": {
+          "title": "🚀 Development Ready",
+          "description": "All documents are validated and aligned. Transition to IDE to begin development cycle with your coding agents."
+        }
+      },
+      "legend": {
+        "user_interaction": "User Interaction Available",
+        "current_step": "Current Step",
+        "completed_step": "Completed Step",
+        "workflow_connection": "Workflow Connection"
+      },
+      "interaction": {
+        "title": "💬 User Interaction",
+        "description": "At this step, you can discuss requirements, ask questions, and provide feedback to the {agent}. The agent will solicit your input to ensure the output meets your specific needs."
+      }
+    },
+    "content": {
+      "introduction": {
+        "title": "What is the BMAD Method?",
+        "description": "BMAD (Brownfield Method for Agile Development) is a structured framework that transforms project ideas into production-ready applications through intelligent agent collaboration and human-in-the-loop processing.",
+        "principles": {
+          "natural_language": {
+            "title": "Natural Language First",
+            "description": "Uses natural language for AI-assisted workflow with clear, readable documentation."
+          },
+          "agent_collaboration": {
+            "title": "Agent Collaboration",
+            "description": "Specialized agents work together while keeping you in control of decisions."
+          },
+          "full_lifecycle": {
+            "title": "Full Lifecycle",
+            "description": "Covers ideation through deployment with structured, repeatable processes."
+          }
+        }
+      },
+      "features": {
+        "title": "Key Features of BMAD Method",
+        "items": {
+          "human_loop": {
+            "title": "Human-in-the-Loop Processing",
+            "description": "Every agent actively solicits your input and feedback throughout the process, ensuring the output matches your vision."
+          },
+          "decision_points": {
+            "title": "Structured Decision Points",
+            "description": "Clear decision points where you choose the path forward, from research depth to UX requirements."
+          },
+          "document_driven": {
+            "title": "Document-Driven Development",
+            "description": "Comprehensive documentation created before coding begins, ensuring clear requirements and architecture."
+          },
+          "validation": {
+            "title": "Validation & Alignment",
+            "description": "Multiple validation checkpoints ensure all documents and requirements are consistent and complete."
+          },
+          "ide_transition": {
+            "title": "Seamless IDE Transition",
+            "description": "Smooth handoff from web-based planning to IDE-based development with properly prepared documents."
+          },
+          "ai_optimized": {
+            "title": "AI-Optimized Output",
+            "description": "All documents are structured for optimal consumption by AI development agents and tools."
+          }
+        }
+      },
+      "phases": {
+        "title": "BMAD Development Phases",
+        "items": {
+          "discovery": {
+            "title": "Discovery & Research",
+            "description": "Optional but powerful market research and competitive analysis phase",
+            "steps": {
+              "0": "Market Research",
+              "1": "Competitive Analysis",
+              "2": "Strategic Brief Creation"
+            }
+          },
+          "requirements": {
+            "title": "Requirements Definition",
+            "description": "Comprehensive requirement gathering with human collaboration",
+            "steps": {
+              "0": "PRD Creation",
+              "1": "Functional Requirements",
+              "2": "Non-Functional Requirements",
+              "3": "User Stories"
+            }
+          },
+          "design": {
+            "title": "Design & Architecture",
+            "description": "UX specifications and technical architecture design",
+            "steps": {
+              "0": "UX Specifications",
+              "1": "System Architecture",
+              "2": "Technology Selection",
+              "3": "API Design"
+            }
+          },
+          "validation": {
+            "title": "Validation & Handoff",
+            "description": "Quality assurance and preparation for development",
+            "steps": {
+              "0": "Document Alignment",
+              "1": "Quality Review",
+              "2": "IDE Preparation",
+              "3": "Development Handoff"
+            }
+          }
+        }
+      },
+      "agents": {
+        "title": "Meet Your AI Agent Team",
+        "responsibilities": "Responsibilities",
+        "interaction_title": "How You Interact",
+        "items": {
+          "analyst": {
+            "name": "Analyst Agent",
+            "role": "Market Research & Strategy",
+            "responsibilities": {
+              "0": "Conducts comprehensive market research",
+              "1": "Performs competitive analysis",
+              "2": "Creates strategic project briefs",
+              "3": "Validates business opportunities",
+              "4": "Provides data-driven insights"
+            },
+            "interaction": "Discusses market conditions, target audience, and business strategy with you to ensure the project aligns with market needs."
+          },
+          "pm": {
+            "name": "Product Manager",
+            "role": "Requirements & Planning",
+            "responsibilities": {
+              "0": "Creates detailed PRDs (Product Requirements Documents)",
+              "1": "Defines functional and non-functional requirements",
+              "2": "Structures epics and user stories",
+              "3": "Manages project scope and priorities",
+              "4": "Ensures stakeholder alignment"
+            },
+            "interaction": "Works with you to understand exactly what you want to build, asking detailed questions about features, constraints, and success criteria."
+          },
+          "ux": {
+            "name": "UX Expert",
+            "role": "User Experience & Design",
+            "responsibilities": {
+              "0": "Creates front-end specifications",
+              "1": "Designs user interface systems",
+              "2": "Generates AI-optimized UI prompts",
+              "3": "Ensures accessibility compliance",
+              "4": "Optimizes user experience flows"
+            },
+            "interaction": "Collaborates on user experience decisions, design preferences, and interface requirements to create intuitive applications."
+          },
+          "architect": {
+            "name": "System Architect",
+            "role": "Technical Architecture",
+            "responsibilities": {
+              "0": "Designs system architecture",
+              "1": "Selects technology stacks",
+              "2": "Plans database structures",
+              "3": "Defines API specifications",
+              "4": "Ensures scalability and performance"
+            },
+            "interaction": "Discusses technical preferences, scalability requirements, and integration needs to build robust system architecture."
+          },
+          "qa": {
+            "name": "QA Specialist",
+            "role": "Quality Assurance",
+            "responsibilities": {
+              "0": "Performs early risk assessment",
+              "1": "Designs test strategies",
+              "2": "Reviews architecture for testability",
+              "3": "Identifies potential issues",
+              "4": "Ensures quality standards"
+            },
+            "interaction": "Reviews your project for potential risks and quality concerns, suggesting testing strategies and quality improvements."
+          },
+          "po": {
+            "name": "Product Owner",
+            "role": "Coordination & Validation",
+            "responsibilities": {
+              "0": "Runs master validation checklists",
+              "1": "Ensures document alignment",
+              "2": "Coordinates between agents",
+              "3": "Manages document sharding",
+              "4": "Facilitates smooth handoffs"
+            },
+            "interaction": "Ensures all planning documents are consistent and complete, coordinating feedback between you and other agents."
+          }
+        }
+      },
+      "conclusion": {
+        "title": "Why Choose BMAD Method?",
+        "description": "BMAD transforms chaotic project starts into structured, agent-driven workflows. From scattered ideas to production-ready specifications, with you in control every step of the way.",
+        "metrics": {
+          "faster_planning": "Faster Planning",
+          "structured_output": "Structured Output",
+          "specialized_agents": "Specialized Agents"
+        },
+        "cta": "Learn Our BMAD Implementation"
+      }
     },
     "benefits": {
       "title": "Key Benefits",

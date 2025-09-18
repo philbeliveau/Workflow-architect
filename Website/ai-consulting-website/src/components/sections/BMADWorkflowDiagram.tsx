@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { 
   User, 
   Brain, 
@@ -31,6 +32,7 @@ interface WorkflowStep {
 }
 
 const BMADWorkflowDiagram: React.FC = () => {
+  const t = useTranslations('bmad.workflow');
   const [selectedStep, setSelectedStep] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentStep, setCurrentStep] = useState<string>('start');
@@ -39,265 +41,107 @@ const BMADWorkflowDiagram: React.FC = () => {
   const workflowSteps: WorkflowStep[] = [
     {
       id: 'start',
-      title: 'Project Idea',
+      title: t('steps.start.title'),
       type: 'start',
-      description: 'Every great application begins with an idea. The BMAD method helps structure and validate your concept.',
-      color: 'bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800',
-      position: { x: 50, y: 5 },
-      connections: ['analyst-research'],
+      description: t('steps.start.description'),
+      color: 'bg-gradient-to-br from-gray-300 to-gray-400 text-gray-900',
+      position: { x: 50, y: 10 },
+      connections: ['research-phase'],
       userInteraction: true
     },
     {
-      id: 'analyst-research',
-      title: 'Analyst Research?',
-      type: 'decision',
-      description: 'Optional but recommended: Should we conduct market research and competitive analysis?',
-      color: 'bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800',
-      position: { x: 50, y: 15 },
-      connections: ['analyst-brainstorm', 'project-brief-check'],
-      userInteraction: true
-    },
-    {
-      id: 'analyst-brainstorm',
-      title: 'Analyst: Brainstorming',
+      id: 'research-phase',
+      title: t('steps.research-phase.title'),
       type: 'agent',
       agent: 'Analyst',
-      description: 'The Analyst agent conducts market research, competitor analysis, and creates a comprehensive project brief.',
-      color: 'bg-gradient-to-br from-green-100 to-green-200 text-green-800',
-      position: { x: 25, y: 25 },
-      connections: ['analyst-market'],
-      userInteraction: true
-    },
-    {
-      id: 'analyst-market',
-      title: 'Market Research',
-      type: 'agent',
-      agent: 'Analyst',
-      description: 'Deep dive into market conditions, user needs, and business opportunities.',
-      color: 'bg-gradient-to-br from-green-100 to-green-200 text-green-800',
-      position: { x: 25, y: 35 },
-      connections: ['analyst-competitor'],
-      userInteraction: true
-    },
-    {
-      id: 'analyst-competitor',
-      title: 'Competitor Analysis',
-      type: 'agent',
-      agent: 'Analyst',
-      description: 'Analyze existing solutions and identify competitive advantages.',
-      color: 'bg-gradient-to-br from-green-100 to-green-200 text-green-800',
-      position: { x: 25, y: 45 },
+      description: t('steps.research-phase.description'),
+      color: 'bg-gradient-to-br from-green-300 to-green-400 text-green-900',
+      position: { x: 50, y: 25 },
       connections: ['project-brief'],
       userInteraction: true
     },
     {
       id: 'project-brief',
-      title: 'Create Project Brief',
-      type: 'agent',
-      agent: 'Analyst',
-      description: 'Comprehensive project brief with research insights and strategic direction.',
-      color: 'bg-gradient-to-br from-green-100 to-green-200 text-green-800',
-      position: { x: 25, y: 55 },
-      connections: ['project-brief-check'],
-      userInteraction: true
-    },
-    {
-      id: 'project-brief-check',
-      title: 'Project Brief Available?',
-      type: 'decision',
-      description: 'Do we have a project brief to work from, or should we create a PRD directly?',
-      color: 'bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800',
-      position: { x: 50, y: 55 },
-      connections: ['pm-fast-track', 'pm-interactive'],
-      userInteraction: true
-    },
-    {
-      id: 'pm-fast-track',
-      title: 'PM: Create PRD (Fast Track)',
-      type: 'agent',
-      agent: 'PM',
-      description: 'Product Manager creates detailed requirements from existing brief.',
-      color: 'bg-gradient-to-br from-orange-100 to-orange-200 text-orange-800',
-      position: { x: 35, y: 65 },
-      connections: ['prd-created'],
-      userInteraction: true
-    },
-    {
-      id: 'pm-interactive',
-      title: 'PM: Interactive PRD Creation',
-      type: 'agent',
-      agent: 'PM',
-      description: 'Product Manager asks detailed questions to create comprehensive requirements.',
-      color: 'bg-gradient-to-br from-orange-100 to-orange-200 text-orange-800',
-      position: { x: 65, y: 65 },
-      connections: ['prd-created'],
-      userInteraction: true
-    },
-    {
-      id: 'prd-created',
-      title: 'PRD with FRs, NFRs, Epics & Stories',
+      title: t('steps.project-brief.title'),
       type: 'process',
-      description: 'Complete Product Requirements Document with functional/non-functional requirements and user stories.',
-      color: 'bg-gradient-to-br from-orange-100 to-orange-200 text-orange-800',
-      position: { x: 50, y: 75 },
-      connections: ['ux-required'],
-      userInteraction: false
-    },
-    {
-      id: 'ux-required',
-      title: 'UX Required?',
-      type: 'decision',
-      description: 'Does this project need UX design and front-end specifications?',
-      color: 'bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800',
-      position: { x: 50, y: 85 },
-      connections: ['ux-spec', 'architect-simple'],
+      description: t('steps.project-brief.description'),
+      color: 'bg-gradient-to-br from-blue-300 to-blue-400 text-blue-900',
+      position: { x: 50, y: 40 },
+      connections: ['pm-planning'],
       userInteraction: true
     },
     {
-      id: 'ux-spec',
-      title: 'UX: Create Front End Spec',
+      id: 'pm-planning',
+      title: t('steps.pm-planning.title'),
+      type: 'agent',
+      agent: 'PM',
+      description: t('steps.pm-planning.description'),
+      color: 'bg-gradient-to-br from-orange-300 to-orange-400 text-orange-900',
+      position: { x: 50, y: 55 },
+      connections: ['ux-decision'],
+      userInteraction: true
+    },
+    {
+      id: 'ux-decision',
+      title: t('steps.ux-decision.title'),
+      type: 'decision',
+      description: t('steps.ux-decision.description'),
+      color: 'bg-gradient-to-br from-blue-300 to-blue-400 text-blue-900',
+      position: { x: 50, y: 70 },
+      connections: ['ux-design', 'architecture'],
+      userInteraction: true
+    },
+    {
+      id: 'ux-design',
+      title: t('steps.ux-design.title'),
       type: 'agent',
       agent: 'UX Expert',
-      description: 'UX Expert creates detailed front-end specifications and design system.',
-      color: 'bg-gradient-to-br from-cyan-100 to-cyan-200 text-cyan-800',
-      position: { x: 25, y: 95 },
-      connections: ['ux-prompt'],
+      description: t('steps.ux-design.description'),
+      color: 'bg-gradient-to-br from-cyan-300 to-cyan-400 text-cyan-900',
+      position: { x: 25, y: 85 },
+      connections: ['architecture'],
       userInteraction: true
     },
     {
-      id: 'ux-prompt',
-      title: 'Generate UI Prompt (Optional)',
-      type: 'agent',
-      agent: 'UX Expert',
-      description: 'Generate optimized prompts for AI UI tools like Lovable or v0.',
-      color: 'bg-gradient-to-br from-cyan-100 to-cyan-200 text-cyan-800',
-      position: { x: 25, y: 105 },
-      connections: ['architect-complex'],
-      userInteraction: true
-    },
-    {
-      id: 'architect-simple',
-      title: 'Architect: Create Architecture',
+      id: 'architecture',
+      title: t('steps.architecture.title'),
       type: 'agent',
       agent: 'Architect',
-      description: 'System Architect designs technical architecture from PRD requirements.',
-      color: 'bg-gradient-to-br from-purple-100 to-purple-200 text-purple-800',
-      position: { x: 75, y: 95 },
-      connections: ['qa-optional'],
+      description: t('steps.architecture.description'),
+      color: 'bg-gradient-to-br from-purple-300 to-purple-400 text-purple-900',
+      position: { x: 50, y: 90 },
+      connections: ['qa-validation'],
       userInteraction: true
     },
     {
-      id: 'architect-complex',
-      title: 'Architect: Create Architecture + UX',
-      type: 'agent',
-      agent: 'Architect',
-      description: 'System Architect integrates UX specifications with technical architecture.',
-      color: 'bg-gradient-to-br from-purple-100 to-purple-200 text-purple-800',
-      position: { x: 25, y: 115 },
-      connections: ['qa-optional'],
-      userInteraction: true
-    },
-    {
-      id: 'qa-optional',
-      title: 'Early Test Strategy?',
-      type: 'decision',
-      description: 'Should QA provide early input on high-risk areas?',
-      color: 'bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800',
-      position: { x: 50, y: 115 },
-      connections: ['qa-review', 'po-checklist'],
-      userInteraction: true
-    },
-    {
-      id: 'qa-review',
-      title: 'QA: Early Architecture Input',
+      id: 'qa-validation',
+      title: t('steps.qa-validation.title'),
       type: 'agent',
       agent: 'QA',
-      description: 'Quality Assurance reviews architecture for testing and risk mitigation.',
-      color: 'bg-gradient-to-br from-yellow-100 to-yellow-200 text-yellow-800',
-      position: { x: 25, y: 125 },
-      connections: ['po-checklist'],
+      description: t('steps.qa-validation.description'),
+      color: 'bg-gradient-to-br from-yellow-300 to-yellow-400 text-yellow-900',
+      position: { x: 25, y: 105 },
+      connections: ['final-review'],
       userInteraction: true
     },
     {
-      id: 'po-checklist',
-      title: 'PO: Run Master Checklist',
+      id: 'final-review',
+      title: t('steps.final-review.title'),
       type: 'agent',
       agent: 'Product Owner',
-      description: 'Product Owner validates all documents are complete and aligned.',
-      color: 'bg-gradient-to-br from-amber-100 to-amber-200 text-amber-800',
+      description: t('steps.final-review.description'),
+      color: 'bg-gradient-to-br from-amber-300 to-amber-400 text-amber-900',
+      position: { x: 50, y: 120 },
+      connections: ['development-ready'],
+      userInteraction: true
+    },
+    {
+      id: 'development-ready',
+      title: t('steps.development-ready.title'),
+      type: 'end',
+      description: t('steps.development-ready.description'),
+      color: 'bg-gradient-to-br from-green-500 to-green-600 text-white',
       position: { x: 50, y: 135 },
-      connections: ['documents-aligned'],
-      userInteraction: true
-    },
-    {
-      id: 'documents-aligned',
-      title: 'Documents Aligned?',
-      type: 'decision',
-      description: 'Are all planning documents consistent and complete?',
-      color: 'bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800',
-      position: { x: 50, y: 145 },
-      connections: ['planning-complete', 'po-update'],
-      userInteraction: true
-    },
-    {
-      id: 'po-update',
-      title: 'PO: Update Epics & Stories',
-      type: 'agent',
-      agent: 'Product Owner',
-      description: 'Product Owner refines epics and user stories based on review feedback.',
-      color: 'bg-gradient-to-br from-amber-100 to-amber-200 text-amber-800',
-      position: { x: 75, y: 155 },
-      connections: ['update-docs'],
-      userInteraction: true
-    },
-    {
-      id: 'update-docs',
-      title: 'Update PRD/Architecture',
-      type: 'process',
-      description: 'Update planning documents based on Product Owner feedback.',
-      color: 'bg-gradient-to-br from-orange-100 to-orange-200 text-orange-800',
-      position: { x: 75, y: 165 },
-      connections: ['po-checklist'],
-      userInteraction: false
-    },
-    {
-      id: 'planning-complete',
-      title: 'Planning Complete',
-      type: 'end',
-      description: 'All planning documents are validated and aligned. Ready for development!',
-      color: 'bg-gradient-to-br from-green-400 to-green-500 text-white',
-      position: { x: 25, y: 155 },
-      connections: ['switch-ide'],
-      userInteraction: false
-    },
-    {
-      id: 'switch-ide',
-      title: '📁 Switch to IDE',
-      type: 'process',
-      description: 'Critical transition: Move from web-based planning to IDE for development.',
-      color: 'bg-gradient-to-br from-blue-500 to-blue-600 text-white',
-      position: { x: 25, y: 165 },
-      connections: ['po-shard'],
-      userInteraction: false
-    },
-    {
-      id: 'po-shard',
-      title: 'PO: Shard Documents',
-      type: 'agent',
-      agent: 'Product Owner',
-      description: 'Product Owner breaks down documents for development team consumption.',
-      color: 'bg-gradient-to-br from-amber-100 to-amber-200 text-amber-800',
-      position: { x: 25, y: 175 },
-      connections: ['ready-dev'],
-      userInteraction: true
-    },
-    {
-      id: 'ready-dev',
-      title: 'Ready for SM/Dev Cycle',
-      type: 'end',
-      description: 'Development-ready! Begin Scrum Master and development agent cycles.',
-      color: 'bg-gradient-to-br from-green-400 to-green-500 text-white',
-      position: { x: 25, y: 185 },
       connections: [],
       userInteraction: false
     }
@@ -365,39 +209,29 @@ const BMADWorkflowDiagram: React.FC = () => {
   const selectedStepData = selectedStep ? workflowSteps.find(s => s.id === selectedStep) : null;
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-12">
-        <h2 className="text-h1 font-bold mb-6 text-text-primary">
-          Interactive BMAD Workflow
-        </h2>
-        <p className="text-lg text-text-secondary max-w-4xl mx-auto mb-8">
-          Click on any step to learn more about agent interactions. Each step shows how you can collaborate 
-          with specialized AI agents to structure your development process.
-        </p>
-        
-        {/* Animation Controls */}
-        <div className="flex justify-center gap-4 mb-8">
-          <button
-            onClick={handleStartAnimation}
-            disabled={isAnimating}
-            className="flex items-center gap-2 px-6 py-3 bg-primary-blue text-white rounded-lg hover:bg-primary-blue/90 disabled:opacity-50 transition-all duration-300"
-          >
-            <Play className="w-4 h-4" />
-            {isAnimating ? 'Running...' : 'Simulate Workflow'}
-          </button>
-          <button
-            onClick={handleResetAnimation}
-            className="flex items-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-all duration-300"
-          >
-            <RotateCcw className="w-4 h-4" />
-            Reset
-          </button>
-        </div>
+    <div className="w-full">
+      {/* Animation Controls */}
+      <div className="flex justify-center gap-3 mb-6">
+        <button
+          onClick={handleStartAnimation}
+          disabled={isAnimating}
+          className="flex items-center gap-2 px-4 py-2 bg-primary-blue text-white rounded-lg hover:bg-primary-blue/90 disabled:opacity-50 transition-all duration-300 text-sm"
+        >
+          <Play className="w-4 h-4" />
+          {isAnimating ? t('running') : t('simulate')}
+        </button>
+        <button
+          onClick={handleResetAnimation}
+          className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-all duration-300 text-sm"
+        >
+          <RotateCcw className="w-4 h-4" />
+          {t('reset')}
+        </button>
       </div>
 
       {/* Workflow Diagram */}
-      <div className="relative bg-gradient-to-br from-primary-900/20 to-primary-800/10 rounded-3xl p-8 mb-12 overflow-hidden">
-        <div className="relative" style={{ height: '2000px' }}>
+      <div className="relative bg-gradient-to-br from-primary-900/20 to-primary-800/10 rounded-2xl p-6 mb-8 overflow-hidden">
+        <div className="relative" style={{ height: '1000px' }}>
           {/* Connections */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             {workflowSteps.map(step => 
@@ -449,7 +283,7 @@ const BMADWorkflowDiagram: React.FC = () => {
           {workflowSteps.map((step) => (
             <motion.div
               key={step.id}
-              className={`absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2 ${step.color} rounded-xl p-4 shadow-lg border-2 transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+              className={`absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2 ${step.color} rounded-xl p-4 shadow-lg border-2 border-white/20 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-white/40 ${
                 selectedStep === step.id ? 'ring-4 ring-primary-blue ring-opacity-50 shadow-2xl scale-110' : ''
               } ${
                 currentStep === step.id ? 'ring-4 ring-accent-yellow animate-pulse' : ''
@@ -459,7 +293,8 @@ const BMADWorkflowDiagram: React.FC = () => {
               style={{
                 left: `${step.position.x}%`,
                 top: `${step.position.y}%`,
-                minWidth: '200px'
+                minWidth: '180px',
+                maxWidth: '200px'
               }}
               onClick={() => handleStepClick(step.id)}
               whileHover={{ scale: 1.05 }}
@@ -521,10 +356,9 @@ const BMADWorkflowDiagram: React.FC = () => {
           
           {selectedStepData.userInteraction && (
             <div className="mt-4 p-4 bg-blue-900/30 rounded-xl border border-blue-700/50">
-              <h4 className="text-sm font-bold text-blue-300 mb-2">💬 User Interaction</h4>
+              <h4 className="text-sm font-bold text-blue-300 mb-2">{t('interaction.title')}</h4>
               <p className="text-sm text-blue-200">
-                At this step, you can discuss requirements, ask questions, and provide feedback to the {selectedStepData.agent || 'system'}. 
-                The agent will solicitate your input to ensure the output meets your specific needs.
+                {t('interaction.description', { agent: selectedStepData.agent || 'system' })}
               </p>
             </div>
           )}
@@ -535,19 +369,19 @@ const BMADWorkflowDiagram: React.FC = () => {
       <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="flex items-center gap-3 p-4 bg-primary-900/30 rounded-xl">
           <MessageCircle className="w-5 h-5 text-blue-400" />
-          <span className="text-sm text-text-secondary">User Interaction Available</span>
+          <span className="text-sm text-text-secondary">{t('legend.user_interaction')}</span>
         </div>
         <div className="flex items-center gap-3 p-4 bg-primary-900/30 rounded-xl">
           <div className="w-4 h-4 rounded-full bg-accent-yellow animate-pulse"></div>
-          <span className="text-sm text-text-secondary">Current Step</span>
+          <span className="text-sm text-text-secondary">{t('legend.current_step')}</span>
         </div>
         <div className="flex items-center gap-3 p-4 bg-primary-900/30 rounded-xl">
           <div className="w-4 h-4 rounded-full bg-green-400"></div>
-          <span className="text-sm text-text-secondary">Completed Step</span>
+          <span className="text-sm text-text-secondary">{t('legend.completed_step')}</span>
         </div>
         <div className="flex items-center gap-3 p-4 bg-primary-900/30 rounded-xl">
           <ArrowRight className="w-5 h-5 text-gray-400" />
-          <span className="text-sm text-text-secondary">Workflow Connection</span>
+          <span className="text-sm text-text-secondary">{t('legend.workflow_connection')}</span>
         </div>
       </div>
     </div>
