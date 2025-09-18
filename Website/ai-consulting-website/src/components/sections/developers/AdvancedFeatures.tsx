@@ -3,8 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageSquare, Slack, Github, Cpu, Network } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const AdvancedFeatures: React.FC = () => {
+  const t = useTranslations('developers.tech_watch');
+  
   const mcpConnections = [
     { name: "Client Instance", icon: <Cpu className="w-6 h-6" />, color: "text-primary-blue" },
     { name: "Slack", icon: <Slack className="w-6 h-6" />, color: "text-success-green" },
@@ -22,10 +25,10 @@ const AdvancedFeatures: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-h1 font-bold mb-4 md:mb-6 text-text-primary">
-              Veille Technologique Continue
+              {t('title')}
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-text-secondary leading-relaxed mb-8 md:mb-12">
-              On vous garde au courant des nouveaux stack de développement logiciel, des MCP, des meilleures pratiques.
+              {t('description')}
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -34,10 +37,10 @@ const AdvancedFeatures: React.FC = () => {
                   <Network className="w-8 h-8 text-primary-blue" />
                 </div>
                 <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  Nouveaux Stacks de Développement
+                  {t('new_stacks.title')}
                 </h3>
                 <p className="text-text-secondary text-sm">
-                  Restez à jour avec les dernières technologies et frameworks émergents
+                  {t('new_stacks.description')}
                 </p>
               </div>
 
@@ -46,10 +49,10 @@ const AdvancedFeatures: React.FC = () => {
                   <MessageSquare className="w-8 h-8 text-accent-red" />
                 </div>
                 <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  Protocoles MCP Avancés
+                  {t('mcp_protocols.title')}
                 </h3>
                 <p className="text-text-secondary text-sm">
-                  Découvrez les dernières innovations en Model Context Protocol
+                  {t('mcp_protocols.description')}
                 </p>
               </div>
 
@@ -58,10 +61,10 @@ const AdvancedFeatures: React.FC = () => {
                   <Cpu className="w-8 h-8 text-success-green" />
                 </div>
                 <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  Meilleures Pratiques
+                  {t('best_practices.title')}
                 </h3>
                 <p className="text-text-secondary text-sm">
-                  Intégrez les standards industry et les patterns éprouvés
+                  {t('best_practices.description')}
                 </p>
               </div>
             </div>

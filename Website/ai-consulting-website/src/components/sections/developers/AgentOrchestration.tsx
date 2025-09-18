@@ -5,14 +5,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { AlertTriangle, ArrowRight, Code, Zap, GitBranch, Database } from 'lucide-react';
 import CodeBlock from '@/components/ui/CodeBlock';
+import { useTranslations } from 'next-intl';
 
 const AgentOrchestration: React.FC = () => {
+  const t = useTranslations('developers.orchestration');
+  
   const claudeCodeLimitations = [
     {
-      title: "Exécution Séquentielle",
+      title: t('limitations.sequential.title'),
       icon: <Code className="w-6 h-6" />,
       color: "warning-orange",
-      description: "Claude Code traite un message à la fois",
+      description: t('limitations.sequential.description'),
       example: `// Claude Code (séquentiel)
 Message 1 : Lire fichier 1
 Message 2 : Lire fichier 2  
@@ -20,42 +23,42 @@ Message 3 : Analyser
 Message 4 : Écrire solution
 // Résultat : 4 cycles → lent`,
       details: [
-        "Aucune parallélisation intégrée des tâches",
-        "Chaque appel d'outil se fait séquentiellement dans un message",
-        "Temps d'attente cumulatif sur les grandes opérations"
+        t('limitations.sequential.details.0'),
+        t('limitations.sequential.details.1'),
+        t('limitations.sequential.details.2')
       ]
     },
     {
-      title: "Approche Mono-Agent",
+      title: t('limitations.mono_agent.title'),
       icon: <GitBranch className="w-6 h-6" />,
       color: "warning-orange", 
-      description: "Une seule instance IA gérant tous les aspects",
+      description: t('limitations.mono_agent.description'),
       details: [
-        "Aucune spécialisation de rôles (architecte vs codeur vs testeur)",
-        "Approche monolithique de résolution de problèmes",
-        "Pas de perspectives multiples sur les défis complexes"
+        t('limitations.mono_agent.details.0'),
+        t('limitations.mono_agent.details.1'),
+        t('limitations.mono_agent.details.2')
       ]
     },
     {
-      title: "Mémoire de Session Limitée",
+      title: t('limitations.memory.title'),
       icon: <Database className="w-6 h-6" />,
       color: "warning-orange",
-      description: "Aucune persistance entre les sessions CLI",
+      description: t('limitations.memory.description'),
       details: [
-        "Le contexte se remet à zéro quand tu fermes/rouvres",
-        "Doit rétablir la compréhension du projet à chaque fois", 
-        "Perte des décisions et apprentissages précédents"
+        t('limitations.memory.details.0'),
+        t('limitations.memory.details.1'),
+        t('limitations.memory.details.2')
       ]
     },
     {
-      title: "Défis de Scalabilité",
+      title: t('limitations.scalability.title'),
       icon: <Zap className="w-6 h-6" />,
       color: "warning-orange",
-      description: "Performance dégradée sur très grandes bases de code",
+      description: t('limitations.scalability.description'),
       details: [
-        "Aucune coordination automatique pour workflows complexes multi-étapes",
-        "Décomposition manuelle des tâches requise",
-        "Gestion limitée des projets d'entreprise à grande échelle"
+        t('limitations.scalability.details.0'),
+        t('limitations.scalability.details.1'),
+        t('limitations.scalability.details.2')
       ]
     }
   ];
@@ -72,10 +75,10 @@ Message 4 : Écrire solution
           viewport={{ once: true }}
         >
           <h2 className="text-h1 font-bold mb-6 text-text-primary">
-            Orchestration d'Agents
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-            Le prochain niveau de Claude Code avec l'orchestration intelligente et les agents spécialisés.
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -90,14 +93,14 @@ Message 4 : Écrire solution
         >
           <div className="bg-primary-blue/10 border border-primary-blue/20 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-primary-blue mb-6 text-center">
-              La Solution d'Orchestration
+              {t('solution.title')}
             </h3>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Text Content */}
               <div>
                 <p className="text-text-secondary leading-relaxed mb-6">
-                  Notre système d'orchestration est un wrapper qui transforme Claude Code en une plateforme collaborative avancée. Il permet l'exécution parallèle, la spécialisation des agents, et de couvrir tout le cycle de développement.
+                  {t('solution.description')}
                 </p>
 
                 <div className="space-y-4">
@@ -106,9 +109,9 @@ Message 4 : Écrire solution
                       <Zap className="w-4 h-4 text-primary-blue" />
                     </div>
                     <div>
-                      <h4 className="text-primary-blue font-semibold mb-1">Principe BatchTool</h4>
+                      <h4 className="text-primary-blue font-semibold mb-1">{t('solution.batchtool.title')}</h4>
                       <p className="text-text-secondary text-sm">
-                        Encapsule plusieurs actions MCP dans un seul message pour l'exécution parallèle
+                        {t('solution.batchtool.description')}
                       </p>
                     </div>
                   </div>
@@ -118,9 +121,9 @@ Message 4 : Écrire solution
                       <GitBranch className="w-4 h-4 text-accent-red" />
                     </div>
                     <div>
-                      <h4 className="text-accent-red font-semibold mb-1">Coordination Intelligente</h4>
+                      <h4 className="text-accent-red font-semibold mb-1">{t('solution.coordination.title')}</h4>
                       <p className="text-text-secondary text-sm">
-                        Réduction de la latence réseau, du nombre de tokens, et du temps de coordination
+                        {t('solution.coordination.description')}
                       </p>
                     </div>
                   </div>
@@ -131,7 +134,7 @@ Message 4 : Écrire solution
               <div className="flex justify-center">
                 <Image 
                   src="/image/diagram_modes.svg" 
-                  alt="Diagram des modes d'orchestration" 
+                  alt={t('solution.diagram_alt')} 
                   className="max-w-full h-auto"
                   width={600}
                   height={400}

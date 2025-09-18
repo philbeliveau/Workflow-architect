@@ -154,18 +154,8 @@ const MethodologyShowcase: React.FC = () => {
           {/* Workflow Progress Header */}
           <div className="text-center mb-8">
             <h3 className="text-h2 font-bold text-text-primary mb-4">
-              {t('workflow.title')}
+              {t('title')}
             </h3>
-            <div className="flex justify-center items-center gap-4 mb-6">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-accent-yellow rounded-full animate-pulse"></div>
-                <span className="text-sm text-text-secondary">{t('workflow.live_collaboration')}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-accent-purple" />
-                <span className="text-sm text-text-secondary">{t('workflow.real_time_processing')}</span>
-              </div>
-            </div>
           </div>
 
           {/* Agent Grid - Single Row */}
@@ -314,79 +304,13 @@ const MethodologyShowcase: React.FC = () => {
                     </div>
                   </div>
                   
-                  {/* Current Tasks */}
-                  <div className="space-y-2">
-                    <h5 className="font-semibold text-text-primary mb-3">{t('workflow.current_tasks')}:</h5>
-                    <div className="space-y-2">
-                      {t.raw('workflow.tasks').map((task: string, idx: number) => (
-                        <div key={idx} className="flex items-center gap-3">
-                          <CheckCircle className={`w-4 h-4 text-${agents[activeAgent].color}`} />
-                          <span className="text-sm text-text-secondary">{task}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
 
-                {/* Agent Status */}
-                <div className="bg-primary-900/50 rounded-lg p-4">
-                  <h5 className="font-semibold text-text-primary mb-3">{t('workflow.current_tasks')}</h5>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-400 text-sm">{agents[activeAgent].status}</span>
-                    </div>
-                    <div className="text-accent-yellow text-sm">
-                      {`${agents[activeAgent].progress}% ${t('workflow.current_tasks')}`}
-                    </div>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </AnimatePresence>
         </motion.div>
 
-        {/* Results Showcase */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gradient-to-r from-accent-purple/10 to-accent-yellow/10 border border-accent-purple/20 rounded-2xl p-8">
-            <h3 className="text-h3 font-bold text-text-primary mb-4">
-              {t('results.title')}
-            </h3>
-            <p className="text-lg text-text-secondary mb-6 max-w-4xl mx-auto">
-              {t('results.subtitle')}
-            </p>
-            
-            {/* Quick Stats */}
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent-purple mb-2">{t('results.stats.agents_count')}</div>
-                <div className="text-sm text-text-secondary">{t('results.stats.agents_description')}</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent-yellow mb-2">{t('results.stats.speed_improvement')}</div>
-                <div className="text-sm text-text-secondary">{t('results.stats.speed_description')}</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent-purple mb-2">{t('results.stats.structure_quality')}</div>
-                <div className="text-sm text-text-secondary">{t('results.stats.structure_description')}</div>
-              </div>
-            </div>
-
-            <motion.button
-              className="bg-gradient-to-r from-accent-purple to-accent-purple-light text-white px-8 py-3 rounded-xl font-semibold hover:scale-105 transition-transform duration-200 shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {t('results.cta')}
-            </motion.button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

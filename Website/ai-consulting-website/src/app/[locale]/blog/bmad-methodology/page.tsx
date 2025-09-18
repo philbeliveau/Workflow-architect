@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Navigation from '@/components/sections/Navigation';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
+import { CheckCircle } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 // Lazy load components
@@ -20,6 +21,7 @@ export default async function BMADMethodologyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations('bmad');
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
@@ -52,24 +54,53 @@ export default async function BMADMethodologyPage({
         <Navigation />
       
       <main className="pt-24">
-        {/* Hero Section */}
+        {/* Hero Section with Diagram */}
         <section className="py-16 bg-gradient-to-br from-primary-900 via-background-dark to-primary-800">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h1 className="text-h1 font-bold mb-6 text-text-primary">
-              BMAD Method: Structured AI-Driven Development
-            </h1>
-            <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-              Discover the complete workflow that transforms project ideas into production-ready applications 
-              through intelligent agent collaboration and structured planning.
-            </p>
-          </div>
-        </section>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Left Column - Text Content */}
+              <div className="space-y-8">
+                <div>
+                  <h1 className="text-h1 font-bold mb-6 text-text-primary">
+                    {t('title')}
+                  </h1>
+                  <p className="text-xl text-text-secondary leading-relaxed">
+                    {t('subtitle')}
+                  </p>
+                </div>
+                
+                {/* Interactive Workflow Header */}
+                <div className="border-t border-primary-700 pt-8">
+                  <h2 className="text-h2 font-bold mb-4 text-text-primary">
+                    {t('workflow.title')}
+                  </h2>
+                  <p className="text-lg text-text-secondary leading-relaxed">
+                    {t('workflow.description')}
+                  </p>
+                </div>
 
-        {/* Interactive Workflow Diagram */}
-        <section className="py-16">
-          <Suspense fallback={<SectionFallback />}>
-            <BMADWorkflowDiagram />
-          </Suspense>
+                {/* Key Benefits */}
+                <div className="bg-primary-800/50 rounded-xl p-6 border border-primary-700">
+                  <h3 className="text-lg font-bold text-text-primary mb-4">{t('benefits.title')}</h3>
+                  <ul className="space-y-3 text-text-secondary">
+                    {[0, 1, 2, 3].map((index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                        <span>{t(`benefits.items.${index}`)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Right Column - Interactive Diagram */}
+              <div className="lg:sticky lg:top-24">
+                <Suspense fallback={<SectionFallback />}>
+                  <BMADWorkflowDiagram />
+                </Suspense>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Methodology Content */}

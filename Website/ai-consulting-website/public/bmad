@@ -1,0 +1,56 @@
+graph TD
+    A["Start: Project Idea"] --> B{"Optional: Analyst Research"}
+    B -->|Yes| C["Analyst: Brainstorming (Optional)"]
+    B -->|No| G{"Project Brief Available?"}
+    C --> C2["Analyst: Market Research (Optional)"]
+    C2 --> C3["Analyst: Competitor Analysis (Optional)"]
+    C3 --> D["Analyst: Create Project Brief"]
+    D --> G
+    G -->|Yes| E["PM: Create PRD from Brief (Fast Track)"]
+    G -->|No| E2["PM: Interactive PRD Creation (More Questions)"]
+    E --> F["PRD Created with FRs, NFRs, Epics & Stories"]
+    E2 --> F
+    F --> F2{"UX Required?"}
+    F2 -->|Yes| F3["UX Expert: Create Front End Spec"]
+    F2 -->|No| H["Architect: Create Architecture from PRD"]
+    F3 --> F4["UX Expert: Generate UI Prompt for Lovable/V0 (Optional)"]
+    F4 --> H2["Architect: Create Architecture from PRD + UX Spec"]
+    H --> Q{"Early Test Strategy? (Optional)"}
+    H2 --> Q
+    Q -->|Yes| R["QA: Early Test Architecture Input on High-Risk Areas"]
+    Q -->|No| I
+    R --> I["PO: Run Master Checklist"]
+    I --> J{"Documents Aligned?"}
+    J -->|Yes| K["Planning Complete"]
+    J -->|No| L["PO: Update Epics & Stories"]
+    L --> M["Update PRD/Architecture as needed"]
+    M --> I
+    K --> N["📁 Switch to IDE (If in a Web Agent Platform)"]
+    N --> O["PO: Shard Documents"]
+    O --> P["Ready for SM/Dev Cycle"]
+
+    style A fill:#f5f5f5,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C fill:#e8f5e9,color:#000
+    style C2 fill:#e8f5e9,color:#000
+    style C3 fill:#e8f5e9,color:#000
+    style D fill:#e8f5e9,color:#000
+    style E fill:#fff3e0,color:#000
+    style E2 fill:#fff3e0,color:#000
+    style F fill:#fff3e0,color:#000
+    style F2 fill:#e3f2fd,color:#000
+    style F3 fill:#e1f5fe,color:#000
+    style F4 fill:#e1f5fe,color:#000
+    style G fill:#e3f2fd,color:#000
+    style H fill:#f3e5f5,color:#000
+    style H2 fill:#f3e5f5,color:#000
+    style Q fill:#e3f2fd,color:#000
+    style R fill:#ffd54f,color:#000
+    style I fill:#f9ab00,color:#fff
+    style J fill:#e3f2fd,color:#000
+    style K fill:#34a853,color:#fff
+    style L fill:#f9ab00,color:#fff
+    style M fill:#fff3e0,color:#000
+    style N fill:#1a73e8,color:#fff
+    style O fill:#f9ab00,color:#fff
+    style P fill:#34a853,color:#fff

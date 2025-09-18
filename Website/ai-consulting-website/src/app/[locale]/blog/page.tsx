@@ -103,77 +103,72 @@ export default function BlogPage() {
           <div className="max-w-7xl mx-auto mb-16">
             <div className="grid lg:grid-cols-2 gap-8">
               {techBlogs.map(blog => (
-                <div key={blog.id} className="bg-primary-800/50 rounded-2xl border border-primary-700 overflow-hidden">
-                  {/* Header */}
-                  <div className="p-6 border-b border-primary-700">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center">
-                        <Brain className="w-5 h-5 text-accent-purple" />
-                      </div>
-                      <div>
-                        <span className="text-accent-purple text-xs font-medium">{blog.category}</span>
-                        <div className="flex items-center gap-2 text-xs text-text-secondary">
-                          <span>{blog.date}</span>
-                          <span>•</span>
-                          <span>{blog.readTime}</span>
-                        </div>
-                      </div>
+                <Link 
+                  key={blog.id} 
+                  href={`/blog/${blog.id}`}
+                  className="group relative rounded-lg bg-background-dark-alt p-2 border border-gray-600 hover:border-primary-blue/50 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-blue/20"
+                >
+                  {/* Terminal Header */}
+                  <div className="relative flex text-center">
+                    {/* Window Controls */}
+                    <div className="flex pl-3.5 pt-3">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.5 mr-1.5 h-3 w-3 text-accent-red/20 group-hover:text-accent-red/40 transition-colors">
+                        <circle r="12" cy="12" cx="12"></circle>
+                      </svg>
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-accent-yellow/20 group-hover:text-accent-yellow/40 transition-colors">
+                        <circle r="12" cy="12" cx="12"></circle>
+                      </svg>
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-success-green/20 group-hover:text-success-green/40 transition-colors">
+                        <circle r="12" cy="12" cx="12"></circle>
+                      </svg>
                     </div>
-                    <h2 className="text-xl font-bold text-text-primary mb-3 leading-tight">
-                      {blog.title}
-                    </h2>
-                    <p className="text-sm text-text-secondary">
-                      {blog.excerpt}
+                    {/* File Title */}
+                    <span className="absolute inset-x-0 top-2 text-xs text-text-secondary group-hover:text-text-primary transition-colors">{blog.category}.tsx</span>
+                  </div>
+                  
+                  {/* Terminal Content */}
+                  <div className="mt-5 space-y-1.5 px-5 pb-10">
+                    {/* Date and Read Time */}
+                    <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                      <span className="text-text-secondary">{"//"}</span> <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.date}</span></span> <span className="text-text-secondary">•</span> <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.readTime}</span></span>
                     </p>
-                  </div>
-
-                  {/* Content Preview */}
-                  <div className="p-6">
-                    <div className="space-y-6">
-                      {/* Challenge & Solution Context */}
-                      <div>
-                        <h3 className="text-sm font-semibold text-text-primary mb-2">Le Défi</h3>
-                        <p className="text-text-secondary text-sm mb-3">{blog.context.challenge}</p>
-                        
-                        <h3 className="text-sm font-semibold text-text-primary mb-2">Ma Solution</h3>
-                        <p className="text-text-secondary text-sm">{blog.context.solution}</p>
+                    
+                    {/* Title as component */}
+                    <p className="mt-4 font-mono text-xs font-normal tracking-wide text-accent-purple">
+                      <span className="text-text-secondary">&lt;</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">ArticleTitle</span><span className="text-text-secondary">&gt;</span>
+                    </p>
+                    <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
+                      <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.title}</span></span>
+                    </p>
+                    <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                      <span className="text-text-secondary">&lt;/</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">ArticleTitle</span><span className="text-text-secondary">&gt;</span>
+                    </p>
+                    
+                    {/* Excerpt as content */}
+                    <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
+                      <span className="text-text-secondary">&lt;</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">Description</span><span className="text-text-secondary">&gt;</span>
+                    </p>
+                    <p className="ml-6 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
+                      <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.excerpt.slice(0, 80)}...</span></span>
+                    </p>
+                    <p className="ml-3 font-mono text-xs font-normal tracking-wide text-accent-purple">
+                      <span className="text-text-secondary">&lt;/</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">Description</span><span className="text-text-secondary">&gt;</span>
+                    </p>
+                    
+                    {/* Click indicator */}
+                    <div className="mt-4 flex items-center justify-between">
+                      <p className="font-mono text-xs text-text-secondary group-hover:text-primary-blue transition-colors">
+                        {`// click to read →`}
+                      </p>
+                      <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowRight className="w-3 h-3 text-primary-blue" />
+                        <span className="font-mono text-xs text-primary-blue">read()</span>
                       </div>
-
-                      {/* Results */}
-                      <div className="bg-primary-900/50 rounded-lg p-4">
-                        <h3 className="text-sm font-semibold text-text-primary mb-3 flex items-center gap-2">
-                          <Code className="w-4 h-4 text-accent-green" />
-                          Résultats Concrets
-                        </h3>
-                        <div className="space-y-2">
-                          {blog.context.results.map((result, index) => (
-                            <div key={index} className="flex items-start gap-2">
-                              <div className="w-1 h-1 bg-accent-green rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-xs text-text-secondary">{result}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-1">
-                        {blog.tags.slice(0, 3).map(tag => (
-                          <span key={tag} className="bg-primary-700/50 text-text-secondary px-2 py-1 rounded text-xs">
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* CTA */}
-                      <Link href={`/blog/${blog.id}`}>
-                        <Button variant="primary" size="sm" className="w-full">
-                          Lire l'article
-                          <ArrowRight className="ml-2 h-3 w-3" />
-                        </Button>
-                      </Link>
                     </div>
                   </div>
-                </div>
+                  
+                </Link>
+
               ))}
             </div>
           </div>
@@ -184,48 +179,97 @@ export default function BlogPage() {
               Prochains Articles Techniques
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-primary-800/30 rounded-xl border border-primary-700 p-6 text-center">
-                <div className="w-12 h-12 bg-accent-blue/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Code className="w-6 h-6 text-accent-blue" />
+              <div className="relative rounded-lg bg-background-dark-alt p-2 border border-gray-600">
+                {/* Terminal Header */}
+                <div className="relative flex text-center">
+                  <div className="flex pl-3.5 pt-3">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.5 mr-1.5 h-3 w-3 text-accent-red/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-accent-yellow/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-success-green/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                  </div>
+                  <span className="absolute inset-x-0 top-2 text-xs text-text-secondary">microservices.tsx</span>
                 </div>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  Architecture Microservices
-                </h3>
-                <p className="text-text-secondary text-sm">
-                  Patterns avancés et optimisations performance
-                </p>
-                <div className="mt-4 text-xs text-accent-blue">
-                  Bientôt disponible
+                <div className="mt-5 space-y-1.5 px-5 pb-10">
+                  <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="text-text-secondary">&lt;</span><span className="text-accent-red">Article</span><span className="ml-2 text-accent-purple">status<span className="text-text-secondary">=</span><span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">"coming-soon"</span></span></span><span className="text-text-secondary">&gt;</span>
+                  </p>
+                  <p className="ml-3 font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">Architecture Microservices</span></span>
+                  </p>
+                  <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">Patterns avancés et optimisations</span></span>
+                  </p>
+                  <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="text-text-secondary">&lt;/</span><span className="text-accent-red">Article</span><span className="text-text-secondary">&gt;</span>
+                  </p>
                 </div>
               </div>
               
-              <div className="bg-primary-800/30 rounded-xl border border-primary-700 p-6 text-center">
-                <div className="w-12 h-12 bg-accent-green/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-6 h-6 text-accent-green" />
+              <div className="relative rounded-lg bg-background-dark-alt p-2 border border-gray-600">
+                <div className="relative flex text-center">
+                  <div className="flex pl-3.5 pt-3">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.5 mr-1.5 h-3 w-3 text-accent-red/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-accent-yellow/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-success-green/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                  </div>
+                  <span className="absolute inset-x-0 top-2 text-xs text-text-secondary">llm-engineering.tsx</span>
                 </div>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  LLM Engineering
-                </h3>
-                <p className="text-text-secondary text-sm">
-                  Techniques avancées de prompt engineering
-                </p>
-                <div className="mt-4 text-xs text-accent-green">
-                  Bientôt disponible
+                <div className="mt-5 space-y-1.5 px-5 pb-10">
+                  <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="text-text-secondary">&lt;</span><span className="text-accent-red">Article</span><span className="ml-2 text-accent-purple">status<span className="text-text-secondary">=</span><span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">"coming-soon"</span></span></span><span className="text-text-secondary">&gt;</span>
+                  </p>
+                  <p className="ml-3 font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">LLM Engineering</span></span>
+                  </p>
+                  <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">Techniques avancées de prompt engineering</span></span>
+                  </p>
+                  <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="text-text-secondary">&lt;/</span><span className="text-accent-red">Article</span><span className="text-text-secondary">&gt;</span>
+                  </p>
                 </div>
               </div>
               
-              <div className="bg-primary-800/30 rounded-xl border border-primary-700 p-6 text-center">
-                <div className="w-12 h-12 bg-accent-purple/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-6 h-6 text-accent-purple" />
+              <div className="relative rounded-lg bg-background-dark-alt p-2 border border-gray-600">
+                <div className="relative flex text-center">
+                  <div className="flex pl-3.5 pt-3">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.5 mr-1.5 h-3 w-3 text-accent-red/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-accent-yellow/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="-ml-0.75 mr-1.5 h-3 w-3 text-success-green/20">
+                      <circle r="12" cy="12" cx="12"></circle>
+                    </svg>
+                  </div>
+                  <span className="absolute inset-x-0 top-2 text-xs text-text-secondary">devops-ai.tsx</span>
                 </div>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  DevOps & IA
-                </h3>
-                <p className="text-text-secondary text-sm">
-                  Intégration IA dans les pipelines CI/CD
-                </p>
-                <div className="mt-4 text-xs text-accent-purple">
-                  Bientôt disponible
+                <div className="mt-5 space-y-1.5 px-5 pb-10">
+                  <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="text-text-secondary">&lt;</span><span className="text-accent-red">Article</span><span className="ml-2 text-accent-purple">status<span className="text-text-secondary">=</span><span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">"coming-soon"</span></span></span><span className="text-text-secondary">&gt;</span>
+                  </p>
+                  <p className="ml-3 font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">DevOps & IA</span></span>
+                  </p>
+                  <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">Intégration IA dans les pipelines CI/CD</span></span>
+                  </p>
+                  <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
+                    <span className="text-text-secondary">&lt;/</span><span className="text-accent-red">Article</span><span className="text-text-secondary">&gt;</span>
+                  </p>
                 </div>
               </div>
             </div>
