@@ -73,7 +73,7 @@ const Navigation: React.FC = memo(() => {
         { name: t('tracks'), href: anchors.tracks, isActive: false },
         { name: t('problem'), href: anchors.problem, isActive: false },
         { name: t('solution'), href: anchors.solution, isActive: false },
-        { name: 'BMAD', href: '/blog/bmad-methodology', isActive: false },
+        { name: t('blog'), href: '/blog', isActive: false },
         { name: t('contact'), href: anchors.contact, isActive: false }
       ];
     } else {
@@ -83,7 +83,7 @@ const Navigation: React.FC = memo(() => {
         { name: t('tracks'), href: `/${anchors.tracks}`, isActive: currentPath === '/developers' || currentPath === '/business' },
         { name: t('problem'), href: `/${anchors.problem}`, isActive: false },
         { name: t('solution'), href: `/${anchors.solution}`, isActive: false },
-        { name: 'BMAD', href: '/blog/bmad-methodology', isActive: currentPath.includes('/blog/bmad-methodology') },
+        { name: t('blog'), href: '/blog', isActive: currentPath.includes('/blog') },
         { name: t('contact'), href: `/${anchors.contact}`, isActive: false }
       ];
     }

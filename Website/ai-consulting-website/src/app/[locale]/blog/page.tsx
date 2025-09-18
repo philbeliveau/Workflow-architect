@@ -7,6 +7,21 @@ import Link from 'next/link';
 export default function BlogPage() {
   const techBlogs = [
     {
+      id: 'bmad-methodology',
+      title: 'BMAD Method: Structured AI-Driven Development',
+      excerpt: 'Discover the complete workflow that transforms project ideas into production-ready applications through intelligent agent collaboration and structured planning.',
+      date: '2025-01-18',
+      readTime: '12 min',
+      category: 'Methodology',
+      tags: ['AI', 'Development', 'Methodology', 'Agents'],
+      featured: true,
+      context: {
+        challenge: 'Transform chaotic project starts into structured, agent-driven workflows',
+        solution: 'BMAD method with 6 specialized agents and human-in-the-loop processing',
+        results: ['85% faster planning', '100% structured output', '6+ specialized agents working together']
+      }
+    },
+    {
       id: 'gayed-trading-signals-swarm',
       title: 'Comment j\'ai Transformé 5 Papiers Académiques en Signaux de Trading Automatisés en 4 Heures',
       excerpt: 'Imaginez-vous devant une pile de 5 papiers académiques de Michael Gayed sur les signaux de trading, une analyse de 47 pages par Manus AI, et la mission d\'implémenter tout ça en code fonctionnel. Normalement, ça prendrait des semaines à une équipe. Moi ? 4 heures.',
@@ -14,7 +29,7 @@ export default function BlogPage() {
       readTime: '15 min',
       category: 'FinTech & Trading',
       tags: ['Trading', 'Swarms', 'FinTech', 'Signals'],
-      featured: true,
+      featured: false,
       context: {
         challenge: 'Implémenter 5 signaux financiers complexes de Michael Gayed',
         solution: 'Swarm de 8 agents IA spécialisés travaillant en parallèle',
@@ -49,12 +64,12 @@ export default function BlogPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <BookOpen className="w-8 h-8 text-accent-purple" />
               <h1 className="text-h1 font-bold text-text-primary">
-                Blog Technique contexteDev
+                NEWCODE Blog
               </h1>
             </div>
             <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-              Articles techniques approfondis sur l'IA, l'architecture logicielle, 
-              et les solutions innovantes de développement.
+              Insights, methodologies, and deep dives into agentic programming, 
+              AI-driven development, and modern software engineering practices.
             </p>
           </div>
 

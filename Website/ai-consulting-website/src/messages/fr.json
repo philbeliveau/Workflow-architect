@@ -716,7 +716,7 @@
     }
   },
   "methodology": {
-    "title": "Collaboration Multi-Agents en Action",
+    "title": "🔄 Cycle Constant d'Agents Collaboratifs",
     "subtitle": "Regardez plusieurs agents IA collaborer en temps réel pour transformer la complexité en solutions structurées",
     "agents": {
       "architect": {
@@ -749,22 +749,12 @@
       "title": "Collaboration d'Agents IA en Action",
       "live_collaboration": "Collaboration Live",
       "real_time_processing": "Traitement Temps Réel",
-      "connected": "Connecté",
-      "progress": "Progrès",
       "current_tasks": "Tâches Actuelles",
-      "live_output": "Sortie Live",
       "tasks": [
         "Analyse des exigences",
         "Traitement des structures de données",
         "Optimisation des performances"
-      ],
-      "outputs": {
-        "analyzing": "> Analyse de l'architecture système...",
-        "researching": "> Collecte des exigences domaine...",
-        "coding": "> Génération de la structure des composants...",
-        "testing": "> Exécution des tests de validation...",
-        "scanning": "> Scan des vulnérabilités de sécurité..."
-      }
+      ]
     },
     "results": {
       "title": "Du Chaos à la Structure : Agents IA Travaillant Ensemble",

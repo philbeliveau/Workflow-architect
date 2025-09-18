@@ -236,7 +236,7 @@ const MethodologyShowcase: React.FC = () => {
                       {/* Progress Bar */}
                       <div className="space-y-2">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs text-text-secondary">{t('workflow.progress')}</span>
+                          <span className="text-xs text-text-secondary">Progrès</span>
                           <span className={`text-xs font-medium text-${colorClass}`}>
                             {agent.progress}%
                           </span>
@@ -328,23 +328,16 @@ const MethodologyShowcase: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Real-time Output */}
+                {/* Agent Status */}
                 <div className="bg-primary-900/50 rounded-lg p-4">
-                  <h5 className="font-semibold text-text-primary mb-3">{t('workflow.live_output')}</h5>
-                  <div className="space-y-2 font-mono text-xs">
+                  <h5 className="font-semibold text-text-primary mb-3">{t('workflow.current_tasks')}</h5>
+                  <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-400">{t('workflow.connected')}</span>
+                      <span className="text-green-400 text-sm">{agents[activeAgent].status}</span>
                     </div>
-                    <div className="text-text-secondary">
-                      {agents[activeAgent].status === t('agents.architect.status') && t('workflow.outputs.analyzing')}
-                      {agents[activeAgent].status === t('agents.researcher.status') && t('workflow.outputs.researching')}
-                      {agents[activeAgent].status === t('agents.coder.status') && t('workflow.outputs.coding')}
-                      {agents[activeAgent].status === t('agents.tester.status') && t('workflow.outputs.testing')}
-                      {agents[activeAgent].status === t('agents.security.status') && t('workflow.outputs.scanning')}
-                    </div>
-                    <div className="text-accent-yellow">
-                      {`> ${t('workflow.progress')}: ${agents[activeAgent].progress}% complete`}
+                    <div className="text-accent-yellow text-sm">
+                      {`${agents[activeAgent].progress}% ${t('workflow.current_tasks')}`}
                     </div>
                   </div>
                 </div>
