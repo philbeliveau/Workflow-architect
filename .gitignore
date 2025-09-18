@@ -1,3 +1,9 @@
 Website/ai-consulting-website/public
 
 theexperts/
+
+# Claude Flow directories and files
+.claude-flow/
+**/.claude-flow/
+.swarm/
+**/.swarm/
