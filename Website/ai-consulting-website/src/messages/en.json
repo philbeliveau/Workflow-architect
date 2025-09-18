@@ -288,37 +288,72 @@
     "tech_watch": {
       "title": "Continuous Technology Watch",
       "description": "We keep you informed about new software development stacks, MCPs, and best practices.",
-      "features": [
-        {
-          "title": "New Development Stacks",
-          "description": "Stay up to date with the latest emerging technologies and frameworks"
-        },
-        {
-          "title": "Advanced MCP Protocols",
-          "description": "Discover the latest innovations in Model Context Protocol"
-        },
-        {
-          "title": "Best Practices",
-          "description": "Integrate industry standards and proven patterns"
-        }
-      ]
+      "new_stacks": {
+        "title": "New Development Stacks",
+        "description": "Stay up to date with the latest emerging technologies and frameworks"
+      },
+      "mcp_protocols": {
+        "title": "Advanced MCP Protocols",
+        "description": "Discover the latest innovations in Model Context Protocol"
+      },
+      "best_practices": {
+        "title": "Best Practices",
+        "description": "Integrate industry standards and proven patterns"
+      }
     },
     "orchestration": {
       "title": "Agent Orchestration",
-      "description": "The next level of Claude Code with intelligent orchestration and specialized agents.",
+      "subtitle": "The next level of Claude Code with intelligent orchestration and specialized agents.",
+      "limitations": {
+        "sequential": {
+          "title": "Sequential Execution",
+          "description": "Claude Code processes one message at a time",
+          "details": [
+            "No integrated task parallelization",
+            "Each tool call is made sequentially in a message",
+            "Cumulative wait time on large operations"
+          ]
+        },
+        "mono_agent": {
+          "title": "Mono-Agent Approach",
+          "description": "Single AI instance managing all aspects",
+          "details": [
+            "No role specialization (architect vs coder vs tester)",
+            "Monolithic problem-solving approach",
+            "No multiple perspectives on complex challenges"
+          ]
+        },
+        "memory": {
+          "title": "Limited Session Memory",
+          "description": "No persistence between CLI sessions",
+          "details": [
+            "Context resets when you close/reopen",
+            "Must re-establish project understanding each time",
+            "Loss of previous decisions and learnings"
+          ]
+        },
+        "scalability": {
+          "title": "Scalability Challenges",
+          "description": "Degraded performance on very large codebases",
+          "details": [
+            "No automatic coordination for complex multi-step workflows",
+            "Manual task decomposition required",
+            "Limited management of large-scale enterprise projects"
+          ]
+        }
+      },
       "solution": {
         "title": "The Orchestration Solution",
         "description": "Our orchestration system is a wrapper that transforms Claude Code into an advanced collaborative platform. It enables parallel execution, agent specialization, and covers the entire development cycle.",
-        "principles": [
-          {
-            "title": "BatchTool Principle",
-            "description": "Encapsulates multiple MCP actions in a single message for parallel execution"
-          },
-          {
-            "title": "Intelligent Coordination",
-            "description": "Reduces network latency, token count, and coordination time"
-          }
-        ]
+        "batchtool": {
+          "title": "BatchTool Principle",
+          "description": "Encapsulates multiple MCP actions in a single message for parallel execution"
+        },
+        "coordination": {
+          "title": "Intelligent Coordination",
+          "description": "Reduces network latency, token count, and coordination time"
+        },
+        "diagram_alt": "Orchestration modes diagram"
       }
     },
     "case_studies": {
@@ -722,7 +757,7 @@
   },
   "methodology": {
     "title": "🔄 Constant Cycle of Collaborative Agents",
-    "subtitle": "Watch multiple AI agents collaborate in real-time to transform complexity into structured solutions",
+    "subtitle": "",
     "agents": {
       "architect": {
         "name": "System Architect",
@@ -752,8 +787,6 @@
     },
     "workflow": {
       "title": "AI Agent Collaboration in Action",
-      "live_collaboration": "Live Collaboration",
-      "real_time_processing": "Real-time Processing",
       "current_tasks": "Current Tasks",
       "tasks": [
         "Analyzing requirements",
@@ -762,22 +795,31 @@
       ]
     },
     "results": {
-      "title": "From Chaos to Structure: AI Agents Working Together",
-      "subtitle": "Watch how multiple specialized AI agents collaborate to transform complex requirements into structured, deployable solutions. Each agent brings unique expertise while maintaining perfect coordination.",
-      "stats": {
-        "agents_count": "5 Agents",
-        "agents_description": "Working in Parallel",
-        "speed_improvement": "85% Faster",
-        "speed_description": "Than Traditional Development",
-        "structure_quality": "100% Structured",
-        "structure_description": "Organized Output"
-      },
-      "cta": "Experience the Methodology"
     },
     "methodology_cta": {
       "title": "Ready to Experience Our Methodology?",
       "description": "Experience the power of structured AI development. From scattered complexity to organized, predictable results.",
       "button": "Experience the Methodology"
+    }
+  },
+  "bmad": {
+    "title": "BMAD Method: Structured AI-Driven Development",
+    "subtitle": "Discover the complete workflow that transforms project ideas into production-ready applications through intelligent agent collaboration and structured planning.",
+    "workflow": {
+      "title": "Interactive BMAD Workflow",
+      "description": "Click on any step to learn more about agent interactions. Each step shows how you can collaborate with specialized AI agents to structure your development process.",
+      "simulate": "Simulate",
+      "reset": "Reset",
+      "running": "Running..."
+    },
+    "benefits": {
+      "title": "Key Benefits",
+      "items": [
+        "Structured workflow eliminates chaotic project starts",
+        "85% faster planning with specialized AI agents",
+        "100% structured output with human-in-the-loop validation",
+        "6+ specialized agents working collaboratively"
+      ]
     }
   },
   "metadata": {
@@ -801,5 +843,32 @@
       "title": "Book a Demo - NEWCODE",
       "description": "Book your free assessment and discover how AI can transform your processes. Personalized audit included."
     }
+  },
+  "team": {
+    "title": "Meet the Team",
+    "subtitle": "Our team of agentic programming experts accompanies you in your transformation towards AI-driven development.",
+    "members": [
+      {
+        "name": "Philippe Béliveau",
+        "title": "Co-founder & Agentic Programming Expert",
+        "description": "Expert in data science and agentic programming, graduated from HEC Montréal. He specializes in transforming business ideas into technical solutions via AI.",
+        "image": "/philippe-beliveau.png",
+        "alt": "Philippe Béliveau"
+      },
+      {
+        "name": "Baptiste Wieczorek",
+        "title": "Co-founder & Technical Expert",
+        "description": "Technical expert specialized in complex architectures and AI agent orchestration for enterprise solutions.",
+        "image": "/baptiste-wieczorek.jpeg",
+        "alt": "Baptiste Wieczorek"
+      },
+      {
+        "name": "Yoan Hibert",
+        "title": "Co-founder & Marketing Strategist",
+        "description": "Entrepreneur trained at EDHEC, specialist in marketing, acquisition and AI-augmented productivity.",
+        "image": "/yoan-hibert.jpeg",
+        "alt": "Yoan Hibert"
+      }
+    ]
   }
 }

@@ -388,38 +388,73 @@
     },
     "tech_watch": {
       "title": "Veille Technologique Continue",
-      "description": "Nous vous tenons informé des nouvelles stacks de développement logiciel, MCPs, et meilleures pratiques.",
-      "features": [
-        {
-          "title": "Nouvelles Stacks de Développement",
-          "description": "Restez à jour avec les dernières technologies et frameworks émergents"
-        },
-        {
-          "title": "Protocoles MCP Avancés",
-          "description": "Découvrez les dernières innovations en Model Context Protocol"
-        },
-        {
-          "title": "Meilleures Pratiques",
-          "description": "Intégrez les standards de l'industrie et les patterns éprouvés"
-        }
-      ]
+      "description": "On vous garde au courant des nouveaux stack de développement logiciel, des MCP, des meilleures pratiques.",
+      "new_stacks": {
+        "title": "Nouveaux Stacks de Développement",
+        "description": "Restez à jour avec les dernières technologies et frameworks émergents"
+      },
+      "mcp_protocols": {
+        "title": "Protocoles MCP Avancés",
+        "description": "Découvrez les dernières innovations en Model Context Protocol"
+      },
+      "best_practices": {
+        "title": "Meilleures Pratiques",
+        "description": "Intégrez les standards industry et les patterns éprouvés"
+      }
     },
     "orchestration": {
       "title": "Orchestration d'Agents",
-      "description": "Le niveau supérieur de Claude Code avec orchestration intelligente et agents spécialisés.",
+      "subtitle": "Le prochain niveau de Claude Code avec l'orchestration intelligente et les agents spécialisés.",
+      "limitations": {
+        "sequential": {
+          "title": "Exécution Séquentielle",
+          "description": "Claude Code traite un message à la fois",
+          "details": [
+            "Aucune parallélisation intégrée des tâches",
+            "Chaque appel d'outil se fait séquentiellement dans un message",
+            "Temps d'attente cumulatif sur les grandes opérations"
+          ]
+        },
+        "mono_agent": {
+          "title": "Approche Mono-Agent",
+          "description": "Une seule instance IA gérant tous les aspects",
+          "details": [
+            "Aucune spécialisation de rôles (architecte vs codeur vs testeur)",
+            "Approche monolithique de résolution de problèmes",
+            "Pas de perspectives multiples sur les défis complexes"
+          ]
+        },
+        "memory": {
+          "title": "Mémoire de Session Limitée",
+          "description": "Aucune persistance entre les sessions CLI",
+          "details": [
+            "Le contexte se remet à zéro quand tu fermes/rouvres",
+            "Doit rétablir la compréhension du projet à chaque fois",
+            "Perte des décisions et apprentissages précédents"
+          ]
+        },
+        "scalability": {
+          "title": "Défis de Scalabilité",
+          "description": "Performance dégradée sur très grandes bases de code",
+          "details": [
+            "Aucune coordination automatique pour workflows complexes multi-étapes",
+            "Décomposition manuelle des tâches requise",
+            "Gestion limitée des projets d'entreprise à grande échelle"
+          ]
+        }
+      },
       "solution": {
         "title": "La Solution d'Orchestration",
-        "description": "Notre système d'orchestration est un wrapper qui transforme Claude Code en plateforme collaborative avancée. Il permet l'exécution parallèle, la spécialisation des agents, et couvre tout le cycle de développement.",
-        "principles": [
-          {
-            "title": "Principe BatchTool",
-            "description": "Encapsule plusieurs actions MCP en un seul message pour l'exécution parallèle"
-          },
-          {
-            "title": "Coordination Intelligente", 
-            "description": "Réduit la latence réseau, le nombre de tokens, et le temps de coordination"
-          }
-        ]
+        "description": "Notre système d'orchestration est un wrapper qui transforme Claude Code en une plateforme collaborative avancée. Il permet l'exécution parallèle, la spécialisation des agents, et de couvrir tout le cycle de développement.",
+        "batchtool": {
+          "title": "Principe BatchTool",
+          "description": "Encapsule plusieurs actions MCP dans un seul message pour l'exécution parallèle"
+        },
+        "coordination": {
+          "title": "Coordination Intelligente",
+          "description": "Réduction de la latence réseau, du nombre de tokens, et du temps de coordination"
+        },
+        "diagram_alt": "Diagram des modes d'orchestration"
       }
     },
     "case_studies": {
@@ -717,7 +752,7 @@
   },
   "methodology": {
     "title": "🔄 Cycle Constant d'Agents Collaboratifs",
-    "subtitle": "Regardez plusieurs agents IA collaborer en temps réel pour transformer la complexité en solutions structurées",
+    "subtitle": "",
     "agents": {
       "architect": {
         "name": "Architecte Système",
@@ -747,8 +782,6 @@
     },
     "workflow": {
       "title": "Collaboration d'Agents IA en Action",
-      "live_collaboration": "Collaboration Live",
-      "real_time_processing": "Traitement Temps Réel",
       "current_tasks": "Tâches Actuelles",
       "tasks": [
         "Analyse des exigences",
@@ -757,22 +790,31 @@
       ]
     },
     "results": {
-      "title": "Du Chaos à la Structure : Agents IA Travaillant Ensemble",
-      "subtitle": "Regardez comment plusieurs agents IA spécialisés collaborent pour transformer des exigences complexes en solutions structurées et déployables. Chaque agent apporte une expertise unique tout en maintenant une coordination parfaite.",
-      "stats": {
-        "agents_count": "5 Agents",
-        "agents_description": "Travaillant en Parallèle",
-        "speed_improvement": "85% Plus Rapide",
-        "speed_description": "Que le Développement Traditionnel",
-        "structure_quality": "100% Structuré",
-        "structure_description": "Sortie Organisée"
-      },
-      "cta": "Découvrez la Méthodologie"
     },
     "methodology_cta": {
       "title": "Prêt à Découvrir Notre Méthodologie ?",
       "description": "Expérimentez la puissance du développement IA structuré. De la complexité éparpillée aux résultats organisés et prévisibles.",
       "button": "Expérimentez la Méthodologie"
+    }
+  },
+  "bmad": {
+    "title": "Méthode BMAD : Développement Structuré par IA",
+    "subtitle": "Découvrez le flux de travail complet qui transforme les idées de projet en applications prêtes pour la production grâce à la collaboration d'agents intelligents et à la planification structurée.",
+    "workflow": {
+      "title": "Flux de Travail BMAD Interactif",
+      "description": "Cliquez sur n'importe quelle étape pour en savoir plus sur les interactions d'agents. Chaque étape montre comment vous pouvez collaborer avec des agents IA spécialisés pour structurer votre processus de développement.",
+      "simulate": "Simuler",
+      "reset": "Réinitialiser",
+      "running": "En cours..."
+    },
+    "benefits": {
+      "title": "Avantages Clés",
+      "items": [
+        "Le flux de travail structuré élimine les démarrages de projet chaotiques",
+        "85% plus rapide planification avec des agents IA spécialisés",
+        "100% de sortie structurée avec validation humaine dans la boucle",
+        "6+ agents spécialisés travaillant en collaboration"
+      ]
     }
   },
   "metadata": {
@@ -791,6 +833,37 @@
     "book_demo": {
       "title": "Réserver une démo - NEWCODE",
       "description": "Réservez votre évaluation gratuite et découvrez comment l'IA peut transformer vos processus. Audit personnalisé inclus."
+    },
+    "developers": {
+      "title": "Développeurs - NEWCODE",
+      "description": "Solutions techniques avancées pour développeurs. Maîtrisez l'orchestration d'agents IA et l'architecture logicielle moderne."
     }
+  },
+  "team": {
+    "title": "Rencontrez l'équipe",
+    "subtitle": "Notre équipe d'experts en programmation agentique vous accompagne dans votre transformation vers le développement dirigé par l'IA.",
+    "members": [
+      {
+        "name": "Philippe Béliveau",
+        "title": "Co-fondateur & Expert en programmation agentique",
+        "description": "Expert en science des données et programmation agentique, diplômé de HEC Montréal. Il se spécialise dans la transformation d'idées métiers en solutions techniques via l'IA.",
+        "image": "/philippe-beliveau.png",
+        "alt": "Philippe Béliveau"
+      },
+      {
+        "name": "Baptiste Wieczorek",
+        "title": "Co-fondateur & Expert technique",
+        "description": "Expert technique spécialisé dans les architectures complexes et l'orchestration d'agents IA pour des solutions d'entreprise.",
+        "image": "/baptiste-wieczorek.jpeg",
+        "alt": "Baptiste Wieczorek"
+      },
+      {
+        "name": "Yoan Hibert",
+        "title": "Co-fondateur & Stratège marketing",
+        "description": "Entrepreneur formé à l'EDHEC, spécialiste en marketing, acquisition et productivité augmentée par l'IA.",
+        "image": "/yoan-hibert.jpeg",
+        "alt": "Yoan Hibert"
+      }
+    ]
   }
 }

@@ -5,10 +5,12 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { getTranslations } from 'next-intl/server';
 
 // Lazy load components that are below the fold
+const TransformationProcess = lazy(() => import('@/components/sections/TransformationProcess'));
 const TrackSelection = lazy(() => import('@/components/sections/TrackSelection'));
 const ProblemStatement = lazy(() => import('@/components/sections/ProblemStatement'));
 const TrainingContent = lazy(() => import('@/components/sections/TrainingContent'));
 const SolutionOverview = lazy(() => import('@/components/sections/SolutionOverview'));
+const TeamSection = lazy(() => import('@/components/sections/TeamSection'));
 const CTASection = lazy(() => import('@/components/sections/CTASection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
 
@@ -39,6 +41,12 @@ export default async function Home({
           <HeroBanner />
         </section>
         
+        <section id="transformation">
+          <Suspense fallback={<SectionFallback />}>
+            <TransformationProcess />
+          </Suspense>
+        </section>
+        
         <section id={sectionIds.problem}>
           <Suspense fallback={<SectionFallback />}>
             <ProblemStatement />
@@ -60,6 +68,12 @@ export default async function Home({
         <section id={sectionIds.solution}>
           <Suspense fallback={<SectionFallback />}>
             <SolutionOverview />
+          </Suspense>
+        </section>
+        
+        <section id="team">
+          <Suspense fallback={<SectionFallback />}>
+            <TeamSection />
           </Suspense>
         </section>
         
