@@ -3,46 +3,12 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Code, Zap, Users, Bot, BookOpen, Star, Play, BarChart3, TrendingUp } from 'lucide-react';
+import { ArrowRight, BarChart3, TrendingUp, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
 import TransformationProcessInteractive from './TransformationProcessInteractive';
-import Image from 'next/image';
 
-const HeroBanner: React.FC = memo(() => {
+const HeroSectionFlow: React.FC = memo(() => {
   const t = useTranslations('hero');
-  const tSections = useTranslations('sections');
-  const locale = useLocale();
-
-  const renderSubtitle = () => {
-    if (locale === 'fr') {
-      return (
-        <>
-          Transformez vos connaissances métier en applications fonctionnelles — passez de{' '}
-          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
-            'celui qui a l'idée'
-          </span>
-          {' '}à{' '}
-          <span className="bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent font-semibold">
-            'celui qui la réalise'
-          </span>
-        </>
-      );
-    } else {
-      return (
-        <>
-          Transform your business knowledge into functional applications — go from{' '}
-          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
-            'the one with the idea'
-          </span>
-          {' '}to{' '}
-          <span className="bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent font-semibold">
-            'the one who realizes it'
-          </span>
-        </>
-      );
-    }
-  };
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -110,10 +76,10 @@ const HeroBanner: React.FC = memo(() => {
               style={{
                 background: `
                   linear-gradient(135deg, 
-                    #9ca3af 0%, 
-                    #e5e7eb 30%, 
-                    #fbbf24 70%, 
-                    #f59e0b 100%
+                    #ffffff 0%, 
+                    #74a6be 30%, 
+                    #fbbf24 60%, 
+                    #a7292e 90%
                   )
                 `,
                 backgroundClip: 'text',
@@ -123,7 +89,7 @@ const HeroBanner: React.FC = memo(() => {
               }}
               role="banner"
             >
-              {t('title')}
+              Ne restez plus spectateur de l'IA
             </h1>
             
             {/* Subtitle with flowing typography */}
@@ -134,28 +100,134 @@ const HeroBanner: React.FC = memo(() => {
               className="space-y-6"
             >
               <p className="text-xl md:text-2xl leading-relaxed font-medium opacity-90 tracking-[-0.01em] text-shadow-flow text-[#e5e5e5]">
-                {renderSubtitle()}
+                Près de 60% des apps personnalisées en entreprise sont développées hors de l'IT
               </p>
               
-              
-              {/* Statistics & Social Proof */}
-              <div className="bg-background-accent-grey/30 backdrop-blur-sm rounded-2xl p-6 border border-text-secondary/20">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-accent-yellow/20 rounded-xl flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6 text-accent-yellow" />
+              <p className="text-lg md:text-xl leading-relaxed font-normal opacity-85 text-[#ffffff] text-shadow-flow">
+                La technique n'est plus une limite
+              </p>
+            </motion.div>
+            
+            {/* Statistics Cards with Seamless Integration */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-4"
+            >
+              {/* Stat Card 1 */}
+              <motion.div
+                whileHover={{ 
+                  y: -4, 
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+                }}
+                className="group relative"
+                style={{
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(116, 166, 190, 0.12) 0%, 
+                      rgba(167, 41, 46, 0.08) 100%
+                    )
+                  `,
+                  boxShadow: `
+                    0 4px 12px rgba(0, 0, 0, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                  `,
+                  backdropFilter: 'none',
+                  border: 'none',
+                  borderRadius: '1rem'
+                }}
+              >
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center"
+                         style={{ background: 'rgba(116, 166, 190, 0.2)' }}>
+                      <TrendingUp className="w-5 h-5 text-[#74a6be]" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-[#ffffff]">3-5x</p>
+                      <p className="text-sm text-[#e5e5e5] opacity-80">Plus rapide</p>
                     </div>
                   </div>
-                  <div>
-                    <p className="text-lg md:text-xl font-semibold text-text-light mb-2">
-                      {t('statistic.text')}
-                    </p>
-                    <p className="text-text-primary leading-relaxed">
-                      {t('statistic.subtext')}
-                    </p>
+                </div>
+              </motion.div>
+              
+              {/* Stat Card 2 */}
+              <motion.div
+                whileHover={{ 
+                  y: -4, 
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+                }}
+                className="group relative"
+                style={{
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(251, 191, 36, 0.15) 0%, 
+                      rgba(116, 166, 190, 0.08) 100%
+                    )
+                  `,
+                  boxShadow: `
+                    0 4px 12px rgba(0, 0, 0, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                  `,
+                  backdropFilter: 'none',
+                  border: 'none',
+                  borderRadius: '1rem'
+                }}
+              >
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center"
+                         style={{ background: 'rgba(251, 191, 36, 0.2)' }}>
+                      <Users className="w-5 h-5 text-[#fbbf24]" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-[#ffffff]">1000+</p>
+                      <p className="text-sm text-[#e5e5e5] opacity-80">Professionnels</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
+              
+              {/* Stat Card 3 */}
+              <motion.div
+                whileHover={{ 
+                  y: -4, 
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+                }}
+                className="group relative"
+                style={{
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(167, 41, 46, 0.12) 0%, 
+                      rgba(251, 191, 36, 0.08) 100%
+                    )
+                  `,
+                  boxShadow: `
+                    0 4px 12px rgba(0, 0, 0, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                  `,
+                  backdropFilter: 'none',
+                  border: 'none',
+                  borderRadius: '1rem'
+                }}
+              >
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center"
+                         style={{ background: 'rgba(167, 41, 46, 0.2)' }}>
+                      <BarChart3 className="w-5 h-5 text-[#a7292e]" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-[#ffffff]">60%</p>
+                      <p className="text-sm text-[#e5e5e5] opacity-80">Hors IT</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
             
             {/* Call-to-Action Buttons with Environmental Integration */}
@@ -179,16 +251,16 @@ const HeroBanner: React.FC = memo(() => {
                   href="#formation-overview"
                   className="relative z-10 group"
                   style={{
-                    background: `linear-gradient(135deg, rgba(251, 191, 36, 0.6) 0%, rgba(245, 158, 11, 0.4) 100%)`,
+                    background: `linear-gradient(135deg, #a7292e 0%, #74a6be 100%)`,
                     boxShadow: `
-                      0 8px 25px rgba(251, 191, 36, 0.15),
-                      0 0 20px rgba(245, 158, 11, 0.1),
+                      0 8px 25px rgba(167, 41, 46, 0.3),
+                      0 0 20px rgba(116, 166, 190, 0.2),
                       inset 0 1px 0 rgba(255, 255, 255, 0.2)
                     `,
                     border: 'none'
                   }}
                 >
-                  {t('cta.primary')}
+                  Commencer ma transformation
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
                 
@@ -198,8 +270,8 @@ const HeroBanner: React.FC = memo(() => {
                   style={{
                     background: `
                       radial-gradient(circle at center, 
-                        rgba(251, 191, 36, 0.15) 0%, 
-                        rgba(245, 158, 11, 0.08) 50%, 
+                        rgba(167, 41, 46, 0.4) 0%, 
+                        rgba(116, 166, 190, 0.2) 50%, 
                         transparent 100%
                       )
                     `,
@@ -226,7 +298,7 @@ const HeroBanner: React.FC = memo(() => {
                   `
                 }}
               >
-                {t('cta.secondary')}
+                Voir la méthode
               </Button>
             </motion.div>
           </motion.div>
@@ -312,6 +384,6 @@ const HeroBanner: React.FC = memo(() => {
   );
 });
 
-HeroBanner.displayName = 'HeroBanner';
+HeroSectionFlow.displayName = 'HeroSectionFlow';
 
-export default HeroBanner;
+export default HeroSectionFlow;

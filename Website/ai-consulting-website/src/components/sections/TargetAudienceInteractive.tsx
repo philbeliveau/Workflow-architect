@@ -119,7 +119,7 @@ const TargetAudienceInteractive: React.FC = memo(() => {
   const segmentColors = {
     entrepreneurs: 'accent-red',
     intrapreneurs: 'primary-blue', 
-    tech_enthusiasts: 'success-green',
+    tech_enthusiasts: 'yellow-500',
     experienced_developers: 'accent-yellow',
     creative_generalists: 'accent-purple',
     product_managers: 'hover-interactive'

@@ -32,8 +32,8 @@ const TrackSelection: React.FC = () => {
       ],
       cta: t('formations.debutant.cta'),
       href: "/formation-debutant",
-      color: "success-green",
-      gradient: "from-success-green/20 via-success-green/10 to-success-green/5",
+      color: "yellow-500",
+      gradient: "from-yellow-500/20 via-yellow-400/10 to-yellow-300/5",
       badge: "",
       footer: t('formations.debutant.footer')
     },
@@ -120,7 +120,7 @@ const TrackSelection: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-success-green/20 to-primary-blue/20 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-r from-yellow-500/20 to-primary-blue/20 rounded-xl flex items-center justify-center">
               <BookOpen className="w-6 h-6 text-primary-blue" />
             </div>
             <span className="text-lg font-semibold text-primary-blue bg-primary-blue/10 px-4 py-2 rounded-full">

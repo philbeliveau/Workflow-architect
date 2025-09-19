@@ -29,11 +29,11 @@
     "title": "Ne restez plus spectateur de l'IA",
     "subtitle": "Transformez vos connaissances métier en applications fonctionnelles — passez de 'celui qui a l'idée' à 'celui qui la réalise'",
     "subtitle_parts": {
-      "prefix": "Transformez vos connaissances métier en ",
+      "line1": "Transformez vos connaissances métier en ",
       "highlight1": "applications fonctionnelles",
-      "middle": " — passez de ",
+      "line2": " — passez de ",
       "highlight2": "'celui qui a l'idée'",
-      "middle2": " à ",
+      "line3": " à ",
       "highlight3": "'celui qui la réalise'"
     },
     "statistic": {
@@ -59,7 +59,7 @@
     "summary": "Méthode complète pour transformer vos équipes",
     "cta": {
       "primary": "Commencer ma transformation",
-      "secondary": "Voir la méthode"
+      "secondary": "Notre guide"
     }
   },
   "sections": {
@@ -127,9 +127,9 @@
     "duration_format_title": "Durée & Format",
     "duration_format_description": "6 à 12 heures de formation intensive en ligne avec support communautaire. Suivez les leçons à votre rythme avec un accompagnement personnalisé. Cours mis à jour en continu — l'IA évolue, notre formation aussi.",
     "level_title": "Niveau",
-    "level_description": "Débutants complets aux développeurs expérimentés souhaitant maîtriser les techniques agentiques. Aucun prérequis technique nécessaire pour commencer.",
+    "level_description": "Débutants aux développeurs expérimentés souhaitant maîtriser les techniques agentiques. Aucun prérequis technique nécessaire pour commencer.",
     "what_you_get_title": "Ce que vous obtenez",
-    "what_you_get_description": "Formation complète, communauté active, templates prêts à l'emploi, sessions live, réseau de développeurs et entrepreneurs, et des amitiés durables.",
+    "what_you_get_description": "Formation complète, communauté active, templates prêts à l'emploi, sessions live, réseau de développeurs et entrepreneurs.",
     "community_members": "150+ membres actifs",
     "community_projects": "50+ projets partagés",
     "support_247": "💬 Support 24/7"
@@ -1156,21 +1156,21 @@
     "members": [
       {
         "name": "Philippe Béliveau",
-        "title": "Co-fondateur & Expert en programmation agentique",
-        "description": "Expert en science des données et programmation agentique, diplômé de HEC Montréal. Il se spécialise dans la transformation d'idées métiers en solutions techniques via l'IA.",
+        "title": "Développeur agentique et data scientist",
+        "description": "Philippe Béliveau est un développeur de recherche en IA, diplômé d'une Msc en Science des données de HEC Montréal.",
         "image": "/philippe-beliveau.png",
         "alt": "Philippe Béliveau"
       },
       {
         "name": "Baptiste Wieczorek",
-        "title": "Co-fondateur & Expert technique",
-        "description": "Expert technique spécialisé dans les architectures complexes et l'orchestration d'agents IA pour des solutions d'entreprise.",
+        "title": "Développeur agentique et data scientist",
+        "description": "Formé au Canada (Polytechnique & HEC), expert en IA, automatisation et déploiement technique, ayant accompagné plus de 50 projets de transformation de PME.",
         "image": "/baptiste-wieczorek.jpeg",
         "alt": "Baptiste Wieczorek"
       },
       {
         "name": "Yoan Hibert",
-        "title": "Co-fondateur & Stratège marketing",
+        "title": "Formateur en IA, en automatisation et spécialiste marketing",
         "description": "Entrepreneur formé à l'EDHEC, spécialiste en marketing, acquisition et productivité augmentée par l'IA.",
         "image": "/yoan-hibert.jpeg",
         "alt": "Yoan Hibert"

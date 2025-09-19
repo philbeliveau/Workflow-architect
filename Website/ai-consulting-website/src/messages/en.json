@@ -29,11 +29,11 @@
     "title": "Don't Stay a Spectator to AI",
     "subtitle": "Transform your business knowledge into functional applications — go from 'the one with the idea' to 'the one who realizes it'",
     "subtitle_parts": {
-      "prefix": "Transform your business knowledge into ",
+      "line1": "Transform your business knowledge into ",
       "highlight1": "functional applications",
-      "middle": " — go from ",
+      "line2": " — go from ",
       "highlight2": "'the one with the idea'",
-      "middle2": " to ",
+      "line3": " to ",
       "highlight3": "'the one who realizes it'"
     },
     "statistic": {
@@ -1350,21 +1350,21 @@
     "members": [
       {
         "name": "Philippe Béliveau",
-        "title": "Co-founder & Agentic Programming Expert",
-        "description": "Expert in data science and agentic programming, graduated from HEC Montréal. He specializes in transforming business ideas into technical solutions via AI.",
+        "title": "Agentic developer and data scientist",
+        "description": "Philippe Béliveau is an AI research developer, graduated with an MSc in Data Science from HEC Montréal.",
         "image": "/philippe-beliveau.png",
         "alt": "Philippe Béliveau"
       },
       {
         "name": "Baptiste Wieczorek",
-        "title": "Co-founder & Technical Expert",
-        "description": "Technical expert specialized in complex architectures and AI agent orchestration for enterprise solutions.",
+        "title": "Agentic developer and data scientist",
+        "description": "Trained in Canada (Polytechnique & HEC), expert in AI, automation and technical deployment, having supported more than 50 SME transformation projects.",
         "image": "/baptiste-wieczorek.jpeg",
         "alt": "Baptiste Wieczorek"
       },
       {
         "name": "Yoan Hibert",
-        "title": "Co-founder & Marketing Strategist",
+        "title": "AI trainer, automation and marketing specialist",
         "description": "Entrepreneur trained at EDHEC, specialist in marketing, acquisition and AI-augmented productivity.",
         "image": "/yoan-hibert.jpeg",
         "alt": "Yoan Hibert"

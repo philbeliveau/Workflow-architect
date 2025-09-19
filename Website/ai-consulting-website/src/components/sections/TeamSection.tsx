@@ -60,21 +60,41 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section id="team-section" className="py-24 bg-gradient-to-br from-background-dark to-background-dark-alt relative overflow-hidden">
-      {/* Background grid pattern - consistent with other sections */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-12 gap-2 h-full p-4">
-          {Array.from({ length: 144 }, (_, i) => (
-            <div 
-              key={i} 
-              className="bg-text-secondary rounded-sm animate-pulse" 
-              style={{
-                animationDelay: `${i * 0.05}s`,
-                animationDuration: '3s'
-              }}
-            ></div>
-          ))}
+    <section id="team-section" className="py-24 relative overflow-hidden">
+      {/* Environmental Background System - Same as Hero */}
+      <div className="absolute inset-0">
+        {/* Base environmental foundation */}
+        <div className="hero-environment-base absolute inset-0 bg-gradient-to-br from-[#2a2a2a] via-[#353535] to-[#2a2a2a]" />
+        
+        {/* Atmospheric layer with brand colors */}
+        <div className="hero-environment-atmosphere absolute inset-0 opacity-[0.08]">
+          <div className="absolute inset-0 bg-gradient-radial from-[#74a6be] via-transparent to-transparent" 
+               style={{ backgroundPosition: '20% 20%', backgroundSize: '100% 100%' }} />
+          <div className="absolute inset-0 bg-gradient-radial from-[#fbbf24] via-transparent to-transparent" 
+               style={{ backgroundPosition: '80% 80%', backgroundSize: '100% 100%' }} />
+          <div className="absolute inset-0 bg-gradient-radial from-[#a7292e] via-transparent to-transparent" 
+               style={{ backgroundPosition: '50% 50%', backgroundSize: '140% 140%' }} />
         </div>
+        
+        {/* Organic movement layer */}
+        <motion.div 
+          className="absolute inset-0 opacity-[0.05]"
+          animate={{ 
+            backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            ease: 'linear' 
+          }}
+          style={{
+            background: `
+              radial-gradient(circle at 30% 40%, #74a6be 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, #fbbf24 0%, transparent 50%)
+            `,
+            backgroundSize: '200% 200%'
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">

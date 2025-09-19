@@ -1,6 +1,17 @@
 'use client';
 
-import React, { useState, useEffect, memo, useCallback } from 'react';
+import React, { useState, useEffect, memo, useCallback, useMemo, useRef } from 'react';
+
+// Global instance control to prevent multiple timers
+let globalTimerInstance: {
+  intervalId: number | null;
+  componentId: string | null;
+  isRunning: boolean;
+} = {
+  intervalId: null,
+  componentId: null,
+  isRunning: false
+};
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Play, 
@@ -38,11 +49,27 @@ interface TransformationProcessInteractiveProps {
   duration?: number;
 }
 
+interface Project {
+  name: string;
+  progress: string;
+  status: string;
+  team?: string;
+  deadline?: string;
+}
+
+interface TeamMember {
+  name: string;
+  role?: string;
+  status: string;
+  avatar?: string;
+  lastActive?: string;
+}
+
 const stages: TransformationStage[] = [
   {
     id: 'chaos',
-    title: 'Ideation',
-    description: 'Clarifier la vision',
+    title: 'Dépendance',
+    description: 'Coincé avec vos idées',
     icon: null,
     color: 'text-accent-red',
     bgColor: 'from-accent-red/20 via-background-dark to-background-dark-alt',
@@ -51,13 +78,20 @@ const stages: TransformationStage[] = [
       'coordination bottleneck', 'daily standups', 'sprint planning', 'retrospectives',
       'Product Manager', 'Scrum Master', 'Product Owner', 'UX/UI Designer',
       'technical debt', 'scalabilité', 'architecture', 'performance', 'sécurité',
-      'KPIs', 'ROI', 'time to market', 'user engagement', 'conversion rate'
+      'KPIs', 'ROI', 'time to market', 'user engagement', 'conversion rate',
+      'brainstorming', 'ideation', 'creative chaos', 'vision floue', 'objectifs multiples',
+      'stakeholders', 'requirements', 'backlog', 'features', 'roadmap', 'timeline',
+      'budget constraints', 'resource allocation', 'team capacity', 'skill gaps',
+      'communication', 'meetings', 'documentation', 'decisions', 'priorities',
+      'market research', 'competitor analysis', 'user feedback', 'testing', 'validation',
+      'prototype', 'wireframes', 'mockups', 'designs', 'iterations', 'revisions',
+      'scope creep', 'changing requirements', 'deadlines', 'pressure', 'stress'
     ]
   },
   {
     id: 'specification',
-    title: 'Specification',
-    description: 'Architecturer avec l\'IA',
+    title: 'Méthode',
+    description: 'Apprendre le langage de l\'IA',
     icon: null,
     color: 'text-primary-blue',
     bgColor: 'from-primary-blue/20 via-background-dark to-background-dark-alt',
@@ -70,8 +104,8 @@ const stages: TransformationStage[] = [
   },
   {
     id: 'completion',
-    title: 'Réalisation',
-    description: 'Déployer en production',
+    title: 'Autonomie',
+    description: 'Créer sans limites',
     icon: null,
     color: 'text-accent-yellow',
     bgColor: 'from-accent-yellow/20 via-background-dark to-background-dark-alt',
@@ -86,56 +120,108 @@ const stages: TransformationStage[] = [
 
 // Composant pour l'état de chaos - L'Univers des Intentions Non-Structurées
 const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
-  const [chaosElements] = useState(() => 
-    concepts.map((concept, i) => ({
-      id: i,
-      text: concept,
-      x: 5 + (i % 6) * 15, // More controlled spacing horizontally
-      y: 10 + Math.floor(i / 6) * 15, // Vertical spacing to prevent overlap
-      opacity: 0.4 + (i * 0.03) % 0.5, // Deterministic opacity based on index
-      size: 0.6 + (i * 0.02) % 0.3, // Deterministic size based on index
-      speed: 0.5 + (i * 0.1) % 1.5 // Deterministic speed based on index
-    }))
-  );
+  const [chaosElements] = useState(() => {
+    // Create dense, tilted word cloud covering entire space
+    const totalWords = concepts.length;
+    const layers = Math.ceil(Math.sqrt(totalWords)); // Multiple layers for density
+    
+    return concepts.map((concept, i) => {
+      // Dense grid with random offset for organic feel
+      const gridSize = Math.ceil(Math.sqrt(totalWords));
+      const baseX = (i % gridSize) * (90 / gridSize) + 5; // Spread across full width
+      const baseY = Math.floor(i / gridSize) * (85 / Math.ceil(totalWords / gridSize)) + 5; // Full height
+      
+      // Add random offset for organic positioning
+      const offsetX = (Math.sin(i * 2.3) * 15); // Deterministic but random-looking
+      const offsetY = (Math.cos(i * 1.7) * 12);
+      
+      const x = Math.max(2, Math.min(95, baseX + offsetX));
+      const y = Math.max(2, Math.min(95, baseY + offsetY));
+      
+      return {
+        id: i,
+        text: concept,
+        x: x,
+        y: y,
+        opacity: 0.4 + (i * 0.03) % 0.5, // Varied opacity for depth
+        size: 0.5 + (concept.length < 8 ? 0.25 : concept.length < 15 ? 0.15 : 0.05), // Size variation
+        speed: 0.2 + (i * 0.12) % 1.0, // Varied animation speeds
+        rotation: -45 + (i * 17) % 90, // Tilted text: -45° to +45°
+        color: i % 5 === 0 ? 'text-accent-yellow/85' : 
+               i % 5 === 1 ? 'text-text-light/75' : 
+               i % 5 === 2 ? 'text-primary-blue/65' : 
+               i % 5 === 3 ? 'text-text-secondary/55' :
+               'text-accent-yellow/70' // More yellow variants for chaos theme
+      };
+    });
+  });
 
-  // Rôles en suspension avec couleurs cohérentes du design system
+  // Rôles éparpillés dans le chaos - plus de rôles pour plus de densité
   const roles = [
-    { name: 'Product Manager', color: 'text-accent-red', bg: 'bg-accent-red/20' },
-    { name: 'Scrum Master', color: 'text-accent-yellow', bg: 'bg-accent-yellow/20' },
-    { name: 'Product Owner', color: 'text-primary-blue', bg: 'bg-primary-blue/20' },
-    { name: 'UX/UI Designer', color: 'text-accent-purple', bg: 'bg-accent-purple/20' },
-    { name: 'Développeurs', color: 'text-success-green', bg: 'bg-success-green/20' },
-    { name: 'Architecte', color: 'text-hover-interactive', bg: 'bg-hover-interactive/20' }
+    { name: 'Product Manager', color: 'text-accent-red' },
+    { name: 'Scrum Master', color: 'text-accent-yellow' },
+    { name: 'Product Owner', color: 'text-primary-blue' },
+    { name: 'UX/UI Designer', color: 'text-accent-purple' },
+    { name: 'Développeurs', color: 'text-success-green' },
+    { name: 'Architecte', color: 'text-text-light' },
+    { name: 'Business Analyst', color: 'text-accent-yellow' },
+    { name: 'DevOps Engineer', color: 'text-primary-blue' },
+    { name: 'QA Tester', color: 'text-success-green' },
+    { name: 'Data Scientist', color: 'text-accent-purple' },
+    { name: 'Marketing Lead', color: 'text-accent-red' },
+    { name: 'CEO', color: 'text-text-light' },
+    { name: 'CTO', color: 'text-primary-blue' },
+    { name: 'Sales Rep', color: 'text-accent-yellow' },
+    { name: 'Customer Support', color: 'text-success-green' }
   ];
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-gray-900/90 via-slate-800/80 to-gray-900/90 rounded-2xl">
-      {/* Océan de chaos - fond sombre et immersif */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-black opacity-95"></div>
+    <div className="relative h-full w-full overflow-hidden rounded-2xl"
+         style={{
+           background: `
+             linear-gradient(135deg, 
+               rgba(251, 191, 36, 0.15) 0%, 
+               rgba(42, 42, 42, 0.92) 50%,
+               rgba(251, 191, 36, 0.08) 100%
+             )
+           `
+         }}>
+      {/* Environmental atmosphere for chaos */}
+      <div className="absolute inset-0 opacity-[0.05]"
+           style={{
+             background: `
+               radial-gradient(circle at 30% 30%, rgba(251, 191, 36, 0.4) 0%, transparent 50%),
+               radial-gradient(circle at 70% 70%, rgba(245, 158, 11, 0.3) 0%, transparent 50%)
+             `
+           }}></div>
       
-      {/* Tempête de concepts flottants */}
+      {/* Dense, tilted word cloud - chaotic concepts everywhere */}
       <div className="absolute inset-0">
         {chaosElements.map((element) => (
           <motion.div
             key={element.id}
-            className="absolute text-accent-red/60 font-medium pointer-events-none"
+            className={`absolute ${element.color} font-medium pointer-events-none select-none`}
             style={{
               left: `${element.x}%`,
               top: `${element.y}%`,
               fontSize: `${element.size}rem`,
-              opacity: element.opacity
+              opacity: element.opacity,
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
+              transform: `translate(-50%, -50%) rotate(${element.rotation}deg)`, // Apply initial rotation
+              whiteSpace: 'nowrap' // Prevent text wrapping
             }}
             animate={{
-              x: [0, (element.id % 2 === 0 ? 1 : -1) * 10, 0], // Deterministic movement
-              y: [0, (element.id % 3 === 0 ? 1 : -1) * 8, 0], // Deterministic movement
-              opacity: [element.opacity * 0.7, element.opacity, element.opacity * 0.5],
-              rotate: [0, (element.id % 2 === 0 ? 1 : -1) * 5, 0] // Deterministic rotation
+              x: [0, (element.id % 3 === 0 ? 1 : -1) * 6, 0], // Subtle floating movement
+              y: [0, (element.id % 2 === 0 ? 1 : -1) * 4, 0], // Reduced vertical movement for density
+              opacity: [element.opacity * 0.7, element.opacity, element.opacity * 0.9],
+              rotate: [element.rotation - 5, element.rotation + 5, element.rotation - 5], // Gentle rotation around base angle
+              scale: [0.9, 1.1, 0.9] // Breathing effect
             }}
             transition={{
-              duration: 8 + element.speed,
+              duration: 8 + element.speed * 3, // Slower movement for readability
               repeat: Infinity,
               ease: "easeInOut",
-              delay: element.id * 0.5
+              delay: element.id * 0.2 // Reduced delay for more chaos
             }}
           >
             {element.text}
@@ -153,15 +239,30 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
           }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="w-32 h-32 bg-gradient-to-br from-accent-red/30 via-red-500/20 to-accent-red/10 rounded-full flex items-center justify-center border-2 border-accent-red/40 shadow-2xl">
-            <Brain className="w-16 h-16 text-accent-red" />
+          <div className="w-32 h-32 rounded-full flex items-center justify-center"
+               style={{
+                 background: `
+                   linear-gradient(135deg, 
+                     rgba(251, 191, 36, 0.25) 0%, 
+                     rgba(251, 191, 36, 0.15) 50%,
+                     rgba(245, 158, 11, 0.08) 100%
+                   )
+                 `,
+                 boxShadow: `
+                   0 8px 25px rgba(251, 191, 36, 0.3),
+                   0 0 40px rgba(251, 191, 36, 0.15),
+                   inset 0 1px 0 rgba(255, 255, 255, 0.2)
+                 `,
+                 border: 'none'
+               }}>
+            <Brain className="w-16 h-16 text-accent-yellow" />
           </div>
           
           {/* Électricité chaotique autour du cerveau */}
           {Array.from({ length: 8 }, (_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-8 bg-gradient-to-t from-accent-red/80 to-transparent"
+              className="absolute w-1 h-8 bg-gradient-to-t from-accent-yellow/80 to-transparent"
               style={{
                 top: '50%',
                 left: '50%',
@@ -185,31 +286,53 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
           ))}
         </motion.div>
 
-        {/* Rôles en suspension autour */}
-        <div className="relative w-full h-48">
-          {roles.map((role, index) => (
-            <motion.div
-              key={role.name}
-              className={`absolute ${role.bg} ${role.color} px-2 py-1 rounded-lg border border-current/30 font-medium text-xs whitespace-nowrap`}
-              style={{
-                left: `${5 + (index % 2) * 45}%`,
-                top: `${10 + Math.floor(index / 2) * 25}%`
-              }}
-              animate={{
-                y: [0, -10, 0],
-                x: [0, (index % 2 === 0 ? 1 : -1) * 5, 0],
-                rotate: [0, (index % 2 === 0 ? 1 : -1) * 3, 0]
-              }}
-              transition={{
-                duration: 3 + index * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: index * 0.3
-              }}
-            >
-              {role.name}
-            </motion.div>
-          ))}
+        {/* Rôles éparpillés dans le chaos */}
+        <div className="absolute inset-0">
+          {roles.map((role, index) => {
+            // Scattered positioning throughout the entire space
+            const scatterX = 15 + (Math.sin(index * 3.7) * 35) + (index * 12) % 60; // Spread across width
+            const scatterY = 20 + (Math.cos(index * 2.1) * 25) + (index * 15) % 50; // Spread across height
+            const rotation = -25 + (index * 23) % 50; // Random tilted angles
+            
+            return (
+              <motion.div
+                key={role.name}
+                className={`absolute ${role.color} px-3 py-1 rounded-lg font-medium text-xs whitespace-nowrap`}
+                style={{
+                  left: `${Math.max(8, Math.min(85, scatterX))}%`,
+                  top: `${Math.max(15, Math.min(80, scatterY))}%`,
+                  transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(251, 191, 36, 0.15) 0%, 
+                      rgba(42, 42, 42, 0.85) 100%
+                    )
+                  `,
+                  boxShadow: `
+                    0 4px 12px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15)
+                  `,
+                  border: 'none',
+                  zIndex: 10 // Above word cloud
+                }}
+                animate={{
+                  y: [0, (index % 3 === 0 ? -6 : 6), 0],
+                  x: [0, (index % 2 === 0 ? -5 : 5), 0],
+                  rotate: [rotation - 8, rotation + 8, rotation - 8], // Gentle rotation around base angle
+                  scale: [0.85, 1.15, 0.85], // More dramatic scale changes
+                  opacity: [0.7, 1.0, 0.8]
+                }}
+                transition={{
+                  duration: 5 + index * 0.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.5
+                }}
+              >
+                {role.name}
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Message central */}
@@ -218,10 +341,10 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 3, repeat: Infinity }}
         >
-          <p className="text-accent-red/80 text-lg font-semibold mb-2">
+          <p className="text-accent-yellow/90 text-lg font-semibold mb-2">
             L'Intelligence Collective Dispersée
           </p>
-          <p className="text-accent-red/60 text-sm">
+          <p className="text-text-light/70 text-sm">
             Toute l'expertise nécessaire existe mais sans structure
           </p>
         </motion.div>
@@ -299,53 +422,66 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
         backgroundSize: '20px 20px'
       }}></div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-        {/* Header avec message central */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+        {/* Header avec message central - Plus compact */}
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-4"
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 3, repeat: Infinity }}
         >
-          <div className="flex items-center justify-center space-x-2 mb-3">
+          <div className="flex items-center justify-center space-x-2 mb-2">
             <motion.div
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              <FileText className="w-8 h-8 text-primary-blue" />
+              <FileText className="w-6 h-6 text-primary-blue" />
             </motion.div>
-            <h3 className="text-xl font-semibold text-primary-blue">Living Documents</h3>
+            <h3 className="text-lg font-semibold text-primary-blue">Living Documents</h3>
           </div>
-          <p className="text-primary-blue/70 text-sm max-w-md">
-            L'information se structure naturellement, sans effort, sans overhead
+          <p className="text-primary-blue/70 text-xs max-w-sm">
+            L'information se structure naturellement, sans effort
           </p>
         </motion.div>
 
-        {/* Documents qui s'écrivent automatiquement */}
-        <div className="grid grid-cols-1 gap-4 w-full max-w-lg mx-auto">
+        {/* Documents qui s'écrivent automatiquement - Plus compact */}
+        <div className="grid grid-cols-1 gap-3 w-full max-w-md mx-auto">
           {documents.map((doc, docIndex) => (
             <motion.div
               key={doc.title}
-              className={`relative ${doc.bgColor} ${doc.borderColor} border-2 rounded-xl p-6 backdrop-blur-sm`}
+              className={`relative rounded-lg p-4`}
+              style={{
+                background: `
+                  linear-gradient(135deg, 
+                    rgba(116, 166, 190, 0.12) 0%, 
+                    rgba(42, 42, 42, 0.9) 100%
+                  )
+                `,
+                boxShadow: `
+                  0 4px 12px rgba(0, 0, 0, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                `,
+                border: 'none'
+              }}
               animate={{ 
                 scale: activeDocument === docIndex ? 1.05 : 1,
                 opacity: activeDocument === docIndex ? 1 : 0.8
               }}
               transition={{ duration: 0.5 }}
             >
-              {/* En-tête du document */}
-              <div className="flex items-center space-x-3 mb-4">
-                <span className="text-2xl">{doc.icon}</span>
+              {/* En-tête du document - Plus compact */}
+              <div className="flex items-center space-x-2 mb-3">
+                <span className="text-lg">{doc.icon}</span>
                 <div>
-                  <h4 className={`font-semibold ${doc.color}`}>{doc.title}</h4>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
+                  <h4 className={`text-sm font-semibold ${doc.color}`}>{doc.title}</h4>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full animate-pulse"></div>
                     <span className="text-xs text-text-secondary">Auto-generated</span>
                   </div>
                 </div>
               </div>
 
-              {/* Contenu qui s'écrit */}
-              <div className="space-y-3">
+              {/* Contenu qui s'écrit - Plus compact */}
+              <div className="space-y-2">
                 {doc.content.map((line, lineIndex) => (
                   <motion.div
                     key={lineIndex}
@@ -370,7 +506,7 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
                       }}
                     />
                     <motion.span 
-                      className={`text-sm ${doc.color} font-mono`}
+                      className={`text-xs ${doc.color} font-mono`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: docIndex * 0.5 + lineIndex * 0.3 + 0.5 }}
@@ -448,17 +584,17 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
           </svg>
         </div>
 
-        {/* Message de simplicité */}
+        {/* Message de simplicité - Plus compact */}
         <motion.div
-          className="mt-8 text-center"
+          className="mt-4 text-center"
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 4, repeat: Infinity }}
         >
-          <p className="text-primary-blue/80 text-lg font-medium mb-2">
+          <p className="text-primary-blue/80 text-sm font-medium mb-1">
             Structure Sans Effort
           </p>
-          <p className="text-primary-blue/60 text-sm max-w-md">
-            Pas de surcharge, pas de complexité - juste l'information qui trouve naturellement sa place
+          <p className="text-primary-blue/60 text-xs max-w-sm">
+            L'information trouve naturellement sa place
           </p>
         </motion.div>
       </div>
@@ -466,9 +602,9 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
   );
 };
 
-// Composant pour l'application incarnée - De l'Intention à la Réalité Numérique
-const LivingApplication = ({ concepts }: { concepts: string[] }) => {
-  const [activeProject, setActiveProject] = useState(0);
+// Composant pour l'application incarnée - Progressive Evolution from Chaos to Sophisticated App
+const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?: number }) => {
+  const currentPhase = phase; // Use phase prop instead of internal state
   const [metrics, setMetrics] = useState({
     activeProjects: 12,
     completedToday: 8,
@@ -476,239 +612,412 @@ const LivingApplication = ({ concepts }: { concepts: string[] }) => {
     deploymentSuccess: 99.2
   });
   
+  // Update metrics periodically (but not phase - that's controlled by parent)
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveProject(prev => (prev + 1) % 4);
       setMetrics(prev => ({
         activeProjects: prev.activeProjects + Math.floor(Math.random() * 3) - 1,
         completedToday: prev.completedToday + Math.floor(Math.random() * 2),
         teamVelocity: Math.max(80, Math.min(100, prev.teamVelocity + Math.random() * 4 - 2)),
         deploymentSuccess: Math.max(95.0, Math.min(100, prev.deploymentSuccess + Math.random() * 0.2 - 0.1))
       }));
-    }, 3000);
+    }, 3000); // Update metrics more frequently for realistic feel
     return () => clearInterval(interval);
   }, []);
 
-  const projects = [
-    { name: 'User Auth System', status: 'In Progress', progress: 75, color: 'primary-blue' },
-    { name: 'Payment Gateway', status: 'Testing', progress: 90, color: 'accent-yellow' },
-    { name: 'Analytics Dashboard', status: 'Deployed', progress: 100, color: 'success-green' },
-    { name: 'Mobile App', status: 'Planning', progress: 25, color: 'accent-purple' }
-  ];
+  // Define the three evolution phases
+  const phases = {
+    0: { // Sketchy Prototype Phase
+      name: "Rough Prototype",
+      description: "From vague ideas...",
+      style: "sketchy"
+    },
+    1: { // Structured Design Phase  
+      name: "Structured Design",
+      description: "Through organization...",
+      style: "structured"
+    },
+    2: { // Polished Application Phase
+      name: "Production App", 
+      description: "To sophisticated reality",
+      style: "polished"
+    }
+  };
 
-  const teamMembers = [
-    { name: 'Alex', avatar: '👨‍💻', status: 'coding', online: true },
-    { name: 'Sarah', avatar: '👩‍🎨', status: 'designing', online: true },
-    { name: 'Mike', avatar: '👨‍💼', status: 'reviewing', online: false },
-    { name: 'Lisa', avatar: '👩‍💻', status: 'testing', online: true }
-  ];
+  // Progressive content evolution - changes based on phase
+  const projectEvolution = {
+    0: { // Sketchy phase - rough wireframe-like
+      projects: [
+        { name: "[Some App Title]", progress: "??%", status: "[Working on it]" },
+        { name: "[Another Thing]", progress: "~40%", status: "[Not sure]" },
+        { name: "[New Feature]", progress: "0%", status: "[Just started]" }
+      ],
+      metrics: { active: "~12", completed: "Some", velocity: "OK", success: "Good?" }
+    },
+    1: { // Structured phase - organized but basic
+      projects: [
+        { name: "User Dashboard", progress: "68%", status: "In Development" },
+        { name: "Payment System", progress: "45%", status: "Design Complete" },
+        { name: "Mobile App", progress: "12%", status: "Planning" }
+      ],
+      metrics: { active: "12", completed: "8", velocity: "87%", success: "99.2%" }
+    },
+    2: { // Polished phase - production-ready details
+      projects: [
+        { name: "Enterprise Dashboard v2.3", progress: "94%", status: "Code Review", team: "Frontend Team", deadline: "Tomorrow" },
+        { name: "Payment Gateway Integration", progress: "78%", status: "Testing Phase", team: "Backend Team", deadline: "Next Week" },
+        { name: "Mobile App (iOS/Android)", progress: "45%", status: "Development", team: "Mobile Team", deadline: "Next Sprint" }
+      ],
+      metrics: { 
+        active: metrics.activeProjects, 
+        completed: metrics.completedToday, 
+        velocity: `${Math.round(metrics.teamVelocity)}%`, 
+        success: `${metrics.deploymentSuccess.toFixed(1)}%` 
+      }
+    }
+  };
+
+  const teamEvolution = {
+    0: [
+      { name: "[Dev Person]", role: "[Coding]", status: "busy" },
+      { name: "[Designer]", role: "[Making stuff]", status: "working" }
+    ],
+    1: [
+      { name: "Alex Chen", role: "Lead Developer", status: "active" },
+      { name: "Maria Garcia", role: "UI Designer", status: "active" },
+      { name: "John Smith", role: "Backend Engineer", status: "break" }
+    ],
+    2: [
+      { name: "Alexandra Chen", role: "Senior Full-Stack Engineer", status: "active", avatar: "AC", lastActive: "2 min ago" },
+      { name: "Maria Isabella Garcia", role: "Principal UI/UX Designer", status: "active", avatar: "MG", lastActive: "5 min ago" },
+      { name: "Jonathan Smith", role: "DevOps & Backend Specialist", status: "break", avatar: "JS", lastActive: "15 min ago" },
+      { name: "Priya Patel", role: "QA Engineering Lead", status: "active", avatar: "PP", lastActive: "1 min ago" }
+    ]
+  };
+
+  // Styling functions for each phase
+  const getPhaseStyle = (phase: number) => {
+    switch(phase) {
+      case 0: // Sketchy
+        return {
+          container: "bg-background-primary/10 border-2 border-dashed border-text-secondary/30",
+          text: "font-mono text-text-secondary/70",
+          accent: "text-accent-yellow/60",
+          button: "border border-dashed border-text-secondary/40 bg-transparent"
+        };
+      case 1: // Structured  
+        return {
+          container: "bg-background-accent-grey/20 border border-text-secondary/40 rounded-lg",
+          text: "font-sans text-text-primary/80",
+          accent: "text-accent-blue/80",
+          button: "border border-text-secondary/60 bg-background-primary/30 rounded"
+        };
+      case 2: // Polished
+        return {
+          container: "bg-gradient-to-br from-background-accent-grey/40 to-background-primary/30 border border-text-secondary/60 rounded-xl shadow-2xl backdrop-blur-sm",
+          text: "font-sans text-text-light",
+          accent: "text-accent-yellow",
+          button: "bg-accent-blue/20 border border-accent-blue/40 rounded-lg hover:bg-accent-blue/30 transition-all"
+        };
+      default:
+        return getPhaseStyle(2);
+    }
+  };
+
+  const currentStyle = getPhaseStyle(currentPhase);
+  const currentProjects = projectEvolution[currentPhase as keyof typeof projectEvolution];
+  const currentTeam = teamEvolution[currentPhase as keyof typeof teamEvolution];
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-accent-yellow/10 via-background-dark to-background-dark-alt rounded-2xl">
-      {/* Fond lumineux de réussite */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-yellow/5 via-transparent to-success-green/5"></div>
+    <div 
+      className="relative h-full w-full overflow-hidden rounded-2xl"
+      style={{
+        background: currentPhase === 0 ? 'linear-gradient(135deg, rgba(200, 200, 200, 0.1) 0%, rgba(42, 42, 42, 0.95) 100%)' : 
+                   currentPhase === 1 ? 'linear-gradient(135deg, rgba(116, 166, 190, 0.08) 0%, rgba(42, 42, 42, 0.95) 100%)' :
+                   'linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(42, 42, 42, 0.95) 100%)'
+      }}
+    >
+      {/* Phase indicator */}
+      <motion.div
+        className="absolute top-4 left-4 z-20 px-3 py-1 rounded-lg text-xs font-medium"
+        style={{
+          background: 'rgba(42, 42, 42, 0.8)',
+          color: '#fbbf24'
+        }}
+        key={currentPhase}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        {phases[currentPhase as keyof typeof phases].name}
+      </motion.div>
       
-      {/* Browser Frame - Realistic proportions */}
+      {/* Evolving Application Frame */}
       <div className="absolute inset-4 flex flex-col">
         <motion.div
-          className="w-full h-full bg-background-dark-alt rounded-xl shadow-2xl border border-primary-blue/20 overflow-hidden"
-          animate={{ 
-            scale: [0.98, 1, 0.98],
-            boxShadow: [
-              "0 20px 60px rgba(116, 166, 190, 0.1)", 
-              "0 25px 80px rgba(116, 166, 190, 0.2)", 
-              "0 20px 60px rgba(116, 166, 190, 0.1)"
-            ]
+          className="w-full h-full overflow-hidden"
+          style={{
+            background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                       currentPhase === 1 ? 'rgba(116, 166, 190, 0.08)' :
+                       'linear-gradient(135deg, rgba(116, 166, 190, 0.12) 0%, rgba(116, 166, 190, 0.08) 100%)',
+            border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                   currentPhase === 1 ? '1px solid rgba(116, 166, 190, 0.20)' : 'none',
+            borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+            boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
           }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          key={currentPhase}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Browser Chrome */}
-          <div className="bg-background-accent-grey/90 px-4 py-3 border-b border-primary-blue/20">
-            {/* Window Controls & Tabs */}
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center space-x-3">
-                {/* Window Controls */}
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 bg-accent-red rounded-full"></div>
-                  <div className="w-3 h-3 bg-accent-yellow rounded-full"></div>
-                  <div className="w-3 h-3 bg-success-green rounded-full"></div>
-                </div>
-                
-                {/* Browser Tabs */}
-                <div className="flex space-x-1 ml-4">
-                  <div className="bg-background-dark px-4 py-2 rounded-t-lg border-t border-l border-r border-primary-blue/30">
-                    <span className="text-xs text-text-primary font-medium">Newcode Dashboard</span>
-                  </div>
-                  <div className="bg-background-accent-grey px-3 py-2 rounded-t-lg">
-                    <span className="text-xs text-text-secondary">Analytics</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Evolving Header */}
+          <motion.div 
+            className={`px-4 py-3 flex items-center justify-between`}
+            style={{
+              background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.03)' : 
+                         currentPhase === 1 ? 'rgba(116, 166, 190, 0.08)' :
+                         'linear-gradient(135deg, rgba(116, 166, 190, 0.12) 0%, rgba(42, 42, 42, 0.95) 100%)',
+              borderBottom: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.2)' : 
+                           currentPhase === 1 ? '1px solid rgba(116, 166, 190, 0.2)' : 'none'
+            }}
+            key={`header-${currentPhase}`}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.h1 
+              className={`text-lg font-bold ${currentStyle.text}`}
+              key={`title-${currentPhase}`}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {currentPhase === 0 ? '[Some App Title]' : 
+               currentPhase === 1 ? 'Project Dashboard' : 
+               'Newcode Production Dashboard'}
+            </motion.h1>
             
-            {/* Address Bar */}
-            <div className="bg-background-dark rounded-lg px-4 py-2 border border-primary-blue/30">
-              <div className="flex items-center space-x-3">
-                <span className="text-success-green text-xs">🔒</span>
-                <span className="text-primary-blue text-sm font-mono">https://dashboard.newcode.dev</span>
-                <div className="flex-1"></div>
-                <span className="text-text-secondary text-sm">↻</span>
-              </div>
+            {currentPhase === 2 && (
+              <motion.div 
+                className="flex items-center space-x-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-xs text-green-400">Live</span>
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* Evolving App Content */}
+          <motion.div 
+            className="flex-1 p-4"
+            style={{ background: 'rgba(42, 42, 42, 0.95)' }}
+            key={`content-${currentPhase}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            {/* Evolving Metrics Grid */}
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              {/* Active Projects Metric */}
+              <motion.div
+                className={`p-3 ${currentStyle.text}`}
+                style={{
+                  background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                             currentPhase === 1 ? 'rgba(116, 166, 190, 0.10)' :
+                             'linear-gradient(135deg, rgba(116, 166, 190, 0.12) 0%, rgba(116, 166, 190, 0.08) 100%)',
+                  border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                         currentPhase === 1 ? '1px solid rgba(116, 166, 190, 0.20)' : 'none',
+                  borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+                  boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
+                }}
+                animate={currentPhase === 2 ? { scale: [1, 1.02, 1] } : {}}
+                transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+              >
+                <div className={`text-xl font-bold ${currentStyle.accent}`}>
+                  {currentProjects.metrics.active}
+                </div>
+                <div className="text-xs opacity-70">
+                  {currentPhase === 0 ? '[Projects?]' : 'Active Projects'}
+                </div>
+              </motion.div>
+              
+              {/* Completed Metric */}
+              <motion.div
+                className={`p-3 ${currentStyle.text}`}
+                style={{
+                  background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                             currentPhase === 1 ? 'rgba(16, 185, 129, 0.10)' :
+                             'linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.08) 100%)',
+                  border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                         currentPhase === 1 ? '1px solid rgba(16, 185, 129, 0.20)' : 'none',
+                  borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+                  boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
+                }}
+                animate={currentPhase === 2 ? { scale: [1, 1.02, 1] } : {}}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+              >
+                <div className={`text-xl font-bold ${currentPhase === 2 ? 'text-green-400' : currentStyle.accent}`}>
+                  {currentProjects.metrics.completed}
+                </div>
+                <div className="text-xs opacity-70">
+                  {currentPhase === 0 ? '[Done stuff]' : 'Completed Today'}
+                </div>
+              </motion.div>
+              
+              {/* Velocity Metric */}
+              <motion.div
+                className={`p-3 ${currentStyle.text}`}
+                style={{
+                  background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                             currentPhase === 1 ? 'rgba(251, 191, 36, 0.10)' :
+                             'linear-gradient(135deg, rgba(251, 191, 36, 0.12) 0%, rgba(251, 191, 36, 0.08) 100%)',
+                  border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                         currentPhase === 1 ? '1px solid rgba(251, 191, 36, 0.20)' : 'none',
+                  borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+                  boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
+                }}
+                animate={currentPhase === 2 ? { scale: [1, 1.02, 1] } : {}}
+                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+              >
+                <div className={`text-xl font-bold ${currentPhase === 2 ? 'text-yellow-400' : currentStyle.accent}`}>
+                  {currentProjects.metrics.velocity}
+                </div>
+                <div className="text-xs opacity-70">
+                  {currentPhase === 0 ? '[Speed]' : 'Team Velocity'}
+                </div>
+              </motion.div>
+              
+              {/* Success Rate Metric */}
+              <motion.div
+                className={`p-3 ${currentStyle.text}`}
+                style={{
+                  background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                             currentPhase === 1 ? 'rgba(139, 92, 246, 0.10)' :
+                             'linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%)',
+                  border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                         currentPhase === 1 ? '1px solid rgba(139, 92, 246, 0.20)' : 'none',
+                  borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+                  boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
+                }}
+                animate={currentPhase === 2 ? { scale: [1, 1.02, 1] } : {}}
+                transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+              >
+                <div className={`text-xl font-bold ${currentPhase === 2 ? 'text-purple-400' : currentStyle.accent}`}>
+                  {currentProjects.metrics.success}
+                </div>
+                <div className="text-xs opacity-70">
+                  {currentPhase === 0 ? '[Works?]' : 'Deploy Success'}
+                </div>
+              </motion.div>
             </div>
-          </div>
 
-          {/* App Content */}
-          <div className="flex h-full bg-background-dark">
-            {/* Sidebar */}
-            <div className="w-48 bg-background-dark-alt border-r border-primary-blue/20 p-3">
-              <div className="mb-6">
-                <h3 className="text-primary-blue font-bold text-lg mb-4">Dashboard</h3>
-                <nav className="space-y-2">
-                  <div className="bg-primary-blue/20 text-primary-blue px-3 py-2 rounded-lg text-sm font-medium">
-                    📊 Overview
-                  </div>
-                  <div className="text-text-secondary px-3 py-2 text-sm hover:text-text-primary">
-                    📋 Projects
-                  </div>
-                  <div className="text-text-secondary px-3 py-2 text-sm hover:text-text-primary">
-                    👥 Team
-                  </div>
-                  <div className="text-text-secondary px-3 py-2 text-sm hover:text-text-primary">
-                    📈 Analytics
-                  </div>
-                </nav>
-              </div>
-
-              {/* Team Status */}
-              <div className="bg-background-accent-grey/50 rounded-lg p-3">
-                <h4 className="text-text-primary font-medium text-sm mb-3">Team Status</h4>
-                <div className="space-y-2">
-                  {teamMembers.map((member, index) => (
-                    <motion.div
-                      key={member.name}
-                      className="flex items-center space-x-2"
-                      animate={{ opacity: [0.7, 1, 0.7] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-                    >
-                      <span className="text-lg">{member.avatar}</span>
-                      <div className="flex-1">
-                        <div className="text-xs text-text-primary">{member.name}</div>
-                        <div className="text-xs text-text-secondary">{member.status}</div>
+            {/* Evolving Projects List */}
+            <motion.div
+              className={`p-3 mb-4 ${currentStyle.text}`}
+              style={{
+                background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                           currentPhase === 1 ? 'rgba(116, 166, 190, 0.08)' :
+                           'linear-gradient(135deg, rgba(116, 166, 190, 0.08) 0%, rgba(42, 42, 42, 0.9) 100%)',
+                border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                       currentPhase === 1 ? '1px solid rgba(116, 166, 190, 0.20)' : 'none',
+                borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+                boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <h3 className={`text-sm font-semibold mb-3 ${currentStyle.text}`}>
+                {currentPhase === 0 ? '[Active Stuff]' : currentPhase === 1 ? 'Active Projects' : 'Project Portfolio'}
+              </h3>
+              <div className="space-y-2">
+                {currentProjects.projects.map((project: Project, index: number) => (
+                  <motion.div
+                    key={`${currentPhase}-${index}`}
+                    className="flex items-center justify-between p-2"
+                    style={{
+                      background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.02)' : 
+                                 currentPhase === 1 ? 'rgba(116, 166, 190, 0.05)' :
+                                 'rgba(116, 166, 190, 0.08)',
+                      border: currentPhase === 0 ? '1px dashed rgba(200, 200, 200, 0.2)' : 'none',
+                      borderRadius: currentPhase === 0 ? '2px' : '6px'
+                    }}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 + (index * 0.1) }}
+                  >
+                    <div className="flex-1">
+                      <div className={`text-xs font-medium ${currentStyle.text}`}>
+                        {project.name}
                       </div>
-                      <div className={`w-2 h-2 rounded-full ${member.online ? 'bg-success-green animate-pulse' : 'bg-text-secondary/30'}`}></div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="flex-1 p-4 overflow-y-auto">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h2 className="text-2xl font-bold text-text-primary">Project Dashboard</h2>
-                  <p className="text-text-secondary">Track your team's progress in real-time</p>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">👤</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Metrics Grid */}
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <motion.div
-                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-primary-blue/20"
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0 }}
-                >
-                  <div className="text-2xl font-bold text-primary-blue">{metrics.activeProjects}</div>
-                  <div className="text-sm text-text-secondary">Active Projects</div>
-                </motion.div>
-                
-                <motion.div
-                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-success-green/20"
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                >
-                  <div className="text-2xl font-bold text-success-green">{metrics.completedToday}</div>
-                  <div className="text-sm text-text-secondary">Completed Today</div>
-                </motion.div>
-                
-                <motion.div
-                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-accent-yellow/20"
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                >
-                  <div className="text-2xl font-bold text-accent-yellow">{metrics.teamVelocity}%</div>
-                  <div className="text-sm text-text-secondary">Team Velocity</div>
-                </motion.div>
-                
-                <motion.div
-                  className="bg-background-accent-grey/80 rounded-xl p-4 border border-accent-purple/20"
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
-                >
-                  <div className="text-2xl font-bold text-accent-purple">{metrics.deploymentSuccess.toFixed(1)}%</div>
-                  <div className="text-sm text-text-secondary">Deploy Success</div>
-                </motion.div>
-              </div>
-
-              {/* Active Projects */}
-              <div className="bg-background-accent-grey/50 rounded-xl p-4">
-                <h3 className="text-lg font-semibold text-text-primary mb-4">Active Projects</h3>
-                <div className="space-y-3">
-                  {projects.map((project, index) => (
-                    <motion.div
-                      key={project.name}
-                      className={`bg-background-dark rounded-lg p-4 border ${
-                        index === activeProject 
-                          ? 'border-primary-blue/50 shadow-lg shadow-primary-blue/20' 
-                          : 'border-text-secondary/20'
-                      }`}
-                      animate={{ 
-                        opacity: index === activeProject ? 1 : 0.7,
-                        scale: index === activeProject ? 1.02 : 1
-                      }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-medium text-text-primary">{project.name}</h4>
-                        <span className={`text-xs px-2 py-1 rounded-full bg-${project.color}/20 text-${project.color}`}>
-                          {project.status}
-                        </span>
+                      <div className="text-xs opacity-60">
+                        {project.status}
+                        {currentPhase === 2 && project.team && ` • ${project.team}`}
+                        {currentPhase === 2 && project.deadline && ` • Due: ${project.deadline}`}
                       </div>
-                      <div className="w-full bg-background-accent-grey/30 rounded-full h-2">
-                        <motion.div
-                          className={`h-2 bg-${project.color} rounded-full`}
-                          initial={{ width: '0%' }}
-                          animate={{ width: `${project.progress}%` }}
-                          transition={{ duration: 1, delay: index * 0.2 }}
-                        />
-                      </div>
-                      <div className="text-xs text-text-secondary mt-1">{project.progress}% complete</div>
-                    </motion.div>
-                  ))}
-                </div>
+                    </div>
+                    <div className={`text-xs ${currentStyle.accent}`}>
+                      {typeof project.progress === 'string' ? project.progress : `${project.progress}%`}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+
+            {/* Evolving Team Section */}
+            <motion.div
+              className={`p-3 ${currentStyle.text}`}
+              style={{
+                background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
+                           currentPhase === 1 ? 'rgba(251, 191, 36, 0.08)' :
+                           'linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(116, 166, 190, 0.08) 100%)',
+                border: currentPhase === 0 ? '2px dashed rgba(200, 200, 200, 0.3)' : 
+                       currentPhase === 1 ? '1px solid rgba(251, 191, 36, 0.20)' : 'none',
+                borderRadius: currentPhase === 0 ? '4px' : currentPhase === 1 ? '8px' : '12px',
+                boxShadow: currentPhase === 2 ? '0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none'
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <h4 className={`text-xs font-medium mb-2 ${currentStyle.text}`}>
+                {currentPhase === 0 ? '[Team People]' : currentPhase === 1 ? 'Team Status' : 'Team Dashboard'}
+              </h4>
+              <div className="space-y-1">
+                {currentTeam.map((member: TeamMember, index: number) => (
+                  <motion.div
+                    key={`${currentPhase}-team-${index}`}
+                    className="flex items-center space-x-2"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                  >
+                    {currentPhase === 2 && member.avatar ? (
+                      <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-xs text-white">
+                        {member.avatar}
+                      </div>
+                    ) : (
+                      <span className="text-sm">{currentPhase === 0 ? '?' : '👤'}</span>
+                    )}
+                    <div className="flex-1">
+                      <div className="text-xs">{member.name}</div>
+                      <div className="text-xs opacity-60">
+                        {member.role || member.status}
+                        {currentPhase === 2 && member.lastActive && ` • ${member.lastActive}`}
+                      </div>
+                    </div>
+                    <div className={`w-1.5 h-1.5 rounded-full ${
+                      member.status === 'active' ? 'bg-green-400 animate-pulse' : 'bg-gray-500'
+                    }`}></div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
-
-      {/* Success indicator */}
-      <motion.div
-        className="absolute bottom-4 right-4 bg-success-green/20 border border-success-green/40 rounded-lg px-3 py-2 backdrop-blur-sm"
-        animate={{ opacity: [0.8, 1, 0.8] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      >
-        <div className="flex items-center space-x-2">
-          <div className="w-2 h-2 bg-success-green rounded-full animate-pulse"></div>
-          <span className="text-success-green text-xs font-mono">LIVE APPLICATION</span>
-        </div>
-      </motion.div>
     </div>
   );
 };
@@ -718,50 +1027,165 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
   duration = 4000
 }) => {
   const [currentStage, setCurrentStage] = useState(0);
+  const [currentPhase, setCurrentPhase] = useState(0); // For Réalisation phases
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [progress, setProgress] = useState(0);
 
+  // StrictMode-safe timer management
+  const intervalRef = useRef<number | null>(null);
+  const isRunningRef = useRef(false);
+  const instanceIdRef = useRef(`TransformationFlow-${Math.random().toString(36).substr(2, 9)}`);
+  const isTransitioningRef = useRef(false);
+  
+  // Component instance tracking
   useEffect(() => {
-    let interval: number;
+    console.log(`🆔 Component instance created: ${instanceIdRef.current}`);
+    return () => {
+      console.log(`🗑️ Component instance destroyed: ${instanceIdRef.current}`);
+    };
+  }, []);
+
+  // Define the 5-state flow (memoized to prevent useEffect re-runs)
+  const flowStates = useMemo(() => [
+    { stage: 0, phase: 0, name: 'Dépendance' },           // State 0: Dépendance
+    { stage: 1, phase: 0, name: 'Méthode' },              // State 1: Méthode  
+    { stage: 2, phase: 0, name: 'Autonomie (Sketchy)' },  // State 2: Sketchy prototype
+    { stage: 2, phase: 1, name: 'Autonomie (Structured)' }, // State 3: Structured design
+    { stage: 2, phase: 2, name: 'Autonomie (Polished)' }    // State 4: Polished app
+  ], []);
+
+  const [currentFlowState, setCurrentFlowState] = useState(0);
+
+  useEffect(() => {
+    const currentInstanceId = instanceIdRef.current;
     
-    if (isPlaying) {
-      console.log('🚀 Starting auto-play with stages:', stages.map((s, i) => `${i}: ${s.title} (${s.id})`));
+    // Clear any existing timer first (both local and global)
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+      console.log(`🧹 [${currentInstanceId}] Cleared local timer`);
+    }
+    
+    // Clear any global timer from other instances
+    if (globalTimerInstance.intervalId && globalTimerInstance.componentId !== currentInstanceId) {
+      clearInterval(globalTimerInstance.intervalId);
+      console.log(`🧹 [${currentInstanceId}] Cleared global timer from ${globalTimerInstance.componentId}`);
+      globalTimerInstance.intervalId = null;
+      globalTimerInstance.componentId = null;
+      globalTimerInstance.isRunning = false;
+    }
+    
+    if (isPlaying && !isRunningRef.current && !globalTimerInstance.isRunning) {
+      isRunningRef.current = true;
+      globalTimerInstance.isRunning = true;
+      globalTimerInstance.componentId = currentInstanceId;
       
-      interval = window.setInterval(() => {
+      console.log(`🚀 [${currentInstanceId}] Starting unified flow with 5 states:`, flowStates.map((s, i) => `${i}: ${s.name}`));
+      
+      const timerId = window.setInterval(() => {
         setProgress(prev => {
-          const increment = 100 / (duration / 200); // Slower increment (200ms intervals)
+          const increment = 100 / (duration / 200); // 200ms intervals
           const newProgress = prev + increment;
           
-          if (newProgress >= 100) {
-            // Stage is complete, move to next stage
-            console.log(`⏭️ Stage complete, transitioning...`);
-            setCurrentStage(current => {
-              const nextStage = (current + 1) % stages.length;
-              console.log(`🔄 TRANSITION: ${current} (${stages[current]?.title}) → ${nextStage} (${stages[nextStage]?.title})`);
-              return nextStage;
+          if (newProgress >= 100 && !isTransitioningRef.current) {
+            // Flow state is complete, move to next state
+            isTransitioningRef.current = true;
+            console.log(`⏭️ [${instanceIdRef.current}] Flow state complete, transitioning...`);
+            
+            setCurrentFlowState(current => {
+              const nextFlowState = (current + 1) % flowStates.length;
+              const currentState = flowStates[current];
+              const nextState = flowStates[nextFlowState];
+              
+              console.log(`🔄 [${instanceIdRef.current}] FLOW TRANSITION: ${current} (${currentState?.name}) → ${nextFlowState} (${nextState?.name})`);
+              
+              // Update stage and phase based on flow state
+              setCurrentStage(nextState.stage);
+              setCurrentPhase(nextState.phase);
+              
+              // Reset transition lock after React completes the state update
+              setTimeout(() => {
+                isTransitioningRef.current = false;
+                console.log(`🔓 [${instanceIdRef.current}] Transition lock released`);
+              }, 0);
+              
+              return nextFlowState;
             });
-            return 0; // Reset progress for next stage
+            return 0; // Reset progress for next state
+          } else if (newProgress >= 100 && isTransitioningRef.current) {
+            // Transition already in progress, skip duplicate
+            console.log(`🚫 [${instanceIdRef.current}] Duplicate transition blocked`);
+            return 0; // Still reset progress but don't transition
           }
           
           return newProgress;
         });
-      }, 200); // Slower interval - 200ms instead of 100ms
+      }, 200);
+      
+      intervalRef.current = timerId;
+      globalTimerInstance.intervalId = timerId;
+      
+    } else if (!isPlaying && isRunningRef.current) {
+      // Stop timer when paused
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+        console.log(`⏸️ [${currentInstanceId}] Timer paused`);
+      }
+      if (globalTimerInstance.componentId === currentInstanceId) {
+        globalTimerInstance.intervalId = null;
+        globalTimerInstance.componentId = null;
+        globalTimerInstance.isRunning = false;
+      }
+      isRunningRef.current = false;
+      isTransitioningRef.current = false; // Reset transition lock
     }
     
     return () => {
-      if (interval) {
-        clearInterval(interval);
-        console.log('🛑 Auto-play stopped');
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+        console.log(`🛑 [${currentInstanceId}] Unified flow stopped`);
       }
+      if (globalTimerInstance.componentId === currentInstanceId) {
+        if (globalTimerInstance.intervalId) {
+          clearInterval(globalTimerInstance.intervalId);
+        }
+        globalTimerInstance.intervalId = null;
+        globalTimerInstance.componentId = null;
+        globalTimerInstance.isRunning = false;
+      }
+      isRunningRef.current = false;
+      isTransitioningRef.current = false; // Reset transition lock
     };
-  }, [isPlaying, duration]);
+  }, [isPlaying, duration, flowStates]);
 
   const handlePlay = () => setIsPlaying(!isPlaying);
   
   const handleReset = () => {
+    const currentInstanceId = instanceIdRef.current;
     setIsPlaying(false);
     setCurrentStage(0);
+    setCurrentPhase(0);
+    setCurrentFlowState(0);
     setProgress(0);
+    
+    // Clear timer and reset refs
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    if (globalTimerInstance.componentId === currentInstanceId) {
+      if (globalTimerInstance.intervalId) {
+        clearInterval(globalTimerInstance.intervalId);
+      }
+      globalTimerInstance.intervalId = null;
+      globalTimerInstance.componentId = null;
+      globalTimerInstance.isRunning = false;
+    }
+    isRunningRef.current = false;
+    isTransitioningRef.current = false; // Reset transition lock
+    console.log(`🔄 [${currentInstanceId}] Flow reset complete`);
   };
 
   const renderStageVisualization = useCallback((stageIndex: number) => {
@@ -778,12 +1202,12 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
       case 'specification':
         return <SpecificationStructure concepts={stage.concepts} />;
       case 'completion':
-        return <LivingApplication concepts={stage.concepts} />;
+        return <LivingApplication concepts={stage.concepts} phase={currentPhase} />;
       default:
         console.warn(`⚠️ Unknown stage id: ${stage.id}`);
         return null;
     }
-  }, []);
+  }, [currentPhase]);
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark overflow-hidden">
@@ -797,7 +1221,22 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
 
 
         {/* Visualisation principale - Format responsive et bien centré */}
-        <div className="relative h-[500px] md:h-[600px] w-full max-w-4xl mx-auto mb-8 bg-gradient-to-b from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-sm rounded-3xl border border-primary-blue/30 shadow-2xl overflow-hidden">
+        <div className="relative h-[500px] md:h-[600px] w-full max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden"
+             style={{
+               background: `
+                 linear-gradient(135deg, 
+                   rgba(42, 42, 42, 0.95) 0%, 
+                   rgba(53, 53, 53, 0.9) 50%,
+                   rgba(42, 42, 42, 0.95) 100%
+                 )
+               `,
+               boxShadow: `
+                 0 25px 80px rgba(0, 0, 0, 0.3),
+                 0 8px 25px rgba(116, 166, 190, 0.1),
+                 inset 0 1px 0 rgba(255, 255, 255, 0.05)
+               `,
+               border: 'none'
+             }}>
           
           {/* Transition Arrow */}
           <AnimatePresence>
@@ -833,7 +1272,16 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
           </AnimatePresence>
           
           {/* Info de l'étape moderne */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background-dark/95 via-background-dark/90 to-transparent backdrop-blur-md p-8">
+          <div className="absolute bottom-0 left-0 right-0 p-8"
+               style={{
+                 background: `
+                   linear-gradient(to top, 
+                     rgba(42, 42, 42, 0.95) 0%, 
+                     rgba(42, 42, 42, 0.8) 50%,
+                     transparent 100%
+                   )
+                 `
+               }}>
             <motion.h3 
               className={`text-2xl font-bold ${stages[currentStage].color} mb-3`}
               key={`title-${currentStage}`}
