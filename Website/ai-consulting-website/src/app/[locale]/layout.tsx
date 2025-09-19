@@ -34,12 +34,22 @@ export async function generateMetadata({
     return {
       title: "NEWCODE - Accelerated AI Development",
       description: "NEWCODE helps you build and deploy your AI solutions. Everyone deserves access to modern software capabilities.",
+      icons: {
+        icon: '/images/N-favicon.png',
+        shortcut: '/images/N-favicon.png',
+        apple: '/images/N-favicon.png',
+      },
     };
   }
   
   return {
     title: "NEWCODE - Développement IA Accéléré",
     description: "NEWCODE vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
+    icons: {
+      icon: '/images/N-favicon.png',
+      shortcut: '/images/N-favicon.png',
+      apple: '/images/N-favicon.png',
+    },
   };
 }
 
@@ -63,6 +73,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="icon" href="/images/N-favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/N-favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/N-favicon.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
