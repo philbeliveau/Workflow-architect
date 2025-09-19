@@ -5,8 +5,8 @@ import { CheckCircle } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 // Lazy load components
-const BMADWorkflowDiagram = lazy(() => import('@/components/sections/BMADWorkflowDiagram'));
-const BMADMethodologyContent = lazy(() => import('@/components/sections/BMADMethodologyContent'));
+const MethodologyWorkflowDiagram = lazy(() => import('@/components/sections/BMADWorkflowDiagram'));
+const MethodologyContent = lazy(() => import('@/components/sections/BMADMethodologyContent'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
 
 const SectionFallback = () => (
@@ -15,13 +15,13 @@ const SectionFallback = () => (
   </div>
 );
 
-export default async function BMADMethodologyPage({
+export default async function MethodologyPage({
   params
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations('bmad');
+  const t = await getTranslations('methodology');
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark">
@@ -96,7 +96,7 @@ export default async function BMADMethodologyPage({
               {/* Right Column - Interactive Diagram */}
               <div className="lg:sticky lg:top-24">
                 <Suspense fallback={<SectionFallback />}>
-                  <BMADWorkflowDiagram />
+                  <MethodologyWorkflowDiagram />
                 </Suspense>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default async function BMADMethodologyPage({
         {/* Methodology Content */}
         <section className="py-16">
           <Suspense fallback={<SectionFallback />}>
-            <BMADMethodologyContent />
+            <MethodologyContent />
           </Suspense>
         </section>
       </main>

@@ -61,18 +61,18 @@ const HeroSectionFlow: React.FC = memo(() => {
       </div>
 
       {/* Main content - Two-column layout */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center min-h-[70vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center min-h-[70vh]">
           {/* Left Column: Main Messaging with French content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6 lg:space-y-8"
           >
             {/* Hero Title with Flowing Gradients */}
             <h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-[-0.02em] text-shadow-hero"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight tracking-[-0.02em] text-shadow-hero"
               style={{
                 background: `
                   linear-gradient(135deg, 
@@ -99,11 +99,11 @@ const HeroSectionFlow: React.FC = memo(() => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <p className="text-xl md:text-2xl leading-relaxed font-medium opacity-90 tracking-[-0.01em] text-shadow-flow text-[#e5e5e5]">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-medium opacity-90 tracking-[-0.01em] text-shadow-flow text-[#e5e5e5]">
                 Près de 60% des apps personnalisées en entreprise sont développées hors de l'IT
               </p>
               
-              <p className="text-lg md:text-xl leading-relaxed font-normal opacity-85 text-[#ffffff] text-shadow-flow">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed font-normal opacity-85 text-[#ffffff] text-shadow-flow">
                 La technique n'est plus une limite
               </p>
             </motion.div>
@@ -113,7 +113,7 @@ const HeroSectionFlow: React.FC = memo(() => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4"
             >
               {/* Stat Card 1 */}
               <motion.div
@@ -139,7 +139,7 @@ const HeroSectionFlow: React.FC = memo(() => {
                   borderRadius: '1rem'
                 }}
               >
-                <div className="p-6 space-y-3">
+                <div className="p-4 sm:p-6 space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                          style={{ background: 'rgba(116, 166, 190, 0.2)' }}>
@@ -177,7 +177,7 @@ const HeroSectionFlow: React.FC = memo(() => {
                   borderRadius: '1rem'
                 }}
               >
-                <div className="p-6 space-y-3">
+                <div className="p-4 sm:p-6 space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                          style={{ background: 'rgba(251, 191, 36, 0.2)' }}>
@@ -215,7 +215,7 @@ const HeroSectionFlow: React.FC = memo(() => {
                   borderRadius: '1rem'
                 }}
               >
-                <div className="p-6 space-y-3">
+                <div className="p-4 sm:p-6 space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                          style={{ background: 'rgba(167, 41, 46, 0.2)' }}>
@@ -235,7 +235,7 @@ const HeroSectionFlow: React.FC = memo(() => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4"
             >
               {/* Primary CTA with Environmental Glow */}
               <motion.div

@@ -19,8 +19,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-const BMADMethodologyContent: React.FC = () => {
-  const t = useTranslations('bmad.content');
+const MethodologyContent: React.FC = () => {
+  const t = useTranslations('methodology.content');
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -429,4 +429,4 @@ const BMADMethodologyContent: React.FC = () => {
   );
 };
 
-export default BMADMethodologyContent;
+export default MethodologyContent;

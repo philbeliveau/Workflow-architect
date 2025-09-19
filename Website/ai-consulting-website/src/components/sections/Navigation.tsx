@@ -98,7 +98,7 @@ const Navigation: React.FC = memo(() => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
@@ -194,7 +194,7 @@ const Navigation: React.FC = memo(() => {
               role="navigation"
               aria-label={locale === 'fr' ? "Menu mobile" : "Mobile menu"}
             >
-              <div className="px-6 py-4 space-y-4">
+              <div className="px-4 sm:px-6 py-4 space-y-4">
                 {navItems.map((item, index) => {
                   const isExternal = item.href.startsWith('#') || item.href.startsWith('/#');
                   const Component = isExternal ? 'a' : Link;

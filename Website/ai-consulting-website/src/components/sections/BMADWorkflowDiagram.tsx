@@ -31,8 +31,8 @@ interface WorkflowStep {
   userInteraction?: boolean;
 }
 
-const BMADWorkflowDiagram: React.FC = () => {
-  const t = useTranslations('bmad.workflow');
+const MethodologyWorkflowDiagram: React.FC = () => {
+  const t = useTranslations('methodology.workflow');
   const [selectedStep, setSelectedStep] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentStep, setCurrentStep] = useState<string>('start');
@@ -388,4 +388,4 @@ const BMADWorkflowDiagram: React.FC = () => {
   );
 };
 
-export default BMADWorkflowDiagram;
+export default MethodologyWorkflowDiagram;

@@ -60,10 +60,14 @@
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
   
   /* Typography scale */
-  --font-size-hero: 3.5rem;
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.5rem;
+  --font-size-hero: 2.5rem;
+  --font-size-hero-lg: 3.5rem;
+  --font-size-h1: 1.875rem;
+  --font-size-h1-lg: 2.5rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h2-lg: 2rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h3-lg: 1.5rem;
   --font-size-lg: 1.125rem;
   --font-size-base: 1rem;
   --font-size-sm: 0.875rem;
@@ -151,10 +155,22 @@ html {
   line-height: var(--line-height-hero);
 }
 
+@media (min-width: 1024px) {
+  .text-hero {
+    font-size: var(--font-size-hero-lg);
+  }
+}
+
 .text-h1 {
   font-size: var(--font-size-h1);
   font-weight: 700;
   line-height: var(--line-height-h1);
+}
+
+@media (min-width: 1024px) {
+  .text-h1 {
+    font-size: var(--font-size-h1-lg);
+  }
 }
 
 .text-h2 {
@@ -163,10 +179,22 @@ html {
   line-height: var(--line-height-h2);
 }
 
+@media (min-width: 1024px) {
+  .text-h2 {
+    font-size: var(--font-size-h2-lg);
+  }
+}
+
 .text-h3 {
   font-size: var(--font-size-h3);
   font-weight: 600;
   line-height: var(--line-height-h3);
+}
+
+@media (min-width: 1024px) {
+  .text-h3 {
+    font-size: var(--font-size-h3-lg);
+  }
 }
 
 .bg-gradient-bronze {
@@ -210,6 +238,26 @@ html {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Mobile specific optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .grid {
+    gap: 1rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1rem;
+  }
 }
 
 /* High contrast mode support */
