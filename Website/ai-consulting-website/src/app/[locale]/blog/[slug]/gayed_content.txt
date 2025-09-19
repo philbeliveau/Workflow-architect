@@ -307,7 +307,7 @@ const results = await YourOrchestrator.validateWithHistoricalData();
 **Avant**: 3 semaines d'équipe, code fragile, bugs subtils
 **Après**: 4 heures solo, code robuste, tests exhaustifs
 
-La différence? **L'intelligence collective des swarms d'IA.**
+La différence? **La complexité du projet gérée par des swarms d'IA.**
 
 On n'est plus limités par notre cerveau individuel. On peut orchestrer des équipes virtuelles d'experts, chacun meilleur que nous dans son domaine.
 

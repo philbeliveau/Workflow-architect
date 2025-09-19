@@ -342,7 +342,7 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
           transition={{ duration: 3, repeat: Infinity }}
         >
           <p className="text-accent-yellow/90 text-lg font-semibold mb-2">
-            L'Intelligence Collective Dispersée
+            La Complexité du Projet
           </p>
           <p className="text-text-light/70 text-sm">
             Toute l'expertise nécessaire existe mais sans structure
@@ -1084,7 +1084,12 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
       
       const timerId = window.setInterval(() => {
         setProgress(prev => {
-          const increment = 100 / (duration / 200); // 200ms intervals
+          // Variable timing: specification gets 1.5x more time
+          const currentState = flowStates[currentFlowState];
+          const stateMultiplier = currentState?.name === 'specification' ? 1.5 : 1.0;
+          const adjustedDuration = duration * stateMultiplier;
+          
+          const increment = 100 / (adjustedDuration / 200); // 200ms intervals
           const newProgress = prev + increment;
           
           if (newProgress >= 100 && !isTransitioningRef.current) {

@@ -19,11 +19,11 @@ const HeroBanner: React.FC = memo(() => {
       return (
         <>
           Transformez vos connaissances métier en applications fonctionnelles — passez de{' '}
-          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold">
             'celui qui a l'idée'
           </span>
           {' '}à{' '}
-          <span className="bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
             'celui qui la réalise'
           </span>
         </>
@@ -32,11 +32,11 @@ const HeroBanner: React.FC = memo(() => {
       return (
         <>
           Transform your business knowledge into functional applications — go from{' '}
-          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold">
             'the one with the idea'
           </span>
           {' '}to{' '}
-          <span className="bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
             'the one who realizes it'
           </span>
         </>
