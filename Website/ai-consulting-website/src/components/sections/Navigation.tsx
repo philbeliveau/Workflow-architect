@@ -70,7 +70,7 @@ const Navigation: React.FC = memo(() => {
     if (currentPath === '/') {
       return [
         { name: t('home'), href: anchors.home, isActive: true },
-        { name: t('tracks'), href: '#formation', isActive: false },
+        { name: t('tracks'), href: '#track-selection', isActive: false },
         { name: t('blog'), href: '/blog', isActive: false },
         { name: t('contact'), href: anchors.contact, isActive: false }
       ];
@@ -78,7 +78,7 @@ const Navigation: React.FC = memo(() => {
       // For specialized pages, show main sections but link back to home page sections
       return [
         { name: t('home'), href: `/#accueil`, isActive: false },
-        { name: t('tracks'), href: `/#formation`, isActive: currentPath === '/developers' || currentPath === '/business' },
+        { name: t('tracks'), href: `/#track-selection`, isActive: currentPath === '/developers' || currentPath === '/business' },
         { name: t('blog'), href: '/blog', isActive: currentPath.includes('/blog') },
         { name: t('contact'), href: `/#contact`, isActive: false }
       ];

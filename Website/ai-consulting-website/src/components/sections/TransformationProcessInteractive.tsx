@@ -3,7 +3,7 @@
 import React, { useState, useEffect, memo, useCallback, useMemo, useRef } from 'react';
 
 // Global instance control to prevent multiple timers
-let globalTimerInstance: {
+const globalTimerInstance: {
   intervalId: number | null;
   componentId: string | null;
   isRunning: boolean;
