@@ -91,8 +91,8 @@ const Navigation: React.FC = memo(() => {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background-dark-alt/95 backdrop-blur-lg shadow-lg border-b border-primary-blue/30' 
-          : 'bg-transparent'
+          ? 'bg-background-dark-alt/98 backdrop-blur-lg shadow-lg border-b border-primary-blue/30' 
+          : 'bg-background-dark-alt/80 backdrop-blur-sm shadow-sm'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -129,10 +129,8 @@ const Navigation: React.FC = memo(() => {
                   <motion.div
                     className={`transition-colors duration-200 relative group cursor-pointer ${
                       item.isActive 
-                        ? 'text-primary-blue' 
-                        : isScrolled 
-                          ? 'text-text-light hover:text-primary-blue' 
-                          : 'text-text-secondary hover:text-text-light'
+                        ? 'text-primary-blue font-semibold' 
+                        : 'text-text-light hover:text-primary-blue'
                     }`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -186,7 +184,7 @@ const Navigation: React.FC = memo(() => {
           {isMobileMenuOpen && (
             <motion.div
               id="mobile-menu"
-              className="md:hidden absolute top-full left-0 right-0 bg-background-dark-alt/98 backdrop-blur-lg border-b border-primary-blue/30 shadow-lg"
+              className="md:hidden absolute top-full left-0 right-0 bg-background-dark-alt/99 backdrop-blur-lg border-b border-primary-blue/30 shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}

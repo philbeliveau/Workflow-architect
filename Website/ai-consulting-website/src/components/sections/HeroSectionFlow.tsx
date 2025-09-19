@@ -310,7 +310,7 @@ const HeroSectionFlow: React.FC = memo(() => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="aspect-square max-w-lg mx-auto lg:mx-0">
+            <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:aspect-square lg:max-w-lg mx-auto lg:mx-0">
               <TransformationProcessInteractive autoPlay={true} duration={5000} />
             </div>
           </motion.div>
