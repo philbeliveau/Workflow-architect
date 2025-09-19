@@ -1250,8 +1250,11 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
 
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {/* Visualisation principale - Format responsive et bien centré */}
-      <div className="relative h-full w-full rounded-2xl overflow-hidden"
+      <div className="relative z-10 w-full h-full">
+
+
+        {/* Visualisation principale - Format responsive et bien centré */}
+        <div className="relative h-[500px] md:h-[600px] w-full max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden"
              style={{
                background: `
                  linear-gradient(135deg, 
@@ -1268,18 +1271,18 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
                border: 'none'
              }}>
           
-          {/* Transition Arrow - Hidden on mobile */}
+          {/* Transition Arrow */}
           <AnimatePresence>
             <motion.div
               key={`arrow-${currentStage}`}
-              className="absolute top-1/2 right-4 lg:right-8 z-20 pointer-events-none hidden sm:block"
+              className="absolute top-1/2 right-8 z-20 pointer-events-none"
               initial={{ opacity: 0, x: -20, scale: 0.5 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 20, scale: 1.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <div className="bg-gradient-to-r from-primary-blue to-accent-yellow p-2 lg:p-3 rounded-full shadow-lg border-2 border-white/20">
-                <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+              <div className="bg-gradient-to-r from-primary-blue to-accent-yellow p-3 rounded-full shadow-lg border-2 border-white/20">
+                <ArrowRight className="w-8 h-8 text-white" />
               </div>
             </motion.div>
           </AnimatePresence>
@@ -1301,8 +1304,8 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
             </motion.div>
           </AnimatePresence>
           
-          {/* Info de l'étape moderne - Responsive padding */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8"
+          {/* Info de l'étape moderne */}
+          <div className="absolute bottom-0 left-0 right-0 p-8"
                style={{
                  background: `
                    linear-gradient(to top, 
@@ -1313,7 +1316,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
                  `
                }}>
             <motion.h3 
-              className={`text-lg sm:text-xl lg:text-2xl font-bold ${translatedStages[currentStage].color} mb-2 lg:mb-3`}
+              className={`text-2xl font-bold ${translatedStages[currentStage].color} mb-3`}
               key={`title-${currentStage}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1322,7 +1325,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
               {translatedStages[currentStage].title}
             </motion.h3>
             <motion.p 
-              className="text-text-secondary text-sm sm:text-base leading-relaxed"
+              className="text-text-secondary text-base leading-relaxed"
               key={`desc-${currentStage}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1332,6 +1335,8 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
             </motion.p>
           </div>
         </div>
+
+
       </div>
     </div>
   );
