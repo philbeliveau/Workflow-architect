@@ -28,10 +28,18 @@
   "hero": {
     "title": "Ne restez plus spectateur de l'IA",
     "subtitle": "Transformez vos connaissances métier en applications fonctionnelles — passez de 'celui qui a l'idée' à 'celui qui la réalise'",
+    "subtitle_parts": {
+      "prefix": "Transformez vos connaissances métier en ",
+      "highlight1": "applications fonctionnelles",
+      "middle": " — passez de ",
+      "highlight2": "'celui qui a l'idée'",
+      "middle2": " à ",
+      "highlight3": "'celui qui la réalise'"
+    },
     "statistic": {
       "icon": "💡",
       "text": "Près de 60% des apps personnalisées en entreprise sont développées hors de l'IT",
-      "subtext": "📈 La technique n'est plus une limite"
+      "subtext": "La technique n'est plus une limite"
     },
     "supporting_message": "Transformez vos connaissances métier en applications fonctionnelles — passez de celui qui a l'idée à celui qui la réalise.",
     "steps": {
@@ -114,7 +122,17 @@
     "value_proposition": "Des connaissances métier aux applications fonctionnelles",
     "subtitle_value": "Notre méthode transforme votre expertise en créations numériques",
     "cta": "CHOISIR MA FORMATION",
-    "community_caption": "Notre communauté active où les apprenants partagent leurs créations"
+    "community_caption": "Notre communauté active où les apprenants partagent leurs créations",
+    "overview_title": "Aperçu de la Formation",
+    "duration_format_title": "Durée & Format",
+    "duration_format_description": "6 à 12 heures de formation intensive en ligne avec support communautaire. Suivez les leçons à votre rythme avec un accompagnement personnalisé. Cours mis à jour en continu — l'IA évolue, notre formation aussi.",
+    "level_title": "Niveau",
+    "level_description": "Débutants complets aux développeurs expérimentés souhaitant maîtriser les techniques agentiques. Aucun prérequis technique nécessaire pour commencer.",
+    "what_you_get_title": "Ce que vous obtenez",
+    "what_you_get_description": "Formation complète, communauté active, templates prêts à l'emploi, sessions live, réseau de développeurs et entrepreneurs, et des amitiés durables.",
+    "community_members": "150+ membres actifs",
+    "community_projects": "50+ projets partagés",
+    "support_247": "💬 Support 24/7"
   },
   "tracks": {
     "header": {

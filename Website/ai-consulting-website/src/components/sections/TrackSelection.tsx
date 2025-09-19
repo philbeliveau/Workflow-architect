@@ -19,7 +19,12 @@ const TrackSelection: React.FC = () => {
       duration: t('formations.debutant.duration'),
       level: t('formations.debutant.level'),
       price: t('formations.debutant.price'),
-      features: t('formations.debutant.features'),
+      features: [
+        t('formations.debutant.features.0'),
+        t('formations.debutant.features.1'),
+        t('formations.debutant.features.2'),
+        t('formations.debutant.features.3')
+      ],
       benefits: [
         { icon: Zap, text: t('formations.debutant.benefits.0') },
         { icon: Users, text: t('formations.debutant.benefits.1') },
@@ -41,7 +46,12 @@ const TrackSelection: React.FC = () => {
       duration: t('formations.avance.duration'),
       level: t('formations.avance.level'),
       price: t('formations.avance.price'),
-      features: t('formations.avance.features'),
+      features: [
+        t('formations.avance.features.0'),
+        t('formations.avance.features.1'),
+        t('formations.avance.features.2'),
+        t('formations.avance.features.3')
+      ],
       benefits: [
         { icon: Cpu, text: t('formations.avance.benefits.0') },
         { icon: Zap, text: t('formations.avance.benefits.1') },

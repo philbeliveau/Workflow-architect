@@ -90,7 +90,18 @@ const HeroBanner: React.FC = memo(() => {
               className="space-y-6"
             >
               <p className="text-xl md:text-2xl text-text-primary leading-relaxed font-medium">
-                {t('subtitle')}
+                {t('subtitle_parts.prefix')}
+                <span className="bg-gradient-to-r from-primary-blue to-accent-yellow bg-clip-text text-transparent font-bold">
+                  {t('subtitle_parts.highlight1')}
+                </span>
+                {t('subtitle_parts.middle')}
+                <span className="bg-gradient-to-r from-accent-yellow to-accent-red bg-clip-text text-transparent font-bold">
+                  {t('subtitle_parts.highlight2')}
+                </span>
+                {t('subtitle_parts.middle2')}
+                <span className="bg-gradient-to-r from-primary-blue to-success-green bg-clip-text text-transparent font-bold">
+                  {t('subtitle_parts.highlight3')}
+                </span>
               </p>
               
               {/* Statistics & Social Proof */}

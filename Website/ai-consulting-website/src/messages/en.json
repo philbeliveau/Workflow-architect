@@ -28,10 +28,18 @@
   "hero": {
     "title": "Don't Stay a Spectator to AI",
     "subtitle": "Transform your business knowledge into functional applications — go from 'the one with the idea' to 'the one who realizes it'",
+    "subtitle_parts": {
+      "prefix": "Transform your business knowledge into ",
+      "highlight1": "functional applications",
+      "middle": " — go from ",
+      "highlight2": "'the one with the idea'",
+      "middle2": " to ",
+      "highlight3": "'the one who realizes it'"
+    },
     "statistic": {
       "icon": "💡",
       "text": "Nearly 60% of custom enterprise apps are developed outside of IT",
-      "subtext": "📈 Technology is no longer a limitation"
+      "subtext": "Technology is no longer a limitation"
     },
     "supporting_message": "Transform your business knowledge into functional applications — go from the one with the idea to the one who realizes it.",
     "steps": {
@@ -92,7 +100,7 @@
     "header": {
       "badge": "NEWCODE Training",
       "title": "Choose Your Training",
-      "subtitle": "Two tracks adapted to your level to master agentic programming"
+      "subtitle": "Two tracks adapted to your level to learn how to bring your ideas to code"
     },
     "formations": {
       "debutant": {
@@ -1102,29 +1110,44 @@
     }
   },
   "formation_overview": {
-    "title": "Training Overview",
-    "subtitle": "Comprehensive agentic development training for all skill levels",
-    "value_proposition": "Transform your development workflow with AI agents. Learn to orchestrate specialized agents for faster, more efficient software development.",
-    "cta": "Start Your Training",
-    "community_caption": "Join our community of agentic developers",
-    "beginner": {
-      "title": "Beginner Level",
-      "description": "Perfect for non-technical professionals",
-      "duration": "6 hours",
-      "format": "Interactive workshop"
+    "title": "NEWCODE TRAINING",
+    "subtitle": "Two tracks to master agentic programming",
+    "formation_beginner": {
+      "title": "BEGINNER TRAINING",
+      "subtitle": "From zero to your first application",
+      "features": [
+        "6 intensive hours",
+        "No technical prerequisites",
+        "Visual tools (Bolt, Lovable)",
+        "Result: Functional deployed site or app"
+      ],
+      "quote": "Create your first application without writing a line of code"
     },
-    "intermediate": {
-      "title": "Intermediate Level", 
-      "description": "For developers with basic experience",
-      "duration": "8 hours",
-      "format": "Hands-on coding sessions"
+    "formation_advanced": {
+      "title": "ADVANCED TRAINING", 
+      "subtitle": "Master agent orchestration",
+      "features": [
+        "Complete SPARC methodology",
+        "Claude Flow and specialized agents",
+        "Complex projects and pro deployment",
+        "Database and API integrations"
+      ],
+      "quote": "Develop professional-level applications"
     },
-    "expert": {
-      "title": "Expert Level",
-      "description": "Advanced agent orchestration techniques", 
-      "duration": "12 hours",
-      "format": "Deep-dive workshops"
-    }
+    "value_proposition": "From business knowledge to functional applications",
+    "subtitle_value": "Our method transforms your expertise into digital creations",
+    "cta": "CHOOSE MY TRAINING",
+    "community_caption": "Our active community where learners share their creations",
+    "overview_title": "Training Overview",
+    "duration_format_title": "Duration & Format",
+    "duration_format_description": "6 to 12 hours of intensive online training with community support. Follow lessons at your own pace with personalized guidance. Continuously updated courses — AI evolves, so does our training.",
+    "level_title": "Level",
+    "level_description": "Complete beginners to experienced developers wanting to master agentic techniques. No technical prerequisites required to start.",
+    "what_you_get_title": "What you get",
+    "what_you_get_description": "Complete training, active community, ready-to-use templates, live sessions, network of developers and entrepreneurs, and lasting friendships.",
+    "community_members": "150+ active members",
+    "community_projects": "50+ shared projects",
+    "support_247": "💬 24/7 Support"
   },
   "target_audience": {
     "title": "Who is this training for?",

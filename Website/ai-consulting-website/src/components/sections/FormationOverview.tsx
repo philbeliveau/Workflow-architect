@@ -64,7 +64,7 @@ const FormationOverview: React.FC = memo(() => {
           >
             <div>
               <h3 className="text-3xl font-bold text-text-light mb-4">
-                Aperçu de la Formation
+                {t('overview_title')}
               </h3>
               <p className="text-lg text-text-primary mb-8">
                 {t('value_proposition')}
@@ -88,9 +88,9 @@ const FormationOverview: React.FC = memo(() => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-accent-yellow mb-2">Durée & Format</h4>
+                  <h4 className="text-xl font-bold text-accent-yellow mb-2">{t('duration_format_title')}</h4>
                   <p className="text-text-primary">
-                    <strong>6 à 12 heures de formation intensive</strong> en ligne avec support communautaire. Suivez les leçons à votre rythme avec un accompagnement personnalisé. Cours mis à jour en continu — l'IA évolue, notre formation aussi.
+                    {t('duration_format_description')}
                   </p>
                 </div>
               </motion.div>
@@ -109,9 +109,9 @@ const FormationOverview: React.FC = memo(() => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-primary-blue mb-2">Niveau</h4>
+                  <h4 className="text-xl font-bold text-primary-blue mb-2">{t('level_title')}</h4>
                   <p className="text-text-primary">
-                    Débutants complets aux développeurs expérimentés souhaitant maîtriser les techniques agentiques. Aucun prérequis technique nécessaire pour commencer.
+                    {t('level_description')}
                   </p>
                 </div>
               </motion.div>
@@ -130,9 +130,9 @@ const FormationOverview: React.FC = memo(() => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-accent-purple mb-2">Ce que vous obtenez</h4>
+                  <h4 className="text-xl font-bold text-accent-purple mb-2">{t('what_you_get_title')}</h4>
                   <p className="text-text-primary">
-                    Formation complète, communauté active, templates prêts à l'emploi, sessions live, réseau de développeurs et entrepreneurs, et des amitiés durables.
+                    {t('what_you_get_description')}
                   </p>
                 </div>
               </motion.div>
@@ -175,7 +175,7 @@ const FormationOverview: React.FC = memo(() => {
                   src="/images/circlepic.jpeg"
                   alt="Communauté Circle Newcode avec discussions et partage de projets"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
                 />
                 
@@ -187,28 +187,9 @@ const FormationOverview: React.FC = memo(() => {
                     {t('community_caption')}
                   </p>
                   
-                  {/* Community engagement indicators */}
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
-                      <span className="text-white/90 text-sm">150+ membres actifs</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-accent-yellow rounded-full animate-pulse delay-300"></div>
-                      <span className="text-white/90 text-sm">50+ projets partagés</span>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
               
-              {/* Floating elements */}
-              <motion.div
-                className="absolute -bottom-4 -left-4 bg-success-green/20 border border-success-green/40 rounded-lg px-3 py-2 backdrop-blur-sm"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <span className="text-success-green text-sm font-medium">💬 Support 24/7</span>
-              </motion.div>
             </div>
           </motion.div>
         </div>
