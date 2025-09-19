@@ -834,10 +834,10 @@
     }
   },
   "bmad": {
-    "title": "BMAD Method: Structured AI-Driven Development",
+    "title": "Structured AI-Driven Development Method",
     "subtitle": "Discover the complete workflow that transforms project ideas into production-ready applications through intelligent agent collaboration and structured planning.",
     "workflow": {
-      "title": "Interactive BMAD Workflow",
+      "title": "Interactive AI Development Workflow",
       "description": "Click on any step to learn more about agent interactions. Each step shows how you can collaborate with specialized AI agents to structure your development process.",
       "simulate": "Simulate",
       "reset": "Reset",
@@ -845,7 +845,7 @@
       "steps": {
         "start": {
           "title": "Project Idea",
-          "description": "Every great application begins with an idea. The BMAD method helps structure and validate your concept."
+          "description": "Every great application begins with an idea. Our structured method helps structure and validate your concept."
         },
         "research-phase": {
           "title": "Research Phase",
@@ -897,8 +897,8 @@
     },
     "content": {
       "introduction": {
-        "title": "What is the BMAD Method?",
-        "description": "BMAD (Brownfield Method for Agile Development) is a structured framework that transforms project ideas into production-ready applications through intelligent agent collaboration and human-in-the-loop processing.",
+        "title": "What is our Structured Method?",
+        "description": "Our structured framework transforms project ideas into production-ready applications through intelligent agent collaboration and human-in-the-loop processing.",
         "principles": {
           "natural_language": {
             "title": "Natural Language First",
@@ -915,7 +915,7 @@
         }
       },
       "features": {
-        "title": "Key Features of BMAD Method",
+        "title": "Key Features of our Method",
         "items": {
           "human_loop": {
             "title": "Human-in-the-Loop Processing",
@@ -944,7 +944,7 @@
         }
       },
       "phases": {
-        "title": "BMAD Development Phases",
+        "title": "Development Phases",
         "items": {
           "discovery": {
             "title": "Discovery & Research",
@@ -1067,14 +1067,14 @@
         }
       },
       "conclusion": {
-        "title": "Why Choose BMAD Method?",
-        "description": "BMAD transforms chaotic project starts into structured, agent-driven workflows. From scattered ideas to production-ready specifications, with you in control every step of the way.",
+        "title": "Why Choose our Method?",
+        "description": "Our method transforms chaotic project starts into structured, agent-driven workflows. From scattered ideas to production-ready specifications, with you in control every step of the way.",
         "metrics": {
           "faster_planning": "Faster Planning",
           "structured_output": "Structured Output",
           "specialized_agents": "Specialized Agents"
         },
-        "cta": "Learn Our BMAD Implementation"
+        "cta": "Learn Our Implementation"
       }
     },
     "benefits": {
@@ -1152,6 +1152,14 @@
   "target_audience": {
     "title": "Who is this training for?",
     "subtitle": "Training accessible to all, adapted to technical and non-technical roles",
+    "interaction": {
+      "title": "👆 Click on your profile",
+      "description": "Discover how our method solves your specific challenges"
+    },
+    "labels": {
+      "current_challenges": "Current challenges:",
+      "transformation": "Transformation:"
+    },
     "segments": {
       "entrepreneurs": {
         "title": "Entrepreneurs",
@@ -1221,39 +1229,35 @@
         ],
         "success_metrics": "Development speed: +400% | Code quality: +60% | Job satisfaction: +90%"
       },
-      "creative_professionals": {
-        "title": "Creative Professionals",
-        "headline": "Bring your ideas to life",
+      "creative_generalists": {
+        "title": "Creative Generalists",
+        "headline": "Versatility enhanced by AI",
         "pain_points": [
-          "Technical barriers to implement ideas",
-          "Dependence on developers for digital projects",
-          "Limited by traditional tools",
-          "Ideas remain conceptual"
+          "Limited technical skills",
+          "Incomplete projects",
+          "Lack of suitable tools"
         ],
         "transformation": [
-          "Transform concepts into functional applications",
-          "Create without technical limitations",
-          "Build interactive experiences",
-          "Monetize your creativity digitally"
+          "Master specification-driven development",
+          "Build complete applications",
+          "Gain technical autonomy"
         ],
-        "success_metrics": "Idea-to-reality time: 6 months → 1 week | Creative output: +250%"
+        "success_metrics": "Complete portfolio | Technical autonomy | Finished projects"
       },
-      "business_professionals": {
-        "title": "Business Professionals",
-        "headline": "Optimize your processes",
+      "product_managers": {
+        "title": "Product Managers",
+        "headline": "From idea to functional prototype",
         "pain_points": [
-          "Manual repetitive processes",
-          "Difficulty accessing and analyzing data",
-          "Dependence on IT for simple tools",
-          "Inefficient workflows"
+          "Difficult communication with devs",
+          "Misunderstood specifications",
+          "Long development cycles"
         ],
         "transformation": [
-          "Automate business processes",
-          "Create custom analysis dashboards",
-          "Build internal tools independently",
-          "Optimize team productivity"
+          "Prototype your product ideas directly",
+          "Communicate through working demos",
+          "Accelerate iteration cycles"
         ],
-        "success_metrics": "Process efficiency: +200% | Data accessibility: +500% | Tool creation: weeks → hours"
+        "success_metrics": "Functional prototypes | Clear communication | Rapid iteration"
       }
     },
     "roles": {
@@ -1720,5 +1724,283 @@
     "subtitle": "Master tomorrow's technology stack",
     "description": "In one training, learn to orchestrate these tools like a senior developer.",
     "cta_button": "GET STARTED"
+  },
+  "methodology": {
+    "title": "🔄 Continuous Collaborative Agents Cycle",
+    "subtitle": "",
+    "agents": {
+      "architect": {
+        "name": "System Architect",
+        "role": "Designs the overall structure",
+        "status": "analysis"
+      },
+      "researcher": {
+        "name": "Research Agent",
+        "role": "Gathers requirements",
+        "status": "research"
+      },
+      "coder": {
+        "name": "Code Generator",
+        "role": "Implements features",
+        "status": "coding"
+      },
+      "tester": {
+        "name": "Quality Agent",
+        "role": "Ensures reliability",
+        "status": "testing"
+      },
+      "security": {
+        "name": "Security Agent",
+        "role": "Validates security",
+        "status": "scan"
+      }
+    },
+    "workflow": {
+      "current_tasks": "Current Tasks",
+      "tasks": [
+        "Requirements analysis",
+        "Data structure processing",
+        "Performance optimization"
+      ]
+    },
+    "methodology_cta": {
+      "title": "Ready to Discover Our Methodology?",
+      "description": "Experience the power of structured AI development. From scattered complexity to organized and predictable results.",
+      "button": "Experience the Methodology"
+    }
+  },
+  "pricing": {
+    "roles": {
+      "developers": {
+        "title": "Developers",
+        "description": "Boost your productivity with AI"
+      },
+      "managers": {
+        "title": "Managers",
+        "description": "Optimize your business processes"
+      },
+      "analysts": {
+        "title": "Analysts",
+        "description": "Transform your analyses into tools"
+      },
+      "entrepreneurs": {
+        "title": "Entrepreneurs",
+        "description": "Validate your ideas quickly"
+      },
+      "consultants": {
+        "title": "Consultants",
+        "description": "Deliver more value to your clients"
+      },
+      "students": {
+        "title": "Students",
+        "description": "Learn the skills of the future"
+      }
+    }
+  },
+  "transformation": {
+    "stages": {
+      "chaos": {
+        "title": "Dependence",
+        "description": "Stuck with your ideas"
+      },
+      "specification": {
+        "title": "Method",
+        "description": "Learn the language of AI"
+      },
+      "completion": {
+        "title": "Autonomy",
+        "description": "Create without limits"
+      }
+    },
+    "chaos_visualization": {
+      "title": "Project Complexity",
+      "description": "All necessary expertise exists but without structure"
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Transformation",
+    "subtitle": "Solutions adapted to every level, from first steps to complete expertise",
+    "tiers": {
+      "guide": {
+        "name": "The Newcode Guide",
+        "tagline": "Autonomous discovery",
+        "description": "Complete agentic development manual",
+        "price": "€197",
+        "price_early": "€97",
+        "includes_title": "What you get:",
+        "includes": [
+          "200+ page manual",
+          "Complete SPARC methodology",
+          "25+ ready-to-use prompts",
+          "Deployment checklist",
+          "Project templates",
+          "Access to updates"
+        ],
+        "perfect_for_title": "Perfect for:",
+        "perfect_for": [
+          "Motivated self-learners",
+          "Tight budget but strong motivation",
+          "Learning at your own pace",
+          "Complement to training"
+        ],
+        "cta": "Start your autonomous journey",
+        "button": "Get the Guide"
+      },
+      "essential": {
+        "name": "Essential Training",
+        "tagline": "Personalized support",
+        "price": "€1,497",
+        "price_early": "€997",
+        "access": "Immediate access",
+        "includes_title": "Training + community:",
+        "includes": [
+          "6h intensive live training",
+          "The Newcode Guide included",
+          "Lifetime Circle community access",
+          "30-day direct support",
+          "Session recordings",
+          "Guided practical projects"
+        ],
+        "perfect_for_title": "Perfect for:",
+        "perfect_for": [
+          "First steps in agentic development",
+          "Need for personalized support",
+          "Structured and progressive learning",
+          "Access to expert community"
+        ],
+        "cta": "The perfect balance between autonomy and support",
+        "button": "Join the Training"
+      },
+      "premium": {
+        "name": "Premium Training",
+        "tagline": "Complete transformation",
+        "price": "€2,997",
+        "price_early": "€1,997",
+        "next_session": "Next session: January 15",
+        "includes_title": "Training + Mentoring:",
+        "includes": [
+          "12h advanced training",
+          "1-to-1 mentoring (3 sessions)",
+          "Real projects with feedback",
+          "Official certification",
+          "VIP community access",
+          "Complete toolkit",
+          "90-day priority support"
+        ],
+        "perfect_for_title": "Perfect for:",
+        "perfect_for": [
+          "Ambitious professionals and entrepreneurs",
+          "Complex and mission-critical projects",
+          "Need for recognized certification",
+          "Complete skills transformation"
+        ],
+        "cta": "Become a recognized expert in agentic development",
+        "button": "Premium Transformation"
+      },
+      "enterprise": {
+        "name": "Enterprise Training",
+        "tagline": "Custom solution",
+        "price": "On quote",
+        "consultation": "Free consultation",
+        "includes_title": "Complete solution:",
+        "includes": [
+          "Personalized team training",
+          "Support on your real projects",
+          "Workflow implementation",
+          "Internal trainer training",
+          "Dedicated technical support",
+          "Integration with existing tools"
+        ],
+        "perfect_for_title": "Perfect for:",
+        "perfect_for": [
+          "Teams of 5+ people",
+          "Organizations with specific needs",
+          "Integration with existing infrastructure",
+          "Training internal trainers"
+        ],
+        "cta": "Transform your entire organization",
+        "button": "Free Consultation"
+      }
+    },
+    "guarantee": {
+      "title": "30-day satisfaction guarantee",
+      "description": "We are convinced of the value of our training. If you are not completely satisfied within the first 30 days, we will refund you in full, no questions asked."
+    }
+  },
+  "testimonials": {
+    "title": "They took the leap",
+    "subtitle": "Discover how our learners transformed their way of developing with AI",
+    "metrics": {
+      "title": "Results measured over 6 months",
+      "subtitle": "Real impact on the careers and projects of our learners"
+    },
+    "items": {
+      "marie_entrepreneur": {
+        "name": "Marie Dubois",
+        "role": "Founder",
+        "company": "GreenTech Solutions",
+        "category": "entrepreneur",
+        "category_label": "Entrepreneur",
+        "quote": "In 3 months, I developed and launched my energy management SaaS. Newcode allowed me to transform my business expertise into a functional application without depending on a technical team.",
+        "achievement": "SaaS launched with 50+ clients in 3 months, saved €80k in development costs",
+        "timeframe": "March 2024"
+      },
+      "thomas_developer": {
+        "name": "Thomas Martin",
+        "role": "Senior Developer",
+        "company": "Digital Factory",
+        "category": "developer",
+        "category_label": "Developer",
+        "quote": "I multiplied my productivity by 5. What used to take me 2 weeks, I now do in 2 days. The Newcode method revolutionized my way of coding with AI.",
+        "achievement": "Promoted to Lead Developer + 35% raise, project timelines reduced by 70%",
+        "timeframe": "April 2024"
+      },
+      "sophie_intrapreneur": {
+        "name": "Sophie Bernard",
+        "role": "Digital Project Manager",
+        "company": "National Bank",
+        "category": "intrapreneur",
+        "category_label": "Intrapreneur",
+        "quote": "I was able to propose and develop an internal app prototype in one week. My manager was amazed and the project was validated with a budget of €200k.",
+        "achievement": "Prototype validated → €200k project approved, promoted to Digital Product Manager",
+        "timeframe": "May 2024"
+      },
+      "lucas_creative": {
+        "name": "Lucas Petit",
+        "role": "UX/UI Designer",
+        "company": "Freelance",
+        "category": "creative",
+        "category_label": "Creative",
+        "quote": "Without any coding background, I created my interactive portfolio and 3 applications for my clients. My rates doubled because I deliver concrete results.",
+        "achievement": "Rates doubled (€150→€300/day), 3 apps delivered, technical portfolio created",
+        "timeframe": "June 2024"
+      },
+      "alex_tech": {
+        "name": "Alexandre Roy",
+        "role": "Engineering Student",
+        "company": "École Polytechnique",
+        "category": "tech_enthusiast",
+        "category_label": "Tech Enthusiast",
+        "quote": "The training gave me a huge head start. I landed an internship at an AI startup thanks to the projects I was able to showcase.",
+        "achievement": "AI startup internship obtained, 2 AI projects in portfolio, job offer received",
+        "timeframe": "February 2024"
+      },
+      "clara_pm": {
+        "name": "Clara Moreau",
+        "role": "Product Manager",
+        "company": "TechCorp",
+        "category": "product_manager",
+        "category_label": "Product Manager",
+        "quote": "I now prototype all my features before briefing the devs. It avoids 80% of back-and-forth and the teams trust me more.",
+        "achievement": "Product timelines reduced by 50%, team satisfaction +40%, promoted to Senior PM",
+        "timeframe": "January 2024"
+      }
+    }
+  },
+  "contact_cta": {
+    "title": "A specific question?",
+    "description": "Our team of experts is available to answer all your personalized questions.",
+    "button": "Contact us",
+    "response_time": "Response within 24h"
   }
 }

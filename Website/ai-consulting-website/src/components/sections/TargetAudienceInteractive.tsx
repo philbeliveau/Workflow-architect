@@ -21,9 +21,10 @@ interface SegmentCardProps {
   icon: React.ReactNode;
   color: string;
   index: number;
+  tLabels: (key: string) => string;
 }
 
-const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onSelect, icon, color, index }) => {
+const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onSelect, icon, color, index, tLabels }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -57,7 +58,7 @@ const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onS
       
       {/* Pain Points Preview */}
       <div className="space-y-2 mb-4">
-        <p className="text-sm text-text-secondary font-medium">Défis actuels :</p>
+        <p className="text-sm text-text-secondary font-medium">{tLabels('current_challenges')}</p>
         <ul className="space-y-1">
           {(segment.pain_points || []).slice(0, 2).map((point: string, idx: number) => (
             <li key={idx} className="text-sm text-text-primary">
@@ -69,7 +70,7 @@ const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onS
       
       {/* Transformation Preview */}
       <div className="space-y-2">
-        <p className="text-sm text-text-secondary font-medium">Transformation :</p>
+        <p className="text-sm text-text-secondary font-medium">{tLabels('transformation')}</p>
         <ul className="space-y-1">
           {(segment.transformation || []).slice(0, 2).map((transform: string, idx: number) => (
             <li key={idx} className="text-sm text-text-primary">
@@ -103,6 +104,7 @@ SegmentCard.displayName = 'SegmentCard';
 
 const TargetAudienceInteractive: React.FC = memo(() => {
   const t = useTranslations('target_audience');
+  const tLabels = useTranslations('target_audience.labels');
   const [selectedSegment, setSelectedSegment] = useState<string>('entrepreneurs');
   
   const segments = t.raw('segments');
@@ -177,6 +179,7 @@ const TargetAudienceInteractive: React.FC = memo(() => {
               icon={segmentIcons[key as keyof typeof segmentIcons]}
               color={segmentColors[key as keyof typeof segmentColors]}
               index={index}
+              tLabels={tLabels}
             />
           ))}
         </div>

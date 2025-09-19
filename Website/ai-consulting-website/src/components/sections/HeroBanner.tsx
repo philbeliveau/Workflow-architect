@@ -15,33 +15,22 @@ const HeroBanner: React.FC = memo(() => {
   const locale = useLocale();
 
   const renderSubtitle = () => {
-    if (locale === 'fr') {
-      return (
-        <>
-          Transformez vos connaissances métier en applications fonctionnelles — passez de{' '}
-          <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold">
-            'celui qui a l'idée'
-          </span>
-          {' '}à{' '}
-          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
-            'celui qui la réalise'
-          </span>
-        </>
-      );
-    } else {
-      return (
-        <>
-          Transform your business knowledge into functional applications — go from{' '}
-          <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold">
-            'the one with the idea'
-          </span>
-          {' '}to{' '}
-          <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
-            'the one who realizes it'
-          </span>
-        </>
-      );
-    }
+    return (
+      <>
+        {t('subtitle_parts.line1')}
+        <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold">
+          {t('subtitle_parts.highlight1')}
+        </span>
+        {t('subtitle_parts.line2')}
+        <span className="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent font-semibold">
+          {t('subtitle_parts.highlight2')}
+        </span>
+        {t('subtitle_parts.line3')}
+        <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
+          {t('subtitle_parts.highlight3')}
+        </span>
+      </>
+    );
   };
   
   return (

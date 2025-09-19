@@ -59,7 +59,9 @@
     "summary": "Méthode complète pour transformer vos équipes",
     "cta": {
       "primary": "Commencer ma transformation",
-      "secondary": "Notre guide"
+      "secondary": "Notre guide",
+      "training": "Commencer la Formation",
+      "guide": "Télécharger le Guide"
     }
   },
   "sections": {
@@ -875,10 +877,10 @@
     }
   },
   "bmad": {
-    "title": "Méthode BMAD : Développement Structuré par IA",
+    "title": "Méthode de Développement Structuré par IA",
     "subtitle": "Découvrez le flux de travail complet qui transforme les idées de projet en applications prêtes pour la production grâce à la collaboration d'agents intelligents et à la planification structurée.",
     "workflow": {
-      "title": "Flux de Travail BMAD Interactif",
+      "title": "Flux de Travail IA Interactif",
       "description": "Cliquez sur n'importe quelle étape pour en savoir plus sur les interactions d'agents. Chaque étape montre comment vous pouvez collaborer avec des agents IA spécialisés pour structurer votre processus de développement.",
       "simulate": "Simuler",
       "reset": "Réinitialiser",
@@ -886,7 +888,7 @@
       "steps": {
         "start": {
           "title": "Idée de Projet",
-          "description": "Chaque grande application commence par une idée. La méthode BMAD aide à structurer et valider votre concept."
+          "description": "Chaque grande application commence par une idée. Notre méthode structurée aide à structurer et valider votre concept."
         },
         "research-phase": {
           "title": "Phase de Recherche",
@@ -938,8 +940,8 @@
     },
     "content": {
       "introduction": {
-        "title": "Qu'est-ce que la Méthode BMAD ?",
-        "description": "BMAD (Brownfield Method for Agile Development) est un framework structuré qui transforme les idées de projet en applications prêtes pour la production grâce à la collaboration d'agents intelligents et au traitement humain-dans-la-boucle.",
+        "title": "Qu'est-ce que notre Méthode Structurée ?",
+        "description": "Notre framework structuré transforme les idées de projet en applications prêtes pour la production grâce à la collaboration d'agents intelligents et au traitement humain-dans-la-boucle.",
         "principles": {
           "natural_language": {
             "title": "Langage Naturel d'Abord",
@@ -956,7 +958,7 @@
         }
       },
       "features": {
-        "title": "Caractéristiques Clés de la Méthode BMAD",
+        "title": "Caractéristiques Clés de notre Méthode",
         "items": {
           "human_loop": {
             "title": "Traitement Humain-dans-la-Boucle",
@@ -985,7 +987,7 @@
         }
       },
       "phases": {
-        "title": "Phases de Développement BMAD",
+        "title": "Phases de Développement",
         "items": {
           "discovery": {
             "title": "Découverte & Recherche",
@@ -1108,14 +1110,14 @@
         }
       },
       "conclusion": {
-        "title": "Pourquoi Choisir la Méthode BMAD ?",
-        "description": "BMAD transforme les démarrages de projet chaotiques en flux de travail structurés dirigés par agents. Des idées éparses aux spécifications prêtes pour la production, avec vous en contrôle à chaque étape.",
+        "title": "Pourquoi Choisir notre Méthode ?",
+        "description": "Notre méthode transforme les démarrages de projet chaotiques en flux de travail structurés dirigés par agents. Des idées éparses aux spécifications prêtes pour la production, avec vous en contrôle à chaque étape.",
         "metrics": {
           "faster_planning": "Planification Plus Rapide",
           "structured_output": "Sortie Structurée",
           "specialized_agents": "Agents Spécialisés"
         },
-        "cta": "Apprenez Notre Implémentation BMAD"
+        "cta": "Apprenez Notre Implémentation"
       }
     },
     "benefits": {
@@ -1528,6 +1530,10 @@
       "title": "👆 Cliquez sur votre profil",
       "description": "Découvrez comment notre méthode résout vos défis spécifiques"
     },
+    "labels": {
+      "current_challenges": "Défis actuels :",
+      "transformation": "Transformation :"
+    },
     "segments": {
       "entrepreneurs": {
         "title": "Entrepreneurs",
@@ -1631,6 +1637,52 @@
         ],
         "success_metrics": "Vitesse de validation : +800% | Qualité des specs : Pro | Alignement équipe : 95%"
       }
+    },
+    "roles": {
+      "developers": {
+        "title": "Développeurs & Équipes Tech",
+        "description": "Apprenez l'orchestration d'agents et l'automatisation"
+      },
+      "managers": {
+        "title": "Gestionnaires de Projet",
+        "description": "Comprenez les workflows agentiques et la coordination"
+      },
+      "analysts": {
+        "title": "Analystes Métier",
+        "description": "Transformez les exigences en spécifications d'agents"
+      },
+      "entrepreneurs": {
+        "title": "Entrepreneurs",
+        "description": "Construisez des prototypes avec les agents IA"
+      },
+      "consultants": {
+        "title": "Consultants",
+        "description": "Livrez des solutions plus rapidement à vos clients"
+      },
+      "students": {
+        "title": "Étudiants",
+        "description": "Préparez votre carrière avec les compétences IA"
+      }
+    }
+  },
+  "transformation": {
+    "stages": {
+      "chaos": {
+        "title": "Dépendance",
+        "description": "Coincé avec vos idées"
+      },
+      "specification": {
+        "title": "Méthode",
+        "description": "Apprendre le langage de l'IA"
+      },
+      "completion": {
+        "title": "Autonomie",
+        "description": "Créer sans limites"
+      }
+    },
+    "chaos_visualization": {
+      "title": "La Complexité du Projet",
+      "description": "Toute l'expertise nécessaire existe mais sans structure"
     }
   },
   "pricing": {

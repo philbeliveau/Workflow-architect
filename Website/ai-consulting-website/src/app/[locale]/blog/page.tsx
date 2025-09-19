@@ -38,7 +38,7 @@ export default function BlogPage() {
     },
     {
       id: 'bmad-methodology',
-      title: 'BMAD Method: Structured AI-Driven Development',
+      title: 'Structured AI-Driven Development Method',
       excerpt: 'Discover the complete workflow that transforms project ideas into production-ready applications through intelligent agent collaboration and structured planning.',
       date: '2025-01-18',
       readTime: '12 min',
@@ -47,7 +47,7 @@ export default function BlogPage() {
       featured: true,
       context: {
         challenge: 'Transform chaotic project starts into structured, agent-driven workflows',
-        solution: 'BMAD method with 6 specialized agents and human-in-the-loop processing',
+        solution: 'Structured method with 6 specialized agents and human-in-the-loop processing',
         results: ['85% faster planning', '100% structured output', '6+ specialized agents working together']
       }
     },
@@ -121,7 +121,7 @@ export default function BlogPage() {
                 <Link 
                   key={blog.id} 
                   href={`/blog/${blog.id}`}
-                  className="group relative rounded-lg bg-background-dark-alt p-2 border border-gray-600 hover:border-primary-blue/50 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-blue/20"
+                  className="group relative rounded-lg bg-background-dark-alt/80 backdrop-blur-sm p-3 border border-gray-600/60 hover:border-primary-blue/50 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-blue/20"
                 >
                   {/* Terminal Header */}
                   <div className="relative flex text-center">
@@ -142,18 +142,18 @@ export default function BlogPage() {
                   </div>
                   
                   {/* Terminal Content */}
-                  <div className="mt-5 space-y-1.5 px-5 pb-10">
+                  <div className="mt-5 space-y-2 px-6 pb-10 bg-black/10 rounded-b-lg backdrop-blur-sm">
                     {/* Date and Read Time */}
-                    <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
-                      <span className="text-text-secondary">{"//"}</span> <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.date}</span></span> <span className="text-text-secondary">•</span> <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.readTime}</span></span>
+                    <p className="font-mono text-sm font-normal tracking-wide text-accent-purple">
+                      <span className="text-gray-400">{"//"}</span> <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/20 group-hover:before:bg-primary-blue/30 transition-all"><span className="relative text-primary-blue font-medium group-hover:text-primary-blue-light">{blog.date}</span></span> <span className="text-gray-400">•</span> <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/20 group-hover:before:bg-primary-blue/30 transition-all"><span className="relative text-primary-blue font-medium group-hover:text-primary-blue-light">{blog.readTime}</span></span>
                     </p>
                     
                     {/* Title as component */}
                     <p className="mt-4 font-mono text-xs font-normal tracking-wide text-accent-purple">
                       <span className="text-text-secondary">&lt;</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">ArticleTitle</span><span className="text-text-secondary">&gt;</span>
                     </p>
-                    <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
-                      <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.title}</span></span>
+                    <p className="ml-3 font-mono text-sm font-medium leading-5 tracking-wide text-accent-purple">
+                      <span className="relative inline-block px-2 py-1 before:absolute before:-inset-1 before:block before:rounded before:bg-primary-blue/20 group-hover:before:bg-primary-blue/30 transition-all"><span className="relative text-white font-semibold group-hover:text-primary-blue-light">{blog.title}</span></span>
                     </p>
                     <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
                       <span className="text-text-secondary">&lt;/</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">ArticleTitle</span><span className="text-text-secondary">&gt;</span>
@@ -163,8 +163,8 @@ export default function BlogPage() {
                     <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
                       <span className="text-text-secondary">&lt;</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">Description</span><span className="text-text-secondary">&gt;</span>
                     </p>
-                    <p className="ml-6 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
-                      <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10 group-hover:before:bg-primary-blue/20 transition-all"><span className="relative text-primary-blue group-hover:text-primary-blue-light">{blog.excerpt.slice(0, 80)}...</span></span>
+                    <p className="ml-6 font-mono text-sm font-normal leading-5 tracking-wide text-accent-purple">
+                      <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-gray-800/30 group-hover:before:bg-gray-700/40 transition-all"><span className="relative text-gray-300 group-hover:text-white">{blog.excerpt.slice(0, 80)}...</span></span>
                     </p>
                     <p className="ml-3 font-mono text-xs font-normal tracking-wide text-accent-purple">
                       <span className="text-text-secondary">&lt;/</span><span className="text-accent-red group-hover:text-accent-red-light transition-colors">Description</span><span className="text-text-secondary">&gt;</span>
@@ -194,7 +194,7 @@ export default function BlogPage() {
               Prochains Articles Techniques
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="relative rounded-lg bg-background-dark-alt p-2 border border-gray-600">
+              <div className="relative rounded-lg bg-background-dark-alt/80 backdrop-blur-sm p-3 border border-gray-600/60">
                 {/* Terminal Header */}
                 <div className="relative flex text-center">
                   <div className="flex pl-3.5 pt-3">
@@ -210,15 +210,15 @@ export default function BlogPage() {
                   </div>
                   <span className="absolute inset-x-0 top-2 text-xs text-text-secondary">microservices.tsx</span>
                 </div>
-                <div className="mt-5 space-y-1.5 px-5 pb-10">
+                <div className="mt-5 space-y-2 px-6 pb-10 bg-black/10 rounded-b-lg backdrop-blur-sm">
                   <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
                     <span className="text-text-secondary">&lt;</span><span className="text-accent-red">Article</span><span className="ml-2 text-accent-purple">status<span className="text-text-secondary">=</span><span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">"coming-soon"</span></span></span><span className="text-text-secondary">&gt;</span>
                   </p>
-                  <p className="ml-3 font-mono text-xs font-normal tracking-wide text-accent-purple">
-                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">Architecture Microservices</span></span>
+                  <p className="ml-3 font-mono text-sm font-medium tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-2 py-1 before:absolute before:-inset-1 before:block before:rounded before:bg-gray-700/30"><span className="relative text-white font-semibold">Architecture Microservices</span></span>
                   </p>
-                  <p className="ml-3 font-mono text-xs font-normal leading-4 tracking-wide text-accent-purple">
-                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-primary-blue/10"><span className="relative text-primary-blue">Patterns avancés et optimisations</span></span>
+                  <p className="ml-3 font-mono text-sm font-normal leading-5 tracking-wide text-accent-purple">
+                    <span className="relative inline-block px-1 before:absolute before:-inset-0.5 before:block before:rounded before:bg-gray-800/30"><span className="relative text-gray-300">Patterns avancés et optimisations</span></span>
                   </p>
                   <p className="font-mono text-xs font-normal tracking-wide text-accent-purple">
                     <span className="text-text-secondary">&lt;/</span><span className="text-accent-red">Article</span><span className="text-text-secondary">&gt;</span>

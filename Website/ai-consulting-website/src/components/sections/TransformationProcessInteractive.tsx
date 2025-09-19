@@ -33,6 +33,7 @@ import {
   Activity,
   ArrowRight
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface TransformationStage {
   id: string;
@@ -119,7 +120,7 @@ const stages: TransformationStage[] = [
 ];
 
 // Composant pour l'état de chaos - L'Univers des Intentions Non-Structurées
-const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
+const ChaosVisualization = ({ concepts, t }: { concepts: string[]; t: any }) => {
   const [chaosElements] = useState(() => {
     // Create dense, tilted word cloud covering entire space
     const totalWords = concepts.length;
@@ -342,10 +343,10 @@ const ChaosVisualization = ({ concepts }: { concepts: string[] }) => {
           transition={{ duration: 3, repeat: Infinity }}
         >
           <p className="text-accent-yellow/90 text-lg font-semibold mb-2">
-            La Complexité du Projet
+            {t('chaos_visualization.title')}
           </p>
           <p className="text-text-light/70 text-sm">
-            Toute l'expertise nécessaire existe mais sans structure
+            {t('chaos_visualization.description')}
           </p>
         </motion.div>
       </div>
@@ -1026,10 +1027,43 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
   autoPlay = false,
   duration = 4000
 }) => {
+  const t = useTranslations('transformation.stages');
+  const tChaos = useTranslations('transformation');
   const [currentStage, setCurrentStage] = useState(0);
   const [currentPhase, setCurrentPhase] = useState(0); // For Réalisation phases
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [progress, setProgress] = useState(0);
+
+  // Create dynamic stages using translations
+  const translatedStages = useMemo(() => [
+    {
+      id: 'chaos',
+      title: t('chaos.title'),
+      description: t('chaos.description'),
+      icon: null,
+      color: 'text-accent-red',
+      bgColor: 'from-accent-red/20 via-background-dark to-background-dark-alt',
+      concepts: stages[0].concepts
+    },
+    {
+      id: 'specification',
+      title: t('specification.title'),
+      description: t('specification.description'),
+      icon: null,
+      color: 'text-primary-blue',
+      bgColor: 'from-primary-blue/20 via-background-dark to-background-dark-alt',
+      concepts: stages[1].concepts
+    },
+    {
+      id: 'completion',
+      title: t('completion.title'),
+      description: t('completion.description'),
+      icon: null,
+      color: 'text-accent-yellow',
+      bgColor: 'from-accent-yellow/20 via-background-dark to-background-dark-alt',
+      concepts: stages[2].concepts
+    }
+  ], [t]);
 
   // StrictMode-safe timer management
   const intervalRef = useRef<number | null>(null);
@@ -1047,12 +1081,12 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
 
   // Define the 5-state flow (memoized to prevent useEffect re-runs)
   const flowStates = useMemo(() => [
-    { stage: 0, phase: 0, name: 'Dépendance' },           // State 0: Dépendance
-    { stage: 1, phase: 0, name: 'Méthode' },              // State 1: Méthode  
-    { stage: 2, phase: 0, name: 'Autonomie (Sketchy)' },  // State 2: Sketchy prototype
-    { stage: 2, phase: 1, name: 'Autonomie (Structured)' }, // State 3: Structured design
-    { stage: 2, phase: 2, name: 'Autonomie (Polished)' }    // State 4: Polished app
-  ], []);
+    { stage: 0, phase: 0, name: translatedStages[0]?.title || 'Dependence' },           // State 0: Dependence
+    { stage: 1, phase: 0, name: translatedStages[1]?.title || 'Method' },              // State 1: Method  
+    { stage: 2, phase: 0, name: `${translatedStages[2]?.title || 'Autonomy'} (Sketchy)` },  // State 2: Sketchy prototype
+    { stage: 2, phase: 1, name: `${translatedStages[2]?.title || 'Autonomy'} (Structured)` }, // State 3: Structured design
+    { stage: 2, phase: 2, name: `${translatedStages[2]?.title || 'Autonomy'} (Polished)` }    // State 4: Polished app
+  ], [translatedStages]);
 
   const [currentFlowState, setCurrentFlowState] = useState(0);
 
@@ -1194,7 +1228,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
   };
 
   const renderStageVisualization = useCallback((stageIndex: number) => {
-    const stage = stages[stageIndex];
+    const stage = translatedStages[stageIndex];
     
     if (!stage) {
       console.warn(`⚠️ No stage found for index ${stageIndex}`);
@@ -1203,7 +1237,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
     
     switch (stage.id) {
       case 'chaos':
-        return <ChaosVisualization concepts={stage.concepts} />;
+        return <ChaosVisualization concepts={stage.concepts} t={tChaos} />;
       case 'specification':
         return <SpecificationStructure concepts={stage.concepts} />;
       case 'completion':
@@ -1212,7 +1246,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
         console.warn(`⚠️ Unknown stage id: ${stage.id}`);
         return null;
     }
-  }, [currentPhase]);
+  }, [currentPhase, translatedStages, tChaos]);
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark overflow-hidden">
@@ -1288,13 +1322,13 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
                  `
                }}>
             <motion.h3 
-              className={`text-2xl font-bold ${stages[currentStage].color} mb-3`}
+              className={`text-2xl font-bold ${translatedStages[currentStage].color} mb-3`}
               key={`title-${currentStage}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {stages[currentStage].title}
+              {translatedStages[currentStage].title}
             </motion.h3>
             <motion.p 
               className="text-text-secondary text-base leading-relaxed"
@@ -1303,7 +1337,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              {stages[currentStage].description}
+              {translatedStages[currentStage].description}
             </motion.p>
           </div>
         </div>
