@@ -50,17 +50,7 @@ const HeroBanner: React.FC = memo(() => {
                style={{ backgroundPosition: '50% 50%', backgroundSize: '140% 140%' }} />
         </div>
         
-        {/* Textural pattern layer */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute inset-0" 
-               style={{
-                 backgroundImage: `
-                   radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
-                   radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px)
-                 `,
-                 backgroundSize: '60px 60px, 80px 80px'
-               }} />
-        </div>
+        {/* Textural pattern layer removed for cleaner design */}
         
         {/* Organic movement layer */}
         <motion.div 
@@ -95,7 +85,7 @@ const HeroBanner: React.FC = memo(() => {
           >
             {/* Hero Title with Flowing Gradients */}
             <h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-[-0.02em] text-shadow-hero"
+              className="font-brutalist-heading text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-[-0.02em] text-shadow-hero"
               style={{
                 background: `
                   linear-gradient(135deg, 
@@ -122,13 +112,13 @@ const HeroBanner: React.FC = memo(() => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <p className="text-xl md:text-2xl leading-relaxed font-medium opacity-90 tracking-[-0.01em] text-shadow-flow text-[#e5e5e5]">
+              <p className="font-brutalist-body text-xl md:text-2xl leading-relaxed font-medium opacity-90 tracking-[-0.01em] text-shadow-flow text-[#e5e5e5]">
                 {renderSubtitle()}
               </p>
               
               
               {/* Statistics & Social Proof */}
-              <div className="bg-background-accent-grey/30 backdrop-blur-sm rounded-2xl p-6 border border-text-secondary/20">
+              <div className="bg-background-accent-grey/60 backdrop-blur-sm rounded-2xl p-6 border border-text-secondary/40">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-accent-yellow/20 rounded-xl flex items-center justify-center">
@@ -136,10 +126,10 @@ const HeroBanner: React.FC = memo(() => {
                     </div>
                   </div>
                   <div>
-                    <p className="text-lg md:text-xl font-semibold text-text-light mb-2">
+                    <p className="font-brutalist-heading text-lg md:text-xl font-semibold text-text-light mb-2">
                       {t('statistic.text')}
                     </p>
-                    <p className="text-text-primary leading-relaxed">
+                    <p className="font-brutalist-body text-text-primary leading-relaxed">
                       {t('statistic.subtext')}
                     </p>
                   </div>
@@ -203,7 +193,9 @@ const HeroBanner: React.FC = memo(() => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                href="#transformation"
+                href="https://buy.stripe.com/00w9AU6F1d0A36185seEo03"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative"
                 style={{
                   background: `rgba(116, 166, 190, 0.1)`,
@@ -215,9 +207,10 @@ const HeroBanner: React.FC = memo(() => {
                   `
                 }}
               >
-                {t('cta.secondary')}
+                {t('guide.title')}
               </Button>
             </motion.div>
+
           </motion.div>
           
           {/* Right Column: Transformation Process */}

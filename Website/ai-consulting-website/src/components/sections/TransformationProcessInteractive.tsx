@@ -361,13 +361,16 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setWritingProgress(prev => (prev + 1) % 100);
-      if (writingProgress % 25 === 0) {
-        setActiveDocument(prev => (prev + 1) % 3);
-      }
+      setWritingProgress(prev => {
+        const newProgress = (prev + 1) % 100;
+        if (newProgress % 25 === 0) {
+          setActiveDocument(prevDoc => (prevDoc + 1) % 3);
+        }
+        return newProgress;
+      });
     }, 80);
     return () => clearInterval(interval);
-  }, [writingProgress]);
+  }, []);
 
   // Documents types qui s'écrivent naturellement
   const documents = [
@@ -417,11 +420,7 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
       {/* Fond papier subtil */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-200/10 via-transparent to-slate-300/5"></div>
       
-      {/* Texture de papier subtile */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(99,102,241,0.3) 1px, transparent 0)`,
-        backgroundSize: '20px 20px'
-      }}></div>
+      {/* Texture de papier subtile removed for cleaner design */}
 
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
         {/* Header avec message central - Plus compact */}
@@ -519,7 +518,7 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
               </div>
 
               {/* Indicateur de progression */}
-              <div className="mt-4 w-full h-1 bg-background-accent-grey/30 rounded-full overflow-hidden">
+              <div className="mt-4 w-full h-1 bg-background-accent-grey/60 rounded-full overflow-hidden">
                 <motion.div
                   className={`h-full ${doc.color.replace('text-', 'bg-')} rounded-full`}
                   initial={{ width: '0%' }}
@@ -708,7 +707,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
         };
       case 1: // Structured  
         return {
-          container: "bg-background-accent-grey/20 border border-text-secondary/40 rounded-lg",
+          container: "bg-background-accent-grey/50 border border-text-secondary/60 rounded-lg",
           text: "font-sans text-text-primary/80",
           accent: "text-accent-blue/80",
           button: "border border-text-secondary/60 bg-background-primary/30 rounded"
@@ -1089,6 +1088,12 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
   ], [translatedStages]);
 
   const [currentFlowState, setCurrentFlowState] = useState(0);
+  const currentFlowStateRef = useRef(0);
+  const flowStatesRef = useRef(flowStates);
+
+  // Update refs during render (safe for refs)
+  currentFlowStateRef.current = currentFlowState;
+  flowStatesRef.current = flowStates;
 
   useEffect(() => {
     const currentInstanceId = instanceIdRef.current;
@@ -1114,12 +1119,12 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
       globalTimerInstance.isRunning = true;
       globalTimerInstance.componentId = currentInstanceId;
       
-      console.log(`🚀 [${currentInstanceId}] Starting unified flow with 5 states:`, flowStates.map((s, i) => `${i}: ${s.name}`));
+      console.log(`🚀 [${currentInstanceId}] Starting unified flow with 5 states:`, flowStatesRef.current.map((s, i) => `${i}: ${s.name}`));
       
       const timerId = window.setInterval(() => {
         setProgress(prev => {
           // Variable timing: specification gets 1.5x more time
-          const currentState = flowStates[currentFlowState];
+          const currentState = flowStatesRef.current[currentFlowStateRef.current];
           const stateMultiplier = currentState?.name === 'specification' ? 1.5 : 1.0;
           const adjustedDuration = duration * stateMultiplier;
           
@@ -1132,9 +1137,9 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
             console.log(`⏭️ [${instanceIdRef.current}] Flow state complete, transitioning...`);
             
             setCurrentFlowState(current => {
-              const nextFlowState = (current + 1) % flowStates.length;
-              const currentState = flowStates[current];
-              const nextState = flowStates[nextFlowState];
+              const nextFlowState = (current + 1) % flowStatesRef.current.length;
+              const currentState = flowStatesRef.current[current];
+              const nextState = flowStatesRef.current[nextFlowState];
               
               console.log(`🔄 [${instanceIdRef.current}] FLOW TRANSITION: ${current} (${currentState?.name}) → ${nextFlowState} (${nextState?.name})`);
               
@@ -1197,7 +1202,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
       isRunningRef.current = false;
       isTransitioningRef.current = false; // Reset transition lock
     };
-  }, [isPlaying, duration, flowStates]);
+  }, [isPlaying, duration]);
 
   const handlePlay = () => setIsPlaying(!isPlaying);
   
@@ -1254,7 +1259,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
 
 
         {/* Visualisation principale - Format responsive et bien centré */}
-        <div className="relative h-[500px] md:h-[600px] w-full max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden"
+        <div className="relative min-h-[400px] h-[60vh] max-h-[600px] w-full max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden"
              style={{
                background: `
                  linear-gradient(135deg, 

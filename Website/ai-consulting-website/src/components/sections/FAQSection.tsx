@@ -25,7 +25,7 @@ const FAQItem: React.FC<FAQItemProps> = memo(({ question, answer, isOpen, onTogg
     >
       <motion.button
         onClick={onToggle}
-        className="w-full p-6 text-left bg-background-accent-grey/50 hover:bg-background-accent-grey/70 transition-colors duration-300 flex items-center justify-between"
+        className="w-full p-6 text-left bg-background-accent-grey/70 hover:bg-background-accent-grey/90 transition-colors duration-300 flex items-center justify-between"
         whileHover={{ backgroundColor: "rgba(99, 102, 241, 0.1)" }}
       >
         <h3 className="text-text-light font-semibold text-lg pr-4">{question}</h3>
@@ -145,7 +145,7 @@ const FAQSection: React.FC = memo(() => {
               placeholder="Rechercher une question..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-background-accent-grey/50 border border-text-secondary/30 rounded-xl text-text-light placeholder-text-secondary focus:border-primary-blue focus:outline-none transition-colors"
+              className="w-full pl-12 pr-4 py-3 bg-background-accent-grey/70 border border-text-secondary/50 rounded-xl text-text-light placeholder-text-secondary focus:border-primary-blue focus:outline-none transition-colors"
             />
           </div>
         </motion.div>
@@ -167,7 +167,7 @@ const FAQSection: React.FC = memo(() => {
                   flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-300
                   ${activeCategory === key
                     ? 'bg-primary-blue text-white shadow-lg'
-                    : 'bg-background-accent-grey/50 text-text-secondary hover:bg-background-accent-grey/70 hover:text-text-light'
+                    : 'bg-background-accent-grey/70 text-text-secondary hover:bg-background-accent-grey/90 hover:text-text-light'
                   }
                 `}
               >

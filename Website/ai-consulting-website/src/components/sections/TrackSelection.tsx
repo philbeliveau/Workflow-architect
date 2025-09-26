@@ -173,7 +173,7 @@ const TrackSelection: React.FC = () => {
                       <h3 className={`text-lg font-bold text-${track.color} mb-1`}>
                         {track.title}
                       </h3>
-                      <p className="text-text-primary font-medium text-sm mb-1">
+                      <p className="text-text-light font-medium text-sm mb-1">
                         {track.subtitle}
                       </p>
                       <div className="flex items-center space-x-3 text-xs">
@@ -195,7 +195,7 @@ const TrackSelection: React.FC = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-text-primary leading-relaxed mb-3 text-sm group-hover:text-text-light transition-colors duration-300">
+                <p className="text-text-light leading-relaxed mb-3 text-base group-hover:text-white transition-colors duration-300">
                   {track.description}
                 </p>
 
@@ -211,7 +211,7 @@ const TrackSelection: React.FC = () => {
                         <div className={`w-5 h-5 bg-${track.color}/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5`}>
                           <span className={`text-${track.color} font-bold text-xs`}>{idx + 1}</span>
                         </div>
-                        <span className="text-text-primary font-medium text-sm">{feature}</span>
+                        <span className="text-text-light font-medium text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -227,7 +227,7 @@ const TrackSelection: React.FC = () => {
                     {track.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-center gap-2 p-2 bg-white/5 rounded-md border border-white/10">
                         <benefit.icon className={`w-4 h-4 text-${track.color} flex-shrink-0`} />
-                        <span className="text-text-primary font-medium text-sm">{benefit.text}</span>
+                        <span className="text-text-light font-medium text-sm">{benefit.text}</span>
                       </div>
                     ))}
                   </div>

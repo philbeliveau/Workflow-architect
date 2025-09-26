@@ -21,9 +21,21 @@
     "signup": "Sign Up",
     "dashboard": "Dashboard",
     "free-assessment": "Free Assessment",
+    "parcours": "Journey",
     "tracks": "Tracks",
     "problem": "Problem",
     "solution": "Solution"
+  },
+  "promotion": {
+    "banner": {
+      "title": "LAUNCH SPECIAL: 30% off all training programs!",
+      "deadline": "",
+      "cta": "Get it now!",
+      "close": "Close",
+      "savings": "Save",
+      "originalPrice": "Original price:",
+      "promoPrice": "Promotional price:"
+    }
   },
   "hero": {
     "title": "Don't Stay a Spectator to AI",
@@ -62,6 +74,11 @@
       "secondary": "See the Method",
       "training": "Our training",
       "guide": "Our guide"
+    },
+    "guide": {
+      "title": "Our Newcode Guide",
+      "description": "Complete agentic programming methodology: learn the fundamentals before diving into training programs",
+      "cta": "Get Our Newcode Guide"
     }
   },
   "sections": {
@@ -104,12 +121,12 @@
     },
     "formations": {
       "debutant": {
-        "title": "Beginner Training",
-        "subtitle": "From zero to your first application",
+        "title": "Kickstart Training",
+        "subtitle": "Create your first website or app with AI in hours",
         "description": "Perfect for entrepreneurs, freelancers and complete beginners. Create your first functional application without any prior technical experience.",
         "duration": "6 intensive hours",
         "level": "Beginner",
-        "price": "$300 CAD",
+        "price": "€280",
         "features": [
           "Fundamentals of agentic AI",
           "First steps with Claude Code and Bolt",
@@ -121,29 +138,29 @@
           "Community support included",
           "Ready-to-use templates"
         ],
-        "cta": "Choose Beginner Training",
+        "cta": "Take action and create your functional website, software in hours",
         "footer": "Start your transformation today"
       },
       "avance": {
-        "title": "Advanced Training",
-        "subtitle": "Master agent orchestration",
-        "description": "Ideal for developers, data scientists and product managers. Learn to orchestrate complex agents and create professional applications.",
+        "title": "Architect Training: From idea to scalable software",
+        "subtitle": "The vision of an entrepreneur, the power of a tech lead",
+        "description": "Professional training for entrepreneurs and tech leads. Master scalable software architecture and enterprise development methodologies.",
         "duration": "12 intensive hours",
-        "level": "Advanced",
-        "price": "$300 CAD",
+        "level": "Professional",
+        "price": "€3200",
         "features": [
-          "Orchestration with Claude Flow",
-          "Specialized agents and MCP servers",
-          "API and database integrations",
-          "Complex workflows and pro deployment"
+          "Scalable software architecture",
+          "Enterprise methodologies and advanced patterns",
+          "Technical leadership and decision-making",
+          "From idea to professional deployment"
         ],
-        "benefits": [
-          "Complex and scalable applications",
-          "Multi-agent orchestration",
-          "Personalized support"
-        ],
-        "cta": "Choose Advanced Training",
-        "footer": "For ambitious professionals"
+        "benefits": {
+          "0": "Scalable and robust software",
+          "1": "Tech lead competencies", 
+          "2": "Expert personalized mentoring"
+        },
+        "cta": "Master Professional Architecture",
+        "footer": "For entrepreneurs and tech leads"
       }
     },
     "title": "Who is the training for?",
@@ -2002,5 +2019,663 @@
     "description": "Our team of experts is available to answer all your personalized questions.",
     "button": "Contact us",
     "response_time": "Response within 24h"
+  },
+  "formation_kickstart": {
+    "hero": {
+      "title": "Create your first application",
+      "title_highlight": "with AI",
+      "subtitle": "6-hour intensive training to master the basics of agentic development and create your first functional application with artificial intelligence.",
+      "duration": "of training",
+      "level": "Beginner level",
+      "online": "Accessible online",
+      "cta_primary": "Start now",
+      "cta_secondary": "View detailed program"
+    },
+    "overview": {
+      "title": "Transform yourself into an application creator",
+      "description": "This training gives you the keys to go from idea to realization. Learn to communicate effectively with AI agents to create functional web applications without prior technical knowledge.",
+      "benefits": {
+        "practical": "100% practical training with concrete projects",
+        "methodology": "Proven AI specification methodology",
+        "support": "Community support and personalized guidance"
+      },
+      "results": {
+        "title": "At the end of this training",
+        "subtitle": "You will have created and deployed your first web application",
+        "items": {
+          "website": "Functional web application deployed online",
+          "mastery": "Mastery of agentic development tools",
+          "methodology": "Methodology for your future projects"
+        }
+      }
+    },
+    "curriculum": {
+      "title": "Detailed program",
+      "subtitle": "10 progressive modules to take you from beginner to autonomous web application creator.",
+      "learning_objectives": "Learning objectives",
+      "key_topics": "Key topics covered",
+      "module": "module",
+      "modules": {
+        "module_1": {
+          "title": "Web fundamentals",
+          "duration": "30min",
+          "description": "Discover web development fundamentals and essential technologies.",
+          "learning_objectives": [
+            "Understand the difference between static and dynamic sites",
+            "Identify Front-end vs Back-end components",
+            "Master hosting and domain name concepts"
+          ],
+          "key_topics": [
+            "HTML/CSS/JS - The 3 fundamental building blocks",
+            "Hosting and domain names",
+            "Practical workshop: live modification via browser console"
+          ]
+        },
+        "module_2": {
+          "title": "Understanding the agentic revolution",
+          "duration": "30min",
+          "description": "Explore the new era of AI and discover why agentic programming changes everything.",
+          "learning_objectives": [
+            "Define and differentiate agentic from no-code and classic code",
+            "Identify concrete opportunities of agentic programming",
+            "Understand the role and access to AI agents"
+          ],
+          "key_topics": [
+            "Definition and differences with no-code",
+            "Opportunities: speed, accessibility, cost",
+            "Code environment and MCP tools",
+            "Agent autonomy and roles"
+          ]
+        },
+        "module_3": {
+          "title": "Vibe coding",
+          "duration": "30min",
+          "description": "Discover AI-assisted development platforms and their limitations.",
+          "learning_objectives": [
+            "Install and navigate Lovable, Bolt, Cursor",
+            "Understand differences between platforms",
+            "Create your first \"Hello World\" with an agent"
+          ],
+          "key_topics": [
+            "Installation and tool discovery",
+            "Navigation and interface",
+            "First project generated with an agent",
+            "Limitations: bugs, adjustments, long-term development"
+          ]
+        },
+        "module_4": {
+          "title": "From need to specification",
+          "duration": "1h",
+          "description": "Learn to transform your ideas into clear specifications for AI agents.",
+          "learning_objectives": [
+            "Transform an idea into a concrete project",
+            "Communicate effectively with an AI agent",
+            "Write specifications understandable by AI"
+          ],
+          "key_topics": [
+            "Idea transformation into project",
+            "Agent language for best results",
+            "Clear specification writing",
+            "Best practices and context",
+            "Guided workshop: spec for your first project"
+          ]
+        },
+        "module_5": {
+          "title": "Generate your first project with an agent",
+          "duration": "1h",
+          "description": "Go from specification to functional project using AI agents.",
+          "learning_objectives": [
+            "Convert specification into generated site/app",
+            "Master interaction: correction, refinement, iteration",
+            "Obtain a functional basic project"
+          ],
+          "key_topics": [
+            "From specification to generated code",
+            "Interaction and iteration techniques",
+            "Correction and refinement",
+            "Functional result validation"
+          ]
+        },
+        "module_6": {
+          "title": "Improve projects and add features",
+          "duration": "30min",
+          "description": "Enhance your projects with advanced features and optimized design.",
+          "learning_objectives": [
+            "Modify design, colors, texts",
+            "Add simple features",
+            "Apply UI/UX principles"
+          ],
+          "key_topics": [
+            "Design and content customization",
+            "Feature addition: forms, buttons, menus",
+            "Essential UI/UX principles",
+            "Connection and authentication",
+            "Complex task deconstruction"
+          ]
+        },
+        "module_7": {
+          "title": "Deploy your project online",
+          "duration": "30min",
+          "description": "Deploy your project and make it accessible worldwide.",
+          "learning_objectives": [
+            "Easily host your project",
+            "Connect to a domain name",
+            "Understand security and GDPR aspects"
+          ],
+          "key_topics": [
+            "Hosting: Netlify, Vercel, etc.",
+            "Domain name configuration",
+            "Live deployment",
+            "Security and GDPR",
+            "Domain purchase and customization"
+          ]
+        },
+        "module_8": {
+          "title": "Common mistakes and best practices",
+          "duration": "30min",
+          "description": "Avoid common pitfalls and adopt best practices.",
+          "learning_objectives": [
+            "Identify pitfalls to avoid",
+            "Adopt iteration best practices",
+            "Plan post-training progression"
+          ],
+          "key_topics": [
+            "Pitfalls: vague specs, over-delegation, lack of testing",
+            "Best practices for rapid iteration",
+            "Progression after training"
+          ]
+        },
+        "module_9": {
+          "title": "Final project",
+          "duration": "30min",
+          "description": "Complete a full project with guided autonomy.",
+          "learning_objectives": [
+            "Build a mini-site/app autonomously",
+            "Follow a complete step-by-step example",
+            "Finalize with online deployment"
+          ],
+          "key_topics": [
+            "Video challenge with guided autonomy",
+            "Complete step-by-step example",
+            "Final deployment",
+            "Conclusion and next steps"
+          ]
+        },
+        "module_10": {
+          "title": "Going further, the next steps",
+          "duration": "30min",
+          "description": "Discover advanced tools to deepen your skills.",
+          "learning_objectives": [
+            "Advanced VS Code and Cursor overview",
+            "Understand sub-agents and automation",
+            "Avoid over-engineering trap"
+          ],
+          "key_topics": [
+            "Advanced VS Code and Cursor usage",
+            "Sub-agents and automation tools",
+            "Over-engineering prevention"
+          ]
+        }
+      }
+    },
+    "outcomes": {
+      "title": "What you'll be able to do",
+      "subtitle": "Concrete skills acquired after training",
+      "skills": {
+        "tools": {
+          "title": "Master agentic tools",
+          "description": "Use Lovable, Bolt, Cursor and other platforms with expertise"
+        },
+        "specifications": {
+          "title": "Write effective specifications",
+          "description": "Communicate clearly with AI to get desired results"
+        },
+        "websites": {
+          "title": "Create functional web applications",
+          "description": "Develop and deploy complete web applications"
+        },
+        "hosting": {
+          "title": "Manage hosting and domains",
+          "description": "Deploy your projects online and configure domains"
+        },
+        "practices": {
+          "title": "Apply best practices",
+          "description": "Avoid common pitfalls and iterate effectively"
+        },
+        "planning": {
+          "title": "Plan your future projects",
+          "description": "Methodology to develop more complex projects"
+        }
+      }
+    },
+    "prerequisites": {
+      "title": "Prerequisites",
+      "target_title": "Who is this training for",
+      "requirements": {
+        "no_experience": {
+          "title": "No technical experience required",
+          "description": "This training is designed for complete beginners"
+        },
+        "computer": {
+          "title": "Computer with internet connection",
+          "description": "Compatible with Mac and PC"
+        },
+        "motivation": {
+          "title": "Motivation to learn",
+          "description": "Desire to create and experiment with AI"
+        }
+      },
+      "target_audience": [
+        "Entrepreneurs wanting to create their website",
+        "Freelancers looking to expand their services",
+        "Students seeking modern skills",
+        "Professionals wanting to understand AI",
+        "Creatives wanting to bring their ideas to life"
+      ]
+    },
+    "enrollment": {
+      "title": "Ready to create your first website with AI?",
+      "subtitle": "Join hundreds of students who have already transformed their ideas into reality thanks to our Kickstart training.",
+      "stats": {
+        "duration": "Intensive training",
+        "practical": "Practical",
+        "guarantee": "Guarantee"
+      },
+      "cta_primary": "Enroll now",
+      "cta_secondary": "Back to training",
+      "stripe_button": "Enroll now - €280"
+    },
+    "navigation": {
+      "home": "Home",
+      "formation": "Training",
+      "current": "Kickstart Training"
+    }
+  },
+  "parcours": {
+    "meta": {
+      "title": "Your Agentic Programming Learning Journey | Newcode",
+      "description": "Discover our progressive training pathway: from beginner to architect, master agentic programming and create applications with AI.",
+      "keywords": "training journey, agentic programming, kickstart training, architect training, progressive learning, AI development"
+    },
+    "hero": {
+      "title": "Your Learning Journey",
+      "subtitle": "From beginner to architect: master AI-powered application creation",
+      "overview": "Discover our progressive approach that transforms non-developers into application creators through agentic programming",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "expert": "Expert"
+      }
+    },
+    "formations": {
+      "title": "Our Training Programs in Detail",
+      "subtitle": "Choose the training that matches your level and objectives",
+      "kickstart": {
+        "level": "Beginner",
+        "title": "Kickstart Training",
+        "target": "Create your first website or app with AI in hours",
+        "price": "280€",
+        "duration": "6 hours",
+        "cta": "Start with Kickstart Training"
+      },
+      "architecte": {
+        "level": "Intermediate & Advanced",
+        "title": "Architect Training",
+        "target": "From idea to scalable software: an entrepreneur's vision, a tech lead's power",
+        "price": "3200€",
+        "duration": "In-depth training",
+        "cta": "Access Architect Training"
+      },
+      "price_label": "Price",
+      "duration_label": "Duration"
+    }
+  },
+  "formation_architecte": {
+    "hero": {
+      "title": "Architect Training",
+      "title_highlight": "From idea to scalable software",
+      "subtitle": "Master AI agent architecture and orchestration to create robust and scalable enterprise applications.",
+      "duration": "comprehensive training",
+      "level": "Advanced level",
+      "online": "100% online",
+      "cta_primary": "Access the training",
+      "cta_secondary": "Discover the program"
+    },
+    "overview": {
+      "title": "Become an agentic development architect",
+      "description": "This advanced training transforms you into an expert capable of designing and orchestrating complex systems with specialized AI agents. Ideal for experienced professionals seeking to master modern enterprise architecture.",
+      "benefits": {
+        "enterprise": "Enterprise architecture with AI agents",
+        "scalability": "Scalable and robust solutions",
+        "leadership": "Technical leadership and innovation"
+      },
+      "results": {
+        "title": "Professional objectives",
+        "subtitle": "Enterprise-level skills guaranteed",
+        "items": {
+          "architecture": "Design complex architectures",
+          "orchestration": "Orchestrate agent teams",
+          "enterprise": "Deploy in enterprise environments"
+        }
+      }
+    },
+    "curriculum": {
+      "title": "Advanced training program",
+      "subtitle": "6 specialized modules to master enterprise AI agent architecture and orchestration",
+      "module": "Module",
+      "learning_objectives": "Learning objectives",
+      "key_topics": "Key topics",
+      "modules": {
+        "module_1": {
+          "title": "Why agentic AI will shape tomorrow's code and practices",
+          "duration": "90 min",
+          "description": "Strategic vision of agentic development",
+          "learning_objectives": [
+            "Understand the fundamental shift in software development",
+            "Recognize the strategic importance of AI-powered development",
+            "Grasp the competitive advantages of agentic programming",
+            "Analyze professional impact and career future-proofing strategies"
+          ],
+          "key_topics": [
+            "Newcode video introduction",
+            "Industry statistics and developer trends",
+            "Claude Flow and Orchids demonstrations",
+            "Professional impact analysis",
+            "Career future-proofing strategies"
+          ]
+        },
+        "module_2": {
+          "title": "Beyond ChatGPT: What is an agent?",
+          "duration": "120 min",
+          "description": "Agent architecture and design for development workflows",
+          "learning_objectives": [
+            "Define and architect AI agents for development workflows",
+            "Understand agent capabilities and limitations",
+            "Design agent-powered development environments",
+            "Master agent autonomy and role-based specialization"
+          ],
+          "key_topics": [
+            "Agent definition and architecture",
+            "Development environment setup (cost-free, maintenance-free)",
+            "MCP (Model Context Protocol) tools and integration",
+            "Agent autonomy and role-based specialization",
+            "Professional development cycle coverage",
+            "Risk management and reliability strategies"
+          ]
+        },
+        "module_3": {
+          "title": "Setting up your agents - Part 1",
+          "duration": "120 min",
+          "description": "Configuring professional-grade agent environments",
+          "learning_objectives": [
+            "Configure professional-grade agent environments",
+            "Implement advanced orchestration for complex tasks",
+            "Set up development infrastructure",
+            "Integrate with existing development workflows"
+          ],
+          "key_topics": [
+            "Roocode setup (modes, indexing, MCP)",
+            "Complex task orchestration",
+            "Professional development environment configuration",
+            "Integration with existing development workflows"
+          ]
+        },
+        "module_4": {
+          "title": "Setting up your agents - Part 2",
+          "duration": "120 min",
+          "description": "Professional development tools integration",
+          "learning_objectives": [
+            "Master professional development tools integration",
+            "Configure specialized agents for different roles",
+            "Optimize development workflows",
+            "Automate and optimize efficiency"
+          ],
+          "key_topics": [
+            "Professional Cursor/VS Code setup",
+            "Claude Code configuration and optimization",
+            "Specialized agent creation and management",
+            "Workflow automation and efficiency optimization"
+          ]
+        },
+        "module_5": {
+          "title": "Keys to master",
+          "duration": "150 min",
+          "description": "Advanced methodologies and quality assurance strategies",
+          "learning_objectives": [
+            "Master advanced development methodologies",
+            "Implement quality assurance and alignment strategies",
+            "Debug and optimize complex systems",
+            "Create quality evaluation frameworks"
+          ],
+          "key_topics": [
+            "Development limitations and challenges (vibe coding pitfalls)",
+            "SPARC methodology implementation",
+            "Advanced Claude-flow techniques",
+            "Prompt engineering science (ultrathink)",
+            "Complex task deconstruction strategies",
+            "Alignment methods (TDD, PRD, modes, subagents)",
+            "Quality evaluation frameworks",
+            "Advanced debugging techniques",
+            "UI creation with Magic MCP",
+            "Professional tips & tricks (NotebookLM, voice input, advanced tools)"
+          ]
+        },
+        "module_6": {
+          "title": "BMAD: The missing pieces",
+          "duration": "180 min",
+          "description": "Complete professional development lifecycle",
+          "learning_objectives": [
+            "Complete the professional development lifecycle",
+            "Deploy production-ready applications",
+            "Establish enterprise-grade development practices",
+            "Scale development teams with agents"
+          ],
+          "key_topics": [
+            "Complete development cycle coverage",
+            "Production deployment strategies",
+            "Enterprise tool integration (Clerk, Prisma, PostgreSQL, Railway, Vercel, Netlify)",
+            "Professional specification examples",
+            "Workflow customization and optimization",
+            "Custom agent development",
+            "Enterprise collaboration and project management",
+            "Scaling development teams with agents"
+          ]
+        }
+      }
+    },
+    "target_audience": {
+      "title": "Designed for experienced professionals",
+      "subtitle": "This training targets technical leaders and ambitious entrepreneurs",
+      "audiences": [
+        {
+          "title": "CTOs & Technical Directors",
+          "description": "Strategic technology adoption",
+          "icon": "🎯"
+        },
+        {
+          "title": "Senior Developers",
+          "description": "Advanced skill development and career progression",
+          "icon": "💻"
+        },
+        {
+          "title": "Tech Entrepreneurs",
+          "description": "Rapid MVP development and scaling",
+          "icon": "🚀"
+        },
+        {
+          "title": "Development Teams",
+          "description": "Productivity multiplication strategies",
+          "icon": "👥"
+        }
+      ]
+    },
+    "value_proposition": {
+      "title": "Enterprise value proposition",
+      "items": [
+        {
+          "title": "10x Development speed",
+          "description": "Accelerate development cycles",
+          "icon": "⚡"
+        },
+        {
+          "title": "Scalable architecture",
+          "description": "Build enterprise-ready applications",
+          "icon": "🏗️"
+        },
+        {
+          "title": "Technical leadership",
+          "description": "Lead AI-powered development teams",
+          "icon": "👨‍💼"
+        },
+        {
+          "title": "Competitive advantage",
+          "description": "Master cutting-edge development practices",
+          "icon": "🏆"
+        }
+      ]
+    },
+    "roi_justification": {
+      "title": "Return on investment justification",
+      "subtitle": "Measurable impact on your organization",
+      "benefits": [
+        "Reduced development time and costs",
+        "Enhanced team productivity",
+        "Competitive market positioning",
+        "Career advancement opportunities",
+        "Enterprise-grade skill development"
+      ]
+    },
+    "prerequisites": {
+      "title": "Professional prerequisites",
+      "subtitle": "Advanced level training",
+      "requirements": {
+        "experience": {
+          "title": "Technical or managerial experience",
+          "description": "Basic knowledge of software development or technical team management"
+        },
+        "environment": {
+          "title": "Professional development environment",
+          "description": "Access to development tools and testing environments"
+        },
+        "commitment": {
+          "title": "Commitment to advanced learning",
+          "description": "Dedicated time to master complex concepts and implementations"
+        }
+      },
+      "ideal_candidates": [
+        "CTOs and technical directors seeking innovation",
+        "Senior developers wanting to evolve towards architecture",
+        "Tech entrepreneurs with ambitious projects",
+        "Consultants seeking AI expertise",
+        "Team leaders modernizing their approaches"
+      ]
+    },
+    "professional_outcomes": {
+      "title": "Professional outcomes",
+      "subtitle": "Skills and capabilities you will master",
+      "outcomes": [
+        {
+          "title": "Agent architecture",
+          "description": "Design and implement complex agent systems",
+          "icon": "🏛️"
+        },
+        {
+          "title": "Advanced orchestration",
+          "description": "Coordinate agent teams for enterprise projects",
+          "icon": "🎼"
+        },
+        {
+          "title": "Enterprise deployment",
+          "description": "Secure and scalable production deployment",
+          "icon": "🏢"
+        },
+        {
+          "title": "Innovation leadership",
+          "description": "Lead your organization's digital transformation",
+          "icon": "💡"
+        },
+        {
+          "title": "Continuous optimization",
+          "description": "Improve and evolve existing systems",
+          "icon": "🔄"
+        },
+        {
+          "title": "Team training",
+          "description": "Transfer knowledge and train other professionals",
+          "icon": "👨‍🏫"
+        }
+      ]
+    },
+    "enterprise_options": {
+      "title": "Enterprise options",
+      "subtitle": "Solutions adapted to organizational needs",
+      "options": [
+        {
+          "title": "Team training",
+          "description": "Dedicated sessions for your development teams",
+          "features": ["Private sessions", "Customized content", "Dedicated support"]
+        },
+        {
+          "title": "Strategic consultation",
+          "description": "Support for organizational adoption",
+          "features": ["Strategic assessment", "Personalized roadmap", "Ongoing support"]
+        },
+        {
+          "title": "Guided implementation",
+          "description": "Support for implementation in your projects",
+          "features": ["Practical coaching", "Code review", "Technical mentoring"]
+        }
+      ]
+    },
+    "enrollment": {
+      "title": "Ready to transform your development approach?",
+      "subtitle": "Join the elite of professionals who already master enterprise agentic architecture.",
+      "stats": {
+        "duration": "Complete intensive training",
+        "enterprise": "Enterprise level",
+        "support": "Professional support"
+      },
+      "cta_primary": "Access the training",
+      "cta_secondary": "Back to training",
+      "cta_enterprise": "Enterprise options"
+    },
+    "navigation": {
+      "home": "Home",
+      "formation": "Training",
+      "current": "Architect Training"
+    }
+  },
+  "payment_flexibility": {
+    "primary_message": "For installment payments:",
+    "contact_link": "contact us",
+    "benefits": {
+      "flexible_plans": "Flexible plans available",
+      "quick_response": "24h response guaranteed"
+    },
+    "options_title": "Installment options",
+    "installment_period": "{months} months",
+    "per_month": "month",
+    "calculation_note": "Approximate amounts - custom plan on request",
+    "contact_title": "How to contact us",
+    "email_contact": "Send email",
+    "email_description": "Response guaranteed within 24h",
+    "alternative_contact": "Or contact us directly:",
+    "email_subject": "Payment plan request - {formation}",
+    "email_body": "Hello,\n\nI am interested in {formation} (price: {price}€) and would like to discuss installment payment options.\n\nMy preferences:\n- Desired duration: [3, 6 or 12 months]\n- Monthly budget: [amount]\n- Additional information: [your specific needs]\n\nPlease contact me to discuss a suitable solution.\n\nBest regards,\n[Your name]",
+    "process_title": "Our response process",
+    "process": {
+      "step1": "Your request",
+      "step2": "Our response",
+      "step3": "Custom plan",
+      "step4": "Enrollment confirmed",
+      "immediate": "Immediate",
+      "within_24h": "Within 24h",
+      "within_48h": "Within 48h",
+      "same_day": "Same day"
+    },
+    "formations": {
+      "kickstart": "Kickstart Training",
+      "architecte": "Architect Training"
+    }
   }
 }

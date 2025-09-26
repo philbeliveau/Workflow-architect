@@ -27,17 +27,7 @@ const HeroSectionFlow: React.FC = memo(() => {
                style={{ backgroundPosition: '50% 50%', backgroundSize: '140% 140%' }} />
         </div>
         
-        {/* Textural pattern layer */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute inset-0" 
-               style={{
-                 backgroundImage: `
-                   radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
-                   radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px)
-                 `,
-                 backgroundSize: '60px 60px, 80px 80px'
-               }} />
-        </div>
+        {/* Textural pattern layer removed for cleaner design */}
         
         {/* Organic movement layer */}
         <motion.div 

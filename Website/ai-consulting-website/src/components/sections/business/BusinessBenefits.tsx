@@ -96,7 +96,7 @@ const BusinessBenefits: React.FC = () => {
               {realBottlenecks.map((benefit, index) => (
                 <motion.div
                   key={benefit.title}
-                  className="bg-background-accent-grey/50 rounded-xl p-6"
+                  className="bg-background-accent-grey/70 rounded-xl p-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}

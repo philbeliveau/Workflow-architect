@@ -1,0 +1,82 @@
+# Quality Gate Decision - Formation Kickstart Detailed Page
+schema: 1
+story: "PAGE.001"
+story_title: "Formation Kickstart Detailed Page"
+gate: FAIL
+status_reason: "Critical translation compliance violations prevent production deployment. Functionality complete but violates mandatory French-first i18n requirements."
+reviewer: "Quinn (Test Architect)"
+updated: "2025-01-26T00:00:00Z"
+
+# Waiver status
+waiver: { active: false }
+
+# Critical issues preventing production deployment
+top_issues:
+  - id: "I18N-001"
+    severity: high
+    finding: "All curriculum module data hardcoded in French instead of using translation system"
+    suggested_action: "Externalize curriculum data to translation files and implement proper i18n keys"
+    suggested_owner: "dev"
+    refs: ["src/app/[locale]/formation-kickstart/page.tsx:32-203"]
+  - id: "I18N-002"
+    severity: high
+    finding: "Breadcrumb navigation hardcoded in French violating CLAUDE.md translation requirements"
+    suggested_action: "Replace hardcoded breadcrumbs with i18n translation keys"
+    suggested_owner: "dev"
+    refs: ["src/app/[locale]/formation-kickstart/page.tsx:224-233"]
+  - id: "A11Y-001"
+    severity: medium
+    finding: "Missing accessibility attributes for interactive elements"
+    suggested_action: "Add aria-expanded, aria-label, and focus management for collapsible modules"
+    suggested_owner: "dev"
+    refs: ["src/app/[locale]/formation-kickstart/page.tsx:408-433"]
+  - id: "TEST-001"
+    severity: medium
+    finding: "No test coverage implemented for new page functionality"
+    suggested_action: "Implement unit, integration, and accessibility test suite"
+    suggested_owner: "dev"
+    refs: ["src/app/[locale]/formation-kickstart/"]
+
+# Quality scoring
+quality_score: 40  # 100 - (20*2 FAILs) - (10*6 CONCERNS) = 40
+expires: "2025-02-09T00:00:00Z"
+
+# Evidence from review
+evidence:
+  tests_reviewed: 0
+  risks_identified: 4
+  trace:
+    ac_covered: [1, 2, 3, 4, 5, 6]  # All ACs functionally met
+    ac_gaps: []  # No functional gaps
+
+# Non-functional requirements validation
+nfr_validation:
+  security:
+    status: PASS
+    notes: "No security vulnerabilities - presentational content only"
+  performance:
+    status: PASS
+    notes: "Acceptable bundle size (7.02KB) and SSG implementation"
+  reliability:
+    status: CONCERNS
+    notes: "Missing error boundaries and test coverage"
+  maintainability:
+    status: FAIL
+    notes: "Critical i18n violations make code unmaintainable for bilingual requirements"
+
+# Actionable recommendations
+recommendations:
+  immediate:  # Must fix before production
+    - action: "Externalize all curriculum data to fr.json and en.json translation files"
+      refs: ["src/app/[locale]/formation-kickstart/page.tsx:32-203"]
+    - action: "Replace hardcoded breadcrumb navigation with i18n translation keys"
+      refs: ["src/app/[locale]/formation-kickstart/page.tsx:224-233"]
+    - action: "Implement comprehensive translation validation"
+      refs: ["src/messages/fr.json", "src/messages/en.json"]
+  future:  # Can be addressed in subsequent sprints
+    - action: "Add accessibility attributes and keyboard navigation support"
+      refs: ["src/app/[locale]/formation-kickstart/page.tsx:408-433"]
+    - action: "Implement test suite covering component functionality"
+      refs: ["src/app/[locale]/formation-kickstart/"]
+    - action: "Add structured data (JSON-LD) for educational content"
+      refs: ["src/app/[locale]/formation-kickstart/layout.tsx"]

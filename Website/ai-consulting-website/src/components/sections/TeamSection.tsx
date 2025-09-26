@@ -128,7 +128,7 @@ const TeamSection: React.FC = () => {
               className="group"
               variants={cardVariants}
             >
-              <div className="relative bg-gradient-to-br from-primary-blue/10 to-accent-red/10 border border-text-muted/30 rounded-3xl p-8 hover:border-primary-blue/50 transition-all duration-300 h-full">
+              <div className="relative bg-gradient-to-br from-primary-blue/30 to-accent-red/30 border border-text-muted/60 rounded-3xl p-8 hover:border-primary-blue/70 transition-all duration-300 h-full">
                 <div className="flex flex-col items-center text-center space-y-6">
                   {/* Profile Image */}
                   <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary-blue/20 group-hover:border-primary-blue/40 transition-all duration-300">

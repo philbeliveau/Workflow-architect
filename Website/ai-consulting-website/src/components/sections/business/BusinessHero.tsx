@@ -130,7 +130,7 @@ const BusinessHero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="space-y-6"
           >
-            <div className="bg-background-accent-grey/50 border border-primary-blue/30 rounded-lg p-6">
+            <div className="bg-background-accent-grey/70 border border-primary-blue/50 rounded-lg p-6">
               <h3 className="text-primary-blue font-semibold mb-4 flex items-center gap-2">
                 <Lightbulb className="w-5 h-5" />
                 {t('process.title')}
@@ -159,7 +159,7 @@ const BusinessHero: React.FC = () => {
             { key: "cost", icon: Users, color: "text-primary-blue" },
             { key: "control", icon: Briefcase, color: "text-accent-red" },
           ].map((item, index) => (
-            <div key={index} className="bg-background-accent-grey/30 border border-primary-blue/30 rounded-xl p-4 text-center">
+            <div key={index} className="bg-background-accent-grey/60 border border-primary-blue/50 rounded-xl p-4 text-center">
               <item.icon className={`w-6 h-6 ${item.color || 'text-primary-blue'} mx-auto mb-2`} />
               <div className={`text-2xl font-bold ${item.color || 'text-primary-blue'} mb-1`}>{statsT(`${item.key}.value`)}</div>
               <div className="text-text-secondary text-xs">{statsT(`${item.key}.label`)}</div>

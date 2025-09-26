@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://newcode.ai'),
   title: "NEWCODE - Développement IA Accéléré",
   description: "NEWCODE vous aide à construire et déployer vos solutions IA. Tout le monde mérite l'accès aux capacités logicielles modernes.",
 };

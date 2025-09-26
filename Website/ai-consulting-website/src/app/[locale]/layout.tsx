@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Manrope, Nunito_Sans } from "next/font/google";
 import SessionProvider from "@/components/auth/SessionProvider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { PromotionalBanner } from "@/components/sections/PromotionalBanner";
+import { PromotionalBannerProvider } from "@/contexts/PromotionalBannerContext";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -13,6 +15,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const manrope = Manrope({
+  variable: "--font-brutalist-heading",
+  subsets: ["latin"],
+});
+
+const nunitoSans = Nunito_Sans({
+  variable: "--font-brutalist-body",
   subsets: ["latin"],
 });
 
@@ -79,7 +91,7 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" href="/images/N-favicon.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${nunitoSans.variable} antialiased promo-banner-active`}
         suppressHydrationWarning={true}
       >
         <a href="#main-content" className="skip-link">
@@ -87,7 +99,10 @@ export default async function LocaleLayout({
         </a>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <SessionProvider session={undefined}>
-            {children}
+            <PromotionalBannerProvider>
+              <PromotionalBanner />
+              {children}
+            </PromotionalBannerProvider>
           </SessionProvider>
         </NextIntlClientProvider>
       </body>

@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import { usePromotionalBannerContext } from '@/contexts/PromotionalBannerContext';
 
 const Navigation: React.FC = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,6 +17,13 @@ const Navigation: React.FC = memo(() => {
   const router = useRouter();
   const t = useTranslations('navigation');
   const locale = useLocale();
+  const { isBannerVisible } = usePromotionalBannerContext();
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Handle hydration
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
@@ -70,7 +78,7 @@ const Navigation: React.FC = memo(() => {
     if (currentPath === '/') {
       return [
         { name: t('home'), href: anchors.home, isActive: true },
-        { name: t('tracks'), href: '#track-selection', isActive: false },
+        { name: t('parcours'), href: '#track-selection', isActive: false },
         { name: t('blog'), href: '/blog', isActive: false },
         { name: t('contact'), href: anchors.contact, isActive: false }
       ];
@@ -78,7 +86,7 @@ const Navigation: React.FC = memo(() => {
       // For specialized pages, show main sections but link back to home page sections
       return [
         { name: t('home'), href: `/#accueil`, isActive: false },
-        { name: t('tracks'), href: `/#track-selection`, isActive: currentPath === '/developers' || currentPath === '/business' },
+        { name: t('parcours'), href: `/#track-selection`, isActive: false },
         { name: t('blog'), href: '/blog', isActive: currentPath.includes('/blog') },
         { name: t('contact'), href: `/#contact`, isActive: false }
       ];
@@ -88,25 +96,15 @@ const Navigation: React.FC = memo(() => {
   const navItems = getNavItems();
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background-dark-alt/98 backdrop-blur-lg shadow-lg border-b border-primary-blue/30' 
-          : 'bg-background-dark-alt/80 backdrop-blur-sm shadow-sm'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <header
+      className={`fixed ${!isHydrated || isBannerVisible ? 'top-16 md:top-20' : 'top-0'} left-0 right-0 z-[100] bg-background-dark-alt/95 backdrop-blur-md shadow-sm border-b border-primary-blue/20 transition-all duration-300 ease-in-out`}
+      suppressHydrationWarning
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <motion.div
-              className="flex items-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
+            <div className="flex items-center hover:opacity-90 transition-opacity duration-200">
               <Image
                 src="/newcode-logo.jpeg"
                 alt="NEWCODE Logo"
@@ -114,7 +112,7 @@ const Navigation: React.FC = memo(() => {
                 height={48}
                 className="h-12 w-auto object-contain"
               />
-            </motion.div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -126,24 +124,20 @@ const Navigation: React.FC = memo(() => {
               
               return (
                 <Component key={item.name} {...linkProps}>
-                  <motion.div
+                  <div
                     className={`transition-colors duration-200 relative group cursor-pointer ${
                       item.isActive 
                         ? 'text-primary-blue font-semibold' 
                         : 'text-text-light hover:text-primary-blue'
                     }`}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
                   >
                     {item.name}
-                    <motion.div
+                    <div
                       className={`absolute -bottom-1 left-0 h-0.5 bg-accent-red transition-all duration-300 ${
                         item.isActive ? 'w-full' : 'w-0 group-hover:w-full'
                       }`}
-                      whileHover={{ width: "100%" }}
                     />
-                  </motion.div>
+                  </div>
                 </Component>
               );
             })}
@@ -188,7 +182,7 @@ const Navigation: React.FC = memo(() => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
               role="navigation"
               aria-label={locale === 'fr' ? "Menu mobile" : "Mobile menu"}
             >
@@ -200,28 +194,20 @@ const Navigation: React.FC = memo(() => {
                   
                   return (
                     <Component key={item.name} {...linkProps}>
-                      <motion.div
+                      <div
                         className={`block transition-colors duration-200 py-2 cursor-pointer ${
                           item.isActive 
                             ? 'text-primary-blue font-semibold' 
                             : 'text-text-light hover:text-primary-blue'
                         }`}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
                         onClick={closeMobileMenu}
                       >
                         {item.name}
-                      </motion.div>
+                      </div>
                     </Component>
                   );
                 })}
-                <motion.div
-                  className="pt-4 border-t border-primary-blue/30 space-y-3"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
+                <div className="pt-4 border-t border-primary-blue/30 space-y-3">
                   <div className="flex items-center justify-center gap-2 py-2">
                     <Globe className="w-4 h-4 text-text-secondary" />
                     <button
@@ -239,13 +225,13 @@ const Navigation: React.FC = memo(() => {
                   >
                     {locale === 'fr' ? 'Évaluation Gratuite' : 'Free Assessment'}
                   </Button>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
   );
 });
 

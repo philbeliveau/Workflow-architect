@@ -1,0 +1,17 @@
+
+> ai-consulting-website@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, using available port 3005 instead.
+   ▲ Next.js 15.3.4
+   - Local:        http://localhost:3005
+   - Network:      http://172.31.172.242:3005
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1238ms
+ ✓ Compiled /middleware in 120ms (137 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1735ms (1918 modules)
+ HEAD / 200 in 2729ms
+[?25h

@@ -1,0 +1,188 @@
+  "parcours": {
+    "meta": {
+      "title": "Votre Parcours d'Apprentissage en Programmation Agentique | Newcode",
+      "description": "Découvrez notre parcours progressif de formation : de débutant à architecte, maîtrisez la programmation agentique et créez des applications avec l'IA.",
+      "keywords": "parcours formation, programmation agentique, formation kickstart, formation architecte, apprentissage progressif, développement IA"
+    },
+    "hero": {
+      "title": "Votre Parcours d'Apprentissage",
+      "subtitle": "De débutant à architecte : maîtrisez la création d'applications avec l'IA",
+      "overview": "Découvrez notre approche progressive qui transforme les non-développeurs en créateurs d'applications grâce à la programmation agentique",
+      "level_beginner": "Débutant",
+      "level_intermediate": "Intermédiaire",
+      "level_expert": "Expert",
+      "scroll_hint": "Découvrez votre parcours"
+    },
+    "learning_path": {
+      "title": "Votre Progression Étape par Étape",
+      "subtitle": "Un parcours structuré pour passer de novice à expert en programmation agentique",
+      "outcomes_title": "Ce que vous maîtriserez",
+      "kickstart": {
+        "level": "Débutant",
+        "title": "Formation Kickstart",
+        "description": "Créez votre premier site ou app avec l'IA en quelques heures",
+        "duration": "6 heures de formation",
+        "price": "280€",
+        "outcomes": [
+          "Comprendre les bases du développement web",
+          "Maîtriser les outils de programmation agentique",
+          "Créer et déployer votre première application",
+          "Acquérir les fondamentaux de la spécification"
+        ]
+      },
+      "architecte": {
+        "level": "Intermédiaire & Avancé",
+        "title": "Formation Architecte",
+        "description": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
+        "duration": "Formation approfondie",
+        "price": "3200€",
+        "outcomes": [
+          "Maîtriser l'architecture logicielle avec agents IA",
+          "Créer des applications scalables et professionnelles",
+          "Diriger des équipes de développement agentique",
+          "Implémenter des solutions enterprise-grade"
+        ]
+      },
+      "cta_kickstart": "Commencer avec Kickstart",
+      "cta_architecte": "Accéder à Formation Architecte"
+    },
+    "formations": {
+      "title": "Nos Formations en Détail",
+      "subtitle": "Choisissez la formation qui correspond à votre niveau et vos objectifs",
+      "price_label": "Prix",
+      "duration_label": "Durée",
+      "outcomes_title": "Objectifs d'apprentissage",
+      "learn_more": "En savoir plus",
+      "comparison_note": "Les deux formations se complètent pour vous offrir une expertise complète en programmation agentique",
+      "kickstart": {
+        "level": "Débutant",
+        "title": "Formation Kickstart",
+        "target": "Créez votre premier site ou app avec l'IA en quelques heures",
+        "price": "280€",
+        "duration": "6 heures",
+        "outcomes": [
+          "Comprendre les bases du développement web",
+          "Maîtriser les outils de programmation agentique",
+          "Créer et déployer votre première application",
+          "Acquérir les fondamentaux de la spécification"
+        ],
+        "cta": "Commencer avec Formation Kickstart"
+      },
+      "architecte": {
+        "level": "Intermédiaire & Avancé",
+        "title": "Formation Architecte",
+        "target": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
+        "price": "3200€",
+        "duration": "Formation approfondie",
+        "outcomes": [
+          "Maîtriser l'architecture logicielle avec agents IA",
+          "Créer des applications scalables et professionnelles",
+          "Diriger des équipes de développement agentique",
+          "Implémenter des solutions enterprise-grade"
+        ],
+        "cta": "Accéder à Formation Architecte"
+      }
+    },
+    "progression_bridge": {
+      "title": "Prêt pour le niveau suivant ?",
+      "content": "Découvrez quand et pourquoi passer de Kickstart à Formation Architecte pour maximiser votre investissement",
+      "prerequisites_title": "Prérequis pour Formation Architecte",
+      "prerequisites_subtitle": "Maîtrisez ces éléments de Kickstart avant d'avancer :",
+      "prerequisites": [
+        "Créer et déployer une application complète",
+        "Maîtriser les bases de la spécification",
+        "Comprendre les fondamentaux des agents IA",
+        "Avoir un premier projet en portfolio"
+      ],
+      "benefits_title": "Pourquoi investir dans le niveau avancé",
+      "benefits_subtitle": "Les compétences professionnelles valent l'investissement :",
+      "benefits": [
+        {
+          "title": "Opportunités professionnelles",
+          "description": "Accédez à des postes de lead tech, architecte solution ou entrepreneur tech"
+        },
+        {
+          "title": "Projets d'envergure",
+          "description": "Créez des applications enterprise avec architecture scalable"
+        },
+        {
+          "title": "Leadership technique",
+          "description": "Dirigez des équipes et implémentez des solutions complexes"
+        }
+      ],
+      "readiness_indicator": "✓ Vous êtes prêt pour Formation Architecte",
+      "cta": "Accéder à Formation Architecte",
+      "cta_subtitle": "Passez au niveau professionnel"
+    },
+    "success_stories": {
+      "title": "Parcours de nos Apprenants",
+      "subtitle": "Découvrez comment nos étudiants ont progressé du niveau débutant au niveau expert",
+      "journey_label": "Parcours",
+      "outcome_label": "Résultat",
+      "progression_label": "Étapes",
+      "stories": [
+        {
+          "name": "Marie Dubois",
+          "role": "Étudiante en Commerce",
+          "journey": "Kickstart → Architecte en 6 mois",
+          "outcome": "Stage dans une startup tech, 3 apps au portfolio",
+          "quote": "J'ai découvert que je pouvais créer mes propres solutions sans dépendre de développeurs. Formation Architecte m'a donné la confiance pour diriger des projets tech.",
+          "progression": [
+            "Formation Kickstart : première app en une semaine",
+            "3 mois de pratique avec projets personnels",
+            "Formation Architecte : architecture enterprise"
+          ]
+        },
+        {
+          "name": "Thomas Martin",
+          "role": "Chef de Projet",
+          "journey": "Kickstart → Architecte → Lead Tech",
+          "outcome": "Promotion Lead Tech, équipe de 8 développeurs",
+          "quote": "Comprendre la programmation agentique m'a permis de mieux communiquer avec les équipes tech et de proposer des solutions innovantes.",
+          "progression": [
+            "Formation Kickstart : bases de la programmation agentique",
+            "Application en entreprise : prototypes rapides",
+            "Formation Architecte : leadership technique"
+          ]
+        },
+        {
+          "name": "Sophie Leroy",
+          "role": "Freelance Design",
+          "journey": "Kickstart → Spécialisation Apps",
+          "outcome": "Tarifs × 3, clients enterprise",
+          "quote": "Je ne fais plus que du design statique. Mes clients viennent me voir pour des apps complètes, et mes tarifs ont triplé.",
+          "progression": [
+            "Formation Kickstart : premières apps interactives",
+            "Spécialisation dans les apps métier",
+            "Clients enterprise et projets complexes"
+          ]
+        }
+      ],
+      "portfolio": {
+        "title": "Exemples de Projets par Niveau",
+        "subtitle": "Voici le type de projets que vous pourrez créer à chaque étape",
+        "kickstart": {
+          "level": "Projets Kickstart",
+          "projects": [
+            "Site vitrine interactif avec formulaires",
+            "Application de gestion de tâches",
+            "Portfolio professionnel avec CMS"
+          ]
+        },
+        "architecte": {
+          "level": "Projets Architecte",
+          "projects": [
+            "Plateforme SaaS avec authentification",
+            "Application métier avec base de données complexe",
+            "Système de gestion avec tableau de bord analytics"
+          ]
+        }
+      },
+      "career_progression": {
+        "title": "Accélérez votre progression",
+        "description": "Rejoignez nos formations et transformez votre carrière en quelques semaines",
+        "cta_kickstart": "Commencer par Kickstart",
+        "cta_case_studies": "Voir plus d'exemples"
+      }
+    }
+  }

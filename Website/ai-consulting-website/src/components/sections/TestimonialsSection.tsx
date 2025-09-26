@@ -210,7 +210,7 @@ const TestimonialsSection: React.FC = memo(() => {
           <div className="flex items-center justify-center mt-8 space-x-6">
             <button
               onClick={prevTestimonial}
-              className="p-3 bg-background-accent-grey/50 rounded-full border border-text-secondary/30 hover:border-primary-blue/50 transition-colors group"
+              className="p-3 bg-background-accent-grey/70 rounded-full border border-text-secondary/50 hover:border-primary-blue/70 transition-colors group"
               aria-label="Témoignage précédent"
             >
               <ChevronLeft className="w-6 h-6 text-text-light group-hover:text-primary-blue transition-colors" />
@@ -236,7 +236,7 @@ const TestimonialsSection: React.FC = memo(() => {
 
             <button
               onClick={nextTestimonial}
-              className="p-3 bg-background-accent-grey/50 rounded-full border border-text-secondary/30 hover:border-primary-blue/50 transition-colors group"
+              className="p-3 bg-background-accent-grey/70 rounded-full border border-text-secondary/50 hover:border-primary-blue/70 transition-colors group"
               aria-label="Témoignage suivant"
             >
               <ChevronRight className="w-6 h-6 text-text-light group-hover:text-primary-blue transition-colors" />

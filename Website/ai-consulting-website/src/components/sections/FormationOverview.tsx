@@ -18,21 +18,7 @@ const FormationOverview: React.FC = memo(() => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-blue/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Background grid pattern with squares */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-12 gap-2 h-full p-4">
-          {Array.from({ length: 144 }, (_, i) => (
-            <div 
-              key={i} 
-              className="bg-text-secondary rounded-sm animate-pulse" 
-              style={{
-                animationDelay: `${i * 0.05}s`,
-                animationDuration: '3s'
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
+      {/* Background grid pattern removed for cleaner design */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -82,7 +68,7 @@ const FormationOverview: React.FC = memo(() => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-accent-yellow/20 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-yellow/40 rounded-full flex items-center justify-center">
                   <div className="w-6 h-6 border-2 border-accent-yellow rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-accent-yellow rounded-full"></div>
                   </div>
@@ -103,7 +89,7 @@ const FormationOverview: React.FC = memo(() => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary-blue/40 rounded-full flex items-center justify-center">
                   <div className="w-6 h-6 border-2 border-primary-blue rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-primary-blue rounded-full"></div>
                   </div>
@@ -124,7 +110,7 @@ const FormationOverview: React.FC = memo(() => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-accent-purple/20 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-purple/40 rounded-full flex items-center justify-center">
                   <div className="w-6 h-6 border-2 border-accent-purple rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-accent-purple rounded-full"></div>
                   </div>

@@ -36,7 +36,7 @@ const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onS
         relative cursor-pointer rounded-2xl p-6 border-2 transition-all duration-300
         ${isSelected 
           ? `bg-gradient-to-br from-${color}/20 to-${color}/10 border-${color} shadow-xl shadow-${color}/20` 
-          : 'bg-background-accent-grey/50 border-text-secondary/30 hover:border-text-secondary/50'
+          : 'bg-background-accent-grey/70 border-text-secondary/50 hover:border-text-secondary/70'
         }
       `}
       onClick={onSelect}
@@ -135,21 +135,6 @@ const TargetAudienceInteractive: React.FC = memo(() => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-success-green/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Background grid pattern with squares - Same as hero section */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-12 gap-2 h-full p-4">
-          {Array.from({ length: 144 }, (_, i) => (
-            <div 
-              key={i} 
-              className="bg-text-secondary rounded-sm animate-pulse" 
-              style={{
-                animationDelay: `${i * 0.05}s`,
-                animationDuration: '3s'
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}

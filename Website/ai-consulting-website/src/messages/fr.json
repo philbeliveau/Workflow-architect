@@ -21,9 +21,21 @@
     "signup": "S'inscrire",
     "dashboard": "Tableau de bord",
     "free-assessment": "Évaluation Gratuite",
-    "tracks": "Parcours",
+    "parcours": "Parcours",
+    "tracks": "Formations",
     "problem": "Problème",
     "solution": "Solution"
+  },
+  "promotion": {
+    "banner": {
+      "title": "LANCEMENT SPÉCIAL: 30% de réduction sur toutes les formations!",
+      "deadline": "",
+      "cta": "J'en profite maintenant!",
+      "close": "Fermer",
+      "savings": "Économisez",
+      "originalPrice": "Prix original:",
+      "promoPrice": "Prix promotionnel:"
+    }
   },
   "hero": {
     "title": "Ne restez plus spectateur de l'IA",
@@ -62,6 +74,11 @@
       "secondary": "Notre guide",
       "training": "Commencer la Formation",
       "guide": "Télécharger le Guide"
+    },
+    "guide": {
+      "title": "Notre Guide Newcode",
+      "description": "Méthodologie complète de programmation agentique : apprenez les fondamentaux avant de plonger dans les formations",
+      "cta": "Obtenir Notre Guide Newcode"
     }
   },
   "sections": {
@@ -144,12 +161,12 @@
     },
     "formations": {
       "debutant": {
-        "title": "Formation Débutant",
-        "subtitle": "De zéro à votre première application",
+        "title": "Formation Kickstart",
+        "subtitle": "Créez votre premier site ou app avec l'IA en quelques heures",
         "description": "Parfait pour les entrepreneurs, freelancers et débutants complets. Créez votre première application fonctionnelle sans aucune expérience technique préalable.",
         "duration": "6 heures intensives",
         "level": "Débutant",
-        "price": "300$ CAD",
+        "price": "280€",
         "features": [
           "Fondements de l'IA agentique",
           "Premiers pas avec Claude Code et Bolt",
@@ -161,29 +178,29 @@
           "Support communautaire inclus",
           "Templates prêts à l'emploi"
         ],
-        "cta": "Choisir Formation Débutant",
+        "cta": "Passez à l'action et créez votre site web, logiciel fonctionnel en quelques heures",
         "footer": "Commencez votre transformation dès aujourd'hui"
       },
       "avance": {
-        "title": "Formation Avancée",
-        "subtitle": "Maîtrisez l'orchestration d'agents",
-        "description": "Idéal pour les développeurs, data scientists et product managers. Apprenez à orchestrer des agents complexes et créer des applications professionnelles.",
+        "title": "Formation Architecte: De l'idée au logiciel scalable",
+        "subtitle": "la vision d'un entrepreneur, la puissance d'un lead tech",
+        "description": "Formation professionnelle pour entrepreneurs et leads techniques. Maîtrisez l'architecture logicielle scalable et les méthodologies de développement enterprise.",
         "duration": "12 heures intensives",
-        "level": "Avancé",
-        "price": "300$ CAD",
+        "level": "Professionnel",
+        "price": "3200€",
         "features": [
-          "Orchestration avec Claude Flow",
-          "Agents spécialisés et MCP servers",
-          "Intégrations APIs et bases de données",
-          "Workflows complexes et déploiement pro"
+          "Architecture logicielle scalable",
+          "Méthodologies enterprise et patterns avancés",
+          "Leadership technique et prise de décision",
+          "De l'idée au déploiement professionnel"
         ],
         "benefits": [
-          "Applications complexes et évolutives",
-          "Orchestration multi-agents",
-          "Accompagnement personnalisé"
+          "Logiciels scalables et robustes",
+          "Compétences de lead technique",
+          "Mentorat expert personnalisé"
         ],
-        "cta": "Choisir Formation Avancée",
-        "footer": "Pour les professionnels ambitieux"
+        "cta": "Maîtriser l'Architecture Professionnelle",
+        "footer": "Pour entrepreneurs et leads techniques"
       }
     },
     "title": "Qui peut devenir créateur ?",
@@ -326,6 +343,45 @@
     "language": {
       "current": "🇫🇷 Français",
       "other": "🇺🇸 English"
+    }
+  },
+  "parcours": {
+    "meta": {
+      "title": "Votre Parcours d'Apprentissage en Programmation Agentique | Newcode",
+      "description": "Découvrez notre parcours progressif de formation : de débutant à architecte, maîtrisez la programmation agentique et créez des applications avec l'IA.",
+      "keywords": "parcours formation, programmation agentique, formation kickstart, formation architecte, apprentissage progressif, développement IA"
+    },
+    "hero": {
+      "title": "Votre Parcours d'Apprentissage",
+      "subtitle": "De débutant à architecte : maîtrisez la création d'applications avec l'IA",
+      "overview": "Découvrez notre approche progressive qui transforme les non-développeurs en créateurs d'applications grâce à la programmation agentique",
+      "levels": {
+        "beginner": "Débutant",
+        "intermediate": "Intermédiaire",
+        "expert": "Expert"
+      }
+    },
+    "formations": {
+      "title": "Nos Formations en Détail",
+      "subtitle": "Choisissez la formation qui correspond à votre niveau et vos objectifs",
+      "kickstart": {
+        "level": "Débutant",
+        "title": "Formation Kickstart",
+        "target": "Créez votre premier site ou app avec l'IA en quelques heures",
+        "price": "280€",
+        "duration": "6 heures",
+        "cta": "Commencer avec Formation Kickstart"
+      },
+      "architecte": {
+        "level": "Intermédiaire & Avancé",
+        "title": "Formation Architecte",
+        "target": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
+        "price": "3200€",
+        "duration": "Formation approfondie",
+        "cta": "Accéder à Formation Architecte"
+      },
+      "price_label": "Prix",
+      "duration_label": "Durée"
     }
   },
   "business": {
@@ -1937,5 +1993,624 @@
     "description": "Notre équipe d'experts est disponible pour répondre à toutes vos questions personnalisées.",
     "button": "Nous contacter",
     "response_time": "Réponse sous 24h"
+  },
+  "formation_kickstart": {
+    "hero": {
+      "title": "Créez votre première application",
+      "title_highlight": "avec l'IA",
+      "subtitle": "Formation intensive de 6 heures pour maîtriser les bases du développement agentique et créer votre première application fonctionnelle avec l'intelligence artificielle.",
+      "duration": "de formation",
+      "level": "Niveau débutant",
+      "online": "Accessible en ligne",
+      "cta_primary": "Commencer maintenant",
+      "cta_secondary": "Voir le programme détaillé"
+    },
+    "overview": {
+      "title": "Transformez-vous en créateur d'applications",
+      "description": "Cette formation vous donne les clés pour passer de l'idée à la réalisation. Apprenez à communiquer efficacement avec les agents IA pour créer des applications web fonctionnelles sans connaissances techniques préalables.",
+      "benefits": {
+        "practical": "Formation 100% pratique avec projets concrets",
+        "methodology": "Méthodologie éprouvée de spécification pour l'IA",
+        "support": "Support communautaire et accompagnement personnalisé"
+      },
+      "results": {
+        "title": "À la fin de cette formation",
+        "subtitle": "Vous aurez créé et mis en ligne votre première application web",
+        "items": {
+          "website": "Application web fonctionnelle déployée en ligne",
+          "mastery": "Maîtrise des outils de développement agentique",
+          "methodology": "Méthodologie pour vos futurs projets"
+        }
+      }
+    },
+    "curriculum": {
+      "title": "Programme détaillé",
+      "subtitle": "10 modules progressifs pour vous mener de débutant à créateur autonome d'applications web.",
+      "learning_objectives": "Objectifs d'apprentissage",
+      "key_topics": "Sujets clés abordés",
+      "module": "module",
+      "modules": {
+        "module_1": {
+          "title": "Bases du web",
+          "duration": "30min",
+          "description": "Découvrez les fondamentaux du développement web et les technologies essentielles.",
+          "learning_objectives": [
+            "Comprendre la différence entre site statique et dynamique",
+            "Identifier les composants Front-end vs Back-end",
+            "Maîtriser les concepts d'hébergement et de nom de domaine"
+          ],
+          "key_topics": [
+            "HTML/CSS/JS - Les 3 briques fondamentales",
+            "Hébergement et nom de domaine",
+            "Atelier pratique : modification en live via console navigateur"
+          ]
+        },
+        "module_2": {
+          "title": "Comprendre la révolution agentique",
+          "duration": "30min",
+          "description": "Explorez la nouvelle ère de l'IA et découvrez pourquoi l'agentique change tout.",
+          "learning_objectives": [
+            "Définir et différencier l'agentique du no-code et code classique",
+            "Identifier les opportunités concrètes de l'agentique",
+            "Comprendre le rôle et l'accès aux agents IA"
+          ],
+          "key_topics": [
+            "Définition et différences avec le no-code",
+            "Opportunités : rapidité, accessibilité, coût",
+            "Environnement de code et outils MCP",
+            "Autonomie et rôles des agents"
+          ]
+        },
+        "module_3": {
+          "title": "Le vibe coding",
+          "duration": "30min",
+          "description": "Découvrez les plateformes de développement assisté par IA et leurs limites.",
+          "learning_objectives": [
+            "Installer et naviguer dans Lovable, Bolt, Cursor",
+            "Comprendre les différences entre plateformes",
+            "Créer votre premier \"Hello World\" avec un agent"
+          ],
+          "key_topics": [
+            "Installation et découverte des outils",
+            "Navigation et interface",
+            "Premier projet généré avec un agent",
+            "Limites : bugs, ajustements, développement long-terme"
+          ]
+        },
+        "module_4": {
+          "title": "Du besoin à la spécification",
+          "duration": "1h",
+          "description": "Apprenez à transformer vos idées en spécifications claires pour les agents IA.",
+          "learning_objectives": [
+            "Transformer une idée en projet concret",
+            "Communiquer efficacement avec un agent IA",
+            "Rédiger des spécifications compréhensibles par l'IA"
+          ],
+          "key_topics": [
+            "Transformation d'idée en projet",
+            "Langage d'agent pour meilleurs résultats",
+            "Rédaction de spécifications claires",
+            "Bonnes pratiques et contexte",
+            "Atelier guidé : spec de votre premier projet"
+          ]
+        },
+        "module_5": {
+          "title": "Générer son premier projet avec un agent",
+          "duration": "1h",
+          "description": "Passez de la spécification à un projet fonctionnel grâce aux agents IA.",
+          "learning_objectives": [
+            "Convertir une spécification en site/app généré",
+            "Maîtriser l'interaction : correction, relance, affinement",
+            "Obtenir un projet fonctionnel de base"
+          ],
+          "key_topics": [
+            "De la spécification au code généré",
+            "Techniques d'interaction et d'itération",
+            "Correction et affinement",
+            "Validation du résultat fonctionnel"
+          ]
+        },
+        "module_6": {
+          "title": "Améliorer ses projets et ajouter des fonctionnalités",
+          "duration": "30min",
+          "description": "Enrichissez vos projets avec des fonctionnalités avancées et un design optimisé.",
+          "learning_objectives": [
+            "Modifier le design, couleurs, textes",
+            "Ajouter des fonctionnalités simples",
+            "Appliquer les principes UI/UX"
+          ],
+          "key_topics": [
+            "Personnalisation design et contenu",
+            "Ajout fonctionnalités : formulaire, bouton, menu",
+            "Principes UI/UX essentiels",
+            "Connexion et authentification",
+            "Déconstruction tâches complexes"
+          ]
+        },
+        "module_7": {
+          "title": "Mettre en ligne son projet",
+          "duration": "30min",
+          "description": "Déployez votre projet et rendez-le accessible au monde entier.",
+          "learning_objectives": [
+            "Héberger facilement son projet",
+            "Relier à un nom de domaine",
+            "Comprendre les aspects sécurité et RGPD"
+          ],
+          "key_topics": [
+            "Hébergement : Netlify, Vercel, etc.",
+            "Configuration nom de domaine",
+            "Mise en ligne en live",
+            "Sécurité et RGPD",
+            "Achat nom de domaine et personnalisation"
+          ]
+        },
+        "module_8": {
+          "title": "Erreurs fréquentes et bonnes pratiques",
+          "duration": "30min",
+          "description": "Évitez les pièges courants et adoptez les meilleures pratiques.",
+          "learning_objectives": [
+            "Identifier les pièges à éviter",
+            "Adopter les bonnes pratiques d'itération",
+            "Planifier la progression post-formation"
+          ],
+          "key_topics": [
+            "Pièges : spécifications floues, sur-délégation, manque de test",
+            "Bonnes pratiques pour itération rapide",
+            "Progression après la formation"
+          ]
+        },
+        "module_9": {
+          "title": "Projet final",
+          "duration": "30min",
+          "description": "Réalisez un projet complet en autonomie guidée.",
+          "learning_objectives": [
+            "Réaliser un mini-site/app en autonomie",
+            "Suivre un exemple complet étape par étape",
+            "Finaliser avec mise en ligne"
+          ],
+          "key_topics": [
+            "Vidéo challenge en autonomie guidée",
+            "Exemple complet étape par étape",
+            "Mise en ligne finale",
+            "Conclusion et prochaines étapes"
+          ]
+        },
+        "module_10": {
+          "title": "Pour aller plus loin, la suite",
+          "duration": "30min",
+          "description": "Découvrez les outils avancés pour approfondir vos compétences.",
+          "learning_objectives": [
+            "Aperçu VS Code et Cursor avancés",
+            "Comprendre les sub-agents et automatisation",
+            "Éviter le piège de l'over-engineering"
+          ],
+          "key_topics": [
+            "VS Code et Cursor utilisation avancée",
+            "Sub-agents et outils d'automatisation",
+            "Prévention over-engineering"
+          ]
+        }
+      }
+    },
+    "outcomes": {
+      "title": "Ce que vous saurez faire",
+      "subtitle": "Compétences concrètes acquises après la formation",
+      "skills": {
+        "tools": {
+          "title": "Maîtriser les outils agentiques",
+          "description": "Utiliser Lovable, Bolt, Cursor et autres plateformes avec expertise"
+        },
+        "specifications": {
+          "title": "Écrire des spécifications efficaces",
+          "description": "Communiquer clairement avec l'IA pour obtenir les résultats souhaités"
+        },
+        "websites": {
+          "title": "Créer des applications web fonctionnelles",
+          "description": "Développer et déployer des applications web complètes"
+        },
+        "hosting": {
+          "title": "Gérer l'hébergement et domaines",
+          "description": "Mettre en ligne vos projets et configurer les domaines"
+        },
+        "practices": {
+          "title": "Appliquer les bonnes pratiques",
+          "description": "Éviter les pièges courants et itérer efficacement"
+        },
+        "planning": {
+          "title": "Planifier vos projets futurs",
+          "description": "Méthodologie pour développer des projets plus complexes"
+        }
+      }
+    },
+    "prerequisites": {
+      "title": "Prérequis",
+      "target_title": "À qui s'adresse cette formation",
+      "requirements": {
+        "no_experience": {
+          "title": "Aucune expérience technique requise",
+          "description": "Cette formation est conçue pour les débutants complets"
+        },
+        "computer": {
+          "title": "Ordinateur avec connexion internet",
+          "description": "Compatible Mac et PC"
+        },
+        "motivation": {
+          "title": "Motivation d'apprendre",
+          "description": "Envie de créer et d'expérimenter avec l'IA"
+        }
+      },
+      "target_audience": [
+        "Entrepreneurs souhaitant créer leur site",
+        "Freelancers voulant élargir leurs services",
+        "Étudiants en recherche de compétences modernes",
+        "Professionnels voulant comprendre l'IA",
+        "Créatifs désirant donner vie à leurs idées"
+      ]
+    },
+    "enrollment": {
+      "title": "Prêt à créer votre premier site avec l'IA ?",
+      "subtitle": "Rejoignez des centaines d'étudiants qui ont déjà transformé leurs idées en réalité grâce à notre formation Kickstart.",
+      "stats": {
+        "duration": "Formation intensive",
+        "practical": "Pratique",
+        "guarantee": "Garantie"
+      },
+      "cta_primary": "S'inscrire maintenant",
+      "cta_secondary": "Retour aux formations",
+      "stripe_button": "S'inscrire maintenant - 280€"
+    },
+    "navigation": {
+      "home": "Accueil",
+      "formation": "Formation",
+      "current": "Formation Kickstart"
+    }
+  },
+  "formation_architecte": {
+    "hero": {
+      "title": "Formation Architecte",
+      "title_highlight": "De l'idée au logiciel scalable",
+      "subtitle": "Maîtrisez l'architecture et l'orchestration d'agents IA pour créer des applications d'entreprise robustes et évolutives.",
+      "duration": "formation complète",
+      "level": "Niveau avancé",
+      "online": "100% en ligne",
+      "cta_primary": "Accéder à la formation",
+      "cta_secondary": "Découvrir le programme"
+    },
+    "overview": {
+      "title": "Devenez un architecte du développement agentique",
+      "description": "Cette formation avancée vous transforme en expert capable de concevoir et orchestrer des systèmes complexes avec des agents IA spécialisés. Idéale pour les professionnels expérimentés cherchant à maîtriser l'architecture d'entreprise moderne.",
+      "benefits": {
+        "enterprise": "Architecture d'entreprise avec agents IA",
+        "scalability": "Solutions scalables et robustes",
+        "leadership": "Leadership technique et innovation"
+      },
+      "results": {
+        "title": "Objectifs professionnels",
+        "subtitle": "Compétences de niveau entreprise garanties",
+        "items": {
+          "architecture": "Concevoir des architectures complexes",
+          "orchestration": "Orchestrer des équipes d'agents",
+          "enterprise": "Déployer en environnement d'entreprise"
+        }
+      }
+    },
+    "curriculum": {
+      "title": "Programme de formation avancé",
+      "subtitle": "6 modules spécialisés pour maîtriser l'architecture et l'orchestration d'agents IA d'entreprise",
+      "module": "Module",
+      "learning_objectives": "Objectifs d'apprentissage",
+      "key_topics": "Sujets clés",
+      "modules": {
+        "module_1": {
+          "title": "Pourquoi l'IA agentique va façonner le code et les pratiques de demain",
+          "duration": "90 min",
+          "description": "Vision stratégique du développement agentique",
+          "learning_objectives": [
+            "Comprendre le changement fondamental dans le développement logiciel",
+            "Reconnaître l'importance stratégique du développement alimenté par l'IA",
+            "Saisir les avantages concurrentiels de la programmation agentique",
+            "Analyser l'impact professionnel et les stratégies de pérennisation de carrière"
+          ],
+          "key_topics": [
+            "Introduction vidéo Newcode",
+            "Statistiques de l'industrie et tendances des développeurs",
+            "Démonstrations de Claude Flow et Orchids",
+            "Analyse de l'impact professionnel",
+            "Stratégies de pérennisation de carrière"
+          ]
+        },
+        "module_2": {
+          "title": "Au-delà de ChatGPT: Qu'est-ce qu'un agent?",
+          "duration": "120 min",
+          "description": "Architecture et conception d'agents pour workflows de développement",
+          "learning_objectives": [
+            "Définir et architecturer des agents IA pour les workflows de développement",
+            "Comprendre les capacités et limitations des agents",
+            "Concevoir des environnements de développement alimentés par des agents",
+            "Maîtriser l'autonomie des agents et la spécialisation par rôle"
+          ],
+          "key_topics": [
+            "Définition et architecture d'agent",
+            "Configuration d'environnement de développement (sans coût, sans maintenance)",
+            "Outils et intégration MCP (Model Context Protocol)",
+            "Autonomie des agents et spécialisation par rôle",
+            "Couverture du cycle de développement professionnel",
+            "Gestion des risques et stratégies de fiabilité"
+          ]
+        },
+        "module_3": {
+          "title": "Setup de vos agents - Partie 1",
+          "duration": "120 min",
+          "description": "Configuration d'environnements d'agents de niveau professionnel",
+          "learning_objectives": [
+            "Configurer des environnements d'agents de niveau professionnel",
+            "Implémenter une orchestration avancée pour des tâches complexes",
+            "Mettre en place une infrastructure de développement",
+            "Intégrer avec les workflows de développement existants"
+          ],
+          "key_topics": [
+            "Configuration Roocode (modes, indexation, MCP)",
+            "Orchestration de tâches complexes",
+            "Configuration d'environnement de développement professionnel",
+            "Intégration avec les workflows de développement existants"
+          ]
+        },
+        "module_4": {
+          "title": "Setup de vos agents - Partie 2",
+          "duration": "120 min",
+          "description": "Intégration d'outils de développement professionnel",
+          "learning_objectives": [
+            "Maîtriser l'intégration d'outils de développement professionnel",
+            "Configurer des agents spécialisés pour différents rôles",
+            "Optimiser les workflows de développement",
+            "Automatiser et optimiser l'efficacité"
+          ],
+          "key_topics": [
+            "Configuration professionnelle Cursor/VS Code",
+            "Configuration et optimisation Claude Code",
+            "Création et gestion d'agents spécialisés",
+            "Automatisation des workflows et optimisation de l'efficacité"
+          ]
+        },
+        "module_5": {
+          "title": "Les clés à maîtriser",
+          "duration": "150 min",
+          "description": "Méthodologies avancées et stratégies d'assurance qualité",
+          "learning_objectives": [
+            "Maîtriser les méthodologies de développement avancées",
+            "Implémenter des stratégies d'assurance qualité et d'alignement",
+            "Déboguer et optimiser des systèmes complexes",
+            "Créer des frameworks d'évaluation de la qualité"
+          ],
+          "key_topics": [
+            "Limitations de développement et défis (pièges du vibe coding)",
+            "Implémentation de la méthodologie SPARC",
+            "Techniques avancées Claude-flow",
+            "Science de l'ingénierie de prompts (ultrathink)",
+            "Stratégies de déconstruction de tâches complexes",
+            "Méthodes d'alignement (TDD, PRD, modes, sous-agents)",
+            "Frameworks d'évaluation de la qualité",
+            "Techniques de débogage avancées",
+            "Création d'UI avec Magic MCP",
+            "Conseils et astuces professionnels (NotebookLM, entrée vocale, outils avancés)"
+          ]
+        },
+        "module_6": {
+          "title": "BMAD: Les pièces manquantes",
+          "duration": "180 min",
+          "description": "Cycle de développement professionnel complet",
+          "learning_objectives": [
+            "Compléter le cycle de vie de développement professionnel",
+            "Déployer des applications prêtes pour la production",
+            "Établir des pratiques de développement de niveau entreprise",
+            "Faire évoluer les équipes de développement avec des agents"
+          ],
+          "key_topics": [
+            "Couverture complète du cycle de développement",
+            "Stratégies de déploiement en production",
+            "Intégration d'outils d'entreprise (Clerk, Prisma, PostgreSQL, Railway, Vercel, Netlify)",
+            "Exemples de spécifications professionnelles",
+            "Personnalisation et optimisation des workflows",
+            "Développement d'agents personnalisés",
+            "Collaboration d'entreprise et gestion de projet",
+            "Faire évoluer les équipes de développement avec des agents"
+          ]
+        }
+      }
+    },
+    "target_audience": {
+      "title": "Conçu pour les professionnels expérimentés",
+      "subtitle": "Cette formation s'adresse aux leaders techniques et entrepreneurs ambitieux",
+      "audiences": [
+        {
+          "title": "CTOs & Directeurs Techniques",
+          "description": "Adoption stratégique de technologies",
+          "icon": "🎯"
+        },
+        {
+          "title": "Développeurs Senior",
+          "description": "Développement de compétences avancées et progression de carrière",
+          "icon": "💻"
+        },
+        {
+          "title": "Entrepreneurs Tech",
+          "description": "Développement rapide de MVP et mise à l'échelle",
+          "icon": "🚀"
+        },
+        {
+          "title": "Équipes de Développement",
+          "description": "Stratégies de multiplication de la productivité",
+          "icon": "👥"
+        }
+      ]
+    },
+    "value_proposition": {
+      "title": "Proposition de valeur d'entreprise",
+      "items": [
+        {
+          "title": "Vitesse de développement 10x",
+          "description": "Accélérez les cycles de développement",
+          "icon": "⚡"
+        },
+        {
+          "title": "Architecture scalable",
+          "description": "Construisez des applications prêtes pour l'entreprise",
+          "icon": "🏗️"
+        },
+        {
+          "title": "Leadership technique",
+          "description": "Dirigez des équipes de développement alimentées par l'IA",
+          "icon": "👨‍💼"
+        },
+        {
+          "title": "Avantage concurrentiel",
+          "description": "Maîtrisez les pratiques de développement de pointe",
+          "icon": "🏆"
+        }
+      ]
+    },
+    "roi_justification": {
+      "title": "Justification du retour sur investissement",
+      "subtitle": "Impact mesurable sur votre organisation",
+      "benefits": [
+        "Réduction du temps et des coûts de développement",
+        "Amélioration de la productivité de l'équipe",
+        "Positionnement concurrentiel sur le marché",
+        "Opportunités d'avancement de carrière",
+        "Développement de compétences de niveau entreprise"
+      ]
+    },
+    "prerequisites": {
+      "title": "Prérequis professionnels",
+      "subtitle": "Formation de niveau avancé",
+      "requirements": {
+        "experience": {
+          "title": "Expérience technique ou managériale",
+          "description": "Connaissance de base du développement logiciel ou gestion d'équipes techniques"
+        },
+        "environment": {
+          "title": "Environnement de développement professionnel",
+          "description": "Accès aux outils de développement et aux environnements de test"
+        },
+        "commitment": {
+          "title": "Engagement à l'apprentissage avancé",
+          "description": "Temps dédié pour maîtriser des concepts complexes et des implémentations"
+        }
+      },
+      "ideal_candidates": [
+        "CTOs et directeurs techniques cherchant l'innovation",
+        "Développeurs senior voulant évoluer vers l'architecture",
+        "Entrepreneurs tech avec des projets ambitieux",
+        "Consultants cherchant l'expertise en IA",
+        "Leaders d'équipe modernisant leurs approches"
+      ]
+    },
+    "professional_outcomes": {
+      "title": "Résultats professionnels",
+      "subtitle": "Compétences et capacités que vous maîtriserez",
+      "outcomes": [
+        {
+          "title": "Architecture d'agents",
+          "description": "Concevoir et implémenter des systèmes d'agents complexes",
+          "icon": "🏛️"
+        },
+        {
+          "title": "Orchestration avancée",
+          "description": "Coordonner des équipes d'agents pour des projets d'entreprise",
+          "icon": "🎼"
+        },
+        {
+          "title": "Déploiement d'entreprise",
+          "description": "Mise en production sécurisée et scalable",
+          "icon": "🏢"
+        },
+        {
+          "title": "Leadership d'innovation",
+          "description": "Diriger la transformation numérique de votre organisation",
+          "icon": "💡"
+        },
+        {
+          "title": "Optimisation continue",
+          "description": "Améliorer et faire évoluer les systèmes existants",
+          "icon": "🔄"
+        },
+        {
+          "title": "Formation d'équipes",
+          "description": "Transférer les connaissances et former d'autres professionnels",
+          "icon": "👨‍🏫"
+        }
+      ]
+    },
+    "enterprise_options": {
+      "title": "Options entreprise",
+      "subtitle": "Solutions adaptées aux besoins organisationnels",
+      "options": [
+        {
+          "title": "Formation d'équipe",
+          "description": "Sessions dédiées pour vos équipes de développement",
+          "features": ["Sessions privées", "Contenu personnalisé", "Support dédié"]
+        },
+        {
+          "title": "Consultation stratégique",
+          "description": "Accompagnement pour l'adoption organisationnelle",
+          "features": ["Évaluation stratégique", "Roadmap personnalisée", "Support continu"]
+        },
+        {
+          "title": "Implémentation guidée",
+          "description": "Support pour l'implémentation dans vos projets",
+          "features": ["Coaching pratique", "Révision de code", "Mentorat technique"]
+        }
+      ]
+    },
+    "enrollment": {
+      "title": "Prêt à transformer votre approche du développement ?",
+      "subtitle": "Rejoignez l'élite des professionnels qui maîtrisent déjà l'architecture agentique d'entreprise.",
+      "stats": {
+        "duration": "Formation intensive complète",
+        "enterprise": "Niveau entreprise",
+        "support": "Support professionnel"
+      },
+      "cta_primary": "Accéder à la formation",
+      "cta_secondary": "Retour aux formations",
+      "cta_enterprise": "Options entreprise"
+    },
+    "navigation": {
+      "home": "Accueil",
+      "formation": "Formation",
+      "current": "Formation Architecte"
+    }
+  },
+  "payment_flexibility": {
+    "primary_message": "Pour les paiements en plusieurs fois :",
+    "contact_link": "nous contacter",
+    "benefits": {
+      "flexible_plans": "Plans flexibles disponibles",
+      "quick_response": "Réponse sous 24h garantie"
+    },
+    "options_title": "Options d'échelonnement",
+    "installment_period": "{months} mois",
+    "per_month": "mois",
+    "calculation_note": "Montants approximatifs - plan personnalisé sur demande",
+    "contact_title": "Comment nous contacter",
+    "email_contact": "Envoyer un courriel",
+    "email_description": "Réponse garantie sous 24h",
+    "alternative_contact": "Ou contactez-nous directement :",
+    "email_subject": "Demande de plan de paiement - {formation}",
+    "email_body": "Bonjour,\n\nJe suis intéressé(e) par la {formation} (prix : {price}€) et j'aimerais discuter des options de paiement échelonné.\n\nMes préférences :\n- Durée souhaitée : [3, 6 ou 12 mois]\n- Budget mensuel : [montant]\n- Informations supplémentaires : [vos besoins spécifiques]\n\nMerci de me recontacter pour discuter d'une solution adaptée.\n\nCordialement,\n[Votre nom]",
+    "process_title": "Notre processus de réponse",
+    "process": {
+      "step1": "Votre demande",
+      "step2": "Notre réponse",
+      "step3": "Plan personnalisé",
+      "step4": "Inscription confirmée",
+      "immediate": "Immédiat",
+      "within_24h": "Sous 24h",
+      "within_48h": "Sous 48h",
+      "same_day": "Même jour"
+    },
+    "formations": {
+      "kickstart": "Formation Kickstart",
+      "architecte": "Formation Architecte"
+    }
   }
 }

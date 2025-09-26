@@ -58,6 +58,8 @@ const config: Config = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'SF Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace'],
+        'brutalist-heading': ['Bangers', 'Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'brutalist-body': ['Comic Neue', 'Nunito Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'hero': ['2.5rem', { lineHeight: '1.1' }],
