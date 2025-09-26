@@ -68,109 +68,110 @@ interface EnterpriseOption {
 export default function FormationAvancePage() {
   const t = useTranslations('tracks.formations.avance')
   const tCommon = useTranslations('common')
+  const tModules = useTranslations('tracks.formations.avance.modules')
 
   // Advanced modules for scalable software architecture
   const curriculumModules: Module[] = [
     {
       id: 'module_1',
-      title: 'Architecture Logicielle Scalable',
-      duration: '2h30',
-      description: 'Principes et patterns pour des systèmes évolutifs',
+      title: tModules('module_1.title'),
+      duration: tModules('module_1.duration'),
+      description: tModules('module_1.description'),
       learningObjectives: [
-        'Maîtriser les patterns d\'architecture scalable',
-        'Concevoir des systèmes distribués robustes',
-        'Optimiser les performances à grande échelle'
+        tModules('module_1.learningObjectives.0'),
+        tModules('module_1.learningObjectives.1'),
+        tModules('module_1.learningObjectives.2')
       ],
       keyTopics: [
-        'Microservices et architecture modulaire',
-        'Event-driven architecture',
-        'Database scaling patterns',
-        'Caching strategies avancées'
+        tModules('module_1.keyTopics.0'),
+        tModules('module_1.keyTopics.1'),
+        tModules('module_1.keyTopics.2'),
+        tModules('module_1.keyTopics.3')
       ]
     },
     {
       id: 'module_2', 
-      title: 'Leadership Technique et Prise de Décision',
-      duration: '2h',
-      description: 'Développez vos compétences de lead technique',
+      title: tModules('module_2.title'),
+      duration: tModules('module_2.duration'),
+      description: tModules('module_2.description'),
       learningObjectives: [
-        'Prendre des décisions techniques stratégiques',
-        'Diriger des équipes techniques efficacement',
-        'Communiquer la vision technique aux stakeholders'
+        tModules('module_2.learningObjectives.0'),
+        tModules('module_2.learningObjectives.1'),
+        tModules('module_2.learningObjectives.2')
       ],
       keyTopics: [
-        'Architecture decision records (ADR)',
-        'Technical debt management',
-        'Team leadership in tech',
-        'Stakeholder communication'
+        tModules('module_2.keyTopics.0'),
+        tModules('module_2.keyTopics.1'),
+        tModules('module_2.keyTopics.2'),
+        tModules('module_2.keyTopics.3')
       ]
     },
     {
       id: 'module_3',
-      title: 'Méthodologies Enterprise et DevOps',
-      duration: '2h',
-      description: 'Implémentez des processus enterprise-grade',
+      title: tModules('module_3.title'),
+      duration: tModules('module_3.duration'),
+      description: tModules('module_3.description'),
       learningObjectives: [
-        'Maîtriser les méthodologies Agile/Scrum à l\'échelle',
-        'Implémenter CI/CD robuste',
-        'Gérer la qualité et la sécurité'
+        tModules('module_3.learningObjectives.0'),
+        tModules('module_3.learningObjectives.1'),
+        tModules('module_3.learningObjectives.2')
       ],
       keyTopics: [
-        'Scaled Agile Framework (SAFe)',
-        'CI/CD enterprise patterns',
-        'Security by design',
-        'Quality assurance processes'
+        tModules('module_3.keyTopics.0'),
+        tModules('module_3.keyTopics.1'),
+        tModules('module_3.keyTopics.2'),
+        tModules('module_3.keyTopics.3')
       ]
     },
     {
       id: 'module_4',
-      title: 'De l\'Idée au Déploiement Professionnel',
-      duration: '2h30',
-      description: 'Orchestration complète du cycle de développement',
+      title: tModules('module_4.title'),
+      duration: tModules('module_4.duration'),
+      description: tModules('module_4.description'),
       learningObjectives: [
-        'Gérer le cycle complet de développement',
-        'Orchestrer les phases de déploiement',
-        'Monitorer et maintenir en production'
+        tModules('module_4.learningObjectives.0'),
+        tModules('module_4.learningObjectives.1'),
+        tModules('module_4.learningObjectives.2')
       ],
       keyTopics: [
-        'Product roadmap et planning',
-        'Deployment strategies',
-        'Monitoring et observability',
-        'Incident management'
+        tModules('module_4.keyTopics.0'),
+        tModules('module_4.keyTopics.1'),
+        tModules('module_4.keyTopics.2'),
+        tModules('module_4.keyTopics.3')
       ]
     },
     {
       id: 'module_5',
-      title: 'AI-Native Development Architecture',
-      duration: '1h30',
-      description: 'Intégrez l\'IA dans vos architectures',
+      title: tModules('module_5.title'),
+      duration: tModules('module_5.duration'),
+      description: tModules('module_5.description'),
       learningObjectives: [
-        'Architecturer des systèmes AI-native',
-        'Intégrer des agents IA dans les workflows',
-        'Optimiser les performances AI'
+        tModules('module_5.learningObjectives.0'),
+        tModules('module_5.learningObjectives.1'),
+        tModules('module_5.learningObjectives.2')
       ],
       keyTopics: [
-        'AI service architecture',
-        'Agent orchestration patterns',
-        'ML model deployment',
-        'AI monitoring et governance'
+        tModules('module_5.keyTopics.0'),
+        tModules('module_5.keyTopics.1'),
+        tModules('module_5.keyTopics.2'),
+        tModules('module_5.keyTopics.3')
       ]
     },
     {
       id: 'module_6',
-      title: 'Mentorat Expert et Projet Capstone',
-      duration: '1h30',
-      description: 'Accompagnement personnalisé sur votre projet',
+      title: tModules('module_6.title'),
+      duration: tModules('module_6.duration'),
+      description: tModules('module_6.description'),
       learningObjectives: [
-        'Appliquer les concepts à votre contexte',
-        'Recevoir des feedbacks d\'experts',
-        'Planifier votre roadmap technique'
+        tModules('module_6.learningObjectives.0'),
+        tModules('module_6.learningObjectives.1'),
+        tModules('module_6.learningObjectives.2')
       ],
       keyTopics: [
-        'Code review avec expert',
-        'Architecture review',
-        'Career development planning',
-        'Technical roadmap creation'
+        tModules('module_6.keyTopics.0'),
+        tModules('module_6.keyTopics.1'),
+        tModules('module_6.keyTopics.2'),
+        tModules('module_6.keyTopics.3')
       ]
     }
   ]
@@ -195,7 +196,7 @@ export default function FormationAvancePage() {
               className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-blue/20 to-accent-purple/20 backdrop-blur-sm rounded-full px-6 py-2 text-primary-blue border border-primary-blue/30 mb-6"
             >
               <Trophy className="w-4 h-4" />
-              <span className="text-sm font-medium">Formation Avancée</span>
+              <span className="text-sm font-medium">{t('misc.formation_avancee')}</span>
             </motion.div>
 
             <motion.h1
@@ -241,7 +242,7 @@ export default function FormationAvancePage() {
                 <div className="p-2 bg-primary-blue/20 rounded-lg">
                   <Globe className="w-5 h-5 text-primary-blue" />
                 </div>
-                <span>Formation en ligne</span>
+                <span>{t('misc.online_training')}</span>
               </div>
             </motion.div>
 
@@ -259,7 +260,7 @@ export default function FormationAvancePage() {
                 <Play className="w-5 h-5" />
               </a>
               <Button variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/20 hover:border-white/60">
-                En savoir plus
+                {t('misc.learn_more')}
                 <BookOpen className="w-5 h-5 ml-2" />
               </Button>
             </motion.div>
@@ -277,21 +278,16 @@ export default function FormationAvancePage() {
               transition={{ delay: 0.5 }}
             >
               <h2 className="text-3xl font-bold text-white mb-6">
-                Vision d'entrepreneur, puissance d'un lead tech
+                {t('overview.title')}
               </h2>
               <p className="text-gray-300 mb-6 text-lg">
-                Cette formation avancée vous donne les compétences pour diriger des projets techniques complexes, 
-                de la conception architecturale au déploiement à grande échelle.
+                {t('overview.description')}
               </p>
               <div className="space-y-4">
-                {[
-                  t('benefits.0'),
-                  t('benefits.1'),
-                  t('benefits.2')
-                ].map((benefit: string, index: number) => (
+                {[0, 1, 2].map((index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-primary-blue mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">{benefit}</span>
+                    <span className="text-gray-300">{t(`benefits.${index}`)}</span>
                   </div>
                 ))}
               </div>
@@ -306,25 +302,23 @@ export default function FormationAvancePage() {
               <div className="text-center mb-6">
                 <div className="inline-flex items-center gap-2 bg-primary-blue/20 rounded-full px-4 py-2 text-primary-blue mb-4">
                   <Award className="w-5 h-5" />
-                  <span className="font-medium">Excellence Technique</span>
+                  <span className="font-medium">{t('overview.card.badge')}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Compétences de Lead Technique</h3>
-                <p className="text-gray-300">Maîtrisez l'art de l'architecture scalable</p>
+                <h3 className="text-xl font-bold text-white mb-2">{t('overview.card.title')}</h3>
+                <p className="text-gray-300">{t('overview.card.subtitle')}</p>
               </div>
               
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Cpu className="w-5 h-5 text-primary-blue" />
-                  <span>Architecture systèmes distribués</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Zap className="w-5 h-5 text-primary-blue" />
-                  <span>Leadership technique avancé</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Target className="w-5 h-5 text-primary-blue" />
-                  <span>Déploiement enterprise-grade</span>
-                </div>
+                {[0, 1, 2].map((index: number) => {
+                  const icons = [Cpu, Zap, Target];
+                  const IconComponent = icons[index];
+                  return (
+                    <div key={index} className="flex items-center gap-3 text-gray-300">
+                      <IconComponent className="w-5 h-5 text-primary-blue" />
+                      <span>{t(`overview.card.features.${index}`)}</span>
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
@@ -341,10 +335,10 @@ export default function FormationAvancePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Programme de Formation Avancée
+              {t('curriculum.title')}
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Six modules intensifs pour maîtriser l'architecture logicielle et le leadership technique
+              {t('curriculum.subtitle')}
             </p>
           </motion.div>
 
@@ -376,7 +370,7 @@ export default function FormationAvancePage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="text-sm font-semibold text-primary-blue mb-3">
-                        Objectifs d'apprentissage
+                        {t('misc.learning_objectives')}
                       </h4>
                       <ul className="space-y-2">
                         {module.learningObjectives.map((objective, idx) => (
@@ -389,7 +383,7 @@ export default function FormationAvancePage() {
                     </div>
                     <div>
                       <h4 className="text-sm font-semibold text-primary-blue mb-3">
-                        Sujets clés
+                        {t('misc.key_topics')}
                       </h4>
                       <ul className="space-y-2">
                         {module.keyTopics.map((topic, idx) => (
@@ -413,47 +407,17 @@ export default function FormationAvancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-6">
-              Résultats Professionnels
+              {t('outcomes.title')}
             </h2>
             <p className="text-xl text-gray-300">
-              Développez les compétences pour diriger des projets techniques de grande envergure
+              {t('outcomes.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Architecture Scalable',
-                description: 'Concevez des systèmes robustes qui évoluent avec votre entreprise',
-                icon: Layers
-              },
-              {
-                title: 'Leadership Technique',
-                description: 'Dirigez des équipes techniques avec confiance et vision',
-                icon: UserCheck
-              },
-              {
-                title: 'Déploiement Enterprise',
-                description: 'Maîtrisez les processus de déploiement professionnel',
-                icon: Rocket
-              },
-              {
-                title: 'Prise de Décision',
-                description: 'Prenez des décisions techniques stratégiques éclairées',
-                icon: Target
-              },
-              {
-                title: 'Innovation AI-Native',
-                description: 'Intégrez l\'IA dans vos architectures modernes',
-                icon: Brain
-              },
-              {
-                title: 'Mentorat Expert',
-                description: 'Bénéficiez d\'un accompagnement personnalisé',
-                icon: GraduationCap
-              }
-            ].map((outcome, index) => {
-              const IconComponent = outcome.icon;
+            {[0, 1, 2, 3, 4, 5].map((index: number) => {
+              const icons = [Layers, UserCheck, Rocket, Target, Brain, GraduationCap];
+              const IconComponent = icons[index];
               return (
                 <motion.div
                   key={index}
@@ -465,8 +429,8 @@ export default function FormationAvancePage() {
                   <div className="mb-4">
                     <IconComponent className="w-8 h-8 text-gray-300" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">{outcome.title}</h3>
-                  <p className="text-gray-300">{outcome.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-3">{t(`outcomes.items.${index}.title`)}</h3>
+                  <p className="text-gray-300">{t(`outcomes.items.${index}.description`)}</p>
                 </motion.div>
               );
             })}
@@ -484,35 +448,29 @@ export default function FormationAvancePage() {
               className="bg-gradient-to-r from-primary-blue to-accent-purple rounded-2xl p-12 text-white"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Prêt à Maîtriser l'Architecture Avancée ?
+                {t('cta_final.title')}
               </h2>
               <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto">
-                Rejoignez cette formation intensive et développez les compétences de leadership technique 
-                pour diriger des projets d'envergure enterprise.
+                {t('cta_final.description')}
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold">12h</div>
-                  <div className="text-white/80">Formation intensive</div>
-                </div>
-                <div className="hidden sm:block w-px h-12 bg-white/30"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold">Expert</div>
-                  <div className="text-white/80">Niveau professionnel</div>
-                </div>
-                <div className="hidden sm:block w-px h-12 bg-white/30"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold">1:1</div>
-                  <div className="text-white/80">Mentorat personnalisé</div>
-                </div>
+                {[0, 1, 2].map((index: number) => (
+                  <>
+                    <div key={index} className="text-center">
+                      <div className="text-3xl font-bold">{t(`cta_final.stats.${index}.value`)}</div>
+                      <div className="text-white/80">{t(`cta_final.stats.${index}.label`)}</div>
+                    </div>
+                    {index < 2 && <div className="hidden sm:block w-px h-12 bg-white/30"></div>}
+                  </>
+                ))}
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <Link href="/formation">
                   <Button variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/20 hover:border-white/70">
                     <ArrowLeft className="w-5 h-5 mr-2" />
-                    Voir toutes les formations
+                    {t('cta_final.back_button')}
                   </Button>
                 </Link>
               </div>

@@ -31,7 +31,7 @@ const TrackSelection: React.FC = () => {
         { icon: BookOpen, text: t('formations.debutant.benefits.2') }
       ],
       cta: t('formations.debutant.cta'),
-      href: "/formation-debutant",
+      href: "/formation-kickstart",
       color: "yellow-500",
       gradient: "from-yellow-500/20 via-yellow-400/10 to-yellow-300/5",
       badge: "",
@@ -203,7 +203,7 @@ const TrackSelection: React.FC = () => {
                 <div className="mb-3">
                   <h4 className="text-text-light font-semibold mb-2 flex items-center text-sm">
                     <BookOpen className="w-3 h-3 mr-2" />
-                    Programme de formation
+                    {t('labels.program')}
                   </h4>
                   <div className="space-y-1">
                     {track.features.map((feature: string, idx: number) => (
@@ -221,7 +221,7 @@ const TrackSelection: React.FC = () => {
                 <div className="mb-4">
                   <h4 className="text-text-light font-semibold mb-2 flex items-center text-sm">
                     <Star className="w-3 h-3 mr-2" />
-                    Ce que vous obtenez
+                    {t('labels.benefits')}
                   </h4>
                   <div className="grid gap-2">
                     {track.benefits.map((benefit, idx) => (

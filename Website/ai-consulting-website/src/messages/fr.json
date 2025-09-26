@@ -29,7 +29,7 @@
   "promotion": {
     "banner": {
       "title": "LANCEMENT SPÉCIAL: 30% de réduction sur toutes les formations!",
-      "deadline": "",
+      "deadline": "Jusqu'au 5 octobre 2025 à 23h59 (EST)",
       "cta": "J'en profite maintenant!",
       "close": "Fermer",
       "savings": "Économisez",
@@ -200,7 +200,179 @@
           "Mentorat expert personnalisé"
         ],
         "cta": "Maîtriser l'Architecture Professionnelle",
-        "footer": "Pour entrepreneurs et leads techniques"
+        "footer": "Pour entrepreneurs et leads techniques",
+        "overview": {
+          "title": "Vision d'entrepreneur, puissance d'un lead tech",
+          "description": "Cette formation avancée vous donne les compétences pour diriger des projets techniques complexes, de la conception architecturale au déploiement à grande échelle.",
+          "card": {
+            "badge": "Excellence Technique",
+            "title": "Compétences de Lead Technique",
+            "subtitle": "Maîtrisez l'art de l'architecture scalable",
+            "features": [
+              "Architecture systèmes distribués",
+              "Leadership technique avancé",
+              "Déploiement enterprise-grade"
+            ]
+          }
+        },
+        "curriculum": {
+          "title": "Programme de Formation Avancée",
+          "subtitle": "Six modules intensifs pour maîtriser l'architecture logicielle et le leadership technique"
+        },
+        "outcomes": {
+          "title": "Résultats Professionnels",
+          "subtitle": "Développez les compétences pour diriger des projets techniques de grande envergure",
+          "items": [
+            {
+              "title": "Architecture Scalable",
+              "description": "Concevez des systèmes robustes qui évoluent avec votre entreprise"
+            },
+            {
+              "title": "Leadership Technique",
+              "description": "Dirigez des équipes techniques avec confiance et vision"
+            },
+            {
+              "title": "Déploiement Enterprise",
+              "description": "Maîtrisez les processus de déploiement professionnel"
+            },
+            {
+              "title": "Prise de Décision",
+              "description": "Prenez des décisions techniques stratégiques éclairées"
+            },
+            {
+              "title": "Innovation AI-Native",
+              "description": "Intégrez l'IA dans vos architectures modernes"
+            },
+            {
+              "title": "Mentorat Expert",
+              "description": "Bénéficiez d'un accompagnement personnalisé"
+            }
+          ]
+        },
+        "cta_final": {
+          "title": "Prêt à Maîtriser l'Architecture Avancée ?",
+          "description": "Rejoignez cette formation intensive et développez les compétences de leadership technique pour diriger des projets d'envergure enterprise.",
+          "stats": [
+            {
+              "value": "12h",
+              "label": "Formation intensive"
+            },
+            {
+              "value": "Expert",
+              "label": "Niveau professionnel"
+            },
+            {
+              "value": "1:1",
+              "label": "Mentorat personnalisé"
+            }
+          ],
+          "back_button": "Voir toutes les formations"
+        },
+        "misc": {
+          "online_training": "Formation en ligne",
+          "learn_more": "En savoir plus",
+          "formation_avancee": "Formation Avancée",
+          "learning_objectives": "Objectifs d'apprentissage",
+          "key_topics": "Sujets clés"
+        },
+        "modules": {
+          "module_1": {
+            "title": "Architecture Logicielle Scalable",
+            "duration": "2h30",
+            "description": "Principes et patterns pour des systèmes évolutifs",
+            "learningObjectives": [
+              "Maîtriser les patterns d'architecture scalable",
+              "Concevoir des systèmes distribués robustes",
+              "Optimiser les performances à grande échelle"
+            ],
+            "keyTopics": [
+              "Microservices et architecture modulaire",
+              "Event-driven architecture",
+              "Database scaling patterns",
+              "Caching strategies avancées"
+            ]
+          },
+          "module_2": {
+            "title": "Leadership Technique et Prise de Décision",
+            "duration": "2h",
+            "description": "Développez vos compétences de lead technique",
+            "learningObjectives": [
+              "Prendre des décisions techniques stratégiques",
+              "Diriger des équipes techniques efficacement",
+              "Communiquer la vision technique aux stakeholders"
+            ],
+            "keyTopics": [
+              "Architecture decision records (ADR)",
+              "Technical debt management",
+              "Team leadership in tech",
+              "Stakeholder communication"
+            ]
+          },
+          "module_3": {
+            "title": "Méthodologies Enterprise et DevOps",
+            "duration": "2h",
+            "description": "Implémentez des processus enterprise-grade",
+            "learningObjectives": [
+              "Maîtriser les méthodologies Agile/Scrum à l'échelle",
+              "Implémenter CI/CD robuste",
+              "Gérer la qualité et la sécurité"
+            ],
+            "keyTopics": [
+              "Scaled Agile Framework (SAFe)",
+              "CI/CD enterprise patterns",
+              "Security by design",
+              "Quality assurance processes"
+            ]
+          },
+          "module_4": {
+            "title": "De l'Idée au Déploiement Professionnel",
+            "duration": "2h30",
+            "description": "Orchestration complète du cycle de développement",
+            "learningObjectives": [
+              "Gérer le cycle complet de développement",
+              "Orchestrer les phases de déploiement",
+              "Monitorer et maintenir en production"
+            ],
+            "keyTopics": [
+              "Product roadmap et planning",
+              "Deployment strategies",
+              "Monitoring et observability",
+              "Incident management"
+            ]
+          },
+          "module_5": {
+            "title": "AI-Native Development Architecture",
+            "duration": "1h30",
+            "description": "Intégrez l'IA dans vos architectures",
+            "learningObjectives": [
+              "Architecturer des systèmes AI-native",
+              "Intégrer des agents IA dans les workflows",
+              "Optimiser les performances AI"
+            ],
+            "keyTopics": [
+              "AI service architecture",
+              "Agent orchestration patterns",
+              "ML model deployment",
+              "AI monitoring et governance"
+            ]
+          },
+          "module_6": {
+            "title": "Mentorat Expert et Projet Capstone",
+            "duration": "1h30",
+            "description": "Accompagnement personnalisé sur votre projet",
+            "learningObjectives": [
+              "Appliquer les concepts à votre contexte",
+              "Recevoir des feedbacks d'experts",
+              "Planifier votre roadmap technique"
+            ],
+            "keyTopics": [
+              "Code review avec expert",
+              "Architecture review",
+              "Career development planning",
+              "Technical roadmap creation"
+            ]
+          }
+        }
       }
     },
     "title": "Qui peut devenir créateur ?",
@@ -250,6 +422,10 @@
       },
       "cta": "Parcours Business",
       "footer": "Pour dirigeants & analystes"
+    },
+    "labels": {
+      "program": "Programme de formation",
+      "benefits": "Ce que vous obtenez"
     }
   },
   "training": {
@@ -321,23 +497,62 @@
       "legal": "Légal"
     },
     "quick_links": [
-      { "name": "Accueil", "href": "/" },
-      { "name": "Services", "href": "/services" },
-      { "name": "Cas d'étude", "href": "/case-studies" },
-      { "name": "Blog", "href": "/blog" },
-      { "name": "À propos", "href": "/about" }
+      {
+        "name": "Accueil",
+        "href": "/"
+      },
+      {
+        "name": "Services",
+        "href": "/services"
+      },
+      {
+        "name": "Cas d'étude",
+        "href": "/case-studies"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      },
+      {
+        "name": "À propos",
+        "href": "/about"
+      }
     ],
     "services_links": [
-      { "name": "Audit de flux", "href": "/services#audit" },
-      { "name": "Implémentation complète", "href": "/services#implementation" },
-      { "name": "Transformation agence", "href": "/services#transformation" },
-      { "name": "Formation équipe", "href": "/services#training" }
+      {
+        "name": "Audit de flux",
+        "href": "/services#audit"
+      },
+      {
+        "name": "Implémentation complète",
+        "href": "/services#implementation"
+      },
+      {
+        "name": "Transformation agence",
+        "href": "/services#transformation"
+      },
+      {
+        "name": "Formation équipe",
+        "href": "/services#training"
+      }
     ],
     "legal_links": [
-      { "name": "Confidentialité", "href": "/privacy" },
-      { "name": "Conditions", "href": "/terms" },
-      { "name": "Cookies", "href": "/cookies" },
-      { "name": "Mentions légales", "href": "/legal" }
+      {
+        "name": "Confidentialité",
+        "href": "/privacy"
+      },
+      {
+        "name": "Conditions",
+        "href": "/terms"
+      },
+      {
+        "name": "Cookies",
+        "href": "/cookies"
+      },
+      {
+        "name": "Mentions légales",
+        "href": "/legal"
+      }
     ],
     "copyright": "© 2025 NEWCODE. Tous droits réservés.",
     "language": {
@@ -495,7 +710,7 @@
         "title": "Stack IA Avancée",
         "items": [
           "Claude-code + wrapper multi-agents",
-          "Roocode + modes personnalisés", 
+          "Roocode + modes personnalisés",
           "MCPs pour intégrations natives"
         ]
       },
@@ -609,7 +824,7 @@
           "description": "Agents de sécurité spécialisés travaillant en collaboration"
         },
         "result": {
-          "title": "Résultat", 
+          "title": "Résultat",
           "description": "Code sécurisé validé et prêt pour la production"
         }
       },
@@ -712,13 +927,13 @@
       "description_end": "– juste des insights exploitables que vous pouvez implémenter immédiatement.",
       "benefits": [
         "30 minutes seulement",
-        "Recommandations personnalisées", 
+        "Recommandations personnalisées",
         "Insights exploitables",
         "Aucun engagement"
       ],
       "trust_indicators": [
         "50+ équipes auditées",
-        "Recommandations spécifiques", 
+        "Recommandations spécifiques",
         "Résultats immédiats"
       ]
     },
@@ -743,7 +958,7 @@
           "options": [
             "Développeur solo",
             "2-3 développeurs",
-            "4-8 développeurs", 
+            "4-8 développeurs",
             "9-15 développeurs",
             "15+ développeurs"
           ]
@@ -797,7 +1012,7 @@
           "description": "Nous apprenons à connaître votre équipe, vos projets actuels et vos objectifs de productivité."
         },
         {
-          "title": "Analyse du flux de travail", 
+          "title": "Analyse du flux de travail",
           "duration": "15 min",
           "description": "Nous examinons votre processus de développement actuel, identifions les goulots d'étranglement et les opportunités d'automatisation."
         },
@@ -808,7 +1023,7 @@
         },
         {
           "title": "Prochaines étapes",
-          "duration": "2 min", 
+          "duration": "2 min",
           "description": "Nous discutons des options pour une transformation plus approfondie si vous êtes intéressé."
         }
       ]
@@ -847,7 +1062,7 @@
         "availability": "Lundi-Vendredi, 9h-18h (heure de Paris)"
       },
       "live_chat": {
-        "title": "Chat en direct", 
+        "title": "Chat en direct",
         "description": "Support instantané",
         "availability": "Disponible pendant les heures ouvrables"
       }
@@ -860,13 +1075,13 @@
         "note": "En jours ouvrables"
       },
       "availability": {
-        "title": "Disponibilité", 
+        "title": "Disponibilité",
         "value": "Lundi - Vendredi",
         "hours": "9h00 - 18h00 (Paris)"
       },
       "timezone": {
         "title": "Fuseau horaire",
-        "value": "Europe/Paris", 
+        "value": "Europe/Paris",
         "note": "UTC+1/UTC+2"
       }
     },
@@ -887,8 +1102,76 @@
     }
   },
   "methodology": {
-    "title": "🔄 Cycle Constant d'Agents Collaboratifs",
-    "subtitle": "",
+    "title": "Méthodologie BMAD - Développement Structuré par IA",
+    "subtitle": "Découvrez notre approche structurée qui transforme les idées en applications fonctionnelles grâce à la collaboration d'agents IA spécialisés.",
+    "workflow": {
+      "title": "Flux de Travail IA Interactif",
+      "description": "Chaque étape de notre méthodologie fait appel à des agents IA spécialisés pour structurer votre processus de développement, de l'idée initiale jusqu'au déploiement en production.",
+      "simulate": "Simuler",
+      "reset": "Réinitialiser",
+      "running": "En cours...",
+      "steps": {
+        "start": {
+          "title": "Idée de Projet",
+          "description": "Chaque grande application commence par une idée. Notre méthode structurée aide à structurer et valider votre concept."
+        },
+        "research-phase": {
+          "title": "Phase de Recherche",
+          "description": "L'agent Analyste effectue une recherche de marché complète, une analyse concurrentielle et crée un brief de projet stratégique."
+        },
+        "project-brief": {
+          "title": "Brief de Projet",
+          "description": "Brief de projet complet avec insights de recherche, analyse de marché et direction stratégique claire."
+        },
+        "pm-planning": {
+          "title": "Planification PM",
+          "description": "Le Product Manager crée un PRD détaillé avec exigences fonctionnelles, non-fonctionnelles, epics et user stories."
+        },
+        "ux-decision": {
+          "title": "UX Requis ?",
+          "description": "Point de décision : Ce projet nécessite-t-il des spécifications UX et un design front-end détaillé ?"
+        },
+        "ux-design": {
+          "title": "Design UX",
+          "description": "L'Expert UX crée des spécifications front-end complètes, wireframes et système de design."
+        },
+        "architecture": {
+          "title": "Architecture Système",
+          "description": "L'Architecte conçoit l'architecture technique, sélectionne les technologies et définit l'API."
+        },
+        "qa-validation": {
+          "title": "Validation QA",
+          "description": "L'Assurance Qualité examine l'architecture pour les tests, la sécurité et l'atténuation des risques."
+        },
+        "final-review": {
+          "title": "Révision Finale",
+          "description": "Le Product Owner valide l'alignement de tous les documents et la préparation pour le développement."
+        },
+        "development-ready": {
+          "title": "🚀 Développement Prêt",
+          "description": "Tous les documents sont validés et alignés. Transition vers l'IDE pour commencer le cycle de développement avec vos agents de codage."
+        }
+      },
+      "legend": {
+        "user_interaction": "Interaction Utilisateur Disponible",
+        "current_step": "Étape Actuelle",
+        "completed_step": "Étape Terminée",
+        "workflow_connection": "Connexion Workflow"
+      },
+      "interaction": {
+        "title": "💬 Interaction Utilisateur",
+        "description": "À cette étape, vous pouvez discuter des exigences, poser des questions et fournir des retours au {agent}. L'agent sollicitera votre contribution pour s'assurer que la sortie répond à vos besoins spécifiques."
+      }
+    },
+    "benefits": {
+      "title": "Avantages Clés de Notre Méthodologie",
+      "items": [
+        "Développement structuré avec des agents IA spécialisés pour chaque étape",
+        "Réduction significative du temps de développement et d'itération",
+        "Qualité et fiabilité accrues grâce aux validations automatisées",
+        "Workflows reproductibles pour tous vos futurs projets"
+      ]
+    },
     "agents": {
       "architect": {
         "name": "Architecte Système",
@@ -916,16 +1199,189 @@
         "status": "scan"
       }
     },
-    "workflow": {
-      "current_tasks": "Tâches Actuelles",
-      "tasks": [
-        "Analyse des exigences",
-        "Traitement des structures de données",
-        "Optimisation des performances"
-      ]
+    "content": {
+      "introduction": {
+        "title": "Qu'est-ce que notre Méthode Structurée ?",
+        "description": "Notre framework structuré transforme les idées de projet en applications prêtes pour la production grâce à la collaboration d'agents intelligents et au traitement humain-dans-la-boucle.",
+        "principles": {
+          "natural_language": {
+            "title": "Langage Naturel d'Abord",
+            "description": "Utilise le langage naturel pour un flux de travail assisté par IA avec une documentation claire et lisible."
+          },
+          "agent_collaboration": {
+            "title": "Collaboration d'Agents",
+            "description": "Des agents spécialisés travaillent ensemble tout en vous gardant en contrôle des décisions."
+          },
+          "full_lifecycle": {
+            "title": "Cycle de Vie Complet",
+            "description": "Couvre l'idéation jusqu'au déploiement avec des processus structurés et répétables."
+          }
+        }
+      },
+      "features": {
+        "title": "Caractéristiques Clés de notre Méthode",
+        "items": {
+          "human_loop": {
+            "title": "Traitement Humain-dans-la-Boucle",
+            "description": "Chaque agent sollicite activement votre contribution et vos retours tout au long du processus, s'assurant que la sortie correspond à votre vision."
+          },
+          "decision_points": {
+            "title": "Points de Décision Structurés",
+            "description": "Des points de décision clairs où vous choisissez la voie à suivre, de la profondeur de recherche aux exigences UX."
+          },
+          "document_driven": {
+            "title": "Développement Dirigé par Documents",
+            "description": "Documentation complète créée avant que le codage ne commence, assurant des exigences et une architecture claires."
+          },
+          "validation": {
+            "title": "Validation & Alignement",
+            "description": "Plusieurs points de contrôle de validation s'assurent que tous les documents et exigences sont cohérents et complets."
+          },
+          "ide_transition": {
+            "title": "Transition IDE Sans Couture",
+            "description": "Passation en douceur de la planification web au développement basé sur IDE avec des documents correctement préparés."
+          },
+          "ai_optimized": {
+            "title": "Sortie Optimisée IA",
+            "description": "Tous les documents sont structurés pour une consommation optimale par les agents et outils de développement IA."
+          }
+        }
+      },
+      "phases": {
+        "title": "Phases de Développement",
+        "items": {
+          "discovery": {
+            "title": "Découverte & Recherche",
+            "description": "Phase de recherche de marché et d'analyse concurrentielle optionnelle mais puissante",
+            "steps": {
+              "0": "Recherche de Marché",
+              "1": "Analyse Concurrentielle",
+              "2": "Création de Brief Stratégique"
+            }
+          },
+          "requirements": {
+            "title": "Définition des Exigences",
+            "description": "Collecte d'exigences complète avec collaboration humaine",
+            "steps": {
+              "0": "Création PRD",
+              "1": "Exigences Fonctionnelles",
+              "2": "Exigences Non-Fonctionnelles",
+              "3": "User Stories"
+            }
+          },
+          "design": {
+            "title": "Design & Architecture",
+            "description": "Spécifications UX et conception d'architecture technique",
+            "steps": {
+              "0": "Spécifications UX",
+              "1": "Architecture Système",
+              "2": "Sélection Technologie",
+              "3": "Design API"
+            }
+          },
+          "validation": {
+            "title": "Validation & Passation",
+            "description": "Assurance qualité et préparation pour le développement",
+            "steps": {
+              "0": "Alignement Documents",
+              "1": "Révision Qualité",
+              "2": "Préparation IDE",
+              "3": "Passation Développement"
+            }
+          }
+        }
+      },
+      "agents": {
+        "title": "Rencontrez Votre Équipe d'Agents IA",
+        "responsibilities": "Responsabilités",
+        "interaction_title": "Comment Vous Interagissez",
+        "items": {
+          "analyst": {
+            "name": "Agent Analyste",
+            "role": "Recherche Marché & Stratégie",
+            "responsibilities": {
+              "0": "Effectue une recherche de marché complète",
+              "1": "Réalise une analyse concurrentielle",
+              "2": "Crée des briefs de projet stratégiques",
+              "3": "Valide les opportunités commerciales",
+              "4": "Fournit des insights basés sur les données"
+            },
+            "interaction": "Discute des conditions de marché, du public cible et de la stratégie commerciale avec vous pour s'assurer que le projet s'aligne avec les besoins du marché."
+          },
+          "pm": {
+            "name": "Product Manager",
+            "role": "Exigences & Planification",
+            "responsibilities": {
+              "0": "Crée des PRD détaillés (Documents d'Exigences Produit)",
+              "1": "Définit les exigences fonctionnelles et non-fonctionnelles",
+              "2": "Structure les epics et user stories",
+              "3": "Gère la portée et les priorités du projet",
+              "4": "Assure l'alignement des parties prenantes"
+            },
+            "interaction": "Travaille avec vous pour comprendre exactement ce que vous voulez construire, posant des questions détaillées sur les fonctionnalités, contraintes et critères de succès."
+          },
+          "ux": {
+            "name": "Expert UX",
+            "role": "Expérience Utilisateur & Design",
+            "responsibilities": {
+              "0": "Crée des spécifications front-end",
+              "1": "Conçoit des systèmes d'interface utilisateur",
+              "2": "Génère des prompts UI optimisés IA",
+              "3": "Assure la conformité d'accessibilité",
+              "4": "Optimise les flux d'expérience utilisateur"
+            },
+            "interaction": "Collabore sur les décisions d'expérience utilisateur, les préférences de design et les exigences d'interface pour créer des applications intuitives."
+          },
+          "architect": {
+            "name": "Architecte Système",
+            "role": "Architecture Technique",
+            "responsibilities": {
+              "0": "Conçoit l'architecture système",
+              "1": "Sélectionne les stacks technologiques",
+              "2": "Planifie les structures de base de données",
+              "3": "Définit les spécifications API",
+              "4": "Assure la scalabilité et la performance"
+            },
+            "interaction": "Discute des préférences techniques, exigences de scalabilité et besoins d'intégration pour construire une architecture système robuste."
+          },
+          "qa": {
+            "name": "Spécialiste QA",
+            "role": "Assurance Qualité",
+            "responsibilities": {
+              "0": "Effectue une évaluation précoce des risques",
+              "1": "Conçoit des stratégies de test",
+              "2": "Examine l'architecture pour la testabilité",
+              "3": "Identifie les problèmes potentiels",
+              "4": "Assure les standards de qualité"
+            },
+            "interaction": "Examine votre projet pour les risques potentiels et préoccupations de qualité, suggérant des stratégies de test et améliorations de qualité."
+          },
+          "po": {
+            "name": "Product Owner",
+            "role": "Coordination & Validation",
+            "responsibilities": {
+              "0": "Exécute les checklists de validation maître",
+              "1": "Assure l'alignement des documents",
+              "2": "Coordonne entre les agents",
+              "3": "Gère la fragmentation des documents",
+              "4": "Facilite les passations fluides"
+            },
+            "interaction": "S'assure que tous les documents de planification sont cohérents et complets, coordonnant les retours entre vous et les autres agents."
+          }
+        }
+      },
+      "conclusion": {
+        "title": "Pourquoi Choisir notre Méthode ?",
+        "description": "Notre méthode transforme les démarrages de projet chaotiques en flux de travail structurés dirigés par agents. Des idées éparses aux spécifications prêtes pour la production, avec vous en contrôle à chaque étape.",
+        "metrics": {
+          "faster_planning": "Planification Plus Rapide",
+          "structured_output": "Sortie Structurée",
+          "specialized_agents": "Agents Spécialisés"
+        },
+        "cta": "Apprenez Notre Implémentation"
+      }
     },
-    "results": {
-    },
+    "results": {},
     "methodology_cta": {
       "title": "Prêt à Découvrir Notre Méthodologie ?",
       "description": "Expérimentez la puissance du développement IA structuré. De la complexité éparpillée aux résultats organisés et prévisibles.",
@@ -1050,7 +1506,7 @@
             "description": "Phase de recherche de marché et d'analyse concurrentielle optionnelle mais puissante",
             "steps": {
               "0": "Recherche de Marché",
-              "1": "Analyse Concurrentielle", 
+              "1": "Analyse Concurrentielle",
               "2": "Création de Brief Stratégique"
             }
           },
@@ -2548,17 +3004,29 @@
         {
           "title": "Formation d'équipe",
           "description": "Sessions dédiées pour vos équipes de développement",
-          "features": ["Sessions privées", "Contenu personnalisé", "Support dédié"]
+          "features": [
+            "Sessions privées",
+            "Contenu personnalisé",
+            "Support dédié"
+          ]
         },
         {
           "title": "Consultation stratégique",
           "description": "Accompagnement pour l'adoption organisationnelle",
-          "features": ["Évaluation stratégique", "Roadmap personnalisée", "Support continu"]
+          "features": [
+            "Évaluation stratégique",
+            "Roadmap personnalisée",
+            "Support continu"
+          ]
         },
         {
           "title": "Implémentation guidée",
           "description": "Support pour l'implémentation dans vos projets",
-          "features": ["Coaching pratique", "Révision de code", "Mentorat technique"]
+          "features": [
+            "Coaching pratique",
+            "Révision de code",
+            "Mentorat technique"
+          ]
         }
       ]
     },
