@@ -178,7 +178,7 @@ const Navigation: React.FC = memo(() => {
           {isMobileMenuOpen && (
             <motion.div
               id="mobile-menu"
-              className="md:hidden absolute top-full left-0 right-0 bg-background-dark-alt/99 backdrop-blur-lg border-b border-primary-blue/30 shadow-lg"
+              className="md:hidden absolute top-full left-0 right-0 bg-background-dark border-b border-primary-blue/30 shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -198,7 +198,7 @@ const Navigation: React.FC = memo(() => {
                         className={`block transition-colors duration-200 py-2 cursor-pointer ${
                           item.isActive 
                             ? 'text-primary-blue font-semibold' 
-                            : 'text-text-light hover:text-primary-blue'
+                            : 'text-white hover:text-primary-blue'
                         }`}
                         onClick={closeMobileMenu}
                       >
@@ -209,10 +209,10 @@ const Navigation: React.FC = memo(() => {
                 })}
                 <div className="pt-4 border-t border-primary-blue/30 space-y-3">
                   <div className="flex items-center justify-center gap-2 py-2">
-                    <Globe className="w-4 h-4 text-text-secondary" />
+                    <Globe className="w-4 h-4 text-white" />
                     <button
                       onClick={() => switchLanguage(locale === 'fr' ? 'en' : 'fr')}
-                      className="text-sm text-text-secondary hover:text-primary-blue transition-colors duration-200 uppercase font-medium"
+                      className="text-sm text-white hover:text-primary-blue transition-colors duration-200 uppercase font-medium"
                     >
                       {locale === 'fr' ? 'EN' : 'FR'}
                     </button>
