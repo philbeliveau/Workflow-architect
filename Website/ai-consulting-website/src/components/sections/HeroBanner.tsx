@@ -17,16 +17,14 @@ const HeroBanner: React.FC = memo(() => {
   const renderSubtitle = () => {
     return (
       <>
-        {t('subtitle_parts.line1')}
-        <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold">
+        <span className="text-white">
+          {t('subtitle_parts.line1')}
           {t('subtitle_parts.highlight1')}
+          {t('subtitle_parts.line2')}
         </span>
-        {t('subtitle_parts.line2')}
-        <span className="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent font-semibold">
-          {t('subtitle_parts.highlight2')}
-        </span>
-        {t('subtitle_parts.line3')}
         <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent font-semibold">
+          {t('subtitle_parts.highlight2')}
+          {t('subtitle_parts.line3')}
           {t('subtitle_parts.highlight3')}
         </span>
       </>
@@ -34,7 +32,7 @@ const HeroBanner: React.FC = memo(() => {
   };
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen lg:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Environmental Background System - Layered approach */}
       <div className="absolute inset-0">
         {/* Base environmental foundation */}
@@ -74,8 +72,8 @@ const HeroBanner: React.FC = memo(() => {
       </div>
 
       {/* Main content - Two-column layout */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center min-h-[70vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12 hero-mobile-spacing">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-16 items-start lg:items-center min-h-[100vh] lg:min-h-[70vh]">
           {/* Left Column: Main Messaging with French content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -204,6 +202,13 @@ const HeroBanner: React.FC = memo(() => {
                   boxShadow: `
                     0 4px 12px rgba(0, 0, 0, 0.1),
                     inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                  `,
+                  textShadow: `
+                    -1px -1px 0 #2a2a2a,
+                    1px -1px 0 #2a2a2a,
+                    -1px 1px 0 #2a2a2a,
+                    1px 1px 0 #2a2a2a,
+                    0 0 3px rgba(42, 42, 42, 0.8)
                   `
                 }}
               >
@@ -218,9 +223,9 @@ const HeroBanner: React.FC = memo(() => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative mt-8 lg:mt-0"
           >
-            <div className="aspect-square max-w-lg mx-auto lg:mx-0">
+            <div className="w-full max-w-lg mx-auto lg:mx-0 min-h-[600px] lg:min-h-[400px]">
               <TransformationProcessInteractive autoPlay={true} duration={5000} />
             </div>
           </motion.div>
@@ -266,6 +271,12 @@ const HeroBanner: React.FC = memo(() => {
         @media (max-width: 768px) {
           .hero-environment-atmosphere {
             opacity: 0.05;
+          }
+          
+          .hero-mobile-spacing {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            min-height: calc(120vh);
           }
         }
         

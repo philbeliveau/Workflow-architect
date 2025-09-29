@@ -64,9 +64,9 @@ export default function FormationKickstartPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden mt-24">
+      <section className="relative py-12 sm:py-20 overflow-hidden mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,17 +80,17 @@ export default function FormationKickstartPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 px-2"
             >
-              {t('hero.title')}
-              <span className="block text-accent-purple">{t('hero.title_highlight')}</span>
+              <span className="block leading-tight">{t('hero.title')}</span>
+              <span className="block text-accent-purple leading-tight">{t('hero.title_highlight')}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
+              className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 leading-relaxed"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -99,7 +99,7 @@ export default function FormationKickstartPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 px-4"
             >
               <div className="flex items-center gap-3 text-gray-300">
                 <div className="p-2 bg-accent-purple/20 rounded-lg">
@@ -125,7 +125,7 @@ export default function FormationKickstartPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
             >
               <Button size="lg" className="bg-accent-purple hover:bg-accent-purple-light text-white">
                 {t('hero.cta_primary')}
@@ -206,18 +206,18 @@ export default function FormationKickstartPage() {
       </section>
 
       {/* Curriculum Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 px-2">
               {t('curriculum.title')}
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
               {t('curriculum.subtitle')}
             </p>
           </motion.div>
@@ -229,25 +229,25 @@ export default function FormationKickstartPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
-                className="bg-primary-800/30 backdrop-blur-sm rounded-xl border border-white/10 p-6"
+                className="bg-primary-800/30 backdrop-blur-sm rounded-xl border border-white/10 p-4 sm:p-6"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="flex items-center justify-center w-12 h-12 bg-accent-purple/20 rounded-xl">
-                    <span className="text-lg font-bold text-accent-purple">{index + 1}</span>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-accent-purple/20 rounded-xl flex-shrink-0">
+                    <span className="text-base sm:text-lg font-bold text-accent-purple">{index + 1}</span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-1">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-1 leading-tight">
                       Module {index + 1} - {module.title}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
                       <span className="text-accent-purple font-medium">{module.duration}</span>
-                      <span className="text-gray-400">{module.description}</span>
+                      <span className="text-gray-400 leading-tight">{module.description}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="border-t border-white/10 pt-4 sm:pt-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <h4 className="text-sm font-semibold text-accent-purple mb-3">
                         {t('curriculum.learning_objectives')}

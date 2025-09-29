@@ -94,22 +94,6 @@ const TrackSelection: React.FC = () => {
 
   return (
     <section id="track-selection" className="py-24 bg-gradient-to-br from-background-dark to-background-dark-alt relative overflow-hidden">
-      {/* Background grid pattern with squares - Same as Hero */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-12 gap-2 h-full p-4">
-          {Array.from({ length: 144 }, (_, i) => (
-            <div 
-              key={i} 
-              className="bg-text-secondary rounded-sm animate-pulse" 
-              style={{
-                animationDelay: `${i * 0.05}s`,
-                animationDuration: '3s'
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -239,12 +223,14 @@ const TrackSelection: React.FC = () => {
                     variant="primary"
                     size="lg" 
                     href={track.href}
-                    className={`w-full group relative overflow-hidden bg-gradient-to-r from-${track.color} to-${track.color}/80 hover:from-${track.color}/90 hover:to-${track.color} shadow-xl hover:shadow-2xl hover:shadow-${track.color}/30 transform hover:scale-105 transition-all duration-300 font-bold text-base py-3 text-white border-0`}
+                    className={`w-full group relative overflow-hidden bg-gradient-to-r from-${track.color} to-${track.color}/80 hover:from-${track.color}/90 hover:to-${track.color} shadow-xl hover:shadow-2xl hover:shadow-${track.color}/30 transform hover:scale-105 transition-all duration-300 font-bold text-sm sm:text-base py-4 sm:py-3 text-white border-0 min-h-[60px] sm:min-h-auto`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center justify-center">
-                      {track.cta}
-                      <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+                    <span className="relative z-10 flex items-center justify-center text-center px-2">
+                      <span className="block sm:inline break-words leading-tight">
+                        {track.cta}
+                      </span>
+                      <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110 flex-shrink-0" />
                     </span>
                   </Button>
                   <p className={`text-center text-${track.color} text-xs mt-2 font-medium`}>

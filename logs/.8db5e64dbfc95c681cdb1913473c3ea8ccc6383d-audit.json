@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/philippebeliveau/Desktop/Notebook/flow/Workflow-architect/Workflow-architect/logs/.8db5e64dbfc95c681cdb1913473c3ea8ccc6383d-audit.json",
+    "files": [
+        {
+            "date": 1758895814298,
+            "name": "/Users/philippebeliveau/Desktop/Notebook/flow/Workflow-architect/Workflow-architect/logs/mcp-puppeteer-2025-09-26.log",
+            "hash": "c7b8fd5e9996107477daa3c9c2c3a4ada88d3316ee69c67d029c7e1d77594f38"
+        },
+        {
+            "date": 1759188573228,
+            "name": "/Users/philippebeliveau/Desktop/Notebook/flow/Workflow-architect/Workflow-architect/logs/mcp-puppeteer-2025-09-29.log",
+            "hash": "dfafbc5d9fe4a21d22068e4e142b51471af430079d7bf0a5393ba66c7467ff62"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -178,13 +178,17 @@ const Navigation: React.FC = memo(() => {
           {isMobileMenuOpen && (
             <motion.div
               id="mobile-menu"
-              className="md:hidden absolute top-full left-0 right-0 bg-background-dark border-b border-primary-blue/30 shadow-lg"
+              className="md:hidden absolute top-full left-0 right-0 bg-background-dark/95 backdrop-blur-md border-b border-primary-blue/30 shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
               role="navigation"
               aria-label={locale === 'fr' ? "Menu mobile" : "Mobile menu"}
+              style={{
+                backgroundColor: 'rgba(32, 32, 32, 0.98)',
+                backdropFilter: 'blur(12px)'
+              }}
             >
               <div className="px-4 sm:px-6 py-4 space-y-4">
                 {navItems.map((item, index) => {

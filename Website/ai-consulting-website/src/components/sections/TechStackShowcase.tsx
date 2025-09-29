@@ -95,8 +95,8 @@ const TechStackShowcase: React.FC = memo(() => {
           </div>
         </motion.div>
 
-        {/* Cloud Layout */}
-        <div className="relative min-h-[400px] md:min-h-[500px]">
+        {/* Cloud Layout - Desktop */}
+        <div className="hidden md:block relative min-h-[400px] md:min-h-[500px]">
           {/* Central "BUILD WITH AI" Element */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -125,6 +125,80 @@ const TechStackShowcase: React.FC = memo(() => {
               color={tool.color}
             />
           ))}
+        </div>
+
+        {/* Mobile Word Cloud Layout */}
+        <div className="md:hidden">
+          <div className="relative min-h-[500px] px-4">
+            {/* Central CTA Button - Fixed in center */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+            >
+              <div className="bg-gradient-to-br from-accent-yellow to-accent-red text-background-dark font-bold text-lg px-6 py-3 rounded-2xl border-4 border-background-dark shadow-[6px_6px_0_#000000] hover:shadow-[8px_8px_0_#000000] hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
+                <div className="flex items-center space-x-2">
+                  <Sparkles className="w-5 h-5" />
+                  <span>{t('cta_button')}</span>
+                  <Bot className="w-5 h-5" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mobile Word Cloud - Positioned around center */}
+            {[
+              // Top area tools
+              { ...cloudTools[0], position: { top: "15%", left: "10%" } }, // Cursor
+              { ...cloudTools[1], position: { top: "20%", left: "65%" } }, // FastAPI
+              { ...cloudTools[2], position: { top: "8%", left: "40%" } }, // Node.js
+              
+              // Left side tools  
+              { ...cloudTools[3], position: { top: "35%", left: "2%" } }, // Next.js
+              { ...cloudTools[9], position: { top: "65%", left: "15%" } }, // Claude
+              
+              // Right side tools
+              { ...cloudTools[4], position: { top: "40%", left: "75%" } }, // Tailwind
+              { ...cloudTools[10], position: { top: "60%", left: "70%" } }, // Vercel
+              
+              // Bottom area tools
+              { ...cloudTools[5], position: { top: "80%", left: "25%" } }, // Supabase
+              { ...cloudTools[6], position: { top: "85%", left: "55%" } }, // Prisma
+              { ...cloudTools[7], position: { top: "75%", left: "45%" } }, // NeonDB
+              { ...cloudTools[8], position: { top: "90%", left: "35%" } }, // Clerk
+            ].map((tool, index) => (
+              <motion.div
+                key={tool.name}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: (index * 0.08) + 0.5 }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 }
+                }}
+                className="absolute group cursor-pointer"
+                style={{ 
+                  top: tool.position.top, 
+                  left: tool.position.left,
+                  transform: `rotate(${(Math.random() * 8) - 4}deg)` // Random rotation for organic feel
+                }}
+              >
+                <div className="flex items-center space-x-1.5 bg-background-accent-grey/50 backdrop-blur-sm rounded-full px-2.5 py-1.5 border border-primary-blue/30 hover:border-accent-yellow/60 hover:bg-background-accent-grey/70 transition-all duration-300 shadow-lg">
+                  {/* Icon */}
+                  <div className="text-primary-blue group-hover:text-accent-yellow transition-colors duration-300">
+                    {React.cloneElement(tool.icon as React.ReactElement, { className: "w-3.5 h-3.5" })}
+                  </div>
+                  
+                  {/* Tool Name */}
+                  <span className={`${tool.color} font-medium text-xs group-hover:text-accent-yellow transition-colors duration-300 whitespace-nowrap`}>
+                    {tool.name}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

@@ -422,7 +422,7 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
       
       {/* Texture de papier subtile removed for cleaner design */}
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-2 lg:p-4">
         {/* Header avec message central - Plus compact */}
         <motion.div
           className="text-center mb-4"
@@ -444,11 +444,11 @@ const SpecificationStructure = ({ concepts }: { concepts: string[] }) => {
         </motion.div>
 
         {/* Documents qui s'écrivent automatiquement - Plus compact */}
-        <div className="grid grid-cols-1 gap-3 w-full max-w-md mx-auto">
+        <div className="grid grid-cols-1 gap-2 lg:gap-3 w-full max-w-md mx-auto">
           {documents.map((doc, docIndex) => (
             <motion.div
               key={doc.title}
-              className={`relative rounded-lg p-4`}
+              className={`relative rounded-lg p-3 lg:p-4`}
               style={{
                 background: `
                   linear-gradient(135deg, 
@@ -753,7 +753,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
       </motion.div>
       
       {/* Evolving Application Frame */}
-      <div className="absolute inset-4 flex flex-col">
+      <div className="absolute inset-2 lg:inset-4 flex flex-col">
         <motion.div
           className="w-full h-full overflow-hidden"
           style={{
@@ -772,7 +772,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
         >
           {/* Evolving Header */}
           <motion.div 
-            className={`px-4 py-3 flex items-center justify-between`}
+            className={`px-3 lg:px-4 py-2 lg:py-3 flex items-center justify-between`}
             style={{
               background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.03)' : 
                          currentPhase === 1 ? 'rgba(116, 166, 190, 0.08)' :
@@ -812,7 +812,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
 
           {/* Evolving App Content */}
           <motion.div 
-            className="flex-1 p-4"
+            className="flex-1 p-2 lg:p-4"
             style={{ background: 'rgba(42, 42, 42, 0.95)' }}
             key={`content-${currentPhase}`}
             initial={{ opacity: 0, y: 20 }}
@@ -820,10 +820,10 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
             transition={{ duration: 1, delay: 0.4 }}
           >
             {/* Evolving Metrics Grid */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="grid grid-cols-2 gap-2 lg:gap-3 mb-3 lg:mb-4">
               {/* Active Projects Metric */}
               <motion.div
-                className={`p-3 ${currentStyle.text}`}
+                className={`p-2 lg:p-3 ${currentStyle.text}`}
                 style={{
                   background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
                              currentPhase === 1 ? 'rgba(116, 166, 190, 0.10)' :
@@ -846,7 +846,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
               
               {/* Completed Metric */}
               <motion.div
-                className={`p-3 ${currentStyle.text}`}
+                className={`p-2 lg:p-3 ${currentStyle.text}`}
                 style={{
                   background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
                              currentPhase === 1 ? 'rgba(16, 185, 129, 0.10)' :
@@ -869,7 +869,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
               
               {/* Velocity Metric */}
               <motion.div
-                className={`p-3 ${currentStyle.text}`}
+                className={`p-2 lg:p-3 ${currentStyle.text}`}
                 style={{
                   background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
                              currentPhase === 1 ? 'rgba(251, 191, 36, 0.10)' :
@@ -892,7 +892,7 @@ const LivingApplication = ({ concepts, phase = 0 }: { concepts: string[]; phase?
               
               {/* Success Rate Metric */}
               <motion.div
-                className={`p-3 ${currentStyle.text}`}
+                className={`p-2 lg:p-3 ${currentStyle.text}`}
                 style={{
                   background: currentPhase === 0 ? 'rgba(200, 200, 200, 0.05)' : 
                              currentPhase === 1 ? 'rgba(139, 92, 246, 0.10)' :
@@ -1259,7 +1259,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
 
 
         {/* Visualisation principale - Format responsive et bien centré */}
-        <div className="relative min-h-[400px] h-[60vh] max-h-[600px] w-full max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden"
+        <div className="relative min-h-[500px] lg:min-h-[400px] h-[70vh] lg:h-[60vh] max-h-[700px] lg:max-h-[600px] w-full max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden"
              style={{
                background: `
                  linear-gradient(135deg, 
@@ -1310,7 +1310,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
           </AnimatePresence>
           
           {/* Info de l'étape moderne */}
-          <div className="absolute bottom-0 left-0 right-0 p-8"
+          <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-8"
                style={{
                  background: `
                    linear-gradient(to top, 
@@ -1321,7 +1321,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
                  `
                }}>
             <motion.h3 
-              className={`text-2xl font-bold ${translatedStages[currentStage].color} mb-3`}
+              className={`text-xl lg:text-2xl font-bold ${translatedStages[currentStage].color} mb-2 lg:mb-3`}
               key={`title-${currentStage}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1330,7 +1330,7 @@ const TransformationProcessInteractive: React.FC<TransformationProcessInteractiv
               {translatedStages[currentStage].title}
             </motion.h3>
             <motion.p 
-              className="text-text-secondary text-base leading-relaxed"
+              className="text-text-secondary text-sm lg:text-base leading-relaxed"
               key={`desc-${currentStage}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
