@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   const currentLocale = params?.locale as string || 'fr';
 
   return (
-    <footer className="bg-background-dark-alt border-t border-text-muted relative overflow-hidden">
+    <footer className="bg-black/40 backdrop-blur-sm border-t border-white/20 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-12 gap-2 h-full p-4">
@@ -51,22 +51,22 @@ const Footer: React.FC = () => {
                 />
               </div>
 
-              <p className="text-text-secondary mb-6 leading-relaxed">
+              <p className="text-white/80 mb-6 leading-relaxed">
                 {t('company_description')}
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-text-secondary">
-                  <Mail className="w-4 h-4 text-accent-red" />
+                <div className="flex items-center gap-3 text-white/70">
+                  <Mail className="w-4 h-4 text-blue-300" />
                   <span className="text-sm">philbeliv@gmail.com</span>
                 </div>
-                <div className="flex items-center gap-3 text-text-secondary">
-                  <Phone className="w-4 h-4 text-accent-red" />
+                <div className="flex items-center gap-3 text-white/70">
+                  <Phone className="w-4 h-4 text-blue-300" />
                   <span className="text-sm">+1 514-773-4780</span>
                 </div>
-                <div className="flex items-center gap-3 text-text-secondary">
-                  <MapPin className="w-4 h-4 text-accent-red" />
+                <div className="flex items-center gap-3 text-white/70">
+                  <MapPin className="w-4 h-4 text-blue-300" />
                   <span className="text-sm">Montréal, Québec</span>
                 </div>
               </div>
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-text-light mb-6">
+              <h4 className="text-lg font-semibold text-white mb-6">
                 {t('sections.navigation')}
               </h4>
               <ul className="space-y-3">
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <Link
                       href={t(`quick_links.${index}.href`)}
-                      className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
+                      className="text-white/70 hover:text-blue-200 transition-colors duration-200"
                     >
                       {t(`quick_links.${index}.name`)}
                     </Link>
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
 
             {/* Services */}
             <div>
-              <h4 className="text-lg font-semibold text-text-light mb-6">
+              <h4 className="text-lg font-semibold text-white mb-6">
                 {t('sections.services')}
               </h4>
               <ul className="space-y-3">
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <Link
                       href={t(`services_links.${index}.href`)}
-                      className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
+                      className="text-white/70 hover:text-blue-200 transition-colors duration-200"
                     >
                       {t(`services_links.${index}.name`)}
                     </Link>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
 
             {/* Legal */}
             <div>
-              <h4 className="text-lg font-semibold text-text-light mb-6">
+              <h4 className="text-lg font-semibold text-white mb-6">
                 {t('sections.legal')}
               </h4>
               <ul className="space-y-3">
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <Link
                       href={t(`legal_links.${index}.href`)}
-                      className="text-text-secondary hover:text-cta-highlight transition-colors duration-200"
+                      className="text-white/70 hover:text-blue-200 transition-colors duration-200"
                     >
                       {t(`legal_links.${index}.name`)}
                     </Link>
@@ -132,18 +132,18 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-neutral-support">
+        <div className="py-6 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-text-muted text-sm">
+            <p className="text-white/60 text-sm">
               {t('copyright')}
             </p>
-            
-            <div className="flex items-center gap-6 text-sm text-text-muted">
+
+            <div className="flex items-center gap-6 text-sm text-white/60">
               <span>{t('language.current')}</span>
-              <span className="w-px h-4 bg-neutral-support"></span>
-              <Link 
-                href={currentLocale === 'fr' ? '/en' : '/fr'} 
-                className="hover:text-text-secondary transition-colors"
+              <span className="w-px h-4 bg-white/20"></span>
+              <Link
+                href={currentLocale === 'fr' ? '/en' : '/fr'}
+                className="hover:text-blue-200 transition-colors"
               >
                 {t('language.other')}
               </Link>

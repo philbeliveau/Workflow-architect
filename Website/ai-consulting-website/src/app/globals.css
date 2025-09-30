@@ -2,13 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+3:wght@200..900&display=swap');
 
 :root {
-  /* NEWCODE Beautiful Dramatic Gradient System */
-  --hero-gradient: linear-gradient(90deg, #b8b8b8 0%, #ffffff 100%);
-  --body-gradient: linear-gradient(90deg, #d0d0d0 0%, #f8f8f8 100%);
+  /* NEWCODE Solar Gradient System - Continuous Flow */
+  --solar-gradient-main: linear-gradient(180deg,
+    #ffffff 0%,                    /* White for hero area */
+    #ffffff calc(100vh - 1px),     /* White until end of hero */
+    #fff8e7 calc(100vh + 5%),      /* Start warm cream transition */
+    #ffeaa7 calc(100vh + 25%),     /* Light golden yellow */
+    #fdcb6e calc(100vh + 45%),     /* Warm amber */
+    #e17055 calc(100vh + 65%),     /* Sunset orange */
+    #d63031 calc(100vh + 85%),     /* Deep sunset red */
+    #74b9ff 100%                   /* Evening blue at bottom */
+  );
+
+  /* Solar overlay utilities for content readability */
+  --solar-overlay-light: rgba(255, 255, 255, 0.85);
+  --solar-overlay-medium: rgba(255, 255, 255, 0.7);
+  --solar-overlay-subtle: rgba(255, 255, 255, 0.4);
+
+  /* Legacy gradient references (updated to use solar system) */
+  --hero-gradient: #ffffff; /* Keep hero pure white */
+  --body-gradient: var(--solar-gradient-main);
   --navigation-background: rgba(255, 255, 255, 0.95);
-  --section-accent: linear-gradient(90deg, #a0a0a0 0%, #e0e0e0 100%);
-  --section-light: linear-gradient(90deg, #e8e8e8 0%, #ffffff 100%);
-  --section-reverse: linear-gradient(90deg, #ffffff 0%, #b8b8b8 100%);
+  --section-accent: transparent; /* Sections now transparent to show gradient */
+  --section-light: transparent; /* Sections now transparent to show gradient */
+  --section-reverse: transparent; /* Sections now transparent to show gradient */
 
   /* Core Colors */
   --text-primary: #000000;
@@ -76,7 +93,7 @@
 }
 
 body {
-  background: var(--body-gradient);
+  background: var(--solar-gradient-main);
   color: var(--text-primary);
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
@@ -86,6 +103,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  /* Ensure gradient covers full page height */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /* Global subtle pattern overlay removed - cleaner background */
@@ -168,25 +189,42 @@ html {
   }
 }
 
-/* NEWCODE Beautiful Dramatic Gradient Utility Classes */
+/* NEWCODE Solar Gradient Utility Classes */
+.bg-solar-transparent {
+  background: transparent;
+}
+
+.bg-solar-overlay-light {
+  background: var(--solar-overlay-light);
+}
+
+.bg-solar-overlay-medium {
+  background: var(--solar-overlay-medium);
+}
+
+.bg-solar-overlay-subtle {
+  background: var(--solar-overlay-subtle);
+}
+
+/* Legacy gradient support - updated for solar system */
 .bg-gradient-hero {
   background: var(--hero-gradient);
 }
 
 .bg-gradient-body {
-  background: var(--body-gradient);
+  background: var(--solar-gradient-main);
 }
 
 .bg-gradient-accent {
-  background: var(--section-accent);
+  background: transparent;
 }
 
 .bg-gradient-light {
-  background: var(--section-light);
+  background: transparent;
 }
 
 .bg-gradient-reverse {
-  background: var(--section-reverse);
+  background: transparent;
 }
 
 .bg-gradient-primary {
@@ -194,12 +232,12 @@ html {
 }
 
 .bg-gradient-dark {
-  background: var(--section-accent);
+  background: transparent;
 }
 
 /* Legacy support */
 .bg-gradient-bronze {
-  background: var(--section-accent);
+  background: transparent;
 }
 
 /* Utility classes for better UX */

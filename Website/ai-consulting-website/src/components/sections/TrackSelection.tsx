@@ -95,10 +95,7 @@ const TrackSelection: React.FC = () => {
   return (
     <section
       id="track-selection"
-      className="py-24 relative overflow-hidden"
-      style={{
-        background: 'var(--section-reverse)'
-      }}
+      className="py-24 relative overflow-hidden bg-solar-overlay-light"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}

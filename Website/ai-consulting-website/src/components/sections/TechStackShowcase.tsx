@@ -50,21 +50,21 @@ const TechStackShowcase: React.FC = memo(() => {
   const t = useTranslations('tech_stack');
   
   const cloudTools = [
-    { name: "Cursor", icon: <Code className="w-8 h-8" />, position: { top: "10%", left: "5%" }, color: "text-gray-200" },
-    { name: "FastAPI", icon: <Zap className="w-8 h-8" />, position: { top: "10%", left: "25%" }, color: "text-gray-200" },
-    { name: "Node.js", icon: <Server className="w-8 h-8" />, position: { top: "15%", left: "70%" }, color: "text-slate-200" },
-    { name: "Next.js", icon: <Globe className="w-8 h-8" />, position: { top: "40%", left: "15%" }, color: "text-zinc-200" },
-    { name: "Tailwind", icon: <Zap className="w-8 h-8" />, position: { top: "45%", left: "80%" }, color: "text-stone-200" },
-    { name: "Supabase", icon: <Database className="w-8 h-8" />, position: { top: "75%", left: "25%" }, color: "text-neutral-200" },
-    { name: "Prisma", icon: <Database className="w-8 h-8" />, position: { top: "25%", left: "45%" }, color: "text-gray-300" },
-    { name: "NeonDB", icon: <Database className="w-8 h-8" />, position: { top: "65%", left: "70%" }, color: "text-slate-300" },
-    { name: "Clerk", icon: <Shield className="w-8 h-8" />, position: { top: "80%", left: "50%" }, color: "text-zinc-300" },
-    { name: "Claude", icon: <Bot className="w-8 h-8" />, position: { top: "60%", left: "5%" }, color: "text-stone-300" },
-    { name: "Vercel", icon: <Globe className="w-8 h-8" />, position: { top: "30%", left: "85%" }, color: "text-neutral-300" }
+    { name: "Cursor", icon: <Code className="w-8 h-8" />, position: { top: "10%", left: "5%" }, color: "text-black" },
+    { name: "FastAPI", icon: <Zap className="w-8 h-8" />, position: { top: "10%", left: "25%" }, color: "text-black" },
+    { name: "Node.js", icon: <Server className="w-8 h-8" />, position: { top: "15%", left: "70%" }, color: "text-black" },
+    { name: "Next.js", icon: <Globe className="w-8 h-8" />, position: { top: "40%", left: "15%" }, color: "text-black" },
+    { name: "Tailwind", icon: <Zap className="w-8 h-8" />, position: { top: "45%", left: "80%" }, color: "text-black" },
+    { name: "Supabase", icon: <Database className="w-8 h-8" />, position: { top: "75%", left: "25%" }, color: "text-black" },
+    { name: "Prisma", icon: <Database className="w-8 h-8" />, position: { top: "25%", left: "45%" }, color: "text-black" },
+    { name: "NeonDB", icon: <Database className="w-8 h-8" />, position: { top: "65%", left: "70%" }, color: "text-black" },
+    { name: "Clerk", icon: <Shield className="w-8 h-8" />, position: { top: "80%", left: "50%" }, color: "text-black" },
+    { name: "Claude", icon: <Bot className="w-8 h-8" />, position: { top: "60%", left: "5%" }, color: "text-black" },
+    { name: "Vercel", icon: <Globe className="w-8 h-8" />, position: { top: "30%", left: "85%" }, color: "text-black" }
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden" style={{ background: 'var(--hero-gradient)' }}>
+    <section className="relative py-24 overflow-hidden bg-solar-overlay-medium">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-accent-red/30 rounded-full blur-3xl animate-pulse"></div>

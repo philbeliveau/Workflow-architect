@@ -12,10 +12,7 @@ const FormationOverview: React.FC = memo(() => {
   
   return (
     <section
-      className="relative py-24 overflow-hidden"
-      style={{
-        background: 'var(--section-light)'
-      }}
+      className="relative py-24 overflow-hidden bg-solar-overlay-subtle"
     >
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">

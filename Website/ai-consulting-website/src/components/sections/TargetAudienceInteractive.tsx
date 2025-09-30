@@ -129,10 +129,7 @@ const TargetAudienceInteractive: React.FC = memo(() => {
 
   return (
     <section
-      className="relative py-24 overflow-hidden"
-      style={{
-        background: 'var(--section-light)'
-      }}
+      className="relative py-24 overflow-hidden bg-solar-overlay-subtle"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">

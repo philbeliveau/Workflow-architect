@@ -7,3 +7,5 @@
 {"level":"info","message":"Browser launched successfully","service":"mcp-puppeteer","timestamp":"2025-09-29 20:19:23.346"}
 {"level":"info","message":"Starting MCP server","service":"mcp-puppeteer","timestamp":"2025-09-29 21:21:24.721"}
 {"level":"info","message":"MCP server started successfully","service":"mcp-puppeteer","timestamp":"2025-09-29 21:21:24.723"}
+{"level":"info","message":"Starting MCP server","service":"mcp-puppeteer","timestamp":"2025-09-29 21:34:56.338"}
+{"level":"info","message":"MCP server started successfully","service":"mcp-puppeteer","timestamp":"2025-09-29 21:34:56.339"}
