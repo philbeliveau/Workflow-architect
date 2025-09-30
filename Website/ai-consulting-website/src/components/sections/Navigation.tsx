@@ -97,20 +97,17 @@ const Navigation: React.FC = memo(() => {
 
   return (
     <header
-      className="fixed left-0 right-0 z-[100] transition-all duration-300"
+      className="fixed left-0 right-0 z-[100] transition-all duration-300 bg-white"
       style={{
-        top: isBannerVisible ? '56px' : '0px',
-        background: 'var(--navigation-background)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
+        top: isBannerVisible ? '56px' : '0px'
       }}
     >
       <nav className="max-w-6xl mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
-          {/* Minimal Logo */}
+          {/* Logo on the left */}
           <Link href="/">
             <div
-              className="font-light text-xl tracking-tight hover:opacity-80 transition-opacity"
+              className="font-light text-4xl tracking-tight hover:opacity-80 transition-opacity"
               style={{
                 color: '#000000',
                 fontFamily: 'Inter, system-ui, sans-serif'
@@ -120,54 +117,50 @@ const Navigation: React.FC = memo(() => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="#track-selection" className="text-sm font-medium text-black hover:opacity-70 transition-opacity">
+          {/* Centered Navigation */}
+          <div className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
+            <Link
+              href="#track-selection"
+              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-black/5"
+            >
               {locale === 'fr' ? 'Parcours' : 'Tracks'}
             </Link>
-            <Link href="/blog" className="text-sm font-medium text-black hover:opacity-70 transition-opacity">
+            <Link
+              href="/blog"
+              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-black/5"
+            >
               Blog
             </Link>
-            <Link href="#contact" className="text-sm font-medium text-black hover:opacity-70 transition-opacity">
+            <Link
+              href="#contact"
+              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-black/5"
+            >
               Contact
             </Link>
-
-            {/* Language Toggle */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => switchLanguage('fr')}
-                className={`text-sm font-medium transition-opacity ${locale === 'fr' ? 'text-black' : 'text-black/50 hover:text-black/70'}`}
-              >
-                FR
-              </button>
-              <span className="text-black/30">|</span>
-              <button
-                onClick={() => switchLanguage('en')}
-                className={`text-sm font-medium transition-opacity ${locale === 'en' ? 'text-black' : 'text-black/50 hover:text-black/70'}`}
-              >
-                EN
-              </button>
-            </div>
           </div>
 
-          {/* Single CTA */}
-          <div className="hidden md:block">
-            <Button
-              variant="primary"
-              size="md"
-              href="#formation-overview"
-              style={{
-                backgroundColor: '#000000',
-                color: '#FFFFFF',
-                border: 'none',
-                padding: '12px 24px',
-                fontSize: '14px',
-                fontWeight: 500,
-                borderRadius: '6px'
-              }}
+          {/* Language Toggle on the right */}
+          <div className="hidden md:flex items-center bg-black/5 rounded-full p-1">
+            <button
+              onClick={() => switchLanguage('fr')}
+              className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all duration-200 ${
+                locale === 'fr'
+                  ? 'bg-black text-white shadow-sm'
+                  : 'text-black/60 hover:text-black/80 hover:bg-black/10'
+              }`}
             >
-              {locale === 'fr' ? 'Démarrer' : 'Get Started'}
-            </Button>
+              FR
+            </button>
+            <button
+              onClick={() => switchLanguage('en')}
+              className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all duration-200 ${
+                locale === 'en'
+                  ? 'bg-black text-white shadow-sm'
+                  : 'text-black/60 hover:text-black/80 hover:bg-black/10'
+              }`}
+            >
+              EN
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -189,54 +182,62 @@ const Navigation: React.FC = memo(() => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              style={{
-                background: 'var(--navigation-background)',
-                backdropFilter: 'blur(12px)'
-              }}
+              style={{}}
             >
-              <div className="px-6 py-6 space-y-4">
+              <div className="px-6 py-6 space-y-3">
                 <Link
                   href="#track-selection"
-                  className="block text-sm font-medium text-black hover:opacity-70"
+                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-black/5"
                   onClick={closeMobileMenu}
                 >
                   {locale === 'fr' ? 'Parcours' : 'Tracks'}
                 </Link>
                 <Link
                   href="/blog"
-                  className="block text-sm font-medium text-black hover:opacity-70"
+                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-black/5"
                   onClick={closeMobileMenu}
                 >
                   Blog
                 </Link>
                 <Link
                   href="#contact"
-                  className="block text-sm font-medium text-black hover:opacity-70"
+                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-black/5"
                   onClick={closeMobileMenu}
                 >
                   Contact
                 </Link>
 
-                {/* Mobile Language Toggle */}
-                <div className="flex items-center gap-4 pt-2">
-                  <span className="text-sm text-black/70">Langue:</span>
-                  <div className="flex items-center gap-2">
+                {/* Enhanced Mobile Language Toggle */}
+                <div className="pt-4 border-t border-black/10">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm text-black/70 font-medium">
+                      {locale === 'fr' ? 'Langue' : 'Language'}
+                    </span>
+                  </div>
+                  <div className="flex bg-black/5 rounded-full p-1">
                     <button
                       onClick={() => {
                         switchLanguage('fr');
                         closeMobileMenu();
                       }}
-                      className={`text-sm font-medium transition-opacity ${locale === 'fr' ? 'text-black' : 'text-black/50 hover:text-black/70'}`}
+                      className={`flex-1 text-sm font-medium py-2 px-4 rounded-full transition-all duration-200 ${
+                        locale === 'fr'
+                          ? 'bg-black text-white shadow-sm'
+                          : 'text-black/60 hover:text-black/80 hover:bg-black/10'
+                      }`}
                     >
                       Français
                     </button>
-                    <span className="text-black/30">|</span>
                     <button
                       onClick={() => {
                         switchLanguage('en');
                         closeMobileMenu();
                       }}
-                      className={`text-sm font-medium transition-opacity ${locale === 'en' ? 'text-black' : 'text-black/50 hover:text-black/70'}`}
+                      className={`flex-1 text-sm font-medium py-2 px-4 rounded-full transition-all duration-200 ${
+                        locale === 'en'
+                          ? 'bg-black text-white shadow-sm'
+                          : 'text-black/60 hover:text-black/80 hover:bg-black/10'
+                      }`}
                     >
                       English
                     </button>
