@@ -140,7 +140,221 @@ const TrackSelection: React.FC = () => {
               className="group"
               variants={cardVariants}
             >
-              <div className={`relative bg-gradient-to-br ${track.gradient} border-2 border-${track.color}/30 rounded-xl p-4 hover:border-${track.color}/60 hover:scale-[1.02] transition-all duration-300 h-full group-hover:shadow-2xl group-hover:shadow-${track.color}/20`}>
+              {track.id === "debutant" ? (
+                // Retro Windows 95 Style Card for Kickstart
+                <div className="relative w-full max-w-md mx-auto" role="article" aria-label={`Formation ${track.title}`}>
+                  <style jsx>{`
+                    .retro-card-container {
+                      width: 100%;
+                      max-width: 480px;
+                      height: 520px;
+                      background: #c0c0c0;
+                      border: 2px outset #c0c0c0;
+                      padding: 2px;
+                      font-family: "MS Sans Serif", "Tahoma", sans-serif;
+                      font-size: 11px;
+                      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+                    }
+
+                    @media (max-width: 768px) {
+                      .retro-card-container {
+                        height: 480px;
+                        font-size: 10px;
+                      }
+                    }
+
+                    .retro-card {
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      height: 100%;
+                      background: #c0c0c0;
+                      border: 2px inset #c0c0c0;
+                      overflow: hidden;
+                      color: #000000;
+                    }
+
+                    .retro-card-header {
+                      background: #000080;
+                      padding: 2px 4px;
+                      flex-shrink: 0;
+                      border-bottom: 1px solid #000000;
+                      color: white;
+                      font-weight: bold;
+                      font-size: 11px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                    }
+
+                    .retro-card-tabs {
+                      display: flex;
+                      background: #c0c0c0;
+                      border-bottom: 1px solid #808080;
+                      height: 20px;
+                    }
+
+                    .retro-card-tab {
+                      padding: 2px 8px;
+                      font-size: 11px;
+                      color: #000000;
+                      background: #c0c0c0;
+                      border: 2px outset #c0c0c0;
+                      border-bottom: none;
+                      cursor: pointer;
+                      height: 18px;
+                      margin-top: 1px;
+                    }
+
+                    .retro-card-tab.active {
+                      background: #c0c0c0;
+                      border: 2px outset #c0c0c0;
+                      border-bottom: 1px solid #c0c0c0;
+                      margin-top: 0;
+                      height: 19px;
+                      position: relative;
+                      z-index: 2;
+                    }
+
+                    .retro-card-body {
+                      display: flex;
+                      flex-grow: 1;
+                      overflow: auto;
+                      padding: 4px 0 4px 2px;
+                      font-family: "Courier New", monospace;
+                      font-size: 12px;
+                      line-height: 1.4;
+                      background: #ffffff;
+                      border: 1px inset #808080;
+                      margin: 2px;
+                    }
+
+                    .retro-line-numbers {
+                      display: flex;
+                      flex-direction: column;
+                      padding: 0 6px;
+                      text-align: right;
+                      color: #808080;
+                      user-select: none;
+                      font-size: 12px;
+                      background: #f0f0f0;
+                      border-right: 1px solid #c0c0c0;
+                      min-width: 25px;
+                    }
+
+                    .retro-code-content {
+                      margin: 0;
+                      padding: 0 4px;
+                      white-space: pre-wrap;
+                      overflow-x: auto;
+                      color: #000000;
+                      flex: 1;
+                    }
+
+                    .retro-card-footer {
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      background: #c0c0c0;
+                      padding: 2px 4px;
+                      border-top: 1px solid #808080;
+                      flex-shrink: 0;
+                      height: 22px;
+                    }
+
+                    .retro-copy-button {
+                      display: flex;
+                      align-items: center;
+                      gap: 4px;
+                      background: #c0c0c0;
+                      color: #000000;
+                      border: 2px outset #c0c0c0;
+                      padding: 0 6px;
+                      cursor: pointer;
+                      font-size: 11px;
+                      height: 18px;
+                    }
+
+                    .retro-copy-button:active {
+                      border: 2px inset #c0c0c0;
+                      padding: 1px 5px 0 7px;
+                    }
+
+                    .code-comment { color: #008000; }
+                    .code-keyword { color: #0000ff; font-weight: bold; }
+                    .code-variable { color: #800080; }
+                    .code-string { color: #808080; }
+                    .code-function { color: #000000; font-weight: bold; }
+                  `}</style>
+
+                  <div className="retro-card-container hover:scale-105 transition-transform duration-300">
+                    <div className="retro-card">
+                      {/* Window Header */}
+                      <div className="retro-card-header" role="banner">
+                        <span>💻 Formation - Kickstart.exe</span>
+                        <div className="flex gap-1" role="toolbar" aria-label="Window controls">
+                          <div className="w-3 h-3 bg-gray-400 border border-black text-[8px] text-center leading-3" role="button" aria-label="Minimize" tabIndex="0">_</div>
+                          <div className="w-3 h-3 bg-gray-400 border border-black text-[8px] text-center leading-3" role="button" aria-label="Maximize" tabIndex="0">□</div>
+                          <div className="w-3 h-3 bg-red-500 border border-black text-[8px] text-center leading-3" role="button" aria-label="Close" tabIndex="0">×</div>
+                        </div>
+                      </div>
+
+                      {/* Tabs */}
+                      <div className="retro-card-tabs" role="tablist" aria-label="Formation details">
+                        <div className="retro-card-tab active" role="tab" aria-selected="true" tabIndex="0">Info.js</div>
+                        <div className="retro-card-tab" role="tab" aria-selected="false" tabIndex="0">Price.css</div>
+                        <div className="retro-card-tab" role="tab" aria-selected="false" tabIndex="0">Modules.md</div>
+                      </div>
+
+                      {/* Code Editor Body */}
+                      <div className="retro-card-body" role="main" aria-label="Formation details code editor">
+                        <div className="retro-line-numbers" aria-hidden="true">
+                          {Array.from({length: 20}, (_, i) => (
+                            <div key={i}>{i + 1}</div>
+                          ))}
+                        </div>
+                        <div className="retro-code-content" role="region" aria-label="Formation information">
+                          <span className="code-comment">// 🚀 Formation Kickstart - {track.level}</span>{'\n'}
+                          <span className="code-keyword">const</span> <span className="code-variable">formation</span> = {'{'}
+                          {'\n'}  <span className="code-string">"title"</span>: <span className="code-string">"{track.title}"</span>,
+                          {'\n'}  <span className="code-string">"duration"</span>: <span className="code-string">"{track.duration}"</span>,
+                          {'\n'}  <span className="code-string">"price"</span>: <span className="code-string">"{track.price}"</span>,
+                          {'\n'}  <span className="code-string">"description"</span>: <span className="code-string">"{track.description.substring(0, 45)}..."</span>,
+                          {'\n'}  <span className="code-string">"modules"</span>: [
+                          {'\n'}    <span className="code-string">"✓ Sites en quelques heures"</span>,
+                          {'\n'}    <span className="code-string">"✓ Outils Bolt/Lovable"</span>,
+                          {'\n'}    <span className="code-string">"✓ Méthodo complète"</span>,
+                          {'\n'}    <span className="code-string">"✓ Portfolio professionnel"</span>
+                          {'\n'}  ],
+                          {'\n'}  <span className="code-string">"benefits"</span>: [
+                          {'\n'}    <span className="code-string">"⚡ Démarrage rapide"</span>,
+                          {'\n'}    <span className="code-string">"👥 Support communauté"</span>,
+                          {'\n'}    <span className="code-string">"📚 Ressources pratiques"</span>
+                          {'\n'}  ]
+                          {'\n'}{'}'}
+                          {'\n'}
+                          {'\n'}<span className="code-comment">// 🎯 {track.footer}</span>
+                        </div>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="retro-card-footer" role="contentinfo">
+                        <span className="text-black font-normal" aria-label="File name">KickstartTraining.js</span>
+                        <button
+                          className="retro-copy-button"
+                          onClick={() => window.open(track.href, '_blank')}
+                          aria-label={`S'inscrire à la formation ${track.title}`}
+                          type="button"
+                        >
+                          ▶ {track.cta.substring(0, 12)}...
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // Regular card for advanced training
+                <div className={`relative bg-gradient-to-br ${track.gradient} border-2 border-${track.color}/30 rounded-xl p-4 hover:border-${track.color}/60 hover:scale-[1.02] transition-all duration-300 h-full group-hover:shadow-2xl group-hover:shadow-${track.color}/20`}>
                 
                 {/* Badge */}
                 {track.badge && (
@@ -243,7 +457,8 @@ const TrackSelection: React.FC = () => {
                     {track.footer}
                   </p>
                 </div>
-              </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>
