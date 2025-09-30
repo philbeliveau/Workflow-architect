@@ -145,11 +145,11 @@ export function PromotionalBanner({
   if (!isHydrated) {
     // During SSR and initial client render, always render to prevent hydration mismatch
     return (
-      <div 
+      <div
         className={`
-          fixed top-0 left-0 w-full bg-gradient-to-r from-yellow-300 to-yellow-200 
-          text-slate-900 py-2 px-4 md:py-3 md:px-6
-          shadow-sm border-b border-yellow-400
+          fixed top-0 left-0 w-full bg-gradient-to-r from-[#BCBCBC] to-[#9A9A9A]
+          text-black py-2 px-4 md:py-3 md:px-6
+          shadow-sm border-b border-[#898989]
           z-[99999]
           ${className}
         `}
@@ -180,11 +180,11 @@ export function PromotionalBanner({
   };
 
   return (
-    <div 
+    <div
       className={`
-        fixed top-0 left-0 w-full bg-gradient-to-r from-yellow-300 to-yellow-200 
-        text-slate-900 py-2 px-4 md:py-3 md:px-6
-        shadow-sm border-b border-yellow-400
+        fixed top-0 left-0 w-full bg-gradient-to-r from-[#BCBCBC] to-[#9A9A9A]
+        text-black py-2 px-4 md:py-3 md:px-6
+        shadow-sm border-b border-[#898989]
         z-[99999]
         ${className}
       `}
@@ -200,7 +200,7 @@ export function PromotionalBanner({
           </div>
           
           {/* Static date display */}
-          <div className="text-xs md:text-sm text-slate-700">
+          <div className="text-xs md:text-sm text-black/70">
             {t('deadline')}
           </div>
         </div>
@@ -215,9 +215,9 @@ export function PromotionalBanner({
               formationSection?.scrollIntoView({ behavior: 'smooth' });
             }}
             className="
-              bg-slate-900 text-white font-medium py-2 px-4 rounded-md
-              hover:bg-slate-800 transition-colors duration-200
-              text-sm whitespace-nowrap border border-slate-700
+              bg-black text-white font-medium py-2 px-4 rounded-md
+              hover:bg-black/80 transition-colors duration-200
+              text-sm whitespace-nowrap border border-black/20
             "
           >
             {t('cta')}
@@ -228,12 +228,12 @@ export function PromotionalBanner({
         <button
           onClick={handleDismiss}
           className="
-            ml-2 p-1 hover:bg-yellow-400 rounded-full transition-colors
+            ml-2 p-1 hover:bg-black/10 rounded-full transition-colors
             flex-shrink-0
           "
           aria-label={t('close')}
         >
-          <X size={16} className="text-slate-700 hover:text-slate-900" />
+          <X size={16} className="text-black/70 hover:text-black" />
         </button>
       </div>
 
@@ -246,9 +246,9 @@ export function PromotionalBanner({
             formationSection?.scrollIntoView({ behavior: 'smooth' });
           }}
           className="
-            bg-slate-900 text-white font-medium py-2 px-6 rounded-md
-            hover:bg-slate-800 transition-colors duration-200
-            text-sm border border-slate-700
+            bg-black text-white font-medium py-2 px-6 rounded-md
+            hover:bg-black/80 transition-colors duration-200
+            text-sm border border-black/20
           "
         >
           {t('cta')}

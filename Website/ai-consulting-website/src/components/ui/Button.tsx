@@ -15,16 +15,16 @@ const Button = memo(React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', href, children, loading = false, ...props }, ref) => {
     const baseClasses = "inline-flex items-center justify-center font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-200";
     
-    const brutalistClasses = variant === 'brutalist' 
-      ? "border-3 border-black rounded-xl relative overflow-hidden transition-all duration-300 ease-cubic-bezier(0.175, 0.885, 0.32, 1.275) hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[2px] active:translate-y-[2px] shadow-[4px_4px_0px_#000000] hover:shadow-[8px_8px_0px_#000000] active:shadow-[2px_2px_0px_#000000]"
-      : "rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-accent-red";
+    const brutalistClasses = variant === 'brutalist'
+      ? "border-3 border-typography-primary rounded-xl relative overflow-hidden transition-all duration-300 ease-cubic-bezier(0.175, 0.885, 0.32, 1.275) hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[2px] active:translate-y-[2px] shadow-[4px_4px_0px_#000000] hover:shadow-[8px_8px_0px_#000000] active:shadow-[2px_2px_0px_#000000]"
+      : "rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-typography-primary";
     
     const variants = {
-      primary: "bg-accent-red hover:bg-hover-interactive text-text-light shadow-lg hover:shadow-xl focus-visible:ring-accent-red",
-      secondary: "bg-primary-blue hover:bg-hover-interactive text-text-light shadow-lg hover:shadow-xl focus-visible:ring-primary-blue",
-      outline: "border-2 border-accent-red text-accent-red hover:bg-accent-red hover:text-text-light focus-visible:ring-accent-red",
-      ghost: "text-text-secondary hover:text-primary-blue hover:bg-hover-soft focus-visible:ring-primary-blue",
-      brutalist: "bg-accent-red text-text-light font-bold border-black focus-visible:ring-accent-red"
+      primary: "bg-typography-primary hover:bg-typography-secondary text-accent-white shadow-lg hover:shadow-xl focus-visible:ring-typography-primary",
+      secondary: "bg-background-light hover:bg-state-hover text-typography-primary shadow-lg hover:shadow-xl focus-visible:ring-background-light",
+      outline: "border-2 border-typography-primary text-typography-primary hover:bg-typography-primary hover:text-accent-white focus-visible:ring-typography-primary",
+      ghost: "text-typography-secondary hover:text-typography-primary hover:bg-accent-subtle focus-visible:ring-typography-primary",
+      brutalist: "bg-typography-primary text-accent-white font-bold border-typography-primary focus-visible:ring-typography-primary"
     };
     
     const sizes = {
@@ -35,9 +35,9 @@ const Button = memo(React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = cn(
       baseClasses, 
-      brutalistClasses, 
-      variants[variant], 
-      sizes[size], 
+      brutalistClasses,
+      variants[variant],
+      sizes[size],
       loading && "opacity-75 cursor-not-allowed",
       className
     );

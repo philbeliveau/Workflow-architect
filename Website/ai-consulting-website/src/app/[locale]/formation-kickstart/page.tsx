@@ -59,7 +59,12 @@ export default function FormationKickstartPage() {
   }, 0)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900">
+    <div
+      className="min-h-screen"
+      style={{
+        background: 'var(--hero-gradient)'
+      }}
+    >
       {/* Navigation */}
       <Navigation />
 
@@ -80,7 +85,7 @@ export default function FormationKickstartPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 px-2"
+              className="text-3xl sm:text-4xl md:text-6xl font-light text-black mb-4 sm:mb-6 px-2"
             >
               <span className="block leading-tight">{t('hero.title')}</span>
               <span className="block text-accent-purple leading-tight">{t('hero.title_highlight')}</span>
@@ -90,7 +95,7 @@ export default function FormationKickstartPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 leading-relaxed"
+              className="text-lg sm:text-xl text-black/80 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 leading-relaxed"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -101,19 +106,19 @@ export default function FormationKickstartPage() {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 px-4"
             >
-              <div className="flex items-center gap-3 text-gray-300">
+              <div className="flex items-center gap-3 text-black/70">
                 <div className="p-2 bg-accent-purple/20 rounded-lg">
                   <Clock className="w-5 h-5 text-accent-purple" />
                 </div>
                 <span>{Math.floor(totalDuration / 60)}h {t('hero.duration')}</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-300">
+              <div className="flex items-center gap-3 text-black/70">
                 <div className="p-2 bg-accent-purple/20 rounded-lg">
                   <Users className="w-5 h-5 text-accent-purple" />
                 </div>
                 <span>{t('hero.level')}</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-300">
+              <div className="flex items-center gap-3 text-black/70">
                 <div className="p-2 bg-accent-purple/20 rounded-lg">
                   <Globe className="w-5 h-5 text-accent-purple" />
                 </div>
@@ -127,11 +132,11 @@ export default function FormationKickstartPage() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
             >
-              <Button size="lg" className="bg-accent-purple hover:bg-accent-purple-light text-white">
+              <Button size="lg" className="bg-accent-purple hover:bg-accent-purple-light text-black">
                 {t('hero.cta_primary')}
                 <Play className="w-5 h-5 ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/20 hover:border-white/60">
+              <Button variant="outline" size="lg" className="border-black/40 text-black hover:bg-black/20 hover:border-black/60">
                 {t('hero.cta_secondary')}
                 <BookOpen className="w-5 h-5 ml-2" />
               </Button>
@@ -141,7 +146,12 @@ export default function FormationKickstartPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-16 bg-white/5 backdrop-blur-sm">
+      <section
+        className="py-16 backdrop-blur-sm"
+        style={{
+          background: 'var(--section-reverse)'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -149,24 +159,24 @@ export default function FormationKickstartPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-light text-black mb-6">
                 {t('overview.title')}
               </h2>
-              <p className="text-gray-300 mb-6 text-lg">
+              <p className="text-black/80 mb-6 text-lg">
                 {t('overview.description')}
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">{t('overview.benefits.practical')}</span>
+                  <span className="text-black/80">{t('overview.benefits.practical')}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">{t('overview.benefits.methodology')}</span>
+                  <span className="text-black/80">{t('overview.benefits.methodology')}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">{t('overview.benefits.support')}</span>
+                  <span className="text-black/80">{t('overview.benefits.support')}</span>
                 </div>
               </div>
             </motion.div>
@@ -182,20 +192,20 @@ export default function FormationKickstartPage() {
                   <Award className="w-5 h-5" />
                   <span className="font-medium">Résultats garantis</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{t('overview.results.title')}</h3>
-                <p className="text-gray-300">{t('overview.results.subtitle')}</p>
+                <h3 className="text-xl font-normal text-black mb-2">{t('overview.results.title')}</h3>
+                <p className="text-black/80">{t('overview.results.subtitle')}</p>
               </div>
               
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-gray-300">
+                <div className="flex items-center gap-3 text-black/80">
                   <Target className="w-5 h-5 text-accent-purple" />
                   <span>{t('overview.results.items.website')}</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-300">
+                <div className="flex items-center gap-3 text-black/80">
                   <Target className="w-5 h-5 text-accent-purple" />
                   <span>{t('overview.results.items.mastery')}</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-300">
+                <div className="flex items-center gap-3 text-black/80">
                   <Target className="w-5 h-5 text-accent-purple" />
                   <span>{t('overview.results.items.methodology')}</span>
                 </div>
@@ -214,10 +224,10 @@ export default function FormationKickstartPage() {
             transition={{ delay: 0.7 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 px-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black mb-4 sm:mb-6 px-2">
               {t('curriculum.title')}
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-black/80 max-w-3xl mx-auto px-4">
               {t('curriculum.subtitle')}
             </p>
           </motion.div>
@@ -233,10 +243,10 @@ export default function FormationKickstartPage() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-accent-purple/20 rounded-xl flex-shrink-0">
-                    <span className="text-base sm:text-lg font-bold text-accent-purple">{index + 1}</span>
+                    <span className="text-base sm:text-lg font-light text-accent-purple">{index + 1}</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base sm:text-lg font-semibold text-white mb-1 leading-tight">
+                    <h3 className="text-base sm:text-lg font-semibold text-black mb-1 leading-tight">
                       Module {index + 1} - {module.title}
                     </h3>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
@@ -254,7 +264,7 @@ export default function FormationKickstartPage() {
                       </h4>
                       <ul className="space-y-2">
                         {module.learningObjectives.map((objective, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-gray-300">
+                          <li key={idx} className="flex items-start gap-2 text-black/80">
                             <CheckCircle className="w-4 h-4 text-green-400 mt-1 flex-shrink-0" />
                             <span className="text-sm">{objective}</span>
                           </li>
@@ -267,7 +277,7 @@ export default function FormationKickstartPage() {
                       </h4>
                       <ul className="space-y-2">
                         {module.keyTopics.map((topic, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-gray-300">
+                          <li key={idx} className="flex items-start gap-2 text-black/80">
                             <div className="w-1.5 h-1.5 bg-accent-purple rounded-full mt-2 flex-shrink-0" />
                             <span className="text-sm">{topic}</span>
                           </li>
@@ -283,13 +293,18 @@ export default function FormationKickstartPage() {
       </section>
 
       {/* Learning Outcomes Section */}
-      <section className="py-16 bg-white/5 backdrop-blur-sm">
+      <section
+        className="py-16 backdrop-blur-sm"
+        style={{
+          background: 'var(--section-reverse)'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">
+            <h2 className="text-3xl font-light text-black mb-6">
               {t('outcomes.title')}
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-black/80">
               {t('outcomes.subtitle')}
             </p>
           </div>
@@ -337,10 +352,10 @@ export default function FormationKickstartPage() {
                   className="bg-primary-800/30 backdrop-blur-sm rounded-xl p-6 border border-white/10"
                 >
                   <div className="mb-4">
-                    <IconComponent className="w-8 h-8 text-gray-300" />
+                    <IconComponent className="w-8 h-8 text-black/80" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">{outcome.title}</h3>
-                  <p className="text-gray-300">{outcome.description}</p>
+                  <h3 className="text-lg font-semibold text-black mb-3">{outcome.title}</h3>
+                  <p className="text-black/80">{outcome.description}</p>
                 </motion.div>
               );
             })}
@@ -354,39 +369,39 @@ export default function FormationKickstartPage() {
           <div className="bg-primary-800/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6">{t('prerequisites.title')}</h2>
+                <h2 className="text-2xl font-light text-black mb-6">{t('prerequisites.title')}</h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-white">{t('prerequisites.requirements.no_experience.title')}</h3>
-                      <p className="text-gray-300">{t('prerequisites.requirements.no_experience.description')}</p>
+                      <h3 className="font-semibold text-black">{t('prerequisites.requirements.no_experience.title')}</h3>
+                      <p className="text-black/80">{t('prerequisites.requirements.no_experience.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-white">{t('prerequisites.requirements.computer.title')}</h3>
-                      <p className="text-gray-300">{t('prerequisites.requirements.computer.description')}</p>
+                      <h3 className="font-semibold text-black">{t('prerequisites.requirements.computer.title')}</h3>
+                      <p className="text-black/80">{t('prerequisites.requirements.computer.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-white">{t('prerequisites.requirements.motivation.title')}</h3>
-                      <p className="text-gray-300">{t('prerequisites.requirements.motivation.description')}</p>
+                      <h3 className="font-semibold text-black">{t('prerequisites.requirements.motivation.title')}</h3>
+                      <p className="text-black/80">{t('prerequisites.requirements.motivation.description')}</p>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6">{t('prerequisites.target_title')}</h2>
+                <h2 className="text-2xl font-light text-black mb-6">{t('prerequisites.target_title')}</h2>
                 <div className="space-y-3">
                   {t.raw('prerequisites.target_audience').map((target: string, index: number) => (
                     <div key={index} className="flex items-center gap-3">
                       <Users className="w-5 h-5 text-accent-purple" />
-                      <span className="text-gray-300">{target}</span>
+                      <span className="text-black/80">{target}</span>
                     </div>
                   ))}
                 </div>
@@ -403,35 +418,35 @@ export default function FormationKickstartPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-r from-accent-purple to-accent-purple-light rounded-2xl p-12 text-white"
+              className="bg-gradient-to-r from-accent-purple to-accent-purple-light rounded-2xl p-12 text-black"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-light mb-6">
                 {t('enrollment.title')}
               </h2>
-              <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+              <p className="text-xl mb-8 text-black/90 max-w-2xl mx-auto">
                 {t('enrollment.subtitle')}
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">6h</div>
-                  <div className="text-white/80">{t('enrollment.stats.duration')}</div>
+                  <div className="text-3xl font-light">6h</div>
+                  <div className="text-black/80">{t('enrollment.stats.duration')}</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-white/30"></div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold">100%</div>
-                  <div className="text-white/80">{t('enrollment.stats.practical')}</div>
+                  <div className="text-3xl font-light">100%</div>
+                  <div className="text-black/80">{t('enrollment.stats.practical')}</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-white/30"></div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold">30j</div>
-                  <div className="text-white/80">{t('enrollment.stats.guarantee')}</div>
+                  <div className="text-3xl font-light">30j</div>
+                  <div className="text-black/80">{t('enrollment.stats.guarantee')}</div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <Link href="/formation">
-                  <Button variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/20 hover:border-white/70">
+                  <Button variant="outline" size="lg" className="border-white/50 text-black hover:bg-white/20 hover:border-white/70">
                     <ArrowLeft className="w-5 h-5 mr-2" />
                     {t('enrollment.cta_secondary')}
                   </Button>

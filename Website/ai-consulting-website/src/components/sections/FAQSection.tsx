@@ -28,7 +28,7 @@ const FAQItem: React.FC<FAQItemProps> = memo(({ question, answer, isOpen, onTogg
         className="w-full p-6 text-left bg-background-accent-grey/70 hover:bg-background-accent-grey/90 transition-colors duration-300 flex items-center justify-between"
         whileHover={{ backgroundColor: "rgba(99, 102, 241, 0.1)" }}
       >
-        <h3 className="text-text-light font-semibold text-lg pr-4">{question}</h3>
+        <h3 className="text-text-light font-normal text-lg pr-4">{question}</h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
@@ -106,7 +106,12 @@ const FAQSection: React.FC = memo(() => {
   ) || [];
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark overflow-hidden">
+    <section
+      className="relative py-24 overflow-hidden"
+      style={{
+        background: 'var(--hero-gradient)'
+      }}
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-accent-red/30 rounded-full blur-3xl animate-pulse"></div>
@@ -122,7 +127,7 @@ const FAQSection: React.FC = memo(() => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4">
+          <h2 className="text-4xl md:text-5xl font-light text-text-light mb-4">
             {t('title')}
           </h2>
           <p className="text-xl text-text-primary max-w-3xl mx-auto">

@@ -60,42 +60,13 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section id="team-section" className="py-24 relative overflow-hidden">
-      {/* Environmental Background System - Same as Hero */}
-      <div className="absolute inset-0">
-        {/* Base environmental foundation */}
-        <div className="hero-environment-base absolute inset-0 bg-gradient-to-br from-[#2a2a2a] via-[#353535] to-[#2a2a2a]" />
-        
-        {/* Atmospheric layer with brand colors */}
-        <div className="hero-environment-atmosphere absolute inset-0 opacity-[0.08]">
-          <div className="absolute inset-0 bg-gradient-radial from-[#74a6be] via-transparent to-transparent" 
-               style={{ backgroundPosition: '20% 20%', backgroundSize: '100% 100%' }} />
-          <div className="absolute inset-0 bg-gradient-radial from-[#fbbf24] via-transparent to-transparent" 
-               style={{ backgroundPosition: '80% 80%', backgroundSize: '100% 100%' }} />
-          <div className="absolute inset-0 bg-gradient-radial from-[#a7292e] via-transparent to-transparent" 
-               style={{ backgroundPosition: '50% 50%', backgroundSize: '140% 140%' }} />
-        </div>
-        
-        {/* Organic movement layer */}
-        <motion.div 
-          className="absolute inset-0 opacity-[0.05]"
-          animate={{ 
-            backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
-          }}
-          transition={{ 
-            duration: 25, 
-            repeat: Infinity, 
-            ease: 'linear' 
-          }}
-          style={{
-            background: `
-              radial-gradient(circle at 30% 40%, #74a6be 0%, transparent 50%),
-              radial-gradient(circle at 70% 60%, #fbbf24 0%, transparent 50%)
-            `,
-            backgroundSize: '200% 200%'
-          }}
-        />
-      </div>
+    <section
+      id="team-section"
+      className="py-24 relative overflow-hidden"
+      style={{
+        background: 'var(--section-reverse)'
+      }}
+    >
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -106,7 +77,7 @@ const TeamSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-h1 font-bold mb-6 text-text-primary">
+          <h2 className="text-h1 font-light mb-6 text-text-primary">
             {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
@@ -142,7 +113,7 @@ const TeamSection: React.FC = () => {
                   
                   {/* Name and Title */}
                   <div className="space-y-2">
-                    <h3 className="text-h2 font-bold text-text-primary group-hover:text-text-primary transition-colors duration-300">
+                    <h3 className="text-h2 font-light text-text-primary group-hover:text-text-primary transition-colors duration-300">
                       {member.name}
                     </h3>
                     <p className="text-primary-blue font-medium text-lg">

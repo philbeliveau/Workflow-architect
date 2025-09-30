@@ -1,44 +1,37 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@300;400;700&family=Manrope:wght@200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+3:wght@200..900&display=swap');
 
 :root {
-  /* Brand Colors - Red & Blue Professional with Softer Greys */
-  --primary-blue: #74a6be;          /* Refined cool blue - clarity, structure, professionalism */
-  --accent-red: #a7292e;            /* Sharp deep red - action, confidence, urgency */
-  --background-dark: #2a2a2a;       /* Softer dark grey background */
-  --background-dark-alt: #353535;   /* Alternative softer grey background */
-  --background-light-grey: #404040; /* Lighter grey for contrast */
-  --background-accent-grey: #4a4a4a; /* Accent grey for cards/panels */
-  --text-light: #ffffff;            /* Pure white - strong contrast */
-  --text-secondary: #c4c4c4;        /* Secondary text - hierarchy without clutter */
-  --text-muted: #8a8a8a;            /* Muted text - subtle hierarchy */
-  --hover-interactive: #569da0;     /* Desaturated teal - subtle, non-distracting */
-  --hover-soft: rgba(255, 255, 255, 0.1); /* Soft white hover */
-  
-  /* Legacy mappings for compatibility */
-  --primary-dark: #2a2a2a;
-  --background-base: #2a2a2a;
-  --dark-accent: #353535;
-  --neutral-support: #8a8a8a;
-  --cta-highlight: #a7292e;
-  --hover-effect: #569da0;
-  --accent-panels: #353535;
-  --success-green: #10b981;
-  --warning-orange: #f59e0b;
-  --text-primary: #ffffff;
-  --background: #2a2a2a;
-  --foreground: #ffffff;
-  
-  /* Brand gradients */
-  --gradient-primary: linear-gradient(135deg, #74a6be 0%, #569da0 100%);
-  --gradient-accent: linear-gradient(135deg, #a7292e 0%, #74a6be 100%);
-  --gradient-dark: linear-gradient(135deg, #2a2a2a 0%, #353535 100%);
-  --gradient-soft-grey: linear-gradient(135deg, #404040 0%, #4a4a4a 100%);
-  
-  /* Global light yellow accent */
-  --accent-yellow: #fbbf24;
-  --accent-yellow-light: #fef3c7;
-  --accent-yellow-subtle: rgba(251, 191, 36, 0.03);
+  /* NEWCODE Beautiful Dramatic Gradient System */
+  --hero-gradient: linear-gradient(90deg, #b8b8b8 0%, #ffffff 100%);
+  --body-gradient: linear-gradient(90deg, #d0d0d0 0%, #f8f8f8 100%);
+  --navigation-background: rgba(255, 255, 255, 0.95);
+  --section-accent: linear-gradient(90deg, #a0a0a0 0%, #e0e0e0 100%);
+  --section-light: linear-gradient(90deg, #e8e8e8 0%, #ffffff 100%);
+  --section-reverse: linear-gradient(90deg, #ffffff 0%, #b8b8b8 100%);
+
+  /* Core Colors */
+  --text-primary: #000000;
+  --text-white: #FFFFFF;
+  --text-secondary: #333333;
+
+  /* Interactive States */
+  --hover-overlay: rgba(0, 0, 0, 0.1);
+  --active-overlay: rgba(0, 0, 0, 0.2);
+
+  /* Legacy support - updated to use new gradient system */
+  --primary-background: var(--hero-gradient);
+  --secondary-background: #F0F0F0;
+  --typography-primary: var(--text-primary);
+  --typography-secondary: var(--text-secondary);
+  --accent-white: var(--text-white);
+  --gradient-main: var(--body-gradient);
+  --gradient-hero: var(--hero-gradient);
+  --gradient-primary: var(--hero-gradient);
+  --gradient-accent: var(--section-accent);
+  --gradient-dark: var(--section-accent);
+  --background: var(--secondary-background);
+  --foreground: var(--text-primary);
 }
 
 @theme inline {
@@ -83,15 +76,16 @@
 }
 
 body {
-  background: 
-    radial-gradient(circle at 20% 80%, var(--accent-yellow-subtle) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, var(--accent-yellow-subtle) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.02) 0%, transparent 50%),
-    var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  line-height: var(--line-height-body);
+  background: var(--body-gradient);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
   position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 /* Global subtle pattern overlay removed - cleaner background */
@@ -125,10 +119,10 @@ html {
   }
 }
 
-/* Custom utility classes */
+/* Custom utility classes - NEWCODE Thin Typography */
 .text-hero {
   font-size: var(--font-size-hero);
-  font-weight: 800;
+  font-weight: 300;
   line-height: var(--line-height-hero);
 }
 
@@ -140,7 +134,7 @@ html {
 
 .text-h1 {
   font-size: var(--font-size-h1);
-  font-weight: 700;
+  font-weight: 300;
   line-height: var(--line-height-h1);
 }
 
@@ -152,7 +146,7 @@ html {
 
 .text-h2 {
   font-size: var(--font-size-h2);
-  font-weight: 600;
+  font-weight: 400;
   line-height: var(--line-height-h2);
 }
 
@@ -164,7 +158,7 @@ html {
 
 .text-h3 {
   font-size: var(--font-size-h3);
-  font-weight: 600;
+  font-weight: 400;
   line-height: var(--line-height-h3);
 }
 
@@ -174,16 +168,38 @@ html {
   }
 }
 
-.bg-gradient-bronze {
-  background: var(--gradient-accent);
+/* NEWCODE Beautiful Dramatic Gradient Utility Classes */
+.bg-gradient-hero {
+  background: var(--hero-gradient);
+}
+
+.bg-gradient-body {
+  background: var(--body-gradient);
+}
+
+.bg-gradient-accent {
+  background: var(--section-accent);
+}
+
+.bg-gradient-light {
+  background: var(--section-light);
+}
+
+.bg-gradient-reverse {
+  background: var(--section-reverse);
 }
 
 .bg-gradient-primary {
-  background: var(--gradient-primary);
+  background: var(--hero-gradient);
 }
 
 .bg-gradient-dark {
-  background: var(--gradient-dark);
+  background: var(--section-accent);
+}
+
+/* Legacy support */
+.bg-gradient-bronze {
+  background: var(--section-accent);
 }
 
 /* Utility classes for better UX */
@@ -217,44 +233,117 @@ html {
   border: 0;
 }
 
-/* Mobile specific optimizations */
+/* Responsive Design Optimizations for NEWCODE Branding */
 @media (max-width: 768px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .grid {
     gap: 1rem;
   }
-  
+
   .space-y-8 > * + * {
     margin-top: 1.5rem;
   }
-  
+
   .space-y-6 > * + * {
     margin-top: 1rem;
+  }
+
+  /* Mobile typography adjustments for better readability */
+  h1, .text-hero {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2, .text-h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Maintain consistent gradient on mobile */
+  body {
+    background: var(--body-gradient);
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-mobile-spacing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Adjust text shadows for mid-range screens */
+  h1, h2, h3 {
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  /* Enhanced text shadows for high-resolution displays */
+  h1 {
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  h2, h3 {
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
   }
 }
 
 /* Promotional banner spacing */
 .promo-banner-active {
-  padding-top: 3.5rem; /* Space for fixed promotional banner on desktop */
+  padding-top: 9rem; /* Space for promotional banner + navigation on desktop */
 }
 
 @media (max-width: 768px) {
   .promo-banner-active {
-    padding-top: 5rem; /* More space on mobile due to mobile CTA */
+    padding-top: 10rem; /* More space on mobile due to mobile layout */
   }
 }
 
-/* High contrast mode support */
+/* High contrast mode support for accessibility */
 @media (prefers-contrast: high) {
   :root {
-    --accent-red: #cc0000;
-    --primary-blue: #0066cc;
-    --background-dark: #000000;
-    --text-light: #ffffff;
-    --text-secondary: #ffffff;
+    --gradient-primary: #808080;
+    --gradient-secondary: #C0C0C0;
+    --background-base: #808080;
+    --background-light: #C0C0C0;
+    --background-dark: #606060;
+    --typography-primary: #000000;
+    --typography-secondary: #000000;
+    --accent-white: #FFFFFF;
+  }
+
+  /* Ensure maximum contrast for text */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  p, span, div {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Dark mode preference support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gradient-primary: #606060;
+    --gradient-secondary: #808080;
+    --background-base: #606060;
+    --background-light: #808080;
+    --background-dark: #404040;
+    --typography-primary: #FFFFFF;
+    --typography-secondary: #E0E0E0;
+    --accent-white: #000000;
+  }
+
+  body {
+    background: linear-gradient(135deg, #606060 0%, #808080 100%);
   }
 }

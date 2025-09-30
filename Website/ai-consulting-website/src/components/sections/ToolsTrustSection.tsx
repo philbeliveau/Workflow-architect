@@ -40,22 +40,12 @@ const ToolsTrustSection: React.FC = () => {
 
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-800 to-primary-900 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-8 gap-4 h-full p-8">
-          {Array.from({ length: 64 }, (_, i) => (
-            <div 
-              key={i} 
-              className="bg-accent-blue rounded-lg animate-pulse" 
-              style={{
-                animationDelay: `${i * 0.1}s`,
-                animationDuration: '3s'
-              }}
-            />
-          ))}
-        </div>
-      </div>
+    <section
+      className="py-24 relative overflow-hidden"
+      style={{
+        background: 'var(--hero-gradient)'
+      }}
+    >
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
@@ -66,7 +56,7 @@ const ToolsTrustSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-h1 font-bold mb-4 sm:mb-6 text-text-primary">
+          <h2 className="text-h1 font-light mb-4 sm:mb-6 text-text-primary">
             Outils que nous maîtrisons
           </h2>
           <p className="text-lg sm:text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-4">

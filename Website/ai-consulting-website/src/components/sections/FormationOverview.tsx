@@ -11,14 +11,12 @@ const FormationOverview: React.FC = memo(() => {
   const t = useTranslations('formation_overview');
   
   return (
-    <section className="relative py-24 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-success-green/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-blue/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
-      {/* Background grid pattern removed for cleaner design */}
+    <section
+      className="relative py-24 overflow-hidden"
+      style={{
+        background: 'var(--section-light)'
+      }}
+    >
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -29,10 +27,20 @@ const FormationOverview: React.FC = memo(() => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-light mb-4">
+          <h2
+            className="text-4xl md:text-5xl font-light mb-4"
+            style={{
+              color: '#000000'
+            }}
+          >
             {t('title')}
           </h2>
-          <p className="text-xl text-text-primary max-w-3xl mx-auto">
+          <p
+            className="text-xl max-w-3xl mx-auto"
+            style={{
+              color: '#1a1a1a'
+            }}
+          >
             {t('subtitle')}
           </p>
         </motion.div>
@@ -49,7 +57,7 @@ const FormationOverview: React.FC = memo(() => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-bold text-text-light mb-4">
+              <h3 className="text-3xl font-light text-text-light mb-4">
                 {t('overview_title')}
               </h3>
               <p className="text-lg text-text-primary mb-8">

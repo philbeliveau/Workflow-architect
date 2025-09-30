@@ -93,7 +93,13 @@ const TrackSelection: React.FC = () => {
   };
 
   return (
-    <section id="track-selection" className="py-24 bg-gradient-to-br from-background-dark to-background-dark-alt relative overflow-hidden">
+    <section
+      id="track-selection"
+      className="py-24 relative overflow-hidden"
+      style={{
+        background: 'var(--section-reverse)'
+      }}
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
