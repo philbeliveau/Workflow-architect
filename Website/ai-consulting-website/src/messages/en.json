@@ -38,15 +38,15 @@
     }
   },
   "hero": {
-    "title": "Don't Stay a Spectator to AI",
-    "subtitle": "Transform your business knowledge into functional applications — go from 'the one with the idea' to 'the one who realizes it'",
+    "title": "Software Development, Now Agentic",
+    "subtitle": "Transform business ideas into functional applications, Autonomously",
     "subtitle_parts": {
-      "line1": "Transform your business knowledge into ",
+      "line1": "Transform business ideas into ",
       "highlight1": "functional applications",
-      "line2": " — go from ",
-      "highlight2": "'the one with the idea'",
-      "line3": " to ",
-      "highlight3": "'the one who realizes it'"
+      "line2": ", ",
+      "highlight2": "Autonomously",
+      "line3": "",
+      "highlight3": ""
     },
     "statistic": {
       "icon": "💡",
@@ -70,7 +70,7 @@
     },
     "summary": "Complete method to transform your teams",
     "cta": {
-      "primary": "Start My Transformation",
+      "primary": "See It in Action",
       "secondary": "See the Method",
       "training": "Our training",
       "guide": "Our guide"

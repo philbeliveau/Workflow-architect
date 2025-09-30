@@ -38,15 +38,15 @@
     }
   },
   "hero": {
-    "title": "Ne restez plus spectateur de l'IA",
-    "subtitle": "Transformez vos connaissances métier en applications fonctionnelles — passez de 'celui qui a l'idée' à 'celui qui la réalise'",
+    "title": "Développement Logiciel, Maintenant Agentique",
+    "subtitle": "Transformez vos idées métier en applications fonctionnelles, Automatiquement",
     "subtitle_parts": {
-      "line1": "Transformez vos connaissances métier en ",
+      "line1": "Transformez vos idées métier en ",
       "highlight1": "applications fonctionnelles",
-      "line2": " — passez de ",
-      "highlight2": "'celui qui a l'idée'",
-      "line3": " à ",
-      "highlight3": "'celui qui la réalise'"
+      "line2": ", ",
+      "highlight2": "Automatiquement",
+      "line3": "",
+      "highlight3": ""
     },
     "statistic": {
       "icon": "💡",
@@ -70,7 +70,7 @@
     },
     "summary": "Méthode complète pour transformer vos équipes",
     "cta": {
-      "primary": "Commencer ma transformation",
+      "primary": "Voir en Action",
       "secondary": "Notre guide",
       "training": "Commencer la Formation",
       "guide": "Télécharger le Guide"
