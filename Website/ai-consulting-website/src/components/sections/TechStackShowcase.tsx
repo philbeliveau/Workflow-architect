@@ -64,7 +64,7 @@ const TechStackShowcase: React.FC = memo(() => {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-background-dark via-background-dark-alt to-background-dark overflow-hidden">
+    <section className="relative py-24 overflow-hidden" style={{ background: 'var(--hero-gradient)' }}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-accent-red/30 rounded-full blur-3xl animate-pulse"></div>

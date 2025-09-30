@@ -52,6 +52,55 @@ When working on this website project, you MUST always follow these translation r
 
 ---
 
+## Typography Standards - NEWCODE Brand
+
+### Font Weight Guidelines (MANDATORY)
+
+**NEWCODE Brand requires thin, elegant typography throughout the website:**
+
+#### Brand Typography Rules
+- **NEWCODE Logo**: Always use `font-weight: 300` (light/thin)
+- **Main Headings (H1)**: `font-weight: 300` for elegant impact
+- **Section Headings (H2, H3)**: `font-weight: 400` maximum
+- **Body Text**: `font-weight: 400` (normal)
+- **Navigation**: `font-weight: 300` (light)
+
+#### Implementation Standards
+```css
+/* NEWCODE Logo - Thin and Elegant */
+.newcode-logo {
+  font-weight: 300;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Hero Headlines - Light Impact */
+.hero-title {
+  font-weight: 300;
+  font-size: 6xl; /* Use size for impact, not weight */
+}
+
+/* Section Headers - Subtle Authority */
+.section-heading {
+  font-weight: 400; /* Never exceed 400 */
+}
+```
+
+#### Anti-Patterns (NEVER USE)
+- ❌ `font-weight: 600` (semibold)
+- ❌ `font-weight: 700` (bold)
+- ❌ `font-weight: 800` (extrabold)
+- ❌ `font-weight: 900` (black)
+- ❌ Tailwind classes: `font-semibold`, `font-bold`, `font-extrabold`, `font-black`
+
+#### Approved Tailwind Classes
+- ✅ `font-light` (300)
+- ✅ `font-normal` (400)
+- ✅ `font-medium` (500) - Use sparingly for CTAs only
+
+**Rationale**: Thin typography creates sophisticated, modern aesthetic that reflects NEWCODE's premium positioning in agentic programming education.
+
+---
+
 **Remember**: This is a bilingual Canadian business. French is the primary language for content creation, with English as a strategic secondary market.
 
 # ERGIR - Claude Code Configuration avec BMAD-METHOD
