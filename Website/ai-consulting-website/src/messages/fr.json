@@ -155,7 +155,7 @@
   },
   "tracks": {
     "header": {
-      "badge": "Formation NEWCODE",
+      "badge": "",
       "title": "Choisissez votre formation",
       "subtitle": "Deux parcours adaptés à votre niveau pour maîtriser la programmation agentique"
     },
@@ -2085,16 +2085,12 @@
         "title": "Tech Enthusiasts",
         "headline": "Passez du hobby aux applications pros",
         "pain_points": [
-          "Projets personnels qui restent inachevés",
-          "Manque de méthodologie pour les gros projets",
-          "Difficultés avec l'architecture complexe",
-          "Pas assez de temps pour tout apprendre"
+          "Apprentissage dispersé sans direction claire",
+          "Difficulté à rester à jour avec les outils IA"
         ],
         "transformation": [
-          "Finalisez enfin vos projets ambitieux",
-          "Maîtrisez l'architecture d'applications complètes",
-          "Accélérez votre apprentissage avec les agents",
-          "Créez un portfolio professionnel impressionnant"
+          "Maîtrisez les outils de pointe de manière systématique",
+          "Créez des projets impressionnants pour votre portfolio"
         ],
         "success_metrics": "Projets complétés : +300% | Temps de développement : -60% | Qualité du code : Pro"
       },

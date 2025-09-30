@@ -39,8 +39,7 @@ export default async function Home({
         <section id={sectionIds.home}>
           <HeroBanner />
         </section>
-        
-        
+
         <section id={sectionIds.formation}>
           <Suspense fallback={<SectionFallback />}>
             <FormationOverview />

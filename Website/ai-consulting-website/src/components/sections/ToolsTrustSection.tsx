@@ -10,31 +10,31 @@ const ToolsTrustSection: React.FC = () => {
       name: "Cursor",
       icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
       description: "Édition assistée",
-      color: "bg-[#000000]"
+      color: "bg-white"
     },
     {
       name: "Roo code",
       icon: <Settings className="w-6 h-6 sm:w-8 sm:h-8" />,
       description: "Orchestration et agents spécialisés",
-      color: "bg-[#0052cc]"
+      color: "bg-white"
     },
     {
       name: "Claude-code",
       icon: <Brain className="w-6 h-6 sm:w-8 sm:h-8" />,
       description: "Code génération & architecture",
-      color: "bg-[#d97706]"
+      color: "bg-white"
     },
     {
       name: "Wrapper d'orchestration",
       icon: <Zap className="w-6 h-6 sm:w-8 sm:h-8" />,
       description: "Orchestration d'agents",
-      color: "bg-[#7c3aed]"
+      color: "bg-white"
     },
     {
       name: "Banque d'agents",
       icon: <Database className="w-6 h-6 sm:w-8 sm:h-8" />,
       description: "Agents spécialisés",
-      color: "bg-[#172b4d]"
+      color: "bg-white"
     }
   ];
 
@@ -88,15 +88,15 @@ const ToolsTrustSection: React.FC = () => {
                 <div className={`relative ${tool.color} border-3 border-black rounded-xl p-4 sm:p-6 transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 cursor-pointer min-h-[140px] flex flex-col justify-center`}>
                   {/* Icon */}
                   <div className="flex justify-center items-center mb-4">
-                    <div className="text-white flex justify-center items-center">
+                    <div className="text-black flex justify-center items-center">
                       {tool.icon}
                     </div>
                   </div>
                   
                   {/* Tool Name */}
                   <div className="text-center">
-                    <div className="text-white font-bold text-base sm:text-lg mb-2">{tool.name}</div>
-                    <div className="text-white/80 text-xs sm:text-sm">{tool.description}</div>
+                    <div className="text-black font-bold text-base sm:text-lg mb-2">{tool.name}</div>
+                    <div className="text-black/80 text-xs sm:text-sm">{tool.description}</div>
                   </div>
                 </div>
               </div>

@@ -115,7 +115,7 @@
   },
   "tracks": {
     "header": {
-      "badge": "NEWCODE Training",
+      "badge": "",
       "title": "Choose Your Training",
       "subtitle": "Two tracks adapted to your level to learn how to bring your ideas to code"
     },
@@ -1680,15 +1680,11 @@
         "headline": "From curiosity to mastery",
         "pain_points": [
           "Scattered learning without clear direction",
-          "Difficulty staying up to date with AI tools",
-          "Gap between theory and practical application",
-          "Lack of structured methodology"
+          "Difficulty staying up to date with AI tools"
         ],
         "transformation": [
           "Master cutting-edge tools systematically",
-          "Build impressive projects for your portfolio",
-          "Become an AI expert in your field",
-          "Create tangible value with your skills"
+          "Build impressive projects for your portfolio"
         ],
         "success_metrics": "Learning efficiency: +300% | Portfolio projects: 0 → 5 in 3 months"
       },

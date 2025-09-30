@@ -34,9 +34,9 @@ const SegmentCard: React.FC<SegmentCardProps> = memo(({ segment, isSelected, onS
       whileHover={{ scale: 1.02 }}
       className={`
         relative cursor-pointer rounded-2xl p-6 border-2 transition-all duration-300
-        ${isSelected 
-          ? `bg-gradient-to-br from-${color}/20 to-${color}/10 border-${color} shadow-xl shadow-${color}/20` 
-          : 'bg-background-accent-grey/70 border-text-secondary/50 hover:border-text-secondary/70'
+        ${isSelected
+          ? `bg-gradient-to-br from-${color}/20 to-${color}/10 border-${color} shadow-xl shadow-${color}/20`
+          : 'bg-background-accent-grey/70 border-text-secondary/50 hover:border-blue-500/20'
         }
       `}
       onClick={onSelect}
@@ -120,8 +120,8 @@ const TargetAudienceInteractive: React.FC = memo(() => {
   
   const segmentColors = {
     entrepreneurs: 'accent-red',
-    intrapreneurs: 'primary-blue', 
-    tech_enthusiasts: 'yellow-500',
+    intrapreneurs: 'primary-blue',
+    tech_enthusiasts: 'blue-500',
     experienced_developers: 'accent-yellow',
     creative_generalists: 'accent-purple',
     product_managers: 'hover-interactive'
@@ -136,7 +136,7 @@ const TargetAudienceInteractive: React.FC = memo(() => {
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-accent-purple/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-success-green/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 

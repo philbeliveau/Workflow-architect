@@ -161,7 +161,7 @@ const FormationOverview: React.FC = memo(() => {
             <div className="relative aspect-[4/3] max-w-2xl mx-auto">
               {/* Circle Community Image */}
               <motion.div
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.15)" }}
                 transition={{ duration: 0.3 }}
                 className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-primary-blue/30"
               >
@@ -174,7 +174,7 @@ const FormationOverview: React.FC = memo(() => {
                 />
                 
                 {/* Overlay with community stats */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-500/5 to-transparent"></div>
                 
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-semibold text-lg mb-2">

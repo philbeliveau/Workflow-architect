@@ -121,19 +121,19 @@ const Navigation: React.FC = memo(() => {
           <div className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
             <Link
               href="#track-selection"
-              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-black/5"
+              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-blue-500/5"
             >
               {locale === 'fr' ? 'Parcours' : 'Tracks'}
             </Link>
             <Link
               href="/blog"
-              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-black/5"
+              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-blue-500/5"
             >
               Blog
             </Link>
             <Link
               href="#contact"
-              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-black/5"
+              className="relative text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-2 px-3 rounded-md hover:bg-blue-500/5"
             >
               Contact
             </Link>
@@ -187,21 +187,21 @@ const Navigation: React.FC = memo(() => {
               <div className="px-6 py-6 space-y-3">
                 <Link
                   href="#track-selection"
-                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-black/5"
+                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-blue-500/5"
                   onClick={closeMobileMenu}
                 >
                   {locale === 'fr' ? 'Parcours' : 'Tracks'}
                 </Link>
                 <Link
                   href="/blog"
-                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-black/5"
+                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-blue-500/5"
                   onClick={closeMobileMenu}
                 >
                   Blog
                 </Link>
                 <Link
                   href="#contact"
-                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-black/5"
+                  className="block text-sm font-normal text-black hover:text-black/70 transition-all duration-200 py-3 px-4 rounded-lg hover:bg-blue-500/5"
                   onClick={closeMobileMenu}
                 >
                   Contact
