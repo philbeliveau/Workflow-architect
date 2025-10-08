@@ -171,7 +171,154 @@ export default function FormationAvancePage() {
         tModules('module_6.keyTopics.0'),
         tModules('module_6.keyTopics.1'),
         tModules('module_6.keyTopics.2'),
-        tModules('module_6.keyTopics.3')
+        tModules('module_6.keyTopics.3'),
+        tModules('module_6.keyTopics.4'),
+        tModules('module_6.keyTopics.5')
+      ]
+    },
+    {
+      id: 'module_7',
+      title: tModules('module_7.title'),
+      duration: tModules('module_7.duration'),
+      description: tModules('module_7.description'),
+      learningObjectives: [
+        tModules('module_7.learningObjectives.0'),
+        tModules('module_7.learningObjectives.1'),
+        tModules('module_7.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_7.keyTopics.0'),
+        tModules('module_7.keyTopics.1'),
+        tModules('module_7.keyTopics.2'),
+        tModules('module_7.keyTopics.3')
+      ]
+    },
+    {
+      id: 'module_8',
+      title: tModules('module_8.title'),
+      duration: tModules('module_8.duration'),
+      description: tModules('module_8.description'),
+      learningObjectives: [
+        tModules('module_8.learningObjectives.0'),
+        tModules('module_8.learningObjectives.1'),
+        tModules('module_8.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_8.keyTopics.0'),
+        tModules('module_8.keyTopics.1'),
+        tModules('module_8.keyTopics.2'),
+        tModules('module_8.keyTopics.3'),
+        tModules('module_8.keyTopics.4')
+      ]
+    },
+    {
+      id: 'module_9',
+      title: tModules('module_9.title'),
+      duration: tModules('module_9.duration'),
+      description: tModules('module_9.description'),
+      learningObjectives: [
+        tModules('module_9.learningObjectives.0'),
+        tModules('module_9.learningObjectives.1'),
+        tModules('module_9.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_9.keyTopics.0'),
+        tModules('module_9.keyTopics.1'),
+        tModules('module_9.keyTopics.2'),
+        tModules('module_9.keyTopics.3'),
+        tModules('module_9.keyTopics.4'),
+        tModules('module_9.keyTopics.5'),
+        tModules('module_9.keyTopics.6')
+      ]
+    },
+    {
+      id: 'module_10',
+      title: tModules('module_10.title'),
+      duration: tModules('module_10.duration'),
+      description: tModules('module_10.description'),
+      learningObjectives: [
+        tModules('module_10.learningObjectives.0'),
+        tModules('module_10.learningObjectives.1'),
+        tModules('module_10.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_10.keyTopics.0'),
+        tModules('module_10.keyTopics.1'),
+        tModules('module_10.keyTopics.2'),
+        tModules('module_10.keyTopics.3'),
+        tModules('module_10.keyTopics.4')
+      ]
+    },
+    {
+      id: 'module_11',
+      title: tModules('module_11.title'),
+      duration: tModules('module_11.duration'),
+      description: tModules('module_11.description'),
+      learningObjectives: [
+        tModules('module_11.learningObjectives.0'),
+        tModules('module_11.learningObjectives.1'),
+        tModules('module_11.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_11.keyTopics.0'),
+        tModules('module_11.keyTopics.1'),
+        tModules('module_11.keyTopics.2'),
+        tModules('module_11.keyTopics.3'),
+        tModules('module_11.keyTopics.4')
+      ]
+    },
+    {
+      id: 'module_12',
+      title: tModules('module_12.title'),
+      duration: tModules('module_12.duration'),
+      description: tModules('module_12.description'),
+      learningObjectives: [
+        tModules('module_12.learningObjectives.0'),
+        tModules('module_12.learningObjectives.1'),
+        tModules('module_12.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_12.keyTopics.0'),
+        tModules('module_12.keyTopics.1'),
+        tModules('module_12.keyTopics.2'),
+        tModules('module_12.keyTopics.3'),
+        tModules('module_12.keyTopics.4')
+      ]
+    },
+    {
+      id: 'module_13',
+      title: tModules('module_13.title'),
+      duration: tModules('module_13.duration'),
+      description: tModules('module_13.description'),
+      learningObjectives: [
+        tModules('module_13.learningObjectives.0'),
+        tModules('module_13.learningObjectives.1'),
+        tModules('module_13.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_13.keyTopics.0'),
+        tModules('module_13.keyTopics.1'),
+        tModules('module_13.keyTopics.2'),
+        tModules('module_13.keyTopics.3'),
+        tModules('module_13.keyTopics.4')
+      ]
+    },
+    {
+      id: 'module_14',
+      title: tModules('module_14.title'),
+      duration: tModules('module_14.duration'),
+      description: tModules('module_14.description'),
+      learningObjectives: [
+        tModules('module_14.learningObjectives.0'),
+        tModules('module_14.learningObjectives.1'),
+        tModules('module_14.learningObjectives.2')
+      ],
+      keyTopics: [
+        tModules('module_14.keyTopics.0'),
+        tModules('module_14.keyTopics.1'),
+        tModules('module_14.keyTopics.2'),
+        tModules('module_14.keyTopics.3'),
+        tModules('module_14.keyTopics.4')
       ]
     }
   ]

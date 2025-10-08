@@ -145,7 +145,7 @@
         "title": "Architect Training: From idea to scalable software",
         "subtitle": "The vision of an entrepreneur, the power of a tech lead",
         "description": "Professional training for entrepreneurs and tech leads. Master scalable software architecture and enterprise development methodologies.",
-        "duration": "12 intensive hours",
+        "duration": "14-26 intensive hours",
         "level": "Professional",
         "price": "3200€",
         "features": [
@@ -177,7 +177,7 @@
         },
         "curriculum": {
           "title": "Advanced Training Program",
-          "subtitle": "Six intensive modules to master software architecture and technical leadership"
+          "subtitle": "Fourteen progressive modules to master agentic programming from philosophy to deployment"
         },
         "outcomes": {
           "title": "Professional Outcomes",
@@ -214,16 +214,16 @@
           "description": "Join this intensive training and develop the technical leadership skills to lead enterprise-scale projects.",
           "stats": [
             {
-              "value": "12h",
+              "value": "14 modules",
+              "label": "Progressive"
+            },
+            {
+              "value": "14-26h",
               "label": "Intensive training"
             },
             {
-              "value": "Expert",
+              "value": "Intermediate - Expert",
               "label": "Professional level"
-            },
-            {
-              "value": "1:1",
-              "label": "Personal mentoring"
             }
           ],
           "back_button": "View all training programs"
@@ -237,99 +237,241 @@
         },
         "modules": {
           "module_1": {
-            "title": "Scalable Software Architecture",
-            "duration": "2.5h",
-            "description": "Principles and patterns for scalable systems",
+            "title": "Philosophy of Agentic Programming",
+            "duration": "1.5h",
+            "description": "Understand why specifications are essential and how to shift from vibe coding to structured development",
             "learningObjectives": [
-              "Master scalable architecture patterns",
-              "Design robust distributed systems",
-              "Optimize large-scale performance"
+              "Understand the importance of specifications in agentic development",
+              "Identify the new bottleneck: communication",
+              "Master the agent-as-intern analogy"
             ],
             "keyTopics": [
-              "Microservices and modular architecture",
-              "Event-driven architecture",
-              "Database scaling patterns",
-              "Advanced caching strategies"
+              "Why specifications are essential",
+              "Vibe coding vs structured development",
+              "The new bottleneck: communication",
+              "The agent-as-intern analogy"
             ]
           },
           "module_2": {
-            "title": "Technical Leadership and Decision Making",
-            "duration": "2h",
-            "description": "Develop your technical lead skills",
+            "title": "Role Evolution with AI",
+            "duration": "1.5h",
+            "description": "Discover how roles transform with the emergence of AI agents",
             "learningObjectives": [
-              "Make strategic technical decisions",
-              "Lead technical teams effectively",
-              "Communicate technical vision to stakeholders"
+              "Understand job transformation with AI",
+              "Identify new required skills",
+              "Master the human-agent RACI model"
             ],
             "keyTopics": [
-              "Architecture decision records (ADR)",
-              "Technical debt management",
-              "Team leadership in tech",
-              "Stakeholder communication"
+              "Traditional job transformation",
+              "New required competencies",
+              "Developer vs Spec-writer",
+              "Human-agent RACI"
             ]
           },
           "module_3": {
-            "title": "Enterprise Methodologies and DevOps",
+            "title": "BMAD Framework",
             "duration": "2h",
-            "description": "Implement enterprise-grade processes",
+            "description": "Master the BMAD framework to structure your agents and workflows",
             "learningObjectives": [
-              "Master scaled Agile/Scrum methodologies",
-              "Implement robust CI/CD",
-              "Manage quality and security"
+              "Understand the complete BMAD methodology",
+              "Master YAML agent anatomy",
+              "Manage dependencies, tasks, and templates"
             ],
             "keyTopics": [
-              "Scaled Agile Framework (SAFe)",
-              "CI/CD enterprise patterns",
-              "Security by design",
-              "Quality assurance processes"
+              "Introduction to BMAD framework",
+              "YAML agent anatomy",
+              "Dependencies, tasks, and templates",
+              "Personas and specialization",
+              "Greenfield and brownfield workflows"
             ]
           },
           "module_4": {
-            "title": "From Idea to Professional Deployment",
-            "duration": "2.5h",
-            "description": "Complete development cycle orchestration",
+            "title": "Building Specifications",
+            "duration": "2h",
+            "description": "Transform vague ideas into executable specifications for agents",
             "learningObjectives": [
-              "Manage the complete development cycle",
-              "Orchestrate deployment phases",
-              "Monitor and maintain in production"
+              "Transform vague ideas into executable specifications",
+              "Structure a complete PRD",
+              "Create user stories with acceptance criteria"
             ],
             "keyTopics": [
-              "Product roadmap and planning",
-              "Deployment strategies",
-              "Monitoring and observability",
-              "Incident management"
+              "From vague idea to executable spec",
+              "Complete PRD structure",
+              "User stories and acceptance criteria",
+              "Iterative spec validation",
+              "Newcode specification templates"
             ]
           },
           "module_5": {
-            "title": "AI-Native Development Architecture",
+            "title": "Communicating with Agents",
             "duration": "1.5h",
-            "description": "Integrate AI into your architectures",
+            "description": "Master the art of effective communication with AI agents",
             "learningObjectives": [
-              "Architect AI-native systems",
-              "Integrate AI agents into workflows",
-              "Optimize AI performance"
+              "Differentiate prompt from specification",
+              "Sequence and divide tasks effectively",
+              "Implement quality loops"
             ],
             "keyTopics": [
-              "AI service architecture",
-              "Agent orchestration patterns",
-              "ML model deployment",
-              "AI monitoring and governance"
+              "Prompt vs specification",
+              "Sequencing and dividing tasks",
+              "Verification and quality loops",
+              "Always verify with another agent",
+              "Treating agents as interns"
             ]
           },
           "module_6": {
-            "title": "Expert Mentoring and Capstone Project",
-            "duration": "1.5h",
-            "description": "Personalized guidance on your project",
+            "title": "EdTech Case Study",
+            "duration": "2h",
+            "description": "Learn from a real project: EdTech platform built in 6 days",
             "learningObjectives": [
-              "Apply concepts to your context",
-              "Receive expert feedback",
-              "Plan your technical roadmap"
+              "Analyze a complete A-Z project",
+              "Understand the day-by-day process",
+              "Learn from real lessons and metrics"
             ],
             "keyTopics": [
-              "Expert code review",
-              "Architecture review",
-              "Career development planning",
-              "Technical roadmap creation"
+              "EdTech platform context",
+              "Day 1-2: Specifications and PRD",
+              "Day 3-4: Backend implementation",
+              "Day 5: Frontend and integration",
+              "Day 6: Testing and deployment",
+              "Lessons learned and metrics"
+            ]
+          },
+          "module_7": {
+            "title": "Environment Setup",
+            "duration": "1.5h",
+            "description": "Configure your development environment with Claude Code",
+            "learningObjectives": [
+              "Install and configure Claude Code",
+              "Understand local vs cloud environments",
+              "Configure RooCode and its modes"
+            ],
+            "keyTopics": [
+              "Claude Code installation",
+              "Basic MCP configuration",
+              "RooCode setup and modes",
+              "Local vs cloud environment"
+            ]
+          },
+          "module_8": {
+            "title": "Advanced MCP",
+            "duration": "2h",
+            "description": "Master essential MCP servers for productivity",
+            "learningObjectives": [
+              "Master Context7 for real-time documentation",
+              "Use Playwright and Puppeteer for testing",
+              "Integrate Sequential-thinking and Magic-UI"
+            ],
+            "keyTopics": [
+              "Context7 real-time documentation",
+              "Playwright and Puppeteer testing",
+              "Sequential-thinking for reasoning",
+              "Magic-UI components",
+              "Custom MCP integration"
+            ]
+          },
+          "module_9": {
+            "title": "Claude-Code Tips & Tricks",
+            "duration": "2.5h",
+            "description": "Advanced techniques to master Claude Code and optimize your workflow",
+            "learningObjectives": [
+              "Master sub-agents and specialization",
+              "Manage context effectively (200K tokens)",
+              "Chain agents and automate with hooks"
+            ],
+            "keyTopics": [
+              "Sub-agents and specialization",
+              "CLAUDE.md: structure and maintenance",
+              "Context management (/compact, /memory)",
+              "Planning before execution (Plan Mode)",
+              "Enforcing alignment and verification",
+              "Chaining agents",
+              "Hooks and automation"
+            ]
+          },
+          "module_10": {
+            "title": "RooCode Complete Development",
+            "duration": "2h",
+            "description": "Orchestrate complete software development with RooCode modes",
+            "learningObjectives": [
+              "Understand RooCode and its positioning",
+              "Master all development modes",
+              "Orchestrate complete workflows"
+            ],
+            "keyTopics": [
+              "Introduction and RooCode setup",
+              "Modes: /dev, /test, /docs, /refactor, /architect",
+              "Complex workflow orchestration",
+              "Complete workflow integration",
+              "Advantages and best practices"
+            ]
+          },
+          "module_11": {
+            "title": "Claude-Flow & SPARC",
+            "duration": "2h",
+            "description": "Orchestrate multi-agent swarms with Claude-Flow and SPARC methodology",
+            "learningObjectives": [
+              "Understand swarm and hivemind architecture",
+              "Master the complete SPARC methodology",
+              "Orchestrate multi-agent workflows"
+            ],
+            "keyTopics": [
+              "Swarm and hivemind architecture",
+              "SPARC methodology (Specification → Completion)",
+              "Multi-agent orchestration",
+              "Memory, coordination, and persistence",
+              "Practical case: swarm for EdTech project"
+            ]
+          },
+          "module_12": {
+            "title": "Production Deployment",
+            "duration": "1.5h",
+            "description": "Deploy your applications to production with best practices",
+            "learningObjectives": [
+              "Deploy frontend and backend to production",
+              "Implement CI/CD with GitHub Actions",
+              "Monitor and manage errors"
+            ],
+            "keyTopics": [
+              "Frontend: Vercel and Netlify",
+              "Backend: Railway and Render",
+              "Databases: Supabase and Neon",
+              "CI/CD with GitHub Actions",
+              "Monitoring and errors with Sentry"
+            ]
+          },
+          "module_13": {
+            "title": "Building Custom Agents",
+            "duration": "2h",
+            "description": "Create your own BMAD agents with the complete framework",
+            "learningObjectives": [
+              "Build a complete YAML agent",
+              "Define effective personas",
+              "Master dependencies and resources"
+            ],
+            "keyTopics": [
+              "Detailed YAML agent structure",
+              "Effective persona definition",
+              "Creating tasks and templates",
+              "Dependencies and resources",
+              "Complete example: QA agent"
+            ]
+          },
+          "module_14": {
+            "title": "Advanced Patterns",
+            "duration": "2h",
+            "description": "Master advanced patterns for professional agentic development",
+            "learningObjectives": [
+              "Implement TDD with agents (BMAD workflow)",
+              "Manage context and memory effectively",
+              "Debug systematically with agents"
+            ],
+            "keyTopics": [
+              "TDD with agents (BMAD workflow)",
+              "Iterative refactoring with agents",
+              "Context and memory management",
+              "Multi-Claude workflows",
+              "Systematic debugging"
             ]
           }
         }
@@ -1834,14 +1976,14 @@
     "members": [
       {
         "name": "Philippe Béliveau",
-        "title": "Agentic developer and data scientist",
+        "title": "AI developer",
         "description": "Philippe Béliveau is an AI research developer, graduated with an MSc in Data Science from HEC Montréal.",
         "image": "/philippe-beliveau.png",
         "alt": "Philippe Béliveau"
       },
       {
         "name": "Baptiste Wieczorek",
-        "title": "Agentic developer and data scientist",
+        "title": "AI developer",
         "description": "Trained in Canada (Polytechnique & HEC), expert in AI, automation and technical deployment, having supported more than 50 SME transformation projects.",
         "image": "/baptiste-wieczorek.jpeg",
         "alt": "Baptiste Wieczorek"
@@ -2200,8 +2342,8 @@
     }
   },
   "tech_stack": {
-    "title": "Professional Tools",
-    "subtitle": "Master tomorrow's technology stack",
+    "title": "Master tomorrow's technology stack",
+    "subtitle": "",
     "description": "In one training, learn to orchestrate these tools like a senior developer.",
     "cta_button": "GET STARTED"
   },
