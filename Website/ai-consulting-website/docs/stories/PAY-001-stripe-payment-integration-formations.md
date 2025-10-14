@@ -23,7 +23,7 @@ So that I can quickly secure my spot without additional steps.
 
 ### AC3: Stripe URLs Implementation
 - [x] Formation Kickstart link: https://buy.stripe.com/dRmcN6bZl7Gg21X3PceEo04
-- [x] Formation Architecte link: https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05
+- [x] Formation Architecte link: https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07
 
 ### AC4: Design Consistency
 - [x] Payment buttons follow existing design patterns

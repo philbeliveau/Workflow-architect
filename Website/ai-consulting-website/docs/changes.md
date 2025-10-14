@@ -247,7 +247,7 @@ Alternative : Pourquoi l’IA agentique va façonner le code et les pratiques de
 
 **Stripe URLs**:
 - Formation Kickstart: https://buy.stripe.com/dRmcN6bZl7Gg21X3PceEo04
--  Formation Architecte https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05
+- Formation Architecte: https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07
 - Guide: https://buy.stripe.com/00w9AU6F1d0A36185seEo03
 
 ### Launch Promotion Campaign

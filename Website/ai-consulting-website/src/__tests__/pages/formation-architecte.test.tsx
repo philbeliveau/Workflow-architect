@@ -19,7 +19,7 @@ jest.mock('@/app/[locale]/formation-architecte/page', () => {
           </div>
         </div>
         <div data-testid="cta-section">
-          <a href="https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05">
+          <a href="https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07">
             formation_architecte.hero.cta_primary
           </a>
         </div>
@@ -65,7 +65,7 @@ describe('Formation Architecte Page', () => {
     
     const ctaLink = screen.getByRole('link', { name: /formation_architecte.hero.cta_primary/i })
     expect(ctaLink).toBeInTheDocument()
-    expect(ctaLink).toHaveAttribute('href', 'https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05')
+    expect(ctaLink).toHaveAttribute('href', 'https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07')
   })
 
   it('has proper accessibility attributes', () => {

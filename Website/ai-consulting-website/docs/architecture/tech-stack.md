@@ -304,7 +304,7 @@ export const authOptions: NextAuthOptions = {
 // Payment links (external)
 const STRIPE_LINKS = {
   kickstart: 'https://buy.stripe.com/dRmcN6bZl7Gg21X3PceEo04',
-  architecte: 'https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05'
+  architecte: 'https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07'
 };
 
 // Usage in components

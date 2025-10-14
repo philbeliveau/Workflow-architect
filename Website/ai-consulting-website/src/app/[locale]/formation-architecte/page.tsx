@@ -161,8 +161,8 @@ export default function FormationArchitectePage() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <a 
-                href="https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05"
+              <a
+                href="https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-orange-600 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 {t('hero.cta_primary')}
@@ -583,8 +583,8 @@ export default function FormationArchitectePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <a 
-                  href="https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05"
+                <a
+                  href="https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold bg-white text-orange-600 hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   {t('enrollment.cta_primary')}

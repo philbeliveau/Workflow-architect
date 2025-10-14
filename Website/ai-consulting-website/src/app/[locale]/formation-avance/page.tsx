@@ -399,8 +399,8 @@ export default function FormationAvancePage() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <a 
-                href="https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05"
+              <a
+                href="https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary-blue to-accent-purple text-white hover:from-primary-blue/90 hover:to-accent-purple/90 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 {t('cta')}
@@ -629,7 +629,7 @@ export default function FormationAvancePage() {
                 originalPrice={3200}
                 isPromotional={true}
                 theme="dark"
-                stripeUrl="https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05"
+                stripeUrl="https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07"
                 className="max-w-2xl mx-auto"
               />
             </motion.div>

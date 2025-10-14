@@ -263,7 +263,7 @@ So that I can quickly secure my spot without additional steps.
 1. Stripe payment links integrated on `/formation-kickstart` page
 2. Stripe payment links integrated on `/formation-architecte` page
 3. Formation Kickstart link: https://buy.stripe.com/dRmcN6bZl7Gg21X3PceEo04
-4. Formation Architecte link: https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05
+4. Formation Architecte link: https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07
 5. Payment buttons follow existing design patterns
 6. Clear pricing display with any applicable promotions
 
