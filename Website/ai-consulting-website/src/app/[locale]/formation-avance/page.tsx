@@ -625,8 +625,8 @@ export default function FormationAvancePage() {
               {/* Payment Flexibility Component */}
               <PaymentFlexibility
                 formationName="avance"
-                price={2240} // 30% discount: 3200 * 0.7 = 2240
-                originalPrice={3200}
+                price={420} // 40% discount: 700 * 0.6 = 420
+                originalPrice={700}
                 isPromotional={true}
                 theme="dark"
                 stripeUrl="https://buy.stripe.com/3cIaEYe7tgcMcGB71oeEo07"

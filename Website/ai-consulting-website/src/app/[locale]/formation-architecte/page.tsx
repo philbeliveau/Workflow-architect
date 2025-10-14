@@ -605,8 +605,8 @@ export default function FormationArchitectePage() {
               {/* Payment Flexibility Component */}
               <PaymentFlexibility
                 formationName="architecte"
-                price={2240} // 30% discount: 3200 * 0.7 = 2240
-                originalPrice={3200}
+                price={420} // 40% discount: 700 * 0.6 = 420
+                originalPrice={700}
                 isPromotional={true}
                 className="max-w-2xl mx-auto"
               />

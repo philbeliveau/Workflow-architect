@@ -88,8 +88,8 @@ export const FORMATION_PRICING = {
     paymentOptions: 'payable en 3x'
   },
   architecte: {
-    id: 'architecte', 
-    originalPrice: 3200,
+    id: 'architecte',
+    originalPrice: 700,
     currency: '€',
     discount: 40,
     paymentOptions: undefined

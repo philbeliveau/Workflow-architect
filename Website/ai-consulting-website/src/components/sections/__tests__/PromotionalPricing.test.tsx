@@ -48,7 +48,7 @@ describe('PromotionalPricing', () => {
     it('has correct architecte formation pricing configuration', () => {
       expect(FORMATION_PRICING.architecte).toEqual({
         id: 'architecte',
-        originalPrice: 3200,
+        originalPrice: 700,
         currency: '€',
         discount: 40,
         paymentOptions: undefined
@@ -100,12 +100,12 @@ describe('PromotionalPricing', () => {
       
       // Check original price with strikethrough
       expect(screen.getByText(/Prix original: 700€/)).toBeInTheDocument();
-      
-      // Check promotional price (3200 * 0.6 = 1920)
-      expect(screen.getByText(/Prix promotionnel: 1920€/)).toBeInTheDocument();
-      
+
+      // Check promotional price (700 * 0.6 = 420)
+      expect(screen.getByText(/Prix promotionnel: 420€/)).toBeInTheDocument();
+
       // Check savings amount
-      expect(screen.getByText(/Économisez 1280€!/)).toBeInTheDocument();
+      expect(screen.getByText(/Économisez 280€!/)).toBeInTheDocument();
       
       // No payment options for architecte
       expect(screen.queryByText(/payable/)).not.toBeInTheDocument();
@@ -173,21 +173,21 @@ describe('PromotionalPricing', () => {
     it('calculates correct promotional prices', () => {
       // Kickstart: 280 * 0.6 = 168
       expect(Math.round(FORMATION_PRICING.kickstart.originalPrice * 0.6)).toBe(168);
-      
-      // Architecte: 3200 * 0.6 = 1920
-      expect(Math.round(FORMATION_PRICING.architecte.originalPrice * 0.6)).toBe(1920);
+
+      // Architecte: 700 * 0.6 = 420
+      expect(Math.round(FORMATION_PRICING.architecte.originalPrice * 0.6)).toBe(420);
     });
 
     it('calculates correct savings amounts', () => {
       // Kickstart savings: 280 - 168 = 112
-      const kickstartSavings = FORMATION_PRICING.kickstart.originalPrice - 
+      const kickstartSavings = FORMATION_PRICING.kickstart.originalPrice -
         Math.round(FORMATION_PRICING.kickstart.originalPrice * 0.6);
       expect(kickstartSavings).toBe(112);
-      
-      // Architecte savings: 3200 - 1920 = 1280
-      const architecteSavings = FORMATION_PRICING.architecte.originalPrice - 
+
+      // Architecte savings: 700 - 420 = 280
+      const architecteSavings = FORMATION_PRICING.architecte.originalPrice -
         Math.round(FORMATION_PRICING.architecte.originalPrice * 0.6);
-      expect(architecteSavings).toBe(1280);
+      expect(architecteSavings).toBe(280);
     });
   });
 });

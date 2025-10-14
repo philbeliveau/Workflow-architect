@@ -93,16 +93,16 @@ describe('PaymentFlexibility', () => {
 
   it('calculates installment amounts correctly for architecte', () => {
     renderWithIntl(
-      <PaymentFlexibility formationName="architecte" price={3200} />
+      <PaymentFlexibility formationName="architecte" price={700} />
     )
-    
+
     // Click to expand details
     fireEvent.click(screen.getByText('nous contacter'))
-    
+
     // Check installment calculations
-    expect(screen.getByText('~1067€/mois')).toBeInTheDocument() // 3 months
-    expect(screen.getByText('~534€/mois')).toBeInTheDocument() // 6 months
-    expect(screen.getByText('~267€/mois')).toBeInTheDocument() // 12 months
+    expect(screen.getByText('~234€/mois')).toBeInTheDocument() // 3 months
+    expect(screen.getByText('~117€/mois')).toBeInTheDocument() // 6 months
+    expect(screen.getByText('~59€/mois')).toBeInTheDocument() // 12 months
   })
 
   it('shows and hides details when clicking contact link', () => {
