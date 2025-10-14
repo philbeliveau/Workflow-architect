@@ -158,13 +158,11 @@ const FormationOverview: React.FC = memo(() => {
                 className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-primary-blue/30 bg-background-dark-alt"
               >
                 <div className="relative w-full h-full">
-                  <Image
+                  {/* Using regular img tag for better deployment compatibility */}
+                  <img
                     src="/images/circlepic.jpeg"
                     alt="Communauté Circle Newcode avec discussions et partage de projets"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
-                    priority={false}
+                    className="w-full h-full object-cover"
                   />
                   
                   {/* Overlay with community stats */}
