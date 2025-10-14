@@ -182,12 +182,12 @@
         "footer": "Commencez votre transformation dès aujourd'hui"
       },
       "avance": {
-        "title": "Formation Architecte: De l'idée au logiciel scalable",
-        "subtitle": "la vision d'un entrepreneur, la puissance d'un lead tech",
+        "title": " Formation Architecte  ",
+        "subtitle": "La vision d'un entrepreneur, la puissance d'un lead tech",
         "description": "Formation professionnelle pour entrepreneurs et leads techniques. Maîtrisez l'architecture logicielle scalable et les méthodologies de développement enterprise.",
         "duration": "14-26 heures intensives",
         "level": "Professionnel",
-        "price": "3200€",
+        "price": "700€",
         "features": [
           "Architecture logicielle scalable",
           "Méthodologies enterprise et patterns avancés",
@@ -732,8 +732,8 @@
       "architecte": {
         "level": "Intermédiaire & Avancé",
         "title": "Formation Architecte",
-        "target": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
-        "price": "3200€",
+        "target": "  : La vision d'un entrepreneur, la puissance d'un lead tech",
+        "price": "700€",
         "duration": "Formation approfondie",
         "cta": "Accéder à Formation Architecte"
       },
@@ -2866,7 +2866,7 @@
   "formation_architecte": {
     "hero": {
       "title": "Formation Architecte",
-      "title_highlight": "De l'idée au logiciel scalable",
+      "title_highlight": " ",
       "subtitle": "Maîtrisez l'architecture et l'orchestration d'agents IA pour créer des applications d'entreprise robustes et évolutives.",
       "duration": "formation complète",
       "level": "Niveau avancé",

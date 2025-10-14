@@ -147,7 +147,7 @@
         "description": "Professional training for entrepreneurs and tech leads. Master scalable software architecture and enterprise development methodologies.",
         "duration": "14-26 intensive hours",
         "level": "Professional",
-        "price": "3200€",
+        "price": "700€",
         "features": [
           "Scalable software architecture",
           "Enterprise methodologies and advanced patterns",
@@ -2855,7 +2855,7 @@
         "level": "Intermediate & Advanced",
         "title": "Architect Training",
         "target": "From idea to scalable software: an entrepreneur's vision, a tech lead's power",
-        "price": "3200€",
+        "price": "700€",
         "duration": "In-depth training",
         "cta": "Access Architect Training"
       },

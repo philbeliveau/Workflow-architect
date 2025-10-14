@@ -99,7 +99,7 @@ describe('PromotionalPricing', () => {
       expect(screen.getByText('🔥 -40%')).toBeInTheDocument();
       
       // Check original price with strikethrough
-      expect(screen.getByText(/Prix original: 3200€/)).toBeInTheDocument();
+      expect(screen.getByText(/Prix original: 700€/)).toBeInTheDocument();
       
       // Check promotional price (3200 * 0.6 = 1920)
       expect(screen.getByText(/Prix promotionnel: 1920€/)).toBeInTheDocument();
