@@ -140,6 +140,7 @@ export function usePromotionalAnalytics(): UsePromotionalAnalyticsReturn {
  * Utility function to track page views with promotional context
  */
 export function trackPromotionalPageView(pageName: string, hasPromotionalContent: boolean) {
+  // Early return if not in browser environment
   if (typeof window === 'undefined') return;
 
   const event = {
@@ -149,7 +150,7 @@ export function trackPromotionalPageView(pageName: string, hasPromotionalContent
       has_promotional_content: hasPromotionalContent,
       campaign: 'launch-promotion-40-percent',
       timestamp: new Date().toISOString(),
-      url: window.location.href
+      url: typeof window !== 'undefined' ? window.location.href : ''
     }
   };
 
