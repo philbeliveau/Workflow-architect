@@ -155,24 +155,27 @@ const FormationOverview: React.FC = memo(() => {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-primary-blue/30"
+                className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-primary-blue/30 bg-background-dark-alt"
               >
-                <Image
-                  src="/images/circlepic.jpeg"
-                  alt="Communauté Circle Newcode avec discussions et partage de projets"
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
-                />
-                
-                {/* Overlay with community stats */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-white font-semibold text-lg mb-2">
-                    {t('community_caption')}
-                  </p>
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/circlepic.jpeg"
+                    alt="Communauté Circle Newcode avec discussions et partage de projets"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
+                    priority={false}
+                  />
                   
+                  {/* Overlay with community stats */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-white font-semibold text-lg mb-2">
+                      {t('community_caption')}
+                    </p>
+                    
+                  </div>
                 </div>
               </motion.div>
               

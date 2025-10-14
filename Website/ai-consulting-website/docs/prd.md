@@ -30,9 +30,9 @@ The website enhancement addresses critical conversion barriers: language prefere
 
 **FR2**: Formation Kickstart rebranding - Update all references from "Formation Débutant" to "Formation Kickstart – Créez votre premier site ou app avec l'IA en quelques heures"
 
-**FR3**: Formation Architecte rebranding - Update to "Formation Architecte: De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech"
+**FR3**: Formation Architecte rebranding - Update to " Formation Architecte   : La vision d'un entrepreneur, la puissance d'un lead tech"
 
-**FR4**: Pricing updates - Formation Kickstart: 280€ (payable en 3x), Formation Architecte: 3200€ (updated from 300€)
+**FR4**: Pricing updates - Formation Kickstart: 280€ (payable en 3x),  Formation Architecte 700€ (updated from 300€)
 
 **FR5**: Dedicated formation pages - Create `/formation-kickstart` and `/formation-architecte` pages with complete curricula
 

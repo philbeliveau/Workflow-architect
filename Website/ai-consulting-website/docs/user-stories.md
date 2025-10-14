@@ -155,9 +155,9 @@ I want to see the updated "Formation Architecte" positioning and pricing,
 So that I understand the professional-level value offered.
 
 **Acceptance Criteria:**
-1. Update name to "Formation Architecte: De l'idée au logiciel scalable"
-2. Subtitle: "la vision d'un entrepreneur, la puissance d'un lead tech"
-3. Pricing updated from 300€ to 3200€
+1. Update name to " Formation Architecte  "
+2. Subtitle: "La vision d'un entrepreneur, la puissance d'un lead tech"
+3. Pricing updated from 300€ to 700€
 4. Professional positioning and messaging implemented
 5. All existing functionality preserved
 
@@ -169,7 +169,7 @@ So that I understand the professional-level value offered.
 **Definition of Done:**
 - [ ] Name updated across all pages
 - [ ] New subtitle implemented
-- [ ] Pricing updated to 3200€
+- [ ] Pricing updated to 700€
 - [ ] Professional messaging consistent
 - [ ] No functionality regression
 

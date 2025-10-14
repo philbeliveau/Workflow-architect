@@ -14,11 +14,11 @@ So that I understand the professional-level value offered.
 ## Acceptance Criteria
 
 ### AC1: Name and Positioning Update
-- [ ] Update name to "Formation Architecte: De l'idée au logiciel scalable"
-- [ ] Add subtitle: "la vision d'un entrepreneur, la puissance d'un lead tech"
+- [ ] Update name to " Formation Architecte  "
+- [ ] Add subtitle: "La vision d'un entrepreneur, la puissance d'un lead tech"
 
 ### AC2: Pricing Update
-- [ ] Pricing updated from 300€ to 3200€
+- [ ] Pricing updated from 300€ to 700€
 - [ ] Clear display of new professional-level pricing
 
 ### AC3: Professional Positioning
@@ -63,9 +63,9 @@ So that I understand the professional-level value offered.
 ### Updated Branding Elements
 | Element | Old | New |
 |---------|-----|-----|
-| Name | Formation 2 : Formation Architecte | Formation Architecte: De l'idée au logiciel scalable |
-| Subtitle | maîtriser vos agents IA et bâtissez vos projets logiciels avancés | la vision d'un entrepreneur, la puissance d'un lead tech |
-| Price | 300€ | 3200€ |
+| Name | Formation 2 : Formation Architecte |  Formation Architecte   |
+| Subtitle | maîtriser vos agents IA et bâtissez vos projets logiciels avancés | La vision d'un entrepreneur, la puissance d'un lead tech |
+| Price | 300€ | 700€ |
 | Positioning | Technical training | Professional/Enterprise development |
 
 ### Professional Messaging Themes
@@ -76,9 +76,9 @@ So that I understand the professional-level value offered.
 - **Innovation**: Cutting-edge AI-powered development workflows
 
 ## Definition of Done
-- [ ] Name updated to "Formation Architecte: De l'idée au logiciel scalable"
+- [ ] Name updated to " Formation Architecte  "
 - [ ] New subtitle implemented across all pages
-- [ ] Pricing updated to 3200€ throughout site
+- [ ] Pricing updated to 700€ throughout site
 - [ ] Professional messaging consistent across platform
 - [ ] No functionality regression
 - [ ] Content review completed for professional tone
@@ -112,7 +112,7 @@ So that I understand the professional-level value offered.
 - Technical leadership skills development
 
 ### Payment Options
-- Full payment: 3200€
+- Full payment: 700€
 - Installment plans: "Pour les paiements en plusieurs fois : nous contacter"
 - Professional/corporate rates available
 

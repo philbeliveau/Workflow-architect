@@ -33,9 +33,9 @@
       "architecte": {
         "level": "Intermédiaire & Avancé",
         "title": "Formation Architecte",
-        "description": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
+        "description": "  : La vision d'un entrepreneur, la puissance d'un lead tech",
         "duration": "Formation approfondie",
-        "price": "3200€",
+        "price": "700€",
         "outcomes": [
           "Maîtriser l'architecture logicielle avec agents IA",
           "Créer des applications scalables et professionnelles",
@@ -71,8 +71,8 @@
       "architecte": {
         "level": "Intermédiaire & Avancé",
         "title": "Formation Architecte",
-        "target": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
-        "price": "3200€",
+        "target": "  : La vision d'un entrepreneur, la puissance d'un lead tech",
+        "price": "700€",
         "duration": "Formation approfondie",
         "outcomes": [
           "Maîtriser l'architecture logicielle avec agents IA",

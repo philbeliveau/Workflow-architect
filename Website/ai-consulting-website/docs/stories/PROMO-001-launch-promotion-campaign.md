@@ -106,8 +106,8 @@ setInterval(updateCountdown, 1000);
 - **Payment**: "(payable en 3x)"
 
 #### Formation Architecte Pricing
-- **Original**: 3200€
-- **Promotional**: ~~3200€~~ **1920€** (40% de réduction)
+- **Original**: 700€
+- **Promotional**: ~~700€~~ **1920€** (40% de réduction)
 - **Payment**: "Économisez 1280€ avec cette offre!"
 
 ## Banner Placement Strategy
@@ -233,7 +233,7 @@ Claude-3.5-Sonnet (claude-sonnet-4-20250514) via BMAD-METHOD TDD workflow
 
 ### Promotional Pricing Implementation
 - **Kickstart Formation**: 280€ → 168€ (40% discount = 112€ savings)
-- **Architecte Formation**: 3200€ → 1920€ (40% discount = 1280€ savings)
+- **Architecte Formation**: 700€ → 1920€ (40% discount = 1280€ savings)
 - **Display**: Clear before/after pricing with strikethrough original prices
 - **Integration**: Seamless integration with existing PaymentFlexibility component
 

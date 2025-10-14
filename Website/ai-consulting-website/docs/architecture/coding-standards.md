@@ -323,8 +323,8 @@ export async function getUserCourses(userId: string) {
     },
     "architecte": {
       "title": "Formation Architecte",
-      "description": "De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech",
-      "price": "3200€"
+      "description": "  : La vision d'un entrepreneur, la puissance d'un lead tech",
+      "price": "700€"
     },
     "common": {
       "enrollNow": "S'inscrire maintenant",

@@ -104,7 +104,7 @@ Create reusable component for payment flexibility messaging that can be included
 - **6 months**: ~47€/month
 - **12 months**: ~23€/month
 
-#### Formation Architecte (3200€)
+#### Formation Architecte (700€)
 - **3 months**: ~1067€/month
 - **6 months**: ~533€/month
 - **12 months**: ~267€/month
@@ -193,7 +193,7 @@ L'équipe Newcode
 - [x] Added comprehensive French translations for payment flexibility
 - [x] Added English translations for payment flexibility
 - [x] Integrated component into Formation Kickstart page (280€ price)
-- [x] Integrated component into Formation Architecte page (3200€ price)
+- [x] Integrated component into Formation Architecte page (700€ price)
 - [x] Created test suite for PaymentFlexibility component
 - [x] Verified development server runs without errors
 

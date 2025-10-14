@@ -48,7 +48,7 @@ So that I can quickly secure my spot without additional steps.
 - **Placement**: After curriculum overview, before FAQ/support section
 
 #### Formation Architecte Payment Button
-- **Text**: "S'inscrire à la Formation Architecte - 3200€"
+- **Text**: "S'inscrire à la Formation Architecte - 700€"
 - **Secondary Text**: "Formation professionnelle avancée"
 - **Styling**: Premium/professional button style
 - **Placement**: After value proposition, prominently featured
@@ -105,7 +105,7 @@ So that I can quickly secure my spot without additional steps.
 
 ### Formation Architecte Flow
 1. User evaluates professional curriculum and ROI
-2. Sees investment pricing: "3200€"
+2. Sees investment pricing: "700€"
 3. Option to contact for installment plans
 4. Clicks professional enrollment button
 5. Redirects to Stripe Checkout
@@ -181,7 +181,7 @@ Successfully implemented Stripe payment integration for both Formation Kickstart
 3. **Formation Architecte Payment Integration**
    - Integrated Stripe payment button with URL: https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05
    - Implemented professional styling with gradient design for enterprise positioning
-   - Added pricing display: "S'inscrire à la Formation Architecte - 3200€"
+   - Added pricing display: "S'inscrire à la Formation Architecte - 700€"
 
 4. **Translation Management**
    - Verified existing French translations for Formation Architecte in `src/messages/fr.json`

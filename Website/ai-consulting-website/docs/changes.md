@@ -147,9 +147,9 @@ Module 10 : Pour aller plus loin, la suite (30min)
 
 ### Change: Formation Avancée Rebranding
 **Current**: "Formation 2 : Formation Architecte – maîtriser vos agents IA et bâtissez vos projets logiciels avancés"
-**New**: "Formation Architecte : De l'idée au logiciel scalable : la vision d'un entrepreneur, la puissance d'un lead tech"
+**New**: "Formation Architecte :   : La vision d'un entrepreneur, la puissance d'un lead tech"
 
-**Pricing Update**: Change from 300€ to 3200€
+**Pricing Update**: Change from 300€ to 700€
 
 ### New Page Required: Formation Architecte Details (/formation-architecte)
 When users click on Formation Architecte, redirect to dedicated page with complete curriculum:
@@ -247,7 +247,7 @@ Alternative : Pourquoi l’IA agentique va façonner le code et les pratiques de
 
 **Stripe URLs**:
 - Formation Kickstart: https://buy.stripe.com/dRmcN6bZl7Gg21X3PceEo04
-- Formation Architecte: https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05
+-  Formation Architecte https://buy.stripe.com/00wfZiaVhgcM5e91H4eEo05
 - Guide: https://buy.stripe.com/00w9AU6F1d0A36185seEo03
 
 ### Launch Promotion Campaign
