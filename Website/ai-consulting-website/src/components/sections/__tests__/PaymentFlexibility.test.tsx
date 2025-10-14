@@ -99,10 +99,10 @@ describe('PaymentFlexibility', () => {
     // Click to expand details
     fireEvent.click(screen.getByText('nous contacter'))
 
-    // Check installment calculations
-    expect(screen.getByText('~234€/mois')).toBeInTheDocument() // 3 months
-    expect(screen.getByText('~117€/mois')).toBeInTheDocument() // 6 months
-    expect(screen.getByText('~59€/mois')).toBeInTheDocument() // 12 months
+    // Check installment calculations (700€ full price, no discount)
+    expect(screen.getByText('~234€/mois')).toBeInTheDocument() // 3 months: 700/3
+    expect(screen.getByText('~117€/mois')).toBeInTheDocument() // 6 months: 700/6
+    expect(screen.getByText('~59€/mois')).toBeInTheDocument() // 12 months: 700/12
   })
 
   it('shows and hides details when clicking contact link', () => {

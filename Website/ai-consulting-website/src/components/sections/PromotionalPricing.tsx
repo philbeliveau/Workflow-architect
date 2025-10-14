@@ -91,7 +91,7 @@ export const FORMATION_PRICING = {
     id: 'architecte',
     originalPrice: 700,
     currency: '€',
-    discount: 40,
+    discount: 0,
     paymentOptions: undefined
   }
 } as const;

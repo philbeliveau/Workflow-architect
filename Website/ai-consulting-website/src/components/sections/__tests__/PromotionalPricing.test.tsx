@@ -50,7 +50,7 @@ describe('PromotionalPricing', () => {
         id: 'architecte',
         originalPrice: 700,
         currency: '€',
-        discount: 40,
+        discount: 0,
         paymentOptions: undefined
       });
     });
@@ -98,14 +98,9 @@ describe('PromotionalPricing', () => {
       // Check discount badge
       expect(screen.getByText('🔥 -40%')).toBeInTheDocument();
       
-      // Check original price with strikethrough
-      expect(screen.getByText(/Prix original: 700€/)).toBeInTheDocument();
-
-      // Check promotional price (700 * 0.6 = 420)
-      expect(screen.getByText(/Prix promotionnel: 420€/)).toBeInTheDocument();
-
-      // Check savings amount
-      expect(screen.getByText(/Économisez 280€!/)).toBeInTheDocument();
+      // No discount for architecte (discount: 0)
+      // Price should be displayed as regular price without promotion
+      expect(screen.getByText(/700€/)).toBeInTheDocument();
       
       // No payment options for architecte
       expect(screen.queryByText(/payable/)).not.toBeInTheDocument();
@@ -174,8 +169,9 @@ describe('PromotionalPricing', () => {
       // Kickstart: 280 * 0.6 = 168
       expect(Math.round(FORMATION_PRICING.kickstart.originalPrice * 0.6)).toBe(168);
 
-      // Architecte: 700 * 0.6 = 420
-      expect(Math.round(FORMATION_PRICING.architecte.originalPrice * 0.6)).toBe(420);
+      // Architecte: No discount (discount: 0), price remains 700
+      expect(FORMATION_PRICING.architecte.originalPrice).toBe(700);
+      expect(FORMATION_PRICING.architecte.discount).toBe(0);
     });
 
     it('calculates correct savings amounts', () => {
@@ -184,10 +180,8 @@ describe('PromotionalPricing', () => {
         Math.round(FORMATION_PRICING.kickstart.originalPrice * 0.6);
       expect(kickstartSavings).toBe(112);
 
-      // Architecte savings: 700 - 420 = 280
-      const architecteSavings = FORMATION_PRICING.architecte.originalPrice -
-        Math.round(FORMATION_PRICING.architecte.originalPrice * 0.6);
-      expect(architecteSavings).toBe(280);
+      // Architecte: No savings (discount: 0)
+      expect(FORMATION_PRICING.architecte.discount).toBe(0);
     });
   });
 });
